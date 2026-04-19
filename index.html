@@ -6,196 +6,67 @@
     <title>Skin Care Pro</title>
     <style>
         :root {
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-            --text-main: #2d3748;
-            --text-secondary: #718096;
-            --accent-color: #3182ce;
-            --safe-color: #38a169;
+            --bg-color: #f4f7f6; --card-bg: #ffffff; --text-main: #2d3748;
+            --text-secondary: #718096; --accent-color: #3182ce; --safe-color: #38a169;
             --border-radius: 16px;
         }
-
         [data-theme="dark"] {
-            --bg-color: #1a202c;
-            --card-bg: #2d3748;
-            --text-main: #f7fafc;
-            --text-secondary: #a0aec0;
-            --accent-color: #63b3ed;
-            --safe-color: #68d391;
+            --bg-color: #1a202c; --card-bg: #2d3748; --text-main: #f7fafc;
+            --text-secondary: #a0aec0; --accent-color: #63b3ed; --safe-color: #68d391;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 40px 20px;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            background-color: var(--bg-color); color: var(--text-main);
+            margin: 0; padding: 40px 20px; transition: 0.4s ease;
         }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
+        .controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         button {
-            padding: 12px 24px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+            padding: 12px 24px; cursor: pointer; border: none; border-radius: 8px;
+            background-color: var(--accent-color); color: #ffffff; font-weight: bold;
+            font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
+        .products-grid { display: flex; flex-direction: column; gap: 20px; }
         .product-card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            max-width: 450px;
-            margin: 0 auto;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg); border-radius: var(--border-radius);
+            padding: 25px; max-width: 500px; margin: 0 auto; width: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
-
-        .brand {
-            font-size: 14px;
-            color: var(--accent-color);
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .title {
-            font-size: 24px;
-            margin: 10px 0;
-            font-weight: 800;
-        }
-
-        .desc {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .ingredients-label {
-            font-weight: bold;
-            color: var(--text-main);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .ingredients-list {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        /* تصميم المادة الفعالة كزر قابل للضغط */
+        .brand { font-size: 14px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
+        .title { font-size: 24px; margin: 10px 0; font-weight: 800; }
+        .desc { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; }
+        .ingredients-label { font-weight: bold; margin-bottom: 10px; display: block; }
+        .ingredients-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .ingredient-btn {
-            background-color: rgba(49, 130, 206, 0.1);
-            color: var(--accent-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid var(--accent-color);
-            cursor: pointer;
-            transition: all 0.2s;
-            user-select: none;
+            background-color: rgba(49,130,206,0.1); color: var(--accent-color);
+            padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;
+            border: 1px solid var(--accent-color); cursor: pointer;
         }
-
-        .ingredient-btn:active {
-            transform: scale(0.9);
-            background-color: var(--accent-color);
-            color: #fff;
-        }
-
         .tag {
-            background-color: rgba(56, 161, 105, 0.1);
-            color: var(--safe-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid var(--safe-color);
-            display: inline-block;
+            background-color: rgba(56,161,105,0.1); color: var(--safe-color);
+            padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;
+            border: 1px solid var(--safe-color); display: inline-block;
         }
-
-        /* تصميم النافذة المنبثقة عند الضغط على المادة الفعالة */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5); display: none; justify-content: center;
+            align-items: center; z-index: 1000;
         }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
         .modal-content {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            width: 85%;
-            max-width: 400px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
+            background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius);
+            width: 85%; max-width: 400px;
         }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-
-        .modal-body {
-            font-size: 16px;
-            color: var(--text-main);
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .close-btn {
-            width: 100%;
-            background-color: var(--text-secondary);
-        }
+        .modal-title { font-size: 20px; font-weight: bold; color: var(--accent-color); margin-bottom: 10px; }
+        .modal-body { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
+        .close-btn { width: 100%; background-color: var(--text-secondary); }
     </style>
 </head>
 <body>
-
     <div class="controls">
         <button onclick="toggleLanguage()">🌐 عربي / English</button>
         <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
     </div>
 
-    <div id="app"></div>
+    <div class="products-grid" id="app"></div>
 
     <div class="modal-overlay" id="ingredientModal">
         <div class="modal-content">
@@ -205,105 +76,58 @@
         </div>
     </div>
 
+    <script src="data.js"></script>
+
     <script>
-        // قاموس المواد الفعالة وشرحها باللغتين
-        const ingredientsDictionary = {
-            "Zinc PCA": {
-                name: { ar: "زنك بيكولينات", en: "Zinc PCA" },
-                desc: { 
-                    ar: "مادة تنظم إفراز الدهون في البشرة ولها خصائص مضادة للبكتيريا المسببة لحب الشباب.", 
-                    en: "An ingredient that regulates sebum production and has antibacterial properties against acne-causing bacteria." 
-                }
-            },
-            "Thermal Spring Water": {
-                name: { ar: "مياه الينابيع الحرارية", en: "Thermal Spring Water" },
-                desc: { 
-                    ar: "مياه غنية بالمعادن الطبيعية، تعمل على تهدئة تهيج البشرة وتخفيف الاحمرار.", 
-                    en: "Water rich in natural minerals, it soothes skin irritation and reduces redness." 
-                }
-            }
-        };
-
-        const productData = {
-            "brand": "La Roche-Posay",
-            "name": {
-                "ar": "إيفاكلار جل غسول رغوي",
-                "en": "Effaclar Purifying Foaming Gel"
-            },
-            "description": {
-                "ar": "غسول يومي للبشرة الدهنية والمعرضة لحب الشباب، ينظف بلطف ويقلل الإفرازات الدهنية دون تجفيف البشرة.",
-                "en": "Daily cleanser for oily and acne-prone skin, gently cleanses and reduces sebum without over-drying."
-            },
-            "key_ingredients": ["Zinc PCA", "Thermal Spring Water"],
-            "flags": {
-                "pregnancy_safe": true
-            }
-        };
-
         let currentLang = 'ar';
 
         function renderUI() {
             const app = document.getElementById('app');
-            const root = document.documentElement;
-            root.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            app.innerHTML = ''; // تفريغ الصفحة قبل وضع المنتجات باللغة الجديدة
 
-            const name = productData.name[currentLang];
-            const desc = productData.description[currentLang];
-            const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات (اضغط للتفاصيل):' : 'Key Ingredients (Tap for details):';
-            const safeTag = currentLang === 'ar' ? '🤰 آمن للحوامل' : '🤰 Pregnancy Safe';
+            productsList.forEach(product => {
+                const name = product.name[currentLang];
+                const desc = product.description[currentLang];
+                const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات (اضغط للتفاصيل):' : 'Key Ingredients (Tap for details):';
+                const safeTag = currentLang === 'ar' ? '🤰 آمن للحوامل' : '🤰 Pregnancy Safe';
 
-            let ingredientsHTML = '';
-            productData.key_ingredients.forEach(ingKey => {
-                const ingName = ingredientsDictionary[ingKey].name[currentLang];
-                ingredientsHTML += `<div class="ingredient-btn" onclick="openModal('${ingKey}')">${ingName}</div>`;
-            });
+                let ingredientsHTML = '';
+                product.key_ingredients.forEach(ingKey => {
+                    if(ingredientsDictionary[ingKey]) {
+                        const ingName = ingredientsDictionary[ingKey].name[currentLang];
+                        ingredientsHTML += `<div class="ingredient-btn" onclick="openModal('${ingKey}')">${ingName}</div>`;
+                    }
+                });
 
-            app.innerHTML = `
-                <div class="product-card">
-                    <div class="brand">${productData.brand}</div>
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="brand">${product.brand}</div>
                     <div class="title">${name}</div>
                     <div class="desc">${desc}</div>
                     <div class="ingredients-label">${ingredientsTitle}</div>
-                    <div class="ingredients-list">
-                        ${ingredientsHTML}
-                    </div>
-                    <div>
-                        ${productData.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}
-                    </div>
-                </div>
-            `;
+                    <div class="ingredients-list">${ingredientsHTML}</div>
+                    <div>${product.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}</div>
+                `;
+                app.appendChild(card);
+            });
         }
 
         function openModal(ingredientKey) {
-            const titleElement = document.getElementById('modalTitle');
-            const bodyElement = document.getElementById('modalBody');
-            const modal = document.getElementById('ingredientModal');
-
-            titleElement.innerText = ingredientsDictionary[ingredientKey].name[currentLang];
-            bodyElement.innerText = ingredientsDictionary[ingredientKey].desc[currentLang];
-            
-            modal.style.display = 'flex';
-            setTimeout(() => { modal.classList.add('active'); }, 10);
+            document.getElementById('modalTitle').innerText = ingredientsDictionary[ingredientKey].name[currentLang];
+            document.getElementById('modalBody').innerText = ingredientsDictionary[ingredientKey].desc[currentLang];
+            document.getElementById('ingredientModal').style.display = 'flex';
         }
 
         function closeModal() {
-            const modal = document.getElementById('ingredientModal');
-            modal.classList.remove('active');
-            setTimeout(() => { modal.style.display = 'none'; }, 300);
+            document.getElementById('ingredientModal').style.display = 'none';
         }
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            renderUI();
-        }
-
+        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; renderUI(); }
         function toggleTheme() {
             const root = document.documentElement;
-            if (root.getAttribute('data-theme') === 'dark') {
-                root.removeAttribute('data-theme');
-            } else {
-                root.setAttribute('data-theme', 'dark');
-            }
+            root.getAttribute('data-theme') === 'dark' ? root.removeAttribute('data-theme') : root.setAttribute('data-theme', 'dark');
         }
 
         renderUI();
