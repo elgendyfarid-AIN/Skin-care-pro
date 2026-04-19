@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل العناية بالبشرة - نسخة تجريبية</title>
+    <style>
+        /* 1. متغيرات الألوان لتسهيل التبديل بين الوضعين النهاري والليلي 
+         استلهمنا الألوان من التصاميم الطبية النظيفة
+        */
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-secondary: #718096;
+            --accent-color: #3182ce;
+            --safe-color: #38a169;
+            --border-radius: 16px;
+        }
+
+        /* ألوان الوضع الليلي (Dark Mode) */
+        [data-theme="dark"] {
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --text-main: #f7fafc;
+            --text-secondary: #a0aec0;
+            --accent-color: #63b3ed;
+            --safe-color: #68d391;
+        }
+
+        /* 2. التصميم الأساسي للصفحة والبطاقة 
+        */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 12px 24px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            max-width: 450px;
+            margin: 0 auto;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s ease, transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .brand {
+            font-size: 14px;
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 24px;
+            margin: 10px 0;
+            font-weight: 800;
+        }
+
+        .desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .ingredients-label {
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(56, 161, 105, 0.1);
+            color: var(--safe-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--safe-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="toggleLanguage()">🌐 عربي / English</button>
+        <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
+    </div>
+
+    <div id="app"></div>
+
+    <script>
+        // 1. البيانات (JSON) - في المستقبل ستكون في ملف منفصل
+        const productData = {
+            "brand": "La Roche-Posay",
+            "name": {
+                "ar": "إيفاكلار جل غسول رغوي",
+                "en": "Effaclar Purifying Foaming Gel"
+            },
+            "description": {
+                "ar": "غسول يومي للبشرة الدهنية والمعرضة لحب الشباب، ينظف بلطف ويقلل الإفرازات الدهنية دون تجفيف البشرة.",
+                "en": "Daily cleanser for oily and acne-prone skin, gently cleanses and reduces sebum without over-drying."
+            },
+            "key_ingredients": {
+                "ar": ["زنك بيكولينات", "مياه الينابيع الحرارية"],
+                "en": ["Zinc PCA", "Thermal Spring Water"]
+            },
+            "flags": {
+                "pregnancy_safe": true
+            }
+        };
+
+        // 2. حالة الموقع الحالية
+        let currentLang = 'ar'; // اللغة الافتراضية
+
+        // 3. الدالة المسؤولة عن بناء وعرض المنتج
+        function renderUI() {
+            const app = document.getElementById('app');
+            const root = document.documentElement;
+            
+            // تحديد اتجاه الصفحة بناءً على اللغة
+            root.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // تجهيز النصوص حسب اللغة المختارة
+            const name = productData.name[currentLang];
+            const desc = productData.description[currentLang];
+            const ingredients = productData.key_ingredients[currentLang].join(' ، ');
+            const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات:' : 'Key Ingredients:';
+            const safeTag = currentLang === 'ar' ? '🤰 آمن للحوامل' : '🤰 Pregnancy Safe';
+
+            // حقن البيانات داخل الـ HTML
+            app.innerHTML = `
+                <div class="product-card">
+                    <div class="brand">${productData.brand}</div>
+                    <div class="title">${name}</div>
+                    <div class="desc">${desc}</div>
+                    <div class="desc">
+                        <span class="ingredients-label">${ingredientsTitle}</span> ${ingredients}
+                    </div>
+                    <div class="tags">
+                        ${productData.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // 4. دالة تبديل اللغة
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            renderUI(); // إعادة رسم البطاقة باللغة الجديدة
+        }
+
+        // 5. دالة تبديل الوضع الليلي والنهاري
+        function toggleTheme() {
+            const root = document.documentElement;
+            if (root.getAttribute('data-theme') === 'dark') {
+                root.removeAttribute('data-theme');
+            } else {
+                root.setAttribute('data-theme', 'dark');
+            }
+        }
+
+        // تشغيل البناء لأول مرة عند فتح الصفحة
+        renderUI();
+    </script>
+</body>
+</html>
