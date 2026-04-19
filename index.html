@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل العناية بالبشرة - نسخة تجريبية</title>
+    <title>Skin Care Pro</title>
     <style>
-        /* 1. متغيرات الألوان لتسهيل التبديل بين الوضعين النهاري والليلي 
-         استلهمنا الألوان من التصاميم الطبية النظيفة
-        */
         :root {
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
@@ -18,7 +15,6 @@
             --border-radius: 16px;
         }
 
-        /* ألوان الوضع الليلي (Dark Mode) */
         [data-theme="dark"] {
             --bg-color: #1a202c;
             --card-bg: #2d3748;
@@ -28,8 +24,6 @@
             --safe-color: #68d391;
         }
 
-        /* 2. التصميم الأساسي للصفحة والبطاقة 
-        */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -70,11 +64,6 @@
             max-width: 450px;
             margin: 0 auto;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.4s ease, transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
         }
 
         .brand {
@@ -101,13 +90,35 @@
         .ingredients-label {
             font-weight: bold;
             color: var(--text-main);
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .tags {
+        .ingredients-list {
             display: flex;
             gap: 10px;
-            margin-top: 20px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        /* تصميم المادة الفعالة كزر قابل للضغط */
+        .ingredient-btn {
+            background-color: rgba(49, 130, 206, 0.1);
+            color: var(--accent-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid var(--accent-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .ingredient-btn:active {
+            transform: scale(0.9);
+            background-color: var(--accent-color);
+            color: #fff;
         }
 
         .tag {
@@ -118,6 +129,62 @@
             font-size: 14px;
             font-weight: 600;
             border: 1px solid var(--safe-color);
+            display: inline-block;
+        }
+
+        /* تصميم النافذة المنبثقة عند الضغط على المادة الفعالة */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            width: 100%;
+            background-color: var(--text-secondary);
         }
     </style>
 </head>
@@ -130,8 +197,33 @@
 
     <div id="app"></div>
 
+    <div class="modal-overlay" id="ingredientModal">
+        <div class="modal-content">
+            <div class="modal-title" id="modalTitle"></div>
+            <div class="modal-body" id="modalBody"></div>
+            <button class="close-btn" onclick="closeModal()">إغلاق / Close</button>
+        </div>
+    </div>
+
     <script>
-        // 1. البيانات (JSON) - في المستقبل ستكون في ملف منفصل
+        // قاموس المواد الفعالة وشرحها باللغتين
+        const ingredientsDictionary = {
+            "Zinc PCA": {
+                name: { ar: "زنك بيكولينات", en: "Zinc PCA" },
+                desc: { 
+                    ar: "مادة تنظم إفراز الدهون في البشرة ولها خصائص مضادة للبكتيريا المسببة لحب الشباب.", 
+                    en: "An ingredient that regulates sebum production and has antibacterial properties against acne-causing bacteria." 
+                }
+            },
+            "Thermal Spring Water": {
+                name: { ar: "مياه الينابيع الحرارية", en: "Thermal Spring Water" },
+                desc: { 
+                    ar: "مياه غنية بالمعادن الطبيعية، تعمل على تهدئة تهيج البشرة وتخفيف الاحمرار.", 
+                    en: "Water rich in natural minerals, it soothes skin irritation and reduces redness." 
+                }
+            }
+        };
+
         const productData = {
             "brand": "La Roche-Posay",
             "name": {
@@ -142,56 +234,69 @@
                 "ar": "غسول يومي للبشرة الدهنية والمعرضة لحب الشباب، ينظف بلطف ويقلل الإفرازات الدهنية دون تجفيف البشرة.",
                 "en": "Daily cleanser for oily and acne-prone skin, gently cleanses and reduces sebum without over-drying."
             },
-            "key_ingredients": {
-                "ar": ["زنك بيكولينات", "مياه الينابيع الحرارية"],
-                "en": ["Zinc PCA", "Thermal Spring Water"]
-            },
+            "key_ingredients": ["Zinc PCA", "Thermal Spring Water"],
             "flags": {
                 "pregnancy_safe": true
             }
         };
 
-        // 2. حالة الموقع الحالية
-        let currentLang = 'ar'; // اللغة الافتراضية
+        let currentLang = 'ar';
 
-        // 3. الدالة المسؤولة عن بناء وعرض المنتج
         function renderUI() {
             const app = document.getElementById('app');
             const root = document.documentElement;
-            
-            // تحديد اتجاه الصفحة بناءً على اللغة
             root.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
-            // تجهيز النصوص حسب اللغة المختارة
             const name = productData.name[currentLang];
             const desc = productData.description[currentLang];
-            const ingredients = productData.key_ingredients[currentLang].join(' ، ');
-            const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات:' : 'Key Ingredients:';
+            const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات (اضغط للتفاصيل):' : 'Key Ingredients (Tap for details):';
             const safeTag = currentLang === 'ar' ? '🤰 آمن للحوامل' : '🤰 Pregnancy Safe';
 
-            // حقن البيانات داخل الـ HTML
+            let ingredientsHTML = '';
+            productData.key_ingredients.forEach(ingKey => {
+                const ingName = ingredientsDictionary[ingKey].name[currentLang];
+                ingredientsHTML += `<div class="ingredient-btn" onclick="openModal('${ingKey}')">${ingName}</div>`;
+            });
+
             app.innerHTML = `
                 <div class="product-card">
                     <div class="brand">${productData.brand}</div>
                     <div class="title">${name}</div>
                     <div class="desc">${desc}</div>
-                    <div class="desc">
-                        <span class="ingredients-label">${ingredientsTitle}</span> ${ingredients}
+                    <div class="ingredients-label">${ingredientsTitle}</div>
+                    <div class="ingredients-list">
+                        ${ingredientsHTML}
                     </div>
-                    <div class="tags">
+                    <div>
                         ${productData.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}
                     </div>
                 </div>
             `;
         }
 
-        // 4. دالة تبديل اللغة
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            renderUI(); // إعادة رسم البطاقة باللغة الجديدة
+        function openModal(ingredientKey) {
+            const titleElement = document.getElementById('modalTitle');
+            const bodyElement = document.getElementById('modalBody');
+            const modal = document.getElementById('ingredientModal');
+
+            titleElement.innerText = ingredientsDictionary[ingredientKey].name[currentLang];
+            bodyElement.innerText = ingredientsDictionary[ingredientKey].desc[currentLang];
+            
+            modal.style.display = 'flex';
+            setTimeout(() => { modal.classList.add('active'); }, 10);
         }
 
-        // 5. دالة تبديل الوضع الليلي والنهاري
+        function closeModal() {
+            const modal = document.getElementById('ingredientModal');
+            modal.classList.remove('active');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            renderUI();
+        }
+
         function toggleTheme() {
             const root = document.documentElement;
             if (root.getAttribute('data-theme') === 'dark') {
@@ -201,7 +306,6 @@
             }
         }
 
-        // تشغيل البناء لأول مرة عند فتح الصفحة
         renderUI();
     </script>
 </body>
