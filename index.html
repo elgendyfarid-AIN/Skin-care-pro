@@ -8,7 +8,7 @@
         :root {
             --bg-color: #f4f7f6; --card-bg: #ffffff; --text-main: #2d3748;
             --text-secondary: #718096; --accent-color: #3182ce; --safe-color: #38a169;
-            --border-radius: 16px;
+            --border-radius: 12px;
         }
         [data-theme="dark"] {
             --bg-color: #1a202c; --card-bg: #2d3748; --text-main: #f7fafc;
@@ -25,36 +25,59 @@
             background-color: var(--accent-color); color: #ffffff; font-weight: bold;
             font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .products-grid { display: flex; flex-direction: column; gap: 20px; }
+        .products-grid { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
+        
+        /* تصميم الكارت في النظام الشجري */
         .product-card {
             background-color: var(--card-bg); border-radius: var(--border-radius);
-            padding: 25px; max-width: 500px; margin: 0 auto; width: 100%;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden;
+            transition: all 0.3s ease;
         }
-        .brand { font-size: 14px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
-        .title { font-size: 24px; margin: 10px 0; font-weight: 800; }
-        .desc { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; }
-        .ingredients-label { font-weight: bold; margin-bottom: 10px; display: block; }
+        
+        /* رأس الكارت (اللي بنضغط عليه) */
+        .accordion-header {
+            padding: 20px; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; user-select: none;
+        }
+        .header-info { display: flex; flex-direction: column; gap: 5px; }
+        .brand { font-size: 12px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
+        .title { font-size: 18px; font-weight: 800; margin: 0; }
+        .arrow { font-size: 16px; transition: transform 0.3s ease; color: var(--text-secondary); }
+        
+        /* عند فتح الكارت */
+        .product-card.active .arrow { transform: rotate(180deg); color: var(--accent-color); }
+        
+        /* محتوى الكارت (المخفي) */
+        .accordion-body {
+            padding: 0 20px; max-height: 0; overflow: hidden; opacity: 0;
+            transition: all 0.3s ease-out; border-top: 1px solid transparent;
+        }
+        .product-card.active .accordion-body {
+            padding: 0 20px 20px 20px; max-height: 1000px; opacity: 1;
+            border-top: 1px solid rgba(0,0,0,0.05); margin-top: 10px; padding-top: 15px;
+        }
+
+        .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; }
+        .ingredients-label { font-weight: bold; margin-bottom: 10px; display: block; font-size: 14px; }
         .ingredients-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .ingredient-btn {
             background-color: rgba(49,130,206,0.1); color: var(--accent-color);
-            padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: bold;
+            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold;
             border: 1px solid var(--accent-color); cursor: pointer;
         }
         .tag {
             background-color: rgba(56,161,105,0.1); color: var(--safe-color);
-            padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;
+            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold;
             border: 1px solid var(--safe-color); display: inline-block;
         }
+
+        /* النافذة المنبثقة */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.5); display: none; justify-content: center;
             align-items: center; z-index: 1000;
         }
-        .modal-content {
-            background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius);
-            width: 85%; max-width: 400px;
-        }
+        .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 400px; }
         .modal-title { font-size: 20px; font-weight: bold; color: var(--accent-color); margin-bottom: 10px; }
         .modal-body { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
         .close-btn { width: 100%; background-color: var(--text-secondary); }
@@ -84,9 +107,9 @@
         function renderUI() {
             const app = document.getElementById('app');
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            app.innerHTML = ''; // تفريغ الصفحة قبل وضع المنتجات باللغة الجديدة
+            app.innerHTML = ''; 
 
-            productsList.forEach(product => {
+            productsList.forEach((product, index) => {
                 const name = product.name[currentLang];
                 const desc = product.description[currentLang];
                 const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات (اضغط للتفاصيل):' : 'Key Ingredients (Tap for details):';
@@ -96,34 +119,46 @@
                 product.key_ingredients.forEach(ingKey => {
                     if(ingredientsDictionary[ingKey]) {
                         const ingName = ingredientsDictionary[ingKey].name[currentLang];
-                        ingredientsHTML += `<div class="ingredient-btn" onclick="openModal('${ingKey}')">${ingName}</div>`;
+                        ingredientsHTML += `<div class="ingredient-btn" onclick="openModal(event, '${ingKey}')">${ingName}</div>`;
                     }
                 });
 
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 card.innerHTML = `
-                    <div class="brand">${product.brand}</div>
-                    <div class="title">${name}</div>
-                    <div class="desc">${desc}</div>
-                    <div class="ingredients-label">${ingredientsTitle}</div>
-                    <div class="ingredients-list">${ingredientsHTML}</div>
-                    <div>${product.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}</div>
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="header-info">
+                            <span class="brand">${product.brand}</span>
+                            <span class="title">${name}</span>
+                        </div>
+                        <div class="arrow">▼</div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="desc">${desc}</div>
+                        <div class="ingredients-label">${ingredientsTitle}</div>
+                        <div class="ingredients-list">${ingredientsHTML}</div>
+                        <div>${product.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}</div>
+                    </div>
                 `;
                 app.appendChild(card);
             });
         }
 
-        function openModal(ingredientKey) {
+        function toggleAccordion(element) {
+            const card = element.parentElement;
+            // السطر اللي جاي ده عشان يقفل أي كارت تاني مفتوح (لو حابب تسيبهم كلهم يفتحوا براحتهم، امسحه)
+            document.querySelectorAll('.product-card').forEach(c => { if(c !== card) c.classList.remove('active'); });
+            card.classList.toggle('active');
+        }
+
+        function openModal(event, ingredientKey) {
+            event.stopPropagation(); // عشان الكارت ميعملش إغلاق لما تضغط على الزرار
             document.getElementById('modalTitle').innerText = ingredientsDictionary[ingredientKey].name[currentLang];
             document.getElementById('modalBody').innerText = ingredientsDictionary[ingredientKey].desc[currentLang];
             document.getElementById('ingredientModal').style.display = 'flex';
         }
 
-        function closeModal() {
-            document.getElementById('ingredientModal').style.display = 'none';
-        }
-
+        function closeModal() { document.getElementById('ingredientModal').style.display = 'none'; }
         function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; renderUI(); }
         function toggleTheme() {
             const root = document.documentElement;
