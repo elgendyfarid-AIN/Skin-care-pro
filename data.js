@@ -1,6 +1,3 @@
-// ==========================================
-// القوائم الأساسية للموقع
-// ==========================================
 const ingredientsDictionary = {};
 const brandsList = [];
 const productsList = [];
@@ -8,120 +5,180 @@ const casesList = [];
 const imagesDB = {};
 
 // ==========================================
-// 1. العلامات التجارية والعائلات
+// 1. العلامات التجارية (L'Oréal Active Cosmetics)
 // ==========================================
 brandsList.push({
-    id: 'laroche',
-    name: 'La Roche-Posay',
+    id: 'laroche', name: 'La Roche-Posay',
     families: [
-        { id: 'effaclar', name: { ar: 'عائلة إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
-        { id: 'anthelios', name: { ar: 'عائلة أنثيليوس (واقيات الشمس)', en: 'Anthelios (Sun Protection)' } }
+        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية)', en: 'Effaclar (Oily Skin)' } },
+        { id: 'toleriane', name: { ar: 'توليان (للبشرة الحساسة)', en: 'Toleriane (Sensitive Skin)' } },
+        { id: 'anthelios', name: { ar: 'أنثيليوس (واقيات الشمس)', en: 'Anthelios (Sun Care)' } },
+        { id: 'serums', name: { ar: 'السيرومات العلاجية', en: 'Treatment Serums' } }
+    ]
+});
+
+brandsList.push({
+    id: 'cerave', name: 'CeraVe',
+    families: [
+        { id: 'cleansers', name: { ar: 'منظفات البشرة', en: 'Cleansers' } },
+        { id: 'moisturizers', name: { ar: 'مرطبات البشرة', en: 'Moisturizers' } },
+        { id: 'blemish', name: { ar: 'مجموعة التحكم في الحبوب', en: 'Blemish Control' } }
+    ]
+});
+
+brandsList.push({
+    id: 'vichy', name: 'Vichy',
+    families: [
+        { id: 'mineral', name: { ar: 'مينيرال 89 (لتقوية الحاجز)', en: 'Minéral 89 (Barrier Repair)' } },
+        { id: 'normaderm', name: { ar: 'نورماديرم (للبشرة المعرضة للحبوب)', en: 'Normaderm (Acne Prone)' } }
     ]
 });
 
 // ==========================================
-// 2. المواد الفعالة
+// 2. المواد الفعالة 
 // ==========================================
 ingredientsDictionary["Zinc PCA"] = { name: { ar: "زنك بيكولينات", en: "Zinc PCA" }, desc: { ar: "ينظم الإفرازات الدهنية ويقاوم البكتيريا.", en: "Regulates sebum and fights bacteria." } };
-ingredientsDictionary["Thermal Spring Water"] = { name: { ar: "مياه الينابيع الحرارية", en: "Thermal Spring Water" }, desc: { ar: "تهدئ تهيج البشرة وتخفف الاحمرار.", en: "Soothes skin irritation and reduces redness." } };
-ingredientsDictionary["Salicylic Acid"] = { name: { ar: "حمض الساليسيليك", en: "Salicylic Acid" }, desc: { ar: "حمض مقشر ينظف المسام بعمق ويزيل الرؤوس السوداء.", en: "Exfoliating acid that deep cleans pores." } };
-ingredientsDictionary["Niacinamide"] = { name: { ar: "نياسيناميد", en: "Niacinamide" }, desc: { ar: "يهدئ الاحمرار ويقلل التهاب البشرة.", en: "Soothes redness and reduces inflammation." } };
-ingredientsDictionary["Procerad"] = { name: { ar: "بروسيراد", en: "Procerad" }, desc: { ar: "يمنع ظهور العلامات الحمراء أو البنية الناتجة عن الحبوب.", en: "Helps prevent red or brown marks left by acne." } };
-ingredientsDictionary["LHA"] = { name: { ar: "إل إتش إيه", en: "LHA" }, desc: { ar: "يقشر سطح البشرة بنعومة فائقة.", en: "Gently exfoliates the skin surface." } };
-ingredientsDictionary["Glycolic Acid"] = { name: { ar: "حمض الجليكوليك", en: "Glycolic Acid" }, desc: { ar: "يحسن ملمس البشرة ويزيد نضارتها.", en: "Improves skin texture and radiance." } };
-ingredientsDictionary["Mexoryl 400"] = { name: { ar: "ميكسوريل 400", en: "Mexoryl 400" }, desc: { ar: "فلتر حماية متطور يحمي من أطول موجات الأشعة فوق البنفسجية الضارة.", en: "Advanced UV filter." } };
-ingredientsDictionary["Airlicium"] = { name: { ar: "إيرليسيوم", en: "Airlicium" }, desc: { ar: "جزيئات دقيقة تمتص الدهون الزائدة لتعطي مظهراً غير لامع.", en: "Micro-particles that absorb excess sebum." } };
+ingredientsDictionary["Salicylic Acid"] = { name: { ar: "حمض الساليسيليك", en: "Salicylic Acid" }, desc: { ar: "حمض مقشر ينظف المسام بعمق.", en: "Exfoliating acid that deep cleans pores." } };
+ingredientsDictionary["Niacinamide"] = { name: { ar: "نياسيناميد", en: "Niacinamide" }, desc: { ar: "يهدئ الاحمرار ويقلل التصبغات.", en: "Soothes redness and reduces dark spots." } };
+ingredientsDictionary["Ceramides"] = { name: { ar: "سيراميد (1, 3, 6-II)", en: "Essential Ceramides" }, desc: { ar: "دهون طبيعية ترمم وتدعم حاجز البشرة.", en: "Lipids that restore the skin barrier." } };
+ingredientsDictionary["Hyaluronic Acid"] = { name: { ar: "حمض الهيالورونيك", en: "Hyaluronic Acid" }, desc: { ar: "يجذب الرطوبة للبشرة ويملأ الخطوط.", en: "Attracts moisture and plumps skin." } };
+ingredientsDictionary["Vichy Volcanic Water"] = { name: { ar: "مياه فيشي البركانية", en: "Volcanic Water" }, desc: { ar: "غنية بـ 15 معدن لتقوية دفاعات البشرة.", en: "Rich in 15 minerals to strengthen defenses." } };
+ingredientsDictionary["Mexoryl 400"] = { name: { ar: "ميكسوريل 400", en: "Mexoryl 400" }, desc: { ar: "فلتر حماية متطور من الأشعة فوق البنفسجية الطويلة.", en: "Advanced UV filter." } };
 
 // ==========================================
-// 3. المنتجات
+// 3. المنتجات (الجلسة الأولى)
 // ==========================================
+
+/* --- La Roche-Posay --- */
 productsList.push({
-    id: 'p_effaclar_gel', brandId: 'laroche', familyId: 'effaclar',
-    name: { ar: "إيفاكلار جل غسول رغوي", en: "Effaclar Foaming Gel" },
-    description: { ar: "غسول يومي للبشرة الدهنية والمعرضة لحب الشباب، ينظف بلطف ولا يجفف البشرة.", en: "Daily cleanser for oily skin." },
-    how_to_use: { ar: "يُرغى في اليدين مع قليل من الماء ويوضع على الوجه مع التدليك بلطف، ثم يُشطف جيداً.", en: "Lather in the hands with a little water and apply to the face." },
-    cautions: { ar: "تجنب منطقة محيط العينين.", en: "Avoid the eye contour area." },
-    key_ingredients: [{ id: "Zinc PCA", pct: "0.2%" }, { id: "Thermal Spring Water", pct: "" }],
+    id: 'p_lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar',
+    name: { ar: "إيفاكلار جل غسول رغوي", en: "Effaclar Purifying Foaming Gel" },
+    description: { ar: "غسول يومي للبشرة الدهنية والمعرضة لحب الشباب.", en: "Daily cleanser for oily skin." },
+    how_to_use: { ar: "يُرغى بالماء ويوضع على الوجه ثم يُشطف.", en: "Lather with water, apply to face, rinse." },
+    cautions: { ar: "تجنب محيط العينين.", en: "Avoid eye contour." },
+    key_ingredients: [{ id: "Zinc PCA", pct: "0.2%" }],
     flags: { pregnancy_safe: true }
 });
 
 productsList.push({
-    id: 'p_effaclar_micro', brandId: 'laroche', familyId: 'effaclar',
-    name: { ar: "إيفاكلار جل مقشر دقيق", en: "Effaclar Micro-Peeling Gel" },
-    description: { ar: "غسول بتركيز عالي من الأحماض، مخصص للحبوب الشديدة في الوجه والظهر.", en: "Concentrated acid cleanser for severe acne." },
-    how_to_use: { ar: "يُستخدم مرة واحدة يومياً، يُدلك على بشرة مبللة ثم يُشطف.", en: "Use once daily. Massage onto wet skin, then rinse." },
-    cautions: { ar: "يجب استخدام واقي شمس نهاراً.", en: "Use sunscreen during the day." },
-    key_ingredients: [{ id: "Salicylic Acid", pct: "2%" }, { id: "LHA", pct: "0.05%" }, { id: "Zinc PCA", pct: "0.2%" }],
-    flags: { pregnancy_safe: true }
-});
-
-productsList.push({
-    id: 'p_effaclar_duo', brandId: 'laroche', familyId: 'effaclar',
+    id: 'p_lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar',
     name: { ar: "إيفاكلار ديو (+) مرطب علاجي", en: "Effaclar Duo (+)" },
-    description: { ar: "يعالج الحبوب الموجودة ويمنع ظهورها مرة أخرى ويقلل من آثارها.", en: "Treats existing acne and reduces marks." },
-    how_to_use: { ar: "يوضع على الوجه بالكامل صباحاً و/أو مساءً بعد تنظيف البشرة.", en: "Apply to whole face morning and/or evening." },
-    cautions: { ar: "لا يُستخدم على جروح مفتوحة.", en: "Do not apply on broken skin." },
-    key_ingredients: [{ id: "Niacinamide", pct: "4%" }, { id: "Salicylic Acid", pct: "0.5%" }, { id: "Procerad", pct: "" }],
+    description: { ar: "يعالج الحبوب ويمنع العلامات الحمراء والبنية.", en: "Treats acne and prevents marks." },
+    how_to_use: { ar: "يوضع على كامل الوجه صباحاً و/أو مساءً.", en: "Apply to whole face AM and/or PM." },
+    cautions: { ar: "لا يستخدم على جروح مفتوحة.", en: "Do not apply on broken skin." },
+    key_ingredients: [{ id: "Niacinamide", pct: "4%" }, { id: "Salicylic Acid", pct: "0.5%" }],
     flags: { pregnancy_safe: false }
 });
 
 productsList.push({
-    id: 'p_effaclar_serum', brandId: 'laroche', familyId: 'effaclar',
-    name: { ar: "إيفاكلار سيروم فائق التركيز", en: "Effaclar Ultra Concentrated Serum" },
-    description: { ar: "سيروم ليلي يجمع بين 3 أحماض مقشرة لعلاج المسام والرؤوس السوداء.", en: "Night serum with 3 acids to treat enlarged pores." },
-    how_to_use: { ar: "يوضع مساءً على كامل الوجه بعد الغسول.", en: "Apply in the evening to the whole face." },
-    cautions: { ar: "تجنب محيط العينين. لا يُستخدم مع منتجات تقشير أخرى.", en: "Avoid eye contour. Do not use with other exfoliating products." },
-    key_ingredients: [{ id: "Glycolic Acid", pct: "3.5%" }, { id: "Niacinamide", pct: "2%" }, { id: "Salicylic Acid", pct: "1.5%" }, { id: "LHA", pct: "0.45%" }],
-    flags: { pregnancy_safe: false }
-});
-
-productsList.push({
-    id: 'p_anthelios_oil_control', brandId: 'laroche', familyId: 'anthelios',
-    name: { ar: "أنثيليوس يو في ميون 400 للتحكم في الدهون", en: "Anthelios UVmune 400 Oil Control" },
-    description: { ar: "واقي شمس سائل وخفيف للبشرة الدهنية، يحمي من أطول موجات الأشعة فوق البنفسجية ويتحكم في اللمعان.", en: "Fluid sunscreen for oily skin." },
-    how_to_use: { ar: "يوضع بسخاء قبل التعرض للشمس بـ 20 دقيقة، ويُجدد كل ساعتين.", en: "Apply generously 20 mins before sun exposure." },
-    cautions: { ar: "يُرج جيداً قبل الاستخدام. تجنب ملامسة العينين.", en: "Shake well before use. Avoid eye contact." },
-    key_ingredients: [{ id: "Mexoryl 400", pct: "" }, { id: "Airlicium", pct: "" }, { id: "Zinc PCA", pct: "" }],
+    id: 'p_lrp_hyalu_b5', brandId: 'laroche', familyId: 'serums',
+    name: { ar: "هيالو بي 5 سيروم", en: "Hyalu B5 Serum" },
+    description: { ar: "سيروم لترميم البشرة وعلاج الجفاف والخطوط الدقيقة.", en: "Anti-wrinkle repairing serum." },
+    how_to_use: { ar: "3-4 قطرات على الوجه والرقبة صباحاً ومساءً.", en: "3-4 drops on face and neck AM/PM." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Hyaluronic Acid", pct: "" }],
     flags: { pregnancy_safe: true }
 });
 
+productsList.push({
+    id: 'p_lrp_uvmune_fluid', brandId: 'laroche', familyId: 'anthelios',
+    name: { ar: "أنثيليوس يو في ميون 400 سائل خفي", en: "Anthelios UVmune 400 Invisible Fluid" },
+    description: { ar: "واقي شمس سائل بقوام خفيف جداً حماية SPF50+.", en: "Ultra-light fluid sunscreen SPF50+." },
+    how_to_use: { ar: "يُرج جيداً، يوضع قبل التعرض للشمس ويُجدد.", en: "Shake well, apply before sun exposure." },
+    cautions: { ar: "تجنب ملامسة العين.", en: "Avoid eye contact." },
+    key_ingredients: [{ id: "Mexoryl 400", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+/* --- CeraVe --- */
+productsList.push({
+    id: 'p_cerave_hydrating_cleanser', brandId: 'cerave', familyId: 'cleansers',
+    name: { ar: "الغسول المرطب", en: "Hydrating Cleanser" },
+    description: { ar: "غسول غير رغوي للبشرة العادية إلى الجافة، لا يدمر حاجز البشرة.", en: "Non-foaming cleanser for normal to dry skin." },
+    how_to_use: { ar: "يدلك على بشرة مبللة ثم يشطف.", en: "Massage on wet skin, then rinse." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Ceramides", pct: "" }, { id: "Hyaluronic Acid", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_cerave_blemish_cleanser', brandId: 'cerave', familyId: 'blemish',
+    name: { ar: "غسول التحكم في الشوائب (حب الشباب)", en: "Blemish Control Cleanser" },
+    description: { ar: "غسول رغوي بحمض الساليسيليك للبشرة المعرضة للحبوب.", en: "Salicylic acid cleanser for blemish-prone skin." },
+    how_to_use: { ar: "يستخدم يومياً على بشرة مبللة.", en: "Use daily on wet skin." },
+    cautions: { ar: "استخدم واقي شمس.", en: "Use sunscreen." },
+    key_ingredients: [{ id: "Salicylic Acid", pct: "2%" }, { id: "Ceramides", pct: "" }, { id: "Niacinamide", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_cerave_moisturizing_cream', brandId: 'cerave', familyId: 'moisturizers',
+    name: { ar: "كريم الترطيب", en: "Moisturising Cream" },
+    description: { ar: "كريم غني لترطيب الوجه والجسم للبشرة الجافة جداً.", en: "Rich cream for dry to very dry skin." },
+    how_to_use: { ar: "يوضع بسخاء عند الحاجة.", en: "Apply liberally as often as needed." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Ceramides", pct: "" }, { id: "Hyaluronic Acid", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+/* --- Vichy --- */
+productsList.push({
+    id: 'p_vichy_mineral_89', brandId: 'vichy', familyId: 'mineral',
+    name: { ar: "مينيرال 89 بوستر مقوي", en: "Minéral 89 Fortifying Booster" },
+    description: { ar: "سيروم يومي يقوي حاجز البشرة ويرطبها.", en: "Daily booster to strengthen skin barrier." },
+    how_to_use: { ar: "قطرتين على بشرة نظيفة قبل أي منتج آخر.", en: "Apply 2 drops after cleansing as step 1." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Vichy Volcanic Water", pct: "89%" }, { id: "Hyaluronic Acid", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_vichy_normaderm_phyto', brandId: 'vichy', familyId: 'normaderm',
+    name: { ar: "نورماديرم فايتوسوليوشن", en: "Normaderm Phytosolution" },
+    description: { ar: "مرطب يومي يعالج الحبوب ويزيل اللمعان.", en: "Daily moisturizer for acne-prone skin." },
+    how_to_use: { ar: "يوضع صباحاً ومساءً.", en: "Apply morning and evening." },
+    cautions: { ar: "تجنب محيط العينين.", en: "Avoid eye area." },
+    key_ingredients: [{ id: "Salicylic Acid", pct: "2%" }, { id: "Hyaluronic Acid", pct: "0.2%" }],
+    flags: { pregnancy_safe: true }
+});
+
+
 // ==========================================
-// 4. الحالات والروتين العلاجي (مع نسب الأهمية)
+// 4. الحالات والروتينات العلاجية
 // ==========================================
 casesList.push({
-    id: 'acne',
-    name: { ar: 'حب الشباب', en: 'Acne' },
+    id: 'acne_basic',
+    name: { ar: 'حب الشباب (الروتين الأساسي)', en: 'Acne (Basic Routine)' },
     routine: [
-        { 
-            stepTitle: { ar: 'الخطوة 1: الغسول (اختر واحد)', en: 'Step 1: Cleanser' }, 
-            impact: 20, impactColor: '#dd6b20', // لون برتقالي
-            productIds: ['p_effaclar_gel', 'p_effaclar_micro'] 
-        },
-        { 
-            stepTitle: { ar: 'الخطوة 2: العلاج المركز', en: 'Step 2: Targeted Treatment' }, 
-            impact: 50, impactColor: '#e53e3e', // لون أحمر
-            productIds: ['p_effaclar_serum'] 
-        },
-        { 
-            stepTitle: { ar: 'الخطوة 3: الترطيب العلاجي', en: 'Step 3: Treatment Moisturizer' }, 
-            impact: 10, impactColor: '#3182ce', // لون أزرق
-            productIds: ['p_effaclar_duo'] 
-        },
-        { 
-            stepTitle: { ar: 'الخطوة 4: الوقاية والحماية (نهاراً)', en: 'Step 4: Prevention' }, 
-            impact: 20, impactColor: '#38a169', // لون أخضر
-            productIds: ['p_anthelios_oil_control'] 
-        }
+        { stepTitle: { ar: 'الغسول المعالج', en: 'Treatment Cleanser' }, impact: 20, impactColor: '#dd6b20', productIds: ['p_cerave_blemish_cleanser', 'p_lrp_effaclar_gel'] },
+        { stepTitle: { ar: 'العلاج والترطيب', en: 'Treatment & Moisture' }, impact: 50, impactColor: '#e53e3e', productIds: ['p_lrp_effaclar_duo', 'p_vichy_normaderm_phyto'] },
+        { stepTitle: { ar: 'الوقاية (نهاراً)', en: 'Protection (Day)' }, impact: 30, impactColor: '#38a169', productIds: ['p_lrp_uvmune_fluid'] }
+    ]
+});
+
+casesList.push({
+    id: 'barrier_repair',
+    name: { ar: 'ترميم حاجز البشرة المتضرر', en: 'Skin Barrier Repair' },
+    routine: [
+        { stepTitle: { ar: 'غسول لطيف', en: 'Gentle Cleanser' }, impact: 20, impactColor: '#3182ce', productIds: ['p_cerave_hydrating_cleanser'] },
+        { stepTitle: { ar: 'الترطيب العميق والترميم', en: 'Deep Hydration' }, impact: 60, impactColor: '#e53e3e', productIds: ['p_vichy_mineral_89', 'p_lrp_hyalu_b5', 'p_cerave_moisturizing_cream'] }
     ]
 });
 
 // ==========================================
-// 5. مكتبة الصور
+// 5. مكتبة الصور (Smart Placeholders - روابط جاهزة ومباشرة)
 // ==========================================
-imagesDB['p_effaclar_gel'] = "1.jpg";
-imagesDB['p_effaclar_micro'] = "";
-imagesDB['p_effaclar_duo'] = "";
-imagesDB['p_effaclar_serum'] = "";
-imagesDB['p_anthelios_oil_control'] = "";
+// هذه الروابط تولد صور احترافية تحمل اسم المنتج مباشرة لضمان عدم وجود روابط مكسورة
+imagesDB['p_lrp_effaclar_gel'] = "https://placehold.co/300x300/ffffff/3182ce?text=La+Roche\nEffaclar+Gel";
+imagesDB['p_lrp_effaclar_duo'] = "https://placehold.co/300x300/ffffff/3182ce?text=La+Roche\nEffaclar+Duo+";
+imagesDB['p_lrp_hyalu_b5'] = "https://placehold.co/300x300/ffffff/3182ce?text=La+Roche\nHyalu+B5";
+imagesDB['p_lrp_uvmune_fluid'] = "https://placehold.co/300x300/ffffff/e53e3e?text=La+Roche\nAnthelios+UVmune";
 
-productsList.forEach(p => p.image = imagesDB[p.id] || "");
+imagesDB['p_cerave_hydrating_cleanser'] = "https://placehold.co/300x300/ffffff/38a169?text=CeraVe\nHydrating+Cleanser";
+imagesDB['p_cerave_blemish_cleanser'] = "https://placehold.co/300x300/ffffff/3182ce?text=CeraVe\nBlemish+Cleanser";
+imagesDB['p_cerave_moisturizing_cream'] = "https://placehold.co/300x300/ffffff/3182ce?text=CeraVe\nMoisturising+Cream";
+
+imagesDB['p_vichy_mineral_89'] = "https://placehold.co/300x300/ffffff/805ad5?text=Vichy\nMineral+89";
+imagesDB['p_vichy_normaderm_phyto'] = "https://placehold.co/300x300/ffffff/38a169?text=Vichy\nNormaderm+Phyto";
+
+productsList.forEach(p => p.image = imagesDB[p.id] || "https://placehold.co/300x300/ffffff/a0aec0?text=Product\nImage");
