@@ -231,3 +231,85 @@ imagesDB['p_to_peeling'] = "https://placehold.co/300x300/ffffff/e53e3e?text=The+
 imagesDB['p_cetaphil_gentle_cleanser'] = "https://placehold.co/300x300/ffffff/38a169?text=Cetaphil\nGentle+Cleanser";
 
 productsList.forEach(p => p.image = imagesDB[p.id] || "https://placehold.co/300x300/ffffff/a0aec0?text=Product\nImage");
+
+// ==========================================
+// --- إضافة الجلسة الخامسة (الروتين الكوري K-Beauty) ---
+// ==========================================
+
+// 1. إضافة العلامات التجارية الجديدة
+brandsList.push({
+    id: 'cosrx', name: 'COSRX',
+    families: [
+        { id: 'snail', name: { ar: 'مجموعة الحلزون (للترميم)', en: 'Snail Line (Repair)' } }
+    ]
+});
+
+brandsList.push({
+    id: 'joseon', name: 'Beauty of Joseon',
+    families: [
+        { id: 'sun_care', name: { ar: 'الحماية من الشمس', en: 'Sun Care' } },
+        { id: 'glow_serums', name: { ar: 'سيرومات النضارة', en: 'Glow Serums' } }
+    ]
+});
+
+brandsList.push({
+    id: 'somebymi', name: 'Some By Mi',
+    families: [
+        { id: 'miracle', name: { ar: 'مجموعة المعجزة 30 يوم', en: '30 Days Miracle' } }
+    ]
+});
+
+// 2. إضافة مواد فعالة كورية جديدة
+ingredientsDictionary["Snail Mucin"] = { name: { ar: "خلاصة الحلزون", en: "Snail Secretion Filtrate" }, desc: { ar: "يرطب بعمق، يهدئ التهيج، ويصلح حاجز البشرة المتضرر.", en: "Deeply hydrates, soothes, and repairs the skin barrier." } };
+ingredientsDictionary["Rice Extract"] = { name: { ar: "مستخلص الأرز والبروبيوتيك", en: "Rice + Probiotics" }, desc: { ar: "يغذي البشرة ويمنحها تفتيحاً وإشراقة طبيعية.", en: "Nourishes and brightens the skin naturally." } };
+ingredientsDictionary["PHA"] = { name: { ar: "أحماض PHA (لطيفة)", en: "PHA" }, desc: { ar: "مقشر لطيف جداً يحافظ على رطوبة البشرة، مناسب للبشرة الحساسة.", en: "Very gentle exfoliant that retains moisture." } };
+
+// 3. إضافة المنتجات الكورية
+productsList.push({
+    id: 'p_cosrx_snail_essence', brandId: 'cosrx', familyId: 'snail',
+    name: { ar: "خلاصة الحلزون 96 المتقدمة", en: "Advanced Snail 96 Mucin Power Essence" },
+    description: { ar: "إيسنس خفيف يتغلغل في البشرة لترطيبها وإعطائها نضارة (Glass Skin) وعلاج الندبات.", en: "Lightweight essence for deep hydration and glass skin glow." },
+    how_to_use: { ar: "بعد الغسول والتونر، توضع كمية مناسبة ويُطبطب على الوجه بلطف حتى يمتص.", en: "Apply after toner, pat gently until absorbed." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Snail Mucin", pct: "96%" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_joseon_relief_sun', brandId: 'joseon', familyId: 'sun_care',
+    name: { ar: "واقي الشمس بالأرز والبروبيوتيك", en: "Relief Sun: Rice + Probiotics" },
+    description: { ar: "واقي شمس كوري بقوام كريمي خفيف جداً، لا يترك أثراً أبيض ويمنح إشراقة صحية.", en: "Lightweight creamy sunscreen, no white cast, gives a healthy glow." },
+    how_to_use: { ar: "في الخطوة الأخيرة من الروتين الصباحي، يوضع بسخاء على الوجه والرقبة.", en: "Apply generously as the last step of AM routine." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Rice Extract", pct: "30%" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_somebymi_miracle_toner', brandId: 'somebymi', familyId: 'miracle',
+    name: { ar: "تونر المعجزة بالأحماض (30 يوم)", en: "AHA BHA PHA 30 Days Miracle Toner" },
+    description: { ar: "تونر يومي يقشر بلطف، يعالج حب الشباب، وينظف المسام لصفاء البشرة خلال 30 يوماً.", en: "Daily exfoliating toner to treat acne and clear pores in 30 days." },
+    how_to_use: { ar: "يُمسح به الوجه باستخدام قطنة بعد الغسول يومياً.", en: "Swipe over face with a cotton pad after cleansing daily." },
+    cautions: { ar: "يحتوي على زيوت شجرة الشاي والنعناع، قد لا يناسب البشرة شديدة التحسس.", en: "Contains tea tree and peppermint oils, may not suit highly sensitive skin." },
+    key_ingredients: [{ id: "AHA", pct: "" }, { id: "BHA", pct: "" }, { id: "PHA", pct: "" }],
+    flags: { pregnancy_safe: false }
+});
+
+// 4. إضافة روتين "النضارة الكورية"
+casesList.push({
+    id: 'glass_skin',
+    name: { ar: 'النضارة الزجاجية والترميم (الروتين الكوري)', en: 'Glass Skin & Glow (K-Beauty Routine)' },
+    routine: [
+        { stepTitle: { ar: 'تجهيز وتنقية المسام', en: 'Pore Prep & Clear' }, impact: 20, impactColor: '#3182ce', productIds: ['p_somebymi_miracle_toner'] },
+        { stepTitle: { ar: 'ترميم وتغذية عميقة (خلاصة الحلزون)', en: 'Deep Nourishment (Snail Mucin)' }, impact: 50, impactColor: '#e53e3e', productIds: ['p_cosrx_snail_essence'] },
+        { stepTitle: { ar: 'الحماية والإشراقة الكورية', en: 'Protection & Glow' }, impact: 30, impactColor: '#38a169', productIds: ['p_joseon_relief_sun'] }
+    ]
+});
+
+// 5. إضافة صور المنتجات الكورية
+imagesDB['p_cosrx_snail_essence'] = "https://placehold.co/300x300/ffffff/000000?text=COSRX\nSnail+Essence";
+imagesDB['p_joseon_relief_sun'] = "https://placehold.co/300x300/ffffff/dd6b20?text=Beauty+of+Joseon\nRelief+Sun";
+imagesDB['p_somebymi_miracle_toner'] = "https://placehold.co/300x300/ffffff/38a169?text=Some+By+Mi\nMiracle+Toner";
+
+// تحديث الصور للمنتجات الجديدة (هذا السطر يضمن تفعيل الصور دائماً في الإضافات الجديدة)
+productsList.forEach(p => p.image = imagesDB[p.id] || p.image || "https://placehold.co/300x300/ffffff/a0aec0?text=Product\nImage");
