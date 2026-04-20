@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skin Care Pro</title>
+    <meta name="referrer" content="no-referrer"> <title>Skin Care Pro</title>
     <style>
         :root {
             --bg-color: #f4f7f6; --card-bg: #ffffff; --text-main: #2d3748;
@@ -38,7 +38,7 @@
         
         .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 15px; }
         .accordion-header { padding: 15px; display: flex; gap: 15px; align-items: center; cursor: pointer; }
-        .product-img { width: 80px; height: 80px; border-radius: 8px; object-fit: contain; background-color: #f9f9f9; flex-shrink: 0; border: 1px solid #eee;}
+        .product-img { width: 80px; height: 80px; border-radius: 8px; object-fit: contain; background-color: #ffffff; flex-shrink: 0; border: 1px solid #eee;}
         .header-info { display: flex; flex-direction: column; gap: 5px; flex-grow: 1; }
         .brand { font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; }
         .title { font-size: 16px; font-weight: 800; margin: 0; line-height: 1.3; color: var(--accent-color);}
@@ -141,11 +141,10 @@
                 const caseObj = casesList.find(c => c.id === param1);
                 let html = buildBreadcrumb([{label: txt.cases[currentLang], action: "navigateTo('cases')"}, {label: caseObj.name[currentLang], action: ""}]);
                 
-                // --- الكود الجديد لعرض صورة الحالة ---
                 let caseImgHtml = caseObj.image ? `<img src="${caseObj.image}" style="width:100%; height:220px; object-fit:cover; border-radius:var(--border-radius); margin-bottom:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">` : '';
                 
                 html += `<div class="page-title">${caseObj.name[currentLang]}</div>`;
-                html += caseImgHtml; // عرض صورة الحالة
+                html += caseImgHtml; 
 
                 caseObj.routine.forEach(step => { 
                     const barHtml = step.impact ? `<div class="progress-track"><div class="progress-fill" style="width: ${step.impact}%; background-color: ${step.impactColor || '#3182ce'};">${step.impact}%</div></div>` : '';
@@ -165,7 +164,6 @@
                     const k = item.id; const pctHtml = item.pct ? `<span class="pct-badge" dir="ltr">${item.pct}</span>` : '';
                     if(ingredientsDictionary[k]) { ingHTML += `<div class="ingredient-btn" onclick="openModal(event, '${k}')">${ingredientsDictionary[k].name[currentLang]} ${pctHtml}</div>`; }
                 });
-                // إذا لم تتوفر الصورة نضع صورة بيضاء فارغة
                 let imgSource = p.image ? p.image : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
                 html += `<div class="product-card"><div class="accordion-header" onclick="toggleAccordion(this)"><img src="${imgSource}" class="product-img" onerror="this.style.display='none'"><div class="header-info"><span class="brand">${brandsList.find(b=>b.id===p.brandId)?.name||''}</span><span class="title">${p.name[currentLang]}</span></div></div><div class="accordion-body"><details class="sub-accordion" open><summary>${txt.desc[currentLang]}</summary><div class="sub-content">${p.description[currentLang]}</div></details><details class="sub-accordion"><summary>${txt.howToUse[currentLang]}</summary><div class="sub-content">${p.how_to_use ? p.how_to_use[currentLang] : '-'}</div></details><details class="sub-accordion"><summary>${txt.cautions[currentLang]}</summary><div class="sub-content">${p.cautions ? p.cautions[currentLang] : '-'}</div></details><details class="sub-accordion" open><summary>${txt.ingredients[currentLang]}</summary><div class="sub-content"><div class="ingredients-list">${ingHTML}</div></div></details>${p.flags.pregnancy_safe ? `<div class="tag">${txt.safe[currentLang]}</div>`:''}</div></div>`;
             });
