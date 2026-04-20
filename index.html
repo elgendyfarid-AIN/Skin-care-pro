@@ -45,10 +45,14 @@
         .accordion-body { padding: 0 15px; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease-out; }
         .product-card.active .accordion-body { padding: 0 15px 15px 15px; max-height: 3000px; opacity: 1; margin-top: 10px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 15px; }
         
-        /* التحديث الجديد: تصميم شريط الخطوة ونسبة الأهمية */
+        /* تصميم شريط التحميل للخطوات */
         .routine-header { display: flex; justify-content: space-between; align-items: center; background-color: rgba(49,130,206,0.05); padding: 12px 15px; border-radius: 8px; margin: 25px 0 15px 0; border-right: 4px solid var(--accent-color); }
+        [dir="ltr"] .routine-header { border-right: none; border-left: 4px solid var(--accent-color); }
         .routine-step-title { font-size: 16px; font-weight: bold; color: var(--text-main); margin: 0;}
-        .importance-badge { color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 5px;}
+        
+        .progress-track { width: 120px; height: 18px; background-color: rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; display: flex; }
+        [data-theme="dark"] .progress-track { background-color: rgba(255,255,255,0.1); }
+        .progress-fill { height: 100%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 12px; font-weight: bold; border-radius: 12px; min-width: 35px; transition: width 0.5s ease; }
         
         .desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 15px; }
         
@@ -97,7 +101,7 @@
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
             desc: { ar: 'الوصف', en: 'Description' }, ingredients: { ar: 'المواد الفعالة', en: 'Active Ingredients' },
             howToUse: { ar: 'طريقة الاستخدام', en: 'How to Use' }, cautions: { ar: 'التحذيرات', en: 'Cautions' },
-            safe: { ar: '🤰 آمن للحوامل', en: '🤰 Pregnancy Safe' }, impact: { ar: 'أهمية', en: 'Impact' }
+            safe: { ar: '🤰 آمن للحوامل', en: '🤰 Pregnancy Safe' }
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
@@ -131,9 +135,9 @@
                 let html = buildBreadcrumb([{label: txt.cases[currentLang], action: "navigateTo('cases')"}, {label: caseObj.name[currentLang], action: ""}]);
                 html += `<div class="page-title">${caseObj.name[currentLang]}</div>`;
                 caseObj.routine.forEach(step => { 
-                    // رسم شريط الخطوة مع نسبة الأهمية
-                    const badgeHtml = step.impact ? `<span class="importance-badge" style="background-color: ${step.impactColor || '#3182ce'}">🎯 ${txt.impact[currentLang]} ${step.impact}%</span>` : '';
-                    html += `<div class="routine-header"><h3 class="routine-step-title">${step.stepTitle[currentLang]}</h3>${badgeHtml}</div>`; 
+                    // رسم شريط التحميل الجديد
+                    const barHtml = step.impact ? `<div class="progress-track"><div class="progress-fill" style="width: ${step.impact}%; background-color: ${step.impactColor || '#3182ce'};">${step.impact}%</div></div>` : '';
+                    html += `<div class="routine-header"><h3 class="routine-step-title">${step.stepTitle[currentLang]}</h3>${barHtml}</div>`; 
                     html += buildProductsHTML(productsList.filter(p => step.productIds.includes(p.id))); 
                 });
                 app.innerHTML = html;
