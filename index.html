@@ -17,155 +17,168 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color); color: var(--text-main);
-            margin: 0; padding: 40px 20px; transition: 0.4s ease;
+            margin: 0; padding: 0; transition: 0.4s ease; padding-bottom: 50px;
         }
-        .controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+        /* تصميم الهيدر (اسم الموقع) */
+        .header {
+            background-color: var(--card-bg); padding: 15px 20px; text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;
+        }
+        .site-title {
+            font-size: 24px; font-weight: 900; color: var(--accent-color);
+            margin: 0; cursor: pointer; user-select: none;
+        }
+        
+        .controls { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
         button {
-            padding: 12px 24px; cursor: pointer; border: none; border-radius: 8px;
+            padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px;
             background-color: var(--accent-color); color: #ffffff; font-weight: bold;
-            font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .products-grid { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
-        
-        /* تصميم الكارت في النظام الشجري */
-        .product-card {
-            background-color: var(--card-bg); border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        /* رأس الكارت (اللي بنضغط عليه) */
-        .accordion-header {
-            padding: 20px; display: flex; justify-content: space-between; align-items: center;
-            cursor: pointer; user-select: none;
-        }
-        .header-info { display: flex; flex-direction: column; gap: 5px; }
-        .brand { font-size: 12px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
-        .title { font-size: 18px; font-weight: 800; margin: 0; }
-        .arrow { font-size: 16px; transition: transform 0.3s ease; color: var(--text-secondary); }
-        
-        /* عند فتح الكارت */
-        .product-card.active .arrow { transform: rotate(180deg); color: var(--accent-color); }
-        
-        /* محتوى الكارت (المخفي) */
-        .accordion-body {
-            padding: 0 20px; max-height: 0; overflow: hidden; opacity: 0;
-            transition: all 0.3s ease-out; border-top: 1px solid transparent;
-        }
-        .product-card.active .accordion-body {
-            padding: 0 20px 20px 20px; max-height: 1000px; opacity: 1;
-            border-top: 1px solid rgba(0,0,0,0.05); margin-top: 10px; padding-top: 15px;
+            font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; }
+        .container { padding: 0 20px; max-width: 600px; margin: 0 auto; }
+
+        /* شريط الحالات الشائعة (متحرك يمين وشمال) */
+        .quick-tags-wrapper { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
+        .quick-tags-wrapper::-webkit-scrollbar { display: none; }
+        .quick-tag {
+            display: inline-block; background-color: var(--card-bg); color: var(--accent-color);
+            padding: 10px 20px; border-radius: 20px; margin-left: 10px; font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid var(--accent-color);
+        }
+
+        /* أزرار المسارات الرئيسية */
+        .main-paths { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .path-btn {
+            background-color: var(--card-bg); color: var(--text-main); padding: 20px;
+            border-radius: var(--border-radius); text-align: center; font-size: 20px; font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .path-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+        /* أزرار الشجرة (البراندات والعائلات) */
+        .tree-btn {
+            background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px;
+            border-radius: var(--border-radius); font-weight: bold; font-size: 18px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; color: var(--text-main);
+        }
+        
+        .page-title { font-size: 22px; margin-bottom: 20px; color: var(--accent-color); font-weight: 800; border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; display: inline-block;}
+        .back-btn { background-color: transparent; color: var(--text-secondary); box-shadow: none; padding: 0; margin-bottom: 15px; font-size: 16px; display: flex; align-items: center; gap: 5px;}
+
+        /* تصميم الكارت بالصور */
+        .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 15px; }
+        .accordion-header { padding: 15px; display: flex; gap: 15px; align-items: center; cursor: pointer; }
+        .product-img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; background-color: #f0f0f0; flex-shrink: 0;}
+        .header-info { display: flex; flex-direction: column; gap: 5px; flex-grow: 1; }
+        .brand { font-size: 11px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
+        .title { font-size: 16px; font-weight: 800; margin: 0; line-height: 1.3;}
+        .accordion-body { padding: 0 15px; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease-out; }
+        .product-card.active .accordion-body { padding: 0 15px 15px 15px; max-height: 2000px; opacity: 1; margin-top: 10px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 15px; }
+        
+        /* تنسيق خطوات الروتين */
+        .routine-step-title { font-size: 18px; font-weight: bold; color: var(--safe-color); margin: 25px 0 10px 0; background-color: rgba(56,161,105,0.1); padding: 5px 10px; border-radius: 5px;}
+
+        /* الباقي من التصميم القديم */
+        .desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 15px; }
         .ingredients-label { font-weight: bold; margin-bottom: 10px; display: block; font-size: 14px; }
-        .ingredients-list { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-        .ingredient-btn {
-            background-color: rgba(49,130,206,0.1); color: var(--accent-color);
-            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold;
-            border: 1px solid var(--accent-color); cursor: pointer;
-        }
-        .tag {
-            background-color: rgba(56,161,105,0.1); color: var(--safe-color);
-            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold;
-            border: 1px solid var(--safe-color); display: inline-block;
-        }
-
-        /* النافذة المنبثقة */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5); display: none; justify-content: center;
-            align-items: center; z-index: 1000;
-        }
-        .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 400px; }
-        .modal-title { font-size: 20px; font-weight: bold; color: var(--accent-color); margin-bottom: 10px; }
-        .modal-body { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
-        .close-btn { width: 100%; background-color: var(--text-secondary); }
+        .ingredients-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .ingredient-btn { background-color: rgba(49,130,206,0.1); color: var(--accent-color); padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--accent-color); cursor: pointer; }
+        .tag { background-color: rgba(56,161,105,0.1); color: var(--safe-color); padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--safe-color); display: inline-block; }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1 class="site-title" onclick="navigateTo('home')">Skin Care Pro</h1>
+    </div>
+
     <div class="controls">
         <button onclick="toggleLanguage()">🌐 عربي / English</button>
         <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
     </div>
 
-    <div class="products-grid" id="app"></div>
-
-    <div class="modal-overlay" id="ingredientModal">
-        <div class="modal-content">
-            <div class="modal-title" id="modalTitle"></div>
-            <div class="modal-body" id="modalBody"></div>
-            <button class="close-btn" onclick="closeModal()">إغلاق / Close</button>
+    <div class="container" id="app">
         </div>
-    </div>
 
     <script src="data.js"></script>
-
     <script>
         let currentLang = 'ar';
 
-        function renderUI() {
+        // محرك التنقل وتذكر الصفحات
+        function navigateTo(view, param1 = '', param2 = '') {
+            localStorage.setItem('currentView', view);
+            localStorage.setItem('param1', param1);
+            localStorage.setItem('param2', param2);
+            renderView(view, param1, param2);
+        }
+
+        function loadSavedView() {
+            const view = localStorage.getItem('currentView') || 'home';
+            const param1 = localStorage.getItem('param1') || '';
+            const param2 = localStorage.getItem('param2') || '';
+            renderView(view, param1, param2);
+        }
+
+        // رسم الشاشات حسب المطلوب
+        function renderView(view, param1, param2) {
             const app = document.getElementById('app');
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
             app.innerHTML = ''; 
 
-            productsList.forEach((product, index) => {
-                const name = product.name[currentLang];
-                const desc = product.description[currentLang];
-                const ingredientsTitle = currentLang === 'ar' ? 'أهم المكونات (اضغط للتفاصيل):' : 'Key Ingredients (Tap for details):';
-                const safeTag = currentLang === 'ar' ? '🤰 آمن للحوامل' : '🤰 Pregnancy Safe';
-
-                let ingredientsHTML = '';
-                product.key_ingredients.forEach(ingKey => {
-                    if(ingredientsDictionary[ingKey]) {
-                        const ingName = ingredientsDictionary[ingKey].name[currentLang];
-                        ingredientsHTML += `<div class="ingredient-btn" onclick="openModal(event, '${ingKey}')">${ingName}</div>`;
-                    }
-                });
-
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="header-info">
-                            <span class="brand">${product.brand}</span>
-                            <span class="title">${name}</span>
-                        </div>
-                        <div class="arrow">▼</div>
+            if (view === 'home') {
+                const title1 = currentLang === 'ar' ? 'تصفح بالمنتجات' : 'Browse by Products';
+                const title2 = currentLang === 'ar' ? 'تصفح بالحالات (روتين)' : 'Browse by Cases (Routine)';
+                
+                app.innerHTML = `
+                    <div class="quick-tags-wrapper">
+                        <div class="quick-tag" onclick="navigateTo('case', 'Acne')">حب الشباب</div>
+                        <div class="quick-tag" onclick="navigateTo('case', 'Pigmentation')">التصبغات</div>
+                        <div class="quick-tag" onclick="navigateTo('case', 'Dryness')">الجفاف الشديد</div>
                     </div>
-                    <div class="accordion-body">
-                        <div class="desc">${desc}</div>
-                        <div class="ingredients-label">${ingredientsTitle}</div>
-                        <div class="ingredients-list">${ingredientsHTML}</div>
-                        <div>${product.flags.pregnancy_safe ? `<div class="tag">${safeTag}</div>` : ''}</div>
+                    <div class="main-paths">
+                        <div class="path-btn" onclick="navigateTo('brands')">📦 ${title1}</div>
+                        <div class="path-btn" onclick="navigateTo('cases')">🩺 ${title2}</div>
                     </div>
                 `;
-                app.appendChild(card);
-            });
+            } 
+            else if (view === 'brands') {
+                const backText = currentLang === 'ar' ? 'رجوع للرئيسية' : 'Back to Home';
+                const titleText = currentLang === 'ar' ? 'اختر العلامة التجارية' : 'Select Brand';
+                
+                let html = `<button class="back-btn" onclick="navigateTo('home')">➔ ${backText}</button>`;
+                html += `<div class="page-title">${titleText}</div>`;
+                
+                // تجميع البراندات من الداتا (سيتم برمجتها لتكون ديناميكية مع ملف الداتا الجديد)
+                html += `<div class="tree-btn" onclick="navigateTo('families', 'La Roche-Posay')">La Roche-Posay <span>▼</span></div>`;
+                app.innerHTML = html;
+            }
+            else if (view === 'families') {
+                const backText = currentLang === 'ar' ? 'رجوع للبراندات' : 'Back to Brands';
+                let html = `<button class="back-btn" onclick="navigateTo('brands')">➔ ${backText}</button>`;
+                html += `<div class="page-title">${param1}</div>`;
+                
+                // تجميع العائلات (مؤقتاً لحين تحديث الدفتر)
+                html += `<div class="tree-btn" onclick="navigateTo('products', 'La Roche-Posay', 'Effaclar')">عائلة إيفاكلار (Effaclar) <span>▼</span></div>`;
+                app.innerHTML = html;
+            }
+            // سيتم استكمال باقي مسارات (Products) و (Cases) لما نحدث ملف data.js في الخطوة الجاية
+            else {
+                app.innerHTML = `<div style="text-align:center; margin-top:50px;">سيتم عرض المنتجات هنا بعد تحديث الدفتر (data.js) في الخطوة القادمة..</div>
+                <br><button onclick="navigateTo('home')">الرجوع للرئيسية</button>`;
+            }
         }
 
-        function toggleAccordion(element) {
-            const card = element.parentElement;
-            // السطر اللي جاي ده عشان يقفل أي كارت تاني مفتوح (لو حابب تسيبهم كلهم يفتحوا براحتهم، امسحه)
-            document.querySelectorAll('.product-card').forEach(c => { if(c !== card) c.classList.remove('active'); });
-            card.classList.toggle('active');
-        }
-
-        function openModal(event, ingredientKey) {
-            event.stopPropagation(); // عشان الكارت ميعملش إغلاق لما تضغط على الزرار
-            document.getElementById('modalTitle').innerText = ingredientsDictionary[ingredientKey].name[currentLang];
-            document.getElementById('modalBody').innerText = ingredientsDictionary[ingredientKey].desc[currentLang];
-            document.getElementById('ingredientModal').style.display = 'flex';
-        }
-
-        function closeModal() { document.getElementById('ingredientModal').style.display = 'none'; }
-        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; renderUI(); }
+        // تبديل اللغة والمظهر
+        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; loadSavedView(); }
         function toggleTheme() {
             const root = document.documentElement;
             root.getAttribute('data-theme') === 'dark' ? root.removeAttribute('data-theme') : root.setAttribute('data-theme', 'dark');
         }
 
-        renderUI();
+        // تشغيل الموقع عند الفتح
+        window.onload = loadSavedView;
     </script>
 </body>
 </html>
