@@ -70,9 +70,21 @@
 
     <script src="data.js"></script>
     <script>
-        let currentLang = 'ar';
-        function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
-        function loadSavedView() { renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); }
+        // قراءة اللغة من الذاكرة أو تحديد العربي كافتراضي
+        let currentLang = localStorage.getItem('siteLang') || 'ar';
+
+        function navigateTo(view, param1 = '', param2 = '') { 
+            localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); 
+            renderView(view, param1, param2); 
+        }
+
+        function loadSavedView() { 
+            // استرجاع الوضع الليلي من الذاكرة
+            if(localStorage.getItem('siteTheme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); 
+        }
 
         function renderView(view, param1, param2) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
@@ -126,8 +138,24 @@
         function toggleAccordion(el) { const c = el.parentElement; document.querySelectorAll('.product-card').forEach(x => { if(x !== c) x.classList.remove('active'); }); c.classList.toggle('active'); }
         function openModal(e, k) { e.stopPropagation(); document.getElementById('modalTitle').innerText = ingredientsDictionary[k].name[currentLang]; document.getElementById('modalBody').innerText = ingredientsDictionary[k].desc[currentLang]; document.getElementById('ingredientModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('ingredientModal').style.display = 'none'; }
-        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; loadSavedView(); }
-        function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme')==='dark' ? r.removeAttribute('data-theme') : r.setAttribute('data-theme', 'dark'); }
+        
+        function toggleLanguage() { 
+            currentLang = currentLang === 'ar' ? 'en' : 'ar'; 
+            localStorage.setItem('siteLang', currentLang); // حفظ اللغة
+            loadSavedView(); 
+        }
+        
+        function toggleTheme() { 
+            const r = document.documentElement; 
+            if(r.getAttribute('data-theme') === 'dark'){
+                r.removeAttribute('data-theme');
+                localStorage.setItem('siteTheme', 'light'); // حفظ النهار
+            } else {
+                r.setAttribute('data-theme', 'dark');
+                localStorage.setItem('siteTheme', 'dark'); // حفظ الليل
+            }
+        }
+        
         window.onload = loadSavedView;
     </script>
 </body>
