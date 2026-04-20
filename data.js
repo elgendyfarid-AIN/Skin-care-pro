@@ -189,3 +189,267 @@ productsList.forEach(p => {
 casesList.forEach(c => {
     if(c.id === 'anti_aging') c.image = "https://placehold.co/800x220/805ad5/ffffff?text=Anti-Aging+Routine";
 });
+// ==========================================
+// --- إضافة الجلسة السابعة (البراندات الإقليمية والمحلية) ---
+// ==========================================
+
+// 1. إضافة العلامات التجارية الجديدة
+brandsList.push({
+    id: 'beesline', name: 'Beesline',
+    families: [
+        { id: 'whitening', name: { ar: 'التفتيح والعناية', en: 'Whitening Care' } },
+        { id: 'deodorant', name: { ar: 'مزيلات العرق', en: 'Deodorants' } }
+    ]
+});
+
+brandsList.push({
+    id: 'biooil', name: 'Bio-Oil',
+    families: [
+        { id: 'body_care', name: { ar: 'العناية بالجسم والندبات', en: 'Body & Scar Care' } }
+    ]
+});
+
+brandsList.push({
+    id: 'maxon', name: 'Maxon',
+    families: [
+        { id: 'sun_care', name: { ar: 'واقيات الشمس', en: 'Sun Care' } },
+        { id: 'hair_care', name: { ar: 'العناية بالشعر', en: 'Hair Care' } }
+    ]
+});
+
+brandsList.push({
+    id: 'himalaya', name: 'Himalaya',
+    families: [
+        { id: 'purifying', name: { ar: 'مجموعة النيم (للنقاء)', en: 'Purifying Neem' } }
+    ]
+});
+
+// 2. إضافة مواد فعالة جديدة
+ingredientsDictionary["Beeswax"] = { name: { ar: "شمع النحل", en: "Beeswax" }, desc: { ar: "يرطب ويهدئ البشرة ويشكل طبقة واقية طبيعية.", en: "Hydrates, soothes, and forms a natural protective barrier." } };
+ingredientsDictionary["Lumiskin"] = { name: { ar: "لوميسكين", en: "Lumiskin" }, desc: { ar: "مادة فعالة قوية في تفتيح التصبغات وتوحيد لون البشرة.", en: "Powerful active for brightening and evening skin tone." } };
+ingredientsDictionary["PurCellin Oil"] = { name: { ar: "زيت بورسيلين", en: "PurCellin Oil" }, desc: { ar: "يقلل من كثافة تركيبة الزيت ليجعله سريع الامتصاص وفعال في علاج الندبات.", en: "Makes the oil lightweight, fast-absorbing, and targets scars." } };
+ingredientsDictionary["Neem"] = { name: { ar: "خلاصة النيم", en: "Neem Extract" }, desc: { ar: "مضاد بكتيري قوي ومنقي طبيعي يساعد في التخلص من الحبوب.", en: "Antibacterial and natural purifier for acne." } };
+
+// 3. إضافة المنتجات
+productsList.push({
+    id: 'p_beesline_deo', brandId: 'beesline', familyId: 'deodorant',
+    name: { ar: "رول أون تفتيح وتأخير نمو الشعر", en: "Whitening Roll-On Deodorant" },
+    description: { ar: "مزيل عرق آمن ومفتح لمنطقة الإبط، يؤخر نمو الشعر. (من الأكثر مبيعاً)", en: "Safe whitening deodorant, delays hair growth." },
+    how_to_use: { ar: "يوضع يومياً على بشرة نظيفة وجافة.", en: "Apply daily on clean, dry skin." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Beeswax", pct: "" }, { id: "Lumiskin", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_beesline_sens_zone', brandId: 'beesline', familyId: 'whitening',
+    name: { ar: "كريم تفتيح المناطق الحساسة", en: "Whitening Sensitive Zone Cream" },
+    description: { ar: "كريم طبيعي لتفتيح وتجديد شباب المناطق الحساسة بأمان.", en: "Natural cream to safely brighten sensitive zones." },
+    how_to_use: { ar: "يدلك بلطف مرتين يومياً حتى يمتص تماماً.", en: "Massage gently twice daily until absorbed." },
+    cautions: { ar: "للاستخدام الخارجي فقط.", en: "For external use only." },
+    key_ingredients: [{ id: "Beeswax", pct: "" }, { id: "Lumiskin", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_biooil_skincare', brandId: 'biooil', familyId: 'body_care',
+    name: { ar: "زيت العناية بالبشرة (بايو أويل)", en: "Skincare Oil" },
+    description: { ar: "الزيت رقم 1 عالمياً لتحسين مظهر الندبات، علامات التمدد للحوامل، وعدم توحد لون البشرة.", en: "World's #1 scar and stretch mark oil." },
+    how_to_use: { ar: "يدلك بحركات دائرية على المنطقة المطلوبة مرتين يومياً لمدة 3 أشهر على الأقل.", en: "Massage circularly twice daily for at least 3 months." },
+    cautions: { ar: "لا يوضع على جروح مفتوحة.", en: "Do not apply on broken skin." },
+    key_ingredients: [{ id: "PurCellin Oil", pct: "" }],
+    flags: { pregnancy_safe: true } // مشهور جداً وآمن للحوامل
+});
+
+productsList.push({
+    id: 'p_maxon_max100', brandId: 'maxon', familyId: 'sun_care',
+    name: { ar: "واقي شمس ماكس 100", en: "Max100 Sunscreen Cream" },
+    description: { ar: "حماية قصوى من الشمس، طبي بامتياز ومناسب للبشرة الحساسة وللأجواء الحارة في الخليج.", en: "Maximum sun protection, suitable for sensitive skin and hot climates." },
+    how_to_use: { ar: "يوضع بسخاء قبل التعرض للشمس بنصف ساعة.", en: "Apply generously 30 mins before sun exposure." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_himalaya_neem_wash', brandId: 'himalaya', familyId: 'purifying',
+    name: { ar: "غسول النيم لتنقية الوجه", en: "Purifying Neem Face Wash" },
+    description: { ar: "غسول يومي خالٍ من الصابون، يمنع الحبوب وينقي البشرة (بديل طبيعي واقتصادي ممتاز).", en: "Soap-free daily wash, prevents pimples naturally." },
+    how_to_use: { ar: "يدلك على وجه مبلل ثم يشطف.", en: "Massage on wet face and rinse." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Neem", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+// 4. إضافة حالات / روتينات طبية جديدة
+casesList.push({
+    id: 'body_care_stretch',
+    name: { ar: 'العناية بالجسم (علامات التمدد والتفتيح)', en: 'Body Care (Stretch Marks & Whitening)' },
+    routine: [
+        { stepTitle: { ar: 'تفتيح وتوحيد لون الجسم', en: 'Body & Sensitive Zone Whitening' }, impact: 40, impactColor: '#e53e3e', productIds: ['p_beesline_sens_zone', 'p_beesline_deo'] },
+        { stepTitle: { ar: 'علاج الندبات وعلامات التمدد', en: 'Scar & Stretch Mark Treatment' }, impact: 60, impactColor: '#dd6b20', productIds: ['p_biooil_skincare'] }
+    ]
+});
+
+// 5. تحديث الصور المؤقتة للمنتجات الجديدة لتجنب العطل
+const session7Images = {
+    'p_beesline_deo': "https://placehold.co/300x300/f4f7f6/dd6b20?text=Beesline\nRoll-On",
+    'p_beesline_sens_zone': "https://placehold.co/300x300/f4f7f6/dd6b20?text=Beesline\nSens+Zone",
+    'p_biooil_skincare': "https://placehold.co/300x300/f4f7f6/e53e3e?text=Bio-Oil\nSkincare",
+    'p_maxon_max100': "https://placehold.co/300x300/f4f7f6/3182ce?text=Maxon\nMax100",
+    'p_himalaya_neem_wash': "https://placehold.co/300x300/f4f7f6/38a169?text=Himalaya\nNeem"
+};
+
+productsList.forEach(p => {
+    if(session7Images[p.id]) p.image = session7Images[p.id];
+});
+
+casesList.forEach(c => {
+    if(c.id === 'body_care_stretch') c.image = "https://placehold.co/800x220/dd6b20/ffffff?text=Body+Care+Routine";
+});
+// ==========================================
+// --- إضافة الجلسة الثامنة (العناية بالشعر وفروة الرأس) ---
+// ==========================================
+
+// 1. تحديث العلامات التجارية الموجودة مسبقاً (إضافة عائلات الشعر لفيشي ودوكراي)
+let vichyBrand = brandsList.find(b => b.id === 'vichy');
+if(vichyBrand) {
+    vichyBrand.families.push({ id: 'dercos', name: { ar: 'ديركوس (للعناية بالشعر)', en: 'Dercos (Hair Care)' } });
+}
+
+let ducrayBrand = brandsList.find(b => b.id === 'ducray');
+if(ducrayBrand) {
+    ducrayBrand.families.push({ id: 'anaphase', name: { ar: 'أنافاز (لتساقط الشعر)', en: 'Anaphase (Hair Loss)' } });
+    ducrayBrand.families.push({ id: 'kelual', name: { ar: 'كيلوال دي إس (للقشرة)', en: 'Kelual DS (Anti-Dandruff)' } });
+}
+
+// 2. إضافة مواد فعالة تخصصية للشعر
+ingredientsDictionary["Aminexil"] = { name: { ar: "أمينيكسيل 1.5%", en: "Aminexil 1.5%" }, desc: { ar: "براءة اختراع لوريال: يمنع تصلب الكولاجين حول بصيلة الشعر مما يثبت الشعرة في الجذور ويمنع تساقطها.", en: "Prevents collagen stiffening around the hair root, anchoring it firmly." } };
+ingredientsDictionary["Selenium Disulfide"] = { name: { ar: "سلينيوم دايسلفايد", en: "Selenium Disulfide" }, desc: { ar: "مضاد للفطريات يقضي على قشرة الرأس المستعصية ويهدئ الحكة والالتهاب.", en: "Antifungal active that eliminates stubborn dandruff and soothes itching." } };
+ingredientsDictionary["Monolaurin"] = { name: { ar: "مونولورين", en: "Monolaurin" }, desc: { ar: "يبطئ تساقط الشعر ويطيل دورة حياة الشعرة.", en: "Slows down hair loss and prolongs the hair life cycle." } };
+ingredientsDictionary["Ciclopirox Olamine"] = { name: { ar: "سيكلوبيروكس أولامين", en: "Ciclopirox Olamine" }, desc: { ar: "مضاد للفطريات قوي جداً لعلاج التهاب الجلد الدهني الشديد.", en: "Potent antifungal for severe seborrheic dermatitis." } };
+
+// 3. إضافة منتجات الشعر
+productsList.push({
+    id: 'p_vichy_dercos_energy', brandId: 'vichy', familyId: 'dercos',
+    name: { ar: "شامبو ديركوس إنيرجي المقوي", en: "Dercos Energy+ Stimulating Shampoo" },
+    description: { ar: "شامبو مقوي يرافق علاجات تساقط الشعر (الأمبولات واللوشن)، يعيد الحيوية والقوة للشعر الضعيف.", en: "Stimulating shampoo complementing hair loss treatments." },
+    how_to_use: { ar: "يُدلك على فروة الرأس المبللة ويترك دقيقة ثم يشطف. مناسب للاستخدام اليومي.", en: "Massage on wet scalp, leave for 1 min, rinse. Suitable for daily use." },
+    cautions: { ar: "تجنب ملامسة العينين.", en: "Avoid contact with eyes." },
+    key_ingredients: [{ id: "Aminexil", pct: "" }, { id: "Niacinamide", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_vichy_dercos_aminexil', brandId: 'vichy', familyId: 'dercos',
+    name: { ar: "أمبولات أمينيكسيل كلينيكال 5", en: "Dercos Aminexil Clinical 5" },
+    description: { ar: "علاج مكثف لتساقط الشعر يعالج الأسباب الخمسة للتساقط (توجد نسخة للرجال ونسخة للنساء).", en: "Intensive anti-hair loss treatment targeting 5 root causes." },
+    how_to_use: { ar: "أمبولة واحدة يومياً أو 3 مرات أسبوعياً على فروة نظيفة، يُدلك ولا يُشطف.", en: "1 vial daily or 3x/week on clean scalp, massage, do not rinse." },
+    cautions: { ar: "للاستعمال الخارجي فقط على الفروة.", en: "For external use only on the scalp." },
+    key_ingredients: [{ id: "Aminexil", pct: "1.5%" }, { id: "Vichy Volcanic Water", pct: "" }],
+    flags: { pregnancy_safe: false } // يفضل استشارة طبيب النساء في الحمل
+});
+
+productsList.push({
+    id: 'p_vichy_dercos_dandruff', brandId: 'vichy', familyId: 'dercos',
+    name: { ar: "شامبو ديركوس المضاد للقشرة", en: "Dercos Anti-Dandruff Shampoo" },
+    description: { ar: "شامبو علاجي أيقوني يقضي على 100% من القشرة المرئية من الاستخدام الأول ويمنع عودتها لـ 6 أسابيع.", en: "Eliminates 100% visible dandruff from first use and provides 6-week anti-relapse." },
+    how_to_use: { ar: "يُترك على الفروة لمدة دقيقتين ثم يشطف، يُستخدم 2-3 مرات أسبوعياً كعلاج، ومرة كوقاية.", en: "Leave on scalp for 2 mins, rinse. Use 2-3x/week for treatment." },
+    cautions: { ar: "لا يستخدم للأطفال أقل من 12 سنة. تجنب ملامسة العين (يحتوي على السلينيوم).", en: "Not for children under 12. Avoid eye contact." },
+    key_ingredients: [{ id: "Selenium Disulfide", pct: "1%" }, { id: "Salicylic Acid", pct: "1%" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_ducray_anaphase', brandId: 'ducray', familyId: 'anaphase',
+    name: { ar: "شامبو أنافاز بلس لتساقط الشعر", en: "Anaphase+ Anti-Hair Loss Shampoo" },
+    description: { ar: "شامبو طبي يهيئ فروة الرأس لاستقبال بخاخات التساقط ويضيف حجماً وكثافة للشعر الخفيف.", en: "Prepares scalp for hair loss treatments and adds volume." },
+    how_to_use: { ar: "يُغسل الشعر، ثم يعاد وضعه ويدلك لمدة 3 دقائق ليحفز الدورة الدموية ثم يشطف.", en: "Wash hair, reapply, massage for 3 mins to stimulate microcirculation, rinse." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Monolaurin", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_ducray_kelual_ds', brandId: 'ducray', familyId: 'kelual',
+    name: { ar: "شامبو كيلوال دي إس", en: "Kelual DS Treatment Shampoo" },
+    description: { ar: "علاج متقدم وفعال جداً للقشرة الشديدة المصحوبة بحكة واحمرار وقشور دهنية (التهاب الجلد الدهني).", en: "Advanced treatment for severe dandruff with itching and redness." },
+    how_to_use: { ar: "يُدلك ويُترك لمدة 3 دقائق ثم يشطف. 3 مرات أسبوعياً لمدة أسبوعين للعلاج المكثف.", en: "Leave for 3 mins, rinse. 3x/week for 2 weeks." },
+    cautions: { ar: "قد يسبب جفافاً طفيفاً لأطراف الشعر، يُفضل استخدام بلسم مرطب على الأطراف فقط.", en: "May dry hair lengths slightly, use conditioner on ends only." },
+    key_ingredients: [{ id: "Ciclopirox Olamine", pct: "1.5%" }, { id: "Zinc PCA", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+// 4. إضافة حالات / روتينات طبية خاصة بالشعر
+casesList.push({
+    id: 'hair_loss',
+    name: { ar: 'تساقط الشعر وضعف البصيلات', en: 'Hair Loss & Thinning' },
+    routine: [
+        { stepTitle: { ar: 'الشامبو المحفز والمقوي (للتهيئة)', en: 'Stimulating Shampoo (Prep)' }, impact: 20, impactColor: '#3182ce', productIds: ['p_vichy_dercos_energy', 'p_ducray_anaphase'] },
+        { stepTitle: { ar: 'العلاج المكثف لتثبيت البصيلة', en: 'Intensive Root Anchoring' }, impact: 80, impactColor: '#e53e3e', productIds: ['p_vichy_dercos_aminexil'] }
+    ]
+});
+
+casesList.push({
+    id: 'dandruff_seborrheic',
+    name: { ar: 'قشرة الرأس والتهاب الفروة', en: 'Dandruff & Seborrheic Dermatitis' },
+    routine: [
+        { stepTitle: { ar: 'الشامبو العلاجي (مضاد الفطريات)', en: 'Treatment Shampoo (Anti-Fungal)' }, impact: 100, impactColor: '#dd6b20', productIds: ['p_vichy_dercos_dandruff', 'p_ducray_kelual_ds'] }
+    ]
+});
+
+// 5. تحديث الصور المؤقتة (Placeholders) للمنتجات والحالات الجديدة
+const session8Images = {
+    'p_vichy_dercos_energy': "https://placehold.co/300x300/f4f7f6/e53e3e?text=Vichy\nDercos+Energy",
+    'p_vichy_dercos_aminexil': "https://placehold.co/300x300/f4f7f6/e53e3e?text=Vichy\nAminexil",
+    'p_vichy_dercos_dandruff': "https://placehold.co/300x300/f4f7f6/38a169?text=Vichy\nDercos+Dandruff",
+    'p_ducray_anaphase': "https://placehold.co/300x300/f4f7f6/dd6b20?text=Ducray\nAnaphase+",
+    'p_ducray_kelual_ds': "https://placehold.co/300x300/f4f7f6/a0aec0?text=Ducray\nKelual+DS"
+};
+
+productsList.forEach(p => {
+    if(session8Images[p.id]) p.image = session8Images[p.id];
+});
+
+casesList.forEach(c => {
+    if(c.id === 'hair_loss') c.image = "https://placehold.co/800x220/e53e3e/ffffff?text=Hair+Loss+Treatment";
+    if(c.id === 'dandruff_seborrheic') c.image = "https://placehold.co/800x220/38a169/ffffff?text=Anti-Dandruff+Treatment";
+});
+// ==========================================
+// --- إضافة الجلسة التاسعة (تفعيل أنواع البشرة Skin Types) ---
+// ==========================================
+
+const skinTypesList = [];
+
+skinTypesList.push({
+    id: 'oily_skin',
+    name: { ar: 'البشرة الدهنية والمختلطة', en: 'Oily & Combination Skin' },
+    image: 'https://placehold.co/800x220/38a169/ffffff?text=Oily+Skin+Routine',
+    routine: [
+        { stepTitle: { ar: 'التنظيف وإزالة الدهون', en: 'Cleansing & Sebum Control' }, impact: 25, impactColor: '#38a169', productIds: ['p_lrp_effaclar_gel', 'p_eucerin_dermopurifyer_gel', 'p_sebamed_clearface_foam'] },
+        { stepTitle: { ar: 'الترطيب الخفيف والتحكم بالمسام', en: 'Light Hydration & Pore Control' }, impact: 45, impactColor: '#3182ce', productIds: ['p_to_niacinamide', 'p_vichy_normaderm_phyto', 'p_cosrx_snail_essence'] },
+        { stepTitle: { ar: 'الوقاية السائلة (بدون لمعان)', en: 'Fluid Sun Protection (Matte)' }, impact: 30, impactColor: '#dd6b20', productIds: ['p_isdin_fusion_water', 'p_lrp_uvmune_fluid'] }
+    ]
+});
+
+skinTypesList.push({
+    id: 'dry_skin',
+    name: { ar: 'البشرة الجافة والعادية', en: 'Dry & Normal Skin' },
+    image: 'https://placehold.co/800x220/3182ce/ffffff?text=Dry+Skin+Routine',
+    routine: [
+        { stepTitle: { ar: 'التنظيف اللطيف (بدون رغوة قاسية)', en: 'Gentle Cleansing' }, impact: 20, impactColor: '#3182ce', productIds: ['p_cerave_hydrating_cleanser', 'p_cetaphil_gentle_cleanser'] },
+        { stepTitle: { ar: 'الترطيب العميق والمكثف', en: 'Deep & Intense Hydration' }, impact: 55, impactColor: '#e53e3e', productIds: ['p_vichy_mineral_89', 'p_cerave_moisturizing_cream', 'p_bioderma_atoderm_baume'] },
+        { stepTitle: { ar: 'الوقاية والتغذية', en: 'Protection & Nourishment' }, impact: 25, impactColor: '#dd6b20', productIds: ['p_joseon_relief_sun', 'p_maxon_max100'] }
+    ]
+});
+
+skinTypesList.push({
+    id: 'sensitive_skin',
+    name: { ar: 'البشرة الحساسة والمتهيجة', en: 'Sensitive & Irritated Skin' },
+    image: 'https://placehold.co/800x220/e53e3e/ffffff?text=Sensitive+Skin+Routine',
+    routine: [
+        { stepTitle: { ar: 'تنظيف ملطف (ماء ميسيلار)', en: 'Soothing Cleansing' }, impact: 30, impactColor: '#3182ce', productIds: ['p_bioderma_sensibio_h2o'] },
+        { stepTitle: { ar: 'ترميم حاجز البشرة المتهالك', en: 'Skin Barrier Repair' }, impact: 50, impactColor: '#dd6b20', productIds: ['p_uriage_bariederm_cica', 'p_avene_cicalfate'] },
+        { stepTitle: { ar: 'وقاية معدنية ولطيفة', en: 'Gentle Protection' }, impact: 20, impactColor: '#38a169', productIds: ['p_isdin_fusion_water'] }
+    ]
+});
