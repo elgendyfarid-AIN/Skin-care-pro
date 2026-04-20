@@ -68,3 +68,124 @@ productsList.forEach(p => {
 casesList.forEach(c => {
     c.image = `https://placehold.co/800x220/3182ce/ffffff?text=${c.id}`;
 });
+// ==========================================
+// --- إضافة الجلسة السادسة (البراندات التخصصية: ISDIN, Filorga, Uriage, Noreva) ---
+// ==========================================
+
+// 1. إضافة العلامات التجارية الجديدة
+brandsList.push({
+    id: 'isdin', name: 'ISDIN',
+    families: [
+        { id: 'fotoprotector', name: { ar: 'فوتوبروتكتور (واقيات الشمس)', en: 'Fotoprotector (Sun Care)' } },
+        { id: 'isdinceutics', name: { ar: 'إيزدينسيوتيكس (للتجاعيد والنضارة)', en: 'Isdinceutics (Anti-Aging)' } }
+    ]
+});
+
+brandsList.push({
+    id: 'filorga', name: 'Filorga',
+    families: [
+        { id: 'time_filler', name: { ar: 'تايم فيلر (للتجاعيد)', en: 'Time-Filler' } },
+        { id: 'ncef', name: { ar: 'مجموعة NCEF (للنضارة الفائقة)', en: 'NCEF Reverse' } }
+    ]
+});
+
+brandsList.push({
+    id: 'uriage', name: 'Uriage',
+    families: [
+        { id: 'bariederm', name: { ar: 'باريديرم (للترميم والعزل)', en: 'Bariéderm (Cica & Repair)' } },
+        { id: 'hyseac', name: { ar: 'هيسياك (للبشرة الدهنية)', en: 'Hyséac (Oily Skin)' } }
+    ]
+});
+
+brandsList.push({
+    id: 'noreva', name: 'Noreva',
+    families: [
+        { id: 'trio_white', name: { ar: 'تريو وايت (للتصبغات المتقدمة)', en: 'Trio White XP' } }
+    ]
+});
+
+// 2. إضافة مواد فعالة تخصصية جديدة
+ingredientsDictionary["NCEF"] = { name: { ar: "مركب NCEF", en: "NCEF Complex" }, desc: { ar: "براءة اختراع من فيلورجا، مركب يحتوي على 50 مكون نشط (فيتامينات، أحماض أمينية، معادن) لتجديد الخلايا.", en: "Unique polyrevitalizing complex encapsulating 50 active ingredients." } };
+ingredientsDictionary["DNA Repairsomes"] = { name: { ar: "إنزيمات إصلاح الـ DNA", en: "DNA Repairsomes" }, desc: { ar: "تقنية من إيزدين لإصلاح التلف الخلوي الناتج عن تراكم أشعة الشمس (الشيخوخة الضوئية).", en: "Repairs sun-induced cellular damage at the DNA level." } };
+ingredientsDictionary["Peptides"] = { name: { ar: "البيبتيدات", en: "Peptides" }, desc: { ar: "أحماض أمينية تحفز إنتاج الكولاجين والإيلاستين لشد البشرة وتقليل التجاعيد.", en: "Stimulates collagen production for firmer skin." } };
+ingredientsDictionary["Uriage Thermal Water"] = { name: { ar: "مياه يورياج الحرارية", en: "Uriage Thermal Water" }, desc: { ar: "مياه متساوية التوتر (Isotonic) ترطب، تهدئ، وتحمي حاجز البشرة بشكل طبيعي.", en: "Isotonic water that hydrates and soothes the skin." } };
+
+// 3. إضافة المنتجات التخصصية
+productsList.push({
+    id: 'p_isdin_fusion_water', brandId: 'isdin', familyId: 'fotoprotector',
+    name: { ar: "إيزدين فيوجن ووتر ماجيك SPF 50", en: "Fusion Water Magic SPF 50" },
+    description: { ar: "واقي شمس مائي فائق الخفة، يمتص فوراً ولا يحرق العينين. (الأكثر مبيعاً)", en: "Ultra-light water-phased sunscreen, absorbs immediately, safe-eye tech." },
+    how_to_use: { ar: "يوضع بسخاء على بشرة جافة أو مبللة قبل التعرض للشمس.", en: "Apply liberally on dry or wet skin before sun exposure." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Hyaluronic Acid", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_isdin_age_repair', brandId: 'isdin', familyId: 'fotoprotector',
+    name: { ar: "فوتو ألترا إيدج ريبير (مكافحة الشيخوخة)", en: "FotoUltra Age Repair Fusion Water" },
+    description: { ar: "يحمي من الشمس، يصلح تلف الـ DNA، ويحفز الكولاجين لتقليل التجاعيد المرئية.", en: "Protects, repairs DNA damage, and reverses signs of photoaging." },
+    how_to_use: { ar: "يطبق يومياً كخطوة أخيرة في الروتين.", en: "Apply daily as the last step." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "DNA Repairsomes", pct: "" }, { id: "Peptides", pct: "" }],
+    flags: { pregnancy_safe: false } // يفضل استشارة الطبيب لوجود مواد مقاومة للشيخوخة متقدمة
+});
+
+productsList.push({
+    id: 'p_filorga_time_filler', brandId: 'filorga', familyId: 'time_filler',
+    name: { ar: "تايم فيلر 5XP كريم التجاعيد", en: "Time-Filler 5XP Cream" },
+    description: { ar: "كريم مستوحى من تقنيات الطب التجميلي، يعالج 5 أنواع من التجاعيد (التعبيرية، العميقة، السطحية، الجفاف، الرقبة).", en: "Inspired by aesthetic medicine, targets 5 types of wrinkles." },
+    how_to_use: { ar: "يوضع صباحاً ومساءً على الوجه والرقبة.", en: "Apply AM and PM to face and neck." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "NCEF", pct: "" }, { id: "Peptides", pct: "" }, { id: "Hyaluronic Acid", pct: "" }],
+    flags: { pregnancy_safe: false }
+});
+
+productsList.push({
+    id: 'p_uriage_bariederm_cica', brandId: 'uriage', familyId: 'bariederm',
+    name: { ar: "باريديرم سيكا كريم بالزنك", en: "Bariéderm Cica-Cream with Copper-Zinc" },
+    description: { ar: "كريم عازل ومرمم مثالي للتهيجات اليومية، الجروح السطحية، وطفح الحفاضات.", en: "Repairing and insulating cream for everyday irritations." },
+    how_to_use: { ar: "يوضع مرتين يومياً على بشرة نظيفة.", en: "Apply twice daily to clean skin." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Uriage Thermal Water", pct: "" }, { id: "Zinc PCA", pct: "" }], // الزنك والنحاس
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_noreva_trio_white_xp', brandId: 'noreva', familyId: 'trio_white',
+    name: { ar: "تريو وايت إكس بي (علاج مكثف للتصبغات)", en: "Trio White XP Anti-Dark Spot" },
+    description: { ar: "علاج مركز يستهدف فرط التصبغ (الكلف وتصبغات الشمس) ويمنع ظهور بقع جديدة.", en: "Intensive treatment targeting hyperpigmentation and dark spots." },
+    how_to_use: { ar: "يوضع مساءً على البقع الداكنة أو كامل الوجه.", en: "Apply at night to dark spots or entire face." },
+    cautions: { ar: "الاستخدام المنتظم لواقي الشمس نهاراً ضروري جداً.", en: "Strict sun protection is required during the day." },
+    key_ingredients: [{ id: "Niacinamide", pct: "" }, { id: "AHA", pct: "" }],
+    flags: { pregnancy_safe: false }
+});
+
+// 4. إضافة حالات / روتينات طبية متقدمة
+casesList.push({
+    id: 'anti_aging',
+    name: { ar: 'مكافحة التجاعيد وشد البشرة (Anti-Aging)', en: 'Anti-Aging & Firming' },
+    routine: [
+        { stepTitle: { ar: 'الترطيب العميق وتهيئة البشرة', en: 'Deep Hydration & Prep' }, impact: 20, impactColor: '#3182ce', productIds: ['p_vichy_mineral_89', 'p_cosrx_snail_essence'] },
+        { stepTitle: { ar: 'العلاج المركز للتجاعيد (البديل التجميلي)', en: 'Targeted Wrinkle Repair' }, impact: 50, impactColor: '#805ad5', productIds: ['p_filorga_time_filler'] },
+        { stepTitle: { ar: 'إصلاح التلف الضوئي (نهاراً)', en: 'Photo-Damage Repair (Day)' }, impact: 30, impactColor: '#e53e3e', productIds: ['p_isdin_age_repair'] }
+    ]
+});
+
+// 5. تحديث الصور المؤقتة للمنتجات الجديدة لتجنب العطل
+const session6Images = {
+    'p_isdin_fusion_water': "https://placehold.co/300x300/f4f7f6/dd6b20?text=ISDIN\nFusion+Water",
+    'p_isdin_age_repair': "https://placehold.co/300x300/f4f7f6/dd6b20?text=ISDIN\nAge+Repair",
+    'p_filorga_time_filler': "https://placehold.co/300x300/f4f7f6/000000?text=Filorga\nTime-Filler",
+    'p_uriage_bariederm_cica': "https://placehold.co/300x300/f4f7f6/3182ce?text=Uriage\nCica+Cream",
+    'p_noreva_trio_white_xp': "https://placehold.co/300x300/f4f7f6/a0aec0?text=Noreva\nTrio+White"
+};
+
+productsList.forEach(p => {
+    if(session6Images[p.id]) p.image = session6Images[p.id];
+});
+
+// إضافة صورة مؤقتة لحالة مكافحة التجاعيد
+casesList.forEach(c => {
+    if(c.id === 'anti_aging') c.image = "https://placehold.co/800x220/805ad5/ffffff?text=Anti-Aging+Routine";
+});
