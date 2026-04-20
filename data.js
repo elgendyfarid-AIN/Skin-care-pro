@@ -158,3 +158,76 @@ imagesDB['p_novaclear_gluta_serum'] = "https://placehold.co/300x300/ffffff/e53e3
 imagesDB['p_sebamed_clearface_foam'] = "https://placehold.co/300x300/ffffff/38a169?text=Sebamed\nClear+Face+Foam";
 
 productsList.forEach(p => p.image = imagesDB[p.id] || "https://placehold.co/300x300/ffffff/a0aec0?text=Product\nImage");
+
+// ==========================================
+// --- إضافة الجلسة الرابعة (الأمريكان: The Ordinary و Cetaphil) ---
+// ==========================================
+
+// 1. إضافة العلامات التجارية الجديدة
+brandsList.push({
+    id: 'theordinary', name: 'The Ordinary',
+    families: [
+        { id: 'acids', name: { ar: 'الأحماض والمقشرات', en: 'Acids & Peels' } },
+        { id: 'vitamins', name: { ar: 'الفيتامينات والمعادن', en: 'Vitamins & Minerals' } }
+    ]
+});
+
+brandsList.push({
+    id: 'cetaphil', name: 'Cetaphil',
+    families: [
+        { id: 'daily_care', name: { ar: 'العناية اليومية', en: 'Daily Care' } }
+    ]
+});
+
+// 2. إضافة مواد فعالة جديدة
+ingredientsDictionary["AHA"] = { name: { ar: "أحماض ألفا هيدروكسي (AHA)", en: "AHA" }, desc: { ar: "تقشر سطح البشرة الخارجي لتحسين النضارة وتوحيد اللون.", en: "Exfoliates the topmost surface of the skin." } };
+ingredientsDictionary["BHA"] = { name: { ar: "أحماض بيتا هيدروكسي (BHA)", en: "BHA" }, desc: { ar: "تتغلغل داخل المسام لتنظيفها من الدهون المتراكمة وتمنع الاحتقان.", en: "Clears pore congestion and excess sebum." } };
+
+// 3. إضافة المنتجات الجديدة
+productsList.push({
+    id: 'p_to_niacinamide', brandId: 'theordinary', familyId: 'vitamins',
+    name: { ar: "سيروم نياسيناميد 10% + زنك 1%", en: "Niacinamide 10% + Zinc 1%" },
+    description: { ar: "سيروم لتنظيم الإفرازات الدهنية، تصغير المسام الواسعة، وتقليل التصبغات والشوائب.", en: "Reduces blemishes, regulates sebum, and minimizes pores." },
+    how_to_use: { ar: "قطرات قليلة على الوجه صباحاً ومساءً قبل الكريمات الثقيلة.", en: "Apply to entire face morning and evening before heavier creams." },
+    cautions: { ar: "لا يُستخدم في نفس الوقت مع فيتامين سي النقي.", en: "Do not use with pure Vitamin C at the same time." },
+    key_ingredients: [{ id: "Niacinamide", pct: "10%" }, { id: "Zinc PCA", pct: "1%" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_to_peeling', brandId: 'theordinary', familyId: 'acids',
+    name: { ar: "محلول التقشير الأحمر (AHA 30% + BHA 2%)", en: "AHA 30% + BHA 2% Peeling Solution" },
+    description: { ar: "مقشر أسبوعي قوي جداً لتجديد البشرة وعلاج التصبغات والندبات السطحية.", en: "10-minute exfoliating facial, improves skin texture and radiance." },
+    how_to_use: { ar: "يُستخدم مساءً فقط على بشرة جافة. يترك 10 دقائق كحد أقصى ثم يُشطف بالماء الفاتر.", en: "Use PM only on dry skin. Leave on for max 10 mins, then rinse." },
+    cautions: { ar: "للمحترفين فقط. لا يستخدم على بشرة ملتهبة أو حساسة. إجباري استخدام واقي شمس نهاراً.", en: "For experienced users only. Sunscreen is mandatory." },
+    key_ingredients: [{ id: "AHA", pct: "30%" }, { id: "BHA", pct: "2%" }],
+    flags: { pregnancy_safe: false }
+});
+
+productsList.push({
+    id: 'p_cetaphil_gentle_cleanser', brandId: 'cetaphil', familyId: 'daily_care',
+    name: { ar: "غسول سيتافيل اللطيف", en: "Gentle Skin Cleanser" },
+    description: { ar: "غسول كريمي لا يرغي، ينظف البشرة الحساسة والجافة دون تجريدها من زيوتها الطبيعية.", en: "Creamy, non-foaming cleanser for dry and sensitive skin." },
+    how_to_use: { ar: "يُدلك على الوجه، ويمكن إزالته بمنديل قطني أو شطفه بالماء.", en: "Massage onto face, remove with cotton pad or rinse with water." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Niacinamide", pct: "" }], // التركيبة الجديدة لسيتافيل تحتوي على نياسيناميد
+    flags: { pregnancy_safe: true }
+});
+
+// 4. إضافة حالة مرضية / روتين جديد
+casesList.push({
+    id: 'enlarged_pores',
+    name: { ar: 'المسام الواسعة والبهتان (النضارة)', en: 'Enlarged Pores & Dullness' },
+    routine: [
+        { stepTitle: { ar: 'التنظيف اللطيف', en: 'Gentle Cleansing' }, impact: 15, impactColor: '#3182ce', productIds: ['p_cetaphil_gentle_cleanser'] },
+        { stepTitle: { ar: 'تنظيم الدهون وتصغير المسام (يومياً)', en: 'Pore Minimizing (Daily)' }, impact: 40, impactColor: '#dd6b20', productIds: ['p_to_niacinamide'] },
+        { stepTitle: { ar: 'التقشير العميق (مرة أسبوعياً مساءً)', en: 'Deep Peeling (Weekly PM)' }, impact: 45, impactColor: '#e53e3e', productIds: ['p_to_peeling'] }
+    ]
+});
+
+// 5. إضافة صور المنتجات الجديدة وتحديث الروابط
+imagesDB['p_to_niacinamide'] = "https://placehold.co/300x300/ffffff/000000?text=The+Ordinary\nNiacinamide";
+imagesDB['p_to_peeling'] = "https://placehold.co/300x300/ffffff/e53e3e?text=The+Ordinary\nAHA+BHA+Peel";
+imagesDB['p_cetaphil_gentle_cleanser'] = "https://placehold.co/300x300/ffffff/38a169?text=Cetaphil\nGentle+Cleanser";
+
+productsList.forEach(p => p.image = imagesDB[p.id] || "https://placehold.co/300x300/ffffff/a0aec0?text=Product\nImage");
