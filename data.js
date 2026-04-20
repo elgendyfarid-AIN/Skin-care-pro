@@ -361,3 +361,53 @@ imagesDB['p_somebymi_miracle_toner'] = "https://m.media-amazon.com/images/I/61V9
 
 // تطبيق الروابط الحقيقية على قائمة المنتجات
 productsList.forEach(p => p.image = imagesDB[p.id] || p.image);
+
+// ==========================================
+// --- الحل النهائي للصور (استخدام خادم وسيط Proxy لتخطي الحظر) ---
+// ==========================================
+
+const proxy = "https://wsrv.nl/?url=";
+
+// 1. تحديث صور الحالات عبر الوسيط
+const realCaseImages = {
+    'acne_basic': proxy + 'images.unsplash.com/photo-1512496015851-a1c8dc8f465f?auto=format&fit=crop&w=800&q=80',
+    'barrier_repair': proxy + 'images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=800&q=80',
+    'rosacea_sensitive': proxy + 'images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+    'eczema_repair': proxy + 'images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80',
+    'hyperpigmentation': proxy + 'images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80',
+    'enlarged_pores': proxy + 'images.unsplash.com/photo-1500522144261-ea64433ca1f4?auto=format&fit=crop&w=800&q=80',
+    'glass_skin': proxy + 'images.unsplash.com/photo-1615397323180-2db47cb6bfa6?auto=format&fit=crop&w=800&q=80'
+};
+
+casesList.forEach(c => {
+    if(realCaseImages[c.id]) c.image = realCaseImages[c.id];
+});
+
+// 2. تحديث صور المنتجات عبر الوسيط (لتخطي حماية أمازون)
+imagesDB['p_lrp_effaclar_gel'] = proxy + "m.media-amazon.com/images/I/51rYgUu9d-L._SL1500_.jpg";
+imagesDB['p_lrp_effaclar_duo'] = proxy + "m.media-amazon.com/images/I/51RDBv7aIOL._SL1500_.jpg";
+imagesDB['p_lrp_hyalu_b5'] = proxy + "m.media-amazon.com/images/I/61r59D+1KDL._SL1500_.jpg";
+imagesDB['p_lrp_uvmune_fluid'] = proxy + "m.media-amazon.com/images/I/518nZc7R8JL._SL1500_.jpg";
+imagesDB['p_cerave_hydrating_cleanser'] = proxy + "m.media-amazon.com/images/I/61S1g5g96vL._SL1500_.jpg";
+imagesDB['p_cerave_blemish_cleanser'] = proxy + "m.media-amazon.com/images/I/61hZzM0hWkL._SL1500_.jpg";
+imagesDB['p_cerave_moisturizing_cream'] = proxy + "m.media-amazon.com/images/I/61E9r+JvKSL._SL1500_.jpg";
+imagesDB['p_vichy_mineral_89'] = proxy + "m.media-amazon.com/images/I/61M6gR-n4mL._SL1500_.jpg";
+imagesDB['p_vichy_normaderm_phyto'] = proxy + "m.media-amazon.com/images/I/61b7U+0d1NL._SL1500_.jpg";
+imagesDB['p_bioderma_sensibio_h2o'] = proxy + "m.media-amazon.com/images/I/51pD-Y3xHCL._SL1500_.jpg";
+imagesDB['p_bioderma_atoderm_baume'] = proxy + "m.media-amazon.com/images/I/51fGIfE3s5L._SL1500_.jpg";
+imagesDB['p_avene_cicalfate'] = proxy + "m.media-amazon.com/images/I/51BqjKq+KNL._SL1500_.jpg";
+imagesDB['p_avene_comedomed'] = proxy + "m.media-amazon.com/images/I/51Q-H99hP5L._SL1500_.jpg";
+imagesDB['p_ducray_keracnyl_pp'] = proxy + "m.media-amazon.com/images/I/41K-m8EowhL._SL1500_.jpg";
+imagesDB['p_eucerin_even_pigment_dual'] = proxy + "m.media-amazon.com/images/I/51r5cQy6M9L._SL1500_.jpg";
+imagesDB['p_eucerin_dermopurifyer_gel'] = proxy + "m.media-amazon.com/images/I/51pD8D90d0L._SL1500_.jpg";
+imagesDB['p_novaclear_gluta_serum'] = proxy + "m.media-amazon.com/images/I/51-QyHq5LPL._SL1500_.jpg"; 
+imagesDB['p_sebamed_clearface_foam'] = proxy + "m.media-amazon.com/images/I/61o4mH3pWHL._SL1500_.jpg";
+imagesDB['p_to_niacinamide'] = proxy + "m.media-amazon.com/images/I/51N-A6M9uBL._SL1500_.jpg";
+imagesDB['p_to_peeling'] = proxy + "m.media-amazon.com/images/I/61Z+-t5P9wL._SL1500_.jpg";
+imagesDB['p_cetaphil_gentle_cleanser'] = proxy + "m.media-amazon.com/images/I/61b7U+0d1NL._SL1500_.jpg";
+imagesDB['p_cosrx_snail_essence'] = proxy + "m.media-amazon.com/images/I/51Yw1Z1D3yL._SL1500_.jpg";
+imagesDB['p_joseon_relief_sun'] = proxy + "m.media-amazon.com/images/I/51E4E0fN-iL._SL1500_.jpg";
+imagesDB['p_somebymi_miracle_toner'] = proxy + "m.media-amazon.com/images/I/61V9eM7f7ZL._SL1500_.jpg";
+
+// تطبيق الروابط الجديدة
+productsList.forEach(p => p.image = imagesDB[p.id] || p.image);
