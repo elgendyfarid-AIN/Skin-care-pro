@@ -453,3 +453,55 @@ skinTypesList.push({
         { stepTitle: { ar: 'وقاية معدنية ولطيفة', en: 'Gentle Protection' }, impact: 20, impactColor: '#38a169', productIds: ['p_isdin_fusion_water'] }
     ]
 });
+// ==========================================
+// --- إضافة الجلسة العاشرة (الرتوش النهائية: العناية بالعين والشفاه) ---
+// ==========================================
+
+// 1. تحديث عائلات بعض البراندات لإضافة منتجات العيون والشفاه
+let ceraveBrand10 = brandsList.find(b => b.id === 'cerave');
+if(ceraveBrand10) ceraveBrand10.families.push({ id: 'eye_care', name: { ar: 'العناية بمحيط العين', en: 'Eye Care' } });
+
+let eucerinBrand10 = brandsList.find(b => b.id === 'eucerin');
+if(eucerinBrand10) eucerinBrand10.families.push({ id: 'aquaphor', name: { ar: 'أكوافور (للترميم)', en: 'Aquaphor' } });
+
+// 2. إضافة مواد فعالة جديدة
+ingredientsDictionary["Panthenol"] = { name: { ar: "بانثينول (فيتامين B5)", en: "Panthenol" }, desc: { ar: "يلطف ويرمم التشققات الشديدة ويدعم التئام الجلد بسرعة.", en: "Soothes, repairs severe cracks, and supports skin healing." } };
+ingredientsDictionary["Marine Extracts"] = { name: { ar: "مستخلصات بحرية", en: "Marine Extracts" }, desc: { ar: "تخفف الهالات السوداء والانتفاخات حول العين وتنشط الدورة الدموية.", en: "Reduces dark circles and puffiness around the eyes." } };
+
+// 3. إضافة المنتجات
+productsList.push({
+    id: 'p_cerave_eye_repair', brandId: 'cerave', familyId: 'eye_care',
+    name: { ar: "كريم ترميم محيط العين", en: "Eye Repair Cream" },
+    description: { ar: "يخفف الهالات السوداء والانتفاخات ويرمم حاجز البشرة الرقيق حول العين.", en: "Reduces dark circles and puffiness, restores eye skin barrier." },
+    how_to_use: { ar: "توضع نقاط صغيرة حول العين وتدلك بلطف حتى الامتصاص التام.", en: "Apply in small dots around eyes, smooth until absorbed." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Ceramides", pct: "" }, { id: "Hyaluronic Acid", pct: "" }, { id: "Marine Extracts", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+productsList.push({
+    id: 'p_eucerin_aquaphor_lip', brandId: 'eucerin', familyId: 'aquaphor',
+    name: { ar: "مرمم الشفاه أكوافور", en: "Aquaphor SOS Lip Repair" },
+    description: { ar: "علاج إسعافي للشفاه الجافة جداً والمتشققة، يمنح راحة فورية خلال 60 ثانية.", en: "SOS care for dry, cracked lips. Relief in 60 seconds." },
+    how_to_use: { ar: "يوضع على الشفاه عند الحاجة وبشكل متكرر.", en: "Apply to lips as frequently as needed." },
+    cautions: { ar: "-", en: "-" },
+    key_ingredients: [{ id: "Panthenol", pct: "" }],
+    flags: { pregnancy_safe: true }
+});
+
+// 4. إضافة روتين (العناية بمحيط العين والشفاه)
+casesList.push({
+    id: 'eye_lip_care',
+    name: { ar: 'العناية بالعين والشفاه (الهالات والتشققات)', en: 'Eye & Lip Care (Dark Circles & Cracks)' },
+    image: 'https://placehold.co/800x220/805ad5/ffffff?text=Eye+%26+Lip+Care',
+    routine: [
+        { stepTitle: { ar: 'علاج الهالات والانتفاخات (العين)', en: 'Dark Circles & Puffiness (Eyes)' }, impact: 60, impactColor: '#3182ce', productIds: ['p_cerave_eye_repair'] },
+        { stepTitle: { ar: 'الترميم العاجل للتشققات (الشفاه)', en: 'SOS Crack Repair (Lips)' }, impact: 40, impactColor: '#e53e3e', productIds: ['p_eucerin_aquaphor_lip'] }
+    ]
+});
+
+// 5. إضافة الصور المؤقتة (Placeholders)
+productsList.forEach(p => {
+    if(p.id === 'p_cerave_eye_repair') p.image = "https://placehold.co/300x300/f4f7f6/3182ce?text=CeraVe\nEye+Repair";
+    if(p.id === 'p_eucerin_aquaphor_lip') p.image = "https://placehold.co/300x300/f4f7f6/e53e3e?text=Eucerin\nAquaphor+Lip";
+});
