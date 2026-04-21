@@ -3,193 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <title>Skin Care Pro</title>
+    <title>Skin Care Pro - Clinical Edition</title>
     <style>
         :root {
-            --bg-color: #f4f7f6; --card-bg: #ffffff; --text-main: #2d3748;
-            --text-secondary: #718096; --accent-color: #3182ce; --safe-color: #38a169;
-            --border-radius: 12px;
+            --bg-color: #f0f4f8; --card-bg: #ffffff; --text-main: #102a43;
+            --text-secondary: #486581; --accent-blue: #0f609b; --accent-teal: #048274;
+            --danger: #d90429; --warning: #f59e0b; --border-radius: 12px;
         }
         [data-theme="dark"] {
-            --bg-color: #1a202c; --card-bg: #2d3748; --text-main: #f7fafc;
-            --text-secondary: #a0aec0; --accent-color: #63b3ed; --safe-color: #68d391;
+            --bg-color: #102a43; --card-bg: #243b53; --text-main: #f0f4f8;
+            --text-secondary: #bcccdc; --accent-blue: #4aa9ec; --accent-teal: #2cb1bc;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; transition: 0.4s ease; padding-bottom: 50px; }
-        .header { background-color: var(--card-bg); padding: 15px 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .site-title { font-size: 24px; font-weight: 900; color: var(--accent-color); margin: 0; cursor: pointer; user-select: none; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; padding-bottom: 50px; }
+        .header { background-color: var(--card-bg); padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue); }
+        .site-title { font-size: 26px; font-weight: 900; margin: 0; color: var(--accent-blue); }
+        .container { padding: 20px; max-width: 800px; margin: 0 auto; }
+        
+        .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
+        .product-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
+        .img-placeholder { width: 90px; height: 90px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; flex-shrink: 0; }
+        [data-theme="dark"] .img-placeholder { background-color: #334e68; border-color: #486581; color: #9fb3c8; }
+        .header-info { flex-grow: 1; }
+        .brand-name { font-size: 12px; font-weight: bold; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .product-name { font-size: 20px; font-weight: 800; color: var(--accent-blue); margin: 5px 0; }
+        
+        .section-title { font-size: 16px; font-weight: bold; color: var(--accent-teal); margin: 15px 0 10px 0; display: flex; align-items: center; gap: 8px; }
+        .section-title::before { content: ''; width: 4px; height: 16px; background-color: var(--accent-teal); border-radius: 2px; }
+        
+        .content-box { padding: 0 20px 20px 20px; }
+        .data-grid { display: grid; grid-template-columns: 1fr; gap: 10px; font-size: 14px; line-height: 1.6; }
+        .data-row { background-color: rgba(0,0,0,0.02); padding: 10px 15px; border-radius: 8px; }
+        [data-theme="dark"] .data-row { background-color: rgba(255,255,255,0.03); }
+        .data-label { font-weight: bold; color: var(--text-main); display: block; margin-bottom: 4px; }
+        
+        .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+        .tag-safe { background-color: rgba(4,130,116,0.1); color: var(--accent-teal); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--accent-teal); }
+        .tag-danger { background-color: rgba(217,4,41,0.1); color: var(--danger); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--danger); }
+        
         .controls { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-color); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .container { padding: 0 20px; max-width: 600px; margin: 0 auto; }
-        
-        .quick-tags-wrapper { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
-        .quick-tags-wrapper::-webkit-scrollbar { display: none; }
-        .quick-tag { display: inline-block; background-color: var(--card-bg); color: var(--accent-color); padding: 10px 20px; border-radius: 20px; margin-left: 10px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid var(--accent-color); }
-        
-        .main-paths { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-        .path-btn { background-color: var(--card-bg); color: var(--text-main); padding: 20px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;}
-        .path-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
-        
-        .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-        .breadcrumb span { cursor: pointer; color: var(--accent-color); font-weight: bold; }
-        .breadcrumb span:hover { text-decoration: underline; }
-        
-        .tree-btn { background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; color: var(--text-main); }
-        .page-title { font-size: 22px; margin-bottom: 20px; color: var(--text-main); font-weight: 800; border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; display: inline-block;}
-        
-        .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 15px; }
-        .accordion-header { padding: 15px; display: flex; gap: 15px; align-items: center; cursor: pointer; }
-        .product-img { width: 80px; height: 80px; border-radius: 8px; object-fit: contain; background-color: #ffffff; flex-shrink: 0; border: 1px solid #eee;}
-        .header-info { display: flex; flex-direction: column; gap: 5px; flex-grow: 1; }
-        .brand { font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; }
-        .title { font-size: 16px; font-weight: 800; margin: 0; line-height: 1.3; color: var(--accent-color);}
-        
-        .accordion-body { padding: 0 15px; max-height: 0; overflow: hidden; opacity: 0; transition: all 0.3s ease-out; }
-        .product-card.active .accordion-body { padding: 0 15px 15px 15px; max-height: 3000px; opacity: 1; margin-top: 10px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 15px; }
-        
-        .routine-header { display: flex; justify-content: space-between; align-items: center; background-color: rgba(49,130,206,0.05); padding: 12px 15px; border-radius: 8px; margin: 25px 0 15px 0; border-right: 4px solid var(--accent-color); }
-        [dir="ltr"] .routine-header { border-right: none; border-left: 4px solid var(--accent-color); }
-        .routine-step-title { font-size: 16px; font-weight: bold; color: var(--text-main); margin: 0;}
-        
-        .progress-track { width: 120px; height: 18px; background-color: rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; display: flex; }
-        [data-theme="dark"] .progress-track { background-color: rgba(255,255,255,0.1); }
-        .progress-fill { height: 100%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 12px; font-weight: bold; border-radius: 12px; min-width: 35px; transition: width 0.5s ease; }
-        
-        details.sub-accordion { border-top: 1px solid rgba(0,0,0,0.05); padding: 5px 0; }
-        details.sub-accordion summary { padding: 10px 0; font-weight: bold; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; font-size: 14px; }
-        details.sub-accordion summary::-webkit-details-marker { display: none; }
-        details.sub-accordion summary::after { content: '+'; color: var(--accent-color); font-size: 18px; font-weight: normal; }
-        details.sub-accordion[open] summary::after { content: '-'; }
-        .sub-content { padding-bottom: 10px; font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
-
-        .ingredients-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
-        .ingredient-btn { background-color: rgba(49,130,206,0.1); color: var(--accent-color); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; border: 1px solid var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 5px;}
-        .pct-badge { background-color: var(--accent-color); color: #fff; padding: 2px 6px; border-radius: 10px; font-size: 11px; }
-        .tag { background-color: rgba(56,161,105,0.1); color: var(--safe-color); padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid var(--safe-color); display: inline-block; margin-top: 15px;}
-        
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center; z-index: 1000; }
-        .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 400px; }
-        .modal-title { font-size: 20px; font-weight: bold; color: var(--accent-color); margin-bottom: 10px; }
-        .modal-body { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
-        .close-btn { width: 100%; background-color: var(--text-secondary); }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1 class="site-title" onclick="navigateTo('home')">Skin Care Pro</h1>
+        <h1 class="site-title">Skin Care Pro <span style="font-size:14px; color:var(--text-secondary);">| Clinical Edition</span></h1>
     </div>
     <div class="controls">
-        <button onclick="toggleLanguage()">🌐 عربي / English</button>
         <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
     </div>
-    <div class="container" id="app"></div>
-
-    <div class="modal-overlay" id="ingredientModal">
-        <div class="modal-content">
-            <div class="modal-title" id="modalTitle"></div>
-            <div class="modal-body" id="modalBody"></div>
-            <button class="close-btn" onclick="closeModal()">إغلاق / Close</button>
+    
+    <div class="container" id="app">
         </div>
-    </div>
 
     <script src="data.js"></script>
     <script>
-        let currentLang = localStorage.getItem('siteLang') || 'ar';
-        const txt = {
-            home: { ar: 'الرئيسية', en: 'Home' }, brands: { ar: 'العلامات التجارية', en: 'Brands' },
-            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
-            skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
-            desc: { ar: 'الوصف', en: 'Description' }, ingredients: { ar: 'المواد الفعالة', en: 'Active Ingredients' },
-            howToUse: { ar: 'طريقة الاستخدام', en: 'How to Use' }, cautions: { ar: 'التحذيرات', en: 'Cautions' },
-            safe: { ar: '🤰 آمن للحوامل', en: '🤰 Pregnancy Safe' }
-        };
-
-        function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
-        function loadSavedView() { if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); }
-        function buildBreadcrumb(pathArray) { let html = `<div class="breadcrumb"><span onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; pathArray.forEach(item => { html += ` / <span onclick="${item.action}">${item.label}</span>`; }); html += `</div>`; return html; }
-
-        function renderView(view, param1, param2) {
-            const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
-            if (view === 'home') {
-                let html = '<div class="quick-tags-wrapper">';
-                casesList.forEach(c => { html += `<div class="quick-tag" onclick="navigateTo('case_routine', '${c.id}')">${c.name[currentLang]}</div>`; });
-                html += `</div><div class="main-paths">
-                            <div class="path-btn" onclick="navigateTo('brands')">📦 ${txt.browseProducts[currentLang]}</div>
-                            <div class="path-btn" onclick="navigateTo('cases')">🩺 ${txt.cases[currentLang]}</div>
-                            <div class="path-btn" onclick="navigateTo('skin_types')">🧑‍⚕️ ${txt.skinTypes[currentLang]}</div>
-                        </div>`;
-                app.innerHTML = html;
-            } else if (view === 'brands') {
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: ""}]); html += `<div class="page-title">${txt.brands[currentLang]}</div>`;
-                brandsList.forEach(b => { html += `<div class="tree-btn" onclick="navigateTo('families', '${b.id}')">${b.name} <span>▼</span></div>`; }); app.innerHTML = html;
-            } else if (view === 'families') {
-                const brand = brandsList.find(b => b.id === param1);
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: ""}]);
-                html += `<div class="page-title">${brand.name}</div>`;
-                brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); app.innerHTML = html;
-            } else if (view === 'products') {
-                const brand = brandsList.find(b => b.id === param1); const family = brand.families.find(f => f.id === param2);
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
-                html += buildProductsHTML(productsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
-            } else if (view === 'cases') {
-                let html = buildBreadcrumb([{label: txt.cases[currentLang], action: ""}]); html += `<div class="page-title">${txt.cases[currentLang]}</div>`;
-                casesList.forEach(c => { html += `<div class="tree-btn" onclick="navigateTo('case_routine', '${c.id}')">${c.name[currentLang]} <span>▼</span></div>`; }); app.innerHTML = html;
-            } else if (view === 'skin_types') {
-                // الكود الجديد لتفعيل قائمة أنواع البشرة
-                let html = buildBreadcrumb([{label: txt.skinTypes[currentLang], action: ""}]); html += `<div class="page-title">${txt.skinTypes[currentLang]}</div>`;
-                if (typeof skinTypesList !== 'undefined') {
-                    skinTypesList.forEach(s => { html += `<div class="tree-btn" onclick="navigateTo('skin_routine', '${s.id}')">${s.name[currentLang]} <span>▼</span></div>`; });
-                }
-                app.innerHTML = html;
-            } else if (view === 'skin_routine') {
-                // عرض روتين نوع البشرة المحدد
-                const skinObj = skinTypesList.find(s => s.id === param1);
-                let html = buildBreadcrumb([{label: txt.skinTypes[currentLang], action: "navigateTo('skin_types')"}, {label: skinObj.name[currentLang], action: ""}]);
-                let skinImgHtml = skinObj.image ? `<img src="${skinObj.image}" style="width:100%; height:220px; object-fit:cover; border-radius:var(--border-radius); margin-bottom:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">` : '';
-                html += `<div class="page-title">${skinObj.name[currentLang]}</div>`;
-                html += skinImgHtml; 
-                skinObj.routine.forEach(step => { 
-                    const barHtml = step.impact ? `<div class="progress-track"><div class="progress-fill" style="width: ${step.impact}%; background-color: ${step.impactColor || '#3182ce'};">${step.impact}%</div></div>` : '';
-                    html += `<div class="routine-header"><h3 class="routine-step-title">${step.stepTitle[currentLang]}</h3>${barHtml}</div>`; 
-                    html += buildProductsHTML(productsList.filter(p => step.productIds.includes(p.id))); 
-                });
-                app.innerHTML = html;
-            } else if (view === 'case_routine') {
-                const caseObj = casesList.find(c => c.id === param1);
-                let html = buildBreadcrumb([{label: txt.cases[currentLang], action: "navigateTo('cases')"}, {label: caseObj.name[currentLang], action: ""}]);
-                let caseImgHtml = caseObj.image ? `<img src="${caseObj.image}" style="width:100%; height:220px; object-fit:cover; border-radius:var(--border-radius); margin-bottom:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">` : '';
-                html += `<div class="page-title">${caseObj.name[currentLang]}</div>`;
-                html += caseImgHtml; 
-                caseObj.routine.forEach(step => { 
-                    const barHtml = step.impact ? `<div class="progress-track"><div class="progress-fill" style="width: ${step.impact}%; background-color: ${step.impactColor || '#3182ce'};">${step.impact}%</div></div>` : '';
-                    html += `<div class="routine-header"><h3 class="routine-step-title">${step.stepTitle[currentLang]}</h3>${barHtml}</div>`; 
-                    html += buildProductsHTML(productsList.filter(p => step.productIds.includes(p.id))); 
-                });
-                app.innerHTML = html;
-            }
+        function toggleTheme() {
+            const r = document.documentElement;
+            r.getAttribute('data-theme') === 'dark' ? r.removeAttribute('data-theme') : r.setAttribute('data-theme', 'dark');
         }
 
-        function buildProductsHTML(arr) {
-            if(arr.length === 0) return `<div style="text-align:center; padding:20px;">لا توجد منتجات / No products</div>`;
+        function renderProducts() {
+            const app = document.getElementById('app');
             let html = '';
-            arr.forEach(p => {
-                let ingHTML = '';
-                p.key_ingredients.forEach(item => { 
-                    const k = item.id; const pctHtml = item.pct ? `<span class="pct-badge" dir="ltr">${item.pct}</span>` : '';
-                    if(ingredientsDictionary[k]) { ingHTML += `<div class="ingredient-btn" onclick="openModal(event, '${k}')">${ingredientsDictionary[k].name[currentLang]} ${pctHtml}</div>`; }
-                });
-                let imgSource = p.image ? p.image : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
-                html += `<div class="product-card"><div class="accordion-header" onclick="toggleAccordion(this)"><img src="${imgSource}" class="product-img" onerror="this.style.display='none'"><div class="header-info"><span class="brand">${brandsList.find(b=>b.id===p.brandId)?.name||''}</span><span class="title">${p.name[currentLang]}</span></div></div><div class="accordion-body"><details class="sub-accordion" open><summary>${txt.desc[currentLang]}</summary><div class="sub-content">${p.description[currentLang]}</div></details><details class="sub-accordion"><summary>${txt.howToUse[currentLang]}</summary><div class="sub-content">${p.how_to_use ? p.how_to_use[currentLang] : '-'}</div></details><details class="sub-accordion"><summary>${txt.cautions[currentLang]}</summary><div class="sub-content">${p.cautions ? p.cautions[currentLang] : '-'}</div></details><details class="sub-accordion" open><summary>${txt.ingredients[currentLang]}</summary><div class="sub-content"><div class="ingredients-list">${ingHTML}</div></div></details>${p.flags.pregnancy_safe ? `<div class="tag">${txt.safe[currentLang]}</div>`:''}</div></div>`;
+            
+            deepProductsList.forEach(p => {
+                // معالجة مكان الصورة (الخانة محجوزة للمستقبل)
+                let imageElement = p.image ? `<img src="${p.image}" style="width:90px; height:90px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">صورة<br>المنتج</div>`;
+                
+                // معالجة التداخلات الدوائية
+                let doNotMix = p.clinical_usage.layering.do_not_mix_with.map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
+                let bestMix = p.clinical_usage.layering.best_mixed_with.map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
+
+                html += `
+                <div class="product-card">
+                    <div class="product-header">
+                        ${imageElement}
+                        <div class="header-info">
+                            <div class="brand-name">${p.brand}</div>
+                            <div class="product-name">${p.name.ar}</div>
+                            <div style="font-size:13px; color:var(--text-secondary);">${p.name.en}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-box">
+                        <div class="section-title">🧪 البطاقة الدوائية (Pharmacology)</div>
+                        <div class="data-grid">
+                            <div class="data-row"><span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism.ar}</div>
+                            <div class="data-row"><span class="data-label">المواد الفعالة والتركيزات:</span> 
+                                <ul style="margin:5px 0; padding-inline-start: 20px;">
+                                    ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role.ar}</li>`).join('')}
+                                </ul>
+                            </div>
+                            ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">مستوى الحموضة (pH):</span> ${p.pharmacology.ph_level}</div>` : ''}
+                        </div>
+
+                        <div class="section-title">🩺 الاستخدام السريري (Clinical Usage)</div>
+                        <div class="data-grid">
+                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application.ar}</div>
+                            <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine.ar}</div>
+                            <div class="data-row">
+                                <span class="data-label">قواعد الدمج (Layering):</span>
+                                <div class="tags-container">${doNotMix} ${bestMix}</div>
+                            </div>
+                        </div>
+
+                        <div class="section-title">⚠️ التحذيرات والفئة المستهدفة</div>
+                        <div class="data-grid">
+                            <div class="data-row">
+                                <span class="data-label">الأمان:</span>
+                                ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل</span>'}
+                                ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يجب واقي)</span>' : ''}
+                            </div>
+                            <div class="data-row"><span class="data-label">ملاحظات سريرية:</span> ${p.precautions.notes.ar}</div>
+                        </div>
+                    </div>
+                </div>`;
             });
-            return html;
+            app.innerHTML = html;
         }
 
-        function toggleAccordion(el) { const c = el.parentElement; document.querySelectorAll('.product-card').forEach(x => { if(x !== c) x.classList.remove('active'); }); c.classList.toggle('active'); }
-        function openModal(e, k) { e.stopPropagation(); document.getElementById('modalTitle').innerText = ingredientsDictionary[k].name[currentLang]; document.getElementById('modalBody').innerText = ingredientsDictionary[k].desc[currentLang]; document.getElementById('ingredientModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('ingredientModal').style.display = 'none'; }
-        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
-        function toggleTheme() { const r = document.documentElement; if(r.getAttribute('data-theme') === 'dark'){ r.removeAttribute('data-theme'); localStorage.setItem('siteTheme', 'light'); } else { r.setAttribute('data-theme', 'dark'); localStorage.setItem('siteTheme', 'dark'); } }
-        window.onload = loadSavedView;
+        window.onload = renderProducts;
     </script>
 </body>
 </html>
