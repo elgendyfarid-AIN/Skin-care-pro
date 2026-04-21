@@ -53,9 +53,12 @@
         .cat-btn span { font-size: 32px; }
         .cat-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15,96,155,0.1);}
 
+        /* مسار التصفح (Breadcrumb) المحدث */
         .breadcrumb { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-        .breadcrumb span { cursor: pointer; color: var(--accent-blue); font-weight: bold; }
-        .breadcrumb span:hover { text-decoration: underline; }
+        .breadcrumb-link { cursor: pointer; color: var(--accent-blue); font-weight: bold; text-decoration: none; transition: 0.2s; }
+        .breadcrumb-link:hover { text-decoration: underline; }
+        .breadcrumb-current { color: var(--text-secondary); font-weight: normal; cursor: default; }
+        
         .tree-btn { background-color: var(--card-bg); padding: 18px 20px; margin-bottom: 12px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.03); cursor: pointer; color: var(--text-main); border: 1px solid rgba(0,0,0,0.03); transition: 0.2s;}
         .tree-btn:hover { border-color: var(--accent-blue); background-color: rgba(15,96,155,0.02);}
         .page-title { font-size: 24px; margin-bottom: 20px; color: var(--text-main); font-weight: 900; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; display: inline-block;}
@@ -181,7 +184,21 @@
             updateUI_Language(); renderSidebar(); renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); 
         }
 
-        function buildBreadcrumb(pathArray) { let html = `<div class="breadcrumb"><span onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; pathArray.forEach(item => { html += ` / <span onclick="${item.action}">${item.label}</span>`; }); html += `</div>`; return html; }
+        // دالة مسار التصفح المحدثة لضمان عمل الأزرار بشكل صحيح
+        function buildBreadcrumb(pathArray) { 
+            let html = `<div class="breadcrumb"><span class="breadcrumb-link" onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; 
+            pathArray.forEach(item => { 
+                if(item.action) {
+                    // إذا كان العنصر قابل للضغط (عنصر سابق)
+                    html += ` / <span class="breadcrumb-link" onclick="${item.action}">${item.label}</span>`; 
+                } else {
+                    // العنصر الأخير (الصفحة الحالية) غير قابل للضغط
+                    html += ` / <span class="breadcrumb-current">${item.label}</span>`; 
+                }
+            }); 
+            html += `</div>`; 
+            return html; 
+        }
 
         function renderSidebar() {
             const sb = document.getElementById('sidebar');
@@ -199,6 +216,7 @@
         function renderView(view, param1, param2) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
             updateUI_Language();
+            
             if (view === 'home') {
                 let html = `<div class="main-categories">
                             <div class="cat-btn" onclick="navigateTo('brands')"><span>📦</span> ${txt.products[currentLang]}</div>
@@ -211,11 +229,13 @@
                 brandsList.forEach(b => { html += `<div class="tree-btn" onclick="navigateTo('families', '${b.id}')">${b.name} <span>▼</span></div>`; }); app.innerHTML = html;
             } else if (view === 'families') {
                 const brand = brandsList.find(b => b.id === param1);
+                // تمرير action صحيحة للرجوع للبراندات
                 let html = buildBreadcrumb([{label: txt.products[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: ""}]);
                 html += `<div class="page-title">${brand.name}</div>`;
                 brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); app.innerHTML = html;
             } else if (view === 'products') {
                 const brand = brandsList.find(b => b.id === param1); const family = brand.families.find(f => f.id === param2);
+                // تمرير action صحيحة للرجوع للعائلات
                 let html = buildBreadcrumb([{label: txt.products[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
                 html += buildDeepProductsHTML(deepProductsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
             } else if (view === 'cases' || view === 'skin_types') {
