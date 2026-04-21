@@ -962,3 +962,142 @@ deepProductsList.push({
         notes: { ar: 'يتوفر بأحجام كبيرة (500 مل) وهو اقتصادي جداً للعائلات.', en: 'Available in large sizes (500ml), very economical for families.' }
     }
 });
+
+// ==========================================
+// 📦 بلوك رقم (7): بيوديرما (Hydrabio للترطيب + Pigmentbio للتفتيح)
+// ==========================================
+
+// --- 1. تحديث العلامات التجارية (إضافة عائلات هيدرابيو وبيجمنت بيو) ---
+let biodermaBrandFull = brandsList.find(b => b.id === 'bioderma');
+if (biodermaBrandFull) {
+    if (!biodermaBrandFull.families.find(f => f.id === 'hydrabio')) {
+        biodermaBrandFull.families.push({ id: 'hydrabio', name: { ar: 'هيدرابيو (للبشرة الفاقدة للحيوية والترطيب)', en: 'Hydrabio (Dehydrated Sensitive Skin)' } });
+    }
+    if (!biodermaBrandFull.families.find(f => f.id === 'pigmentbio')) {
+        biodermaBrandFull.families.push({ id: 'pigmentbio', name: { ar: 'بيجمنت بيو (لعلاج التصبغات وتفتيح البشرة)', en: 'Pigmentbio (Hyperpigmentation)' } });
+    }
+}
+
+// --- 2. إضافة مصطلحات جديدة للقاموس ---
+glossaryDict['aquagenium'] = {
+    title: { ar: 'براءة اختراع Aquagenium 🌊', en: 'Aquagenium™ Patent 🌊' },
+    desc: { 
+        ar: 'تقنية تحفز الجلد على إعادة بناء قدراته الترطيبية الطبيعية من خلال تنشيط "الأكوابورينات" (قنوات نقل الماء داخل الخلايا)، وحبس الماء في طبقات الجلد السطحية.', 
+        en: 'A technology that teaches the skin to biologically relaunch its natural hydration capacities by stimulating aquaporins (water channels) and retaining water.' 
+    }
+};
+
+glossaryDict['lumireveal'] = {
+    title: { ar: 'تقنية LumiReveal ✨', en: 'LumiReveal™ Technology ✨' },
+    desc: { 
+        ar: 'ابتكار مستوحى من العلاجات الرائدة في طب الجلدية، يعمل على ثلاث مراحل: تقليل إنتاج الميلانين، منع انتقاله للخلايا السطحية، وتسريع تجديد الخلايا المصبوغة.', 
+        en: 'A technology inspired by leading dermatological treatments that reduces melanin production, prevents its transfer, and accelerates cell renewal to eliminate spots.' 
+    }
+};
+
+glossaryDict['vitamin_c_fresh'] = {
+    title: { ar: 'فيتامين C الطازج 🍋', en: 'Fresh Vitamin C 🍋' },
+    desc: { 
+        ar: 'فيتامين سي نقي يتم عزله في كبسولة خاصة داخل العبوة للحفاظ على استقراره وقوته من الأكسدة، ولا يتم تفعيله إلا عند أول استخدام لضمان أقصى فعالية للتفتيح.', 
+        en: 'Pure Vitamin C isolated in a special canister to prevent oxidation, activated only upon first use to ensure maximum brightening potency.' 
+    }
+};
+
+// --- 3. المنتجات العميقة الجديدة ---
+
+// [23] بيوديرما هيدرابيو سيروم (مرطب قوي)
+deepProductsList.push({
+    id: 'bio_hydrabio_serum', brandId: 'bioderma', familyId: 'hydrabio', brand: 'Bioderma',
+    name: { ar: 'هيدرابيو سيروم (مركز الترطيب)', en: 'Hydrabio Serum (Hydration Booster)' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعيد تعليم البشرة كيف ترطب نفسها بفضل براءة اختراع <span class="glossary-term" onclick="openGlossary(\'aquagenium\')">Aquagenium</span>، حيث يرفع مستويات الأكسجين والماء داخل الخلايا فوراً.', 
+            en: 'Re-teaches the skin to hydrate itself via <span class="glossary-term" onclick="openGlossary(\'aquagenium\')">Aquagenium</span> patent, instantly boosting oxygen and water levels in cells.' 
+        },
+        patient_benefit: { 
+            ar: 'يعطي البشرة نضارة فورية (إشراقة بنسبة 57% زيادة) ويرطبها بعمق، مما يزيل بهتان البشرة الناتج عن الجفاف.', 
+            en: 'Provides instant radiance (+57% glow) and deep hydration, eliminating skin dullness caused by dehydration.' 
+        },
+        active_ingredients: [
+            { name: 'Hyaluronic Acid', concentration: 'نقي', role: { ar: 'جذب وحبس الماء داخل الجلد.', en: 'Attracting and locking water into the skin.' } },
+            { name: 'Xylitol & Glycerin', concentration: 'فعال', role: { ar: 'ترطيب طويل الأمد وتقوية الحاجز الجلدي.', en: 'Long-lasting hydration and barrier strengthening.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' },
+        step_in_routine: { ar: 'سيروم ترطيب (قبل الكريم).', en: 'Hydrating serum (before cream).' },
+        application: { ar: 'يوضع على الوجه والرقبة بعد التطهير.', en: 'Apply to face and neck after cleansing.' },
+        layering: { do_not_mix_with: { ar: ['لا يوجد.'], en: ['None.'] }, best_mixed_with: { ar: ['هيدرابيو ميسيلار ووتر', 'هيدرابيو كريم.'], en: ['Hydrabio Micellar Water', 'Hydrabio Cream.'] } }
+    },
+    precautions: {
+        indications: { ar: 'البشرة شديدة الجفاف، الباهتة، والبشرة التي تعاني من ضغوط البيئة (تكييف، تلوث).', en: 'Severely dehydrated skin, dull complexion, and skin stressed by environment (AC, pollution).' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام (جل) خفيف جداً، ممتاز كقاعدة للمكياج.', en: 'Ultra-light gel texture, excellent makeup base.' }
+    }
+});
+
+// [24] بيوديرما بيجمنت بيو C-Concentrate (سيروم التفتيح المركز)
+deepProductsList.push({
+    id: 'bio_pigmentbio_c_concentrate', brandId: 'bioderma', familyId: 'pigmentbio', brand: 'Bioderma',
+    name: { ar: 'بيجمنت بيو سي-كونسينتريت (مركز فيتامين سي)', en: 'Pigmentbio C-Concentrate' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً (لتعزيز امتصاص فيتامين سي)', en: 'Slightly acidic (to boost Vit C absorption)' },
+        mechanism: { 
+            ar: 'يجمع بين تقنية <span class="glossary-term" onclick="openGlossary(\'lumireveal\')">LumiReveal</span> و <span class="glossary-term" onclick="openGlossary(\'vitamin_c_fresh\')">فيتامين C الطازج</span> بتركيز 2% لإزالة البقع ومنع ظهورها، مع أحماض AHA/BHA للتقشير اللطيف.', 
+            en: 'Combines <span class="glossary-term" onclick="openGlossary(\'lumireveal\')">LumiReveal</span> technology and 2% <span class="glossary-term" onclick="openGlossary(\'vitamin_c_fresh\')">Fresh Vitamin C</span> to eliminate spots, with AHA/BHA for mild exfoliation.' 
+        },
+        patient_benefit: { 
+            ar: 'تفتيح مكثف وتوحيد لون البشرة خلال شهر واحد، مع تحسين ملمس الجلد وإعطائه نضارة ملحوظة.', 
+            en: 'Intense brightening and skin tone evening in 1 month, improving skin texture and providing noticeable glow.' 
+        },
+        active_ingredients: [
+            { name: 'Fresh Vitamin C', concentration: '2%', role: { ar: 'تفتيح البقع ومنع الأكسدة.', en: 'Lightening spots and anti-oxidation.' } },
+            { name: 'Glycolic & Salicylic Acid', concentration: '8%', role: { ar: 'تقشير كيميائي لطيف لتجديد الخلايا.', en: 'Mild chemical peel for cell renewal.' } },
+            { name: 'Niacinamide', concentration: 'فعال', role: { ar: 'تقوية الحاجز وتهدئة الجلد.', en: 'Barrier strengthening and soothing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مساءً فقط، لمدة شهر واحد (كورس علاجي).', en: 'PM only, for 1 month (treatment course).' },
+        step_in_routine: { ar: 'خطوة العلاج الليلي.', en: 'Night treatment step.' },
+        application: { ar: 'توضع 5 قطرات على الوجه والرقبة. يجب الضغط على الكبسولة لتفعيل فيتامين سي عند أول استخدام.', en: 'Apply 5 drops to face and neck. Press the canister to activate Vitamin C on first use.' },
+        layering: { do_not_mix_with: { ar: ['الريتينول أو المقشرات القوية الأخرى في نفس الوقت.'], en: ['Retinol or other strong exfoliants simultaneously.'] }, best_mixed_with: { ar: ['واقي شمس في الصباح (إلزامي).'], en: ['Sunscreen in the morning (Mandatory).'] } }
+    },
+    precautions: {
+        indications: { ar: 'البقع الداكنة، الكلف، النمش، وبهتان لون البشرة.', en: 'Dark spots, melasma, freckles, and dull skin tone.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قد يسبب وخزاً طفيفاً في البداية. يجب استبدال الغطاء بقطارة الاستخدام المرفقة.', en: 'May cause slight tingling initially. Replace cap with the provided dropper.' }
+    }
+});
+
+// [25] بيوديرما بيجمنت بيو للمناطق الحساسة (Pigmentbio Sensitive Areas)
+deepProductsList.push({
+    id: 'bio_pigmentbio_sensitive_areas', brandId: 'bioderma', familyId: 'pigmentbio', brand: 'Bioderma',
+    name: { ar: 'بيجمنت بيو للمناطق الحساسة الاحتكاكية', en: 'Pigmentbio Sensitive Areas' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'أول مرطب مصمم خصيصاً للمناطق المعرضة للاحتكاك (الإبط، الفخذين). يهدئ الالتهاب فوراً بفضل خلاصة (Andrographis paniculata) ويفتح اللون بتقنية <span class="glossary-term" onclick="openGlossary(\'lumireveal\')">LumiReveal</span>.', 
+            en: 'The 1st care specifically designed for friction areas (axillae, groin). Instantly soothes inflammation via Andrographis paniculata and brightens via <span class="glossary-term" onclick="openGlossary(\'lumireveal\')">LumiReveal</span>.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل الاحمرار والاسمرار الناتج عن الاحتكاك في المناطق الحساسة، ويرطبها لمدة 8 ساعات، ويمكن استخدامه مباشرة بعد الحلاقة أو الليزر.', 
+            en: 'Reduces redness and darkening caused by friction in sensitive areas, hydrates for 8 hours, and can be used post-shaving or laser.' 
+        },
+        active_ingredients: [
+            { name: 'Azelaic Acid derivative', concentration: 'فعال', role: { ar: 'تفتيح آمن وفعال للمناطق الحساسة.', en: 'Safe and effective brightening for sensitive areas.' } },
+            { name: 'LumiReveal™ Complex', concentration: 'براءة اختراع', role: { ar: 'علاج التصبغات من المنبع.', en: 'Treating pigmentation at the source.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'مرطب علاجي للمناطق الحساسة.', en: 'Treatment moisturizer for sensitive areas.' },
+        application: { ar: 'يوضع على المناطق المتضررة بعد تنظيفها.', en: 'Apply to affected areas after cleansing.' },
+        layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['بيجمنت بيو كريم رغوي (Pigmentbio Foaming Cream).'], en: ['Pigmentbio Foaming Cream.'] } }
+    },
+    precautions: {
+        indications: { ar: 'اسمرار الإبطين، بين الفخذين، الركبتين، والأكواع.', en: 'Darkening of axillae, inner thighs, knees, and elbows.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من العطور. قوامه غير لزج ولا يترك أثراً دهنياً.', en: 'Fragrance-free. Non-sticky and non-greasy texture.' }
+    }
+});
