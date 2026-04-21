@@ -780,3 +780,185 @@ deepProductsList.push({
         notes: { ar: 'المناديل ناعمة جداً ومصنوعة من ألياف لطيفة على الجلد. يجب إغلاق العبوة بإحكام لمنع الجفاف.', en: 'Very soft wipes made of skin-friendly fibers. Must tightly close the pack to prevent drying.' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (6): تصفية نواقص La Roche-Posay و Bioderma
+// ==========================================
+
+// --- 1. تحديث القاموس بمصطلحات سريرية جديدة ---
+glossaryDict['uvmune_400'] = {
+    title: { ar: 'ميكسوريل 400 (Mexoryl 400) ☀️', en: 'Mexoryl 400 ☀️' },
+    desc: { 
+        ar: 'أحدث وأقوى فلتر شمسي في العالم من ابتكار لوريال، وهو الوحيد القادر على حجب أشعة UVA الطويلة جداً (حتى 400 نانومتر) التي تخترق الجلد بعمق وتسبب السرطانات والتجاعيد.', 
+        en: 'The most advanced UV filter globally, capable of blocking ultra-long UVA rays (up to 400nm) that penetrate deep into the skin, causing DNA damage and premature aging.' 
+    }
+};
+
+glossaryDict['mp_lipids'] = {
+    title: { ar: 'ليبيدات MP (MP-Lipids) 🧬', en: 'MP-Lipids 🧬' },
+    desc: { 
+        ar: 'جيل جديد من الليبيدات القادرة على محاكاة دهون الجلد الطبيعية، لترميم حاجز البشرة المتهالك وإعادة بناء الغشاء الحامي للجلد من الداخل.', 
+        en: 'A new generation of biomimetic lipids that repair the skin barrier and rebuild the protective film from within.' 
+    }
+};
+
+// --- 2. المنتجات العميقة الجديدة (استكمال النواقص) ---
+
+// [18] لاروش بوزيه - إيفاكلار إتش إيزو-بيوم (المنقذ لمرضى الروكوتان)
+deepProductsList.push({
+    id: 'lrp_effaclar_h', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار إتش إيزو-بيوم (مرطب معوّض)', en: 'Effaclar H Iso-Biome Moisturizer' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (متوازن)', en: '5.5 (Balanced)' },
+        mechanism: { 
+            ar: 'يعمل كـ <span class="glossary-term" onclick="openGlossary(\'isotretinoin_companion\')">علاج مصاحب</span> فائق الفعالية؛ حيث يعيد توازن <span class="glossary-term" onclick="openGlossary(\'microbiome\')">الميكروبيوم</span> المتضرر من أدوية حب الشباب ويقوي حاجز الجلد بـ <span class="glossary-term" onclick="openGlossary(\'mp_lipids\')">ليبيدات MP</span>.', 
+            en: 'An ultra-effective <span class="glossary-term" onclick="openGlossary(\'isotretinoin_companion\')">Companion Care</span>; rebalances the <span class="glossary-term" onclick="openGlossary(\'microbiome\')">Microbiome</span> disrupted by acne meds and strengthens the barrier with <span class="glossary-term" onclick="openGlossary(\'mp_lipids\')">MP-Lipids</span>.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر راحة فورية للبشرة الدهنية التي أصبحت شديدة الجفاف والحساسية بسبب العلاج، يقلل من ظهور العيوب، ويعوض نقص الدهون المفقودة.', 
+            en: 'Provides instant comfort for oily skin made ultra-dry and sensitive by treatments, reduces blemishes, and replenishes lost lipids.' 
+        },
+        active_ingredients: [
+            { name: 'Vitamin B5 & Squalane', concentration: 'مركز', role: { ar: 'ترميم وتهدئة الجلد المتهيج.', en: 'Repairing and soothing irritated skin.' } },
+            { name: 'Orellana Extract', concentration: 'فعال', role: { ar: 'تقليل الشوائب مع الحفاظ على الترطيب.', en: 'Reducing imperfections while maintaining hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' },
+        step_in_routine: { ar: 'المرطب الأساسي أثناء فترة العلاج الطبي.', en: 'Primary moisturizer during medical treatment.' },
+        application: { ar: 'يوضع على وجه نظيف وجاف تماماً.', en: 'Apply to clean, dry face.' },
+        layering: { do_not_mix_with: { ar: ['المقشرات القوية في نفس اللحظة (البشرة لا تحتمل).'], en: ['Strong exfoliants simultaneously (skin cannot tolerate).'] }, best_mixed_with: { ar: ['أيزوتريتينوين (روكوتان)', 'غسول إيفاكلار إتش الحليبي.'], en: ['Isotretinoin', 'Effaclar H Cleansing Cream.'] } }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الدهنية التي تعاني من جفاف شديد بسبب الأدوية أو العلاجات القوية.', en: 'Oily skin suffering from severe dryness due to medication or harsh treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غير دهني ولا يسبب ظهور حبوب (Non-comedogenic).', en: 'Non-greasy and non-comedogenic.' }
+    }
+});
+
+// [19] لاروش بوزيه - أنثيليوس UVMune 400 (سائل غير مرئي)
+deepProductsList.push({
+    id: 'lrp_anthelios_uvmune', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay', // يتبع عائلة الحماية
+    name: { ar: 'أنثيليوس UVMune 400 (سائل غير مرئي)', en: 'Anthelios UVMune 400 Invisible Fluid' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستخدم فلتر <span class="glossary-term" onclick="openGlossary(\'uvmune_400\')">ميكسوريل 400</span> الحصري للحماية من أشعة UVA الطويلة جداً، مع تقنية (Netlock) التي تثبت الفلاتر في غشاء غير مرئي على الجلد.', 
+            en: 'Features the exclusive <span class="glossary-term" onclick="openGlossary(\'uvmune_400\')">Mexoryl 400</span> filter against ultra-long UVA, with Netlock technology that anchors filters in an invisible film.' 
+        },
+        patient_benefit: { 
+            ar: 'أقوى واقي شمس في تاريخ الشركة. حماية فائقة من التصبغات والشيخوخة، مقاوم للماء والعرق، ولا يترك أي أثر أبيض نهائياً.', 
+            en: 'The most powerful sunscreen in the brand\'s history. Ultimate protection against pigmentation and aging, water/sweat resistant, and zero white cast.' 
+        },
+        active_ingredients: [
+            { name: 'Mexoryl 400', concentration: 'براءة اختراع', role: { ar: 'حماية من أعمق أشعة الشمس ضرراً.', en: 'Protection against the deepest, most damaging UV rays.' } },
+            { name: 'Vitamin E', concentration: 'مضاد أكسدة', role: { ar: 'حماية الخلايا من الشوارد الحرة.', en: 'Protects cells from free radicals.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً، يُجدد كل ساعتين.', en: 'Daily, reapply every 2 hours.' },
+        step_in_routine: { ar: 'آخر خطوة صباحية.', en: 'Last morning step.' },
+        application: { ar: 'يُرج جيداً ويوضع على الوجه ومحيط العين.', en: 'Shake well and apply to face and eye area.' },
+        layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['جميع السيرومات العلاجية.'], en: ['All treatment serums.'] } }
+    },
+    precautions: {
+        indications: { ar: 'جميع أنواع البشرة، البشرة شديدة التحسس للشمس، والوقاية من الكلف.', en: 'All skin types, sun-allergic skin, and melasma prevention.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسبب وخز العينين (Anti-eye stinging). خالي من العطور.', en: 'Anti-eye stinging. Fragrance-free.' }
+    }
+});
+
+// [20] لاروش بوزيه - سيكابلاست لشفاه (Cicaplast Levres)
+deepProductsList.push({
+    id: 'lrp_cicaplast_lips', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
+    name: { ar: 'سيكابلاست لشفاه (مرمم الشفاه)', en: 'Cicaplast Lips Barrier Repair' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يصنع طبقة عازلة (Film-forming) بتركيز 5% من البانثينول لترميم الشقوق، مع <span class="glossary-term" onclick="openGlossary(\'mp_lipids\')">ليبيدات MP</span> لإعادة ترطيب غشاء الشفاه من الداخل.', 
+            en: 'Creates a film-forming barrier with 5% Panthenol to repair cracks, and <span class="glossary-term" onclick="openGlossary(\'mp_lipids\')">MP-Lipids</span> to rehydrate the lip membrane from within.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج الشفاه المتشققة والنازفة فوراً، يمنع التهيج الناتج عن لعق الشفاه أو البرد، ويوفر حماية طويلة الأمد.', 
+            en: 'Instantly heals cracked and bleeding lips, prevents irritation from lip-licking or cold, and provides long-lasting protection.' 
+        },
+        active_ingredients: [
+            { name: 'Panthenol', concentration: '5%', role: { ar: 'تهدئة وترميم سريع.', en: 'Soothing and fast repair.' } },
+            { name: 'MP-Lipids', concentration: 'فعال', role: { ar: 'إعادة بناء حاجز الشفاه.', en: 'Rebuilding the lip barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'متكرر يومياً.', en: 'Multiple times daily.' },
+        step_in_routine: { ar: 'عناية موضعية.', en: 'Targeted care.' },
+        application: { ar: 'يوضع مباشرة على الشفاه.', en: 'Apply directly to lips.' },
+        layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['علاجات الروكوتان.'], en: ['Accutane treatments.'] } }
+    },
+    precautions: {
+        indications: { ar: 'الشفاه شديدة الجفاف والمتشققة.', en: 'Severely dry and cracked lips.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غير مرئي ولا يترك أثر دهني مزعج.', en: 'Invisible texture with no annoying greasy residue.' }
+    }
+});
+
+// [21] بيوديرما - سيبيوم H2O (الميسيلار الأخضر)
+deepProductsList.push({
+    id: 'bio_sebium_h2o', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
+    name: { ar: 'سيبيوم H2O (محلول ميسيلار منقي)', en: 'Sebium H2O Micellar Water' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (فسيولوجي)', en: '5.5 (Physiological)' },
+        mechanism: { 
+            ar: 'يجمع بين <span class="glossary-term" onclick="openGlossary(\'micellar_tech\')">تقنية الميسيلار</span> وبراءة اختراع <span class="glossary-term" onclick="openGlossary(\'fluidactiv\')">Fluidactiv</span> لتنظيف المكياج وتنظيم جودة الدهون في وقت واحد.', 
+            en: 'Combines <span class="glossary-term" onclick="openGlossary(\'micellar_tech\')">Micellar Technology</span> and <span class="glossary-term" onclick="openGlossary(\'fluidactiv\')">Fluidactiv patent</span> to cleanse makeup and regulate sebum quality simultaneously.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف البشرة الدهنية بعمق دون تجفيفها، يزيل اللمعان فوراً، ويمنع انسداد المسام.', 
+            en: 'Deeply cleanses oily skin without drying, instantly removes shine, and prevents clogged pores.' 
+        },
+        active_ingredients: [
+            { name: 'Zinc Gluconate', concentration: 'فعال', role: { ar: 'تنقية البشرة وتنظيم الدهون.', en: 'Purifying skin and regulating sebum.' } },
+            { name: 'Copper Sulfate', concentration: 'فعال', role: { ar: 'مضاد للبكتيريا ومنظف.', en: 'Antibacterial and cleansing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى (تنظيف).', en: 'Step 1 (Cleansing).' },
+        application: { ar: 'يُبلل قطن ويُمسح الوجه. لا يحتاج لشطف.', en: 'Soak cotton pad and wipe face. No rinsing needed.' },
+        layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['مجموعة سيبيوم بالكامل.'], en: ['Entire Sebium range.'] } }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الدهنية، المختلطة، والمسام الواسعة.', en: 'Oily, combination skin, and enlarged pores.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يُستخدم لإزالة مكياج العين الحساسة (يُفضل استخدام النسخة الوردية للعين).', en: 'Not for sensitive eye makeup removal (use the Pink version for eyes).' }
+    }
+});
+
+// [22] بيوديرما - أتوديرم كريم (الترطيب اليومي للعائلة)
+deepProductsList.push({
+    id: 'bio_atoderm_cream', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
+    name: { ar: 'أتوديرم كريم (مرطب مغذي فائق)', en: 'Atoderm Cream Ultra' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعمل مركب (Skin Protect Complex) على تحفيز إنتاج حمض الهيالورونيك الطبيعي في الجلد، مع تعويض الليبيدات لتقوية الحاجز الواقي.', 
+            en: 'Skin Protect Complex stimulates natural Hyaluronic Acid production while replenishing lipids to strengthen the protective barrier.' 
+        },
+        patient_benefit: { 
+            ar: 'ترطيب فوري وعميق يدوم 24 ساعة، يجعل البشرة ناعمة ومرنة من أول استخدام، ومثالي لجميع أفراد العائلة.', 
+            en: 'Instant, deep 24-hour hydration, making skin soft and supple from the first use, ideal for the whole family.' 
+        },
+        active_ingredients: [
+            { name: 'Niacinamide', concentration: 'فعال', role: { ar: 'تحفيز بناء السيراميدات الطبيعية.', en: 'Stimulating natural ceramide synthesis.' } },
+            { name: 'Glycerin & Vaseline', concentration: 'غني', role: { ar: 'حبس الرطوبة ومنع الجفاف.', en: 'Locking in moisture and preventing dryness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'ترطيب الجسم والوجه.', en: 'Body and face hydration.' },
+        application: { ar: 'يوضع على بشرة نظيفة (يفضل وهي رطبة قليلاً).', en: 'Apply to clean skin (preferably slightly damp).' },
+        layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['أتوديرم جل دوش.'], en: ['Atoderm Gel Douche.'] } }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة، الجافة جداً، والعناية اليومية لجميع الأعمار.', en: 'Dry, very dry skin, and daily care for all ages.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يتوفر بأحجام كبيرة (500 مل) وهو اقتصادي جداً للعائلات.', en: 'Available in large sizes (500ml), very economical for families.' }
+    }
+});
