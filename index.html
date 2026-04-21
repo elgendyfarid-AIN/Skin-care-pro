@@ -4,32 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>Skin Care Pro</title>
+    <title>Skin Care Pro - Clinical</title>
     <style>
         :root {
-            --bg-color: #f0f4f8; --card-bg: #ffffff; --text-main: #102a43;
+            --bg-color: #f4f7fa; --card-bg: #ffffff; --text-main: #102a43;
             --text-secondary: #486581; --accent-blue: #0f609b; --accent-teal: #048274;
             --danger: #d90429; --warning: #f59e0b; --border-radius: 12px;
         }
         [data-theme="dark"] {
-            --bg-color: #102a43; --card-bg: #243b53; --text-main: #f0f4f8;
+            --bg-color: #0b1a2a; --card-bg: #192e44; --text-main: #f0f4f8;
             --text-secondary: #bcccdc; --accent-blue: #4aa9ec; --accent-teal: #2cb1bc;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; padding-bottom: 50px; transition: 0.3s ease;}
-        .header { background-color: var(--card-bg); padding: 15px 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue);}
-        .site-title { font-size: 24px; font-weight: 900; color: var(--accent-blue); margin: 0; cursor: pointer; user-select: none; }
-        .controls { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .container { padding: 0 20px; max-width: 800px; margin: 0 auto; }
         
-        .main-paths { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-        .path-btn { background-color: var(--card-bg); color: var(--text-main); padding: 20px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;}
-        .path-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+        /* 1. الشريط العلوي (Top Bar) */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; background-color: var(--card-bg); padding: 15px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue);}
+        .site-title { font-size: 22px; font-weight: 900; color: var(--accent-blue); margin: 0; cursor: pointer; user-select: none; display: flex; align-items: center; gap: 8px; }
+        .controls { display: flex; gap: 10px; }
+        .icon-btn { padding: 8px 15px; cursor: pointer; border: none; border-radius: 8px; background-color: rgba(15,96,155,0.1); color: var(--accent-blue); font-weight: bold; font-size: 14px; transition: 0.2s;}
+        .icon-btn:hover { background-color: var(--accent-blue); color: #fff; }
+
+        /* 2. الهيكل الرئيسي (Layout Grid) */
+        .layout-container { display: flex; flex-direction: column; gap: 20px; max-width: 1000px; margin: 25px auto; padding: 0 20px; }
+        @media(min-width: 768px) {
+            .layout-container { flex-direction: row; align-items: flex-start; }
+            .sidebar { flex: 0 0 260px; position: sticky; top: 90px; } /* القائمة الجانبية ثابتة */
+            .main-content { flex: 1; min-width: 0; }
+        }
+
+        /* 3. القائمة الجانبية (Sidebar - حالات شائعة) */
+        .sidebar { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+        .sidebar-title { font-size: 16px; font-weight: 900; color: var(--accent-teal); margin-bottom: 15px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; display: flex; align-items: center; gap: 5px;}
+        .quick-link { display: block; padding: 12px 15px; margin-bottom: 8px; background-color: rgba(0,0,0,0.02); border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: bold; color: var(--text-main); transition: 0.2s; border-right: 3px solid transparent;}
+        [dir="ltr"] .quick-link { border-right: none; border-left: 3px solid transparent; }
+        .quick-link:hover { background-color: rgba(15,96,155,0.05); color: var(--accent-blue); border-color: var(--accent-blue); padding-right: 20px; }
+        [data-theme="dark"] .quick-link { background-color: rgba(255,255,255,0.03); }
+        [dir="ltr"] .quick-link:hover { padding-right: 15px; padding-left: 20px; }
+
+        /* 4. الأزرار الرئيسية الأفقية (المنتجات، الحالات، الأنواع) */
+        .main-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .cat-btn { background-color: var(--card-bg); color: var(--text-main); padding: 25px 15px; border-radius: var(--border-radius); text-align: center; font-size: 17px; font-weight: 800; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 10px;}
+        .cat-btn span { font-size: 28px; }
+        .cat-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15,96,155,0.1);}
+
+        /* 5. باقي التنسيقات (الكروت العميقة والقاموس) */
         .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
         .breadcrumb span { cursor: pointer; color: var(--accent-blue); font-weight: bold; }
         .breadcrumb span:hover { text-decoration: underline; }
-        .tree-btn { background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; color: var(--text-main); }
-        .page-title { font-size: 22px; margin-bottom: 20px; color: var(--text-main); font-weight: 800; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; display: inline-block;}
+        .tree-btn { background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.03); cursor: pointer; color: var(--text-main); border: 1px solid rgba(0,0,0,0.03);}
+        .page-title { font-size: 22px; margin-bottom: 20px; color: var(--text-main); font-weight: 900; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; display: inline-block;}
         
         .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
         .product-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
@@ -62,19 +85,28 @@
         .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .modal-title { font-size: 20px; font-weight: 900; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
         .modal-body { font-size: 15px; line-height: 1.6; margin-bottom: 20px; color: var(--text-main); }
-        .close-btn { width: 100%; background-color: var(--accent-teal); }
+        .close-btn { width: 100%; background-color: var(--accent-teal); color:#fff; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;}
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="site-title" onclick="navigateTo('home')">Skin Care Pro <span style="font-size:12px; color:var(--text-secondary);">| Clinical</span></h1>
-    </div>
-    <div class="controls">
-        <button onclick="toggleLanguage()">🌐 عربي / English</button>
-        <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
+    
+    <div class="top-bar">
+        <div class="site-title" onclick="navigateTo('home')">Skin Care Pro <span style="font-size:12px; color:var(--text-secondary); margin-top:6px;">| Clinical</span></div>
+        <div class="controls">
+            <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">🌓</button>
+            <button class="icon-btn" onclick="toggleLanguage()" id="langBtn">🌐 EN</button>
+        </div>
     </div>
     
-    <div class="container" id="app"></div>
+    <div class="layout-container">
+        
+        <aside class="sidebar" id="sidebar">
+            </aside>
+
+        <main class="main-content" id="app">
+            </main>
+
+    </div>
 
     <div class="modal-overlay" id="glossaryModal" onclick="closeGlossary()">
         <div class="modal-content" onclick="event.stopPropagation()">
@@ -88,9 +120,11 @@
     <script>
         let currentLang = localStorage.getItem('siteLang') || 'ar';
         const txt = {
-            home: { ar: 'الرئيسية', en: 'Home' }, brands: { ar: 'العلامات التجارية', en: 'Brands' },
-            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
+            home: { ar: 'الرئيسية', en: 'Home' }, 
+            products: { ar: 'المنتجات', en: 'Products' }, // تم تغيير تصفح المنتجات إلى المنتجات
+            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, 
             skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
+            common_cases: { ar: 'حالات شائعة', en: 'Common Cases' },
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' },
             mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
             active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' },
@@ -106,35 +140,62 @@
             safety_label: { ar: 'الأمان:', en: 'Safety:' },
             notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
             benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' },
-            close: { ar: 'إغلاق', en: 'Close' }
+            close: { ar: 'إغلاق', en: 'Close' },
+            coming_soon: { ar: 'سيتم برمجتها في الجلسات القادمة...', en: 'Will be programmed in upcoming sessions...' }
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
-        function loadSavedView() { if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); }
+        
+        function loadSavedView() { 
+            if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); 
+            document.getElementById('langBtn').innerText = currentLang === 'ar' ? '🌐 EN' : '🌐 عربي';
+            renderSidebar();
+            renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); 
+        }
+
         function buildBreadcrumb(pathArray) { let html = `<div class="breadcrumb"><span onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; pathArray.forEach(item => { html += ` / <span onclick="${item.action}">${item.label}</span>`; }); html += `</div>`; return html; }
+
+        // رسم القائمة الجانبية (الحالات الشائعة)
+        function renderSidebar() {
+            const sb = document.getElementById('sidebar');
+            let html = `<div class="sidebar-title">⭐ ${txt.common_cases[currentLang]}</div>`;
+            
+            // قائمة مؤقتة للحالات الشائعة لحين بناء قاعدة بيانات الحالات العميقة
+            const quickLinks = [
+                { id: 'acne', name: {ar: 'حب الشباب النشط', en: 'Active Acne'} },
+                { id: 'pih', name: {ar: 'التصبغات والكلف', en: 'Pigmentation & Melasma'} },
+                { id: 'barrier', name: {ar: 'تضرر حاجز البشرة', en: 'Skin Barrier Damage'} },
+                { id: 'rosacea', name: {ar: 'الوردية والاحمرار', en: 'Rosacea & Redness'} }
+            ];
+            
+            quickLinks.forEach(q => {
+                html += `<div class="quick-link" onclick="alert('${txt.coming_soon[currentLang]}')">${q.name[currentLang]}</div>`;
+            });
+            sb.innerHTML = html;
+        }
 
         function renderView(view, param1, param2) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
             document.getElementById('glossaryCloseBtn').innerText = txt.close[currentLang];
 
             if (view === 'home') {
-                let html = `<div class="main-paths">
-                            <div class="path-btn" onclick="navigateTo('brands')">📦 ${txt.browseProducts[currentLang]}</div>
-                            <div class="path-btn" onclick="navigateTo('cases')">🩺 ${txt.cases[currentLang]}</div>
-                            <div class="path-btn" onclick="navigateTo('skin_types')">🧑‍⚕️ ${txt.skinTypes[currentLang]}</div>
+                let html = `<div class="main-categories">
+                            <div class="cat-btn" onclick="navigateTo('brands')"><span>📦</span> ${txt.products[currentLang]}</div>
+                            <div class="cat-btn" onclick="navigateTo('cases')"><span>🩺</span> ${txt.cases[currentLang]}</div>
+                            <div class="cat-btn" onclick="navigateTo('skin_types')"><span>🧑‍⚕️</span> ${txt.skinTypes[currentLang]}</div>
                         </div>`;
                 app.innerHTML = html;
             } else if (view === 'brands') {
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: ""}]); html += `<div class="page-title">${txt.brands[currentLang]}</div>`;
+                let html = buildBreadcrumb([{label: txt.products[currentLang], action: ""}]); html += `<div class="page-title">${txt.products[currentLang]}</div>`;
                 brandsList.forEach(b => { html += `<div class="tree-btn" onclick="navigateTo('families', '${b.id}')">${b.name} <span>▼</span></div>`; }); app.innerHTML = html;
             } else if (view === 'families') {
                 const brand = brandsList.find(b => b.id === param1);
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: ""}]);
+                let html = buildBreadcrumb([{label: txt.products[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: ""}]);
                 html += `<div class="page-title">${brand.name}</div>`;
                 brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); app.innerHTML = html;
             } else if (view === 'products') {
                 const brand = brandsList.find(b => b.id === param1); const family = brand.families.find(f => f.id === param2);
-                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
+                let html = buildBreadcrumb([{label: txt.products[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
                 html += buildDeepProductsHTML(deepProductsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
             } else if (view === 'cases' || view === 'skin_types') {
                 app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث للنسخة العميقة..." : "Updating to Clinical Edition...", action: "navigateTo('home')"}]);
@@ -147,17 +208,14 @@
             arr.forEach(p => {
                 let imgElement = p.image ? `<img src="${p.image}" style="width:80px; height:80px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
                 
-                // التأكد من استدعاء اللغة الصحيحة في المصفوفات
                 let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
                 let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
                 
-                // مؤشر القوة حسب اللغة
                 let potencyHtml = '';
                 if(p.potency === 1) potencyHtml = `<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ ${currentLang === 'ar' ? 'لطيف (Mild)' : 'Mild'}</span>`;
                 if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
                 if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
 
-                // علامات الأمان حسب اللغة
                 let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل (غير آمن)' : 'Not Safe for Pregnancy'}</span>`;
                 let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يزيد التحسس للشمس (يتطلب واقي)' : 'Increases Sun Sensitivity (Requires SPF)'}</span>` : '';
 
