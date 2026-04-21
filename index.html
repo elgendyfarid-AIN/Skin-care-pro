@@ -21,7 +21,6 @@
         .top-bar { display: flex; justify-content: space-between; align-items: center; background-color: var(--card-bg); padding: 15px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue);}
         .site-title { font-size: 22px; font-weight: 900; color: var(--accent-blue); margin: 0; cursor: pointer; user-select: none; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
         
-        /* شريط البحث الجديد (لحل نقطة رقم 3) */
         .search-container { flex-grow: 1; max-width: 600px; margin: 0 30px; position: relative; display: flex; align-items: center; }
         .search-input { width: 100%; padding: 10px 40px 10px 15px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.1); background-color: var(--bg-color); color: var(--text-main); font-family: inherit; font-size: 15px; outline: none; transition: 0.3s; }
         [dir="ltr"] .search-input { padding: 10px 15px 10px 40px; }
@@ -34,12 +33,12 @@
         .icon-btn { padding: 8px 15px; cursor: pointer; border: none; border-radius: 8px; background-color: rgba(15,96,155,0.1); color: var(--accent-blue); font-weight: bold; font-size: 14px; transition: 0.2s;}
         .icon-btn:hover { background-color: var(--accent-blue); color: #fff; }
 
-        /* الهيكل الرئيسي (توسيع العرض ليملأ الشاشة - حل نقطة 1 و 2) */
+        /* الهيكل الرئيسي (Dashboard Layout) */
         .layout-container { display: flex; flex-direction: column; gap: 25px; max-width: 1400px; width: 96%; margin: 25px auto; padding: 0; }
         @media(min-width: 768px) {
             .layout-container { flex-direction: row; align-items: flex-start; }
-            .sidebar { flex: 0 0 280px; position: sticky; top: 95px; } /* القائمة الجانبية على الطرف */
-            .main-content { flex: 1; min-width: 0; } /* الكارت الأساسي أوسع */
+            .sidebar { flex: 0 0 280px; position: sticky; top: 95px; } 
+            .main-content { flex: 1; min-width: 0; } 
         }
 
         .sidebar { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
@@ -48,7 +47,6 @@
         [dir="ltr"] .quick-link { border-right: none; border-left: 3px solid transparent; }
         .quick-link:hover { background-color: rgba(15,96,155,0.05); color: var(--accent-blue); border-color: var(--accent-blue); padding-right: 20px; }
         [data-theme="dark"] .quick-link { background-color: rgba(255,255,255,0.03); }
-        [dir="ltr"] .quick-link:hover { padding-right: 15px; padding-left: 20px; }
 
         .main-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .cat-btn { background-color: var(--card-bg); color: var(--text-main); padding: 30px 15px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: 800; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 12px;}
@@ -64,8 +62,13 @@
         
         .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
         .product-header { padding: 25px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
-        .img-placeholder { width: 90px; height: 90px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; flex-shrink: 0; }
+        
+        /* ميزة تكبير الصورة */
+        .img-container { cursor: zoom-in; flex-shrink: 0; transition: transform 0.2s; }
+        .img-container:hover { transform: scale(1.05); }
+        .img-placeholder, .prod-img { width: 90px; height: 90px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; object-fit: contain;}
         [data-theme="dark"] .img-placeholder { background-color: #334e68; border-color: #486581; color: #9fb3c8; }
+        
         .header-info { flex-grow: 1; }
         .brand-name { font-size: 13px; font-weight: bold; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
         .product-name { font-size: 20px; font-weight: 800; color: var(--accent-blue); margin: 5px 0; }
@@ -85,18 +88,21 @@
         .tag-safe { background-color: rgba(4,130,116,0.1); color: var(--accent-teal); padding: 5px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--accent-teal); }
         .tag-danger { background-color: rgba(217,4,41,0.1); color: var(--danger); padding: 5px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--danger); }
         .potency-indicator { font-weight: bold; font-size: 13px; padding: 4px 10px; border-radius: 12px; background-color: rgba(0,0,0,0.05); display: inline-block; margin-top: 4px;}
-        [data-theme="dark"] .potency-indicator { background-color: rgba(255,255,255,0.1); }
 
+        /* تنسيق القاموس (Glossary) */
         .glossary-term { font-weight: 900; text-decoration: none; border-bottom: 1.5px dashed var(--accent-blue); padding-bottom: 2px; color: var(--accent-blue); cursor: pointer; transition: color 0.2s, border-color 0.2s; }
         .glossary-term:hover { color: var(--accent-teal); border-bottom-color: var(--accent-teal); }
         
+        /* مودال القاموس والصور */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(3px); }
         .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 450px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .modal-title { font-size: 20px; font-weight: 900; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
         .modal-body { font-size: 15px; line-height: 1.6; margin-bottom: 20px; color: var(--text-main); }
         .close-btn { width: 100%; background-color: var(--accent-teal); color:#fff; border:none; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:15px;}
         
-        /* إخفاء شريط البحث في شاشات الموبايل الصغيرة جداً لتوفير المساحة */
+        /* مودال تكبير الصورة */
+        .image-modal-content { max-width: 95vw; max-height: 85vh; object-fit: contain; background-color: #fff; border-radius: 12px; padding: 10px; }
+        
         @media(max-width: 600px) {
             .search-container { display: none; }
         }
@@ -119,13 +125,8 @@
     </div>
     
     <div class="layout-container">
-        
-        <aside class="sidebar" id="sidebar">
-        </aside>
-
-        <main class="main-content" id="app">
-        </main>
-
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="main-content" id="app"></main>
     </div>
 
     <div class="modal-overlay" id="glossaryModal" onclick="closeGlossary()">
@@ -136,14 +137,16 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="imageModal" onclick="closeImageModal()">
+        <img id="zoomedImg" class="image-modal-content">
+    </div>
+
     <script src="data.js"></script>
     <script>
         let currentLang = localStorage.getItem('siteLang') || 'ar';
         const txt = {
-            home: { ar: 'الرئيسية', en: 'Home' }, 
-            products: { ar: 'المنتجات', en: 'Products' },
-            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, 
-            skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
+            home: { ar: 'الرئيسية', en: 'Home' }, products: { ar: 'المنتجات', en: 'Products' },
+            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
             common_cases: { ar: 'حالات شائعة', en: 'Common Cases' },
             search_placeholder: { ar: 'بحث عن منتج، مادة فعالة، أو حالة...', en: 'Search products, actives, cases...' },
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' },
@@ -175,9 +178,7 @@
 
         function loadSavedView() { 
             if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); 
-            updateUI_Language();
-            renderSidebar();
-            renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); 
+            updateUI_Language(); renderSidebar(); renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); 
         }
 
         function buildBreadcrumb(pathArray) { let html = `<div class="breadcrumb"><span onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; pathArray.forEach(item => { html += ` / <span onclick="${item.action}">${item.label}</span>`; }); html += `</div>`; return html; }
@@ -185,24 +186,19 @@
         function renderSidebar() {
             const sb = document.getElementById('sidebar');
             let html = `<div class="sidebar-title">⭐ ${txt.common_cases[currentLang]}</div>`;
-            
             const quickLinks = [
                 { id: 'acne', name: {ar: 'حب الشباب النشط', en: 'Active Acne'} },
                 { id: 'pih', name: {ar: 'التصبغات والكلف', en: 'Pigmentation & Melasma'} },
                 { id: 'barrier', name: {ar: 'تضرر حاجز البشرة', en: 'Skin Barrier Damage'} },
                 { id: 'rosacea', name: {ar: 'الوردية والاحمرار', en: 'Rosacea & Redness'} }
             ];
-            
-            quickLinks.forEach(q => {
-                html += `<div class="quick-link" onclick="alert('${txt.coming_soon[currentLang]}')">${q.name[currentLang]}</div>`;
-            });
+            quickLinks.forEach(q => { html += `<div class="quick-link" onclick="alert('${txt.coming_soon[currentLang]}')">${q.name[currentLang]}</div>`; });
             sb.innerHTML = html;
         }
 
         function renderView(view, param1, param2) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
             updateUI_Language();
-
             if (view === 'home') {
                 let html = `<div class="main-categories">
                             <div class="cat-btn" onclick="navigateTo('brands')"><span>📦</span> ${txt.products[currentLang]}</div>
@@ -223,7 +219,7 @@
                 let html = buildBreadcrumb([{label: txt.products[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
                 html += buildDeepProductsHTML(deepProductsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
             } else if (view === 'cases' || view === 'skin_types') {
-                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث للنسخة العميقة..." : "Updating to Clinical Edition...", action: "navigateTo('home')"}]);
+                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث..." : "Updating...", action: "navigateTo('home')"}]);
             }
         }
 
@@ -231,67 +227,46 @@
             if(arr.length === 0) return `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد منتجات بعد...' : 'No products yet...'}</div>`;
             let html = '';
             arr.forEach(p => {
-                let imgElement = p.image ? `<img src="${p.image}" style="width:80px; height:80px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
+                let imgSource = p.image ? p.image : '';
+                let imgElement = p.image ? `<img src="${p.image}" class="prod-img" onclick="openImageModal('${p.image}')">` : `<div class="img-placeholder" onclick="alert('لا توجد صورة لهذا المنتج حالياً')">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
                 
                 let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
                 let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
-                
                 let potencyHtml = '';
-                if(p.potency === 1) potencyHtml = `<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ ${currentLang === 'ar' ? 'لطيف (Mild)' : 'Mild'}</span>`;
-                if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
-                if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
+                if(p.potency === 1) potencyHtml = `<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ ${currentLang === 'ar' ? 'لطيف' : 'Mild'}</span>`;
+                if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط' : 'Moderate'}</span>`;
+                if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف' : 'Strong'}</span>`;
 
-                let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل (غير آمن)' : 'Not Safe for Pregnancy'}</span>`;
-                let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يزيد التحسس للشمس (يتطلب واقي)' : 'Increases Sun Sensitivity (Requires SPF)'}</span>` : '';
-
-                html += `
-                <div class="product-card">
+                html += `<div class="product-card">
                     <div class="product-header">
-                        ${imgElement}
+                        <div class="img-container">${imgElement}</div>
                         <div class="header-info">
                             <div class="brand-name">${p.brand}</div>
                             <div class="product-name">${p.name[currentLang]}</div>
                             <div style="font-size:12px; color:var(--text-secondary);">${currentLang === 'ar' ? p.name.en : p.name.ar}</div>
                         </div>
                     </div>
-                    
                     <div class="content-box">
                         <div class="section-title">🧪 ${txt.pharmacology[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row">
-                                <span class="data-label">${txt.mechanism[currentLang]}</span> ${p.pharmacology.mechanism[currentLang]}
-                                <div class="benefit-box">
-                                    <span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> 
-                                    ${p.pharmacology.patient_benefit[currentLang]}
-                                </div>
+                            <div class="data-row"><span class="data-label">${txt.mechanism[currentLang]}</span> ${p.pharmacology.mechanism[currentLang]}
+                                <div class="benefit-box"><span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> ${p.pharmacology.patient_benefit[currentLang]}</div>
                             </div>
-                            <div class="data-row"><span class="data-label">${txt.active_ing[currentLang]}</span> 
-                                <ul style="margin:5px 0; padding-inline-start: 20px;">
-                                    ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}
-                                </ul>
-                            </div>
+                            <div class="data-row"><span class="data-label">${txt.active_ing[currentLang]}</span> <ul style="margin:5px 0; padding-inline-start:20px;">${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}</ul></div>
                             ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">${txt.ph_level[currentLang]}</span> ${p.pharmacology.ph_level[currentLang]}</div>` : ''}
                         </div>
-
                         <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
                             <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
                             <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
                             <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
-                            <div class="data-row">
-                                <span class="data-label">${txt.layering[currentLang]}</span>
-                                <div class="tags-container">${bestMix} ${doNotMix}</div>
-                            </div>
+                            <div class="data-row"><span class="data-label">${txt.layering[currentLang]}</span><div class="tags-container">${bestMix} ${doNotMix}</div></div>
                         </div>
-
                         <div class="section-title">⚠️ ${txt.indications[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row"><span class="data-label">${txt.ind_label[currentLang]}</span> ${p.precautions.indications[currentLang]}</div>
-                            <div class="data-row">
-                                <span class="data-label">${txt.safety_label[currentLang]}</span>
-                                ${pregnancySafeHtml} ${sunSafeHtml}
-                            </div>
+                            <div class="data-row"><span class="data-label">${txt.safety_label[currentLang]}</span> ${p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل' : 'Not Safe'}</span>`} ${p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يتحسس للشمس' : 'Sun Sensitive'}</span>` : ''}</div>
                             <div class="data-row"><span class="data-label">${txt.notes_label[currentLang]}</span> ${p.precautions.notes[currentLang]}</div>
                         </div>
                     </div>
@@ -300,16 +275,11 @@
             return html;
         }
 
-        function openGlossary(termId) {
-            const term = glossaryDict[termId];
-            if(term) {
-                document.getElementById('glossaryTitle').innerText = term.title[currentLang];
-                document.getElementById('glossaryBody').innerText = term.desc[currentLang];
-                document.getElementById('glossaryModal').style.display = 'flex';
-            }
-        }
-        
+        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerText = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
+        
+        function openImageModal(imgSrc) { document.getElementById('zoomedImg').src = imgSrc; document.getElementById('imageModal').style.display = 'flex'; }
+        function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
         
         function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
         function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme') === 'dark' ? (r.removeAttribute('data-theme'), localStorage.setItem('siteTheme', 'light')) : (r.setAttribute('data-theme', 'dark'), localStorage.setItem('siteTheme', 'dark')); }
