@@ -26,8 +26,8 @@ brandsList.push({
 // 2. قائمة المنتجات العميقة
 deepProductsList.push({
     id: 'lrp_effaclar_duo', 
-    brandId: 'laroche', // للربط بالتصفح
-    familyId: 'effaclar', // للربط بالتصفح
+    brandId: 'laroche', 
+    familyId: 'effaclar', 
     brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' },
     image: "", 
@@ -40,6 +40,11 @@ deepProductsList.push({
         mechanism: { 
             ar: 'استهداف بكتيريا C.acnes ومنع تكوين الأغشية الحيوية، مع تقشير دقيق لمنع انسداد المسام وتقليل التصبغات.', 
             en: 'Targets C.acnes biofilms and micro-exfoliates to prevent PIH.' 
+        },
+        // --- النتيجة أو الفائدة للمريض ---
+        patient_benefit: {
+            ar: 'يعالج الحبوب النشطة من جذورها ويمنع ظهور حبوب جديدة، والأهم أنه يمنع تحول الحبة الحمراء إلى بقعة داكنة أو أثر بني بعد جفافها.',
+            en: 'Treats active breakouts, prevents new ones, and stops red pimples from turning into dark brown marks.'
         },
         active_ingredients: [
             { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory.' } },
