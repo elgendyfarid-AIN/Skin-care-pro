@@ -56,7 +56,6 @@
         .potency-indicator { font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 12px; background-color: rgba(0,0,0,0.05); display: inline-block; margin-top: 4px;}
         [data-theme="dark"] .potency-indicator { background-color: rgba(255,255,255,0.1); }
 
-        /* تنسيق القاموس (Glossary) */
         .glossary-term { font-weight: 900; text-decoration: underline; text-decoration-style: dashed; color: var(--accent-blue); cursor: pointer; transition: color 0.2s; }
         .glossary-term:hover { color: var(--accent-teal); }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(3px); }
@@ -81,7 +80,7 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-title" id="glossaryTitle"></div>
             <div class="modal-body" id="glossaryBody"></div>
-            <button class="close-btn" onclick="closeGlossary()">فهمت / Got it</button>
+            <button class="close-btn" onclick="closeGlossary()" id="glossaryCloseBtn">فهمت / Got it</button>
         </div>
     </div>
 
@@ -93,9 +92,21 @@
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
             skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' },
+            mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
+            active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' },
+            ph_level: { ar: 'مستوى الحموضة (pH):', en: 'pH Level:' },
             usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, 
+            potency_label: { ar: 'مؤشر القوة (Potency):', en: 'Potency Indicator:' },
+            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' },
+            application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
+            routine_step: { ar: 'موقعه في الروتين:', en: 'Step in Routine:' },
+            layering: { ar: 'المقبول والمحظور مع هذا المنتج (Layering):', en: 'Layering (Do\'s & Don\'ts):' },
             indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, 
-            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' } 
+            ind_label: { ar: 'الحالات المستهدفة (Indications):', en: 'Target Indications:' },
+            safety_label: { ar: 'الأمان:', en: 'Safety:' },
+            notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
+            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' },
+            close: { ar: 'إغلاق', en: 'Close' }
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
@@ -104,6 +115,8 @@
 
         function renderView(view, param1, param2) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
+            document.getElementById('glossaryCloseBtn').innerText = txt.close[currentLang];
+
             if (view === 'home') {
                 let html = `<div class="main-paths">
                             <div class="path-btn" onclick="navigateTo('brands')">📦 ${txt.browseProducts[currentLang]}</div>
@@ -124,22 +137,29 @@
                 let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
                 html += buildDeepProductsHTML(deepProductsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
             } else if (view === 'cases' || view === 'skin_types') {
-                app.innerHTML = buildBreadcrumb([{label: "جاري التحديث للنسخة العميقة...", action: "navigateTo('home')"}]);
+                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث للنسخة العميقة..." : "Updating to Clinical Edition...", action: "navigateTo('home')"}]);
             }
         }
 
         function buildDeepProductsHTML(arr) {
-            if(arr.length === 0) return `<div style="text-align:center; padding:20px;">لا توجد منتجات تم تحديثها للنسخة العميقة بعد...</div>`;
+            if(arr.length === 0) return `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد منتجات بعد...' : 'No products yet...'}</div>`;
             let html = '';
             arr.forEach(p => {
-                let imgElement = p.image ? `<img src="${p.image}" style="width:80px; height:80px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">صورة<br>المنتج</div>`;
-                let doNotMix = p.clinical_usage.layering.do_not_mix_with.map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
-                let bestMix = p.clinical_usage.layering.best_mixed_with.map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
+                let imgElement = p.image ? `<img src="${p.image}" style="width:80px; height:80px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
                 
+                // التأكد من استدعاء اللغة الصحيحة في المصفوفات
+                let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
+                let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
+                
+                // مؤشر القوة حسب اللغة
                 let potencyHtml = '';
-                if(p.potency === 1) potencyHtml = '<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ لطيف (Mild)</span>';
-                if(p.potency === 2) potencyHtml = '<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ متوسط (Moderate)</span>';
-                if(p.potency === 3) potencyHtml = '<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 قوي/مكثف (Strong)</span>';
+                if(p.potency === 1) potencyHtml = `<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ ${currentLang === 'ar' ? 'لطيف (Mild)' : 'Mild'}</span>`;
+                if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
+                if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
+
+                // علامات الأمان حسب اللغة
+                let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل (غير آمن)' : 'Not Safe for Pregnancy'}</span>`;
+                let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يزيد التحسس للشمس (يتطلب واقي)' : 'Increases Sun Sensitivity (Requires SPF)'}</span>` : '';
 
                 html += `
                 <div class="product-card">
@@ -156,41 +176,40 @@
                         <div class="section-title">🧪 ${txt.pharmacology[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row">
-                                <span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism[currentLang]}
+                                <span class="data-label">${txt.mechanism[currentLang]}</span> ${p.pharmacology.mechanism[currentLang]}
                                 <div class="benefit-box">
                                     <span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> 
                                     ${p.pharmacology.patient_benefit[currentLang]}
                                 </div>
                             </div>
-                            <div class="data-row"><span class="data-label">المواد الفعالة والتركيزات:</span> 
+                            <div class="data-row"><span class="data-label">${txt.active_ing[currentLang]}</span> 
                                 <ul style="margin:5px 0; padding-inline-start: 20px;">
                                     ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}
                                 </ul>
                             </div>
-                            ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">مستوى الحموضة (pH):</span> ${p.pharmacology.ph_level}</div>` : ''}
+                            ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">${txt.ph_level[currentLang]}</span> ${p.pharmacology.ph_level[currentLang]}</div>` : ''}
                         </div>
 
                         <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">مؤشر القوة (Potency):</span> ${potencyHtml}</div>
-                            <div class="data-row"><span class="data-label">التكرار والمدة:</span> ${p.clinical_usage.frequency[currentLang]}</div>
-                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
-                            <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
+                            <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                             <div class="data-row">
-                                <span class="data-label">المقبول والمحظور مع هذا المنتج (Layering):</span>
+                                <span class="data-label">${txt.layering[currentLang]}</span>
                                 <div class="tags-container">${bestMix} ${doNotMix}</div>
                             </div>
                         </div>
 
                         <div class="section-title">⚠️ ${txt.indications[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">الحالات المستهدفة (Indications):</span> ${p.precautions.indications[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">${txt.ind_label[currentLang]}</span> ${p.precautions.indications[currentLang]}</div>
                             <div class="data-row">
-                                <span class="data-label">الأمان:</span>
-                                ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل (غير آمن)</span>'}
-                                ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يتطلب واقي)</span>' : ''}
+                                <span class="data-label">${txt.safety_label[currentLang]}</span>
+                                ${pregnancySafeHtml} ${sunSafeHtml}
                             </div>
-                            <div class="data-row"><span class="data-label">ملاحظات:</span> ${p.precautions.notes[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">${txt.notes_label[currentLang]}</span> ${p.precautions.notes[currentLang]}</div>
                         </div>
                     </div>
                 </div>`;
@@ -198,7 +217,6 @@
             return html;
         }
 
-        // دالة فتح القاموس
         function openGlossary(termId) {
             const term = glossaryDict[termId];
             if(term) {
@@ -208,10 +226,7 @@
             }
         }
         
-        // دالة إغلاق القاموس
-        function closeGlossary() { 
-            document.getElementById('glossaryModal').style.display = 'none'; 
-        }
+        function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
         
         function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
         function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme') === 'dark' ? (r.removeAttribute('data-theme'), localStorage.setItem('siteTheme', 'light')) : (r.setAttribute('data-theme', 'dark'), localStorage.setItem('siteTheme', 'dark')); }
