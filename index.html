@@ -22,9 +22,6 @@
         button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .container { padding: 0 20px; max-width: 800px; margin: 0 auto; }
         
-        .quick-tags-wrapper { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
-        .quick-tags-wrapper::-webkit-scrollbar { display: none; }
-        .quick-tag { display: inline-block; background-color: var(--card-bg); color: var(--accent-blue); padding: 10px 20px; border-radius: 20px; margin-left: 10px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid var(--accent-blue); }
         .main-paths { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
         .path-btn { background-color: var(--card-bg); color: var(--text-main); padding: 20px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;}
         .path-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
@@ -50,7 +47,6 @@
         [data-theme="dark"] .data-row { background-color: rgba(255,255,255,0.03); }
         .data-label { font-weight: bold; color: var(--text-main); display: block; margin-bottom: 4px; }
         
-        /* تنسيق الفائدة للمريض */
         .benefit-box { margin-top: 8px; padding: 10px; background-color: rgba(4,130,116,0.08); border-right: 3px solid var(--accent-teal); border-radius: 6px; }
         [dir="ltr"] .benefit-box { border-right: none; border-left: 3px solid var(--accent-teal); }
         
@@ -79,10 +75,10 @@
             home: { ar: 'الرئيسية', en: 'Home' }, brands: { ar: 'العلامات التجارية', en: 'Brands' },
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
             skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
-            pharmacology: { ar: 'البطاقة الدوائية (Pharmacology)', en: 'Pharmacology' },
-            usage: { ar: 'الاستخدام (Usage)', en: 'Usage' },
-            precautions: { ar: 'التحذيرات والفئة المستهدفة', en: 'Precautions' },
-            benefit: { ar: '💡 النتيجة للمريض (Benefit):', en: '💡 Patient Benefit:' }
+            pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' },
+            usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, // تعديل 1
+            indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, // تعديل 3
+            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' } // تعديل "النتيجة للمستخدم"
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
@@ -160,17 +156,17 @@
                         <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row"><span class="data-label">مؤشر القوة (Potency):</span> ${potencyHtml}</div>
-                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">التكرار والمدة:</span> ${p.clinical_usage.frequency[currentLang]}</div> <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
                             <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                             <div class="data-row">
-                                <span class="data-label">قواعد الدمج (Layering):</span>
-                                <div class="tags-container">${doNotMix} ${bestMix}</div>
+                                <span class="data-label">المقبول والمحظور مع هذا المنتج (Layering):</span>
+                                <div class="tags-container">${bestMix} ${doNotMix}</div>
                             </div>
                         </div>
 
-                        <div class="section-title">⚠️ ${txt.precautions[currentLang]}</div>
+                        <div class="section-title">⚠️ ${txt.indications[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row">
+                            <div class="data-row"><span class="data-label">الحالات المستهدفة (Indications):</span> ${p.precautions.indications[currentLang]}</div> <div class="data-row">
                                 <span class="data-label">الأمان:</span>
                                 ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل (غير آمن)</span>'}
                                 ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يتطلب واقي)</span>' : ''}
