@@ -22,7 +22,6 @@
         button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .container { padding: 0 20px; max-width: 800px; margin: 0 auto; }
         
-        /* Navigation Styles */
         .quick-tags-wrapper { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
         .quick-tags-wrapper::-webkit-scrollbar { display: none; }
         .quick-tag { display: inline-block; background-color: var(--card-bg); color: var(--accent-blue); padding: 10px 20px; border-radius: 20px; margin-left: 10px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid var(--accent-blue); }
@@ -35,7 +34,6 @@
         .tree-btn { background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; color: var(--text-main); }
         .page-title { font-size: 22px; margin-bottom: 20px; color: var(--text-main); font-weight: 800; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; display: inline-block;}
         
-        /* Clinical Deep Card Styles */
         .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
         .product-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
         .img-placeholder { width: 80px; height: 80px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; flex-shrink: 0; }
@@ -51,6 +49,10 @@
         .data-row { background-color: rgba(0,0,0,0.02); padding: 10px 15px; border-radius: 8px; }
         [data-theme="dark"] .data-row { background-color: rgba(255,255,255,0.03); }
         .data-label { font-weight: bold; color: var(--text-main); display: block; margin-bottom: 4px; }
+        
+        /* تنسيق الفائدة للمريض */
+        .benefit-box { margin-top: 8px; padding: 10px; background-color: rgba(4,130,116,0.08); border-right: 3px solid var(--accent-teal); border-radius: 6px; }
+        [dir="ltr"] .benefit-box { border-right: none; border-left: 3px solid var(--accent-teal); }
         
         .tags-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
         .tag-safe { background-color: rgba(4,130,116,0.1); color: var(--accent-teal); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--accent-teal); }
@@ -79,7 +81,8 @@
             skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
             pharmacology: { ar: 'البطاقة الدوائية (Pharmacology)', en: 'Pharmacology' },
             usage: { ar: 'الاستخدام (Usage)', en: 'Usage' },
-            precautions: { ar: 'التحذيرات والفئة المستهدفة', en: 'Precautions' }
+            precautions: { ar: 'التحذيرات والفئة المستهدفة', en: 'Precautions' },
+            benefit: { ar: '💡 النتيجة للمريض (Benefit):', en: '💡 Patient Benefit:' }
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
@@ -120,7 +123,6 @@
                 let doNotMix = p.clinical_usage.layering.do_not_mix_with.map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
                 let bestMix = p.clinical_usage.layering.best_mixed_with.map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
                 
-                // مؤشر القوة
                 let potencyHtml = '';
                 if(p.potency === 1) potencyHtml = '<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ لطيف (Mild)</span>';
                 if(p.potency === 2) potencyHtml = '<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ متوسط (Moderate)</span>';
@@ -140,7 +142,13 @@
                     <div class="content-box">
                         <div class="section-title">🧪 ${txt.pharmacology[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism[currentLang]}</div>
+                            <div class="data-row">
+                                <span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism[currentLang]}
+                                <div class="benefit-box">
+                                    <span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> 
+                                    ${p.pharmacology.patient_benefit[currentLang]}
+                                </div>
+                            </div>
                             <div class="data-row"><span class="data-label">المواد الفعالة والتركيزات:</span> 
                                 <ul style="margin:5px 0; padding-inline-start: 20px;">
                                     ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}
