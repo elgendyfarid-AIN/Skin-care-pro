@@ -55,6 +55,15 @@
         .tag-danger { background-color: rgba(217,4,41,0.1); color: var(--danger); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--danger); }
         .potency-indicator { font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 12px; background-color: rgba(0,0,0,0.05); display: inline-block; margin-top: 4px;}
         [data-theme="dark"] .potency-indicator { background-color: rgba(255,255,255,0.1); }
+
+        /* تنسيق القاموس (Glossary) */
+        .glossary-term { font-weight: 900; text-decoration: underline; text-decoration-style: dashed; color: var(--accent-blue); cursor: pointer; transition: color 0.2s; }
+        .glossary-term:hover { color: var(--accent-teal); }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(3px); }
+        .modal-content { background-color: var(--card-bg); padding: 25px; border-radius: var(--border-radius); width: 85%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal-title { font-size: 20px; font-weight: 900; color: var(--accent-blue); margin-bottom: 10px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
+        .modal-body { font-size: 15px; line-height: 1.6; margin-bottom: 20px; color: var(--text-main); }
+        .close-btn { width: 100%; background-color: var(--accent-teal); }
     </style>
 </head>
 <body>
@@ -68,6 +77,14 @@
     
     <div class="container" id="app"></div>
 
+    <div class="modal-overlay" id="glossaryModal" onclick="closeGlossary()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-title" id="glossaryTitle"></div>
+            <div class="modal-body" id="glossaryBody"></div>
+            <button class="close-btn" onclick="closeGlossary()">فهمت / Got it</button>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script>
         let currentLang = localStorage.getItem('siteLang') || 'ar';
@@ -76,9 +93,9 @@
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
             skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' },
-            usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, // تعديل 1
-            indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, // تعديل 3
-            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' } // تعديل "النتيجة للمستخدم"
+            usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, 
+            indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, 
+            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' } 
         };
 
         function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
@@ -156,7 +173,8 @@
                         <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row"><span class="data-label">مؤشر القوة (Potency):</span> ${potencyHtml}</div>
-                            <div class="data-row"><span class="data-label">التكرار والمدة:</span> ${p.clinical_usage.frequency[currentLang]}</div> <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">التكرار والمدة:</span> ${p.clinical_usage.frequency[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
                             <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                             <div class="data-row">
                                 <span class="data-label">المقبول والمحظور مع هذا المنتج (Layering):</span>
@@ -166,7 +184,8 @@
 
                         <div class="section-title">⚠️ ${txt.indications[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">الحالات المستهدفة (Indications):</span> ${p.precautions.indications[currentLang]}</div> <div class="data-row">
+                            <div class="data-row"><span class="data-label">الحالات المستهدفة (Indications):</span> ${p.precautions.indications[currentLang]}</div>
+                            <div class="data-row">
                                 <span class="data-label">الأمان:</span>
                                 ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل (غير آمن)</span>'}
                                 ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يتطلب واقي)</span>' : ''}
@@ -179,6 +198,21 @@
             return html;
         }
 
+        // دالة فتح القاموس
+        function openGlossary(termId) {
+            const term = glossaryDict[termId];
+            if(term) {
+                document.getElementById('glossaryTitle').innerText = term.title[currentLang];
+                document.getElementById('glossaryBody').innerText = term.desc[currentLang];
+                document.getElementById('glossaryModal').style.display = 'flex';
+            }
+        }
+        
+        // دالة إغلاق القاموس
+        function closeGlossary() { 
+            document.getElementById('glossaryModal').style.display = 'none'; 
+        }
+        
         function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
         function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme') === 'dark' ? (r.removeAttribute('data-theme'), localStorage.setItem('siteTheme', 'light')) : (r.setAttribute('data-theme', 'dark'), localStorage.setItem('siteTheme', 'dark')); }
         window.onload = loadSavedView;
