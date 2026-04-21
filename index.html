@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skin Care Pro - Clinical Edition</title>
+    <meta name="referrer" content="no-referrer">
+    <title>Skin Care Pro</title>
     <style>
         :root {
             --bg-color: #f0f4f8; --card-bg: #ffffff; --text-main: #102a43;
@@ -14,115 +15,169 @@
             --bg-color: #102a43; --card-bg: #243b53; --text-main: #f0f4f8;
             --text-secondary: #bcccdc; --accent-blue: #4aa9ec; --accent-teal: #2cb1bc;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; padding-bottom: 50px; }
-        .header { background-color: var(--card-bg); padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue); }
-        .site-title { font-size: 26px; font-weight: 900; margin: 0; color: var(--accent-blue); }
-        .container { padding: 20px; max-width: 800px; margin: 0 auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; padding-bottom: 50px; transition: 0.3s ease;}
+        .header { background-color: var(--card-bg); padding: 15px 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent-blue);}
+        .site-title { font-size: 24px; font-weight: 900; color: var(--accent-blue); margin: 0; cursor: pointer; user-select: none; }
+        .controls { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { padding: 0 20px; max-width: 800px; margin: 0 auto; }
         
+        /* Navigation Styles */
+        .quick-tags-wrapper { overflow-x: auto; white-space: nowrap; padding-bottom: 10px; margin-bottom: 20px; scrollbar-width: none; }
+        .quick-tags-wrapper::-webkit-scrollbar { display: none; }
+        .quick-tag { display: inline-block; background-color: var(--card-bg); color: var(--accent-blue); padding: 10px 20px; border-radius: 20px; margin-left: 10px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid var(--accent-blue); }
+        .main-paths { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .path-btn { background-color: var(--card-bg); color: var(--text-main); padding: 20px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;}
+        .path-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+        .breadcrumb span { cursor: pointer; color: var(--accent-blue); font-weight: bold; }
+        .breadcrumb span:hover { text-decoration: underline; }
+        .tree-btn { background-color: var(--card-bg); padding: 15px 20px; margin-bottom: 10px; border-radius: var(--border-radius); font-weight: bold; font-size: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; color: var(--text-main); }
+        .page-title { font-size: 22px; margin-bottom: 20px; color: var(--text-main); font-weight: 800; border-bottom: 2px solid var(--accent-blue); padding-bottom: 10px; display: inline-block;}
+        
+        /* Clinical Deep Card Styles */
         .product-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
         .product-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
-        .img-placeholder { width: 90px; height: 90px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; flex-shrink: 0; }
+        .img-placeholder { width: 80px; height: 80px; background-color: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #64748b; text-align: center; border: 1px dashed #cbd5e1; flex-shrink: 0; }
         [data-theme="dark"] .img-placeholder { background-color: #334e68; border-color: #486581; color: #9fb3c8; }
         .header-info { flex-grow: 1; }
         .brand-name { font-size: 12px; font-weight: bold; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
-        .product-name { font-size: 20px; font-weight: 800; color: var(--accent-blue); margin: 5px 0; }
+        .product-name { font-size: 18px; font-weight: 800; color: var(--accent-blue); margin: 5px 0; }
         
-        .section-title { font-size: 16px; font-weight: bold; color: var(--accent-teal); margin: 15px 0 10px 0; display: flex; align-items: center; gap: 8px; }
+        .section-title { font-size: 15px; font-weight: bold; color: var(--accent-teal); margin: 15px 0 10px 0; display: flex; align-items: center; gap: 8px; }
         .section-title::before { content: ''; width: 4px; height: 16px; background-color: var(--accent-teal); border-radius: 2px; }
-        
         .content-box { padding: 0 20px 20px 20px; }
-        .data-grid { display: grid; grid-template-columns: 1fr; gap: 10px; font-size: 14px; line-height: 1.6; }
+        .data-grid { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 13px; line-height: 1.6; }
         .data-row { background-color: rgba(0,0,0,0.02); padding: 10px 15px; border-radius: 8px; }
         [data-theme="dark"] .data-row { background-color: rgba(255,255,255,0.03); }
         .data-label { font-weight: bold; color: var(--text-main); display: block; margin-bottom: 4px; }
         
-        .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
+        .tags-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
         .tag-safe { background-color: rgba(4,130,116,0.1); color: var(--accent-teal); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--accent-teal); }
         .tag-danger { background-color: rgba(217,4,41,0.1); color: var(--danger); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; border: 1px solid var(--danger); }
-        
-        .controls { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 8px; background-color: var(--accent-blue); color: #ffffff; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .potency-indicator { font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 12px; background-color: rgba(0,0,0,0.05); display: inline-block; margin-top: 4px;}
+        [data-theme="dark"] .potency-indicator { background-color: rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1 class="site-title">Skin Care Pro <span style="font-size:14px; color:var(--text-secondary);">| Clinical Edition</span></h1>
+        <h1 class="site-title" onclick="navigateTo('home')">Skin Care Pro <span style="font-size:12px; color:var(--text-secondary);">| Clinical</span></h1>
     </div>
     <div class="controls">
+        <button onclick="toggleLanguage()">🌐 عربي / English</button>
         <button onclick="toggleTheme()">🌓 الوضع الليلي</button>
     </div>
     
-    <div class="container" id="app">
-        </div>
+    <div class="container" id="app"></div>
 
     <script src="data.js"></script>
     <script>
-        function toggleTheme() {
-            const r = document.documentElement;
-            r.getAttribute('data-theme') === 'dark' ? r.removeAttribute('data-theme') : r.setAttribute('data-theme', 'dark');
+        let currentLang = localStorage.getItem('siteLang') || 'ar';
+        const txt = {
+            home: { ar: 'الرئيسية', en: 'Home' }, brands: { ar: 'العلامات التجارية', en: 'Brands' },
+            cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, browseProducts: { ar: 'تصفح بالمنتجات', en: 'Browse by Products' },
+            skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
+            pharmacology: { ar: 'البطاقة الدوائية (Pharmacology)', en: 'Pharmacology' },
+            usage: { ar: 'الاستخدام (Usage)', en: 'Usage' },
+            precautions: { ar: 'التحذيرات والفئة المستهدفة', en: 'Precautions' }
+        };
+
+        function navigateTo(view, param1 = '', param2 = '') { localStorage.setItem('cv', view); localStorage.setItem('p1', param1); localStorage.setItem('p2', param2); renderView(view, param1, param2); }
+        function loadSavedView() { if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1') || '', localStorage.getItem('p2') || ''); }
+        function buildBreadcrumb(pathArray) { let html = `<div class="breadcrumb"><span onclick="navigateTo('home')">${txt.home[currentLang]}</span>`; pathArray.forEach(item => { html += ` / <span onclick="${item.action}">${item.label}</span>`; }); html += `</div>`; return html; }
+
+        function renderView(view, param1, param2) {
+            const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; 
+            if (view === 'home') {
+                let html = `<div class="main-paths">
+                            <div class="path-btn" onclick="navigateTo('brands')">📦 ${txt.browseProducts[currentLang]}</div>
+                            <div class="path-btn" onclick="navigateTo('cases')">🩺 ${txt.cases[currentLang]}</div>
+                            <div class="path-btn" onclick="navigateTo('skin_types')">🧑‍⚕️ ${txt.skinTypes[currentLang]}</div>
+                        </div>`;
+                app.innerHTML = html;
+            } else if (view === 'brands') {
+                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: ""}]); html += `<div class="page-title">${txt.brands[currentLang]}</div>`;
+                brandsList.forEach(b => { html += `<div class="tree-btn" onclick="navigateTo('families', '${b.id}')">${b.name} <span>▼</span></div>`; }); app.innerHTML = html;
+            } else if (view === 'families') {
+                const brand = brandsList.find(b => b.id === param1);
+                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: ""}]);
+                html += `<div class="page-title">${brand.name}</div>`;
+                brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); app.innerHTML = html;
+            } else if (view === 'products') {
+                const brand = brandsList.find(b => b.id === param1); const family = brand.families.find(f => f.id === param2);
+                let html = buildBreadcrumb([{label: txt.brands[currentLang], action: "navigateTo('brands')"}, {label: brand.name, action: `MapsTo('families', '${brand.id}')`}, {label: family.name[currentLang], action: ""}]);
+                html += buildDeepProductsHTML(deepProductsList.filter(p => p.brandId === param1 && p.familyId === param2)); app.innerHTML = html;
+            } else if (view === 'cases' || view === 'skin_types') {
+                app.innerHTML = buildBreadcrumb([{label: "جاري التحديث للنسخة العميقة...", action: "navigateTo('home')"}]);
+            }
         }
 
-        function renderProducts() {
-            const app = document.getElementById('app');
+        function buildDeepProductsHTML(arr) {
+            if(arr.length === 0) return `<div style="text-align:center; padding:20px;">لا توجد منتجات تم تحديثها للنسخة العميقة بعد...</div>`;
             let html = '';
-            
-            deepProductsList.forEach(p => {
-                // معالجة مكان الصورة (الخانة محجوزة للمستقبل)
-                let imageElement = p.image ? `<img src="${p.image}" style="width:90px; height:90px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">صورة<br>المنتج</div>`;
-                
-                // معالجة التداخلات الدوائية
+            arr.forEach(p => {
+                let imgElement = p.image ? `<img src="${p.image}" style="width:80px; height:80px; object-fit:contain; border-radius:8px;">` : `<div class="img-placeholder">صورة<br>المنتج</div>`;
                 let doNotMix = p.clinical_usage.layering.do_not_mix_with.map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
                 let bestMix = p.clinical_usage.layering.best_mixed_with.map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
+                
+                // مؤشر القوة
+                let potencyHtml = '';
+                if(p.potency === 1) potencyHtml = '<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ لطيف (Mild)</span>';
+                if(p.potency === 2) potencyHtml = '<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ متوسط (Moderate)</span>';
+                if(p.potency === 3) potencyHtml = '<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 قوي/مكثف (Strong)</span>';
 
                 html += `
                 <div class="product-card">
                     <div class="product-header">
-                        ${imageElement}
+                        ${imgElement}
                         <div class="header-info">
                             <div class="brand-name">${p.brand}</div>
-                            <div class="product-name">${p.name.ar}</div>
-                            <div style="font-size:13px; color:var(--text-secondary);">${p.name.en}</div>
+                            <div class="product-name">${p.name[currentLang]}</div>
+                            <div style="font-size:12px; color:var(--text-secondary);">${currentLang === 'ar' ? p.name.en : p.name.ar}</div>
                         </div>
                     </div>
                     
                     <div class="content-box">
-                        <div class="section-title">🧪 البطاقة الدوائية (Pharmacology)</div>
+                        <div class="section-title">🧪 ${txt.pharmacology[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism.ar}</div>
+                            <div class="data-row"><span class="data-label">آلية العمل:</span> ${p.pharmacology.mechanism[currentLang]}</div>
                             <div class="data-row"><span class="data-label">المواد الفعالة والتركيزات:</span> 
                                 <ul style="margin:5px 0; padding-inline-start: 20px;">
-                                    ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role.ar}</li>`).join('')}
+                                    ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}
                                 </ul>
                             </div>
                             ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">مستوى الحموضة (pH):</span> ${p.pharmacology.ph_level}</div>` : ''}
                         </div>
 
-                        <div class="section-title">🩺 الاستخدام السريري (Clinical Usage)</div>
+                        <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                         <div class="data-grid">
-                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application.ar}</div>
-                            <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine.ar}</div>
+                            <div class="data-row"><span class="data-label">مؤشر القوة (Potency):</span> ${potencyHtml}</div>
+                            <div class="data-row"><span class="data-label">الجرعة وطريقة التطبيق:</span> ${p.clinical_usage.application[currentLang]}</div>
+                            <div class="data-row"><span class="data-label">موقعه في الروتين:</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                             <div class="data-row">
                                 <span class="data-label">قواعد الدمج (Layering):</span>
                                 <div class="tags-container">${doNotMix} ${bestMix}</div>
                             </div>
                         </div>
 
-                        <div class="section-title">⚠️ التحذيرات والفئة المستهدفة</div>
+                        <div class="section-title">⚠️ ${txt.precautions[currentLang]}</div>
                         <div class="data-grid">
                             <div class="data-row">
                                 <span class="data-label">الأمان:</span>
-                                ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل</span>'}
-                                ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يجب واقي)</span>' : ''}
+                                ${p.precautions.pregnancy_safe ? '<span class="tag-safe">🤰 آمن للحوامل</span>' : '<span class="tag-danger">⛔ يمنع للحوامل (غير آمن)</span>'}
+                                ${p.precautions.sun_sensitivity ? '<span class="tag-danger">☀️ يزيد التحسس للشمس (يتطلب واقي)</span>' : ''}
                             </div>
-                            <div class="data-row"><span class="data-label">ملاحظات سريرية:</span> ${p.precautions.notes.ar}</div>
+                            <div class="data-row"><span class="data-label">ملاحظات:</span> ${p.precautions.notes[currentLang]}</div>
                         </div>
                     </div>
                 </div>`;
             });
-            app.innerHTML = html;
+            return html;
         }
 
-        window.onload = renderProducts;
+        function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
+        function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme') === 'dark' ? (r.removeAttribute('data-theme'), localStorage.setItem('siteTheme', 'light')) : (r.setAttribute('data-theme', 'dark'), localStorage.setItem('siteTheme', 'dark')); }
+        window.onload = loadSavedView;
     </script>
 </body>
 </html>
