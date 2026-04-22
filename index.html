@@ -14,6 +14,8 @@
             <h1 class="brand-logo">SkinCare <span class="gold-text">Pro</span></h1>
         </div>
         <div class="controls-container">
+            <input type="text" id="productSearch" placeholder="🔍 ابحث عن منتج..." style="padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--accent-gold); outline: none; background: var(--bg-color); color: var(--text-main); font-family: 'Tajawal', sans-serif;">
+            
             <button id="themeToggle" class="control-btn" title="تغيير الإضاءة">🌙</button>
             <button id="langToggle" class="control-btn" title="تغيير اللغة">EN</button>
         </div>
@@ -27,16 +29,13 @@
         </div>
 
         <section id="products-section" class="content-section active">
-            <div id="brandsGrid" class="brands-grid">
-                </div>
-            <div id="familiesGrid" class="families-grid" style="display: none;">
-                </div>
-            <div id="productsGrid" class="products-grid" style="display: none;">
-                </div>
+            <div id="brandsGrid" class="brands-grid"></div>
+            <div id="familiesGrid" class="families-grid" style="display: none;"></div>
+            <div id="productsGrid" class="products-grid" style="display: none;"></div>
         </section>
 
         <section id="routines-section" class="content-section" style="display: none;">
-            <h2 class="section-title">حالات البشرة (قريباً)</h2>
+            <h2 class="section-title">الأنظمة والروتين (قريباً)</h2>
         </section>
 
         <section id="skin-types-section" class="content-section" style="display: none;">
@@ -47,8 +46,7 @@
     <div id="productModal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-modal-btn">&times;</button>
-            <div id="productDetails" class="product-details-container">
-                </div>
+            <div id="productDetails" class="product-details-container"></div>
         </div>
     </div>
 
