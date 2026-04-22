@@ -6788,14 +6788,12 @@ deepProductsList.push({
     precautions: { indications: { ar: 'التحسس الجلدي والتهيج العابر.', en: 'Skin allergies and transient irritation.' }, pregnancy_safe: true, sun_sensitivity: false }
 });
 // ==========================================
-// ==========================================
-// 🛡️ كود الإنقاذ النهائي والشامل (Bulletproof Fix)
+// 🛡️ كود الإنقاذ النهائي (The Bulletproof Fix)
+// حط الكود ده في آخر الملف خالص عشان يفتح كل المعلومات
 // ==========================================
 deepProductsList.forEach((product) => {
-    // 1. التأكد من وجود كائن الاستخدام السريري
-    if (!product.clinical_usage) {
-        product.clinical_usage = {};
-    }
+    // 1. لو المنتج ملوش خانة استخدام سريري، نكريتها له
+    if (!product.clinical_usage) product.clinical_usage = {};
 
     // 2. إصلاح خانة التعارضات (السبب الرئيسي للانهيار)
     if (!product.clinical_usage.layering) {
@@ -6805,18 +6803,15 @@ deepProductsList.forEach((product) => {
         };
     }
 
-    // 3. ضمان وجود الخانات الإلزامية الأخرى للعرض
+    // 3. التأكد من وجود التكرار وطريقة الاستخدام عشان الموقع ميهنجش
     if (!product.clinical_usage.frequency) product.clinical_usage.frequency = { ar: '-', en: '-' };
-    if (!product.clinical_usage.step_in_routine) product.clinical_usage.step_in_routine = { ar: '-', en: '-' };
     if (!product.clinical_usage.application) product.clinical_usage.application = { ar: '-', en: '-' };
 
-    if (!product.pharmacology) {
-        product.pharmacology = { mechanism: { ar: '-', en: '-' }, active_ingredients: [] };
-    }
-
+    // 4. التأكد من وجود خانة الاحتياطات
     if (!product.precautions) {
         product.precautions = { indications: { ar: '-', en: '-' }, pregnancy_safe: true, sun_sensitivity: false };
     }
 });
 
+console.log("✅ تم فحص وإصلاح " + deepProductsList.length + " منتج بنجاح.");
 console.log("✅ تم فحص وإصلاح " + deepProductsList.length + " منتج. الموقع جاهز للعمل الآن.");
