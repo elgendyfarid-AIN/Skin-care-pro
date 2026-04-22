@@ -1,56 +1,82 @@
-// 1. نظام إدارة السمة (Dark / Light Mode)
-const themeToggleBtn = document.getElementById('themeToggle');
-const bodyElement = document.body;
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinCare Pro - Elite Medical Reference</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light"> <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">SkinCare <span>Pro</span></a>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="globalSearch" placeholder="ابحث باسم المنتج، المادة الفعالة، أو الحالة المرضية...">
+            <button class="search-btn">🔍</button>
+        </div>
 
-themeToggleBtn.addEventListener('click', () => {
-    if (bodyElement.classList.contains('theme-light')) {
-        bodyElement.classList.replace('theme-light', 'theme-dark');
-        localStorage.setItem('skinCareProTheme', 'theme-dark');
-    } else {
-        bodyElement.classList.replace('theme-dark', 'theme-light');
-        localStorage.setItem('skinCareProTheme', 'theme-light');
-    }
-});
+        <div class="user-settings">
+            <button id="langToggle" class="btn-outline">En / Ar</button>
+            <button id="themeToggle" class="btn-outline">🌙 / ☀️</button>
+        </div>
+    </header>
 
-// الاحتفاظ بإعدادات المستخدم عند إعادة التحميل
-window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('skinCareProTheme');
-    if (savedTheme) {
-        bodyElement.classList.remove('theme-light', 'theme-dark');
-        bodyElement.classList.add(savedTheme);
-    }
-});
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="#products" class="active">المنتجات (Products)</a></li>
+            <li><a href="#routines">الحالات والروتين (Indications)</a></li>
+            <li><a href="#skintypes">أنواع البشرة (Skin Types)</a></li>
+        </ul>
+    </nav>
 
-// 2. محرك البحث (ربط مبدئي)
-const searchInput = document.getElementById('globalSearch');
-searchInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        const query = e.target.value.trim();
-        if(query) {
-            console.log(`جارٍ البحث في قاعدة البيانات عن: ${query}`);
-            // سيتم ربط هذه الدالة ببيانات NoSQL لاحقاً لفلترة المنتجات
-        }
-    }
-});
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <h3>الحالات الشائعة</h3>
+            <ul class="indication-list">
+                <li><a href="#acne">حب الشباب (Acne)</a></li>
+                <li><a href="#melasma">كلف وتصبغات (Melasma)</a></li>
+                <li><a href="#rosacea">وردية (Rosacea)</a></li>
+                <li><a href="#eczema">جفاف وأكزيما (Eczema)</a></li>
+            </ul>
+        </aside>
 
-// 3. التحكم في نافذة القاموس الطبي (Glossary Modal)
-const modal = document.getElementById('glossaryModal');
-const closeModalBtn = document.querySelector('.close-modal');
+        <main class="main-content">
+            
+            <nav class="breadcrumbs">
+                <a href="#">البراندات</a> > 
+                <a href="#">Bioderma</a> > 
+                <span class="current-page">Sensibio Family</span>
+            </nav>
 
-// دالة قابلة للاستدعاء عند الضغط على أي مصطلح طبي
-function openGlossary(termTitle, termDescription) {
-    document.getElementById('modalTitle').textContent = termTitle;
-    document.getElementById('modalDesc').textContent = termDescription;
-    modal.classList.remove('hidden');
-}
+            <section id="products-grid" class="grid-container">
+                <article class="product-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/200x200?text=SkinCare+Pro" alt="Product Image" class="zoomable-img">
+                    </div>
+                    <div class="card-info">
+                        <span class="badge-potency potency-1">عناية يومية</span>
+                        <h4>Sensibio H2O</h4>
+                        <p class="brand-name">Bioderma</p>
+                        <button class="btn-primary">عرض التفاصيل الطبية</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
 
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-});
+    <div id="glossaryModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle">المصطلح الطبي</h3>
+            <p id="modalDesc">شرح المصطلح سيظهر هنا...</p>
+        </div>
+    </div>
 
-// إغلاق النافذة عند الضغط خارجها
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.add('hidden');
-    }
-});
+    <script src="app.js"></script>
+</body>
+</html>
