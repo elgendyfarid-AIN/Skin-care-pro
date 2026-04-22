@@ -6787,9 +6787,7 @@ deepProductsList.push({
     clinical_usage: { frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' } },
     precautions: { indications: { ar: 'التحسس الجلدي والتهيج العابر.', en: 'Skin allergies and transient irritation.' }, pregnancy_safe: true, sun_sensitivity: false }
 });
-// ==========================================
-// 🛡️ رقعة الإصلاح الشاملة (Universal Repair Patch)
-// ==========================================
+// 1️⃣ الـ forEach Patch (ملء layering الناقص)
 deepProductsList.forEach(product => {
     if (!product.clinical_usage.layering) {
         product.clinical_usage.layering = {
@@ -6798,3 +6796,8 @@ deepProductsList.forEach(product => {
         };
     }
 });
+
+// 2️⃣ تصدير البيانات (3 طرق لضمان توافق كامل)
+// للمتصفح → window.medicinalData
+// للـ Node.js → module.exports
+// للـ ES6 → exports
