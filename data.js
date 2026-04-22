@@ -5226,4 +5226,82 @@ deepProductsList.push({
 // [147] Hydra-Filler Mask
 deepProductsList.push({
     id: 'fil_hydra_filler_mask', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-فيلر ماسك (شيت الترطيب)', e
+    name: { ar: 'هيدرا-فيلر ماسك (شيت الترطيب)', en: 'Hydra-Filler Mask Super-Moisturizing' }, image: "", potency: 1, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'ماسك ورقي غني بحمض الهيالورونيك وخلاصة الصبار (Aloe Vera) لتوفير حمام ترطيب فوري واستعادة نضارة البشرة الجافة في 15 دقيقة.', 
+            en: 'Sheet mask rich in HA and Aloe Vera to provide an instant hydration bath and restore radiance to dry skin in 15 minutes.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'عند الحاجة.', en: 'As needed.' } },
+    precautions: { indications: { ar: 'الجفاف الشديد والبهتان.', en: 'Severe dehydration and dullness.' }, pregnancy_safe: true, sun_sensitivity: false }
+});
+
+// [148] Time-Filler Mask
+deepProductsList.push({
+    id: 'fil_time_filler_mask', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر ماسك (شيت التجاعيد)', en: 'Time-Filler Mask Super-Smoothing' }, image: "", potency: 2, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'ماسك ورقي أسود (Black fiber) مشبع بالكولاجين البحري وشد السكريات لتنعيم التجاعيد فوراً وشد ملامح الوجه.', 
+            en: 'Black fiber sheet mask saturated with Marine Collagen and lifting sugars to instantly smooth wrinkles and firm facial contours.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'قبل المناسبات.', en: 'Pre-events.' } },
+    precautions: { indications: { ar: 'التجاعيد التعبيرية وترهل الجلد السريع.', en: 'Expression lines and rapid skin sagging.' }, pregnancy_safe: true, sun_sensitivity: false }
+});
+
+// [149] Oxygen-Peel Lotion
+deepProductsList.push({
+    id: 'fil_oxygen_peel', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أوكسجين-بيل لوشن (تونر التقشير الدقيق)', en: 'Oxygen-Peel Re-Oxygenating Micro-Peeling Lotion' }, image: "", potency: 2, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'تونر يومي يحتوي على 6 أحماض دقيقة التقشير بنسبة تركيز 6%، مقترن بحمض الهيالورونيك ومستشعر للأكسجين لضخ الهواء في المسام المخنوقة.', 
+            en: 'Daily toner containing 6 micro-peeling acids at 6%, paired with HA and an oxygen-captor to pump air into asphyxiated pores.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'مساءً.', en: 'PM.' }, application: { ar: 'يمسح به الوجه باستخدام قطنة بعد الغسول.', en: 'Wipe face with a cotton pad post-cleansing.' } },
+    precautions: { indications: { ar: 'الرؤوس السوداء، المسام الواسعة، والجلد الباهت.', en: 'Blackheads, enlarged pores, and dull skin.' }, pregnancy_safe: false, sun_sensitivity: true }
+});
+
+// [150] NCTF-Essence Supreme Regenerating Lotion
+deepProductsList.push({
+    id: 'fil_nctf_essence', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
+    name: { ar: 'إن سي تي إف إيسنس (لوشن التحضير)', en: 'NCTF-Essence Supreme Regenerating Lotion' }, image: "", potency: 1, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'لوشن مائي مرطب (Primer-like) يعتمد على تقنية (AQUA-MX) للاحتفاظ بالماء، مع مركب NCTF لتهيئة البشرة لامتصاص السيرومات بكفاءة أعلى.', 
+            en: 'Hydrating watery lotion (Primer-like) relying on (AQUA-MX) technology to bind water, with NCTF complex to prep skin for higher serum absorption.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' }, application: { ar: 'يوضع باليد على الوجه بعد الغسول وقبل السيروم.', en: 'Apply with hands to face after cleansing and before serum.' } },
+    precautions: { indications: { ar: 'الجفاف، تجهيز البشرة لروتين مكافحة الشيخوخة.', en: 'Dehydration, prepping skin for anti-aging routine.' }, pregnancy_safe: true, sun_sensitivity: false }
+});
+
+// [151] Sleep Recover Balm
+deepProductsList.push({
+    id: 'fil_sleep_recover', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
+    name: { ar: 'سليب ريكوفر بلسم (مضاد للإرهاق الليلي)', en: 'Sleep Recover Anti-Fatigue Night Balm' }, image: "", potency: 2, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'يستهدف علامات الإرهاق. يحتوي على مستخلص شجرة الحرير لإزالة سموم الخلايا ليلاً وتقليل الهالات وعلامات التعب التي تظهر في الصباح.', 
+            en: 'Targets fatigue signs. Contains Silk Tree extract to detoxify cells overnight and reduce dark circles and morning fatigue marks.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'مساءً.', en: 'PM.' } },
+    precautions: { indications: { ar: 'الإرهاق، السهر، بهتان البشرة الصباحي.', en: 'Fatigue, sleeplessness, and morning dullness.' }, pregnancy_safe: true, sun_sensitivity: false }
+});
+
+// [152] Hydra-Filler Cream (Classic Edition)
+deepProductsList.push({
+    id: 'fil_hydra_filler_cream_old', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-فيلر كريم (الإصدار الكلاسيكي)', en: 'Hydra-Filler Pro-Youth Boosting Moisturizer' }, image: "", potency: 1, 
+    pharmacology: {
+        mechanism: { 
+            ar: 'الإصدار الذي سبق (Hydra-Hyal). يركز على حمض الهيالورونيك وببتيدات محفزة لإنتاج الكولاجين لمنع ظهور علامات الجفاف والشيخوخة المبكرة.', 
+            en: 'The predecessor to (Hydra-Hyal). Focuses on HA and collagen-boosting peptides to prevent signs of dehydration and premature aging.' 
+        }
+    },
+    clinical_usage: { frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' } },
+    precautions: { indications
