@@ -6787,3 +6787,14 @@ deepProductsList.push({
     clinical_usage: { frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' } },
     precautions: { indications: { ar: 'التحسس الجلدي والتهيج العابر.', en: 'Skin allergies and transient irritation.' }, pregnancy_safe: true, sun_sensitivity: false }
 });
+// ==========================================
+// 🛡️ رقعة الإصلاح الشاملة (Universal Repair Patch)
+// ==========================================
+deepProductsList.forEach(product => {
+    if (!product.clinical_usage.layering) {
+        product.clinical_usage.layering = {
+            do_not_mix_with: { ar: ['-'], en: ['-'] },
+            best_mixed_with: { ar: ['-'], en: ['-'] }
+        };
+    }
+});
