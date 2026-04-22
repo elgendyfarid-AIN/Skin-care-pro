@@ -37,7 +37,7 @@ langToggle.addEventListener('click', () => {
     langToggle.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
     document.documentElement.lang = currentLang;
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    renderBrands(); // إعادة رسم المنتجات باللغة الجديدة
+    renderBrands(); 
 });
 
 // 4. عرض البراندات والمنتجات من المخزن
@@ -68,7 +68,6 @@ function renderProducts(brandId) {
     productsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
     productsGrid.style.gap = '20px';
     
-    // زر الرجوع
     productsGrid.innerHTML = `
         <div style="grid-column: 1 / -1; margin-bottom: 20px;">
             <button onclick="renderBrands()" class="control-btn">🔙 رجوع للبراندات</button>
