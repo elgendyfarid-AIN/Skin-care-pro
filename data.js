@@ -200,3 +200,165 @@ deepProductsList.push({
         notes: { ar: 'مناسب لجميع أفراد العائلة والرضع.', en: 'Suitable for all family members and infants.' }
     }
 });
+// ==========================================
+// 📚 تكملة القاموس الطبي لبيوديرما
+// ==========================================
+
+glossaryDict['cellular_bioprotection'] = {
+    title: { ar: 'الحماية الحيوية الخلوية', en: 'Cellular Bioprotection™' },
+    desc: { 
+        ar: 'براءة اختراع تحفز الدفاعات الطبيعية للجلد وتحمي الحمض النووي (DNA) للخلايا من التلف الناتج عن الشمس.', 
+        en: 'A patent that stimulates the skin’s natural defenses and protects cellular DNA from sun-induced damage.' 
+    }
+};
+
+// ==========================================
+// 🧪 تكملة منتجات بيوديرما المتبقية (Products)
+// ==========================================
+
+// [5] Sensibio Defensive (Normal/Light)
+deepProductsList.push({
+    id: 'bio_sensibio_defensive', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو ديفينسيف (كريم مهدئ خفيف)', en: 'Sensibio Defensive Active Soothing Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يهدئ البشرة على الفور بفضل البوليفينول المستخلص من المريمية الحمراء، ويقوي الحاجز بخفة تناسب البشرة العادية للمختلطة.', 
+            en: 'Instantly soothes the skin with Red Sage polyphenols and strengthens the barrier with a lightweight texture for normal to combination skin.' 
+        },
+        patient_benefit: { 
+            ar: 'ترطيب عميق غير دهني، يوقف الإحساس بالشد والوخز بشكل فوري ومستدام.', 
+            en: 'Deep, non-greasy hydration that instantly and durably stops tightness and stinging.' 
+        },
+        active_ingredients: [
+            { name: 'Carnosine', concentration: { ar: 'مضاد أكسدة', en: 'Antioxidant' }, role: { ar: 'منع الأكسدة وتقليل الحساسية البيئية.', en: 'Preventing oxidation and reducing environmental sensitivity.' } },
+            { name: 'Red Sage Extract', concentration: { ar: 'مركز', en: 'Concentrated' }, role: { ar: 'مضاد قوي للالتهابات.', en: 'Potent anti-inflammatory.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الترطيب.', en: 'Moisturization.' },
+        routine_step_number: 3,
+        usage_duration: { ar: 'استخدام يومي.', en: 'Daily use.' },
+        application: { ar: 'يوضع على وجه نظيف ومجفف بلطف.', en: 'Apply to gently dried, cleansed face.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يوجد.'], en: ['None.'] }, 
+            best_mixed_with: { ar: ['Sensibio H2O.'], en: ['Sensibio H2O.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة العادية إلى المختلطة.', en: 'Normal to combination sensitive skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام خفيف يمتص فوراً، ممتاز كبرايمر للمكياج.', en: 'Lightweight texture absorbs instantly, excellent makeup primer.' }
+    }
+});
+
+// [6] Photoderm Aquafluid SPF 50+
+deepProductsList.push({
+    id: 'bio_photoderm_aquafluid', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم أكوافلويد (واقي شمس مائي)', en: 'Photoderm Aquafluid SPF 50+ (Invisible)' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية فائقة بتقنية <span class="glossary-term" onclick="openGlossary(\'cellular_bioprotection\')">الحماية الحيوية الخلوية</span> مع قوام مائي سائل يترك لمسة جافة خالية من اللمعان.', 
+            en: 'Provides ultra protection with <span class="glossary-term" onclick="openGlossary(\'cellular_bioprotection\')">Cellular Bioprotection™</span> and a watery fluid texture for a dry, shine-free finish.' 
+        },
+        patient_benefit: { 
+            ar: 'حماية قصوى بدون أي أثر أبيض أو إحساس دهني، يمتص في ثوانٍ.', 
+            en: 'Maximum protection without white marks or greasy feel, absorbs in seconds.' 
+        },
+        active_ingredients: [
+            { name: 'UVA/UVB Filters', concentration: { ar: 'SPF 50+', en: 'SPF 50+' }, role: { ar: 'حماية واسعة الطيف.', en: 'Broad-spectrum protection.' } },
+            { name: 'Mattifying Powders', concentration: { ar: 'ثلاثي', en: 'Trio' }, role: { ar: 'التحكم في اللمعان (Dry Touch).', en: 'Shine control (Dry Touch).' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'قبل التعرض للشمس ويُجدد كل ساعتين.', en: 'Before sun exposure, reapply every 2 hours.' },
+        step_in_routine: { ar: 'الحماية (الخطوة الأخيرة).', en: 'Protection (Last step).' },
+        routine_step_number: 4,
+        usage_duration: { ar: 'طوال فترة التعرض للشمس.', en: 'During sun exposure periods.' },
+        application: { ar: 'يرج جيداً قبل الاستخدام، يوزع بسخاء.', en: 'Shake well before use, apply generously.' },
+        layering: { 
+            do_not_mix_with: { ar: ['السيرومات الزيتية الثقيلة.', 'المكياج الثقيل فوراً (انتظر 3 دقائق).'], en: ['Heavy oil serums.', 'Heavy makeup immediately (wait 3 mins).'] }, 
+            best_mixed_with: { ar: ['مرطبات خفيفة.', 'سيروم فيتامين سي (تحته).'], en: ['Lightweight moisturizers.', 'Vitamin C serum (underneath).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة العادية، المختلطة، والدهنية.', en: 'Normal, combination, and oily skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مقاوم للماء والعرق، لا يسد المسام.', en: 'Water and sweat resistant, non-comedogenic.' }
+    }
+});
+
+// [7] Photoderm Cream SPF 50+
+deepProductsList.push({
+    id: 'bio_photoderm_cream', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم كريم (واقي شمس للترطيب)', en: 'Photoderm Cream SPF 50+ (Invisible/Light)' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يدمج الحماية القصوى ضد الأشعة مع قاعدة كريمية مغذية تمنع تبخر الماء من الجلد.', 
+            en: 'Combines maximum UV protection with a nourishing cream base that prevents trans-epidermal water loss.' 
+        },
+        patient_benefit: { 
+            ar: 'يحمي من حروق الشمس ويوفر ترطيباً مريحاً يمنع جفاف البشرة طوال اليوم.', 
+            en: 'Protects against sunburns and provides comforting hydration preventing dryness all day.' 
+        },
+        active_ingredients: [
+            { name: 'UVA/UVB Filters', concentration: { ar: 'SPF 50+', en: 'SPF 50+' }, role: { ar: 'حماية شمسية.', en: 'Sun protection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'قبل التعرض للشمس ويُجدد كل ساعتين.', en: 'Before sun exposure, reapply every 2 hours.' },
+        step_in_routine: { ar: 'واقي ومرطب نهاري.', en: 'AM SPF and moisturizer.' },
+        routine_step_number: 4,
+        usage_duration: { ar: 'طوال فترة النهار.', en: 'Throughout the day.' },
+        application: { ar: 'يوزع بالتساوي على الوجه.', en: 'Apply evenly on face.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات الثقيلة الأخرى (حتى لا يتكتل).'], en: ['Other heavy moisturizers (to avoid pilling).'] }, 
+            best_mixed_with: { ar: ['الغسولات اللطيفة.'], en: ['Gentle cleansers.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة والجافة جداً.', en: 'Dry and very dry skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'متوفر بنسخة شفافة ونسخة ملونة فاتحة (Light).', en: 'Available in invisible and tinted (Light) versions.' }
+    }
+});
+
+// [8] Photoderm MAX Fluid SPF 100
+deepProductsList.push({
+    id: 'bio_photoderm_max_100', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم ماكس فلويد SPF 100', en: 'Photoderm MAX Fluid SPF 100' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على أقصى تركيز من فلاتر الحماية لتقديم درع مطلق ضد الأشعة فوق البنفسجية في الحالات السريرية المعقدة.', 
+            en: 'Contains the maximum concentration of protective filters to offer an absolute shield against UV rays in complex clinical cases.' 
+        },
+        patient_benefit: { 
+            ar: 'حماية مطلقة للبشرة الحساسة جداً للشمس أو التي خضعت لإجراءات التجميل والليزر.', 
+            en: 'Absolute protection for extreme sun-intolerant skin or post-cosmetic/laser procedures.' 
+        },
+        active_ingredients: [
+            { name: 'Max UVA/UVB Filters', concentration: { ar: 'SPF 100', en: 'SPF 100' }, role: { ar: 'حماية قصوى مطلقة.', en: 'Ultimate maximum protection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'قبل التعرض المباشر للشمس.', en: 'Before direct sun exposure.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة للوقاية.', en: 'Final prevention step.' },
+        routine_step_number: 4,
+        usage_duration: { ar: 'فترات التعرض الشديد للشمس.', en: 'Periods of extreme sun exposure.' },
+        application: { ar: 'يُرج جيداً ويوزع بكثافة.', en: 'Shake well and apply generously.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التقشير الكيميائي النهاري.'], en: ['Daytime chemical peels.'] }, 
+            best_mixed_with: { ar: ['كريمات الترميم مثل سيكابلاست.'], en: ['Repair creams like Cicaplast.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة شديدة البياض، فرط الحساسية للشمس، بعد جلسات الليزر.', en: 'Extremely fair skin, sun hypersensitivity, post-laser sessions.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'متوفر شفاف (Invisible) وملون (Light/Very Light).', en: 'Available in Invisible, Light, and Very Light tints.' }
+    }
+});
+
