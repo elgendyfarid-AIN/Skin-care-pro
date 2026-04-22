@@ -10,6 +10,23 @@ const deepProductsList = [];
 const glossaryDict = {};
 
 // ==========================================
+// 🔧 دوال مساعدة (Helper Functions)
+// ==========================================
+
+/**
+ * فتح القاموس الطبي
+ * @param {string} termId - معرف المصطلح الطبي
+ */
+function openGlossary(termId) {
+    const term = glossaryDict[termId];
+    if (term) {
+        console.log('Glossary Term:', term.title);
+    } else {
+        console.warn(`Glossary term "${termId}" not found`);
+    }
+}
+
+// ==========================================
 // 📚 1. القاموس الطبي (Pharmacological Glossary)
 // ==========================================
 
@@ -6788,30 +6805,58 @@ deepProductsList.push({
     precautions: { indications: { ar: 'التحسس الجلدي والتهيج العابر.', en: 'Skin allergies and transient irritation.' }, pregnancy_safe: true, sun_sensitivity: false }
 });
 // ==========================================
-// 🛡️ كود الإنقاذ النهائي (The Bulletproof Fix)
-// حط الكود ده في آخر الملف خالص عشان يفتح كل المعلومات
+// 🛡️ رقعة الإصلاح الشاملة (Universal Repair Patch)
 // ==========================================
-deepProductsList.forEach((product) => {
-    // 1. لو المنتج ملوش خانة استخدام سريري، نكريتها له
-    if (!product.clinical_usage) product.clinical_usage = {};
 
-    // 2. إصلاح خانة التعارضات (السبب الرئيسي للانهيار)
-    if (!product.clinical_usage.layering) {
-        product.clinical_usage.layering = {
-            do_not_mix_with: { ar: ['-'], en: ['-'] },
-            best_mixed_with: { ar: ['-'], en: ['-'] }
-        };
-    }
+/**
+ * إصلاح شامل لضمان اكتمال جميع المنتجات بالبيانات المطلوبة
+ */
+function initializeProductsData() {
+    deepProductsList.forEach((product, index) => {
+        // التحقق من البيانات الأساسية
+        if (!product.id || !product.brand) {
+            console.warn(`Product at index ${index} is missing critical data`);
+        }
 
-    // 3. التأكد من وجود التكرار وطريقة الاستخدام عشان الموقع ميهنجش
-    if (!product.clinical_usage.frequency) product.clinical_usage.frequency = { ar: '-', en: '-' };
-    if (!product.clinical_usage.application) product.clinical_usage.application = { ar: '-', en: '-' };
+        // إضافة طبقة تجميع إذا كانت مفقودة
+        if (!product.clinical_usage) {
+            product.clinical_usage = {};
+        }
 
-    // 4. التأكد من وجود خانة الاحتياطات
-    if (!product.precautions) {
-        product.precautions = { indications: { ar: '-', en: '-' }, pregnancy_safe: true, sun_sensitivity: false };
-    }
-});
+        if (!product.clinical_usage.layering) {
+            product.clinical_usage.layering = {
+                do_not_mix_with: { ar: ['-'], en: ['-'] },
+                best_mixed_with: { ar: ['-'], en: ['-'] }
+            };
+        }
 
-console.log("✅ تم فحص وإصلاح " + deepProductsList.length + " منتج بنجاح.");
-console.log("✅ تم فحص وإصلاح " + deepProductsList.length + " منتج. الموقع جاهز للعمل الآن.");
+        // التأكد من وجود الحقول الأساسية للحذر والتحذيرات
+        if (!product.precautions) {
+            product.precautions = {
+                indications: { ar: 'لم تُحدد', en: 'Not specified' },
+                pregnancy_safe: true,
+                sun_sensitivity: false
+            };
+        }
+    });
+
+    console.log(`✅ تم تهيئة ${deepProductsList.length} منتج بنجاح`);
+}
+
+// استدعاء دالة التهيئة عند الحاجة
+if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', initializeProductsData);
+}
+
+// دعم بيئة Node.js
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        brandsList,
+        casesList,
+        skinTypesList,
+        deepProductsList,
+        glossaryDict,
+        openGlossary,
+        initializeProductsData
+    };
+}
