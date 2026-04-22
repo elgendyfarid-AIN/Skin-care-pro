@@ -1,15 +1,69 @@
 // ==========================================
-// ⚙️ محرك الموقع الأليت (V2) - نسخة مستقرة وخالية من الأخطاء
+// ⚙️ محرك الموقع الأليت (UI/UX Engine)
+// وظيفته: تشغيل الواجهة وعرض بياناتك المحفوظة بأمان
 // ==========================================
 
 let currentLang = 'ar';
 let activeBrand = null;
 let activeFamily = null;
 
-// 1. اللوجو والتنقل
-document.querySelector('.brand-logo').style.cursor = 'pointer';
-document.querySelector('.brand-logo').addEventListener('click', () => renderBrands());
+// 1. التأكد من اتصال ملف البيانات (data.js)
+window.onload = () => {
+    if (typeof brandsList === 'undefined' || typeof deepProductsList === 'undefined') {
+        document.getElementById('brandsGrid').innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: #ffeaa7; color: #d63031; border-radius: 12px; border: 1px solid #d63031;">
+                <h3>⚠️ تنبيه برمجي: ملف البيانات (data.js) غير متصل.</h3>
+                <p>يرجى التأكد من وجود ملف بياناتك الذي يحتوي على البلوكات الطبية في نفس المجلد.</p>
+            </div>`;
+    } else {
+        renderBrands();
+    }
+};
 
+// 2. أزرار التحكم العلوية (اللوجو، الإضاءة، اللغة)
+document.querySelector('.brand-logo').addEventListener('click', () => {
+    document.getElementById('productSearch').value = '';
+    renderBrands();
+});
+
+document.getElementById('themeToggle').addEventListener('click', (e) => {
+    const body = document.body;
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        e.target.textContent = '🌙';
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        e.target.textContent = '☀️';
+    }
+});
+
+document.getElementById('langToggle').addEventListener('click', (e) => {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    e.target.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    
+    // تحديث عناوين الأقسام الرئيسية
+    document.querySelector('[data-target="products-section"]').textContent = currentLang === 'ar' ? 'المنتجات' : 'Products';
+    document.querySelector('[data-target="routines-section"]').textContent = currentLang === 'ar' ? 'حالات البشرة والروتين' : 'Skin Conditions & Routines';
+    document.querySelector('[data-target="skin-types-section"]').textContent = currentLang === 'ar' ? 'أنواع البشرة' : 'Skin Types';
+    document.getElementById('productSearch').placeholder = currentLang === 'ar' ? '🔍 ابحث عن منتج أو مادة فعالة...' : '🔍 Search product or ingredient...';
+
+    // إعادة رسم الشاشة الحالية باللغة الجديدة
+    const searchQuery = document.getElementById('productSearch').value.toLowerCase();
+    if(searchQuery.length > 0) {
+        filterProducts(searchQuery);
+    } else if(activeBrand && activeFamily) {
+        const famName = brandsList.find(b=>b.id===activeBrand).families.find(f=>f.id===activeFamily).name[currentLang];
+        renderProducts(activeBrand, activeFamily, famName);
+    } else if(activeBrand) {
+        renderFamilies(activeBrand);
+    } else {
+        renderBrands();
+    }
+});
+
+// 3. التنقل بين الأقسام (التابات)
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('.content-section');
 tabs.forEach(tab => {
@@ -21,53 +75,25 @@ tabs.forEach(tab => {
     });
 });
 
-// 2. أزرار التحكم (الإضاءة واللغة والبحث)
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-    const body = document.body;
-    if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
-        themeToggle.textContent = '🌙';
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        themeToggle.textContent = '☀️';
-    }
-});
-
-const langToggle = document.getElementById('langToggle');
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'ar' ? 'en' : 'ar';
-    langToggle.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    
-    document.querySelector('[data-target="products-section"]').textContent = currentLang === 'ar' ? 'المنتجات' : 'Products';
-    document.querySelector('[data-target="routines-section"]').textContent = currentLang === 'ar' ? 'الروتين والأنظمة' : 'Routines & Regimens';
-    document.querySelector('[data-target="skin-types-section"]').textContent = currentLang === 'ar' ? 'أنواع البشرة' : 'Skin Types';
-    document.getElementById('productSearch').placeholder = currentLang === 'ar' ? '🔍 ابحث عن منتج...' : '🔍 Search product...';
-
-    if(activeBrand) {
-        if(activeFamily) {
-            const famName = brandsList.find(b=>b.id===activeBrand).families.find(f=>f.id===activeFamily).name[currentLang];
-            renderProducts(activeBrand, activeFamily, famName);
-        } else { renderFamilies(activeBrand); }
-    } else { renderBrands(); }
-});
-
-const searchInput = document.getElementById('productSearch');
-searchInput.addEventListener('input', (e) => {
+// 4. محرك البحث الذكي اللحظي
+document.getElementById('productSearch').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
-    if(query.length >= 2) filterProducts(query);
-    else if (query.length === 0) {
+    if(query.length >= 2) {
+        filterProducts(query);
+    } else if (query.length === 0) {
+        // العودة للشاشة السابقة عند مسح البحث
         if(activeFamily) {
             const famName = brandsList.find(b=>b.id===activeBrand).families.find(f=>f.id===activeFamily).name[currentLang];
             renderProducts(activeBrand, activeFamily, famName);
-        } else if(activeBrand) renderFamilies(activeBrand);
-        else renderBrands();
+        } else if(activeBrand) {
+            renderFamilies(activeBrand);
+        } else {
+            renderBrands();
+        }
     }
 });
 
-// 3. عرض البراندات والعائلات والمنتجات
+// 5. دوال العرض المتسلسل (براندات > عائلات > منتجات)
 const brandsGrid = document.getElementById('brandsGrid');
 const familiesGrid = document.getElementById('familiesGrid');
 const productsGrid = document.getElementById('productsGrid');
@@ -75,19 +101,13 @@ const productsGrid = document.getElementById('productsGrid');
 function renderBrands() {
     activeBrand = null; activeFamily = null;
     familiesGrid.style.display = 'none'; productsGrid.style.display = 'none';
-    brandsGrid.style.display = 'flex'; brandsGrid.style.flexWrap = 'wrap'; brandsGrid.style.gap = '15px';
-    brandsGrid.innerHTML = '';
-
-    // نظام فحص أخطاء ملف الداتا
-    if (typeof brandsList === 'undefined' || brandsList.length === 0) {
-        brandsGrid.innerHTML = `<h3 style="color: #FF4D4D; width: 100%; text-align: center; padding: 2rem;">⚠️ خطأ: ملف البيانات (data.js) فارغ أو يحتوي على خطأ برمجي. يرجى التأكد من نسخه بالكامل.</h3>`;
-        return;
-    }
+    brandsGrid.style.display = 'grid'; brandsGrid.innerHTML = '';
 
     brandsList.forEach(brand => {
-        const btn = document.createElement('button');
-        btn.className = 'control-btn brand-btn';
-        btn.innerHTML = `<h2 style="padding: 1rem 2rem; color: var(--primary-navy);">${brand.name}</h2>`;
+        const btn = document.createElement('div');
+        btn.className = 'product-card';
+        btn.style.alignItems = 'center'; btn.style.justifyContent = 'center'; btn.style.minHeight = '150px';
+        btn.innerHTML = `<h2 style="color: var(--primary-navy); font-size: 1.8rem; text-align: center;">${brand.name}</h2>`;
         btn.onclick = () => renderFamilies(brand.id);
         brandsGrid.appendChild(btn);
     });
@@ -96,25 +116,24 @@ function renderBrands() {
 function renderFamilies(brandId) {
     activeBrand = brandId; activeFamily = null;
     brandsGrid.style.display = 'none'; productsGrid.style.display = 'none';
-    familiesGrid.style.display = 'flex'; familiesGrid.style.flexWrap = 'wrap'; familiesGrid.style.gap = '15px';
+    familiesGrid.style.display = 'grid'; familiesGrid.innerHTML = '';
     
-    const backText = currentLang === 'ar' ? '🔙 رجوع للبراندات' : '🔙 Back to Brands';
     const brandName = brandsList.find(b=>b.id===brandId).name;
-    
-    familiesGrid.innerHTML = `
-        <div style="width: 100%; margin-bottom: 20px;">
-            <button onclick="renderBrands()" class="control-btn" style="border-color: var(--accent-gold);">${backText}</button>
-            <h1 style="color: var(--primary-navy); margin-top: 15px;">${brandName}</h1>
-        </div>
+    const backBtn = document.createElement('div');
+    backBtn.style.gridColumn = '1 / -1';
+    backBtn.innerHTML = `
+        <button onclick="renderBrands()" class="control-btn">🔙 ${currentLang === 'ar' ? 'رجوع للبراندات' : 'Back to Brands'}</button>
+        <h2 style="color: var(--accent-gold); margin-top: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">${brandName}</h2>
     `;
+    familiesGrid.appendChild(backBtn);
 
     const brand = brandsList.find(b => b.id === brandId);
     if(brand && brand.families) {
         brand.families.forEach(family => {
-            const btn = document.createElement('button');
-            btn.className = 'control-btn';
-            btn.style.padding = '1.2rem 2.5rem'; btn.style.fontSize = '1.1rem';
-            btn.textContent = family.name[currentLang];
+            const btn = document.createElement('div');
+            btn.className = 'product-card';
+            btn.style.alignItems = 'center'; btn.style.justifyContent = 'center'; btn.style.minHeight = '120px';
+            btn.innerHTML = `<h3 style="color: var(--primary-navy); font-size: 1.3rem; text-align: center;">${family.name[currentLang]}</h3>`;
             btn.onclick = () => renderProducts(brandId, family.id, family.name[currentLang]);
             familiesGrid.appendChild(btn);
         });
@@ -123,112 +142,158 @@ function renderFamilies(brandId) {
 
 function renderProducts(brandId, familyId, familyName) {
     activeBrand = brandId; activeFamily = familyId;
-    familiesGrid.style.display = 'none';
-    productsGrid.style.display = 'grid';
-    productsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
-    productsGrid.style.gap = '20px';
+    familiesGrid.style.display = 'none'; brandsGrid.style.display = 'none';
+    productsGrid.style.display = 'grid'; productsGrid.innerHTML = '';
     
-    const brandName = brandsList.find(b=>b.id===brandId).name;
-    const backText = currentLang === 'ar' ? `🔙 رجوع لعائلات ${brandName}` : `🔙 Back to Families`;
-    
-    productsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; margin-bottom: 20px;">
-            <button onclick="renderFamilies('${brandId}')" class="control-btn" style="border-color: var(--accent-gold);">${backText}</button>
-            <h2 style="margin-top: 20px; color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold); padding-bottom: 10px;">${familyName}</h2>
-        </div>
+    const header = document.createElement('div');
+    header.style.gridColumn = '1 / -1';
+    header.innerHTML = `
+        <button onclick="renderFamilies('${brandId}')" class="control-btn">🔙 ${currentLang === 'ar' ? 'رجوع للعائلات' : 'Back to Families'}</button>
+        <h2 style="color: var(--accent-gold); margin-top: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">${familyName}</h2>
     `;
+    productsGrid.appendChild(header);
 
-    deepProductsList.filter(p => p.familyId === familyId).forEach(prod => createProductCard(prod));
+    const products = deepProductsList.filter(p => p.familyId === familyId);
+    if(products.length === 0) {
+        productsGrid.innerHTML += `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); margin-top: 2rem;">${currentLang === 'ar' ? 'لا توجد منتجات مسجلة في هذه العائلة حالياً.' : 'No products currently registered in this family.'}</p>`;
+    } else {
+        products.forEach(prod => createProductCard(prod));
+    }
 }
 
+// 6. فلترة المنتجات بناءً على البحث
 function filterProducts(query) {
-    activeBrand = null; activeFamily = null;
     brandsGrid.style.display = 'none'; familiesGrid.style.display = 'none';
-    productsGrid.style.display = 'grid';
-    productsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
-    productsGrid.style.gap = '20px';
+    productsGrid.style.display = 'grid'; productsGrid.innerHTML = '';
     
-    productsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; margin-bottom: 20px;">
-            <button onclick="renderBrands()" class="control-btn" style="border-color: var(--accent-gold);">${currentLang === 'ar' ? '🔙 إلغاء البحث' : '🔙 Cancel'}</button>
-            <h2 style="margin-top: 20px; color: var(--primary-navy);">${currentLang === 'ar' ? 'نتائج البحث' : 'Search Results'}</h2>
-        </div>
+    const header = document.createElement('div');
+    header.style.gridColumn = '1 / -1';
+    header.innerHTML = `
+        <button onclick="document.getElementById('productSearch').value=''; renderBrands();" class="control-btn">🔙 ${currentLang === 'ar' ? 'إلغاء البحث' : 'Cancel Search'}</button>
+        <h2 style="color: var(--primary-navy); margin-top: 20px;">${currentLang === 'ar' ? 'نتائج البحث' : 'Search Results'}</h2>
     `;
+    productsGrid.appendChild(header);
 
-    const filtered = deepProductsList.filter(p => 
-        p.name[currentLang].toLowerCase().includes(query) || 
-        p.pharmacology.mechanism[currentLang].toLowerCase().includes(query)
-    );
+    const filtered = deepProductsList.filter(p => {
+        const nameText = p.name[currentLang] || "";
+        const mechText = (p.pharmacology && p.pharmacology.mechanism) ? p.pharmacology.mechanism[currentLang] : "";
+        let ingredientsText = "";
+        if(p.pharmacology && p.pharmacology.active_ingredients) {
+            ingredientsText = p.pharmacology.active_ingredients.map(i => i.name).join(" ");
+        }
+        
+        const textToSearch = (nameText + " " + mechText + " " + ingredientsText).toLowerCase();
+        return textToSearch.includes(query);
+    });
 
-    if(filtered.length === 0) productsGrid.innerHTML += `<p style="grid-column: 1/-1; text-align: center;">${currentLang === 'ar' ? 'لا توجد نتائج.' : 'No results found.'}</p>`;
-    else filtered.forEach(prod => createProductCard(prod));
+    if(filtered.length === 0) {
+        productsGrid.innerHTML += `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); margin-top: 2rem;">${currentLang === 'ar' ? 'لا توجد نتائج تطابق بحثك.' : 'No results match your search.'}</p>`;
+    } else {
+        filtered.forEach(prod => createProductCard(prod));
+    }
 }
 
+// 7. إنشاء البطاقة الخارجية للمنتج
 function createProductCard(prod) {
     const card = document.createElement('div');
     card.className = 'product-card';
-    card.style.position = 'relative';
-    card.style.border = '1px solid var(--border-color)';
-    card.style.padding = '20px';
-    card.style.borderRadius = '12px';
-    card.style.backgroundColor = 'var(--surface-color)';
+    card.onclick = () => openProductModal(prod.id); // البطاقة كلها قابلة للضغط
     
+    // شارة خطوة الروتين (إذا كانت متوفرة)
     if(prod.clinical_usage && prod.clinical_usage.routine_step_number) {
-        card.innerHTML += `<div style="position: absolute; top: 10px; right: 10px; background: var(--accent-gold); color: white; padding: 5px 10px; border-radius: 8px; font-weight: bold;">#${prod.clinical_usage.routine_step_number}</div>`;
+        card.innerHTML += `<div class="routine-step-badge">Step ${prod.clinical_usage.routine_step_number}</div>`;
     }
     
+    let shortMech = "";
+    if(prod.pharmacology && prod.pharmacology.mechanism && prod.pharmacology.mechanism[currentLang]) {
+        shortMech = prod.pharmacology.mechanism[currentLang].substring(0, 90) + "...";
+    }
+
     card.innerHTML += `
-        <h3 style="color: var(--primary-navy); margin-bottom: 10px; margin-top: 15px;">${prod.name[currentLang]}</h3>
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6;">${prod.pharmacology.mechanism[currentLang]}</p>
-        <button class="control-btn" style="width: 100%; background: var(--primary-navy); color: white;" onclick="openProductModal('${prod.id}')">${currentLang === 'ar' ? 'عرض البطاقة' : 'View Card'}</button>
+        <div>
+            <h3 class="card-title">${prod.name[currentLang]}</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">${shortMech}</p>
+        </div>
+        <button class="control-btn view-card-btn">${currentLang === 'ar' ? 'عرض البطاقة الأليت' : 'View Elite Card'}</button>
     `;
     productsGrid.appendChild(card);
 }
 
-// 4. النافذة المنبثقة للبطاقة والقاموس
-function openProductModal(productId) {
+// 8. فتح النافذة المنبثقة للبطاقة الطبية التفصيلية (دون المساس بالبيانات)
+window.openProductModal = function(productId) {
     const prod = deepProductsList.find(p => p.id === productId);
     if(!prod) return;
     
     const detailsContainer = document.getElementById('productDetails');
     const potencyPercentage = (prod.potency / 3) * 100;
-    const potencyBarColor = prod.potency === 3 ? '#FF4D4D' : (prod.potency === 2 ? '#D4AF37' : '#28A745');
+    const potencyColor = prod.potency === 3 ? '#FF4D4D' : (prod.potency === 2 ? 'var(--accent-gold)' : '#28A745');
 
+    // تجهيز المكونات النشطة وربطها بالقاموس إذا أمكن
     let ingredientsHTML = '';
-    prod.pharmacology.active_ingredients.forEach(ing => {
-        const glossaryKey = ing.name.toLowerCase().replace(/ /g, '_').replace(/[\(\)\+\-]/g, '');
-        const interactive = glossaryDict[glossaryKey] ? `style="cursor:pointer; color:var(--accent-gold); text-decoration:underline dashed;" onclick="openGlossary('${glossaryKey}')"` : '';
-        ingredientsHTML += `<li ${interactive}><strong>${ing.name}</strong> (${ing.concentration[currentLang]}): ${ing.role[currentLang]}</li>`;
-    });
+    if(prod.pharmacology && prod.pharmacology.active_ingredients) {
+        prod.pharmacology.active_ingredients.forEach(ing => {
+            const glossaryKey = ing.name.toLowerCase().replace(/ /g, '_').replace(/[\(\)\+\-]/g, '');
+            const interactive = (typeof glossaryDict !== 'undefined' && glossaryDict[glossaryKey]) ? `class="interactive-term" onclick="openGlossary('${glossaryKey}')"` : '';
+            ingredientsHTML += `<li style="margin-bottom: 10px;"><span ${interactive}>${ing.name}</span> (${ing.concentration[currentLang]}): <span style="color: var(--text-muted);">${ing.role[currentLang]}</span></li>`;
+        });
+    }
+
+    // تجهيز التعارضات
+    let dontMixHTML = '';
+    let bestMixHTML = '';
+    if(prod.clinical_usage && prod.clinical_usage.layering) {
+        dontMixHTML = prod.clinical_usage.layering.do_not_mix_with[currentLang].map(i => `<li style="margin-bottom: 5px;">${i}</li>`).join('');
+        bestMixHTML = prod.clinical_usage.layering.best_mixed_with[currentLang].map(i => `<li style="margin-bottom: 5px;">${i}</li>`).join('');
+    }
 
     detailsContainer.innerHTML = `
-        <h2 style="color: var(--primary-navy); border-bottom: 3px solid var(--accent-gold); padding-bottom: 10px; margin-bottom: 25px;">${prod.name[currentLang]}</h2>
+        <h2 style="color: var(--primary-navy); border-bottom: 2px solid var(--border-color); padding-bottom: 15px; margin-bottom: 25px; font-size: 1.6rem; padding-right: 20px;">
+            ${prod.name[currentLang]}
+        </h2>
         
-        <div style="margin-bottom: 25px; background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 12px; border: 1px solid var(--accent-gold);">
-            <strong>${currentLang === 'ar' ? 'مقياس القوة:' : 'Potency Scale:'}</strong>
-            <div style="margin-top: 10px; height: 12px; border-radius: 6px; background: var(--bg-color); border: 1px solid var(--border-color); overflow: hidden;">
-                <div style="width: ${potencyPercentage}%; height: 100%; background: ${potencyBarColor};"></div>
+        <div style="display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <div style="flex: 1; background: var(--bg-color); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color);">
+                <strong style="color: var(--primary-navy);">${currentLang === 'ar' ? 'مقياس القوة (Potency):' : 'Potency Scale:'}</strong>
+                <div style="margin-top: 10px; height: 10px; border-radius: 5px; background: #e0e0e0; overflow: hidden;">
+                    <div style="width: ${potencyPercentage}%; height: 100%; background: ${potencyColor};"></div>
+                </div>
+            </div>
+            <div style="background: var(--bg-color); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; min-width: 150px;">
+                <strong style="color: var(--primary-navy); margin-inline-end: 10px;">pH:</strong> ${(prod.pharmacology && prod.pharmacology.ph_level) ? prod.pharmacology.ph_level[currentLang] : '-'}
             </div>
         </div>
 
-        <h4 style="color: var(--accent-gold); margin-bottom: 8px;">${currentLang === 'ar' ? 'فائدة المستخدم:' : 'User Benefit:'}</h4>
-        <p style="margin-bottom: 20px;">${prod.pharmacology.patient_benefit[currentLang]}</p>
-
-        <h4 style="color: var(--accent-gold); margin-bottom: 8px;">${currentLang === 'ar' ? 'دواعي الاستخدام:' : 'Indications:'}</h4>
-        <p style="margin-bottom: 20px; font-weight: bold;">${prod.precautions.indications[currentLang]}</p>
+        <h4 style="color: var(--accent-gold); margin-bottom: 10px;">${currentLang === 'ar' ? 'دواعي الاستخدام والفوائد:' : 'Indications & Benefits:'}</h4>
+        <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary-navy);">${(prod.precautions && prod.precautions.indications) ? prod.precautions.indications[currentLang] : ''}</p>
+        <p style="margin-bottom: 25px; color: var(--text-muted); line-height: 1.8;">${(prod.pharmacology && prod.pharmacology.patient_benefit) ? prod.pharmacology.patient_benefit[currentLang] : ''}</p>
 
         <h4 style="color: var(--accent-gold); margin-bottom: 10px;">${currentLang === 'ar' ? 'المكونات النشطة:' : 'Active Ingredients:'}</h4>
-        <ul style="margin-bottom: 25px; padding-inline-start: 20px;">${ingredientsHTML}</ul>
+        <ul style="margin-bottom: 25px; padding-inline-start: 20px; line-height: 1.6;">${ingredientsHTML}</ul>
 
-        <h4 style="color: var(--accent-gold); margin-bottom: 10px;">${currentLang === 'ar' ? 'التعارضات:' : 'Layering:'}</h4>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
-            <div style="background: rgba(255, 77, 77, 0.1); padding: 15px; border-radius: 12px; border-right: 4px solid #FF4D4D;">
-                <strong>${currentLang === 'ar' ? 'يُمنع الخلط مع:' : 'Do NOT mix with:'}</strong>
-                <ul style="margin-top: 10px; padding-inline-start: 20px;">${prod.clinical_usage.layering.do_not_mix_with[currentLang].map(i => `<li>${i}</li>`).join('')}</ul>
+        <h4 style="color: var(--accent-gold); margin-bottom: 15px;">${currentLang === 'ar' ? 'التداخلات الدوائية (Layering):' : 'Drug Interactions (Layering):'}</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;">
+            <div style="background: rgba(255, 77, 77, 0.05); padding: 15px; border-radius: 12px; border-right: 4px solid #FF4D4D; border-left: ${currentLang === 'en' ? '4px solid #FF4D4D' : 'none'}; border-right: ${currentLang === 'en' ? 'none' : '4px solid #FF4D4D'};">
+                <strong style="color: #FF4D4D;">🚫 ${currentLang === 'ar' ? 'يُمنع الخلط مع:' : 'Do NOT mix with:'}</strong>
+                <ul style="margin-top: 10px; padding-inline-start: 20px; color: var(--text-muted);">
+                    ${dontMixHTML}
+                </ul>
             </div>
-            <div style="background: rgba(40, 167, 69, 0.1); padding: 15px; border-radius: 12px; border-right: 4px solid #28A745;">
-                <strong>${currentLang === 'ar' ? 'الأفضل دمجه مع:' : 'Best mixed with:'}</strong>
-                <ul style="margin-top: 10px; padding-inline-start: 20px;">${prod.clinical_usage.layering.best_mixed_with[currentLang].map(i => `<li>${i}</li>`).join('')}</ul>
+            <div style="background: rgba(40, 167, 69, 0.05); padding: 15px; border-radius: 12px; border-right: 4px solid #28A745; border-left: ${currentLang === 'en' ? '4px solid #28A745' : 'none'}; border-right: ${currentLang === 'en' ? 'none' : '4px solid #28A745'};">
+                <strong style="color: #28A745;">✅ ${currentLang === 'ar' ? 'الأفضل دمجه مع:' : 'Best mixed with:'}</strong>
+                <ul style="margin-top: 10px; padding-inline-start: 20px; color: var(--text-muted);">
+                    ${bestMixHTML}
+                </ul>
+            </div>
+        </div>
+        
+        <div style="background: var(--bg-color); padding: 15px; border-radius: 12px; border: 1px dashed var(--border-color); display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 10px;">
+            <div>
+                <strong style="color: var(--primary-navy); display: block; margin-bottom: 5px;">${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</strong>
+                <span>${(prod.precautions && prod.precautions.pregnancy_safe) ? '🤰 نعم ✅' : '⛔ لا ❌'}</span>
+            </div>
+            <div>
+                <strong style="color: var(--primary-navy); display: block; margin-bottom: 5px;">${currentLang === 'ar' ? 'حساسية شمس' : 'Sun Sensitivity'}</strong>
+                <span>${(prod.precautions && prod.precautions.sun_sensitivity) ? '☀️ نعم (يتطلب واقي)' : '🛡️ لا يوجد'}</span>
             </div>
         </div>
     `;
@@ -236,17 +301,24 @@ function openProductModal(productId) {
     const modal = document.getElementById('productModal');
     modal.style.display = 'flex';
     setTimeout(() => modal.style.opacity = '1', 10);
-}
+    document.body.style.overflow = 'hidden'; // إيقاف تحريك الشاشة الخلفية
+};
 
 document.querySelector('.close-modal-btn').addEventListener('click', () => {
     const modal = document.getElementById('productModal');
     modal.style.opacity = '0';
-    setTimeout(() => modal.style.display = 'none', 300);
+    setTimeout(() => { 
+        modal.style.display = 'none'; 
+        document.body.style.overflow = 'auto'; 
+    }, 300);
 });
 
+// 9. فتح نافذة القاموس الطبي
 window.openGlossary = function(key) {
+    if(typeof glossaryDict === 'undefined') return;
     const term = glossaryDict[key];
     if(!term) return;
+    
     document.getElementById('glossaryTitle').textContent = term.title[currentLang];
     document.getElementById('glossaryDesc').innerHTML = term.desc[currentLang];
     
@@ -260,6 +332,3 @@ document.querySelector('.close-glossary-btn').addEventListener('click', () => {
     modal.style.opacity = '0';
     setTimeout(() => modal.style.display = 'none', 300);
 });
-
-// بدء التشغيل
-setTimeout(() => renderBrands(), 100);
