@@ -10,23 +10,6 @@ const deepProductsList = [];
 const glossaryDict = {};
 
 // ==========================================
-// 🔧 دوال مساعدة (Helper Functions)
-// ==========================================
-
-/**
- * فتح القاموس الطبي
- * @param {string} termId - معرف المصطلح الطبي
- */
-function openGlossary(termId) {
-    const term = glossaryDict[termId];
-    if (term) {
-        console.log('Glossary Term:', term.title);
-    } else {
-        console.warn(`Glossary term "${termId}" not found`);
-    }
-}
-
-// ==========================================
 // 📚 1. القاموس الطبي (Pharmacological Glossary)
 // ==========================================
 
@@ -88,7 +71,7 @@ brandsList.push({
 // [1] Sensibio H2O Micellar Water
 deepProductsList.push({
     id: 'bio_sensibio_h2o', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
-    name: { ar: 'سينسيبيو H2O ميسيلار', en: 'Sensibio H2O Micellar Water' }, image: "", potency: 1, 
+    name: { ar: 'سينسيبيو H2O ميسيلار', en: 'Sensibio H2O Micellar Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (درجة حموضة فسيولوجية)', en: '5.5 (Physiological pH)' },
         mechanism: { 
@@ -124,7 +107,7 @@ deepProductsList.push({
 // [2] Sensibio Gel Moussant
 deepProductsList.push({
     id: 'bio_sensibio_gel', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
-    name: { ar: 'سينسيبيو جل موسان (غسول رغوي)', en: 'Sensibio Gel Moussant' }, image: "", potency: 1, 
+    name: { ar: 'سينسيبيو جل موسان (غسول رغوي)', en: 'Sensibio Gel Moussant' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (متوازن)', en: '5.5 (Balanced)' },
         mechanism: { 
@@ -159,7 +142,7 @@ deepProductsList.push({
 // [3] Sensibio Defensive Serum
 deepProductsList.push({
     id: 'bio_sensibio_defensive_serum', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
-    name: { ar: 'سينسيبيو ديفينسيف سيروم', en: 'Sensibio Defensive Serum' }, image: "", potency: 2, 
+    name: { ar: 'سينسيبيو ديفينسيف سيروم', en: 'Sensibio Defensive Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -195,7 +178,7 @@ deepProductsList.push({
 // [4] Sensibio AR Anti-Redness Cream
 deepProductsList.push({
     id: 'bio_sensibio_ar', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
-    name: { ar: 'سينسيبيو AR (علاج الاحمرار والوردية)', en: 'Sensibio AR Anti-Redness Cream' }, image: "", potency: 2, 
+    name: { ar: 'سينسيبيو AR (علاج الاحمرار والوردية)', en: 'Sensibio AR Anti-Redness Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -262,7 +245,7 @@ glossaryDict['isotretinoin_companion'] = {
 // [5] Sebium H2O Micellar Water
 deepProductsList.push({
     id: 'bio_sebium_h2o', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم H2O ميسيلار', en: 'Sebium H2O Micellar Water' }, image: "", potency: 1, 
+    name: { ar: 'سيبيوم H2O ميسيلار', en: 'Sebium H2O Micellar Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (درجة حموضة فسيولوجية)', en: '5.5 (Physiological pH)' },
         mechanism: { 
@@ -297,7 +280,7 @@ deepProductsList.push({
 // [6] Sebium Gel Moussant
 deepProductsList.push({
     id: 'bio_sebium_gel', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم جل موسان (غسول منقي)', en: 'Sebium Gel Moussant' }, image: "", potency: 2, 
+    name: { ar: 'سيبيوم جل موسان (غسول منقي)', en: 'Sebium Gel Moussant' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: '5.5 (متوازن لعدم تحفيز الدهون)', en: '5.5 (Balanced to prevent sebum rebound)' },
         mechanism: { 
@@ -333,7 +316,7 @@ deepProductsList.push({
 // [7] Sebium Pore Refiner
 deepProductsList.push({
     id: 'bio_sebium_pore_refiner', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم بور ريفاينر (مصغر المسام)', en: 'Sebium Pore Refiner' }, image: "", potency: 2, 
+    name: { ar: 'سيبيوم بور ريفاينر (مصغر المسام)', en: 'Sebium Pore Refiner' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً (لتعزيز التقشير)', en: 'Slightly acidic (to boost exfoliation)' },
         mechanism: { 
@@ -369,7 +352,7 @@ deepProductsList.push({
 // [8] Sebium Hydra
 deepProductsList.push({
     id: 'bio_sebium_hydra', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم هيدرا (مرطب معوّض)', en: 'Sebium Hydra Compensating Care' }, image: "", potency: 1, 
+    name: { ar: 'سيبيوم هيدرا (مرطب معوّض)', en: 'Sebium Hydra Compensating Care' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -435,7 +418,7 @@ glossaryDict['skin_relief_tech'] = {
 // [9] Atoderm Intensive Baume
 deepProductsList.push({
     id: 'bio_atoderm_intensive_baume', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
-    name: { ar: 'أتوديرم إنتينسيف بوم (بلسم الإكزيما)', en: 'Atoderm Intensive Baume' }, image: "", potency: 3, 
+    name: { ar: 'أتوديرم إنتينسيف بوم (بلسم الإكزيما)', en: 'Atoderm Intensive Baume' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن ليناسب الجلد التأتبي', en: 'Balanced for atopic skin' },
         mechanism: { 
@@ -471,7 +454,7 @@ deepProductsList.push({
 // [10] Atoderm Shower Oil
 deepProductsList.push({
     id: 'bio_atoderm_shower_oil', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
-    name: { ar: 'أتوديرم زيت الاستحمام', en: 'Atoderm Huile de Douche (Shower Oil)' }, image: "", potency: 1, 
+    name: { ar: 'أتوديرم زيت الاستحمام', en: 'Atoderm Huile de Douche (Shower Oil)' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (يحترم الغلاف الحمضي)', en: '5.5 (Respects the acid mantle)' },
         mechanism: { 
@@ -506,7 +489,7 @@ deepProductsList.push({
 // [11] Atoderm Cream Ultra
 deepProductsList.push({
     id: 'bio_atoderm_cream', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
-    name: { ar: 'أتوديرم كريم ألترا (ترطيب يومي)', en: 'Atoderm Cream Ultra' }, image: "", potency: 1, 
+    name: { ar: 'أتوديرم كريم ألترا (ترطيب يومي)', en: 'Atoderm Cream Ultra' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -541,7 +524,7 @@ deepProductsList.push({
 // [12] Atoderm SOS Spray
 deepProductsList.push({
     id: 'bio_atoderm_sos_spray', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
-    name: { ar: 'أتوديرم SOS بخاخ (مضاد للحكة)', en: 'Atoderm SOS Spray' }, image: "", potency: 2, 
+    name: { ar: 'أتوديرم SOS بخاخ (مضاد للحكة)', en: 'Atoderm SOS Spray' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -607,7 +590,7 @@ glossaryDict['glabridin'] = {
 // [13] Photoderm Aquafluide SPF 50+
 deepProductsList.push({
     id: 'bio_photoderm_aquafluide', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
-    name: { ar: 'فوتوديرم أكوا فلويد SPF50+', en: 'Photoderm Aquafluide SPF50+' }, image: "", potency: 1, 
+    name: { ar: 'فوتوديرم أكوا فلويد SPF50+', en: 'Photoderm Aquafluide SPF50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -642,7 +625,7 @@ deepProductsList.push({
 // [14] Photoderm MAX Fluid SPF 100
 deepProductsList.push({
     id: 'bio_photoderm_max_100', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
-    name: { ar: 'فوتوديرم ماكس فلويد SPF 100', en: 'Photoderm MAX Fluid SPF 100' }, image: "", potency: 2, 
+    name: { ar: 'فوتوديرم ماكس فلويد SPF 100', en: 'Photoderm MAX Fluid SPF 100' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -676,7 +659,7 @@ deepProductsList.push({
 // [15] Photoderm M Gel-Cream SPF 50+ (Melasma Care)
 deepProductsList.push({
     id: 'bio_photoderm_m', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
-    name: { ar: 'فوتوديرم M (واقي الكلف والتصبغات)', en: 'Photoderm M Gel-Cream SPF 50+' }, image: "", potency: 2, 
+    name: { ar: 'فوتوديرم M (واقي الكلف والتصبغات)', en: 'Photoderm M Gel-Cream SPF 50+' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -711,7 +694,7 @@ deepProductsList.push({
 // [16] Photoderm Spot-Age SPF 50+
 deepProductsList.push({
     id: 'bio_photoderm_spot_age', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
-    name: { ar: 'فوتوديرم سبوت إيدج SPF50+', en: 'Photoderm Spot-Age SPF 50+' }, image: "", potency: 2, 
+    name: { ar: 'فوتوديرم سبوت إيدج SPF50+', en: 'Photoderm Spot-Age SPF 50+' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -777,7 +760,7 @@ glossaryDict['vitamin_c_fresh'] = {
 // [17] Hydrabio H2O Micellar Water
 deepProductsList.push({
     id: 'bio_hydrabio_h2o', brandId: 'bioderma', familyId: 'hydrabio', brand: 'Bioderma',
-    name: { ar: 'هيدرابيو H2O ميسيلار', en: 'Hydrabio H2O Micellar Water' }, image: "", potency: 1, 
+    name: { ar: 'هيدرابيو H2O ميسيلار', en: 'Hydrabio H2O Micellar Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (درجة حموضة فسيولوجية)', en: '5.5 (Physiological pH)' },
         mechanism: { 
@@ -812,7 +795,7 @@ deepProductsList.push({
 // [18] Hydrabio Serum
 deepProductsList.push({
     id: 'bio_hydrabio_serum', brandId: 'bioderma', familyId: 'hydrabio', brand: 'Bioderma',
-    name: { ar: 'هيدرابيو سيروم (معزز الترطيب)', en: 'Hydrabio Serum (Hydration Booster)' }, image: "", potency: 2, 
+    name: { ar: 'هيدرابيو سيروم (معزز الترطيب)', en: 'Hydrabio Serum (Hydration Booster)' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -847,7 +830,7 @@ deepProductsList.push({
 // [19] Pigmentbio C-Concentrate
 deepProductsList.push({
     id: 'bio_pigmentbio_c_concentrate', brandId: 'bioderma', familyId: 'pigmentbio', brand: 'Bioderma',
-    name: { ar: 'بيجمنت بيو سي-كونسينتريت', en: 'Pigmentbio C-Concentrate' }, image: "", potency: 3, 
+    name: { ar: 'بيجمنت بيو سي-كونسينتريت', en: 'Pigmentbio C-Concentrate' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (pH ~3.5-4.0 لفعالية التقشير)', en: 'Acidic (pH ~3.5-4.0 for exfoliation efficacy)' },
         mechanism: { 
@@ -883,7 +866,7 @@ deepProductsList.push({
 // [20] Pigmentbio Sensitive Areas
 deepProductsList.push({
     id: 'bio_pigmentbio_sensitive_areas', brandId: 'bioderma', familyId: 'pigmentbio', brand: 'Bioderma',
-    name: { ar: 'بيجمنت بيو للمناطق الحساسة', en: 'Pigmentbio Sensitive Areas' }, image: "", potency: 1, 
+    name: { ar: 'بيجمنت بيو للمناطق الحساسة', en: 'Pigmentbio Sensitive Areas' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -957,7 +940,7 @@ glossaryDict['non_detergent'] = {
 // [21] Cicabio Cream
 deepProductsList.push({
     id: 'bio_cicapio_cream', brandId: 'bioderma', familyId: 'cicabio', brand: 'Bioderma',
-    name: { ar: 'سيكابيو كريم (مرمم ومهدئ)', en: 'Cicabio Soothing Repairing Cream' }, image: "", potency: 2, 
+    name: { ar: 'سيكابيو كريم (مرمم ومهدئ)', en: 'Cicabio Soothing Repairing Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -993,7 +976,7 @@ deepProductsList.push({
 // [22] Cicabio Arnica+
 deepProductsList.push({
     id: 'bio_cicabio_arnica', brandId: 'bioderma', familyId: 'cicabio', brand: 'Bioderma',
-    name: { ar: 'سيكابيو أرنيكا+ (لعلاج الكدمات)', en: 'Cicabio Arnica+ Cream' }, image: "", potency: 2, 
+    name: { ar: 'سيكابيو أرنيكا+ (لعلاج الكدمات)', en: 'Cicabio Arnica+ Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1028,7 +1011,7 @@ deepProductsList.push({
 // [23] Node DS+ Anti-Dandruff Shampoo
 deepProductsList.push({
     id: 'bio_node_ds_plus', brandId: 'bioderma', familyId: 'node', brand: 'Bioderma',
-    name: { ar: 'نوديه DS+ (شامبو للقشرة الشديدة)', en: 'Node DS+ Anti-Dandruff Shampoo' }, image: "", potency: 3, 
+    name: { ar: 'نوديه DS+ (شامبو للقشرة الشديدة)', en: 'Node DS+ Anti-Dandruff Shampoo' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن لفروة الرأس', en: 'Balanced for Scalp' },
         mechanism: { 
@@ -1064,7 +1047,7 @@ deepProductsList.push({
 // [24] Node Fluid Shampoo
 deepProductsList.push({
     id: 'bio_node_fluid', brandId: 'bioderma', familyId: 'node', brand: 'Bioderma',
-    name: { ar: 'نوديه فلويد (شامبو يومي لطيف)', en: 'Node Fluid Non-Detergent Shampoo' }, image: "", potency: 1, 
+    name: { ar: 'نوديه فلويد (شامبو يومي لطيف)', en: 'Node Fluid Non-Detergent Shampoo' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -1121,7 +1104,7 @@ glossaryDict['amylpriv_patent'] = {
 // [25] ABCDerm H2O Micellar Water
 deepProductsList.push({
     id: 'bio_abcderm_h2o', brandId: 'bioderma', familyId: 'abcderm', brand: 'Bioderma',
-    name: { ar: 'أبِسيديرم H2O (ماء تنظيف ميسيلار)', en: 'ABCDerm H2O Micellar Water' }, image: "", potency: 1, 
+    name: { ar: 'أبِسيديرم H2O (ماء تنظيف ميسيلار)', en: 'ABCDerm H2O Micellar Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً لجلد الرضع', en: 'Physiologically balanced for infant skin' },
         mechanism: { 
@@ -1156,7 +1139,7 @@ deepProductsList.push({
 // [26] ABCDerm Moussant
 deepProductsList.push({
     id: 'bio_abcderm_moussant', brandId: 'bioderma', familyId: 'abcderm', brand: 'Bioderma',
-    name: { ar: 'أبِسيديرم موسان (جل استحمام رغوي)', en: 'ABCDerm Gel Moussant' }, image: "", potency: 1, 
+    name: { ar: 'أبِسيديرم موسان (جل استحمام رغوي)', en: 'ABCDerm Gel Moussant' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically balanced' },
         mechanism: { 
@@ -1190,7 +1173,7 @@ deepProductsList.push({
 // [27] ABCDerm Péri-oral
 deepProductsList.push({
     id: 'bio_abcderm_perioral', brandId: 'bioderma', familyId: 'abcderm', brand: 'Bioderma',
-    name: { ar: 'أبِسيديرم بيري-أورال (علاج حول الفم)', en: 'ABCDerm Péri-oral' }, image: "", potency: 2, 
+    name: { ar: 'أبِسيديرم بيري-أورال (علاج حول الفم)', en: 'ABCDerm Péri-oral' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1226,7 +1209,7 @@ deepProductsList.push({
 // [28] ABCDerm Cold-Cream
 deepProductsList.push({
     id: 'bio_abcderm_cold_cream', brandId: 'bioderma', familyId: 'abcderm', brand: 'Bioderma',
-    name: { ar: 'أبِسيديرم كولد كريم (مرطب شتوي مكثف)', en: 'ABCDerm Cold-Cream Face & Body' }, image: "", potency: 1, 
+    name: { ar: 'أبِسيديرم كولد كريم (مرطب شتوي مكثف)', en: 'ABCDerm Cold-Cream Face & Body' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1308,7 +1291,7 @@ brandsList.push({
 // [29] Effaclar Duo+M
 deepProductsList.push({
     id: 'lrp_effaclar_duo_m', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ديو+M (علاج شامل للحبوب)', en: 'Effaclar Duo+M Anti-Blemish Cream' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار ديو+M (علاج شامل للحبوب)', en: 'Effaclar Duo+M Anti-Blemish Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: '5.5 (متوازن)', en: '5.5 (Balanced)' },
         mechanism: { 
@@ -1344,7 +1327,7 @@ deepProductsList.push({
 // [30] Effaclar Purifying Foaming Gel
 deepProductsList.push({
     id: 'lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار الغسول الرغوي المنقي', en: 'Effaclar Purifying Foaming Gel' }, image: "", potency: 1, 
+    name: { ar: 'إيفاكلار الغسول الرغوي المنقي', en: 'Effaclar Purifying Foaming Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (يحافظ على الغلاف الحمضي)', en: '5.5 (Maintains the acid mantle)' },
         mechanism: { 
@@ -1379,7 +1362,7 @@ deepProductsList.push({
 // [31] Effaclar Micro-Peeling Purifying Gel
 deepProductsList.push({
     id: 'lrp_effaclar_micro_peeling', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار غسول المايكرو-بيلينج (تقشير دقيق)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار غسول المايكرو-بيلينج (تقشير دقيق)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (لضمان فعالية التقشير)', en: 'Acidic (to ensure peeling efficacy)' },
         mechanism: { 
@@ -1415,7 +1398,7 @@ deepProductsList.push({
 // [32] Effaclar Ultra Concentrated Serum
 deepProductsList.push({
     id: 'lrp_effaclar_serum', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار السيروم فائق التركيز (سيروم التقشير)', en: 'Effaclar Ultra Concentrated Serum' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار السيروم فائق التركيز (سيروم التقشير)', en: 'Effaclar Ultra Concentrated Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (~3.5-4.0)', en: 'Acidic (~3.5-4.0)' },
         mechanism: { 
@@ -1481,7 +1464,7 @@ glossaryDict['orellana_extract'] = {
 // [33] Effaclar Mat
 deepProductsList.push({
     id: 'lrp_effaclar_mat', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار مات (مرطب قابض للمسام)', en: 'Effaclar Mat Sebo-Regulating Moisturizer' }, image: "", potency: 1, 
+    name: { ar: 'إيفاكلار مات (مرطب قابض للمسام)', en: 'Effaclar Mat Sebo-Regulating Moisturizer' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -1517,7 +1500,7 @@ deepProductsList.push({
 // [34] Effaclar H Iso-Biome Cream
 deepProductsList.push({
     id: 'lrp_effaclar_h_cream', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار إتش إيزو-بيوم (كريم ترميم)', en: 'Effaclar H Iso-Biome Soothing Moisturizer' }, image: "", potency: 1, 
+    name: { ar: 'إيفاكلار إتش إيزو-بيوم (كريم ترميم)', en: 'Effaclar H Iso-Biome Soothing Moisturizer' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1553,7 +1536,7 @@ deepProductsList.push({
 // [35] Effaclar H Iso-Biome Cleansing Cream
 deepProductsList.push({
     id: 'lrp_effaclar_h_cleanser', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار إتش إيزو-بيوم (كريم منظف)', en: 'Effaclar H Iso-Biome Cleansing Cream' }, image: "", potency: 1, 
+    name: { ar: 'إيفاكلار إتش إيزو-بيوم (كريم منظف)', en: 'Effaclar H Iso-Biome Cleansing Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -1589,7 +1572,7 @@ deepProductsList.push({
 // [36] Effaclar A.I.
 deepProductsList.push({
     id: 'lrp_effaclar_ai', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار A.I. (علاج موضعي للحبوب)', en: 'Effaclar A.I. Targeted Breakout Corrector' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار A.I. (علاج موضعي للحبوب)', en: 'Effaclar A.I. Targeted Breakout Corrector' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
         mechanism: { 
@@ -1648,7 +1631,7 @@ glossaryDict['urea_keratolytic'] = {
 // [37] Effaclar Micellar Water Ultra
 deepProductsList.push({
     id: 'lrp_effaclar_micellar', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ميسيلار ووتر ألترا', en: 'Effaclar Micellar Water Ultra' }, image: "", potency: 1, 
+    name: { ar: 'إيفاكلار ميسيلار ووتر ألترا', en: 'Effaclar Micellar Water Ultra' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (متوازن)', en: '5.5 (Balanced)' },
         mechanism: { 
@@ -1683,7 +1666,7 @@ deepProductsList.push({
 // [38] Effaclar Duo+ SPF 30
 deepProductsList.push({
     id: 'lrp_effaclar_duo_spf', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ديو+ (مع واقي شمس SPF30)', en: 'Effaclar Duo+ SPF 30' }, image: "", potency: 2, 
+    name: { ar: 'إيفاكلار ديو+ (مع واقي شمس SPF30)', en: 'Effaclar Duo+ SPF 30' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1718,7 +1701,7 @@ deepProductsList.push({
 // [39] Effaclar Sebo-Controlling Mask
 deepProductsList.push({
     id: 'lrp_effaclar_mask', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ماسك للتحكم في الزهم', en: 'Effaclar Sebo-Controlling Mask' }, image: "", potency: 2, 
+    name: { ar: 'إيفاكلار ماسك للتحكم في الزهم', en: 'Effaclar Sebo-Controlling Mask' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1753,7 +1736,7 @@ deepProductsList.push({
 // [40] Effaclar Duo+M Patch
 deepProductsList.push({
     id: 'lrp_effaclar_patch', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ديو+M (لصقات الحبوب)', en: 'Effaclar Duo+M Blemish Patches' }, image: "", potency: 2, 
+    name: { ar: 'إيفاكلار ديو+M (لصقات الحبوب)', en: 'Effaclar Duo+M Blemish Patches' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'غير مائي', en: 'Water-free' },
         mechanism: { 
@@ -1787,7 +1770,7 @@ deepProductsList.push({
 // [41] Lipikar Baume AP+M
 deepProductsList.push({
     id: 'lrp_lipikar_baume_apm', brandId: 'laroche', familyId: 'lipikar', brand: 'La Roche-Posay',
-    name: { ar: 'ليبيكار بوم AP+M (بلسم الإكزيما)', en: 'Lipikar Baume AP+M' }, image: "", potency: 3, 
+    name: { ar: 'ليبيكار بوم AP+M (بلسم الإكزيما)', en: 'Lipikar Baume AP+M' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1823,7 +1806,7 @@ deepProductsList.push({
 // [42] Lipikar Syndet AP+
 deepProductsList.push({
     id: 'lrp_lipikar_syndet', brandId: 'laroche', familyId: 'lipikar', brand: 'La Roche-Posay',
-    name: { ar: 'ليبيكار سينديت AP+ (كريم غسول)', en: 'Lipikar Syndet AP+ Cream Wash' }, image: "", potency: 1, 
+    name: { ar: 'ليبيكار سينديت AP+ (كريم غسول)', en: 'Lipikar Syndet AP+ Cream Wash' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -1858,7 +1841,7 @@ deepProductsList.push({
 // [43] Lipikar Lait Urea 5+
 deepProductsList.push({
     id: 'lrp_lipikar_urea', brandId: 'laroche', familyId: 'lipikar', brand: 'La Roche-Posay',
-    name: { ar: 'ليبيكار لوشن يوريا 5+ (مقشر ومرطب)', en: 'Lipikar Lait Urea 5+ Soothing Lotion' }, image: "", potency: 2, 
+    name: { ar: 'ليبيكار لوشن يوريا 5+ (مقشر ومرطب)', en: 'Lipikar Lait Urea 5+ Soothing Lotion' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
         mechanism: { 
@@ -1925,7 +1908,7 @@ glossaryDict['ce_act_complex'] = {
 // [44] Lipikar Baby Shower Gel (Gel Lavant)
 deepProductsList.push({
     id: 'lrp_lipikar_gel_lavant', brandId: 'laroche', familyId: 'lipikar', brand: 'La Roche-Posay',
-    name: { ar: 'ليبيكار جل لافانت (غسول العائلة والأطفال)', en: 'Lipikar Gel Lavant (Baby Shower Gel)' }, image: "", potency: 1, 
+    name: { ar: 'ليبيكار جل لافانت (غسول العائلة والأطفال)', en: 'Lipikar Gel Lavant (Baby Shower Gel)' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (درجة حموضة فسيولوجية)', en: '5.5 (Physiological pH)' },
         mechanism: { 
@@ -1960,7 +1943,7 @@ deepProductsList.push({
 // [45] Anthelios UVMune 400 Invisible / Tinted Fluid SPF50+
 deepProductsList.push({
     id: 'lrp_anthelios_uvmune_fluid', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس UVMune 400 فلويد (مخفي / ملون)', en: 'Anthelios UVMune 400 Invisible / Tinted Fluid SPF50+' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس UVMune 400 فلويد (مخفي / ملون)', en: 'Anthelios UVMune 400 Invisible / Tinted Fluid SPF50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -1995,7 +1978,7 @@ deepProductsList.push({
 // [46] Anthelios UVMune 400 Oil Control (Fluid / Gel-Cream) SPF50+
 deepProductsList.push({
     id: 'lrp_anthelios_uvmune_oil_control', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس UVMune 400 أويل كنترول', en: 'Anthelios UVMune 400 Oil Control (Fluid/Gel-Cream)' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس UVMune 400 أويل كنترول', en: 'Anthelios UVMune 400 Oil Control (Fluid/Gel-Cream)' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2030,7 +2013,7 @@ deepProductsList.push({
 // [47] Anthelios Age Correct SPF50
 deepProductsList.push({
     id: 'lrp_anthelios_age_correct', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس إيدج كوريكت (مضاد للشيخوخة)', en: 'Anthelios Age Correct SPF50 (Light / Tinted)' }, image: "", potency: 2, 
+    name: { ar: 'أنثيليوس إيدج كوريكت (مضاد للشيخوخة)', en: 'Anthelios Age Correct SPF50 (Light / Tinted)' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2089,7 +2072,7 @@ glossaryDict['pediatric_sun_charter'] = {
 // [48] Anthelios UVMune 400 Hydrating Cream SPF 50+
 deepProductsList.push({
     id: 'lrp_anthelios_uvmune_hydrating', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس UVMune 400 كريم مرطب', en: 'Anthelios UVMune 400 Hydrating Cream SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس UVMune 400 كريم مرطب', en: 'Anthelios UVMune 400 Hydrating Cream SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -2124,7 +2107,7 @@ deepProductsList.push({
 // [49] Anthelios Anti-Shine Invisible Fresh Mist SPF 50+
 deepProductsList.push({
     id: 'lrp_anthelios_mist', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس بخاخ منعش مضاد للمعان (XL Mist)', en: 'Anthelios Anti-Shine Invisible Fresh Mist SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس بخاخ منعش مضاد للمعان (XL Mist)', en: 'Anthelios Anti-Shine Invisible Fresh Mist SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2159,7 +2142,7 @@ deepProductsList.push({
 // [50] Anthelios Dermo-Pediatrics / Baby Sun Lines
 deepProductsList.push({
     id: 'lrp_anthelios_pediatrics', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس ديرمو-بيدياتريكس (واقي أطفال/رضع)', en: 'Anthelios Dermo-Pediatrics / Baby Lotion SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس ديرمو-بيدياتريكس (واقي أطفال/رضع)', en: 'Anthelios Dermo-Pediatrics / Baby Lotion SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن ليناسب الأطفال', en: 'Balanced for pediatric skin' },
         mechanism: { 
@@ -2194,7 +2177,7 @@ deepProductsList.push({
 // [51] Anthelios UVMune 400 Anti-Dark Spot Fluid SPF 50+
 deepProductsList.push({
     id: 'lrp_anthelios_anti_dark_spot', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس UVMune 400 مضاد للتصبغات', en: 'Anthelios UVMune 400 Anti-Dark Spot Fluid SPF 50+' }, image: "", potency: 2, 
+    name: { ar: 'أنثيليوس UVMune 400 مضاد للتصبغات', en: 'Anthelios UVMune 400 Anti-Dark Spot Fluid SPF 50+' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2252,7 +2235,7 @@ glossaryDict['gradual_retinol'] = {
 // [52] Hyalu B5 Serum
 deepProductsList.push({
     id: 'lrp_hyalu_b5', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'هيالو B5 سيروم (ترطيب وملء)', en: 'Hyalu B5 Serum' }, image: "", potency: 2, 
+    name: { ar: 'هيالو B5 سيروم (ترطيب وملء)', en: 'Hyalu B5 Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2288,7 +2271,7 @@ deepProductsList.push({
 // [53] Retinol B3 Serum
 deepProductsList.push({
     id: 'lrp_retinol_b3', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'ريتينول B3 سيروم (مكافحة الشيخوخة)', en: 'Retinol B3 Serum' }, image: "", potency: 3, 
+    name: { ar: 'ريتينول B3 سيروم (مكافحة الشيخوخة)', en: 'Retinol B3 Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن لتقليل التهيج', en: 'Balanced to minimize irritation' },
         mechanism: { 
@@ -2323,7 +2306,7 @@ deepProductsList.push({
 // [54] Pure Vitamin C10 Serum
 deepProductsList.push({
     id: 'lrp_vitamin_c10', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'فيتامين C10 سيروم (للنضارة)', en: 'Pure Vitamin C10 Serum' }, image: "", potency: 3, 
+    name: { ar: 'فيتامين C10 سيروم (للنضارة)', en: 'Pure Vitamin C10 Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً (~5.5 للتحمل)', en: 'Slightly acidic (~5.5 for tolerance)' },
         mechanism: { 
@@ -2359,7 +2342,7 @@ deepProductsList.push({
 // [55] Niacinamide 10 Serum
 deepProductsList.push({
     id: 'lrp_niacinamide_10', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'نياسيناميد 10 سيروم (للتصبغات)', en: 'Niacinamide 10 Serum' }, image: "", potency: 2, 
+    name: { ar: 'نياسيناميد 10 سيروم (للتصبغات)', en: 'Niacinamide 10 Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2395,7 +2378,7 @@ deepProductsList.push({
 // [56] Hyalu B5 Eye Serum
 deepProductsList.push({
     id: 'lrp_hyalu_b5_eye', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'هيالو B5 سيروم محيط العين', en: 'Hyalu B5 Eye Serum' }, image: "", potency: 1, 
+    name: { ar: 'هيالو B5 سيروم محيط العين', en: 'Hyalu B5 Eye Serum' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -2453,7 +2436,7 @@ glossaryDict['mp_lipids'] = {
 // [57] Cicaplast Baume B5+
 deepProductsList.push({
     id: 'lrp_cicaplast_baume_b5_plus', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
-    name: { ar: 'سيكابلاست بوم B5+ (بلسم مرمم مكثف)', en: 'Cicaplast Baume B5+ Ultra-Repairing Balm' }, image: "", potency: 3, 
+    name: { ar: 'سيكابلاست بوم B5+ (بلسم مرمم مكثف)', en: 'Cicaplast Baume B5+ Ultra-Repairing Balm' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -2489,7 +2472,7 @@ deepProductsList.push({
 // [58] Cicaplast Baume B5+ SPF 50
 deepProductsList.push({
     id: 'lrp_cicaplast_baume_spf50', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
-    name: { ar: 'سيكابلاست بوم B5+ مع واقي شمس SPF 50', en: 'Cicaplast Baume B5+ SPF 50' }, image: "", potency: 2, 
+    name: { ar: 'سيكابلاست بوم B5+ مع واقي شمس SPF 50', en: 'Cicaplast Baume B5+ SPF 50' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2525,7 +2508,7 @@ deepProductsList.push({
 // [59] Cicaplast Gel B5
 deepProductsList.push({
     id: 'lrp_cicaplast_gel_b5', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
-    name: { ar: 'سيكابلاست جل B5 (مسرع التئام ومُدلك)', en: 'Cicaplast Gel B5 Pro-Recovery' }, image: "", potency: 2, 
+    name: { ar: 'سيكابلاست جل B5 (مسرع التئام ومُدلك)', en: 'Cicaplast Gel B5 Pro-Recovery' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2560,7 +2543,7 @@ deepProductsList.push({
 // [60] Cicaplast Levres (Lips)
 deepProductsList.push({
     id: 'lrp_cicaplast_lips', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
-    name: { ar: 'سيكابلاست للشفاه (حاجز مرمم)', en: 'Cicaplast Lips Barrier Repairing Balm' }, image: "", potency: 1, 
+    name: { ar: 'سيكابلاست للشفاه (حاجز مرمم)', en: 'Cicaplast Lips Barrier Repairing Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2595,7 +2578,7 @@ deepProductsList.push({
 // [61] Cicaplast Mains (Hands)
 deepProductsList.push({
     id: 'lrp_cicaplast_mains', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
-    name: { ar: 'سيكابلاست لليدين (كريم مرمم)', en: 'Cicaplast Mains Barrier Repairing Hand Cream' }, image: "", potency: 1, 
+    name: { ar: 'سيكابلاست لليدين (كريم مرمم)', en: 'Cicaplast Mains Barrier Repairing Hand Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2661,7 +2644,7 @@ glossaryDict['green_tech_ha'] = {
 // [62] Toleriane Dermallergo Fluid
 deepProductsList.push({
     id: 'lrp_toleriane_dermallergo_fluid', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
-    name: { ar: 'توليان ديرماليرجو فلويد', en: 'Toleriane Dermallergo Fluid' }, image: "", potency: 2, 
+    name: { ar: 'توليان ديرماليرجو فلويد', en: 'Toleriane Dermallergo Fluid' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن بدقة', en: 'Strictly Balanced' },
         mechanism: { 
@@ -2696,7 +2679,7 @@ deepProductsList.push({
 // [63] Toleriane Dermallergo Eye Cream
 deepProductsList.push({
     id: 'lrp_toleriane_dermallergo_eye', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
-    name: { ar: 'توليان ديرماليرجو كريم العين', en: 'Toleriane Dermallergo Eye Cream' }, image: "", potency: 2, 
+    name: { ar: 'توليان ديرماليرجو كريم العين', en: 'Toleriane Dermallergo Eye Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن لمحيط العين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -2731,7 +2714,7 @@ deepProductsList.push({
 // [64] Toleriane Sensitive Cream
 deepProductsList.push({
     id: 'lrp_toleriane_sensitive', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
-    name: { ar: 'توليان سينسيتيف كريم', en: 'Toleriane Sensitive Cream' }, image: "", potency: 1, 
+    name: { ar: 'توليان سينسيتيف كريم', en: 'Toleriane Sensitive Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -2766,7 +2749,7 @@ deepProductsList.push({
 // [65] Hydraphase HA Light
 deepProductsList.push({
     id: 'lrp_hydraphase_ha_light', brandId: 'laroche', familyId: 'hydraphase', brand: 'La Roche-Posay',
-    name: { ar: 'هيدرافاز HA لايت (مرطب 72 ساعة)', en: 'Hydraphase HA Light' }, image: "", potency: 1, 
+    name: { ar: 'هيدرافاز HA لايت (مرطب 72 ساعة)', en: 'Hydraphase HA Light' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2801,7 +2784,7 @@ deepProductsList.push({
 // [66] Hydraphase HA Rich
 deepProductsList.push({
     id: 'lrp_hydraphase_ha_rich', brandId: 'laroche', familyId: 'hydraphase', brand: 'La Roche-Posay',
-    name: { ar: 'هيدرافاز HA ريتش (كريم غني)', en: 'Hydraphase HA Rich' }, image: "", potency: 1, 
+    name: { ar: 'هيدرافاز HA ريتش (كريم غني)', en: 'Hydraphase HA Rich' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2836,7 +2819,7 @@ deepProductsList.push({
 // [67] Thermal Spring Water
 deepProductsList.push({
     id: 'lrp_thermal_spring_water', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
-    name: { ar: 'مياه لاروش بوزيه الحرارية (سبراي مهدئ)', en: 'La Roche-Posay Thermal Spring Water' }, image: "", potency: 1, 
+    name: { ar: 'مياه لاروش بوزيه الحرارية (سبراي مهدئ)', en: 'La Roche-Posay Thermal Spring Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '7.0 (معتدل طبيعياً)', en: '7.0 (Naturally Neutral)' },
         mechanism: { 
@@ -2893,7 +2876,7 @@ glossaryDict['phe_resorcinol'] = {
 // [68] Mela B3 Anti Dark Spots Serum
 deepProductsList.push({
     id: 'lrp_mela_b3_serum', brandId: 'laroche', familyId: 'mela_b3', brand: 'La Roche-Posay',
-    name: { ar: 'ميلا B3 سيروم (مضاد للتصبغات)', en: 'Mela B3 Anti-Dark Spots Serum' }, image: "", potency: 3, 
+    name: { ar: 'ميلا B3 سيروم (مضاد للتصبغات)', en: 'Mela B3 Anti-Dark Spots Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -2929,7 +2912,7 @@ deepProductsList.push({
 // [69] Mela B3 Cream SPF 30
 deepProductsList.push({
     id: 'lrp_mela_b3_spf30', brandId: 'laroche', familyId: 'mela_b3', brand: 'La Roche-Posay',
-    name: { ar: 'ميلا B3 كريم يومي (مع SPF30)', en: 'Mela B3 Anti-Dark Spots Cream SPF 30' }, image: "", potency: 2, 
+    name: { ar: 'ميلا B3 كريم يومي (مع SPF30)', en: 'Mela B3 Anti-Dark Spots Cream SPF 30' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -2964,7 +2947,7 @@ deepProductsList.push({
 // [70] Mela B3 Micro-Peeling Gel
 deepProductsList.push({
     id: 'lrp_mela_b3_peeling_gel', brandId: 'laroche', familyId: 'mela_b3', brand: 'La Roche-Posay',
-    name: { ar: 'ميلا B3 غسول المايكرو-بيلينج', en: 'Mela B3 Micro-Peeling Cleansing Gel' }, image: "", potency: 2, 
+    name: { ar: 'ميلا B3 غسول المايكرو-بيلينج', en: 'Mela B3 Micro-Peeling Cleansing Gel' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
         mechanism: { 
@@ -2999,7 +2982,7 @@ deepProductsList.push({
 // [71] Pigmentclar Cream Cleanser
 deepProductsList.push({
     id: 'lrp_pigmentclar_cleanser', brandId: 'laroche', familyId: 'mela_b3', brand: 'La Roche-Posay',
-    name: { ar: 'بيجمنتكلار غسول كريمي للتفتيح', en: 'Pigmentclar Brightening Cream Cleanser' }, image: "", potency: 1, 
+    name: { ar: 'بيجمنتكلار غسول كريمي للتفتيح', en: 'Pigmentclar Brightening Cream Cleanser' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3034,7 +3017,7 @@ deepProductsList.push({
 // [72] Pigmentclar Eye Cream
 deepProductsList.push({
     id: 'lrp_pigmentclar_eye', brandId: 'laroche', familyId: 'mela_b3', brand: 'La Roche-Posay',
-    name: { ar: 'بيجمنتكلار كريم العين (للهالات)', en: 'Pigmentclar Dark Circle Eye Cream' }, image: "", potency: 2, 
+    name: { ar: 'بيجمنتكلار كريم العين (للهالات)', en: 'Pigmentclar Dark Circle Eye Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -3089,7 +3072,7 @@ glossaryDict['xdefense_tech'] = {
 // [76] Sebium Hydra Cleanser
 deepProductsList.push({
     id: 'bio_sebium_hydra_cleanser', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم هيدرا كلينزر (منظف مرمم)', en: 'Sebium Hydra Cleanser' }, image: "", potency: 1, 
+    name: { ar: 'سيبيوم هيدرا كلينزر (منظف مرمم)', en: 'Sebium Hydra Cleanser' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3107,7 +3090,7 @@ deepProductsList.push({
 // [77] Sebium Kerato+
 deepProductsList.push({
     id: 'bio_sebium_kerato', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
-    name: { ar: 'سيبيوم كيراتو+ (جل كريم للحبوب)', en: 'Sebium Kerato+ Gel-Cream' }, image: "", potency: 3, 
+    name: { ar: 'سيبيوم كيراتو+ (جل كريم للحبوب)', en: 'Sebium Kerato+ Gel-Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (للتقشير)', en: 'Acidic (for peeling)' },
         mechanism: { 
@@ -3125,7 +3108,7 @@ deepProductsList.push({
 // [78] Sensibio Eye+ (Anti-Fatigue)
 deepProductsList.push({
     id: 'bio_sensibio_eye_plus', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
-    name: { ar: 'سينسيبيو Eye+ (عناية الهالات والإرهاق)', en: 'Sensibio Eye+ Anti-Fatigue Eye Care' }, image: "", potency: 1, 
+    name: { ar: 'سينسيبيو Eye+ (عناية الهالات والإرهاق)', en: 'Sensibio Eye+ Anti-Fatigue Eye Care' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'يستهدف الاحتقان حول العين، يقلل الانتفاخات والهالات السوداء الناتجة عن الإرهاق، ويهدئ التحسس فوراً.', 
@@ -3142,7 +3125,7 @@ deepProductsList.push({
 // [79] Hydrabio Hyalu+ Serum
 deepProductsList.push({
     id: 'bio_hydrabio_hyalu_plus', brandId: 'bioderma', familyId: 'hydrabio', brand: 'Bioderma',
-    name: { ar: 'هيدرابيو هيالو+ سيروم', en: 'Hydrabio Hyalu+ Serum' }, image: "", potency: 2, 
+    name: { ar: 'هيدرابيو هيالو+ سيروم', en: 'Hydrabio Hyalu+ Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم عالي التركيز يجمع حمض الهيالورونيك بوزنين جزيئيين مع النياسيناميد، لملء التجاعيد الناتجة عن الجفاف وتقوية الدفاعات الذاتية للجلد.', 
@@ -3159,7 +3142,7 @@ deepProductsList.push({
 // [80] Photoderm XDefense (Invisible / Tinted)
 deepProductsList.push({
     id: 'bio_photoderm_xdefense', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
-    name: { ar: 'فوتوديرم XDefense (واقي فائق)', en: 'Photoderm XDefense SPF 50+ (Invisible/Tinted)' }, image: "", potency: 2, 
+    name: { ar: 'فوتوديرم XDefense (واقي فائق)', en: 'Photoderm XDefense SPF 50+ (Invisible/Tinted)' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يستخدم <span class="glossary-term" onclick="openGlossary(\'xdefense_tech\')">تقنية XDefense</span> للحماية من الأشعة فوق البنفسجية والتلوث في نفس الوقت، مع توفير تغطية لونية (في النسخ الملونة 01-04).', 
@@ -3173,7 +3156,7 @@ deepProductsList.push({
 // [81] Cicabio Cleansing Balm
 deepProductsList.push({
     id: 'bio_cicabio_cleansing_balm', brandId: 'bioderma', familyId: 'cicabio', brand: 'Bioderma',
-    name: { ar: 'سيكابيو بلسم منظف مهدئ', en: 'Cicabio Soothing Cleansing Balm' }, image: "", potency: 1, 
+    name: { ar: 'سيكابيو بلسم منظف مهدئ', en: 'Cicabio Soothing Cleansing Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'بلسم منظف يحمي الجلد المتضرر أثناء الغسيل، يسكن الحكة والوخز بفضل الـ Antalgicine ويحافظ على تعقيم المنطقة بالزنك.', 
@@ -3198,7 +3181,7 @@ glossaryDict['pure_vitamin_c12'] = {
 // [73] Physiological Foaming Water
 deepProductsList.push({
     id: 'lrp_physiological_foam', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'الغسول الرغوي الفسيولوجي', en: 'Physiological Foaming Water' }, image: "", potency: 1, 
+    name: { ar: 'الغسول الرغوي الفسيولوجي', en: 'Physiological Foaming Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '5.5 (متوازن فسيولوجياً)', en: '5.5 (Physiologically Balanced)' },
         mechanism: { 
@@ -3229,7 +3212,7 @@ deepProductsList.push({
 // [74] Pure Vitamin C12 Serum
 deepProductsList.push({
     id: 'lrp_vitamin_c12', brandId: 'laroche', familyId: 'serums', brand: 'La Roche-Posay',
-    name: { ar: 'فيتامين C12 سيروم فائق التركيز', en: 'Pure Vitamin C12 Serum' }, image: "", potency: 3, 
+    name: { ar: 'فيتامين C12 سيروم فائق التركيز', en: 'Pure Vitamin C12 Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (لأقصى امتصاص)', en: 'Acidic (for maximum absorption)' },
         mechanism: { 
@@ -3260,7 +3243,7 @@ deepProductsList.push({
 // [75] Anthelios Hydrating Lotion 250ml / Pediatrics Spray
 deepProductsList.push({
     id: 'lrp_anthelios_lotion_250', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس لوشن مرطب للجسم SPF 50+', en: 'Anthelios Hydrating Lotion SPF 50+ (250ml)' }, image: "", potency: 1, 
+    name: { ar: 'أنثيليوس لوشن مرطب للجسم SPF 50+', en: 'Anthelios Hydrating Lotion SPF 50+ (250ml)' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3332,7 +3315,7 @@ glossaryDict['melatonin_cx'] = {
 // [82] NCEF-SHOT Booster
 deepProductsList.push({
     id: 'fil_ncef_shot', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف شوت (أمبولة التجديد المكثف)', en: 'NCEF-SHOT Supreme Polyrevitalizing Concentrate' }, image: "", potency: 3, 
+    name: { ar: 'إن سي إي إف شوت (أمبولة التجديد المكثف)', en: 'NCEF-SHOT Supreme Polyrevitalizing Concentrate' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن للامتصاص العميق', en: 'Balanced for deep absorption' },
         mechanism: { 
@@ -3367,7 +3350,7 @@ deepProductsList.push({
 // [83] NCEF-REVERSE Cream
 deepProductsList.push({
     id: 'fil_ncef_reverse_cream', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيرس كريم (مجدد للشباب)', en: 'NCEF-REVERSE Supreme Multi-Correction Cream' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ريفيرس كريم (مجدد للشباب)', en: 'NCEF-REVERSE Supreme Multi-Correction Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3399,7 +3382,7 @@ deepProductsList.push({
 // [84] NCTF-REVERSE MAT Fluid (NCEF-Reverse Mat)
 deepProductsList.push({
     id: 'fil_nctf_reverse_mat', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيرس مات (فلويد مطفئ)', en: 'NCTF-REVERSE MAT Supreme Multi-Correction Fluid' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ريفيرس مات (فلويد مطفئ)', en: 'NCTF-REVERSE MAT Supreme Multi-Correction Fluid' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3431,7 +3414,7 @@ deepProductsList.push({
 // [85] NCEF-INTENSIVE Serum
 deepProductsList.push({
     id: 'fil_ncef_intensive_serum', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف إنتينسيف سيروم', en: 'NCEF-INTENSIVE Supreme Multi-Correction Serum' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف إنتينسيف سيروم', en: 'NCEF-INTENSIVE Supreme Multi-Correction Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن للامتصاص السريع', en: 'Balanced for rapid absorption' },
         mechanism: { 
@@ -3463,7 +3446,7 @@ deepProductsList.push({
 // [86] NCEF-REVERSE EYE Cream
 deepProductsList.push({
     id: 'fil_ncef_reverse_eye', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيرس كريم العين', en: 'NCEF-REVERSE EYES Supreme Multi-Correction' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ريفيرس كريم العين', en: 'NCEF-REVERSE EYES Supreme Multi-Correction' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -3495,7 +3478,7 @@ deepProductsList.push({
 // [87] NCEF-NIGHT MASK
 deepProductsList.push({
     id: 'fil_ncef_night_mask', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ماسك ليلي (مجدد للخلايا)', en: 'NCEF-NIGHT MASK Supreme Multi-Correction' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ماسك ليلي (مجدد للخلايا)', en: 'NCEF-NIGHT MASK Supreme Multi-Correction' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3558,7 +3541,7 @@ glossaryDict['sea_fennel'] = {
 // [88] Time-Filler 5XP Correction Cream
 deepProductsList.push({
     id: 'fil_time_filler_5xp_cream', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم فيلر 5XP كريم (للتجاعيد 5 في 1)', en: 'Time-Filler 5XP Correction Cream' }, image: "", potency: 3, 
+    name: { ar: 'تايم فيلر 5XP كريم (للتجاعيد 5 في 1)', en: 'Time-Filler 5XP Correction Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3590,7 +3573,7 @@ deepProductsList.push({
 // [89] Time-Filler 5XP Gel-Cream
 deepProductsList.push({
     id: 'fil_time_filler_5xp_gel', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم فيلر 5XP جل-كريم (مطفئ للمعان)', en: 'Time-Filler 5XP Correction Gel-Cream' }, image: "", potency: 3, 
+    name: { ar: 'تايم فيلر 5XP جل-كريم (مطفئ للمعان)', en: 'Time-Filler 5XP Correction Gel-Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3622,7 +3605,7 @@ deepProductsList.push({
 // [90] Time-Filler Intensive 5XP Serum
 deepProductsList.push({
     id: 'fil_time_filler_intensive', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم فيلر إنتينسيف 5XP سيروم', en: 'Time-Filler Intensive 5XP Serum' }, image: "", potency: 3, 
+    name: { ar: 'تايم فيلر إنتينسيف 5XP سيروم', en: 'Time-Filler Intensive 5XP Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن لاختراق أسرع', en: 'Balanced for faster penetration' },
         mechanism: { 
@@ -3654,7 +3637,7 @@ deepProductsList.push({
 // [91] Time-Filler Eyes 5XP Cream
 deepProductsList.push({
     id: 'fil_time_filler_eyes_5xp', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم فيلر 5XP كريم العين', en: 'Time-Filler Eyes 5XP Correction Cream' }, image: "", potency: 3, 
+    name: { ar: 'تايم فيلر 5XP كريم العين', en: 'Time-Filler Eyes 5XP Correction Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن لمحيط العين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -3686,7 +3669,7 @@ deepProductsList.push({
 // [92] Time-Filler Shot (Expression Lines)
 deepProductsList.push({
     id: 'fil_time_filler_shot', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم فيلر شوت (للتجاعيد التعبيرية)', en: 'Time-Filler Shot Targeted Serum' }, image: "", potency: 3, 
+    name: { ar: 'تايم فيلر شوت (للتجاعيد التعبيرية)', en: 'Time-Filler Shot Targeted Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3741,7 +3724,7 @@ glossaryDict['intensive_repairing_factors'] = {
 // [93] Hydra-Hyal Serum
 deepProductsList.push({
     id: 'fil_hydra_hyal_serum', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-هيال سيروم (ممتلئ ومرطب)', en: 'Hydra-Hyal Hydrating Plumping Serum' }, image: "", potency: 2, 
+    name: { ar: 'هيدرا-هيال سيروم (ممتلئ ومرطب)', en: 'Hydra-Hyal Hydrating Plumping Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن للامتصاص', en: 'Balanced for Absorption' },
         mechanism: { 
@@ -3773,7 +3756,7 @@ deepProductsList.push({
 // [94] Hydra-Hyal Cream
 deepProductsList.push({
     id: 'fil_hydra_hyal_cream', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-هيال كريم (مرطب ومجدد)', en: 'Hydra-Hyal Hydrating Plumping Cream' }, image: "", potency: 1, 
+    name: { ar: 'هيدرا-هيال كريم (مرطب ومجدد)', en: 'Hydra-Hyal Hydrating Plumping Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3805,7 +3788,7 @@ deepProductsList.push({
 // [95] Global-Repair Intensive Serum
 deepProductsList.push({
     id: 'fil_global_repair_serum', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
-    name: { ar: 'جلوبال ريبير إنتينسيف (سيروم التغذية والشد)', en: 'Global-Repair Intensive Multi-Revitalising Serum' }, image: "", potency: 3, 
+    name: { ar: 'جلوبال ريبير إنتينسيف (سيروم التغذية والشد)', en: 'Global-Repair Intensive Multi-Revitalising Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3837,7 +3820,7 @@ deepProductsList.push({
 // [96] Global-Repair Advanced Cream
 deepProductsList.push({
     id: 'fil_global_repair_cream', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
-    name: { ar: 'جلوبال ريبير أدفانسد كريم', en: 'Global-Repair Advanced Youth Cream' }, image: "", potency: 3, 
+    name: { ar: 'جلوبال ريبير أدفانسد كريم', en: 'Global-Repair Advanced Youth Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -3869,7 +3852,7 @@ deepProductsList.push({
 // [97] Global-Repair Eyes & Lips
 deepProductsList.push({
     id: 'fil_global_repair_eyes_lips', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
-    name: { ar: 'جلوبال ريبير للعين والشفاه', en: 'Global-Repair Eyes & Lips Multi-Revitalising' }, image: "", potency: 3, 
+    name: { ar: 'جلوبال ريبير للعين والشفاه', en: 'Global-Repair Eyes & Lips Multi-Revitalising' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -3932,7 +3915,7 @@ glossaryDict['dermo_rescue_cx'] = {
 // [98] Optim-Eyes Cream
 deepProductsList.push({
     id: 'fil_optim_eyes_cream', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
-    name: { ar: 'أوبتيم-آيز كريم (لمحيط العين)', en: 'Optim-Eyes 3-in-1 Eye Contour Cream' }, image: "", potency: 2, 
+    name: { ar: 'أوبتيم-آيز كريم (لمحيط العين)', en: 'Optim-Eyes 3-in-1 Eye Contour Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -3964,7 +3947,7 @@ deepProductsList.push({
 // [99] Optim-Eyes Lotion (Make-up Remover Serum)
 deepProductsList.push({
     id: 'fil_optim_eyes_lotion', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
-    name: { ar: 'أوبتيم-آيز لوشن (مزيل مكياج وسيروم)', en: 'Optim-Eyes Lotion Eye Makeup Remover Serum' }, image: "", potency: 1, 
+    name: { ar: 'أوبتيم-آيز لوشن (مزيل مكياج وسيروم)', en: 'Optim-Eyes Lotion Eye Makeup Remover Serum' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن للدموع', en: 'Tear-balanced' },
         mechanism: { 
@@ -3996,7 +3979,7 @@ deepProductsList.push({
 // [100] Age-Purify Fluid
 deepProductsList.push({
     id: 'fil_age_purify_fluid', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
-    name: { ar: 'إيدج-بيوريفاي فلويد (للحبوب والتجاعيد)', en: 'Age-Purify Double Correction Fluid' }, image: "", potency: 3, 
+    name: { ar: 'إيدج-بيوريفاي فلويد (للحبوب والتجاعيد)', en: 'Age-Purify Double Correction Fluid' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
         mechanism: { 
@@ -4028,7 +4011,7 @@ deepProductsList.push({
 // [101] Age-Purify Intensive Serum
 deepProductsList.push({
     id: 'fil_age_purify_serum', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
-    name: { ar: 'إيدج-بيوريفاي إنتينسيف سيروم', en: 'Age-Purify Intensive Double Correction Serum' }, image: "", potency: 3, 
+    name: { ar: 'إيدج-بيوريفاي إنتينسيف سيروم', en: 'Age-Purify Intensive Double Correction Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (للتقشير والنفاذية)', en: 'Acidic (for peeling & permeability)' },
         mechanism: { 
@@ -4060,7 +4043,7 @@ deepProductsList.push({
 // [102] Age-Purify Clean Cleansing Gel
 deepProductsList.push({
     id: 'fil_age_purify_clean', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
-    name: { ar: 'إيدج-بيوريفاي كلين (غسول منقي ومجدد)', en: 'Age-Purify Clean Smoothing Purifying Gel' }, image: "", potency: 2, 
+    name: { ar: 'إيدج-بيوريفاي كلين (غسول منقي ومجدد)', en: 'Age-Purify Clean Smoothing Purifying Gel' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن لعدم التجريد', en: 'Balanced to prevent stripping' },
         mechanism: { 
@@ -4115,7 +4098,7 @@ glossaryDict['photoperfector_hd'] = {
 // [103] Oxygen-Glow Cream
 deepProductsList.push({
     id: 'fil_oxygen_glow_cream', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-جلو كريم (للنضارة الفائقة)', en: 'Oxygen-Glow Super-Perfecting Radiance Cream' }, image: "", potency: 1, 
+    name: { ar: 'أوكسجين-جلو كريم (للنضارة الفائقة)', en: 'Oxygen-Glow Super-Perfecting Radiance Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4147,7 +4130,7 @@ deepProductsList.push({
 // [104] Oxygen-Glow Eyes
 deepProductsList.push({
     id: 'fil_oxygen_glow_eyes', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-جلو للعين (نضارة وتمويه الهالات)', en: 'Oxygen-Glow Super-Smoothing Radiance Eye Care' }, image: "", potency: 1, 
+    name: { ar: 'أوكسجين-جلو للعين (نضارة وتمويه الهالات)', en: 'Oxygen-Glow Super-Smoothing Radiance Eye Care' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن للعين', en: 'Balanced for Eye Contour' },
         mechanism: { 
@@ -4179,7 +4162,7 @@ deepProductsList.push({
 // [105] Oxygen-Glow Mask
 deepProductsList.push({
     id: 'fil_oxygen_glow_mask', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-جلو ماسك (إكسبريس النضارة 10 دقائق)', en: 'Oxygen-Glow Super-Perfecting Express Mask' }, image: "", potency: 2, 
+    name: { ar: 'أوكسجين-جلو ماسك (إكسبريس النضارة 10 دقائق)', en: 'Oxygen-Glow Super-Perfecting Express Mask' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4211,7 +4194,7 @@ deepProductsList.push({
 // [106] Oxygen-Glow Clean
 deepProductsList.push({
     id: 'fil_oxygen_glow_clean', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-جلو كلين (منظف ومزيل مكياج)', en: 'Oxygen-Glow Clean Super Cleanser' }, image: "", potency: 1, 
+    name: { ar: 'أوكسجين-جلو كلين (منظف ومزيل مكياج)', en: 'Oxygen-Glow Clean Super Cleanser' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -4243,7 +4226,7 @@ deepProductsList.push({
 // [107] Oxygen-Glow CC Cream SPF 30
 deepProductsList.push({
     id: 'fil_oxygen_glow_cc', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-جلو CC كريم (واقي شمس مصحح)', en: 'Oxygen-Glow CC Cream SPF 30' }, image: "", potency: 1, 
+    name: { ar: 'أوكسجين-جلو CC كريم (واقي شمس مصحح)', en: 'Oxygen-Glow CC Cream SPF 30' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4298,7 +4281,7 @@ glossaryDict['hexylresorcinol_cx'] = {
 // [108] Skin-Unify Intensive Serum
 deepProductsList.push({
     id: 'fil_skin_unify_intensive', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
-    name: { ar: 'سكين يونيفاي إنتينسيف سيروم (للتصبغات)', en: 'Skin-Unify Intensive Illuminating Even Skin Tone Serum' }, image: "", potency: 3, 
+    name: { ar: 'سكين يونيفاي إنتينسيف سيروم (للتصبغات)', en: 'Skin-Unify Intensive Illuminating Even Skin Tone Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن للامتصاص', en: 'Balanced for Absorption' },
         mechanism: { 
@@ -4330,7 +4313,7 @@ deepProductsList.push({
 // [109] Skin-Unify Cream
 deepProductsList.push({
     id: 'fil_skin_unify_cream', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
-    name: { ar: 'سكين يونيفاي كريم (توحيد اللون والإضاءة)', en: 'Skin-Unify Illuminating Even Skin Tone Cream' }, image: "", potency: 2, 
+    name: { ar: 'سكين يونيفاي كريم (توحيد اللون والإضاءة)', en: 'Skin-Unify Illuminating Even Skin Tone Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4362,7 +4345,7 @@ deepProductsList.push({
 // [110] Skin-Unify Radiance Fluid
 deepProductsList.push({
     id: 'fil_skin_unify_radiance', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
-    name: { ar: 'سكين يونيفاي راديانس (فلويد الإضاءة)', en: 'Skin-Unify Radiance Illuminating Perfecting Fluid' }, image: "", potency: 1, 
+    name: { ar: 'سكين يونيفاي راديانس (فلويد الإضاءة)', en: 'Skin-Unify Radiance Illuminating Perfecting Fluid' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4394,7 +4377,7 @@ deepProductsList.push({
 // [111] Pigment-Perfect Serum
 deepProductsList.push({
     id: 'fil_pigment_perfect_serum', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
-    name: { ar: 'بيجمنت بيرفكت سيروم (للتبقع)', en: 'Pigment-Perfect Dark Spot Corrector Serum' }, image: "", potency: 3, 
+    name: { ar: 'بيجمنت بيرفكت سيروم (للتبقع)', en: 'Pigment-Perfect Dark Spot Corrector Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4426,7 +4409,7 @@ deepProductsList.push({
 // [112] Pigment-White Cream
 deepProductsList.push({
     id: 'fil_pigment_white_cream', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
-    name: { ar: 'بيجمنت وايت كريم (تفتيح ثلاثي الأبعاد)', en: 'Pigment-White 360° Multi-Revitalising Cream' }, image: "", potency: 3, 
+    name: { ar: 'بيجمنت وايت كريم (تفتيح ثلاثي الأبعاد)', en: 'Pigment-White 360° Multi-Revitalising Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4481,7 +4464,7 @@ glossaryDict['bio_cellulose_tech'] = {
 // [113] Lift-Designer Serum
 deepProductsList.push({
     id: 'fil_lift_designer_serum', brandId: 'filorga', familyId: 'lift_designer', brand: 'Filorga',
-    name: { ar: 'ليفت-ديزاينر سيروم (لشد الترهلات)', en: 'Lift-Designer Ultra-Lifting Serum' }, image: "", potency: 3, 
+    name: { ar: 'ليفت-ديزاينر سيروم (لشد الترهلات)', en: 'Lift-Designer Ultra-Lifting Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن للامتصاص', en: 'Balanced for Absorption' },
         mechanism: { 
@@ -4513,7 +4496,7 @@ deepProductsList.push({
 // [114] Sleep & Lift Night Cream
 deepProductsList.push({
     id: 'fil_sleep_lift_cream', brandId: 'filorga', familyId: 'lift_designer', brand: 'Filorga',
-    name: { ar: 'سليب أند ليفت كريم (شد ليلي مكثف)', en: 'Sleep & Lift Ultra-Lifting Night Cream' }, image: "", potency: 3, 
+    name: { ar: 'سليب أند ليفت كريم (شد ليلي مكثف)', en: 'Sleep & Lift Ultra-Lifting Night Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4545,7 +4528,7 @@ deepProductsList.push({
 // [115] Lift-Mask
 deepProductsList.push({
     id: 'fil_lift_mask', brandId: 'filorga', familyId: 'lift_designer', brand: 'Filorga',
-    name: { ar: 'ليفت-ماسك (ماسك الشد السريع)', en: 'Lift-Mask Ultra-Lifting Mask' }, image: "", potency: 3, 
+    name: { ar: 'ليفت-ماسك (ماسك الشد السريع)', en: 'Lift-Mask Ultra-Lifting Mask' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4600,7 +4583,7 @@ glossaryDict['cleansing_oil_tech'] = {
 // [116] Skin Prep Micellar Solution
 deepProductsList.push({
     id: 'fil_skin_prep_micellar', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكين بريب ميسيلار (محلول منظف)', en: 'Skin Prep Micellar Solution' }, image: "", potency: 1, 
+    name: { ar: 'سكين بريب ميسيلار (محلول منظف)', en: 'Skin Prep Micellar Solution' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'محلول ميسيلار غني بالهيالورونيك والجلسرين. يزيل المكياج والشوائب والملوثات المجهرية مع الحفاظ على ترطيب الجلد ومنع تهيج الحاجز الواقي.', 
@@ -4618,7 +4601,7 @@ deepProductsList.push({
 // [117] Skin Prep Enzymatic Cleansing Foam
 deepProductsList.push({
     id: 'fil_skin_prep_foam', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكين بريب رغوة التقشير الإنزيمي', en: 'Skin Prep Enzymatic Cleansing Foam' }, image: "", potency: 2, 
+    name: { ar: 'سكين بريب رغوة التقشير الإنزيمي', en: 'Skin Prep Enzymatic Cleansing Foam' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'رغوة ذكية تستخدم <span class="glossary-term" onclick="openGlossary(\'enzymatic_peel\')">التقشير الإنزيمي</span> لتنظيف المسام بعمق وإزالة الخلايا الباهتة، مما يحسن ملمس الجلد فوراً ويهيئه للسيرومات.', 
@@ -4636,7 +4619,7 @@ deepProductsList.push({
 // [118] Skin Prep AHA Cleansing Gel
 deepProductsList.push({
     id: 'fil_skin_prep_aha_gel', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكين بريب جل منظف بالأحماض', en: 'Skin Prep AHA Cleansing Gel' }, image: "", potency: 3, 
+    name: { ar: 'سكين بريب جل منظف بالأحماض', en: 'Skin Prep AHA Cleansing Gel' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'يجمع بين 3 أحماض (Mandelic, Citric, Glycolic) لعمل تقشير كيميائي سطحي أثناء الغسيل، مما يقلل اللمعان ويصفي الحبوب الصغيرة والرؤوس السوداء.', 
@@ -4653,7 +4636,7 @@ deepProductsList.push({
 // [119] Skin Prep Perfecting Cleansing Oil
 deepProductsList.push({
     id: 'fil_skin_prep_oil', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكين بريب الزيت المنظف المثالي', en: 'Skin Prep Perfecting Cleansing Oil' }, image: "", potency: 1, 
+    name: { ar: 'سكين بريب الزيت المنظف المثالي', en: 'Skin Prep Perfecting Cleansing Oil' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'يستخدم <span class="glossary-term" onclick="openGlossary(\'cleansing_oil_tech\')">تكنولوجيا الزيت</span> المعتمدة على الأوميجا 6 لإذابة أثقل أنواع المكياج وواقيات الشمس الفيزيائية بلمسة واحدة دون تجفيف الجلد.', 
@@ -4670,7 +4653,7 @@ deepProductsList.push({
 // [120] Skin Prep Enzymatic Exfoliating Cream (75ml)
 deepProductsList.push({
     id: 'fil_skin_prep_exfoliant', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكين بريب كريم التقشير الإنزيمي المكثف', en: 'Skin Prep Enzymatic Exfoliating Cream' }, image: "", potency: 3, 
+    name: { ar: 'سكين بريب كريم التقشير الإنزيمي المكثف', en: 'Skin Prep Enzymatic Exfoliating Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'علاج تقشير أسبوعي يدمج الإنزيمات مع الرمل البركاني الدقيق لعمل تقشير مزدوج (كيميائي وميكانيكي) لإعادة تسطيح الجلد بالكامل.', 
@@ -4687,7 +4670,7 @@ deepProductsList.push({
 // [121] Foam Cleanser (Classic 150ml)
 deepProductsList.push({
     id: 'fil_classic_foam', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'فوم كلينزر (الغسول الرغوي الكلاسيكي)', en: 'Foam Cleanser' }, image: "", potency: 1, 
+    name: { ar: 'فوم كلينزر (الغسول الرغوي الكلاسيكي)', en: 'Foam Cleanser' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'غسول رغوي غني جداً بحمض الهيالورونيك، ينظف ويرطب في آن واحد. مثالي للبشرة التي تبحث عن شعور النظافة مع الامتلاء.', 
@@ -4724,7 +4707,7 @@ glossaryDict['rhamnose_polysaccharide'] = {
 // [122] UV-DEFENCE Anti-Aging / Dark Spots SPF 50+
 deepProductsList.push({
     id: 'fil_uv_defence', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
-    name: { ar: 'يو في ديفينس (واقي شمس للتجاعيد والتصبغات)', en: 'UV-DEFENCE Anti-Aging / Dark Spots SPF 50+' }, image: "", potency: 2, 
+    name: { ar: 'يو في ديفينس (واقي شمس للتجاعيد والتصبغات)', en: 'UV-DEFENCE Anti-Aging / Dark Spots SPF 50+' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4756,7 +4739,7 @@ deepProductsList.push({
 // [123] UV-BRONZE Face Sun Fluid SPF 50+
 deepProductsList.push({
     id: 'fil_uv_bronze_face', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
-    name: { ar: 'يو في برونز للوجه (فلويد مضاد للشيخوخة)', en: 'UV-BRONZE Face Anti-Aging Sun Fluid SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'يو في برونز للوجه (فلويد مضاد للشيخوخة)', en: 'UV-BRONZE Face Anti-Aging Sun Fluid SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4782,7 +4765,7 @@ deepProductsList.push({
 // [124] UV Cellular Protect Face SPF 50+
 deepProductsList.push({
     id: 'fil_uv_cellular_face', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
-    name: { ar: 'يو في سيلولار بروتيكت للوجه SPF 50+', en: 'UV Cellular Protect Face SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'يو في سيلولار بروتيكت للوجه SPF 50+', en: 'UV Cellular Protect Face SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'أحدث أجيال الحماية من فيلورجا. يغلف الخلايا بدرع حماية ضد الـ UVA/UVB والأشعة تحت الحمراء، معزز بفيتامين E والنياسيناميد لدعم الحاجز الجلدي وتلطيفه.', 
@@ -4799,7 +4782,7 @@ deepProductsList.push({
 // [125] UV Cellular Protect Face & Body SPF 50+ (125ml)
 deepProductsList.push({
     id: 'fil_uv_cellular_body', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
-    name: { ar: 'يو في سيلولار بروتيكت (لوشن الوجه والجسم)', en: 'UV Cellular Protect Face & Body SPF 50+ 125ml' }, image: "", potency: 1, 
+    name: { ar: 'يو في سيلولار بروتيكت (لوشن الوجه والجسم)', en: 'UV Cellular Protect Face & Body SPF 50+ 125ml' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'نسخة اقتصادية خفيفة الوزن للوجه والجسم. توفر حماية خلوية مكثفة مع ترطيب عميق يمنع جفاف الجلد وتقشره بعد التعرض للشمس.', 
@@ -4816,7 +4799,7 @@ deepProductsList.push({
 // [126] MESO-MASK
 deepProductsList.push({
     id: 'fil_meso_mask', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'ميزو-ماسك (ماسك النضارة والتنعيم الساحر)', en: 'MESO-MASK Smoothing Radiance Mask' }, image: "", potency: 2, 
+    name: { ar: 'ميزو-ماسك (ماسك النضارة والتنعيم الساحر)', en: 'MESO-MASK Smoothing Radiance Mask' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4848,7 +4831,7 @@ deepProductsList.push({
 // [127] MESO + Serum
 deepProductsList.push({
     id: 'fil_meso_plus_serum', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'ميزو+ سيروم (مجدد الشباب المطلق)', en: 'MESO+ Absolute Anti-Aging Serum' }, image: "", potency: 3, 
+    name: { ar: 'ميزو+ سيروم (مجدد الشباب المطلق)', en: 'MESO+ Absolute Anti-Aging Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4896,7 +4879,7 @@ glossaryDict['aha_bha_complex'] = {
 // [128] Neocica Repairing Cream
 deepProductsList.push({
     id: 'fil_neocica', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
-    name: { ar: 'نيوسيكا (كريم الترميم والتهدئة)', en: 'Neocica Universal Repairing Cream' }, image: "", potency: 2, 
+    name: { ar: 'نيوسيكا (كريم الترميم والتهدئة)', en: 'Neocica Universal Repairing Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -4921,7 +4904,7 @@ deepProductsList.push({
 // [129] Universal Cream
 deepProductsList.push({
     id: 'fil_universal_cream', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'يونيفرسال كريم (العناية العائلية الشاملة)', en: 'Universal Cream Daily Multi-Purpose' }, image: "", potency: 1, 
+    name: { ar: 'يونيفرسال كريم (العناية العائلية الشاملة)', en: 'Universal Cream Daily Multi-Purpose' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'تركيبة غنية تعتمد على مركب (NCEF) والهيالورونيك، مدمجة مع اليوريا (Urea) وبولي سكاريد مهدئ، لحماية ترطيب البشرة وإصلاح الحاجز لجميع أفراد الأسرة.', 
@@ -4938,7 +4921,7 @@ deepProductsList.push({
 // [130] C-Recover Concentrate
 deepProductsList.push({
     id: 'fil_c_recover', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
-    name: { ar: 'سي-ريكوفر (أمبولات فيتامين C النقي)', en: 'C-Recover Radiance Boosting Concentrate' }, image: "", potency: 3, 
+    name: { ar: 'سي-ريكوفر (أمبولات فيتامين C النقي)', en: 'C-Recover Radiance Boosting Concentrate' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (للامتصاص)', en: 'Acidic (for absorption)' },
         mechanism: { 
@@ -4964,7 +4947,7 @@ deepProductsList.push({
 // [131] Sleep & Peel Night Cream
 deepProductsList.push({
     id: 'fil_sleep_peel', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سليب أند بيل (كريم التقشير الليلي)', en: 'Sleep & Peel Resurfacing Night Cream' }, image: "", potency: 3, 
+    name: { ar: 'سليب أند بيل (كريم التقشير الليلي)', en: 'Sleep & Peel Resurfacing Night Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'كريم ليلي يعتمد على <span class="glossary-term" onclick="openGlossary(\'aha_bha_complex\')">مركب الأحماض المجدد</span> بتركيز 4.5%، مدعوم بخلاصة الطحالب البنية المهدئة ليسمح بالتقشير الدقيق (Micro-peeling) طوال الليل دون تهيج.', 
@@ -4981,7 +4964,7 @@ deepProductsList.push({
 // [132] Scrub & Mask
 deepProductsList.push({
     id: 'fil_scrub_mask', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكرب أند ماسك (التقشير والأكسجة)', en: 'Scrub & Mask Reoxygenating Exfoliating Mask' }, image: "", potency: 2, 
+    name: { ar: 'سكرب أند ماسك (التقشير والأكسجة)', en: 'Scrub & Mask Reoxygenating Exfoliating Mask' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'عملية مزدوجة: المرحلة الأولى تقشير ميكانيكي (كرات البيرلايت) وكيميائي لتقشير الجلد، والمرحلة الثانية تفعيل <span class="glossary-term" onclick="openGlossary(\'oxygen_bubble_tech\')">فقاعات الأكسجين</span> لضخ الحياة في المسام.', 
@@ -4998,7 +4981,7 @@ deepProductsList.push({
 // [133] Scrub & Detox
 deepProductsList.push({
     id: 'fil_scrub_detox', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكرب أند ديتوكس (تنقية بالرغوة السوداء)', en: 'Scrub & Detox Intense Purity Foam' }, image: "", potency: 2, 
+    name: { ar: 'سكرب أند ديتوكس (تنقية بالرغوة السوداء)', en: 'Scrub & Detox Intense Purity Foam' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يعتمد على الفحم النشط الدقيق (Activated Charcoal) و بولي فينيل الباشن فروت لإزالة السموم العميقة وتفكيك الملوثات الحضرية، مع تأثير تقشير ميكانيكي بحجر الخفاف.', 
@@ -5015,7 +4998,7 @@ deepProductsList.push({
 // [134] Time-Zero Serum
 deepProductsList.push({
     id: 'fil_time_zero', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم زيرو سيروم (مزدوج لتجاعيد العمر)', en: 'Time-Zero Multi-Correction Wrinkles Serum' }, image: "", potency: 3, 
+    name: { ar: 'تايم زيرو سيروم (مزدوج لتجاعيد العمر)', en: 'Time-Zero Multi-Correction Wrinkles Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'عبوة مزدوجة الغرف تضخ سيرومين معاً: سيروم (الشد) الغني بالببتيدات لإرخاء التجاعيد، وسيروم (الامتلاء) الغني بالهيالورونيك وNCEF. يتم خلطهما وقت الضغط لفعالية قصوى.', 
@@ -5055,7 +5038,7 @@ glossaryDict['hydra_aox_complex'] = {
 // [135] Flash-Nude Fluid SPF 30 (00 & 01)
 deepProductsList.push({
     id: 'fil_flash_nude_fluid', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'فلاش-نود فلويد (مكياج علاجي SPF30)', en: 'Flash-Nude Pro-Perfection Tinted Fluid SPF 30' }, image: "", potency: 1, 
+    name: { ar: 'فلاش-نود فلويد (مكياج علاجي SPF30)', en: 'Flash-Nude Pro-Perfection Tinted Fluid SPF 30' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -5081,7 +5064,7 @@ deepProductsList.push({
 // [136] Flash-Nude Powder
 deepProductsList.push({
     id: 'fil_flash_nude_powder', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'فلاش-نود بودرة (شفافة لتثبيت المكياج)', en: 'Flash-Nude Invisible Pro-Perfection Powder' }, image: "", potency: 1, 
+    name: { ar: 'فلاش-نود بودرة (شفافة لتثبيت المكياج)', en: 'Flash-Nude Invisible Pro-Perfection Powder' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'بودرة شفافة لا تترك أثراً أبيض، غنية بحمض الهيالورونيك والسيليكا لتثبيت المكياج، إطفاء اللمعان، وتمويه المسام بصرياً دون تجفيف البشرة.', 
@@ -5095,7 +5078,7 @@ deepProductsList.push({
 // [137] Time-Flash Active Primer
 deepProductsList.push({
     id: 'fil_time_flash_primer', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم-فلاش برايمر (لتنعيم التجاعيد)', en: 'Time-Flash Express Smoothing Active Primer' }, image: "", potency: 2, 
+    name: { ar: 'تايم-فلاش برايمر (لتنعيم التجاعيد)', en: 'Time-Flash Express Smoothing Active Primer' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'برايمر (أساس مكياج) علاجي. يحتوي على تقنية (Lift & Blur) لشد الجلد وملء التجاعيد فوراً، بالإضافة إلى ببتيدات (NCTF) لمعالجة التجاعيد على المدى الطويل.', 
@@ -5109,7 +5092,7 @@ deepProductsList.push({
 // [138] Pore Express Regulating Primer
 deepProductsList.push({
     id: 'fil_pore_express', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
-    name: { ar: 'بور إكسبريس (برايمر منظم للمسام)', en: 'Pore Express Regulating Primer' }, image: "", potency: 2, 
+    name: { ar: 'بور إكسبريس (برايمر منظم للمسام)', en: 'Pore Express Regulating Primer' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'برايمر مخصص للبشرة الدهنية. يستخدم إنزيمات قابضة للزهم ومواد بصرية مموهة لتقليص المسام وإلغاء اللمعان فوراً، مع حماية ضد التلوث لمنع الرؤوس السوداء.', 
@@ -5123,7 +5106,7 @@ deepProductsList.push({
 // [139] Hydra-AOX [5] Serum
 deepProductsList.push({
     id: 'fil_hydra_aox5_serum', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-أوكس 5 سيروم (مضاد الأكسدة)', en: 'Hydra-AOX [5] Intensive Antioxidant Serum' }, image: "", potency: 3, 
+    name: { ar: 'هيدرا-أوكس 5 سيروم (مضاد الأكسدة)', en: 'Hydra-AOX [5] Intensive Antioxidant Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم نضارة مركز يعتمد على <span class="glossary-term" onclick="openGlossary(\'hydra_aox_complex\')">مركب هيدرا-أوكس 5</span>، يصحح العلامات الخمس للشيخوخة المبكرة (الجفاف، البهتان، الخطوط، المسام، وعدم تجانس اللون).', 
@@ -5137,7 +5120,7 @@ deepProductsList.push({
 // [140] NCEF-Revitalize Serum
 deepProductsList.push({
     id: 'fil_ncef_revitalize_serum', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيتالايز سيروم (الجديد)', en: 'NCEF-Revitalize Supreme Polyrevitalising Serum' }, image: "", potency: 3, 
+    name: { ar: 'إن سي إي إف ريفيتالايز سيروم (الجديد)', en: 'NCEF-Revitalize Supreme Polyrevitalising Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'الجيل الأحدث من عائلة NCEF. تركيبة مركزة تعزز طاقة الخلايا وتسرع من عملية التعافي البيولوجي للجلد المنهك من الضغوطات والتلوث السريع.', 
@@ -5151,7 +5134,7 @@ deepProductsList.push({
 // [141] NCEF-Revitalize Cream
 deepProductsList.push({
     id: 'fil_ncef_revitalize_cream', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيتالايز كريم', en: 'NCEF-Revitalize Supreme Polyrevitalising Cream' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ريفيتالايز كريم', en: 'NCEF-Revitalize Supreme Polyrevitalising Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'كريم مكمل للسيروم، يحتوي على أحدث نواقل الميزوثيرابي لإعادة هيكلة حاجز البشرة وتغذيتها بعمق مع إعطاء تأثير نضارة ولمعان صحي فوري.', 
@@ -5165,7 +5148,7 @@ deepProductsList.push({
 // [142] Optim-Eyes Lashes & Brows
 deepProductsList.push({
     id: 'fil_optim_eyes_lashes', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
-    name: { ar: 'أوبتيم-آيز للرموش والحواجب (مقوي مكثف)', en: 'Optim-Eyes Lashes & Brows Booster' }, image: "", potency: 2, 
+    name: { ar: 'أوبتيم-آيز للرموش والحواجب (مقوي مكثف)', en: 'Optim-Eyes Lashes & Brows Booster' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'علاج مزدوج. الخطوة 1 (سيروم تحفيز): يوضع على الجذور لإطالة وتكثيف الشعيرات عبر مركب KERA-EXTEND. الخطوة 2 (تغليف): يوضع بفرشاة الماسكارا لتغذية الشعر وتقويته.', 
@@ -5179,7 +5162,7 @@ deepProductsList.push({
 // [143] Nutri-Filler Lips
 deepProductsList.push({
     id: 'fil_nutri_filler_lips', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
-    name: { ar: 'نوتري-فيلر ليبس (مرطب ونافخ الشفاه)', en: 'Nutri-Filler Lips Nutri-Plumping Balm' }, image: "", potency: 1, 
+    name: { ar: 'نوتري-فيلر ليبس (مرطب ونافخ الشفاه)', en: 'Nutri-Filler Lips Nutri-Plumping Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'بلسم زيتي مغذي. يحتوي على ببتيد محفز للكولاجين وNCTF لنفخ الشفاه وتنعيم الخطوط، مع زيت زبدة الشيا للترميم، ومكون منشط لتعزيز اللون الوردي الطبيعي للشفاه.', 
@@ -5193,7 +5176,7 @@ deepProductsList.push({
 // [144] Scrub & Peel Body Exfoliating Cream
 deepProductsList.push({
     id: 'fil_scrub_peel_body', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'سكرب أند بيل (مقشر الجسم المجدد)', en: 'Scrub & Peel Resurfacing Exfoliating Cream' }, image: "", potency: 2, 
+    name: { ar: 'سكرب أند بيل (مقشر الجسم المجدد)', en: 'Scrub & Peel Resurfacing Exfoliating Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'مقشر للجسم يعمل بخطوتين: 1. تقشير ميكانيكي وكيميائي (أحماض). 2. يتحول لغسول حليبي مرطب عند الشطف، ليترك بشرة الجسم ناعمة ومشرقة كالحرير.', 
@@ -5212,7 +5195,7 @@ deepProductsList.push({
 // [145] Effaclar Micro-Peeling Purifying Gel
 deepProductsList.push({
     id: 'lrp_effaclar_micro_peeling', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار مايكرو-بيلينج (غسول التقشير)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار مايكرو-بيلينج (غسول التقشير)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'أقوى غسول في عائلة إيفاكلار. يحتوي على (2% حمض الساليسيليك + LHA) لتقشير الخلايا الميتة وفتح المسام المسدودة بعمق، مع الزنك لتقليل إفراز الدهون.', 
@@ -5229,7 +5212,7 @@ deepProductsList.push({
 // [146] Time-Filler Night Cream
 deepProductsList.push({
     id: 'fil_time_filler_night', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم-فيلر نايت (كريم التجاعيد الليلي)', en: 'Time-Filler Night Multi-Correction Wrinkles' }, image: "", potency: 3, 
+    name: { ar: 'تايم-فيلر نايت (كريم التجاعيد الليلي)', en: 'Time-Filler Night Multi-Correction Wrinkles' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'يجمع تكنولوجيا 5XP مع مركب (Express-Recover) الذي يقلل من انتفاخ الوجه الصباحي وتجاعيد الوسادة التي تظهر أثناء النوم (Sleep lines).', 
@@ -5243,7 +5226,7 @@ deepProductsList.push({
 // [147] Hydra-Filler Mask
 deepProductsList.push({
     id: 'fil_hydra_filler_mask', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-فيلر ماسك (شيت الترطيب)', en: 'Hydra-Filler Mask Super-Moisturizing' }, image: "", potency: 1, 
+    name: { ar: 'هيدرا-فيلر ماسك (شيت الترطيب)', en: 'Hydra-Filler Mask Super-Moisturizing' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'ماسك ورقي غني بحمض الهيالورونيك وخلاصة الصبار (Aloe Vera) لتوفير حمام ترطيب فوري واستعادة نضارة البشرة الجافة في 15 دقيقة.', 
@@ -5257,7 +5240,7 @@ deepProductsList.push({
 // [148] Time-Filler Mask
 deepProductsList.push({
     id: 'fil_time_filler_mask', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
-    name: { ar: 'تايم-فيلر ماسك (شيت التجاعيد)', en: 'Time-Filler Mask Super-Smoothing' }, image: "", potency: 2, 
+    name: { ar: 'تايم-فيلر ماسك (شيت التجاعيد)', en: 'Time-Filler Mask Super-Smoothing' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'ماسك ورقي أسود (Black fiber) مشبع بالكولاجين البحري وشد السكريات لتنعيم التجاعيد فوراً وشد ملامح الوجه.', 
@@ -5271,7 +5254,7 @@ deepProductsList.push({
 // [149] Oxygen-Peel Lotion
 deepProductsList.push({
     id: 'fil_oxygen_peel', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'أوكسجين-بيل لوشن (تونر التقشير الدقيق)', en: 'Oxygen-Peel Re-Oxygenating Micro-Peeling Lotion' }, image: "", potency: 2, 
+    name: { ar: 'أوكسجين-بيل لوشن (تونر التقشير الدقيق)', en: 'Oxygen-Peel Re-Oxygenating Micro-Peeling Lotion' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'تونر يومي يحتوي على 6 أحماض دقيقة التقشير بنسبة تركيز 6%، مقترن بحمض الهيالورونيك ومستشعر للأكسجين لضخ الهواء في المسام المخنوقة.', 
@@ -5285,7 +5268,7 @@ deepProductsList.push({
 // [150] NCTF-Essence Supreme Regenerating Lotion
 deepProductsList.push({
     id: 'fil_nctf_essence', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي تي إف إيسنس (لوشن التحضير)', en: 'NCTF-Essence Supreme Regenerating Lotion' }, image: "", potency: 1, 
+    name: { ar: 'إن سي تي إف إيسنس (لوشن التحضير)', en: 'NCTF-Essence Supreme Regenerating Lotion' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'لوشن مائي مرطب (Primer-like) يعتمد على تقنية (AQUA-MX) للاحتفاظ بالماء، مع مركب NCTF لتهيئة البشرة لامتصاص السيرومات بكفاءة أعلى.', 
@@ -5299,7 +5282,7 @@ deepProductsList.push({
 // [151] Sleep Recover Balm
 deepProductsList.push({
     id: 'fil_sleep_recover', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
-    name: { ar: 'سليب ريكوفر بلسم (مضاد للإرهاق الليلي)', en: 'Sleep Recover Anti-Fatigue Night Balm' }, image: "", potency: 2, 
+    name: { ar: 'سليب ريكوفر بلسم (مضاد للإرهاق الليلي)', en: 'Sleep Recover Anti-Fatigue Night Balm' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يستهدف علامات الإرهاق. يحتوي على مستخلص شجرة الحرير لإزالة سموم الخلايا ليلاً وتقليل الهالات وعلامات التعب التي تظهر في الصباح.', 
@@ -5313,7 +5296,7 @@ deepProductsList.push({
 // [152] Hydra-Filler Cream (Classic Edition)
 deepProductsList.push({
     id: 'fil_hydra_filler_cream_old', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
-    name: { ar: 'هيدرا-فيلر كريم (الإصدار الكلاسيكي)', en: 'Hydra-Filler Pro-Youth Boosting Moisturizer' }, image: "", potency: 1, 
+    name: { ar: 'هيدرا-فيلر كريم (الإصدار الكلاسيكي)', en: 'Hydra-Filler Pro-Youth Boosting Moisturizer' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'الإصدار الذي سبق (Hydra-Hyal). يركز على حمض الهيالورونيك وببتيدات محفزة لإنتاج الكولاجين لمنع ظهور علامات الجفاف والشيخوخة المبكرة.', 
@@ -5327,7 +5310,7 @@ deepProductsList.push({
 // [153] Age-Purify Mask
 deepProductsList.push({
     id: 'fil_age_purify_mask', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
-    name: { ar: 'إيدج-بيوريفاي ماسك (الطين المنقي)', en: 'Age-Purify Mask Double Correction' }, image: "", potency: 2, 
+    name: { ar: 'إيدج-بيوريفاي ماسك (الطين المنقي)', en: 'Age-Purify Mask Double Correction' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'ماسك طيني يعتمد على طين الماستيك (Mastic) لسحب الدهون من المسام العميقة، مع تكنولوجيا الإصلاح المزدوج (حبوب + تجاعيد).', 
@@ -5341,7 +5324,7 @@ deepProductsList.push({
 // [154] Perfect+ Serum
 deepProductsList.push({
     id: 'fil_perfect_plus_serum', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
-    name: { ar: 'بيرفكت بلس سيروم (مصحح البشرة)', en: 'Perfect+ Perfecting Serum' }, image: "", potency: 2, 
+    name: { ar: 'بيرفكت بلس سيروم (مصحح البشرة)', en: 'Perfect+ Perfecting Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم يجمع بين شد المسام، إطفاء اللمعان، وتقشير خفيف لتحسين نسيج الجلد العام (Skin texture) وإعطاء مظهر متجانس ومثالي.', 
@@ -5355,7 +5338,7 @@ deepProductsList.push({
 // [155] NCEF-Revitalize Mask
 deepProductsList.push({
     id: 'fil_ncef_revitalize_mask', brandId: 'filorga', familyId: 'ncef_nctf', brand: 'Filorga',
-    name: { ar: 'إن سي إي إف ريفيتالايز ماسك', en: 'NCEF-Revitalize Mask - 1 Sheet' }, image: "", potency: 2, 
+    name: { ar: 'إن سي إي إف ريفيتالايز ماسك', en: 'NCEF-Revitalize Mask - 1 Sheet' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'أحدث ماسك ورقي من فيلورجا. مشبع بسيروم (Revitalize) المركز بـ NCEF لنفخ البشرة وإعادة الحياة للخلايا المنهكة في جلسة واحدة.', 
@@ -5374,7 +5357,7 @@ deepProductsList.push({
 // [156] Effaclar Ultra Concentrated Serum
 deepProductsList.push({
     id: 'lrp_effaclar_ultra_serum', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار سيروم فائق التركيز (للتقشير)', en: 'Effaclar Ultra Concentrated Serum' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار سيروم فائق التركيز (للتقشير)', en: 'Effaclar Ultra Concentrated Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (للتقشير)', en: 'Acidic (for peeling)' },
         mechanism: { 
@@ -5409,7 +5392,7 @@ deepProductsList.push({
 // [157] Anti-Ageing Micellar Solution
 deepProductsList.push({
     id: 'fil_anti_aging_micellar', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
-    name: { ar: 'محلول ميسيلار المكافح للشيخوخة', en: 'Anti-Ageing Micellar Solution' }, image: "", potency: 1, 
+    name: { ar: 'محلول ميسيلار المكافح للشيخوخة', en: 'Anti-Ageing Micellar Solution' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -5485,9 +5468,8 @@ glossaryDict['glycoleol'] = {
 
 // [158] Cleanance Cleansing Gel (200ml / 400ml / Tube)
 deepProductsList.push({
-    id: 'avene_cleanance_gel', brandId: 'avene', familyId: 'cleanance', brand: 'Bioderma', // Note: Fixing brand strictly to Avene below
-    brand: 'Avene',
-    name: { ar: 'كلينانس جل (غسول البشرة الدهنية)', en: 'Cleanance Cleansing Gel' }, image: "", potency: 1, 
+    id: 'avene_cleanance_gel', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
+    name: { ar: 'كلينانس جل (غسول البشرة الدهنية)', en: 'Cleanance Cleansing Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -5519,7 +5501,7 @@ deepProductsList.push({
 // [159] Cleanance Comedomed Concentrate
 deepProductsList.push({
     id: 'avene_cleanance_comedomed', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس كوميدوميد (علاج الحبوب المركز)', en: 'Cleanance Comedomed Anti-Blemishes Concentrate' }, image: "", potency: 3, 
+    name: { ar: 'كلينانس كوميدوميد (علاج الحبوب المركز)', en: 'Cleanance Comedomed Anti-Blemishes Concentrate' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -5551,7 +5533,7 @@ deepProductsList.push({
 // [160] Cleanance Comedomed Peeling (Spot Treatment)
 deepProductsList.push({
     id: 'avene_cleanance_comedomed_peeling', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس كوميدوميد بيلينج (علاج موضعي مكثف)', en: 'Cleanance Comedomed Peeling Intensive Cream' }, image: "", potency: 3, 
+    name: { ar: 'كلينانس كوميدوميد بيلينج (علاج موضعي مكثف)', en: 'Cleanance Comedomed Peeling Intensive Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
         mechanism: { 
@@ -5583,7 +5565,7 @@ deepProductsList.push({
 // [161] Cleanance AHA Exfoliating Serum
 deepProductsList.push({
     id: 'avene_cleanance_aha_serum', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس AHA سيروم التقشير (لآثار الحبوب)', en: 'Cleanance AHA Exfoliating Serum' }, image: "", potency: 3, 
+    name: { ar: 'كلينانس AHA سيروم التقشير (لآثار الحبوب)', en: 'Cleanance AHA Exfoliating Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'حامضي (~4.0)', en: 'Acidic (~4.0)' },
         mechanism: { 
@@ -5615,7 +5597,7 @@ deepProductsList.push({
 // [162] Cleanance Hydra Cream
 deepProductsList.push({
     id: 'avene_cleanance_hydra_cream', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس هيدرا كريم (مرطب الروكوتان)', en: 'Cleanance Hydra Soothing Cream' }, image: "", potency: 1, 
+    name: { ar: 'كلينانس هيدرا كريم (مرطب الروكوتان)', en: 'Cleanance Hydra Soothing Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -5647,7 +5629,7 @@ deepProductsList.push({
 // [163] Cleanance Mattifying Aqua-Gel
 deepProductsList.push({
     id: 'avene_cleanance_aqua_gel', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس أكوا-جل مطفئ للمعان', en: 'Cleanance Mattifying Aqua-Gel' }, image: "", potency: 1, 
+    name: { ar: 'كلينانس أكوا-جل مطفئ للمعان', en: 'Cleanance Mattifying Aqua-Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -5679,7 +5661,7 @@ deepProductsList.push({
 // [164] Cleanance Detox Mask
 deepProductsList.push({
     id: 'avene_cleanance_detox_mask', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس ديتوكس ماسك', en: 'Cleanance Detox Mask' }, image: "", potency: 2, 
+    name: { ar: 'كلينانس ديتوكس ماسك', en: 'Cleanance Detox Mask' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'ماسك طيني منقي يعتمد على طين (الكاولين) لامتصاص الزهم العميق والشوائب، مقترن بالبيرلايت (Perlite) للتقشير اللطيف، لتنقية المسام المخنوقة بالسموم وتصغير حجمها.', 
@@ -5697,7 +5679,7 @@ deepProductsList.push({
 // [165] Cleanance Micellar Water
 deepProductsList.push({
     id: 'avene_cleanance_micellar', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'كلينانس ميسيلار וوٹر (مزيل مكياج)', en: 'Cleanance Micellar Water' }, image: "", potency: 1, 
+    name: { ar: 'كلينانس ميسيلار ووتر (مزيل مكياج)', en: 'Cleanance Micellar Water' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'محلول ميسيلار ينظف ويزيل المكياج (الوجه والعين) للبشرة الدهنية. يحتوي على الكوميدوكلاستين لتنظيم الزهم، مما يترك البشرة نظيفة وغير لامعة دون فرك.', 
@@ -5714,7 +5696,7 @@ deepProductsList.push({
 // [166] Cleanance Sunscreen SPF 50+
 deepProductsList.push({
     id: 'avene_cleanance_sunscreen', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'كلينانس واقي شمس مطفئ SPF 50+', en: 'Cleanance Sunscreen SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'كلينانس واقي شمس مطفئ SPF 50+', en: 'Cleanance Sunscreen SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'واقي شمس واسع الطيف مزود بمركب (TriAsorB) للحماية من الأشعة فوق البنفسجية والضوء الأزرق، بالإضافة إلى المونولورين لتنظيم إفراز الدهون وتوفير حماية مضادة للمعان.', 
@@ -5731,7 +5713,7 @@ deepProductsList.push({
 // [167] TriAcnéal Expert / Cleanance Expert Emulsion
 deepProductsList.push({
     id: 'avene_triacneal_expert', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'ترياكنيل إكسبيرت (لعلامات الحبوب والعمر)', en: 'TriAcnéal Expert / Cleanance Expert Emulsion' }, image: "", potency: 2, 
+    name: { ar: 'ترياكنيل إكسبيرت (لعلامات الحبوب والعمر)', en: 'TriAcnéal Expert / Cleanance Expert Emulsion' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'مستحلب كلاسيكي متخصص لـ (حبوب البالغين). يدمج مقشرات لتقليل الشوائب مع مركب (Diolényl) المضاد للبكتيريا و(Retinaldehyde) لتنعيم التجاعيد وتفتيح ندبات حب الشباب القديمة.', 
@@ -5779,7 +5761,7 @@ glossaryDict['cer_omega'] = {
 // [168] Cicalfate+ Restorative Protective Cream
 deepProductsList.push({
     id: 'avene_cicalfate_plus_cream', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات+ كريم (مرمم وحامي للجروح)', en: 'Cicalfate+ Restorative Protective Cream' }, image: "", potency: 3, 
+    name: { ar: 'سيكالفات+ كريم (مرمم وحامي للجروح)', en: 'Cicalfate+ Restorative Protective Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -5811,7 +5793,7 @@ deepProductsList.push({
 // [169] Cicalfate+ Scar Gel
 deepProductsList.push({
     id: 'avene_cicalfate_scar_gel', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات+ جل الندبات (مُدلك للندبات)', en: 'Cicalfate+ Scar Gel' }, image: "", potency: 2, 
+    name: { ar: 'سيكالفات+ جل الندبات (مُدلك للندبات)', en: 'Cicalfate+ Scar Gel' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'قوام سيليكوني مخصص لتدليك الندبات. يحتوي على دايميثيكون وحمض الهيالورونيك لخلق غشاء شبه نفاذ يحافظ على الترطيب ويساعد في تسطيح الندبات المرتفعة، بجانب <span class="glossary-term" onclick="openGlossary(\'c_restore\')">[C+-Restore]</span> لتحسين المظهر.', 
@@ -5828,7 +5810,7 @@ deepProductsList.push({
 // [170] Cicalfate+ Absorbing Soothing Spray / Drying Lotion
 deepProductsList.push({
     id: 'avene_cicalfate_spray', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات بخاخ / لوشن (مجفف للالتهابات النازفة)', en: 'Cicalfate+ Absorbing Soothing Spray / Lotion' }, image: "", potency: 2, 
+    name: { ar: 'سيكالفات بخاخ / لوشن (مجفف للالتهابات النازفة)', en: 'Cicalfate+ Absorbing Soothing Spray / Lotion' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'تركيبة غنية بالبودرة الماصة (Absorbent Powders) والنحاس والزنك. صُممت خصيصاً لتجفيف الإفرازات في طيات الجلد (Maceration) ومناطق الالتهاب الرطبة لمنع التعفن البكتيري.', 
@@ -5845,7 +5827,7 @@ deepProductsList.push({
 // [171] Cicalfate Lips Restorative Lip Balm
 deepProductsList.push({
     id: 'avene_cicalfate_lips', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات للشفاه (بلسم مرمم ومقاوم للماء)', en: 'Cicalfate Lips Restorative Balm' }, image: "", potency: 1, 
+    name: { ar: 'سيكالفات للشفاه (بلسم مرمم ومقاوم للماء)', en: 'Cicalfate Lips Restorative Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'بلسم (Water-in-Oil) يوفر تغطية عازلة تدوم طويلاً حتى مع الأكل والشرب. يحتوي على زيوت نباتية و <span class="glossary-term" onclick="openGlossary(\'c_restore\')">سوكرالفات</span> لترميم تشققات الشفاه وحول الفم.', 
@@ -5859,7 +5841,7 @@ deepProductsList.push({
 // [172] Cicalfate+ Skin Repair Emulsion (Post-Procedure)
 deepProductsList.push({
     id: 'avene_cicalfate_emulsion', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات+ مستحلب الترميم (لما بعد الإجراءات)', en: 'Cicalfate+ Post-Procedure Skin Repair Emulsion' }, image: "", potency: 2, 
+    name: { ar: 'سيكالفات+ مستحلب الترميم (لما بعد الإجراءات)', en: 'Cicalfate+ Post-Procedure Skin Repair Emulsion' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'نسخة خفيفة جداً من كريم سيكالفات. مصممة لتهدئة الحرارة والاحمرار فوراً بعد الإجراءات التجميلية السطحية (كالتقشير الكيميائي والليزر) دون سد المسام أو التسبب في لمعان.', 
@@ -5873,7 +5855,7 @@ deepProductsList.push({
 // [173] Cicalfate+ Cream SPF 50+
 deepProductsList.push({
     id: 'avene_cicalfate_spf50', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات+ كريم حماية (بواقي شمس SPF50)', en: 'Cicalfate+ Cream SPF 50+' }, image: "", potency: 2, 
+    name: { ar: 'سيكالفات+ كريم حماية (بواقي شمس SPF50)', en: 'Cicalfate+ Cream SPF 50+' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يدمج قوة الترميم مع فلاتر حماية من الأشعة فوق البنفسجية واسعة الطيف. يمنع التصبغ المفرط للندبات والجروح (Hyperpigmentation) عند تعرضها للشمس أثناء فترة الالتئام.', 
@@ -5887,7 +5869,7 @@ deepProductsList.push({
 // [174] Cicalfate+ Intensive Skin Recovery Serum
 deepProductsList.push({
     id: 'avene_cicalfate_recovery_serum', brandId: 'avene', familyId: 'cicalfate', brand: 'Avene',
-    name: { ar: 'سيكالفات+ سيروم التعافي المكثف', en: 'Cicalfate+ Intensive Skin Recovery Serum' }, image: "", potency: 2, 
+    name: { ar: 'سيكالفات+ سيروم التعافي المكثف', en: 'Cicalfate+ Intensive Skin Recovery Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم عالي التركيز بحمض الهيالورونيك ومياه أفين الحرارية وفيتامين B5. يرمم حاجز البشرة المتضرر خلال 24 ساعة ويرطب بعمق لتهدئة التهيج والتحسس المزمن.', 
@@ -5901,7 +5883,7 @@ deepProductsList.push({
 // [175] XeraCalm A.D Lipid-Replenishing Cream
 deepProductsList.push({
     id: 'avene_xeracalm_ad_cream', brandId: 'avene', familyId: 'xeracalm', brand: 'Avene',
-    name: { ar: 'زيراكالم A.D كريم (للإكزيما والحكة)', en: 'XeraCalm A.D Lipid-Replenishing Cream' }, image: "", potency: 3, 
+    name: { ar: 'زيراكالم A.D كريم (للإكزيما والحكة)', en: 'XeraCalm A.D Lipid-Replenishing Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -5933,7 +5915,7 @@ deepProductsList.push({
 // [176] XeraCalm A.D Lipid-Replenishing Cleansing Oil
 deepProductsList.push({
     id: 'avene_xeracalm_ad_oil', brandId: 'avene', familyId: 'xeracalm', brand: 'Avene',
-    name: { ar: 'زيراكالم A.D زيت منظف (للاستحمام)', en: 'XeraCalm A.D Lipid-Replenishing Cleansing Oil' }, image: "", potency: 1, 
+    name: { ar: 'زيراكالم A.D زيت منظف (للاستحمام)', en: 'XeraCalm A.D Lipid-Replenishing Cleansing Oil' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'غسول زيتي خالٍ من الصابون، مصمم خصيصاً للاستحمام أثناء نوبات الإكزيما (Flare-ups). يحتوي على I-Modulia لتخفيف حكة الماء الساخن، ويترك طبقة دهنية حامية على الجلد.', 
@@ -5947,7 +5929,7 @@ deepProductsList.push({
 // [177] XeraCalm Nutrition Cleansing Gel
 deepProductsList.push({
     id: 'avene_xeracalm_nutrition_gel', brandId: 'avene', familyId: 'xeracalm', brand: 'Avene',
-    name: { ar: 'زيراكالم نوتريشن جل منظف', en: 'XeraCalm Nutrition Cleansing Gel' }, image: "", potency: 1, 
+    name: { ar: 'زيراكالم نوتريشن جل منظف', en: 'XeraCalm Nutrition Cleansing Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'غسول يومي للعائلة (بديلاً لـ Trixera القديم). ينظف بلطف فائق ويحتوي على زيت الحرشف المريمي (Milk Thistle Oil) لتعزيز السيراميد الطبيعي وترطيب الجلد الجاف.', 
@@ -5961,7 +5943,7 @@ deepProductsList.push({
 // [178] XeraCalm Nutrition Shower Cream
 deepProductsList.push({
     id: 'avene_xeracalm_nutrition_cream_wash', brandId: 'avene', familyId: 'xeracalm', brand: 'Avene',
-    name: { ar: 'زيراكالم نوتريشن كريم استحمام', en: 'XeraCalm Nutrition Shower Cream' }, image: "", potency: 1, 
+    name: { ar: 'زيراكالم نوتريشن كريم استحمام', en: 'XeraCalm Nutrition Shower Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'نسخة أكثر دسامة من الجل. قوام كريمي غني بالدهون الفائقة (Super-fatting agents) لتنظيف البشرة شديدة الجفاف والمتقشرة دون الإخلال بغلافها الدهني.', 
@@ -5975,7 +5957,7 @@ deepProductsList.push({
 // [179] XeraCalm Nutrition Moisturizing Balm
 deepProductsList.push({
     id: 'avene_xeracalm_nutrition_balm', brandId: 'avene', familyId: 'xeracalm', brand: 'Avene',
-    name: { ar: 'زيراكالم نوتريشن بلسم مرطب', en: 'XeraCalm Nutrition Moisturizing Balm' }, image: "", potency: 1, 
+    name: { ar: 'زيراكالم نوتريشن بلسم مرطب', en: 'XeraCalm Nutrition Moisturizing Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'مرطب يومي غني للعائلة يوفر تغذية تدوم لـ 48 ساعة بفضل مستخلصات النياكيناميد والزيوت النباتية التي تعيد بناء حاجز الجلد وتمنع جفاف الشتاء.', 
@@ -6020,7 +6002,7 @@ glossaryDict['cohederm'] = {
 // [180] Tolerance Control Soothing Skin Recovery Cream
 deepProductsList.push({
     id: 'avene_tolerance_control', brandId: 'avene', familyId: 'tolerance', brand: 'Avene',
-    name: { ar: 'توليرانس كنترول كريم (للتحسس المفرط)', en: 'Tolerance Control Soothing Skin Recovery Cream' }, image: "", potency: 3, 
+    name: { ar: 'توليرانس كنترول كريم (للتحسس المفرط)', en: 'Tolerance Control Soothing Skin Recovery Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
         mechanism: { 
@@ -6051,7 +6033,7 @@ deepProductsList.push({
 // [181] Tolerance Hydra-10 Cream / Fluid
 deepProductsList.push({
     id: 'avene_tolerance_hydra10', brandId: 'avene', familyId: 'tolerance', brand: 'Avene',
-    name: { ar: 'توليرانس هيدرا-10 (كريم/فلويد ترطيب 48 ساعة)', en: 'Tolerance Hydra-10 Hydrating Cream / Fluid' }, image: "", potency: 1, 
+    name: { ar: 'توليرانس هيدرا-10 (كريم/فلويد ترطيب 48 ساعة)', en: 'Tolerance Hydra-10 Hydrating Cream / Fluid' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'أول مرطب طبيعي 100% عالي التوافق. يحتوي على 10 مكونات فقط مستوحاة من تركيب الجلد (Biomimetic)، مدعم بحمض الهيالورونيك عالي الوزن الجزيئي لترطيب يدوم 48 ساعة في <span class="glossary-term" onclick="openGlossary(\'sterile_cosmetics\')">عبوة معقمة</span>.', 
@@ -6065,7 +6047,7 @@ deepProductsList.push({
 // [182] Tolerance Extremely Gentle Cleansing Lotion
 deepProductsList.push({
     id: 'avene_tolerance_cleanser', brandId: 'avene', familyId: 'tolerance', brand: 'Avene',
-    name: { ar: 'توليرانس لوشن منظف فائق اللطف', en: 'Tolerance Extremely Gentle Cleanser' }, image: "", potency: 1, 
+    name: { ar: 'توليرانس لوشن منظف فائق اللطف', en: 'Tolerance Extremely Gentle Cleanser' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'منظف ومزيل مكياج لا يحتاج للشطف. يحتوي على مواد تنظيف فائقة اللطف تحترم ميكروبيوم البشرة الهش، مع نسبة عالية من مياه أفين لتهدئة الجلد.', 
@@ -6079,11 +6061,11 @@ deepProductsList.push({
 // [183] Hydrance Boost Concentrated Hydrating Serum
 deepProductsList.push({
     id: 'avene_hydrance_boost_serum', brandId: 'avene', familyId: 'hydrance', brand: 'Avene',
-    name: { ar: 'هيدرانس بوست سيروم (الترطيب المركز)', en: 'Hydrance Boost Concentrated Hydrating Serum' }, image: "", potency: 2, 
+    name: { ar: 'هيدرانس بوست سيروم (الترطيب المركز)', en: 'Hydrance Boost Concentrated Hydrating Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
-            ar: 'سيروم מائي يحتوي على حمض الهيالورونيك (1.5%) والنياسيناميد مع مركب <span class="glossary-term" onclick="openGlossary(\'cohederm\')">الكوهيديرم</span> لإعادة شحن خلايا الجلد بالماء الحراري المهدئ وتقوية حاجز الجلد ضد الجفاف.', 
+            ar: 'سيروم مائي يحتوي على حمض الهيالورونيك (1.5%) والنياسيناميد مع مركب <span class="glossary-term" onclick="openGlossary(\'cohederm\')">الكوهيديرم</span> لإعادة شحن خلايا الجلد بالماء الحراري المهدئ وتقوية حاجز الجلد ضد الجفاف.', 
             en: 'An aqueous serum containing HA (1.5%) and Niacinamide with the <span class="glossary-term" onclick="openGlossary(\'cohederm\')">Cohederm</span> complex to recharge skin cells with soothing thermal water and fortify the barrier against dehydration.' 
         },
         patient_benefit: { 
@@ -6105,7 +6087,7 @@ deepProductsList.push({
 // [184] Hydrance Aqua-Gel
 deepProductsList.push({
     id: 'avene_hydrance_aqua_gel', brandId: 'avene', familyId: 'hydrance', brand: 'Avene',
-    name: { ar: 'هيدرانس أكوا-جل (مرطب متعدد الاستخدامات)', en: 'Hydrance Aqua-Gel Hydrating Cream-in-Gel' }, image: "", potency: 1, 
+    name: { ar: 'هيدرانس أكوا-جل (مرطب متعدد الاستخدامات)', en: 'Hydrance Aqua-Gel Hydrating Cream-in-Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'عناية شاملة 3 في 1 (كريم نهار، ماسك ليلي، وعناية للعين). يعتمد على <span class="glossary-term" onclick="openGlossary(\'cohederm\')">الكوهيديرم</span> مع خصائص الديتوكس (Dextran Sulfate) لحماية البشرة من الإجهاد التأكسدي والملوثات البيئية.', 
@@ -6119,7 +6101,7 @@ deepProductsList.push({
 // [185] Hydrance UV Light / Rich Hydrating Cream SPF 30
 deepProductsList.push({
     id: 'avene_hydrance_uv', brandId: 'avene', familyId: 'hydrance', brand: 'Avene',
-    name: { ar: 'هيدرانس كريم ترطيب مع واقي شمس SPF30 (لايت/ريتش)', en: 'Hydrance UV Light / Rich Hydrating Cream SPF 30' }, image: "", potency: 1, 
+    name: { ar: 'هيدرانس كريم ترطيب مع واقي شمس SPF30 (لايت/ريتش)', en: 'Hydrance UV Light / Rich Hydrating Cream SPF 30' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'يوفر ترطيباً مستمراً بواسطة مركب الكوهيديرم، مدمجاً مع نظام حماية شمسي فعال ضد الأشعة فوق البنفسجية لتجنب جفاف البشرة الناتج عن الشمس. متوفر بنسخة (Light) للمختلطة، و (Rich) للجافة.', 
@@ -6133,7 +6115,7 @@ deepProductsList.push({
 // [186] Thermal Spring Water
 deepProductsList.push({
     id: 'avene_thermal_water', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'مياه أفين الحرارية (البخاخ المهدئ)', en: 'Avene Thermal Spring Water Spray' }, image: "", potency: 1, 
+    name: { ar: 'مياه أفين الحرارية (البخاخ المهدئ)', en: 'Avene Thermal Spring Water Spray' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: '7.5 (معتدل يميل للقلوية)', en: '7.5 (Neutral tending alkaline)' },
         mechanism: { 
@@ -6189,7 +6171,7 @@ glossaryDict['vitamin_cg'] = {
 // [187] Hyaluron Activ B3 Cell Renewal Cream
 deepProductsList.push({
     id: 'avene_hyaluron_activ_b3_cream', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'هيالورون أكتيف B3 كريم تجديد الخلايا', en: 'Hyaluron Activ B3 Cell Renewal Cream' }, image: "", potency: 2, 
+    name: { ar: 'هيالورون أكتيف B3 كريم تجديد الخلايا', en: 'Hyaluron Activ B3 Cell Renewal Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -6214,7 +6196,7 @@ deepProductsList.push({
 // [188] Hyaluron Activ B3 Multi-Intensive Night Cream
 deepProductsList.push({
     id: 'avene_hyaluron_activ_b3_night', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'هيالورون أكتيف B3 كريم الليل المكثف', en: 'Hyaluron Activ B3 Multi-Intensive Night Cream' }, image: "", potency: 3, 
+    name: { ar: 'هيالورون أكتيف B3 كريم الليل المكثف', en: 'Hyaluron Activ B3 Multi-Intensive Night Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'كريم ليلي مجدد. يحتوي على تركيبة B3 بالإضافة إلى <span class="glossary-term" onclick="openGlossary(\'retinaldehyde\')">الريتينال (Retinal)</span> لتسريع التجديد الخلوي أثناء النوم بشكل دراماتيكي، ومستخلص هاريتيكا (Haritaki) لتعزيز الكولاجين.', 
@@ -6231,7 +6213,7 @@ deepProductsList.push({
 // [189] Hyaluron Activ B3 Plumping Serum
 deepProductsList.push({
     id: 'avene_hyaluron_activ_b3_serum', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'هيالورون أكتيف B3 سيروم (للنفخ)', en: 'Hyaluron Activ B3 Concentrated Plumping Serum' }, image: "", potency: 3, 
+    name: { ar: 'هيالورون أكتيف B3 سيروم (للنفخ)', en: 'Hyaluron Activ B3 Concentrated Plumping Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم عالي التركيز (يحتوي على مكونين نشطين فقط بتركيز عالٍ: النياسيناميد 6% والهيالورونيك 1.5%). يوفر تأثيراً مباشراً في شد ونفخ التجاعيد دون إضافات كيميائية غير ضرورية.', 
@@ -6245,7 +6227,7 @@ deepProductsList.push({
 // [190] Hyaluron Activ B3 Eye Cream
 deepProductsList.push({
     id: 'avene_hyaluron_activ_b3_eye', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'هيالورون أكتيف B3 كريم العين', en: 'Hyaluron Activ B3 Triple Correction Eye Cream' }, image: "", potency: 2, 
+    name: { ar: 'هيالورون أكتيف B3 كريم العين', en: 'Hyaluron Activ B3 Triple Correction Eye Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'تصحيح ثلاثي الأبعاد للعين. يدمج النياسيناميد، الهيالورونيك، الديكستران سلفات (للتورم)، ومستخلص هاريتيكا لملء التجاعيد، وتقليل الهالات والانتفاخات.', 
@@ -6259,7 +6241,7 @@ deepProductsList.push({
 // [191] Vitamin Activ CG Serum
 deepProductsList.push({
     id: 'avene_vitamin_activ_cg_serum', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيتامين أكتيف CG سيروم (للنضارة)', en: 'Vitamin Activ CG Radiance Corrector Serum' }, image: "", potency: 3, 
+    name: { ar: 'فيتامين أكتيف CG سيروم (للنضارة)', en: 'Vitamin Activ CG Radiance Corrector Serum' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'سيروم التفتيح ومكافحة الأكسدة. يستخدم <span class="glossary-term" onclick="openGlossary(\'vitamin_cg\')">فيتامين CG</span> بنسبة 1.8% (يعادل 20% من فيتامين سي العادي)، مع النياسيناميد 3% والباكوشيول (بديل الريتينول الطبيعي) لتوحيد اللون وتحفيز الكولاجين.', 
@@ -6273,7 +6255,7 @@ deepProductsList.push({
 // [192] Vitamin Activ CG Radiance Intensive Cream
 deepProductsList.push({
     id: 'avene_vitamin_activ_cg_cream', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيتامين أكتيف CG كريم الإشراق المكثف', en: 'Vitamin Activ CG Radiance Intensive Cream' }, image: "", potency: 2, 
+    name: { ar: 'فيتامين أكتيف CG كريم الإشراق المكثف', en: 'Vitamin Activ CG Radiance Intensive Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'كريم نهار/ليل مكمل للسيروم. يحول فيتامين CG ببطء داخل الجلد للحفاظ على حاجز مضاد للأكسدة طوال اليوم، ويرطب بقوة لإعادة الضوء للبشرة المتعبة.', 
@@ -6287,7 +6269,7 @@ deepProductsList.push({
 // [193] A-Oxitive Serum
 deepProductsList.push({
     id: 'avene_a_oxitive_serum', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'أوكسيتيف سيروم (مضاد الأكسدة)', en: 'A-Oxitive Antioxidant Defense Serum' }, image: "", potency: 2, 
+    name: { ar: 'أوكسيتيف سيروم (مضاد الأكسدة)', en: 'A-Oxitive Antioxidant Defense Serum' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'درع وقائي للجلد. يعتمد على مركب (Pro-Vitamin C & E) المستقر ليحيد الجذور الحرة المسببة لشيخوخة الجلد، مدعوماً بـ GP4G كمصدر للطاقة الخلوية.', 
@@ -6301,7 +6283,7 @@ deepProductsList.push({
 // [194] A-Oxitive Day Cream
 deepProductsList.push({
     id: 'avene_a_oxitive_day', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'أوكسيتيف كريم النهار المائي', en: 'A-Oxitive Day Smoothing Water-Cream' }, image: "", potency: 1, 
+    name: { ar: 'أوكسيتيف كريم النهار المائي', en: 'A-Oxitive Day Smoothing Water-Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'كريم مائي خفيف جداً يغلف البشرة بحماية مضادة للتلوث ومضادة للأكسدة، مدعم بلؤلؤ دقيق لتمويه العيوب وإعطاء لمعة صحية (Glow).', 
@@ -6315,7 +6297,7 @@ deepProductsList.push({
 // [195] A-Oxitive Night Cream
 deepProductsList.push({
     id: 'avene_a_oxitive_night', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'أوكسيتيف كريم التقشير الليلي', en: 'A-Oxitive Night Peeling Cream' }, image: "", potency: 3, 
+    name: { ar: 'أوكسيتيف كريم التقشير الليلي', en: 'A-Oxitive Night Peeling Cream' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'يحتوي على <span class="glossary-term" onclick="openGlossary(\'retinaldehyde\')">الريتينال</span> وبروفيتامين E لعمل تقشير دقيق وتجديد كولاجين مكثف ليلاً دون تهيج، ليمنح تأثير مساوٍ لـ 3 جلسات تقشير كيميائي بعد 8 أسابيع.', 
@@ -6329,7 +6311,7 @@ deepProductsList.push({
 // [196] A-Oxitive Eye Cream
 deepProductsList.push({
     id: 'avene_a_oxitive_eye', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'أوكسيتيف كريم العين المنعم', en: 'A-Oxitive Smoothing Eye Contour Cream' }, image: "", potency: 2, 
+    name: { ar: 'أوكسيتيف كريم العين المنعم', en: 'A-Oxitive Smoothing Eye Contour Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يستخدم تركيزاً لطيفاً من <span class="glossary-term" onclick="openGlossary(\'retinaldehyde\')">الريتينال</span> مع مياه أفين الحرارية لتنعيم خطوط الضحك حول العين بأمان، وزيادة إشراقة المنطقة المظلمة.', 
@@ -6343,7 +6325,7 @@ deepProductsList.push({
 // [197] Physiolift Day Cream
 deepProductsList.push({
     id: 'avene_physiolift_day', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيزيوليفت كريم النهار المنعم', en: 'Physiolift Smoothing Day Cream' }, image: "", potency: 2, 
+    name: { ar: 'فيزيوليفت كريم النهار المنعم', en: 'Physiolift Smoothing Day Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يعتمد على الـ (Ascofilline) لإعادة شحن الكولاجين، والهيالورونيك أحادي القسيمات (Mono-oligomers) لملء التجاعيد الملحوظة بقوة.', 
@@ -6357,7 +6339,7 @@ deepProductsList.push({
 // [198] Physiolift Night Balm
 deepProductsList.push({
     id: 'avene_physiolift_night', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيزيوليفت بلسم الليل المجدد', en: 'Physiolift Smoothing Regenerating Night Balm' }, image: "", potency: 3, 
+    name: { ar: 'فيزيوليفت بلسم الليل المجدد', en: 'Physiolift Smoothing Regenerating Night Balm' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'يدمج <span class="glossary-term" onclick="openGlossary(\'retinaldehyde\')">الريتينال</span> مع Ascofilline والهيالورونيك لشد الجلد المترهل وإزالة التجاعيد العميقة، مع الهسبريدين لتخفيف انتفاخات الوجه الليلي.', 
@@ -6371,7 +6353,7 @@ deepProductsList.push({
 // [199] Physiolift Eye Contour
 deepProductsList.push({
     id: 'avene_physiolift_eye', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيزيوليفت كريم محيط العين', en: 'Physiolift Eye Contour Cream' }, image: "", potency: 2, 
+    name: { ar: 'فيزيوليفت كريم محيط العين', en: 'Physiolift Eye Contour Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يملأ التجاعيد العنيدة حول العين، يرفع الجفون قليلاً، ويستخدم ديكستران سلفات لتصريف الانتفاخات القوية التي تأتي مع التقدم في العمر.', 
@@ -6385,7 +6367,7 @@ deepProductsList.push({
 // [200] Physiolift Wrinkle Filler
 deepProductsList.push({
     id: 'avene_physiolift_filler', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'فيزيوليفت فيلر (حاقن التجاعيد الموضعي)', en: 'Physiolift Wrinkle Filler' }, image: "", potency: 3, 
+    name: { ar: 'فيزيوليفت فيلر (حاقن التجاعيد الموضعي)', en: 'Physiolift Wrinkle Filler' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         mechanism: { 
             ar: 'علاج موضعي مركز جداً لخطوط التعبير العميقة (كخطوط الابتسامة والجبهة). يعمل كـ "حاقن هيالورونيك" بفضل التركيز العالي للمواد الفعالة في قلم دقيق التوزيع.', 
@@ -6399,7 +6381,7 @@ deepProductsList.push({
 // [201] DermAbsolu Day Cream
 deepProductsList.push({
     id: 'avene_dermabsolu_day', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'ديرمأبسولو كريم النهار المجدد للكثافة', en: 'DermAbsolu Day Redensifying Cream' }, image: "", potency: 2, 
+    name: { ar: 'ديرمأبسولو كريم النهار المجدد للكثافة', en: 'DermAbsolu Day Redensifying Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يستهدف الترهل في سن اليأس (Menopause). يحتوي على بولي فينول الفانيليا لدعم حمض الهيالورونيك، وسيتينول (Sytenol) لإعادة هيكلة الخلايا، وزيت الجوجوبا لتغذية البشرة المترققة.', 
@@ -6413,7 +6395,7 @@ deepProductsList.push({
 // [202] DermAbsolu Night Balm
 deepProductsList.push({
     id: 'avene_dermabsolu_night', brandId: 'avene', familyId: 'anti_aging', brand: 'Avene',
-    name: { ar: 'ديرمأبسولو بلسم الليل المريح', en: 'DermAbsolu Night Comforting Balm' }, image: "", potency: 2, 
+    name: { ar: 'ديرمأبسولو بلسم الليل المريح', en: 'DermAbsolu Night Comforting Balm' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'بلسم ليلي غني يعمل على إعادة نحت ملامح الوجه وتغذية الجلد المتقدم في العمر بفضل السيتينول وزبدة الشيا، ليعطي مظهراً ممتلئاً ومريحاً في الصباح.', 
@@ -6450,7 +6432,7 @@ glossaryDict['ruscus_extract'] = {
 // [203] Intense Protect Fluid SPF 50+ (150ml)
 deepProductsList.push({
     id: 'avene_intense_protect', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'إنتينس بروتيكت فلويد SPF 50+ (لأقسى الظروف)', en: 'Intense Protect Fluid SPF 50+' }, image: "", potency: 1, 
+    name: { ar: 'إنتينس بروتيكت فلويد SPF 50+ (لأقسى الظروف)', en: 'Intense Protect Fluid SPF 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -6472,7 +6454,7 @@ deepProductsList.push({
 // [204] Ultra Fluid Invisible / Tinted Perfector SPF 50
 deepProductsList.push({
     id: 'avene_ultra_fluid', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'ألترا فلويد SPF 50 (الخفي / الملون)', en: 'Ultra Fluid Invisible / Tinted Perfector SPF 50' }, image: "", potency: 1, 
+    name: { ar: 'ألترا فلويد SPF 50 (الخفي / الملون)', en: 'Ultra Fluid Invisible / Tinted Perfector SPF 50' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'الجيل الجديد من أفين (منافس الشاكا فلويد). قوام مائي خفيف كالهواء بفضل تكنولوجيا (Water-like). يحتوي على <span class="glossary-term" onclick="openGlossary(\'triasorb\')">TriAsorB</span> لحماية واسعة من الضوء الأزرق دون التسبب في حبوب أو لمعان.', 
@@ -6486,7 +6468,7 @@ deepProductsList.push({
 // [205] Sun Fluid SPF 50+ / Tinted Fluid
 deepProductsList.push({
     id: 'avene_sun_fluid_50', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'فلويد الحماية من الشمس SPF 50+ (العادي والملون)', en: 'Sun Fluid SPF 50+ / Tinted Fluid' }, image: "", potency: 1, 
+    name: { ar: 'فلويد الحماية من الشمس SPF 50+ (العادي والملون)', en: 'Sun Fluid SPF 50+ / Tinted Fluid' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'سائل حماية كلاسيكي للبشرة المختلطة إلى الدهنية. يترك لمسة جافة غير لامعة (Dry Touch) ويحتوي على مياه أفين لتهدئة البشرة المتهيجة من الحرارة.', 
@@ -6500,7 +6482,7 @@ deepProductsList.push({
 // [206] Sun Cream SPF 50+ / Tinted Cream
 deepProductsList.push({
     id: 'avene_sun_cream_50', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'كريم الحماية من الشمس SPF 50+ (العادي والملون)', en: 'Sun Cream SPF 50+ / Tinted Cream' }, image: "", potency: 1, 
+    name: { ar: 'كريم الحماية من الشمس SPF 50+ (العادي والملون)', en: 'Sun Cream SPF 50+ / Tinted Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'النسخة الغنية بالترطيب من واقيات أفين (Cream). يغذي البشرة الجافة ويحميها من الشوارد الحرة والجفاف الناتج عن التعرض للشمس بفضل الجلسرين ومضادات الأكسدة.', 
@@ -6514,7 +6496,7 @@ deepProductsList.push({
 // [207] Mineral Cream SPF 50+ (V. High Pro)
 deepProductsList.push({
     id: 'avene_mineral_cream_50', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'الكريم المعدني للحماية SPF 50+ (للحساسية المفرطة)', en: 'Sun Block Cream V High Pro SPF 50 Mineral' }, image: "", potency: 1, 
+    name: { ar: 'الكريم المعدني للحماية SPF 50+ (للحساسية المفرطة)', en: 'Sun Block Cream V High Pro SPF 50 Mineral' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'واقي فيزيائي 100%. خالٍ تماماً من الفلاتر الكيميائية (يعتمد على ثاني أكسيد التيتانيوم والزنك). يعكس الأشعة كالمرآة، مما يجعله الآمن والمناسب للبشرة التي تعاني من حساسية تجاه الفلاتر العضوية.', 
@@ -6528,7 +6510,7 @@ deepProductsList.push({
 // [208] Sun Spray SPF 50+ / Children Spray
 deepProductsList.push({
     id: 'avene_sun_spray_50', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'بخاخ الحماية من الشمس SPF 50+ (وللأطفال)', en: 'Sun Spray SPF 50+ / Children Spray' }, image: "", potency: 1, 
+    name: { ar: 'بخاخ الحماية من الشمس SPF 50+ (وللأطفال)', en: 'Sun Spray SPF 50+ / Children Spray' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'حماية واسعة للجسم. بخاخ عملي يضمن توزيعاً متجانساً. تركيبة الأطفال خالية من العطور ومُختبرة لأعلى درجات الأمان ومقاومة الاحتكاك بالرمال.', 
@@ -6542,7 +6524,7 @@ deepProductsList.push({
 // [209] B-Protect Sunscreen 50+
 deepProductsList.push({
     id: 'avene_b_protect', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'بي-بروتيكت واقي الشمس المضيء SPF 50+', en: 'B-Protect Sunscreen 50+' }, image: "", potency: 1, 
+    name: { ar: 'بي-بروتيكت واقي الشمس المضيء SPF 50+', en: 'B-Protect Sunscreen 50+' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'عناية 3 في 1 (حماية شمس + حماية تلوث + إضاءة). يحتوي على كبسولات صبغية دقيقة (Micro-encapsulated pigments) تنفجر عند التدليك لتتكيف مع لون البشرة وتمنحها نضارة مشرقة.', 
@@ -6556,7 +6538,7 @@ deepProductsList.push({
 // [210] Reflexe Solaire SPF 50+ (30ml)
 deepProductsList.push({
     id: 'avene_reflexe_solaire', brandId: 'avene', familyId: 'sun_care', brand: 'Avene',
-    name: { ar: 'ريفليكس سولير SPF 50+ (واقي الجيب)', en: 'Reflexe Solaire SPF 50+ 30ml' }, image: "", potency: 1, 
+    name: { ar: 'ريفليكس سولير SPF 50+ (واقي الجيب)', en: 'Reflexe Solaire SPF 50+ 30ml' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'نفس تركيبة فلويد أفين الممتازة ولكن في عبوة مسطحة مريحة جداً للجيب (Pocket-size). مثالي للرياضيين، وحمله في الشنطة لتجديد الحماية بسهولة خلال اليوم.', 
@@ -6570,7 +6552,7 @@ deepProductsList.push({
 // [211] Antirougeurs Fort Relief Concentrate
 deepProductsList.push({
     id: 'avene_antirougeurs_fort', brandId: 'avene', familyId: 'antirougeurs', brand: 'Avene',
-    name: { ar: 'أنتيروجير فورت (علاج الاحمرار والوردية المركز)', en: 'Antirougeurs Fort Relief Concentrate Drops' }, image: "", potency: 3, 
+    name: { ar: 'أنتيروجير فورت (علاج الاحمرار والوردية المركز)', en: 'Antirougeurs Fort Relief Concentrate Drops' }, image: "placeholder.png", potency: 3, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -6595,7 +6577,7 @@ deepProductsList.push({
 // [212] Antirougeurs Day Emulsion / Cream SPF 30
 deepProductsList.push({
     id: 'avene_antirougeurs_day', brandId: 'avene', familyId: 'antirougeurs', brand: 'Avene',
-    name: { ar: 'أنتيروجير مستحلب/كريم النهار SPF 30', en: 'Antirougeurs Day Emulsion / Cream SPF 30' }, image: "", potency: 2, 
+    name: { ar: 'أنتيروجير مستحلب/كريم النهار SPF 30', en: 'Antirougeurs Day Emulsion / Cream SPF 30' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'مرطب وقائي يدمج <span class="glossary-term" onclick="openGlossary(\'ruscus_extract\')">الروسكوس</span> مع حماية شمسية SPF30 (لأن الشمس هي المهيج الأول للوردية). يحتوي على صبغة خضراء خفيفة جداً لتحييد اللون الأحمر بصرياً فور وضعه.', 
@@ -6609,7 +6591,7 @@ deepProductsList.push({
 // [213] Antirougeurs Soothing Cleansing Lotion
 deepProductsList.push({
     id: 'avene_antirougeurs_cleanser', brandId: 'avene', familyId: 'antirougeurs', brand: 'Avene',
-    name: { ar: 'أنتيروجير لوشن منظف مهدئ', en: 'Antirougeurs Soothing Cleansing Lotion' }, image: "", potency: 1, 
+    name: { ar: 'أنتيروجير لوشن منظف مهدئ', en: 'Antirougeurs Soothing Cleansing Lotion' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'لوشن حليبي منعش. ينظف ويزيل المكياج دون الحاجة للشطف بالماء (لتجنب تهيج الجير أو الكلور في ماء الصنبور). يترك ملمساً مبرداً (Cooling effect) يطفيء حرارة الوجه.', 
@@ -6646,7 +6628,7 @@ glossaryDict['cold_cream_tech'] = {
 // [214] TriXera Nutrition Nutri-Fluid Lotion
 deepProductsList.push({
     id: 'avene_trixera_lotion', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'تريزيرا لوشن (مرطب الجسم العائلي السائل)', en: 'TriXera Nutrition Nutri-Fluid Lotion' }, image: "", potency: 1, 
+    name: { ar: 'تريزيرا لوشن (مرطب الجسم العائلي السائل)', en: 'TriXera Nutrition Nutri-Fluid Lotion' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
@@ -6668,7 +6650,7 @@ deepProductsList.push({
 // [215] TriXera Nutrition Nutri-Fluid Balm
 deepProductsList.push({
     id: 'avene_trixera_balm', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'تريزيرا بلسم (مرطب الجسم شديد الجفاف)', en: 'TriXera Nutrition Nutri-Fluid Balm' }, image: "", potency: 1, 
+    name: { ar: 'تريزيرا بلسم (مرطب الجسم شديد الجفاف)', en: 'TriXera Nutrition Nutri-Fluid Balm' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'النسخة الأكثر كثافة (Balm) من تريزيرا. يحتوي على تركيز أعلى من الدهون النباتية ليغلف البشرة شديدة الجفاف والمتقشرة، ويمنع تبخر الماء منها بقوة أكبر.', 
@@ -6682,7 +6664,7 @@ deepProductsList.push({
 // [216] TriXera Nutrition Cleanser (Gel / Bar)
 deepProductsList.push({
     id: 'avene_trixera_cleanser', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'تريزيرا غسول (جل / صابونة)', en: 'TriXera Nutrition Cleanser / Cleansing Bar' }, image: "", potency: 1, 
+    name: { ar: 'تريزيرا غسول (جل / صابونة)', en: 'TriXera Nutrition Cleanser / Cleansing Bar' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'غسول يومي خالي من الصابون. ينظف بلطف شديد بفضل عوامل التنظيف الحيوية، ويحمي البشرة من التأثير المجفف للماء العسر (Hard water) أثناء الاستحمام.', 
@@ -6696,7 +6678,7 @@ deepProductsList.push({
 // [217] Cold Cream Hand Cream
 deepProductsList.push({
     id: 'avene_cold_cream_hand', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'كولد كريم لليدين (مرمم التشققات)', en: 'Cold Cream Concentrated Hand Cream' }, image: "", potency: 1, 
+    name: { ar: 'كولد كريم لليدين (مرمم التشققات)', en: 'Cold Cream Concentrated Hand Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'يعتمد على <span class="glossary-term" onclick="openGlossary(\'cold_cream_tech\')">تركيبة الكولد كريم</span> مع السوكرالفات (Sucralfate). يرمم شقوق الأيدي العاملة والجافة جداً، ويصنع قفازاً واقياً (Protective Glove) مقاوماً للماء.', 
@@ -6710,7 +6692,7 @@ deepProductsList.push({
 // [218] Cold Cream Lip Balm / Cream
 deepProductsList.push({
     id: 'avene_cold_cream_lip', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'كولد كريم للشفاه (مرطب ومغذي عميق)', en: 'Cold Cream Lip Balm / Lip Cream' }, image: "", potency: 1, 
+    name: { ar: 'كولد كريم للشفاه (مرطب ومغذي عميق)', en: 'Cold Cream Lip Balm / Lip Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'غني بشمع النحل وفيتامين E. يذوب على الشفاه ليعالج الجفاف الشديد والتقشر، مع توفير لمعة طبيعية وحماية مضادة للأكسدة.', 
@@ -6724,7 +6706,7 @@ deepProductsList.push({
 // [219] Gentle Milk Cleanser & Gentle Toner
 deepProductsList.push({
     id: 'avene_gentle_cleansing_duo', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'الحليب المنظف والتونر اللطيف (للبشرة الجافة)', en: 'Gentle Milk Cleanser & Gentle Toner Dry Skin' }, image: "", potency: 1, 
+    name: { ar: 'الحليب المنظف والتونر اللطيف (للبشرة الجافة)', en: 'Gentle Milk Cleanser & Gentle Toner Dry Skin' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'ثنائي التنظيف الكلاسيكي. الحليب يذيب المكياج بلطف بالزيوت المرطبة، والتونر (الخالي من الكحول) غني بسيليكات دقيقة لتهدئة البشرة وإغلاق المسام بلطف، ويُرج قبل الاستخدام لتفعيل السيليكات.', 
@@ -6738,7 +6720,7 @@ deepProductsList.push({
 // [220] Mattifying Cleansing Foam
 deepProductsList.push({
     id: 'avene_mattifying_foam', brandId: 'avene', familyId: 'cleanance', brand: 'Avene',
-    name: { ar: 'رغوة التنظيف المطفئة للمعان', en: 'Mattifying Cleansing Foam' }, image: "", potency: 1, 
+    name: { ar: 'رغوة التنظيف المطفئة للمعان', en: 'Mattifying Cleansing Foam' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'رغوة خفيفة (Foam) خالية من الصابون، تنظف الوجه والعين. تحتوي على حمض الجلوتاميك لتنظيم إفراز الزهم في منطقة T-Zone دون التسبب في جفاف الخدين.', 
@@ -6752,7 +6734,7 @@ deepProductsList.push({
 // [221] Gentle Exfoliating Gel / Purifying Scrub
 deepProductsList.push({
     id: 'avene_gentle_scrub', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'جل التقشير اللطيف / السكرب المنقي', en: 'Gentle Exfoliating Gel / Purifying Scrub' }, image: "", potency: 2, 
+    name: { ar: 'جل التقشير اللطيف / السكرب المنقي', en: 'Gentle Exfoliating Gel / Purifying Scrub' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'يجمع بين التقشير الميكانيكي (بميكروبيدات السليلوز وزيت الجوجوبا) والتقشير الكيميائي الخفيف (النياسيناميد وساليسيلات الصوديوم) لإزالة الخلايا الميتة وتنقية البشرة الحساسة دون خدشها.', 
@@ -6766,7 +6748,7 @@ deepProductsList.push({
 // [222] Soothing Moisture Mask / Eye Contour Cream
 deepProductsList.push({
     id: 'avene_soothing_essentials', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'الماسك المهدئ / كريم العين الملطف', en: 'Soothing Moisture Mask / Eye Contour Cream' }, image: "", potency: 1, 
+    name: { ar: 'الماسك المهدئ / كريم العين الملطف', en: 'Soothing Moisture Mask / Eye Contour Cream' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'عناية أساسية للترطيب. الماسك يغمر الوجه بالماء الحراري لمعالجة حروق الشمس أو التهيج الفوري، وكريم العين يزيل الاحتقان والتعب بفضل البابونج (Chamomile) والماء الحراري.', 
@@ -6780,7 +6762,7 @@ deepProductsList.push({
 // [223] Moisturizing Melt-In Body Balm / Self Tanner
 deepProductsList.push({
     id: 'avene_body_specialties', brandId: 'avene', familyId: 'body_essentials', brand: 'Avene',
-    name: { ar: 'بلسم الجسم الذوباني / التان الذاتي المرطب', en: 'Moisturizing Melt In Body Balm / Self Tanner Silky Gel' }, image: "", potency: 1, 
+    name: { ar: 'بلسم الجسم الذوباني / التان الذاتي المرطب', en: 'Moisturizing Melt In Body Balm / Self Tanner Silky Gel' }, image: "placeholder.png", potency: 1, 
     pharmacology: {
         mechanism: { 
             ar: 'بلسم الجسم يوفر ترطيباً مريحاً برائحة زهرية خفيفة وتأثير مهدئ. والتان الذاتي يمنح البشرة الحساسة لوناً برونزياً طبيعياً ومتجانساً دون التعرض لأضرار الشمس، مع ترطيب عميق.', 
@@ -6794,7 +6776,7 @@ deepProductsList.push({
 // [224] Skin Recovery Cream (Classic)
 deepProductsList.push({
     id: 'avene_skin_recovery', brandId: 'avene', familyId: 'tolerance', brand: 'Avene',
-    name: { ar: 'سكين ريكفري كريم (الكلاسيكي للإصلاح)', en: 'Skin Recovery Cream' }, image: "", potency: 2, 
+    name: { ar: 'سكين ريكفري كريم (الكلاسيكي للإصلاح)', en: 'Skin Recovery Cream' }, image: "placeholder.png", potency: 2, 
     pharmacology: {
         mechanism: { 
             ar: 'الإصدار الكلاسيكي (الذي سبقه Tolerance). غني بمركب البارسيراين (Parcerine) لتهدئة تهيج الجلد السريع وتقوية الحاجز الواقي، مصمم بأقل عدد من المكونات لتجنب التحسس.', 
@@ -6807,56 +6789,11 @@ deepProductsList.push({
 // ==========================================
 // 🛡️ رقعة الإصلاح الشاملة (Universal Repair Patch)
 // ==========================================
-
-/**
- * إصلاح شامل لضمان اكتمال جميع المنتجات بالبيانات المطلوبة
- */
-function initializeProductsData() {
-    deepProductsList.forEach((product, index) => {
-        // التحقق من البيانات الأساسية
-        if (!product.id || !product.brand) {
-            console.warn(`Product at index ${index} is missing critical data`);
-        }
-
-        // إضافة طبقة تجميع إذا كانت مفقودة
-        if (!product.clinical_usage) {
-            product.clinical_usage = {};
-        }
-
-        if (!product.clinical_usage.layering) {
-            product.clinical_usage.layering = {
-                do_not_mix_with: { ar: ['-'], en: ['-'] },
-                best_mixed_with: { ar: ['-'], en: ['-'] }
-            };
-        }
-
-        // التأكد من وجود الحقول الأساسية للحذر والتحذيرات
-        if (!product.precautions) {
-            product.precautions = {
-                indications: { ar: 'لم تُحدد', en: 'Not specified' },
-                pregnancy_safe: true,
-                sun_sensitivity: false
-            };
-        }
-    });
-
-    console.log(`✅ تم تهيئة ${deepProductsList.length} منتج بنجاح`);
-}
-
-// استدعاء دالة التهيئة عند الحاجة
-if (typeof window !== 'undefined') {
-    window.addEventListener('DOMContentLoaded', initializeProductsData);
-}
-
-// دعم بيئة Node.js
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        brandsList,
-        casesList,
-        skinTypesList,
-        deepProductsList,
-        glossaryDict,
-        openGlossary,
-        initializeProductsData
-    };
-}
+deepProductsList.forEach(product => {
+    if (!product.clinical_usage.layering) {
+        product.clinical_usage.layering = {
+            do_not_mix_with: { ar: ['-'], en: ['-'] },
+            best_mixed_with: { ar: ['-'], en: ['-'] }
+        };
+    }
+});
