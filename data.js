@@ -6788,13 +6788,35 @@ deepProductsList.push({
     precautions: { indications: { ar: 'التحسس الجلدي والتهيج العابر.', en: 'Skin allergies and transient irritation.' }, pregnancy_safe: true, sun_sensitivity: false }
 });
 // ==========================================
-// 🛡️ رقعة الإصلاح الشاملة (Universal Repair Patch)
 // ==========================================
-deepProductsList.forEach(product => {
+// 🛡️ كود الإنقاذ النهائي والشامل (Bulletproof Fix)
+// ==========================================
+deepProductsList.forEach((product) => {
+    // 1. التأكد من وجود كائن الاستخدام السريري
+    if (!product.clinical_usage) {
+        product.clinical_usage = {};
+    }
+
+    // 2. إصلاح خانة التعارضات (السبب الرئيسي للانهيار)
     if (!product.clinical_usage.layering) {
         product.clinical_usage.layering = {
             do_not_mix_with: { ar: ['-'], en: ['-'] },
             best_mixed_with: { ar: ['-'], en: ['-'] }
         };
     }
+
+    // 3. ضمان وجود الخانات الإلزامية الأخرى للعرض
+    if (!product.clinical_usage.frequency) product.clinical_usage.frequency = { ar: '-', en: '-' };
+    if (!product.clinical_usage.step_in_routine) product.clinical_usage.step_in_routine = { ar: '-', en: '-' };
+    if (!product.clinical_usage.application) product.clinical_usage.application = { ar: '-', en: '-' };
+
+    if (!product.pharmacology) {
+        product.pharmacology = { mechanism: { ar: '-', en: '-' }, active_ingredients: [] };
+    }
+
+    if (!product.precautions) {
+        product.precautions = { indications: { ar: '-', en: '-' }, pregnancy_safe: true, sun_sensitivity: false };
+    }
 });
+
+console.log("✅ تم فحص وإصلاح " + deepProductsList.length + " منتج. الموقع جاهز للعمل الآن.");
