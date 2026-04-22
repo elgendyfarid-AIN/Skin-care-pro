@@ -1,275 +1,264 @@
 // ==========================================
-// 🏥 SkinCare Pro - Elite Clinical Database
-// 🏢 Brand: LA ROCHE-POSAY (Part 1)
-// ⚠️ STRICT MODE: Validated Data Structure
+// 🏥 Skin Care Pro - Clinical Database
+// متوافق 100% مع واجهة (Dashboard Layout)
 // ==========================================
 
-// 1. التأسيس الأساسي للمصفوفات
 const brandsList = [];
+const casesList = [];
+const skinTypesList = [];
 const deepProductsList = [];
 const glossaryDict = {};
 
 // ==========================================
-// 📚 القاموس الطبي التفاعلي لـ LA ROCHE-POSAY
+// 📚 القاموس الطبي (Glossary)
 // ==========================================
 
+glossaryDict['c_acnes'] = {
+    title: { ar: 'بكتيريا C.acnes 🦠', en: 'C.acnes Bacteria 🦠' },
+    desc: { 
+        ar: 'البكتيريا الرئيسية المسببة لحب الشباب. تعيش داخل المسام وتتغذى على الإفرازات الدهنية، مما يسبب الالتهاب والاحمرار.', 
+        en: 'The primary bacteria responsible for acne. It lives inside the pores and feeds on sebum, causing inflammation.' 
+    }
+};
+
+glossaryDict['biofilms'] = {
+    title: { ar: 'الأغشية الحيوية (Biofilms) 🛡️', en: 'Biofilms 🛡️' },
+    desc: { 
+        ar: 'درع واقي تبنيه البكتيريا حول نفسها لحماية نفسها من العلاجات والمضادات. تكسير هذا الدرع يعني القضاء على الحبوب من جذورها.', 
+        en: 'A protective shield built by bacteria to defend against treatments. Breaking this shield eliminates breakouts from the root.' 
+    }
+};
+
+glossaryDict['pih'] = {
+    title: { ar: 'التصبغات (PIH) 🟤', en: 'PIH (Hyperpigmentation) 🟤' },
+    desc: { 
+        ar: 'البقع الداكنة أو البنية التي تتركها الحبة بعد أن تجف وتشفى، وتحدث نتيجة زيادة إنتاج الميلانين بسبب الالتهاب.', 
+        en: 'Post-Inflammatory Hyperpigmentation: The dark or brown spots left behind after a pimple heals, caused by excess melanin production.' 
+    }
+};
+
+glossaryDict['lha'] = {
+    title: { ar: 'حمض LHA 🧪', en: 'LHA Acid 🧪' },
+    desc: { 
+        ar: 'مُقشر مشتق من حمض الساليسيليك، لكنه ألطف بكثير. يتميز بأنه "محب للدهون" فيخترق المسام ببطء لتنظيفها من الداخل دون تهيج.', 
+        en: 'Lipo-Hydroxy Acid: A derivative of Salicylic Acid, but much gentler. Being lipophilic (fat-loving), it slowly penetrates and deeply cleanses pores without irritation.' 
+    }
+};
+
+glossaryDict['keratolytic'] = {
+    title: { ar: 'تحلل القرنية (Keratolytic) 🧹', en: 'Keratolytic Action 🧹' },
+    desc: { 
+        ar: 'عملية إذابة وتقشير الطبقة الخارجية الميتة من الجلد (الكيراتين)، مما يساعد في فتح المسام المسدودة وتنعيم ملمس البشرة.', 
+        en: 'The process of dissolving and exfoliating the dead outer layer of the skin (keratin), which helps unclog pores and smooth skin texture.' 
+    }
+};
+
+glossaryDict['aha_bha'] = {
+    title: { ar: 'أحماض AHA و BHA 💧', en: 'AHA & BHA Acids 💧' },
+    desc: { 
+        ar: 'أحماض ألفا هيدروكسي (AHA) تقشر السطح وتوحد اللون، بينما أحماض بيتا هيدروكسي (BHA) تذوب في الدهون لتنظيف المسام من الداخل.', 
+        en: 'Alpha Hydroxy Acids (AHA) exfoliate the surface and even tone, while Beta Hydroxy Acids (BHA) are oil-soluble to deep-clean pores.' 
+    }
+};
+
 glossaryDict['microbiome_science'] = {
-    title: { ar: 'علم الميكروبيوم', en: 'Microbiome Science' },
+    title: { ar: 'علم الميكروبيوم 🧫', en: 'Microbiome Science 🧫' },
     desc: { 
         ar: 'توازن البكتيريا النافعة على سطح الجلد. الإخلال بهذا التوازن يؤدي إلى الالتهابات، حب الشباب، أو الإكزيما.', 
         en: 'The balance of beneficial bacteria on the skin surface. Disrupting this balance leads to inflammation, acne, or eczema.' 
     }
 };
 
-glossaryDict['mexoryl_400'] = {
-    title: { ar: 'ميكسوريل 400', en: 'Mexoryl 400' },
-    desc: { 
-        ar: 'فلتر حماية حصري ومتطور جداً، وهو الوحيد القادر على صد الأشعة فوق البنفسجية الطويلة جداً (Ultra-Long UVA) التي تسبب التلف الخلوي العميق.', 
-        en: 'An exclusive, highly advanced UV filter, the only one capable of blocking Ultra-Long UVA rays that cause deep cellular damage.' 
-    }
-};
-
-glossaryDict['aqua_posae_filiformis'] = {
-    title: { ar: 'أكوا بوزاي فيليفورميس', en: 'Aqua Posae Filiformis (APF)' },
-    desc: { 
-        ar: 'مكون نشط حصري يُزرع في مياه لاروش بوزيه الحرارية، يعمل على إعادة توازن الميكروبيوم وتقوية حاجز البشرة.', 
-        en: 'An exclusive active ingredient grown in La Roche-Posay Thermal Spring Water, rebalances the microbiome and strengthens the skin barrier.' 
-    }
-};
-
 // ==========================================
-// 🏢 تعريف براند LA ROCHE-POSAY وعائلاته
+// 🏢 العلامات التجارية والعائلات
 // ==========================================
 
 brandsList.push({
-    id: 'laroche', 
-    name: 'La Roche-Posay',
+    id: 'laroche', name: 'La Roche-Posay',
     families: [
-        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
-        { id: 'lipikar', name: { ar: 'ليبيكار (للجفاف الشديد والإكزيما)', en: 'Lipikar (Severe Dryness & Eczema)' } },
-        { id: 'anthelios', name: { ar: 'أنثيليوس (حماية فائقة من الشمس)', en: 'Anthelios (High Sun Protection)' } },
-        { id: 'toleriane', name: { ar: 'توليريان (للبشرة شديدة الحساسية)', en: 'Toleriane (Ultra-Sensitive Skin)' } },
-        { id: 'anti_aging', name: { ar: 'مضادات الشيخوخة والسيرومات', en: 'Anti-Aging & Serums' } },
-        { id: 'physiological', name: { ar: 'المنظفات الفسيولوجية', en: 'Physiological Cleansers' } }
+        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } }
     ]
 });
 
 // ==========================================
-// 🧪 المنتجات الطبية (الدفعة الأولى - 5 منتجات بعمق سريري)
+// 🧪 المنتجات (Deep Products)
 // ==========================================
 
-// [1] EFFACLAR H ISO-BIOME ULTRA SOOTHING HYDRATING CARE CREAM
+// [1] EFFACLAR DUO (+)
 deepProductsList.push({
-    id: 'lrp_effaclar_h_isobiome', 
-    brandId: 'laroche', 
-    familyId: 'effaclar', 
-    brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار H إيزو-بايوم (كريم مرطب وملطف فائق)', en: 'Effaclar H Iso-Biome Ultra Soothing Hydrating Care' }, 
-    image: "", 
-    potency: 2, 
+    id: 'lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "", potency: 3, 
     pharmacology: {
-        ph_level: { ar: 'فسيولوجي (5.5)', en: 'Physiological (5.5)' },
+        ph_level: { ar: '5.5 (متوازن مع الغلاف الحمضي)', en: '5.5 (Balanced with acid mantle)' },
         mechanism: { 
-            ar: 'يعمل على ترميم الحاجز الجلدي واستعادة توازن <span class="interactive-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> الذي تعرض للتدمير بسبب علاجات حب الشباب الفموية (مثل الأيزوتريتينوين).', 
-            en: 'Repairs the skin barrier and restores <span class="interactive-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> balance severely compromised by oral acne treatments (e.g., Isotretinoin).' 
+            ar: 'استهداف بكتيريا <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> ومنع تكوين <span class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</span>، مع تقشير دقيق لمنع انسداد المسام وتقليل <span class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</span>.', 
+            en: 'Targets <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> bacteria and prevents the formation of <span class="glossary-term" onclick="openGlossary(\'biofilms\')">Biofilms</span>, with precise micro-exfoliation to prevent clogged pores and reduce <span class="glossary-term" onclick="openGlossary(\'pih\')">PIH</span>.' 
         },
         patient_benefit: { 
-            ar: 'يوفر راحة فورية من الجفاف الشديد، التشقق، والاحمرار الناتج عن الأدوية المجففة دون التسبب في انسداد المسام.', 
-            en: 'Provides instant relief from severe dryness, cracking, and erythema induced by drying medications without clogging pores.' 
+            ar: 'يعالج الحبوب النشطة من جذورها ويمنع ظهور حبوب جديدة، والأهم أنه يمنع تحول الحبة الحمراء إلى بقعة داكنة بعد جفافها.', 
+            en: 'Treats active breakouts from the root, prevents new ones, and crucially stops red pimples from turning into dark marks after drying.' 
         },
         active_ingredients: [
-            { name: 'Aqua Posae Filiformis', concentration: { ar: 'معدل بكتيري', en: 'Microbiome Modulator' }, role: { ar: 'إعادة توازن البكتيريا النافعة.', en: 'Rebalancing beneficial bacteria.' } },
-            { name: 'Niacinamide + Panthenol', concentration: { ar: 'عالي', en: 'High' }, role: { ar: 'ترميم الحاجز وتقليل الالتهاب.', en: 'Barrier repair and inflammation reduction.' } },
-            { name: 'Squalane', concentration: { ar: 'مرطب دهني', en: 'Lipid Replenisher' }, role: { ar: 'تعويض نقص الدهون بالبشرة.', en: 'Compensating for skin lipid deficiency.' } }
+            { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory, soothes redness.' } },
+            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> يخترق المسام بلطف لتنظيفها.', en: 'A <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> exfoliator that gently penetrates and cleanses pores.' } },
+            { name: 'Salicylic Acid', concentration: '0.5%', role: { ar: 'يعمل بخاصية <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">تحلل القرنية</span> لتنظيف المسام.', en: 'Provides <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">Keratolytic</span> action to deeply cleanse pores.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يُستخدم مرة واحدة مساءً (أو مرتين إذا تحملت البشرة)، لمدة لا تقل عن 4 أسابيع.', en: 'Use once daily PM (or twice if tolerated), for at least 4 weeks.' },
+        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول).', en: 'Treatment Step (After cleanser).' },
+        application: { ar: 'توزع طبقة رقيقة على كامل الوجه، لا يستخدم كنقطة علاجية فقط.', en: 'Apply a thin layer over the entire face. Do not use as a spot treatment only.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات كيميائية قوية (AHA/BHA)', 'الريتينول'], en: ['Strong chemical exfoliants (AHA/BHA)', 'Retinol'] }, 
+            best_mixed_with: { ar: ['غسول لطيف', 'مرمّمات الحاجز (Ceramides)'], en: ['Gentle cleansers', 'Barrier repair creams'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب الخفيف إلى المتوسط، الرؤوس السوداء، والآثار الحمراء بعد الحبوب.', en: 'Mild to moderate acne, blackheads, and post-acne red marks.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قد يسبب وخزاً خفيفاً وجفافاً في الأسبوع الأول.', en: 'May cause mild tingling and dryness in the first week.' }
+    }
+});
+
+// [2] EFFACLAR PURIFYING FOAMING GEL
+deepProductsList.push({
+    id: 'lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار جل غسول رغوي منقي', en: 'Effaclar Purifying Foaming Gel' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (يحترم الغلاف الحمضي)', en: '5.5 (Respects acid mantle)' },
+        mechanism: { 
+            ar: 'ينظف البشرة بلطف بفضل عوامل التنظيف المختارة للبشرة الحساسة، ويزيل الشوائب والزهم الزائد بفضل الزنك.', 
+            en: 'Gently cleanses the skin with agents selected for sensitive skin. Eliminates impurities and excess sebum with Zinc.' 
+        },
+        patient_benefit: { 
+            ar: 'يترك البشرة نظيفة تماماً دون الشعور بالشد أو الجفاف، ويقلل من لمعان البشرة الدهنية تدريجياً.', 
+            en: 'Leaves skin perfectly clean without a tight feeling, and gradually reduces oily shine.' 
+        },
+        active_ingredients: [
+            { name: 'Zinc PCA', concentration: 'Active', role: { ar: 'ينظم إفراز الزهم وله خصائص مضادة للبكتيريا.', en: 'Regulates sebum production with antibacterial properties.' } },
+            { name: 'Thermal Spring Water', concentration: 'Base', role: { ar: 'مياه حرارية مهدئة ومضادة للتهيج.', en: 'Soothing and anti-irritating thermal water.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (Morning and Evening).' },
+        step_in_routine: { ar: 'الخطوة 1 (التنظيف).', en: 'Step 1 (Cleansing).' },
+        application: { ar: 'يُرغى مع قليل من الماء ويُدلك بلطف على الوجه، ثم يُشطف.', en: 'Lather with water, gently massage onto face, and rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['فرش التنظيف القاسية (تُهيج الغدد الدهنية).'], en: ['Harsh cleansing brushes (irritates sebaceous glands).'] }, 
+            best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مضادات الأكسدة نهاراً'], en: ['Effaclar Duo (+)', 'Daytime Antioxidants'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الدهنية، المعرضة لحب الشباب، واللمعان الزائد.', en: 'Oily, acne-prone skin, and excess shine.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من الكحول والأصباغ.', en: 'Alcohol and dye-free.' }
+    }
+});
+
+// [3] EFFACLAR ULTRA CONCENTRATED SERUM
+deepProductsList.push({
+    id: 'lrp_effaclar_serum', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار سيروم التقشير المركز', en: 'Effaclar Ultra Concentrated Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي للتقشير', en: 'Acidic for exfoliation' },
+        mechanism: { 
+            ar: 'مركب ثلاثي الأحماض <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> يعمل بآلية تآزرية لتقشير الخلايا الميتة السطحية وفتح المسام العميقة.', 
+            en: 'A tri-acid complex <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> works synergistically to exfoliate surface dead cells and unclog deep pores.' 
+        },
+        patient_benefit: { 
+            ar: 'مُصمم لحب الشباب عند البالغين. يقلل حجم المسام، ويمحو العلامات الداكنة والخطوط الدقيقة.', 
+            en: 'Formulated for adult acne. Reduces pore size, erases dark marks and fine lines.' 
+        },
+        active_ingredients: [
+            { name: 'Glycolic Acid (AHA)', concentration: '3.5%', role: { ar: 'تقشير سطحي وتخفيف العلامات.', en: 'Surface exfoliation and fading marks.' } },
+            { name: 'Salicylic Acid (BHA)', concentration: '1.5%', role: { ar: 'تنظيف المسام العميقة.', en: 'Cleanses deep pores.' } },
+            { name: 'LHA', concentration: '0.45%', role: { ar: 'تقشير دقيق ولطيف.', en: 'Micro and gentle exfoliation.' } },
+            { name: 'Niacinamide', concentration: '2%', role: { ar: 'تهدئة البشرة وتقوية الحاجز.', en: 'Soothes skin and strengthens barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (مساءً فقط).', en: 'Once daily (PM only).' },
+        step_in_routine: { ar: 'خطوة السيروم (قبل المرطب).', en: 'Serum step (Before moisturizer).' },
+        application: { ar: 'توضع 3-4 قطرات على الوجه مع تجنب محيط العينين تماماً.', en: 'Apply 3-4 drops to the face, strictly avoiding the eye contour.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أي مقشرات أخرى', 'الريتينول', 'فيتامين سي النقي'], en: ['Any other exfoliants', 'Retinol', 'Pure Vitamin C'] }, 
+            best_mixed_with: { ar: ['مرطب إيفاكلار إتش (للتوازن)', 'واقي شمس (إجباري)'], en: ['Effaclar H moisturizer (for balance)', 'SPF (Mandatory)'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب لدى البالغين، المسام الواسعة، التصبغات العنيدة.', en: 'Adult acne, enlarged pores, persistent pigmentation.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قوي جداً. يُنصح بإدخاله بالتدريج لروتينك.', en: 'Very strong. Recommend gradual introduction into routine.' }
+    }
+});
+
+// [4] EFFACLAR H ISO-BIOME CREAM
+deepProductsList.push({
+    id: 'lrp_effaclar_h_isobiome', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار H إيزو-بايوم (كريم مرطب معوض)', en: 'Effaclar H Iso-Biome Care Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: '5.5', en: '5.5' },
+        mechanism: { 
+            ar: 'يرمم الحاجز الجلدي ويستعيد توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> الذي تدمر بسبب علاجات حب الشباب المجففة.', 
+            en: 'Repairs the skin barrier and restores <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> balance compromised by drying acne treatments.' 
+        },
+        patient_benefit: { 
+            ar: 'راحة فورية من الجفاف والتشقق الناتج عن أدوية الحبوب (مثل الأيزوتريتينوين) دون سد المسام.', 
+            en: 'Instant relief from severe dryness and cracking caused by acne meds (like Isotretinoin) without clogging pores.' 
+        },
+        active_ingredients: [
+            { name: 'Aqua Posae Filiformis', concentration: 'Active', role: { ar: 'إعادة توازن البكتيريا النافعة.', en: 'Rebalancing beneficial bacteria.' } },
+            { name: 'Niacinamide + Panthenol', concentration: 'High', role: { ar: 'ترميم وتقليل الالتهاب.', en: 'Repair and inflammation reduction.' } }
         ]
     },
     clinical_usage: {
         frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
-        step_in_routine: { ar: 'خطوة الترطيب الأساسية (التعويضية).', en: 'Core compensating hydration step.' },
-        routine_step_number: 3,
-        usage_duration: { ar: 'طوال فترة العلاج الدوائي لحب الشباب.', en: 'Throughout the duration of medical acne treatment.' },
-        application: { ar: 'يوضع بلطف على بشرة نظيفة وجافة.', en: 'Apply gently to clean, dry skin.' },
+        step_in_routine: { ar: 'الترطيب.', en: 'Moisturization.' },
+        application: { ar: 'يوضع بلطف على بشرة نظيفة.', en: 'Apply gently to clean skin.' },
         layering: { 
-            do_not_mix_with: { ar: ['المقشرات القوية (AHA/BHA) أثناء فترة العلاج.', 'الغسولات الرغوية القاسية.'], en: ['Strong exfoliants (AHA/BHA) during treatment.', 'Harsh foaming cleansers.'] }, 
-            best_mixed_with: { ar: ['Effaclar H Cleansing Cream.'], en: ['Effaclar H Cleansing Cream.'] } 
+            do_not_mix_with: { ar: ['لا يوجد تعارضات خطيرة.'], en: ['No severe interactions.'] }, 
+            best_mixed_with: { ar: ['أدوية حب الشباب الموصوفة كمعوض للجفاف.'], en: ['Prescription acne meds to compensate for dryness.'] } 
         }
     },
     precautions: {
-        indications: { ar: 'البشرة الدهنية المعرضة لحب الشباب والتي أضعفتها العلاجات المجففة.', en: 'Acne-prone oily skin weakened by drying treatments.' },
-        pregnancy_safe: true, 
-        sun_sensitivity: false, 
-        notes: { ar: 'غير زؤاني (لا يسد المسام).', en: 'Non-comedogenic.' }
+        indications: { ar: 'البشرة المعرضة للحبوب والتي أضعفتها العلاجات المجففة.', en: 'Acne-prone skin weakened by drying treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تركيبة غير دهنية وغير زؤانية.', en: 'Non-greasy and non-comedogenic formula.' }
     }
 });
 
-// [2] LIPIKAR SYNDET AP+ CREAM WASH (Covers both 200ml & 400ml refill)
+// [5] EFFACLAR MICRO-PEELING PURIFYING GEL
 deepProductsList.push({
-    id: 'lrp_lipikar_syndet_ap', 
-    brandId: 'laroche', 
-    familyId: 'lipikar', 
-    brand: 'La Roche-Posay',
-    name: { ar: 'ليبيكار سينديت AP+ (كريم غسول مرمم)', en: 'Lipikar Syndet AP+ Cream Wash' }, 
-    image: "", 
-    potency: 1, 
+    id: 'lrp_effaclar_micro_peeling', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار مايكرو-بيلينج (غسول مقشر دقيق)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "", potency: 2, 
     pharmacology: {
-        ph_level: { ar: 'متوازن (خالٍ من الصابون)', en: 'Balanced (Soap-Free)' },
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
         mechanism: { 
-            ar: 'قاعدة غسيل لطيفة للغاية تعمل بتقنية <span class="interactive-term" onclick="openGlossary(\'aqua_posae_filiformis\')">Aqua Posae Filiformis</span> لتهدئة تهيج الجلد وتقليل الرغبة الشديدة في الحك أثناء الاستحمام.', 
-            en: 'Ultra-gentle cleansing base utilizing <span class="interactive-term" onclick="openGlossary(\'aqua_posae_filiformis\')">Aqua Posae Filiformis</span> to soothe skin irritation and reduce severe scratching urge during bathing.' 
+            ar: 'قوة تقشير مزدوجة تجمع بين حمض الساليسيليك (2%) و LHA لاختراق المسام وتنظيفها من الدهون المتصلبة.', 
+            en: 'Dual exfoliating power combining 2% Salicylic Acid and LHA to penetrate pores and clear hardened sebum.' 
         },
         patient_benefit: { 
-            ar: 'ينظف دون تجريد الجلد من زيوته الطبيعية، ويعيد بناء الحاجز المائي الدهني منذ الاستحمام الأول.', 
-            en: 'Cleanses without stripping natural oils, rebuilding the hydrolipidic barrier from the first shower.' 
+            ar: 'يستهدف حب الشباب الشديد على الوجه والجسم (الظهر والصدر)، ويقلل من آثار الحبوب المتبقية.', 
+            en: 'Targets severe acne on face and body (back/chest), and reduces residual acne marks.' 
         },
         active_ingredients: [
-            { name: 'Shea Butter', concentration: { ar: '20% (تعويض دهني)', en: '20% (Lipid-Replenishing)' }, role: { ar: 'تغذية الجلد وتكوين طبقة عازلة.', en: 'Nourishing skin and forming a protective film.' } },
-            { name: 'Niacinamide', concentration: { ar: 'مهدئ', en: 'Soothing' }, role: { ar: 'مضاد للحكة والالتهاب.', en: 'Anti-pruritic and anti-inflammatory.' } }
+            { name: 'Salicylic Acid (BHA)', concentration: '2%', role: { ar: 'فتح المسام وتقشير عميق.', en: 'Unclogging pores and deep exfoliation.' } },
+            { name: 'LHA', concentration: '0.05%', role: { ar: 'تقشير سطحي ناعم.', en: 'Gentle surface exfoliation.' } },
+            { name: 'Zinc PCA', concentration: 'Active', role: { ar: 'تقليل اللمعان والبكتيريا.', en: 'Reducing shine and bacteria.' } }
         ]
     },
     clinical_usage: {
-        frequency: { ar: 'يومياً أثناء الاستحمام.', en: 'Daily during bathing.' },
-        step_in_routine: { ar: 'الخطوة 1: التنظيف الطبي.', en: 'Step 1: Medical Cleansing.' },
-        routine_step_number: 1,
-        usage_duration: { ar: 'آمن للاستخدام المزمن والدائم.', en: 'Safe for chronic and permanent use.' },
-        application: { ar: 'توضع كمية صغيرة على راحة اليد وتدلك على بشرة مبللة، ثم تشطف برفق.', en: 'Apply a small amount to palm, massage onto wet skin, then rinse gently.' },
+        frequency: { ar: 'مرة واحدة يومياً.', en: 'Once daily.' },
+        step_in_routine: { ar: 'التنظيف العلاجي.', en: 'Therapeutic Cleansing.' },
+        application: { ar: 'يُرغى على بشرة مبللة (وجه وجسم)، يُدلك بلطف، ثم يُشطف جيداً.', en: 'Lather on wet skin (face & body), massage gently, then rinse.' },
         layering: { 
-            do_not_mix_with: { ar: ['ليفة الاستحمام الخشنة (تزيد الإكزيما).', 'الماء شديد السخونة.'], en: ['Harsh bath loofahs (worsens eczema).', 'Extremely hot water.'] }, 
-            best_mixed_with: { ar: ['Lipikar Baume AP+M (فوراً بعد التجفيف).'], en: ['Lipikar Baume AP+M (immediately after drying).'] } 
+            do_not_mix_with: { ar: ['أحماض تقشير إضافية قوية.'], en: ['Additional strong peeling acids.'] }, 
+            best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مرطبات خفيفة.'], en: ['Effaclar Duo (+)', 'Light moisturizers.'] } 
         }
     },
     precautions: {
-        indications: { ar: 'الجفاف الشديد، الإكزيما التأتبية، الحكة، قشرة الرأس للرضع.', en: 'Severe dryness, atopic eczema, pruritus, cradle cap in infants.' },
-        pregnancy_safe: true, 
-        sun_sensitivity: false, 
-        notes: { ar: 'آمن لحديثي الولادة (Pediatric Safe).', en: 'Safe for newborns (Pediatric Safe).' }
-    }
-});
-
-// [3] ANTHELIOS AGE CORRECT PHOTOCORRECTION DAILY LIGHT CREAM SPF 50
-deepProductsList.push({
-    id: 'lrp_anthelios_age_correct_light', 
-    brandId: 'laroche', 
-    familyId: 'anthelios', 
-    brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس إيدج كوريكت (كريم يومي لتصحيح التجاعيد SPF 50)', en: 'Anthelios Age Correct Photocorrection Daily Light Cream SPF 50' }, 
-    image: "", 
-    potency: 3, 
-    pharmacology: {
-        ph_level: { ar: 'متوازن', en: 'Balanced' },
-        mechanism: { 
-            ar: 'يوفر حماية واسعة الطيف مع تقنية (CELLOX-B3 TECH) للحد من تلف الخلايا الناتج عن التلوث والأشعة، ويصحح علامات الشيخوخة بجزيئات نشطة جلدياً.', 
-            en: 'Provides broad-spectrum protection with (CELLOX-B3 TECH) to limit cellular damage from pollution and UV, correcting aging signs with dermatological actives.' 
-        },
-        patient_benefit: { 
-            ar: 'يقلل التجاعيد بنسبة 15% والبقع الداكنة بنسبة 26% خلال 4 أسابيع مع حماية يومية فائقة.', 
-            en: 'Reduces wrinkles by 15% and dark spots by 26% within 4 weeks alongside ultra daily protection.' 
-        },
-        active_ingredients: [
-            { name: 'Fragmented Hyaluronic Acid', concentration: { ar: 'مجزأ للعمق', en: 'Fragmented for depth' }, role: { ar: 'ملء التجاعيد الدقيقة وترطيب عميق.', en: 'Plumping fine lines and deep hydration.' } },
-            { name: 'PHE-Resorcinol + LHA', concentration: { ar: 'نشط', en: 'Active' }, role: { ar: 'تقشير دقيق وتفتيح البقع الداكنة.', en: 'Micro-exfoliation and brightening dark spots.' } }
-        ]
-    },
-    clinical_usage: {
-        frequency: { ar: 'كل صباح (كبديل للمرطب والواقي).', en: 'Every morning (as moisturizer and SPF alternative).' },
-        step_in_routine: { ar: 'الخطوة الأخيرة نهاراً.', en: 'Last AM step.' },
-        routine_step_number: 4,
-        usage_duration: { ar: 'يومياً ومستمر.', en: 'Daily and continuous.' },
-        application: { ar: 'يوزع بالتساوي على كامل الوجه والرقبة قبل التعرض للشمس.', en: 'Apply evenly to whole face and neck before sun exposure.' },
-        layering: { 
-            do_not_mix_with: { ar: ['الريتينول النهاري (ممنوع).'], en: ['Daytime Retinol (Prohibited).'] }, 
-            best_mixed_with: { ar: ['Vitamin C10 Serum (تحته).', 'Retinol B3 Serum (مساءً فقط).'], en: ['Vitamin C10 Serum (underneath).', 'Retinol B3 Serum (PM only).'] } 
-        }
-    },
-    precautions: {
-        indications: { ar: 'التجاعيد، فقدان المرونة، البقع الداكنة الناجمة عن الشمس.', en: 'Wrinkles, loss of elasticity, sun-induced dark spots.' },
-        pregnancy_safe: true, 
-        sun_sensitivity: false, 
-        notes: { ar: 'قوام خفيف غير دهني يمتص بسرعة.', en: 'Lightweight, non-greasy texture absorbs quickly.' }
-    }
-});
-
-// [4] ANTHELIOS AGE CORRECT PHOTOCORRECTION GEL-CREAM SPF 50 TINTED
-deepProductsList.push({
-    id: 'lrp_anthelios_age_correct_tinted', 
-    brandId: 'laroche', 
-    familyId: 'anthelios', 
-    brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس إيدج كوريكت الملون (جل-كريم لتصحيح التجاعيد SPF 50)', en: 'Anthelios Age Correct Photocorrection Tinted Gel-Cream SPF 50' }, 
-    image: "", 
-    potency: 3, 
-    pharmacology: {
-        ph_level: { ar: 'متوازن', en: 'Balanced' },
-        mechanism: { 
-            ar: 'نفس آلية الإصدار الشفاف مع إضافة أكاسيد الحديد المعدنية لصد الضوء المرئي (Blue Light) وتوحيد لون البشرة فوراً.', 
-            en: 'Same mechanism as the invisible version, with added mineral Iron Oxides to block visible Blue Light and instantly even skin tone.' 
-        },
-        patient_benefit: { 
-            ar: 'حماية وتصحيح للتجاعيد مع تغطية تجميلية خفيفة (Tinted) تغني عن كريم الأساس اليومي.', 
-            en: 'Protection and wrinkle correction with light cosmetic coverage (Tinted), replacing daily foundation.' 
-        },
-        active_ingredients: [
-            { name: 'Mineral Iron Oxides', concentration: { ar: 'أصباغ معدنية', en: 'Mineral Pigments' }, role: { ar: 'حماية من الضوء الأزرق وتوحيد اللون.', en: 'Blue light protection and tone unifying.' } },
-            { name: 'Hyaluronic Acid + Niacinamide', concentration: { ar: 'مرمم', en: 'Repairing' }, role: { ar: 'مكافحة الشيخوخة.', en: 'Anti-aging.' } }
-        ]
-    },
-    clinical_usage: {
-        frequency: { ar: 'كل صباح.', en: 'Every morning.' },
-        step_in_routine: { ar: 'واقي شمس + تغطية تجميلية.', en: 'SPF + Cosmetic coverage.' },
-        routine_step_number: 4,
-        usage_duration: { ar: 'يومياً.', en: 'Daily.' },
-        application: { ar: 'يوزع بالتربيت اللطيف لتجنب تكتل اللون.', en: 'Apply with gentle patting to avoid pigment pilling.' },
-        layering: { 
-            do_not_mix_with: { ar: ['كريمات الأساس الكثيفة (لتجنب التكتل واللمعان).'], en: ['Heavy foundations (to avoid pilling and shine).'] }, 
-            best_mixed_with: { ar: ['سيروم هيالو B5.'], en: ['Hyalu B5 Serum.'] } 
-        }
-    },
-    precautions: {
-        indications: { ar: 'علامات تقدم السن، البشرة غير موحدة اللون.', en: 'Signs of aging, uneven skin tone.' },
-        pregnancy_safe: true, 
-        sun_sensitivity: false, 
-        notes: { ar: 'مناسب لدرجات البشرة الحنطية والقمحية.', en: 'Suitable for medium and olive skin tones.' }
-    }
-});
-
-// [5] ANTHELIOS UVMUNE 400 SPF 50+ OIL CONTROL GEL-CREAM TINTED
-deepProductsList.push({
-    id: 'lrp_anthelios_uvmune_oil_control_tinted', 
-    brandId: 'laroche', 
-    familyId: 'anthelios', 
-    brand: 'La Roche-Posay',
-    name: { ar: 'أنثيليوس يو في ميون 400 (جل-كريم ملون للتحكم في اللمعان SPF 50+)', en: 'Anthelios UVMune 400 Oil Control Tinted Gel-Cream SPF 50+' }, 
-    image: "", 
-    potency: 3, 
-    pharmacology: {
-        ph_level: { ar: 'متوازن', en: 'Balanced' },
-        mechanism: { 
-            ar: 'يوفر حماية قصوى باستخدام فلتر <span class="interactive-term" onclick="openGlossary(\'mexoryl_400\')">ميكسوريل 400</span>، مدعوماً بتقنية Airlicium لامتصاص الدهون الزائدة وتقليل اللمعان، مع صبغات معدنية للمسة نهائية غير لامعة.', 
-            en: 'Provides extreme protection using the <span class="interactive-term" onclick="openGlossary(\'mexoryl_400\')">Mexoryl 400</span> filter, powered by Airlicium tech to absorb excess sebum, with mineral pigments for a matte finish.' 
-        },
-        patient_benefit: { 
-            ar: 'يحمي من أطول وأخطر أشعة UVA، ويتحكم في اللمعان لمدة 12 ساعة مع توحيد لون البشرة بمظهر جاف (Dry Touch).', 
-            en: 'Protects against the longest, most insidious UVA rays, controls shine for 12 hours, and evens skin tone with a Dry Touch finish.' 
-        },
-        active_ingredients: [
-            { name: 'Mexoryl 400', concentration: { ar: 'فلتر حصري', en: 'Exclusive Filter' }, role: { ar: 'صد الأشعة فوق البنفسجية الطويلة جداً (380-400nm).', en: 'Blocking Ultra-Long UVA rays (380-400nm).' } },
-            { name: 'Airlicium™ Micro-particles', concentration: { ar: 'ممتص للدهون', en: 'Sebum Absorbing' }, role: { ar: 'امتصاص العرق والدهون بفعالية هائلة.', en: 'Massively absorbing sweat and sebum.' } }
-        ]
-    },
-    clinical_usage: {
-        frequency: { ar: 'قبل التعرض للشمس ويُجدد عند الحاجة.', en: 'Before sun exposure, reapply as needed.' },
-        step_in_routine: { ar: 'الخطوة الأخيرة (الحماية + التحكم في اللمعان).', en: 'Last step (Protection + Oil Control).' },
-        routine_step_number: 4,
-        usage_duration: { ar: 'طوال فترة النهار.', en: 'Throughout the day.' },
-        application: { ar: 'يوزع بسرعة وبشكل متساوٍ على الوجه لأن قوامه الجل يجف سريعاً.', en: 'Distribute quickly and evenly on the face as the gel texture dries fast.' },
-        layering: { 
-            do_not_mix_with: { ar: ['المرطبات الزيتية الكثيفة (تفسد مفعول الـ Airlicium).'], en: ['Heavy oily moisturizers (disrupts Airlicium effect).'] }, 
-            best_mixed_with: { ar: ['Effaclar Purifying Foaming Gel (كغسول).'], en: ['Effaclar Purifying Foaming Gel (as cleanser).'] } 
-        }
-    },
-    precautions: {
-        indications: { ar: 'البشرة الدهنية والمختلطة والمعرضة لحب الشباب.', en: 'Oily, combination, and acne-prone skin.' },
-        pregnancy_safe: true, 
-        sun_sensitivity: false, 
-        notes: { ar: 'لا يترك أثراً دهنياً، مقاوم جداً للماء والعرق.', en: 'Leaves no oily residue, highly water and sweat resistant.' }
+        indications: { ar: 'حب الشباب الشديد، حبوب الظهر والصدر.', en: 'Severe acne, back and chest acne.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'مثالي للاستحمام لعلاج حبوب الجسم.', en: 'Ideal for showering to treat body acne.' }
     }
 });
