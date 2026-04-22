@@ -402,4 +402,150 @@ deepProductsList.push({
         notes: { ar: 'مريح جداً لأنه لا يحتاج إلى ماء للشطف (مفيد في حالات الحساسية من مياه الصنبور).', en: 'Very comforting as it does not require water to rinse (useful for tap water sensitivity).' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (3): بيوديرما (عائلة Sensibio الوردية)
+// تم التدقيق البرمجي والتوافق الثنائي (V3.0)
+// ==========================================
 
+// --- 1. إضافة العلامة التجارية وعائلاتها ---
+brandsList.push({
+    id: 'bioderma', name: 'Bioderma',
+    families: [
+        { id: 'sensibio', name: { ar: 'سينسيبيو (للبشرة الحساسة والوردية)', en: 'Sensibio (Sensitive & Rosacea)' } }
+    ]
+});
+
+// --- 2. تحديث القاموس بمصطلحات بيوديرما التقنية ---
+glossaryDict['micellar_tech'] = {
+    title: { ar: 'تقنية الميسيلار 🧼', en: 'Micellar Technology 🧼' },
+    desc: { 
+        ar: 'جزيئات منظفة مجهرية لها رأس يحب الماء وذيل يحب الدهون. تعمل كمغناطيس يلتقط الأوساخ والمكياج والملوثات من المسام دون الحاجة للفرك أو الشطف، مما يحافظ على غشاء البشرة.', 
+        en: 'Microscopic cleansing molecules with water-loving heads and oil-loving tails. They act like magnets to lift dirt, makeup, and pollutants from pores without rubbing or rinsing.' 
+    }
+};
+
+glossaryDict['daf_patent'] = {
+    title: { ar: 'براءة اختراع D.A.F 🛡️', en: 'D.A.F. Patent 🛡️' },
+    desc: { 
+        ar: 'مركب حصري من السكريات المتعددة (Dermatological Advanced Formulation) يرفع من سقف تحمل الجلد للعوامل الخارجية ويقلل من ردود الفعل التحسسية.', 
+        en: 'A patented complex of polysaccharides that raises the skin\'s tolerance threshold against external stressors and reduces allergic reactions.' 
+    }
+};
+
+glossaryDict['rosactiv'] = {
+    title: { ar: 'براءة اختراع Rosactiv 🔴', en: 'Rosactiv™ Patent 🔴' },
+    desc: { 
+        ar: 'تقنية تستهدف العامل الرئيسي المسؤول عن اتساع الأوعية الدموية الدقيقة في الجلد، مما يقلل الاحمرار بشكل دائم ويمنع ظهور الشعيرات الدموية الواضحة.', 
+        en: 'A technology targeting the primary factor responsible for micro-vessel dilation, permanently reducing redness and preventing visible capillaries.' 
+    }
+};
+
+// --- 3. المنتجات العميقة (Deep Products) ---
+
+// [7] بيوديرما سينسيبيو H2O
+deepProductsList.push({
+    id: 'bio_sensibio_h2o', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو H2O (ماء ميسيلار)', en: 'Sensibio H2O Micellar Water' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (فسيولوجي مطابق للدموع)', en: '5.5 (Physiological pH)' },
+        mechanism: { 
+            ar: 'يعتمد على <span class="glossary-term" onclick="openGlossary(\'micellar_tech\')">تقنية الميسيلار</span> لتنظيف الملوثات (99%) والمعادن الثقيلة (78%)، مع الحفاظ على الغلاف الحمضي للبشرة بفضل تركيبته المائية النقية.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'micellar_tech\')">Micellar Technology</span> to capture 99% of pollutants and 78% of heavy metals, preserving the acid mantle with highly purified water.' 
+        },
+        patient_benefit: { 
+            ar: 'المنظف رقم 1 عالمياً. يزيل المكياج (حتى المقاوم للماء) والشوائب في ثوانٍ دون الحاجة للشطف، ويترك البشرة هادئة ومنتعشة فوراً.', 
+            en: 'The world\'s #1 cleanser. Removes makeup (even waterproof) and impurities in seconds without rinsing, leaving skin instantly soothed.' 
+        },
+        active_ingredients: [
+            { name: 'Cucumber Extract', concentration: 'Pure | نقي', role: { ar: 'تهدئة وتلطيف الجلد المتهيج.', en: 'Soothes and calms irritated skin.' } },
+            { name: 'Highly Purified Water', concentration: 'Pharma | فارموسيتيكال', role: { ar: 'مياه خالية من الشوائب تمنع أي رد فعل تحسسي.', en: 'Pure water preventing any allergic reaction.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة (لإزالة المكياج أو تنظيف البشرة).', en: 'As needed (makeup removal or cleansing).' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف الجاف).', en: 'Step 1 (Dry cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُبلل قطن نظيف بالمحلول ويُمسح به الوجه والعين بلطف. لا يحتاج للشطف بالماء.', en: 'Soak a cotton pad and gently wipe face and eyes. No rinsing required.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف بقطن خشن.'], en: ['Harsh rubbing with rough cotton.'] }, 
+            best_mixed_with: { ar: ['جميع منتجات البشرة الحساسة.'], en: ['All sensitive skin products.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة، المتهيجة من مياه الصنبور، وإزالة مكياج العين.', en: 'Sensitive skin, tap water irritation, eye makeup removal.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن جداً لمحيط العينين. خالي من الكحول والعطور.', en: 'Safe for eye area. Alcohol and fragrance-free.' }
+    }
+});
+
+// [8] بيوديرما سينسيبيو جل غسول رغوي
+deepProductsList.push({
+    id: 'bio_sensibio_gel', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو جل موسان (غسول رغوي)', en: 'Sensibio Gel Moussant' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (متوازن)', en: '5.5 (Balanced)' },
+        mechanism: { 
+            ar: 'يجمع بين قوة التنظيف ولطف الترطيب بفضل جزيئات (Coco-Glucoside)، مع براءة اختراع <span class="glossary-term" onclick="openGlossary(\'daf_patent\')">D.A.F</span> لتقليل الحساسية.', 
+            en: 'Combines cleansing power with hydration using (Coco-Glucoside), enhanced by <span class="glossary-term" onclick="openGlossary(\'daf_patent\')">D.A.F. patent</span> to lower sensitivity.' 
+        },
+        patient_benefit: { 
+            ar: 'غسول رغوي يعطي إحساساً بالترطيب (+77%)، يهدئ التهيج فوراً، ويترك البشرة ناعمة ومرتاحة.', 
+            en: 'Foaming gel that boosts hydration (+77%), instantly soothes irritation, leaving skin soft and comfortable.' 
+        },
+        active_ingredients: [
+            { name: 'Coco-Glucoside', concentration: 'Active | فعال', role: { ar: 'منظف يحاكي الدهون الطبيعية للجلد.', en: 'Cleansing agent mimicking natural skin lipids.' } },
+            { name: 'Glyceryl Oleate', concentration: 'Hydrating | مرطب', role: { ar: 'يعيد بناء طبقة الدهون المفقودة أثناء الغسل.', en: 'Replenishes lipids lost during cleansing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (AM & PM).' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف الرطب).', en: 'Step 1 (Wet Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك على بشرة مبللة حتى يرغي، ثم يُشطف جيداً.', en: 'Massage onto wet skin until it lathers, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الماء الساخن جداً (يزيد التهيج).'], en: ['Very hot water (increases irritation).'] }, 
+            best_mixed_with: { ar: ['سينسيبيو كريم.'], en: ['Sensibio Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة التي تفضل ملمس الرغوة، والبشرة المعرضة للاحمرار.', en: 'Sensitive skin preferring foam, and redness-prone skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من الصابون والعطور.', en: 'Soap and fragrance-free.' }
+    }
+});
+
+// [9] بيوديرما سينسيبيو AR
+deepProductsList.push({
+    id: 'bio_sensibio_ar', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو AR (كريم علاج الاحمرار)', en: 'Sensibio AR (Anti-Redness Care)' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف العامل البيولوجي للاحمرار (VEGF) من خلال براءة اختراع <span class="glossary-term" onclick="openGlossary(\'rosactiv\')">Rosactiv</span> لتهدئة البشرة بعمق.', 
+            en: 'Targets the biological factor of redness (VEGF) via <span class="glossary-term" onclick="openGlossary(\'rosactiv\')">Rosactiv patent</span> to deeply soothe the skin.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل من حدة احمرار الوجه بشكل ملحوظ، يمنع نوبات الحرارة والوخز، ويوفر ترطيباً مريحاً.', 
+            en: 'Visibly reduces facial redness intensity, prevents heat/stinging, and provides comforting hydration.' 
+        },
+        active_ingredients: [
+            { name: 'Enoxolone & Allantoin', concentration: 'Concentrated | مركز', role: { ar: 'تهدئة فورية للالتهاب والحرارة.', en: 'Instant soothing of inflammation and heat.' } },
+            { name: 'Canola & Glycerin', concentration: 'Nourishing | مغذي', role: { ar: 'تقوية حاجز البشرة وترطيبها.', en: 'Strengthening skin barrier and hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' },
+        step_in_routine: { ar: 'خطوة العلاج والترطيب.', en: 'Treatment and hydration step.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على وجه نظيف، مع التركيز على المناطق المحمرة.', en: 'Apply to clean face, focusing on red areas.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المقشرات الحامضية القوية.'], en: ['Strong acidic exfoliants.'] }, 
+            best_mixed_with: { ar: ['سينسيبيو H2O', 'واقي شمس فوتوديرم AR.'], en: ['Sensibio H2O', 'Photoderm AR sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المعرضة للوردية (Rosacea)، الاحمرار، والشعيرات الدموية الظاهرة.', en: 'Rosacea-prone skin, redness, and visible capillaries.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام ممتاز كأساس للمكياج لإخفاء الاحمرار.', en: 'Excellent makeup base for hiding redness.' }
+    }
+});
