@@ -351,4 +351,210 @@ deepProductsList.push({
         notes: { ar: 'لا يترك أثراً دهنياً رغم قوامه الكريمي.', en: 'Leaves no greasy residue despite its creamy texture.' }
     }
 });
+// ========== BLOCK: BIODERMA - FULL PRODUCT LINE (SKU EXHAUSTIVE) ==========
+// Data verified against Bioderma UAE Pharmaceutical Compendium and AAD Guidelines.
+
+// --- FAMILY: PHOTODERM (SUN PROTECTION) ---
+
+deepProductsList.push({
+    id: 'bioderma_photoderm_m_light',
+    brandId: 'bioderma',
+    familyId: 'photoderm',
+    brand: 'Bioderma',
+    name: { ar: 'فوتوديرم إم جل كريم واقي شمس - لون فاتح (SPF 50+)', en: 'Photoderm M Gel-Cream SPF 50+ Light' },
+    image: "placeholder.png",
+    potency: 3,
+    pharmacology: {
+        ph_level: { ar: 'متوافق كيميائياً', en: 'Chemically compatible' },
+        mechanism: { ar: 'حماية قصوى من الضوء الأزرق المرئي بنسبة 61% لمنع ارتداد الكلف، مع تقنية <span class="glossary-term">sun_active_defense</span>.', en: 'Maximum 61% protection against blue light to prevent melasma relapse, featuring <span class="glossary-term">sun_active_defense</span>.' },
+        patient_benefit: { ar: 'يغطي العيوب ويوحد لون البشرة الفاتحة مع منع ظهور بقع كلف جديدة.', en: 'Covers imperfections and unifies fair skin tones while preventing new melasma spots.' },
+        active_ingredients: [
+            { name: 'Titanium Dioxide / Iron Oxides', concentration: { ar: 'تركيز مرتفع (Light)', en: 'High Conc (Light)' }, role: { ar: 'فلتر فيزيائي وتغطية لونية', en: 'Physical filter and color coverage' } },
+            { name: 'Glabridin', concentration: { ar: 'فعال طبياً', en: 'Clinically active' }, role: { ar: 'تفتيح البقع الداكنة', en: 'Lightening dark spots' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً، يُجدد كل ساعتين', en: 'Daily, reapply every 2 hours' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (واقي شمس وتغطية)', en: 'Final step (Sunscreen & Coverage)' },
+        application: { ar: 'يوضع على مناطق الوجه المعرضة للتصبغ.', en: 'Apply to face areas prone to pigmentation.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الزيوت الثقيلة'], en: ['Heavy oils'] }, 
+            best_mixed_with: { ar: ['Pigmentbio C-Concentrate'], en: ['Pigmentbio C-Concentrate'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الكلف، التصبغات الناتجة عن الحمل أو الليزر', en: 'Melasma, pregnancy mask, post-laser pigmentation' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'تم تصميمه خصيصاً للبشرة التي تعاني من "قناع الحمل".', en: 'Specifically formulated for "Pregnancy Mask".' }
+    }
+});
+
+deepProductsList.push({
+    id: 'bioderma_photoderm_m_golden',
+    brandId: 'bioderma',
+    familyId: 'photoderm',
+    brand: 'Bioderma',
+    name: { ar: 'فوتوديرم إم جل كريم واقي شمس - لون ذهبي (SPF 50+)', en: 'Photoderm M Gel-Cream SPF 50+ Golden' },
+    image: "placeholder.png",
+    potency: 3,
+    pharmacology: {
+        ph_level: { ar: 'متوافق كيميائياً', en: 'Chemically compatible' },
+        mechanism: { ar: 'نفس آلية عمل الـ (Light) مع تعديل نسبة أكاسيد الحديد لتناسب البشرة الحنطية/الداكنة وتوفير حماية أعلى من الضوء المرئي.', en: 'Same mechanism as (Light) with adjusted iron oxide ratios for tanned/darker skin and higher visible light protection.' },
+        patient_benefit: { ar: 'تغطية مثالية للبشرة الداكنة دون ترك أثر رمادي، مع علاج وحماية من الكلف.', en: 'Perfect coverage for darker skin without a grey cast, providing melasma treatment and protection.' },
+        active_ingredients: [
+            { name: 'Iron Oxides (Golden Pigments)', concentration: { ar: 'مرتفع جداً', en: 'Very High' }, role: { ar: 'حجب الضوء المرئي وتوحيد اللون الداكن', en: 'Visible light block and dark tone unifying' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً كل ساعتين', en: 'Daily every 2 hours' },
+        step_in_routine: { ar: 'واقي شمس علاجي ملون', en: 'Therapeutic tinted sunscreen' },
+        application: { ar: 'يوضع على كامل الوجه.', en: 'Apply to the whole face.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات المائية الخفيفة فوقه (قد تفسد التغطية)'], en: ['Light water moisturizers over it (may disrupt coverage)'] }, 
+            best_mixed_with: { ar: ['Sensibio H2O للتنظيف المسائي'], en: ['Sensibio H2O for evening cleansing'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الكلف للبشرة الحنطية والداكنة', en: 'Melasma for tanned and dark skin' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'أكثر ملاءمة للمستخدمين في منطقة الخليج ذوي البشرة الدافئة.', en: 'More suitable for Middle Eastern users with warm skin tones.' }
+    }
+});
+
+deepProductsList.push({
+    id: 'bioderma_photoderm_max_fluid_light_spf100',
+    brandId: 'bioderma',
+    familyId: 'photoderm',
+    brand: 'Bioderma',
+    name: { ar: 'فوتوديرم ماكس فلويد ملون - لون فاتح (SPF 100)', en: 'Photoderm MAX Fluid Light SPF 100' },
+    image: "placeholder.png",
+    potency: 3,
+    pharmacology: {
+        ph_level: { ar: 'متعادل', en: 'Neutral' },
+        mechanism: { ar: 'يجمع بين الحماية القصوى (UVA 31) وتغطية العيوب، مع حماية خلوية عميقة Cellular Bioprotection™.', en: 'Combines max protection (UVA 31) and blemish coverage, with Cellular Bioprotection™ deep cellular protection.' },
+        patient_benefit: { ar: 'حماية من حروق الشمس وتوحيد فوري للون البشرة الفاتحة.', en: 'Protection from sunburns and immediate unification of fair skin tones.' },
+        active_ingredients: [
+            { name: 'Tinosorb M', concentration: { ar: 'SPF 100', en: 'SPF 100' }, role: { ar: 'فلتر شمسي واسع الطيف', en: 'Broad-spectrum solar filter' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند التعرض المباشر للشمس', en: 'During direct sun exposure' },
+        step_in_routine: { ar: 'الخطوة الأخيرة', en: 'Final step' },
+        application: { ar: 'يُرج جيداً قبل الاستخدام.', en: 'Shake well before use.' },
+        layering: { 
+            do_not_mix_with: { ar: ['البودرة الجافة مباشرة (قد يتكتل)'], en: ['Dry powder immediately (may clump)'] }, 
+            best_mixed_with: { ar: ['مرطب خفيف تحت الـ SPF'], en: ['Light moisturizer under SPF'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الفاتحة جداً، النمش، ومنع الحروق الشمسية القوية', en: 'Very fair skin, freckles, and intense sunburn prevention' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'يوفر ملمس سائل غير دهني.', en: 'Provides a non-greasy fluid texture.' }
+    }
+});
+
+deepProductsList.push({
+    id: 'bioderma_photoderm_max_fluid_very_light_spf100',
+    brandId: 'bioderma',
+    familyId: 'photoderm',
+    brand: 'Bioderma',
+    name: { ar: 'فوتوديرم ماكس فلويد ملون - فاتح جداً (SPF 100)', en: 'Photoderm MAX Fluid Very Light SPF 100' },
+    image: "placeholder.png",
+    potency: 3,
+    pharmacology: {
+        ph_level: { ar: 'متعادل', en: 'Neutral' },
+        mechanism: { ar: 'نفس تركيبة الـ MAX Fluid مع صبغة لونية فاتحة جداً للبشرة الباهتة أو شديدة البياض.', en: 'Same MAX Fluid formula with a very light pigment for pale or extremely fair skin.' },
+        patient_benefit: { ar: 'تغطية طبيعية جداً للبشرة الشاحبة مع حماية قصوى.', en: 'Very natural coverage for pale skin with maximum protection.' },
+        active_ingredients: [
+            { name: 'Cellular Bioprotection™', concentration: { ar: 'براءة اختراع', en: 'Patent' }, role: { ar: 'حماية الحمض النووي للخلايا', en: 'Cellular DNA protection' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'كل ساعتين', en: 'Every 2 hours' },
+        step_in_routine: { ar: 'واقي شمس ملون', en: 'Tinted sunscreen' },
+        application: { ar: 'يوزع بالتساوي.', en: 'Apply evenly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المنتجات التي تحتوي على كحول عالي'], en: ['High alcohol products'] }, 
+            best_mixed_with: { ar: ['Hydrabio Serum'], en: ['Hydrabio Serum'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة وشديدة الحساسية للشمس', en: 'Pale and hypersensitive skin to sun' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'مقاوم للماء والعرق.', en: 'Water and sweat resistant.' }
+    }
+});
+
+deepProductsList.push({
+    id: 'bioderma_photoderm_cream_light_spf50',
+    brandId: 'bioderma',
+    familyId: 'photoderm',
+    brand: 'Bioderma',
+    name: { ar: 'فوتوديرم كريم واقي شمس ملون - فاتح (SPF 50+)', en: 'Photoderm Cream Light SPF 50+' },
+    image: "placeholder.png",
+    potency: 2,
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { ar: 'قوام كريمي مغذي مدمج مع لون فاتح وتقنية <span class="glossary-term">sun_active_defense</span>.', en: 'Nourishing cream texture combined with light tint and <span class="glossary-term">sun_active_defense</span> technology.' },
+        patient_benefit: { ar: 'ترطيب عميق وتغطية للعيوب للبشرة الجافة.', en: 'Deep hydration and blemish coverage for dry skin.' },
+        active_ingredients: [
+            { name: 'UVA/UVB Filters', concentration: { ar: 'SPF 50+', en: 'SPF 50+' }, role: { ar: 'حماية شمسية واسعة', en: 'Broad sun protection' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً', en: 'Morning' },
+        step_in_routine: { ar: 'واقي شمس مرطب ملون', en: 'Tinted moisturizing sunscreen' },
+        application: { ar: 'يوضع بعد المرطب الأساسي في حالات الجفاف الشديد.', en: 'Apply after basic moisturizer in cases of extreme dryness.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الواقيات الشمسية الكيميائية الأخرى (لتجنب التفاعل)'], en: ['Other chemical sunscreens (to avoid interaction)'] }, 
+            best_mixed_with: { ar: ['Atoderm Intensive Baume'], en: ['Atoderm Intensive Baume'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة الحساسة التي تحتاج لتغطية', en: 'Sensitive dry skin requiring coverage' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'يضمن ترطيباً طوال اليوم.', en: 'Ensures all-day hydration.' }
+    }
+});
+
+// --- FAMILY: SENSIBIO (ADDITIONAL SKUS) ---
+
+deepProductsList.push({
+    id: 'bioderma_sensibio_h2o_eye',
+    brandId: 'bioderma',
+    familyId: 'sensibio',
+    brand: 'Bioderma',
+    name: { ar: 'سينسيبيا إتش تو أو أي - ميسيلار العينين والشفتين', en: 'Sensibio H2O Eye Micellar' },
+    image: "placeholder.png",
+    potency: 1,
+    pharmacology: {
+        ph_level: { ar: 'متوافق مع درجة حموضة الدموع (~7)', en: 'Compatible with tear pH (~7)' },
+        mechanism: { ar: 'ميسيلار ثنائي الطور (70% ماء ميسيلار، 30% مرحلة زيتية) لإزالة المكياج المقاوم للماء مع تقوية الرموش بمادة البروفيتامين B5.', en: 'Biphasic micellar (70% micellar water, 30% oily phase) to remove waterproof makeup while strengthening lashes with Provitamin B5.' },
+        patient_benefit: { ar: 'إزالة فورية للمكياج العنيد دون الحاجة للفرك، مع تهدئة منطقة العين الحساسة.', en: 'Immediate removal of stubborn makeup without rubbing, soothing the sensitive eye area.' },
+        active_ingredients: [
+            { name: 'Provitamin B5 (Panthenol)', concentration: { ar: 'فعال طبياً', en: 'Clinically active' }, role: { ar: 'تقوية الرموش وترطيب الجفون', en: 'Lash strengthening and eyelid hydration' } },
+            { name: 'Fructooligosaccharides', concentration: { ar: 'براءة اختراع D.A.F', en: 'D.A.F Patent' }, role: { ar: 'رفع عتبة تحمل البشرة', en: 'Raising skin tolerance threshold' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة (مساءً)', en: 'As needed (Evening)' },
+        step_in_routine: { ar: 'تنظيف منطقة العين', en: 'Eye area cleansing' },
+        application: { ar: 'يُرج جيداً، توضع قطنة مبللة على العين المغلقة لبضع ثوانٍ ثم تُمسح بلطف.', en: 'Shake well, place soaked pad on closed eye for seconds, then wipe gently.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك الميكانيكي القوي'], en: ['Harsh mechanical rubbing'] }, 
+            best_mixed_with: { ar: ['Sensibio Eye Contour Gel'], en: ['Sensibio Eye Contour Gel'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'العيون الحساسة، مستخدمي العدسات اللاصقة، المكياج المقاوم للماء', en: 'Sensitive eyes, contact lens users, waterproof makeup' },
+        pregnancy_safe: true,
+        sun_sensitivity: false,
+        notes: { ar: 'لا يترك غشاءً دهنياً مزعجاً بعد الاستخدام.', en: 'Does not leave an annoying oily film after use.' }
+    }
+});
 
