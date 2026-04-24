@@ -169,18 +169,17 @@
             home: { ar: 'الرئيسية', en: 'Home' }, products: { ar: 'المنتجات', en: 'Products' },
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
             common_cases: { ar: 'حالات شائعة', en: 'Common Cases' }, search_placeholder: { ar: 'بحث عن منتج، مادة فعالة، أو حالة...', en: 'Search products, actives, cases...' },
-            pharmacology: { ar: 'التحليل السريري', en: 'Clinical Analysis' }, mechanism: { ar: 'آلية العمل:', en: 'Mechanism:' },
-            active_ing: { ar: 'المكونات والتركيزات:', en: 'Ingredients & Concentrations:' }, ph_level: { ar: 'مستوى pH:', en: 'pH Level:' },
-            usage: { ar: 'البروتوكول العلاجي', en: 'Therapeutic Protocol' }, potency_label: { ar: 'مؤشر القوة:', en: 'Potency:' },
-            frequency: { ar: 'التكرار والمدة:', en: 'Frequency:' }, 
-            duration_label: { ar: 'المدة المتوقعة للعلاج:', en: 'Expected Duration:' },
-            application: { ar: 'طريقة التطبيق:', en: 'Application:' },
-            routine_step: { ar: 'الترتيب في الروتين:', en: 'Routine Order:' }, layering: { ar: 'الدمج (Layering):', en: 'Layering:' },
-            indications: { ar: 'دواعي الاستخدام والسلامة', en: 'Indications & Safety' }, ind_label: { ar: 'الحالات المستهدفة:', en: 'Indications:' },
-            safety_label: { ar: 'احتياطات الأمان:', en: 'Safety Precautions:' }, notes_label: { ar: 'ملاحظات إضافية:', en: 'Clinical Notes:' },
-            benefit: { ar: '💡 الفائدة للمريض:', en: '💡 Patient Benefit:' }, close: { ar: 'إغلاق', en: 'Close' }, coming_soon: { ar: 'سيتم برمجتها قريباً...', en: 'Coming soon...' }
+            pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' }, mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
+            active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' }, ph_level: { ar: 'مستوى الحموضة (pH):', en: 'pH Level:' },
+            usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, potency_label: { ar: 'مؤشر القوة (Potency):', en: 'Potency Indicator:' },
+            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
+            routine_step: { ar: 'موقعه في الروتين:', en: 'Step in Routine:' }, layering: { ar: 'المقبول والمحظور مع هذا المنتج (Layering):', en: 'Layering (Do\'s & Don\'ts):' },
+            indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, ind_label: { ar: 'الحالات المستهدفة (Indications):', en: 'Target Indications:' },
+            safety_label: { ar: 'الأمان:', en: 'Safety:' }, notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
+            benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' }, close: { ar: 'إغلاق', en: 'Close' }, coming_soon: { ar: 'سيتم برمجتها قريباً...', en: 'Coming soon...' }
         };
 
+        // دالة التنقل المعدلة لتدعم الشجرة الكاملة
         function navigateTo(view, p1 = '', p2 = '', p3 = '') { 
             localStorage.setItem('cv', view); localStorage.setItem('p1', p1); localStorage.setItem('p2', p2); localStorage.setItem('p3', p3);
             renderView(view, p1, p2, p3); 
@@ -237,7 +236,7 @@
                 html += `<div class="page-title">${brand.name}</div>`;
                 brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products_list', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); 
                 app.innerHTML = html;
-            } else if (view === 'products_list') {
+            } else if (view === 'products_list') { // مستوى جديد: عرض أسماء المنتجات كأزرار
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
                 let html = buildBreadcrumb([
@@ -246,24 +245,31 @@
                     {label: family.name[currentLang], action: ""}
                 ]);
                 html += `<div class="page-title">${family.name[currentLang]}</div>`;
+                
                 const prods = deepProductsList.filter(p => p.brandId === p1 && p.familyId === p2);
-                prods.forEach(p => { 
-                    html += `<div class="tree-btn" style="justify-content: flex-start; gap:15px;" onclick="navigateTo('single_product', '${p1}', '${p2}', '${p.id}')">
-                                <div style="width:40px; height:40px; background:#e2e8f0; border-radius:6px; flex-shrink:0; overflow:hidden;">
-                                    ${p.image ? `<img src="${p.image}" style="width:100%; height:100%; object-fit:contain;">` : ''}
-                                </div>
-                                <div style="flex-grow:1;">
-                                    <div style="font-size:16px;">${p.name[currentLang]}</div>
-                                    <div style="font-size:12px; color:var(--text-secondary); font-weight:normal;">${currentLang === 'ar' ? p.name.en : p.name.ar}</div>
-                                </div>
-                                <span style="color:var(--accent-teal);">▶</span>
-                             </div>`; 
-                });
+                if(prods.length === 0) {
+                    html += `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد منتجات بعد...' : 'No products yet...'}</div>`;
+                } else {
+                    prods.forEach(p => { 
+                        // زر يفتح المنتج الواحد
+                        html += `<div class="tree-btn" style="justify-content: flex-start; gap:15px;" onclick="navigateTo('single_product', '${p1}', '${p2}', '${p.id}')">
+                                    <div style="width:40px; height:40px; background:#e2e8f0; border-radius:6px; flex-shrink:0; overflow:hidden;">
+                                        ${p.image ? `<img src="${p.image}" style="width:100%; height:100%; object-fit:contain;">` : ''}
+                                    </div>
+                                    <div style="flex-grow:1;">
+                                        <div style="font-size:16px;">${p.name[currentLang]}</div>
+                                        <div style="font-size:12px; color:var(--text-secondary); font-weight:normal;">${currentLang === 'ar' ? p.name.en : p.name.ar}</div>
+                                    </div>
+                                    <span style="color:var(--accent-teal);">▶</span>
+                                 </div>`; 
+                    });
+                }
                 app.innerHTML = html;
-            } else if (view === 'single_product') {
-                const product = deepProductsList.find(p => p.id === p3);
+            } else if (view === 'single_product') { // مستوى جديد: عرض كارت منتج واحد فقط
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
+                const product = deepProductsList.find(p => p.id === p3);
+                
                 let html = buildBreadcrumb([
                     {label: txt.products[currentLang], action: "navigateTo('brands')"}, 
                     {label: brand.name, action: "navigateTo('families', '" + p1 + "')"}, 
@@ -272,68 +278,87 @@
                 ]);
                 html += buildSingleProductHTML(product); 
                 app.innerHTML = html;
+            } else if (view === 'cases' || view === 'skin_types') {
+                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث للنسخة العميقة..." : "Updating to Clinical Edition...", action: "navigateTo('home')"}]);
             }
         }
 
+        // الدالة المعدلة لترسم منتج واحد فقط
         function buildSingleProductHTML(p) {
-            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder">Product Image</div>`;
+            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة لهذا المنتج حالياً' : 'No image available'}')">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
+            
             let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
             let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
-            let potencyHtml = p.potency === 1 ? '🟢⚪⚪ Mild' : (p.potency === 2 ? '🟡🟡⚪ Moderate' : '🔴🔴🔴 Strong');
-            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'غير آمن للحوامل' : 'Not Safe'}</span>`;
-            let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يتطلب واقي شمس' : 'Requires SPF'}</span>` : '';
+            
+            let potencyHtml = '';
+            if(p.potency === 1) potencyHtml = `<span class="potency-indicator" style="color:var(--accent-teal);">🟢⚪⚪ ${currentLang === 'ar' ? 'لطيف (Mild)' : 'Mild'}</span>`;
+            if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
+            if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
+
+            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل (غير آمن)' : 'Not Safe for Pregnancy'}</span>`;
+            let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يزيد التحسس للشمس (يتطلب واقي)' : 'Increases Sun Sensitivity (Requires SPF)'}</span>` : '';
 
             return `
-            <div class="product-card">
+            <div class="product-card" style="margin-top:10px;">
                 <div class="product-header">
                     <div class="img-container" onclick="${p.image ? `openImageModal('${p.image}')` : ''}">${imgElement}</div>
                     <div class="header-info">
                         <div class="brand-name">${p.brand}</div>
                         <div class="product-name">${p.name[currentLang]}</div>
+                        <div style="font-size:12px; color:var(--text-secondary);">${currentLang === 'ar' ? p.name.en : p.name.ar}</div>
                     </div>
                 </div>
+                
                 <div class="content-box">
                     <div class="section-title">🧪 ${txt.pharmacology[currentLang]}</div>
                     <div class="data-grid">
-                        <div class="data-row"><span class="data-label">${txt.mechanism[currentLang]}</span> ${p.pharmacology.mechanism[currentLang]}
-                            <div class="benefit-box"><span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> ${p.pharmacology.patient_benefit[currentLang]}</div>
+                        <div class="data-row">
+                            <span class="data-label">${txt.mechanism[currentLang]}</span> ${p.pharmacology.mechanism[currentLang]}
+                            <div class="benefit-box">
+                                <span style="font-weight:bold; color:var(--accent-teal);">${txt.benefit[currentLang]}</span> 
+                                ${p.pharmacology.patient_benefit[currentLang]}
+                            </div>
                         </div>
                         <div class="data-row"><span class="data-label">${txt.active_ing[currentLang]}</span> 
-                            <ul>${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name}:</strong> ${ing.role[currentLang]}</li>`).join('')}</ul>
+                            <ul style="margin:5px 0; padding-inline-start: 20px;">
+                                ${p.pharmacology.active_ingredients.map(ing => `<li><strong>${ing.name} (${ing.concentration}):</strong> ${ing.role[currentLang]}</li>`).join('')}
+                            </ul>
                         </div>
+                        ${p.pharmacology.ph_level ? `<div class="data-row"><span class="data-label">${txt.ph_level[currentLang]}</span> ${p.pharmacology.ph_level[currentLang]}</div>` : ''}
                     </div>
+
                     <div class="section-title">📋 ${txt.usage[currentLang]}</div>
                     <div class="data-grid">
                         <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
                         <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
-                        ${p.clinical_usage.expected_duration ? `<div class="data-row"><span class="data-label">${txt.duration_label[currentLang]}</span> ${p.clinical_usage.expected_duration[currentLang]}</div>` : ''}
                         <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
-                        <div class="data-row"><span class="data-label">${txt.layering[currentLang]}</span><div class="tags-container">${bestMix} ${doNotMix}</div></div>
+                        <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
+                        <div class="data-row">
+                            <span class="data-label">${txt.layering[currentLang]}</span>
+                            <div class="tags-container">${bestMix} ${doNotMix}</div>
+                        </div>
                     </div>
+
                     <div class="section-title">⚠️ ${txt.indications[currentLang]}</div>
                     <div class="data-grid">
                         <div class="data-row"><span class="data-label">${txt.ind_label[currentLang]}</span> ${p.precautions.indications[currentLang]}</div>
-                        <div class="data-row"><span class="data-label">${txt.safety_label[currentLang]}</span> ${pregnancySafeHtml} ${sunSafeHtml}</div>
+                        <div class="data-row">
+                            <span class="data-label">${txt.safety_label[currentLang]}</span>
+                            ${pregnancySafeHtml} ${sunSafeHtml}
+                        </div>
                         <div class="data-row"><span class="data-label">${txt.notes_label[currentLang]}</span> ${p.precautions.notes[currentLang]}</div>
                     </div>
                 </div>
             </div>`;
         }
 
-        // استخدام innerHTML لضمان أن الروابط تعمل
-        function openGlossary(id) { 
-            const term = glossaryDict[id]; 
-            if(term) { 
-                document.getElementById('glossaryTitle').innerText = term.title[currentLang]; 
-                document.getElementById('glossaryBody').innerHTML = term.desc[currentLang]; 
-                document.getElementById('glossaryModal').style.display = 'flex'; 
-            } 
-        }
+        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerText = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
         function openImageModal(imgSrc) { document.getElementById('zoomedImg').src = imgSrc; document.getElementById('imageModal').style.display = 'flex'; }
         function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
         function toggleLanguage() { currentLang = currentLang === 'ar' ? 'en' : 'ar'; localStorage.setItem('siteLang', currentLang); loadSavedView(); }
         function toggleTheme() { const r = document.documentElement; r.getAttribute('data-theme') === 'dark' ? (r.removeAttribute('data-theme'), localStorage.setItem('siteTheme', 'light')) : (r.setAttribute('data-theme', 'dark'), localStorage.setItem('siteTheme', 'dark')); }
+        
         window.onload = loadSavedView;
     </script>
 </body>
