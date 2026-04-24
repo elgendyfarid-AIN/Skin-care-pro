@@ -2795,3 +2795,2561 @@ deepProductsList.push({
         notes: { ar: 'قوام "مرهم" ثقيل جداً يوفر حماية قصوى. لونه طبيعي.', en: 'Very heavy "ointment" texture for maximum protection. Natural color.' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (17): تأسيس فيلورجا (Filorga) - البلوك الأول
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة العلامة التجارية (Filorga) وعائلاتها ---
+brandsList.push({
+    id: 'filorga', name: 'Filorga',
+    families: [
+        { id: 'ncef', name: { ar: 'NCEF (التجديد الخلوي الشامل)', en: 'NCEF (Global Cell Renewal)' } },
+        { id: 'time_filler', name: { ar: 'تايم-فيلر (تصحيح التجاعيد المتقدم)', en: 'Time-Filler (Wrinkle Correction)' } },
+        { id: 'hydra_hyal', name: { ar: 'هيدرا-هيال (ترطيب وامتلاء مكثف)', en: 'Hydra-Hyal (Intense Plumping & Hydration)' } },
+        { id: 'age_purify', name: { ar: 'إيدج-بيوريفاي (مكافحة التجاعيد وحب الشباب)', en: 'Age-Purify (Anti-Aging & Blemish)' } },
+        { id: 'optim_eyes', name: { ar: 'أوبتيم-آيز (عناية محيط العين)', en: 'Optim-Eyes (Eye Care)' } },
+        { id: 'skin_unify', name: { ar: 'سكين-يونيفاي (تفتيح وتوحيد اللون)', en: 'Skin-Unify (Illuminating & Even Tone)' } },
+        { id: 'global_repair', name: { ar: 'جلوبال-ريبير (التغذية ومكافحة الشيخوخة الشاملة)', en: 'Global-Repair (Advanced Anti-Aging)' } },
+        { id: 'oxygen_glow', name: { ar: 'أكسجين-جلو (نضارة وإشراقة فورية)', en: 'Oxygen-Glow (Instant Radiance)' } },
+        { id: 'skin_prep', name: { ar: 'سكين-بريب (المنظفات والتقشير)', en: 'Skin-Prep (Cleansers & Peeling)' } },
+        { id: 'sun_care', name: { ar: 'العناية بالشمس (UV-Protect)', en: 'Sun Care (UV Protection)' } }
+    ]
+});
+
+// --- 2. إضافة مصطلحات القاموس الطبي (Glossary) الخاصة بفيلورجا ---
+
+glossaryDict['ncef_complex'] = {
+    title: { ar: 'مركب NCEF 🧬', en: 'NCEF Complex 🧬' },
+    desc: { 
+        ar: 'مركب حصري من فيلورجا (New Cellular Encapsulated Factors) يحتوي على حمض الهيالورونيك و 50 مكوناً نشطاً (فيتامينات، أحماض أمينية، معادن، إنزيمات مساعدة، مضادات أكسدة) مستوحى من حقن الميزوثيرابي لتجديد جودة الجلد من العمق.', 
+        en: 'Filorga\'s exclusive complex containing Hyaluronic Acid and 50 revitalizing ingredients (vitamins, amino acids, minerals, coenzymes, antioxidants) inspired by meso-injections to renew skin quality from within.' 
+    }
+};
+
+glossaryDict['chronospheres'] = {
+    title: { ar: 'الكرونوسفير (Chronospheres) 🔮', en: 'Chronospheres 🔮' },
+    desc: { 
+        ar: 'نواقل مجهرية متطورة تغلف مركب NCEF وتضمن اختراقه العميق وتوزيعه التدريجي داخل طبقات الجلد المختلفة وصولاً إلى الأدمة، لضمان امتصاص وفعالية تضاهي الحقن التجميلية.', 
+        en: 'Microscopic vectors encapsulating the NCEF complex, ensuring deep penetration and gradual release into the skin layers down to the dermis, mimicking injection efficacy.' 
+    }
+};
+
+glossaryDict['hyaluro_youth'] = {
+    title: { ar: 'مركب هيالورو-يوث (Hyaluro-Youth CX) 💧', en: 'Hyaluro-Youth CX 💧' },
+    desc: { 
+        ar: 'مركب يجمع بين 3 مكونات مضادة للتجاعيد: حمض الهيالورونيك الممتلئ، ببتيد منعم للخطوط، وجليكوببتيد معزز لمرونة الجلد، لتنعيم التجاعيد بشكل فعال.', 
+        en: 'A complex combining 3 anti-wrinkle ingredients: plumping HA, a smoothing peptide, and a plumping glycopeptide to effectively smooth wrinkles.' 
+    }
+};
+
+glossaryDict['dermo_rescue'] = {
+    title: { ar: 'مركب ديرما-ريسكيو (Dermo-Rescue CX) 🌿', en: 'Dermo-Rescue CX 🌿' },
+    desc: { 
+        ar: 'مركب يعالج عيوب البشرة يدمج: 5 أحماض تقشير دقيق (Micro-peeling)، زنك منظم للدهون، ومستخلص نباتي مضاد للالتهابات لتقليل المسام والرؤوس السوداء والحبوب.', 
+        en: 'A blemish-treating complex combining: 5 micro-peeling acids, sebum-regulating Zinc, and an anti-inflammatory plant extract to reduce pores, blackheads, and spots.' 
+    }
+};
+
+// --- 3. المنتجات العميقة (Deep Products) ---
+
+// [1] FILORGA NCEF SHOT BOOSTER 15 ML
+deepProductsList.push({
+    id: 'fil_ncef_shot', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF شوت (معزز التجديد المركز)', en: 'NCEF-Shot Supreme Polyrevitalizing Concentrate' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'جرعة يومية تعادل حقنة ميزوثيرابي واحدة. يحتوي على تركيز فائق من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">مركب NCEF</span> المنقول عبر <span class="glossary-term" onclick="openGlossary(\'chronospheres\')">الكرونوسفير</span> لتنشيط الخلايا المنهكة وتكوين كولاجين وإيلاستين جديد في 10 أيام.', 
+            en: 'A daily dose equivalent to 1 meso-injection. Features a supreme concentration of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF Complex</span> delivered via <span class="glossary-term" onclick="openGlossary(\'chronospheres\')">Chronospheres</span> to revitalize exhausted cells and build new collagen/elastin in 10 days.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج مكثف لمدة 10 أيام يغير جودة الجلد تماماً؛ يمنح إشراقة قوية، يشد البشرة، ويملأ الخطوط بشكل درامي وسريع. مثالي للتحضير للمناسبات.', 
+            en: 'An intensive 10-day treatment that completely alters skin quality; provides intense radiance, firmness, and dramatic rapid plumping of lines. Ideal pre-event prep.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF (50 Ingredients + HA)', concentration: 'Supreme Dose | جرعة فائقة', role: { ar: 'تجديد الخلايا ومحاكاة الحقن التجميلي.', en: 'Cellular renewal mimicking aesthetic injections.' } },
+            { name: 'Pseudoalteromonas Extract', concentration: 'Active | فعال', role: { ar: 'بروتين بحري يعزز تماسك الخلايا ويقوي الجلد.', en: 'Marine protein enhancing cellular adhesion and skin strength.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً) ككورس لمدة 10 أيام.', en: 'Twice daily (AM & PM) as a 10-day course.' },
+        step_in_routine: { ar: 'الخطوة الأولى بعد الغسول (قبل أي سيروم أو كريم).', en: 'First step post-cleanser (before any serum or cream).' },
+        routine_step_number: 2,
+        application: { ar: 'تُسحب الجرعة المحددة بالقطارة (إلى العلامة الموضحة) وتوزع على الوجه والرقبة مع التدليك الخفيف.', en: 'Draw the exact dose with the pipette (to the line) and apply to face/neck with light massage.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التقشير الكيميائي العنيف في نفس الكورس لتجنب الإرهاق الخلوي.'], en: ['Harsh chemical peeling during the course to avoid cellular exhaustion.'] }, 
+            best_mixed_with: { ar: ['كريم NCEF-Reverse للحصول على نتيجة ميزوثيرابي متكاملة.'], en: ['NCEF-Reverse cream for a complete mesotherapy result.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المنهكة، المجهدة، الباهتة، وتغير الفصول، التحضير لمناسبة مهمة.', en: 'Exhausted, stressed, dull skin, change of seasons, event preparation.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام مائي خفيف جداً يمتص في ثوانٍ دون ترك أثر.', en: 'Ultra-light watery texture absorbing in seconds without residue.' }
+    }
+});
+
+// [2] FILORGA OXYGEN - GLOW CC CREAM SPF 30
+deepProductsList.push({
+    id: 'fil_oxygen_glow_cc', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-جلو سي سي كريم SPF 30', en: 'Oxygen-Glow CC Cream SPF 30' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يجمع بين (معزز الأكسجين، حمض الهيالورونيك، وإنزيم L-enzyme المزيل للسموم) لتنشيط إشراقة البشرة، مع أصباغ دقيقة التغليف تتكيف مع كل ألوان البشرة وفلاتر حماية من أشعة الشمس.', 
+            en: 'Combines (oxygenation booster, HA, detoxifying L-enzyme) to boost skin radiance, with micro-encapsulated pigments that adapt to all skin tones and UV filters.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر تغطية طبيعية فورية توحد لون البشرة، يزيل بهتان اللون المائل للرمادي، ويحمي من أشعة الشمس والتلوث البيئي.', 
+            en: 'Provides instant natural coverage to even skin tone, removes grayish dullness, and protects from sun rays and environmental pollution.' 
+        },
+        active_ingredients: [
+            { name: 'Nasturtium Extract', concentration: 'Active | فعال', role: { ar: 'تعزيز نقل الأكسجين للخلايا لنضارة طبيعية.', en: 'Boosting oxygen transport to cells for natural glow.' } },
+            { name: 'Micro-encapsulated Pigments', concentration: 'Cosmetic', role: { ar: 'توحيد لون البشرة بشكل يتكيف مع لونها الأصلي.', en: 'Evening skin tone adapting to the original skin color.' } },
+            { name: 'UV Filters', concentration: 'SPF 30', role: { ar: 'حماية من الأشعة فوق البنفسجية والشيخوخة الضوئية.', en: 'Protection against UV and photoaging.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (صباحاً).', en: 'Daily (AM).' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (كريم نهار / تغطية / واقي شمس).', en: 'Last step (Day cream / Coverage / SPF).' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع بلطف على الوجه والرقبة للحصول على تغطية متساوية.', en: 'Distribute gently over face and neck for even coverage.' },
+        layering: { 
+            do_not_mix_with: { ar: ['كريمات الأساس الثقيلة جداً (تفقد مظهر النضارة الطبيعي).'], en: ['Very heavy foundations (loses the natural glow effect).'] }, 
+            best_mixed_with: { ar: ['كريم أوبتيم-آيز لمحيط العين.'], en: ['Optim-Eyes cream for eye contour.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة، اللون غير الموحد، نقص الإشراقة، والحاجة لتغطية خفيفة مع حماية.', en: 'Dull skin, uneven tone, lack of radiance, and need for light coverage with protection.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يتميز بلون وردي خفيف يتغير ليطابق لون البشرة عند التدليك (Universal Shade).', en: 'Features a light pink tint that transforms to match skin tone upon massaging (Universal Shade).' }
+    }
+});
+
+// [3] FILORGA SKIN PREP MICELLAR SOLUTION 400 ML
+deepProductsList.push({
+    id: 'fil_skin_prep_micellar', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب محلول ميسيلار', en: 'Skin Prep Micellar Solution' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'محلول ميسيلار غني بمواد مرطبة ومهدئة (تريهالوز) يعمل كمنظف مضاد للشيخوخة، يزيل المكياج تماماً دون التأثير على التوازن المائي للجلد.', 
+            en: 'Micellar solution enriched with hydrating and soothing actives (Trehalose) acting as an anti-aging cleanser, perfectly removing makeup without affecting the skin\'s water balance.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف الوجه والعينين بعمق، يزيل المكياج المقاوم للماء، ويترك البشرة مرطبة وجاهزة لاستقبال العلاجات التجميلية.', 
+            en: 'Deeply cleanses face and eyes, removes waterproof makeup, and leaves skin hydrated and prepped for cosmetic treatments.' 
+        },
+        active_ingredients: [
+            { name: 'Micelles', concentration: 'Active | فعال', role: { ar: 'التقاط الشوائب والدهون بلطف.', en: 'Gently capturing impurities and sebum.' } },
+            { name: 'Trehalose', concentration: 'Hydrating | مرطب', role: { ar: 'حماية الخلايا من الجفاف والاحتفاظ بالماء.', en: 'Protecting cells from dehydration and retaining water.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى في تحضير البشرة.', en: 'First step in skin preparation.' },
+        routine_step_number: 1,
+        application: { ar: 'يُبلل قطن نظيف ويُمسح الوجه والعينين. لا يتطلب الشطف.', en: 'Soak a cotton pad and wipe face and eyes. No rinsing required.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف للعينين.'], en: ['Harsh rubbing of the eyes.'] }, 
+            best_mixed_with: { ar: ['غسول فيلورجا الرغوي (للتنظيف المزدوج).'], en: ['Filorga Foam Cleanser (for double cleansing).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'إزالة المكياج، التنظيف اليومي لجميع أنواع البشرة، والتحضير للروتين المضاد للشيخوخة.', en: 'Makeup removal, daily cleansing for all skin types, prepping for anti-aging routine.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مُعزز بخصائص مرطبة تمنع إحساس الشد بعد التنظيف.', en: 'Enhanced with hydrating properties preventing tightness post-cleansing.' }
+    }
+});
+
+// [4] FILORGA AGE PURIFY FLUID 50 ML
+deepProductsList.push({
+    id: 'fil_age_purify_fluid', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
+    name: { ar: 'إيدج-بيوريفاي فلويد (سائل التجاعيد والحبوب)', en: 'Age-Purify Double Correction Fluid' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'علاج مزدوج يدمج <span class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</span> لملء التجاعيد و <span class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</span> الذي يضم 5 أحماض وزِنك لتقشير الخلايا الميتة وتنظيم الإفرازات الدهنية، مع حماية ضد التصاق البكتيريا.', 
+            en: 'Dual treatment integrating <span class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</span> to plump wrinkles and <span class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</span> featuring 5 acids and Zinc to exfoliate dead cells and regulate sebum, with anti-bacterial adhesion protection.' 
+        },
+        patient_benefit: { 
+            ar: 'يحل معضلة البالغين (تجاعيد + حبوب)؛ يشد البشرة ويملأ الخطوط بينما يعالج اللمعان، المسام الواسعة، والبثور النشطة.', 
+            en: 'Solves the adult dilemma (Wrinkles + Blemishes); firms and plumps lines while treating shine, enlarged pores, and active breakouts.' 
+        },
+        active_ingredients: [
+            { name: '5 Micro-peeling Acids (AHA/BHA/PHA)', concentration: 'Active | فعال', role: { ar: 'تجديد السطح وإزالة الانسدادات.', en: 'Surface renewal and removing clogs.' } },
+            { name: 'Zinc + Exopolysaccharide', concentration: 'Purifying | منقي', role: { ar: 'تقليل الدهون ومنع التصاق بكتيريا حب الشباب.', en: 'Reducing sebum and preventing acne bacteria adhesion.' } },
+            { name: 'Hyaluronic Acid + Peptides', concentration: 'Plumping | ممتلئ', role: { ar: 'محاربة التجاعيد وترميم الحجم.', en: 'Fighting wrinkles and restoring volume.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم المعالجة والترطيب الأساسي.', en: 'Core treatment and hydration cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على كامل الوجه كمرطب يومي.', en: 'Apply to entire face as a daily moisturizer.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات إضافية في نفس الروتين (قد تسبب تهيج).'], en: ['Additional exfoliants in the same routine (may cause irritation).'] }, 
+            best_mixed_with: { ar: ['سيروم Age-Purify Intensive.'], en: ['Age-Purify Intensive Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب المتأخر (Adult Acne)، التجاعيد الأولى، المسام الواسعة، واللمعان.', en: 'Adult acne, first wrinkles, enlarged pores, and shine.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قوام (Fluid) مطفي خفيف جداً يمنع اللمعان طوال اليوم.', en: 'Ultra-light mattifying fluid texture preventing shine all day.' }
+    }
+});
+
+// [5] FILORGA HYDRA HYAL CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_hydra_hyal_cream', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-هيال كريم (مرطب هيالورونيك مكثف)', en: 'Hydra-Hyal Hydrating Plumping Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على 5 أنواع من حمض الهيالورونيك (منخفض، متوسط، عالي الوزن الجزيئي، مغلف، ومتقاطع الروابط) لترطيب البشرة من السطح حتى أعمق الطبقات، مع مستخلص السوفورا جابونيكا لمكافحة شيخوخة الجلد.', 
+            en: 'Contains 5 types of HA (low, medium, high molecular weight, encapsulated, cross-linked) to hydrate skin from surface to deepest layers, with Sophora Japonica extract for anti-aging.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر ترطيباً عميقاً، يملأ (Plump) الخطوط الرفيعة الناتجة عن الجفاف، ويعيد الحجم والإشراقة للبشرة المترهلة.', 
+            en: 'Provides deep hydration, plumps dehydration fine lines, and restores volume and radiance to sagging skin.' 
+        },
+        active_ingredients: [
+            { name: '5 Types of Hyaluronic Acid', concentration: 'Intense | مكثف', role: { ar: 'ترطيب متعدد الطبقات ونفخ الخطوط.', en: 'Multi-layer hydration and line plumping.' } },
+            { name: 'Sophora Japonica Extract', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'حماية حمض الهيالورونيك الطبيعي من التكسر.', en: 'Protecting natural HA from degradation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم الترطيب.', en: 'Hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة، يُفضل بعد سيروم هيدرا-هيال للحصول على أقصى فعالية.', en: 'Massage onto face and neck, preferably after Hydra-Hyal Serum for maximum efficacy.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يوجد تعارض.'], en: ['No contraindications.'] }, 
+            best_mixed_with: { ar: ['سيروم Hydra-Hyal.', 'أي مكونات نشطة قاسية للحد من جفافها.'], en: ['Hydra-Hyal Serum.', 'Any harsh actives to buffer their dryness.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد، الخطوط الرفيعة المرتبطة بنقص الماء، وفقدان الحجم الطبيعي.', en: 'Severe dehydration, water-loss fine lines, and loss of natural volume.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام كريمي ناعم منعش، مناسب للبشرة العادية إلى الجافة.', en: 'Refreshing smooth cream texture, suitable for normal to dry skin.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (18): فيلورجا (عناية محيط العين + العلاج الليلي)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات جديدة للقاموس (Glossary) ---
+
+glossaryDict['express_recover'] = {
+    title: { ar: 'مركب التعافي السريع 🌙', en: 'Express-Recover Complex 🌙' },
+    desc: { 
+        ar: 'مركب ليلي متطور يجمع بين معززات مرونة الجلد (Elastin booster) ومستخلصات نباتية مزيلة للسموم (Detoxifying)، يعمل أثناء النوم لمنع "تجاعيد الوسادة" وتورم الوجه الصباحي.', 
+        en: 'An advanced night complex combining elastin boosters and detoxifying plant extracts, working during sleep to prevent "pillow wrinkles" and morning facial puffiness.' 
+    }
+};
+
+glossaryDict['eye_impact_tech'] = {
+    title: { ar: 'تقنية آي-إمباكت (Eye-Impact) 👁️', en: 'Eye-Impact Technology 👁️' },
+    desc: { 
+        ar: 'تقنية تستهدف مشاكل محيط العين الثلاثية؛ تستخدم مركب (Chrysin) لتقليل التصبغ الدموي (الهالات)، وببتيدات معززة للدورة اللمفاوية (للانتفاخات)، وحمض هيالورونيك (للتجاعيد).', 
+        en: 'A technology targeting triple eye contour issues; uses Chrysin to reduce blood pigmentation (dark circles), lymphatic-boosting peptides (puffiness), and HA (wrinkles).' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [6] FILORGA TIME-FILLER NIGHT 5XP CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_time_filler_night', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر نايت 5XP (كريم التجاعيد الليلي)', en: 'Time-Filler Night 5XP Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يدمج التقنيات الخمسة لكريم النهار مع <span class="glossary-term" onclick="openGlossary(\'express_recover\')">مركب التعافي السريع</span>. يحفز تجديد الخلايا أثناء ذروة النشاط الليلي، ويمنع احتباس السوائل الذي يسبب انتفاخ الوجه وتجاعيد النوم.', 
+            en: 'Integrates the 5 techniques of the day cream with the <span class="glossary-term" onclick="openGlossary(\'express_recover\')">Express-Recover Complex</span>. Stimulates cell renewal during peak night activity, preventing fluid retention that causes morning puffiness and sleep wrinkles.' 
+        },
+        patient_benefit: { 
+            ar: 'يصحح جميع أنواع التجاعيد أثناء النوم، وتستيقظ المريضة بوجه مشدود، مرتاح، وخالٍ من خطوط الوسادة أو الانتفاخات الصباحية.', 
+            en: 'Corrects all types of wrinkles during sleep. The patient wakes up with a tightened, rested face, free from pillow lines or morning puffiness.' 
+        },
+        active_ingredients: [
+            { name: 'Hexapeptide + NCEF', concentration: 'Botox-like | يحاكي البوتوكس', role: { ar: 'إرخاء عضلات الوجه أثناء النوم لتقليل الخطوط.', en: 'Relaxing facial muscles during sleep to reduce lines.' } },
+            { name: 'Passion Fruit Extract', concentration: 'Active | فعال', role: { ar: 'تحفيز التصريف اللمفاوي الليلي.', en: 'Stimulating nighttime lymphatic drainage.' } },
+            { name: 'Gluconolactone (PHA)', concentration: 'Micro-peeling | تقشير دقيق', role: { ar: 'تجديد سطح الجلد وتنعيمه بلطف.', en: 'Surface renewal and gentle smoothing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة في الروتين الليلي.', en: 'Last step in the night routine.' },
+        routine_step_number: 4,
+        application: { ar: 'يُدلك بلطف على كامل الوجه والرقبة بعد تنظيفهما وتطبيق السيروم.', en: 'Massage gently onto the entire face and neck after cleansing and serum application.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات قوية جداً (يحتوي بالفعل على مقشرات لطيفة).'], en: ['Very strong exfoliants (already contains mild exfoliants).'] }, 
+            best_mixed_with: { ar: ['سيروم Time-Filler Intensive.', 'NCEF Shot.'], en: ['Time-Filler Intensive Serum.', 'NCEF Shot.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تجاعيد النوم، تورم الوجه الصباحي، علامات الإرهاق، وجميع أنواع التجاعيد العميقة والسطحية.', en: 'Sleep wrinkles, morning facial puffiness, signs of fatigue, and all deep/surface wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام جل-كريم ناعم يغلف البشرة كقناع ليلي رقيق.', en: 'Smooth gel-cream texture enveloping the skin like a thin night mask.' }
+    }
+});
+
+// [7] FILORGA TIME-FILLER EYES CREAM 15 ML
+deepProductsList.push({
+    id: 'fil_time_filler_eyes', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر آيز (كريم تجاعيد العين والرموش)', en: 'Time-Filler Eyes Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً (مطابق للعين)', en: 'Physiologically Balanced (Eye-compatible)' },
+        mechanism: { 
+            ar: 'يستهدف تجاعيد العين بـ <span class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">ببتيدات البوتوكس</span>، ويعالج تجويف العين بحمض الهيالورونيك المغلف، بينما يشد الجفون العلوية بمستخلص شجرة الحرير، ويكثف الرموش بمادة (Matrikine).', 
+            en: 'Targets eye wrinkles with <span class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">Botox-like peptides</span>, treats hollows with encapsulated HA, lifts upper eyelids via Silk Tree extract, and densifies lashes with Matrikine.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج شامل لمنطقة العين؛ يشد الجفون المترهلة، يملأ التجاعيد الغائرة، يقلل الهالات الداكنة، ويزيد من كثافة وطول الرموش.', 
+            en: 'Global eye treatment; lifts sagging eyelids, plumps hollow wrinkles, reduces dark circles, and increases lash density and length.' 
+        },
+        active_ingredients: [
+            { name: 'Tripeptide', concentration: 'Relaxing | مرخي عضلات', role: { ar: 'تنعيم تجاعيد قدم الغراب (حول العين).', en: 'Smoothing crow\'s feet wrinkles.' } },
+            { name: 'Matrikine + Provitamin B5', concentration: 'Active | فعال', role: { ar: 'تحفيز نمو وتقوية بصيلات الرموش.', en: 'Stimulating growth and strengthening lash follicles.' } },
+            { name: 'Silk Tree Extract', concentration: 'Lifting | شد', role: { ar: 'رفع الجفن العلوي المترهل.', en: 'Lifting the sagging upper eyelid.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'عناية محيط العين (قبل كريم الوجه).', en: 'Eye contour care (before face cream).' },
+        routine_step_number: 2,
+        application: { ar: 'يُربت بلطف حول العينين، وعلى الجفن العلوي، وحتى جذور الرموش.', en: 'Dab gently around the eyes, on the upper eyelid, and down to the lash roots.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف للعين.'], en: ['Harsh rubbing of the eye.'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تجاعيد محيط العين، ترهل الجفون، تجاويف العين الغائرة، وضعف الرموش.', en: 'Eye contour wrinkles, sagging eyelids, hollow sunken eyes, and weak lashes.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره من قبل أطباء العيون. لا يسيل داخل العين.', en: 'Ophthalmologically tested. Does not migrate into the eye.' }
+    }
+});
+
+// [8] FILORGA OPTIM EYES CREAM 15 ML
+deepProductsList.push({
+    id: 'fil_optim_eyes', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
+    name: { ar: 'أوبتيم-آيز (كريم الهالات والانتفاخات)', en: 'Optim-Eyes Intensive Revitalizing 3-in-1' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'يستخدم تقنية <span class="glossary-term" onclick="openGlossary(\'eye_impact_tech\')">Eye-Impact</span> مع مركب (Melano-Tracker) لإزالة التصبغات الدموية والميلانينية معاً، بالإضافة إلى ببتيدات تصريف السوائل لتقليل الانتفاخ، و NCEF للتنعيم.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'eye_impact_tech\')">Eye-Impact</span> technology with (Melano-Tracker) to eliminate both vascular and melanin pigmentation, plus fluid-draining peptides for puffiness, and NCEF for smoothing.' 
+        },
+        patient_benefit: { 
+            ar: 'أفضل كريم مبيعاً للهالات في فرنسا. يمحو الهالات السوداء (بأنواعها)، يخفف الانتفاخات الصباحية فوراً، وينعش مظهر العين المتعبة.', 
+            en: 'The best-selling dark circle cream in France. Erases dark circles (all types), instantly reduces morning puffiness, and refreshes tired eyes.' 
+        },
+        active_ingredients: [
+            { name: 'Chrysin + N-hydroxysuccinimide', concentration: 'Active | فعال', role: { ar: 'إزالة التصبغ الدموي (الهالات الزرقاء/الحمراء).', en: 'Eliminating vascular pigmentation (blue/red circles).' } },
+            { name: 'Hesperidin + Peptides', concentration: 'Draining | مصِرف', role: { ar: 'تصريف السوائل اللمفاوية وتقليل الأكياس تحت العين.', en: 'Draining lymphatic fluids and reducing under-eye bags.' } },
+            { name: 'Hyaluronic Acid + NCEF', concentration: 'Revitalizing | مجدد', role: { ar: 'ترطيب عميق وتنعيم الخطوط.', en: 'Deep hydration and line smoothing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'عناية محيط العين.', en: 'Eye contour care.' },
+        routine_step_number: 2,
+        application: { ar: 'يُربت برفق من الزاوية الداخلية للعين إلى الخارج. (يُنصح بحفظه في الثلاجة لزيادة مفعول التبريد والشد).', en: 'Dab gently from the inner corner outwards. (Recommended to keep in the fridge for enhanced cooling/lifting effect).' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['غسول Optim-Eyes Lotion لإزالة المكياج.'], en: ['Optim-Eyes Lotion for makeup removal.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الهالات السوداء (الوعائية والمصبوغة)، الانتفاخات وأكياس العين، علامات الإرهاق الشديد والتعب.', en: 'Dark circles (vascular & pigmented), puffiness and eye bags, severe signs of fatigue.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام منعش ومرطب، يمتص بسرعة ولا يتعارض مع الكونسيلر.', en: 'Refreshing and hydrating texture, absorbs quickly and does not pill under concealer.' }
+    }
+});
+
+// [9] FILORGA NCEF-REVERSE EYE CREAM 15 ML
+deepProductsList.push({
+    id: 'fil_ncef_reverse_eyes', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF-ريفرس آيز (كريم التجديد الشامل للعين)', en: 'NCEF-Reverse Eyes Supreme Multi-Correction' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على أعلى تركيز من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> مخصص للعين، مدمج بتقنية (Genius-Vector) لتوصيل 5 مكونات نشطة (HA، كولاجين، فيتامين C، إسسين، وكافيين) إلى عمق الأدمة.', 
+            en: 'Contains the highest concentration of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> formulated for the eyes, combined with Genius-Vector tech to deliver 5 actives (HA, Collagen, Vit C, Escin, Caffeine) deep into the dermis.' 
+        },
+        patient_benefit: { 
+            ar: 'تصحيح شامل 5 في 1: يعالج التجاعيد، الهالات، الانتفاخات، الترهل، والبهتان في منتج واحد فائق الفعالية.', 
+            en: 'Global 5-in-1 correction: treats wrinkles, dark circles, puffiness, sagging, and dullness in one supremely effective product.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF + Collagen', concentration: 'Supreme | فائق', role: { ar: 'إعادة بناء أنسجة محيط العين وشد الترهل.', en: 'Rebuilding eye contour tissues and lifting sagging.' } },
+            { name: 'Caffeine + Escin', concentration: 'Active | فعال', role: { ar: 'تنشيط الدورة الدموية بقوة لإنهاء الهالات والانتفاخ.', en: 'Strongly stimulating circulation to end circles and puffiness.' } },
+            { name: 'Vitamin C', concentration: 'Brightening | مفتح', role: { ar: 'إشراقة فورية ومحاربة التصبغ.', en: 'Instant radiance and fighting pigmentation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'علاج محيط العين المكثف.', en: 'Intensive eye contour treatment.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع يومياً حول العينين بالتربيت الخفيف حتى يمتص تماماً.', en: 'Apply daily around the eyes with light dabbing until fully absorbed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول المركز لمحيط العين (لتجنب التحسس).'], en: ['Concentrated retinol for eye contour (to avoid sensitivity).'] }, 
+            best_mixed_with: { ar: ['سيروم NCEF للوجه.'], en: ['NCEF Face Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'علامات الشيخوخة المتقدمة حول العين، الترهل، الهالات العنيدة، والتجاعيد المتعددة.', en: 'Advanced aging signs around eyes, sagging, stubborn dark circles, and multiple wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تركيبة غنية ومريحة، تعتبر الأقوى كعلاج شامل للعين في براند فيلورجا.', en: 'Rich and comforting formula, considered the most potent global eye treatment in Filorga.' }
+    }
+});
+
+// [10] FILORGA GLOBAL REPAIR EYES & LIPS CREAM 15 ML
+deepProductsList.push({
+    id: 'fil_global_repair_eyes_lips', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
+    name: { ar: 'جلوبال-ريبير للعين والشفاه (تغذية ومكافحة شيخوخة)', en: 'Global-Repair Eyes & Lips Multi-Revitalising Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف المناطق الرقيقة المفتقرة للدهون (العين والشفايف). يدمج 3 مغذيات فائقة (سيراميد، أوميجا، فيتامينات) مع 50 مكون ميزوثيرابي، وخلاصة (Tuberose) لتنشيط الدورة الدموية المجهرية.', 
+            en: 'Targets thin, lipid-depleted areas (eyes & lips). Combines 3 super-nutrients (Ceramides, Omegas, Vitamins) with 50 meso-ingredients, and Tuberose extract to activate micro-circulation.' 
+        },
+        patient_benefit: { 
+            ar: 'يغذي بعمق البشرة الرقيقة والجافة، يمحو خطوط "الباركود" فوق الشفاه، ويشد محيط العين المترهل مع إعطاء حيوية فورية.', 
+            en: 'Deeply nourishes thin, dry skin, erases "barcode" lines above lips, and lifts sagging eye contours with instant vitality.' 
+        },
+        active_ingredients: [
+            { name: 'Ceramides + Omegas (3,6,9) + Vitamins', concentration: 'Super-Nutrients | مغذيات فائقة', role: { ar: 'ترميم الحاجز الدهني المفقود بقوة.', en: 'Powerfully restoring the lost lipid barrier.' } },
+            { name: 'Tuberose Extract', concentration: 'Active | فعال', role: { ar: 'تجديد الخلايا وتقليل الهالات.', en: 'Cell renewal and reducing dark circles.' } },
+            { name: 'Sesame Seed Extract', concentration: 'Smoothing | منعم', role: { ar: 'تنعيم خطوط محيط الشفاه (الباركود).', en: 'Smoothing peri-oral lines (barcode lines).' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'علاج العين والشفاه.', en: 'Eye and Lip treatment.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع بطبقة رقيقة حول العينين ومحيط الشفاه.', en: 'Apply a thin layer around the eyes and the lip contour.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم وكريم Global-Repair للوجه.'], en: ['Global-Repair Face Serum & Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشيخوخة المتقدمة، الجفاف الشديد حول العين والشفايف، ترهل الأنسجة، والتجاعيد العميقة.', en: 'Advanced aging, severe dryness around eyes and lips, tissue sagging, and deep wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مثالي للبشرة الناضجة (Mature Skin) ولمن يعانون من جفاف مزمن في هذه المناطق.', en: 'Ideal for mature skin and those suffering from chronic dryness in these areas.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (19): فيلورجا (عناية الأكسجين + المنظفات والتقشير)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات جديدة للقاموس (Glossary) ---
+
+glossaryDict['photoperfector_hd'] = {
+    title: { ar: 'فوتو-بيرفيكتور (Photoperfector HD) ✨', en: 'Photoperfector HD ✨' },
+    desc: { 
+        ar: 'تقنية بصرية متطورة تعتمد على جزيئات لؤلؤية دقيقة تعكس الضوء بذكاء لتمويه العيوب والهالات فوراً، وإعطاء تأثير "الفلتر" الطبيعي للبشرة.', 
+        en: 'An advanced optical technology using fine pearlescent particles that cleverly reflect light to instantly blur flaws and circles, giving a natural "filter" effect.' 
+    }
+};
+
+glossaryDict['oxygen_releaser'] = {
+    title: { ar: 'ناقلات الأكسجين (Oxygen Releaser) 🫧', en: 'Oxygen Releaser 🫧' },
+    desc: { 
+        ar: 'جزيئات ذكية تلتقط الأكسجين من الهواء وتضخه مباشرة داخل الخلايا المجهدة، مما يعيد تنشيط التنفس الخلوي ويمنح البشرة توهجاً فورياً وحيوية.', 
+        en: 'Smart molecules that capture oxygen from the air and pump it directly into exhausted cells, reactivating cellular respiration for an instant glow and vitality.' 
+    }
+};
+
+glossaryDict['aqua_mx'] = {
+    title: { ar: 'تقنية أكوا-إم إكس (Aqua-MX) 💧', en: 'Aqua-MX Technology 💧' },
+    desc: { 
+        ar: 'مستشعر مائي (Water Sensor) يضمن ترطيباً فلاشياً سريعاً ودائماً، ويهيئ مسام البشرة لامتصاص السيرومات والكريمات العلاجية بفعالية مضاعفة.', 
+        en: 'A water sensor technology ensuring rapid and lasting flash hydration, prepping skin pores to absorb therapeutic serums and creams with multiplied efficacy.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [11] FILORGA OXYGEN GLOW EYES 15 ML
+deepProductsList.push({
+    id: 'fil_oxygen_glow_eyes', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-جلو آيز (كريم إشراقة العين)', en: 'Oxygen-Glow Eyes Super-Smoothing Radiance' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يدمج مركب (Super-Skin Boosting Factors) الذي يحتوي على معززات الأكسجين وحمض الهيالورونيك، مع تقنية <span class="glossary-term" onclick="openGlossary(\'photoperfector_hd\')">Photoperfector HD</span> وتيتراهيكسيل ديسيل أسكوربات (فيتامين C) لتفتيح محيط العين فوراً.', 
+            en: 'Integrates (Super-Skin Boosting Factors) containing oxygen boosters and HA, with <span class="glossary-term" onclick="openGlossary(\'photoperfector_hd\')">Photoperfector HD</span> tech and Tetrahexyldecyl Ascorbate (Vit C) to instantly illuminate the eye contour.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج العيون المتعبة والباهتة فوراً؛ يملأ الخطوط الدقيقة، يموّه الهالات السوداء بصرياً وعلاجياً، ويمنح نظرة منتعشة ومضيئة.', 
+            en: 'Instantly treats tired, dull eyes; plumps fine lines, blurs dark circles optically and therapeutically, granting a refreshed, luminous look.' 
+        },
+        active_ingredients: [
+            { name: 'Oxygen-Booster', concentration: 'Active | فعال', role: { ar: 'تنشيط الدورة الدموية الدقيقة حول العين.', en: 'Stimulating micro-circulation around the eye.' } },
+            { name: 'Illuminating Micro-Pigments', concentration: 'Cosmetic | تجميلي', role: { ar: 'تفتيح بصري فوري للهالات (تأثير الكونسيلر).', en: 'Instant optical brightening of dark circles (concealer effect).' } },
+            { name: 'L-Enzyme', concentration: 'Detoxifying | مزيل سموم', role: { ar: 'التخلص من الخلايا الميتة والسموم المتراكمة.', en: 'Eliminating dead cells and accumulated toxins.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'عناية محيط العين.', en: 'Eye contour care.' },
+        routine_step_number: 2,
+        application: { ar: 'يُربت برفق حول العين. يمكن استخدامه كـ (هايلايتر) فوق المكياج لزيادة الإضاءة.', en: 'Dab gently around the eyes. Can be used as a highlighter over makeup for extra glow.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Oxygen-Glow للوجه.'], en: ['Oxygen-Glow Face Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'محيط العين الباهت، الهالات الوراثية والمكتسبة، الخطوط الدقيقة، وعلامات السهر.', en: 'Dull eye contour, genetic and acquired dark circles, fine lines, and signs of sleeplessness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره من قبل أطباء العيون. قوامه جل-كريم مضيء.', en: 'Ophthalmologically tested. Luminous gel-cream texture.' }
+    }
+});
+
+// [12] FILORGA OXYGEN - PEEL LOTION 150 ML
+deepProductsList.push({
+    id: 'fil_oxygen_peel_lotion', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-بيل (لوشن التقشير الدقيق المجدد)', en: 'Oxygen-Peel Re-Oxygenating Micro-Peeling Lotion' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (للتقشير الفعال)', en: 'Acidic (for effective peeling)' },
+        mechanism: { 
+            ar: 'لوشن تقشير يومي يجمع كوكتيل من 6 أحماض (AHA/BHA/PHA) بتركيز 6% لتجديد سطح الجلد تدريجياً، مع نواقل <span class="glossary-term" onclick="openGlossary(\'oxygen_releaser\')">الأكسجين</span> وحمض الهيالورونيك لتفادي جفاف التقشير المعتاد.', 
+            en: 'A daily peeling lotion combining a cocktail of 6 acids (AHA/BHA/PHA) at 6% to gradually renew the skin surface, with <span class="glossary-term" onclick="openGlossary(\'oxygen_releaser\')">Oxygen releasers</span> and HA to prevent typical peeling dryness.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلص المسام بشكل واضح، يمحو التصبغات السطحية والخطوط الدقيقة، ويعيد الأكسجة للبشرة المختنقة (من التدخين أو التلوث) لإشراقة صافية.', 
+            en: 'Visibly shrinks pores, erases surface pigmentation and fine lines, and re-oxygenates suffocated skin (from smoking/pollution) for clear radiance.' 
+        },
+        active_ingredients: [
+            { name: '6-Acid Micro-Peeling Cocktail', concentration: '6%', role: { ar: 'تقشير الخلايا الميتة وتنعيم نسيج الجلد.', en: 'Exfoliating dead cells and smoothing skin texture.' } },
+            { name: 'Bio-active Oxygen Sensors', concentration: 'Active | فعال', role: { ar: 'ضخ الأكسجين في الخلايا المجهدة.', en: 'Pumping oxygen into exhausted cells.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب فوري وملء الجلد بعد التقشير.', en: 'Instant hydration and plumping post-peel.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'التونر المقشر (بعد الغسول).', en: 'Exfoliating Toner (post-cleansing).' },
+        routine_step_number: 2,
+        application: { ar: 'يُضغط على قطنة ويُمسح بها الوجه والرقبة. لا يُشطف.', en: 'Press onto a cotton pad and wipe over face and neck. Do not rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول القوي أو مقشرات إضافية في نفس الليلة.'], en: ['Strong retinol or additional exfoliants on the same night.'] }, 
+            best_mixed_with: { ar: ['واقي شمس (إلزامي في صباح اليوم التالي).', 'سيروم NCEF.'], en: ['Sunscreen (Mandatory next AM).', 'NCEF Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام الواسعة، البشرة الباهتة (خاصة للمدخنين)، عدم توحد اللون، والخطوط السطحية.', en: 'Enlarged pores, dull skin (especially for smokers), uneven tone, and surface lines.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'استخدام عبوة بمضخة (Pump) علوية مبتكرة للاستخدام بيد واحدة.', en: 'Uses an innovative top-pump bottle for one-handed use.' }
+    }
+});
+
+// [13] FILORGA FOAM CLEANSER 150 ML
+deepProductsList.push({
+    id: 'fil_foam_cleanser', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'فوم كلينزر (رغوة التنظيف وإزالة المكياج)', en: 'Foam Cleanser Anti-Aging Makeup Remover' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'رغوة هوائية خفيفة غنية بحمض الهيالورونيك ومستخلص زنبق الماء (White Lily)، تزيل المكياج والأوساخ مع الحفاظ على الغلاف الحمضي للجلد وتوفير ترطيب مضاد للشيخوخة منذ خطوة التنظيف.', 
+            en: 'Light airy foam rich in HA and White Lily extract, removing makeup and dirt while preserving the skin\'s acid mantle and providing anti-aging hydration right from the cleansing step.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف البشرة بلطف بالغ دون تجفيفها، يزيل مكياج الوجه والعينين، ويترك البشرة ناعمة، مرنة، ومهيأة للروتين.', 
+            en: 'Cleanses skin extremely gently without drying, removes face/eye makeup, and leaves skin soft, supple, and prepped for routine.' 
+        },
+        active_ingredients: [
+            { name: 'High Weight Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'ترطيب السطح ومنع جفاف المياه العسرة.', en: 'Surface hydration and preventing hard water dryness.' } },
+            { name: 'White Lily Extract', concentration: 'Soothing | مهدئ', role: { ar: 'تهدئة الاحمرار وتلطيف البشرة الحساسة.', en: 'Soothing redness and calming sensitive skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف الرطب).', en: 'Step 1 (Wet Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'تُضخ كمية في اليد وتُدلك على بشرة مبللة، ثم تُشطف بالماء.', en: 'Pump into hand, massage onto wet skin, then rinse with water.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك الميكانيكي العنيف.'], en: ['Harsh mechanical scrubbing.'] }, 
+            best_mixed_with: { ar: ['NCEF-Essence Lotion.'], en: ['NCEF-Essence Lotion.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التنظيف اليومي وإزالة المكياج لجميع أنواع البشرة (حتى الحساسة).', en: 'Daily cleansing and makeup removal for all skin types (even sensitive).' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من الصابون القاسي (Soap-free).', en: 'Harsh soap-free.' }
+    }
+});
+
+// [14] FILORGA NCTF (NCEF) ESSENCE LOTION 150 ML
+deepProductsList.push({
+    id: 'fil_ncef_essence', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF-إسنس (لوشن التحضير والتجديد)', en: 'NCEF-Essence Supreme Multi-Correction Lotion' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستخدم تقنية <span class="glossary-term" onclick="openGlossary(\'aqua_mx\')">Aqua-MX</span> لتوفير ترطيب فلاشي سريع، مع تركيز عالٍ من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">مركب NCEF</span> لتهيئة المسام وتسهيل اختراق السيرومات والكريمات العلاجية اللاحقة.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'aqua_mx\')">Aqua-MX</span> technology for rapid flash hydration, with a high concentration of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF complex</span> to prep pores and facilitate the penetration of subsequent therapeutic serums.' 
+        },
+        patient_benefit: { 
+            ar: 'يضاعف فعالية الروتين التجميلي اللاحق، يروي البشرة الجافة فوراً، ويوفر حماية مضادة للتلوث والأكسدة.', 
+            en: 'Multiplies the efficacy of the subsequent cosmetic routine, instantly quenches dry skin, and provides anti-pollution/antioxidant protection.' 
+        },
+        active_ingredients: [
+            { name: 'Aqua-MX Technology', concentration: 'Patented | براءة اختراع', role: { ar: 'مستشعر ترطيب لتعزيز حبس الماء.', en: 'Hydration sensor to enhance water locking.' } },
+            { name: 'NCEF Complex + Sage Extract', concentration: 'High | عالي', role: { ar: 'تجديد الخلايا وتقوية حاجز البشرة.', en: 'Cell renewal and strengthening skin barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'خطوة التحضير (بعد الغسول وقبل السيروم).', en: 'Prepping step (post-cleanser & pre-serum).' },
+        routine_step_number: 2,
+        application: { ar: 'توضع قطرات في راحة اليد وتُربت مباشرة على وجه نظيف حتى الامتصاص (بدون قطنة).', en: 'Place drops in palm and dab directly onto clean face until absorbed (without cotton).' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم NCEF Intensive.'], en: ['NCEF Intensive Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة العطشى (Dehydrated)، الخطوط الرفيعة، التحضير لزيادة كفاءة العلاجات باهظة الثمن.', en: 'Thirsty (dehydrated) skin, fine lines, prepping to maximize efficacy of expensive treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوامه مائي لزج (Essence) يشبه الروتين الآسيوي.', en: 'Viscous watery texture (Essence) similar to Asian routines.' }
+    }
+});
+
+// [15] FILORGA SCRUB & MASK 55 ML
+deepProductsList.push({
+    id: 'fil_scrub_mask', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكراب آند ماسك (قناع التقشير والأكسجين)', en: 'Scrub & Mask Reoxygenating Exfoliating Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'علاج مزدوج: يبدأ بتقشير ميكانيكي بحبيبات البيرلايت وتقشير إنزيمي، ثم يتحول إلى رغوة نشطة تضخ <span class="glossary-term" onclick="openGlossary(\'oxygen_releaser\')">ناقلات الأكسجين</span> و NCEF لإنعاش الخلايا بعمق.', 
+            en: 'Dual treatment: begins with mechanical Perlite exfoliation and enzymatic peeling, then transforms into an active foam pumping <span class="glossary-term" onclick="openGlossary(\'oxygen_releaser\')">Oxygen releasers</span> and NCEF to deeply refresh cells.' 
+        },
+        patient_benefit: { 
+            ar: 'جلسة تنظيف عميق (Detox) منزلي في 10 دقائق؛ يزيل الجلد الميت، يقلص المسام، ويترك البشرة تتنفس بنضارة لؤلؤية ونعومة فائقة.', 
+            en: 'A 10-minute at-home deep Detox session; removes dead skin, shrinks pores, and leaves skin breathing with pearlescent radiance and extreme softness.' 
+        },
+        active_ingredients: [
+            { name: 'Perlite Spheres + Protease Enzyme', concentration: 'Dual Exfoliant | مقشر مزدوج', role: { ar: 'تقشير ميكانيكي وإنزيمي لطيف.', en: 'Mechanical and gentle enzymatic exfoliation.' } },
+            { name: 'NCTF + Micro-bubbles System', concentration: 'Active | فعال', role: { ar: 'تنشيط الأكسجة الخلوية وتجديد النضارة.', en: 'Activating cellular oxygenation and renewing radiance.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين إلى ثلاث مرات أسبوعياً.', en: 'Two to three times a week.' },
+        step_in_routine: { ar: 'عناية أسبوعية مكثفة (قناع وتقشير).', en: 'Intensive weekly care (Mask & Peel).' },
+        routine_step_number: 2,
+        application: { ar: 'يُدلك برفق على وجه نظيف (كـ سكراب)، يُترك ليتحول إلى رغوة (أكسجة)، وحين تختفي الرغوة يُشطف بالماء.', en: 'Massage gently on clean face (as a scrub), leave to turn into foam (oxygenation), and once foam disappears, rinse with water.' },
+        layering: { 
+            do_not_mix_with: { ar: ['فرش التقشير الكهربائية أثناء الاستخدام.'], en: ['Electric facial cleansing brushes during use.'] }, 
+            best_mixed_with: { ar: ['الترطيب المكثف بكريم هيدرا-هيال بعده.'], en: ['Intense hydration with Hydra-Hyal cream post-use.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام المسدودة، الرؤوس السوداء، البشرة الباهتة والمختنقة.', en: 'Clogged pores, blackheads, dull and suffocated skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'عبوة تعمل بالضغط (Airless) تحافظ على تركيبة الأكسجين من التلف.', en: 'Airless push-packaging preserves the oxygen formula from degradation.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (20): فيلورجا (السيرومات العلاجية المتقدمة)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة عائلة جديدة إن لم تكن موجودة و مصطلحات القاموس ---
+
+// تحديث العائلات لإضافة عائلة LIFT (للشد) إن لم تكن مضافة مسبقاً
+let filorgaBrand = brandsList.find(b => b.id === 'filorga');
+if (filorgaBrand && !filorgaBrand.families.find(f => f.id === 'lift_structure')) {
+    filorgaBrand.families.push({ id: 'lift_structure', name: { ar: 'ليفت-ستركتشر (شد البشرة المترهلة)', en: 'Lift-Structure (Firming & Lifting)' } });
+}
+
+glossaryDict['plasmatic_lifting'] = {
+    title: { ar: 'عوامل الشد البلازمية 🧬', en: 'Plasmatic Lifting Factors 🧬' },
+    desc: { 
+        ar: 'مركب مستوحى من حقن البلازما الغنية (PRP)، يدمج عوامل خلوية، كولاجين دقيق، وحمض هيالورونيك لإعادة شد ملامح الوجه ونحتها بوضوح.', 
+        en: 'A complex inspired by PRP injections, integrating cellular factors, micro-collagen, and HA to visibly tighten and sculpt facial features.' 
+    }
+};
+
+glossaryDict['swirl_tech'] = {
+    title: { ar: 'تقنية الدوامة المزدوجة (Swirl Tech) 🌀', en: 'Swirl Technology 🌀' },
+    desc: { 
+        ar: 'ابتكار يجمع بين تركيبتين مختلفتين (جل لشد البشرة وسائل لعلاج التجاعيد) في مضخة واحدة، يتم مزجهما لحظة الاستخدام لضمان أقصى فعالية للمواد النشطة.', 
+        en: 'An innovation combining two distinct formulas (a stretch gel and an anti-wrinkle fluid) in one pump, mixed exactly upon application for maximum active efficacy.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [16] FILORGA HYDRA-HYAL SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_hydra_hyal_serum', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-هيال سيروم (مركز حمض الهيالورونيك)', en: 'Hydra-Hyal Intensive Hydrating Plumping Concentrate' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على 4 أنواع من حمض الهيالورونيك (لترطيب سطحي وعميق) معزز بمستخلصين نباتيين يحفزان الإنتاج الطبيعي لحمض الهيالورونيك في طبقتي الأدمة والبشرة.', 
+            en: 'Contains 4 types of Hyaluronic Acid (for surface and deep hydration) enhanced by 2 plant extracts that stimulate natural HA production in the dermis and epidermis.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر جرعة يومية مكثفة تعادل الحقن التجميلي، يملأ (Plump) الخطوط الرفيعة فوراً، ويمنح البشرة الجافة مرونة وإشراقة تدوم طويلاً.', 
+            en: 'Provides an intense daily dose equivalent to cosmetic injections, instantly plumps fine lines, and grants dry skin long-lasting suppleness and radiance.' 
+        },
+        active_ingredients: [
+            { name: '4 Hyaluronic Acids', concentration: 'High Dose | جرعة عالية', role: { ar: 'نفخ التجاعيد وترطيب متعدد الطبقات.', en: 'Plumping wrinkles and multi-layer hydration.' } },
+            { name: 'Ophiopogon Japonicus Extract', concentration: 'Active | فعال', role: { ar: 'تنشيط تصنيع الهيالورونيك الطبيعي.', en: 'Activating natural HA synthesis.' } },
+            { name: 'NCEF Complex', concentration: 'Revitalizing | مجدد', role: { ar: 'تجديد الخلايا وتحسين جودة الجلد.', en: 'Cell renewal and improving skin quality.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'السيروم المرطب الأول.', en: 'First hydrating serum.' },
+        routine_step_number: 2,
+        application: { ar: 'توضع بضع قطرات على وجه ورقبة نظيفين قبل كريم العناية.', en: 'Apply a few drops to a clean face and neck before care cream.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Hydra-Hyal.', 'كريم Time-Filler.'], en: ['Hydra-Hyal Cream.', 'Time-Filler Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد، البشرة الفاقدة للحيوية والامتلاء، والتجاعيد المبكرة الناتجة عن الجفاف.', en: 'Severe dehydration, skin lacking vitality and plumpness, and early dehydration wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام فريد يشبه الجل المائي، لا يترك أي أثر لزج.', en: 'Unique water-gel texture, leaves no sticky residue.' }
+    }
+});
+
+// [17] FILORGA LIFT-DESIGNER SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_lift_designer_serum', brandId: 'filorga', familyId: 'lift_structure', brand: 'Filorga',
+    name: { ar: 'ليفت-ديزاينر (سيروم الشد الفائق)', en: 'Lift-Designer Ultra-Lifting Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعتمد على <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">عوامل الشد البلازمية</span> لشد الأنسجة المترهلة بقوة، مع خلاصة الطحالب الدقيقة (Arabinoxylane) التي توفر تأثيراً ميكانيكياً لشد السطح فورياً.', 
+            en: 'Relies on <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">Plasmatic Lifting Factors</span> to powerfully tighten sagging tissues, with micro-algae extract (Arabinoxylane) providing an immediate mechanical surface lift.' 
+        },
+        patient_benefit: { 
+            ar: 'ينحت ملامح الوجه (خاصة خط الفك والرقبة)، يرفع الجلد المترهل بشكل ملحوظ خلال 7 أيام، ويوفر شدة فورية (Lifting effect).', 
+            en: 'Sculpts facial contours (especially jawline and neck), visibly lifts sagging skin within 7 days, and provides an immediate lifting effect.' 
+        },
+        active_ingredients: [
+            { name: 'Plasmatic Lifting Factors', concentration: 'Concentrated | مركز', role: { ar: 'إعادة بناء الكولاجين والمرونة لشد الجلد.', en: 'Rebuilding collagen and elasticity to lift skin.' } },
+            { name: 'Microalgae Extract', concentration: 'Tensor | شد فوري', role: { ar: 'تكوين شبكة غير مرئية لشد سطح البشرة.', en: 'Forming an invisible mesh to tighten the skin surface.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'سيروم الشد والمكافحة.', en: 'Lifting and anti-aging serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يُدلك بحركات تصاعدية (من الأسفل للأعلى) على الوجه، خط الفك، والرقبة.', en: 'Massage with upward strokes (bottom to top) on face, jawline, and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['زيوت الوجه الثقيلة (تُضعف مفعول الشد الميكانيكي).'], en: ['Heavy face oils (weakens the mechanical lifting effect).'] }, 
+            best_mixed_with: { ar: ['كريم Sleep & Lift الليلي.'], en: ['Sleep & Lift Night Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'ترهل الجلد، فقدان تحديد ملامح الوجه، وشيخوخة الرقبة وخط الفك.', en: 'Skin sagging, loss of facial contour definition, and aging of neck and jawline.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يأتي مع أداة تدليك دوارة (Roller) لتحفيز الدورة الدموية أثناء الاستخدام.', en: 'Comes with a roller applicator to stimulate blood circulation during use.' }
+    }
+});
+
+// [18] FILORGA TIME-ZERO MULTI CORRECTION SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_time_zero_serum', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-زيرو (سيروم التصحيح المتعدد للتجاعيد)', en: 'Time-Zero Multi-Correction Wrinkles Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستخدم <span class="glossary-term" onclick="openGlossary(\'swirl_tech\')">تقنية الدوامة المزدوجة</span> لمزج (جل لشد الأنسجة) مع (سائل لمعالجة التجاعيد العميقة والتعبيرية). يجمع حمض الهيالورونيك، ببتيدات البوتوكس، ومركب تقشير دقيق.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'swirl_tech\')">Swirl Technology</span> to mix (a stretch gel) with (a deep/expression wrinkle fluid). Combines HA, Botox-like peptides, and a micro-peeling complex.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج مكثف 4 في 1 لجميع أنواع التجاعيد (التعبيرية، العميقة، السطحية، والإرهاق). يعطي تأثيراً مشابهاً للميزوثيرابي وحقن الفيلر.', 
+            en: 'Intensive 4-in-1 treatment for all wrinkle types (expression, deep, surface, fatigue). Provides an effect similar to mesotherapy and fillers.' 
+        },
+        active_ingredients: [
+            { name: 'Botox-like Hexapeptide', concentration: 'Active | فعال', role: { ar: 'إرخاء الخطوط التعبيرية.', en: 'Relaxing expression lines.' } },
+            { name: 'NCTF + Gluconolactone', concentration: 'Peeling-like | مقشر دقيق', role: { ar: 'تجديد السطح وتنعيم التجاعيد الدقيقة.', en: 'Surface renewal and smoothing fine wrinkles.' } },
+            { name: 'Cross-linked HA', concentration: 'Filler-like | يحاكي الفيلر', role: { ar: 'ملء التجاعيد الغائرة من العمق.', en: 'Plumping deep sunken wrinkles from within.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'السيروم المعالج الرئيسي.', en: 'Main treatment serum.' },
+        routine_step_number: 2,
+        application: { ar: 'تُضغط المضخة لخروج المزيج، ويُدلك بلطف على كامل الوجه.', en: 'Press pump to release the mixture, massage gently over the entire face.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات كيميائية عنيفة.'], en: ['Harsh chemical peels.'] }, 
+            best_mixed_with: { ar: ['كريم Time-Filler.'], en: ['Time-Filler Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد الظاهرة والمتعددة، الخطوط حول الفم والعين، والتجاعيد الناتجة عن تعابير الوجه.', en: 'Visible and multiple wrinkles, peri-oral/ocular lines, and expression-induced wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'منتج كلاسيكي قوي جداً من فيلورجا، يوفر شد وملء في خطوة واحدة.', en: 'A very potent classic Filorga product, providing lifting and plumping in one step.' }
+    }
+});
+
+// [19] FILORGA PIGMENT-PERFECT SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_pigment_perfect_serum', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'بيجمنت-بيرفكت (سيروم مصحح البقع الداكنة)', en: 'Pigment-Perfect Dark Spot Corrector Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف التصبغات من خلال (خلاصة نبات الجنجل) لتنظيم تصنيع الميلانين، و (البابونج الذهبي) المضاد للأكسدة لمنع الأكسدة المسؤولة عن البقع العمرية، مع فيتامين C للتفتيح.', 
+            en: 'Targets pigmentation via (Hop extract) to regulate melanin synthesis, and antioxidant (Golden Chamomile) to prevent oxidation responsible for age spots, with Vit C for brightening.' 
+        },
+        patient_benefit: { 
+            ar: 'يخفف تدريجياً البقع الداكنة (كلف، آثار حبوب، بقع شمس)، يوحد لون البشرة، ويحمي من ظهور تصبغات جديدة.', 
+            en: 'Gradually fades dark spots (melasma, acne marks, sun spots), evens skin tone, and protects against new pigmentation.' 
+        },
+        active_ingredients: [
+            { name: 'Hop Extract (Humulus Lupulus)', concentration: 'Active | فعال', role: { ar: 'تثبيط إنتاج وتراكم الميلانين.', en: 'Inhibiting melanin production and accumulation.' } },
+            { name: 'Vitamin C + NCEF', concentration: 'Illuminating | مفتح', role: { ar: 'تفتيح البشرة وتحفيز الكولاجين.', en: 'Brightening skin and stimulating collagen.' } },
+            { name: 'Golden Chamomile Extract', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'تهدئة الجلد ومنع الإجهاد التأكسدي.', en: 'Soothing skin and preventing oxidative stress.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'سيروم التفتيح.', en: 'Brightening serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على كامل الوجه والرقبة، أو موضعياً على البقع الداكنة.', en: 'Apply to entire face and neck, or topically on dark spots.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التعرض للشمس بدون واقي (إلزامي).'], en: ['Sun exposure without SPF (Mandatory).'] }, 
+            best_mixed_with: { ar: ['كريم UV-Defence SPF50+.', 'كريم Pigment-White.'], en: ['UV-Defence SPF50+.', 'Pigment-White Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البقع الداكنة المستعصية، التصبغات الهرمونية، لون البشرة غير المتجانس.', en: 'Stubborn dark spots, hormonal pigmentation, and uneven skin tone.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'قوام حليبي خفيف يمتص بسهولة ويصلح كقاعدة للمكياج.', en: 'Light milky texture that absorbs easily and acts as a makeup base.' }
+    }
+});
+
+// [20] FILORGA MESO+ SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_meso_plus_serum', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'ميزو+ (سيروم مكافحة الشيخوخة المطلق)', en: 'Meso+ Absolute Anti-Aging Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يجمع أفضل مكونات طب التجميل: الريتينول النقي لتنعيم السطح، حمض الهيالورونيك للامتلاء، وتركيز مضاعف من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCTF/NCEF</span> لتجديد الأنسجة من العمق.', 
+            en: 'Combines the best of aesthetic medicine: Pure Retinol for surface smoothing, HA for plumping, and a double concentration of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCTF/NCEF</span> for deep tissue renewal.' 
+        },
+        patient_benefit: { 
+            ar: 'يعيد بناء نسيج الجلد بالكامل، يمحو التجاعيد العميقة، ويعيد الحيوية المفقودة للبشرة المتعبة والمتقدمة في العمر.', 
+            en: 'Completely rebuilds skin tissue, erases deep wrinkles, and restores lost vitality to tired, aging skin.' 
+        },
+        active_ingredients: [
+            { name: 'Pure Retinol', concentration: 'Active | فعال', role: { ar: 'تحفيز تجدد الخلايا وتقشير دقيق.', en: 'Stimulating cell turnover and micro-exfoliation.' } },
+            { name: 'NCTF Complex', concentration: 'Double Dose | جرعة مضاعفة', role: { ar: 'تغذية الخلايا بـ 50 مكوناً نشطاً.', en: 'Nourishing cells with 50 active ingredients.' } },
+            { name: 'Cross-linked HA', concentration: 'Plumping | ممتلئ', role: { ar: 'ترطيب عميق طويل الأمد.', en: 'Deep long-lasting hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً (بسبب الريتينول).', en: 'Once daily PM (due to retinol).' },
+        step_in_routine: { ar: 'السيروم الليلي المجدد.', en: 'Nighttime renewing serum.' },
+        routine_step_number: 2,
+        application: { ar: 'توضع بضع قطرات على وجه نظيف وجاف قبل الكريم الليلي.', en: 'Apply a few drops to a clean, dry face before night cream.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات AHA/BHA في نفس الوقت.', 'فيتامين C الصافي.'], en: ['AHA/BHA peels simultaneously.', 'Pure Vitamin C.'] }, 
+            best_mixed_with: { ar: ['كريم Sleep & Peel.', 'المرطبات الغنية (Ceramides).'], en: ['Sleep & Peel cream.', 'Rich moisturizers (Ceramides).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشيخوخة المتقدمة، الجلد السميك المتجعد، بهتان البشرة الشديد.', en: 'Advanced aging, thick wrinkled skin, and severe skin dullness.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'يُمنع للحوامل بسبب وجود الريتينول. يجب استخدام واقي شمس صباحاً.', en: 'Contraindicated for pregnancy due to Retinol. Sunscreen is mandatory in the AM.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (21): فيلورجا (واقيات الشمس وعلاجات التوحيد والتفتيح)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['photo_activated_tech'] = {
+    title: { ar: 'تقنية التنشيط الضوئي ☀️', en: 'Photo-Activated Technology ☀️' },
+    desc: { 
+        ar: 'تقنية مبتكرة تُفعل مضادات الأكسدة القوية بمجرد تعرض البشرة لأشعة الشمس، لتوفير حماية بيولوجية عالية وحماية الكولاجين من التكسر أثناء التعرض للأشعة.', 
+        en: 'An innovative technology that activates powerful antioxidants upon exposure to sunlight, providing high biological protection and shielding collagen from degradation during UV exposure.' 
+    }
+};
+
+glossaryDict['cystoseira_extract'] = {
+    title: { ar: 'مستخلص طحلب سيستوسيرا (Cystoseira) 🌊', en: 'Cystoseira Extract 🌊' },
+    desc: { 
+        ar: 'طحلب بحري قوي يُعرف باسم (طحلب قوس قزح)، يثبط إنزيم التيروزيناز ويمنع تنشيط الخلايا الصبغية، مما يجعله فعالاً جداً في توحيد لون البشرة وتقليل البقع.', 
+        en: 'A potent marine algae known as (Rainbow Algae) that inhibits tyrosinase and prevents melanocyte activation, making it highly effective in evening skin tone and reducing spots.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [21] FILORGA UV-BRONZE FACE SUN FLUID SPF 50+ 40 ML
+deepProductsList.push({
+    id: 'fil_uv_bronze_face', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
+    name: { ar: 'يو في-برونز للوجه SPF 50+ (واقي شمس وتجاعيد)', en: 'UV-Bronze Face Sun Fluid SPF 50+ Anti-Aging' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية قصوى (UVA/UVB/IR) باستخدام فلاتر فيزيائية وكيميائية، مع <span class="glossary-term" onclick="openGlossary(\'photo_activated_tech\')">تقنية التنشيط الضوئي</span> التي تطلق مضادات أكسدة قوية تحت أشعة الشمس لحماية الـ DNA.', 
+            en: 'Provides supreme protection (UVA/UVB/IR) using physical & chemical filters, with <span class="glossary-term" onclick="openGlossary(\'photo_activated_tech\')">Photo-Activated Tech</span> releasing potent antioxidants under sunlight to protect DNA.' 
+        },
+        patient_benefit: { 
+            ar: 'واقي شمس مضاد للشيخوخة؛ يمنع التصبغات، يقلل التجاعيد الناتجة عن الشمس، ولا يترك ملمساً دهنياً أو لزجاً.', 
+            en: 'Anti-aging sunscreen; prevents pigmentation, reduces sun-induced wrinkles, and leaves no greasy or sticky feel.' 
+        },
+        active_ingredients: [
+            { name: 'Sulforaphane', concentration: 'Active | فعال', role: { ar: 'مكافحة التجاعيد وعلامات التقدم في السن.', en: 'Combating wrinkles and signs of aging.' } },
+            { name: 'Vitamin PP (Niacinamide)', concentration: 'Soothing | مهدئ', role: { ar: 'منع البقع الداكنة وتوحيد اللون.', en: 'Preventing dark spots and evening tone.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً قبل التعرض للشمس ويُجدد بانتظام.', en: 'Daily before sun exposure and reapply regularly.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (الحماية).', en: 'Final step (Protection).' },
+        routine_step_number: 4,
+        application: { ar: 'يُرج جيداً قبل الاستخدام، ويُوزع بسخاء على الوجه والرقبة.', en: 'Shake well before use, distribute generously over face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الزيوت الثقيلة جداً (لتجنب تكسير الفلاتر).'], en: ['Very heavy oils (to avoid breaking down filters).'] }, 
+            best_mixed_with: { ar: ['سيروم Pigment-Perfect أو Skin Unify.'], en: ['Pigment-Perfect or Skin Unify Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جميع أنواع البشرة التي تحتاج حماية من التصبغات والتجاعيد الضوئية.', en: 'All skin types needing protection against pigmentation and photo-wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام سائل (Fluid) غير مرئي بلمسة نهائية غير لامعة (Matte).', en: 'Invisible fluid texture with a matte finish.' }
+    }
+});
+
+// [22] FILORGA UV-DEFENCE ANTI AGING / DARK SPOTS SPF 50 + 40 ML
+deepProductsList.push({
+    id: 'fil_uv_defence_50', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
+    name: { ar: 'يو في-ديفينس SPF 50+ (مكافحة التصبغات)', en: 'UV-Defence Anti-Aging & Dark Spots SPF 50+' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف بشكل خاص البقع الداكنة والتجاعيد مع حماية عالية جداً من الأشعة. يدمج خلاصة (Hop) لتنظيم الميلانين، و NCTF لترميم الجلد المتضرر.', 
+            en: 'Specifically targets dark spots and wrinkles with very high UV protection. Integrates Hop extract to regulate melanin, and NCTF to repair damaged skin.' 
+        },
+        patient_benefit: { 
+            ar: 'الواقي المثالي بعد جلسات الليزر أو التقشير في العيادة. يمنع التصبغ الالتهابي (PIH) ويهدئ البشرة.', 
+            en: 'The ideal sunscreen post-clinic laser or peeling sessions. Prevents Post-Inflammatory Hyperpigmentation (PIH) and soothes skin.' 
+        },
+        active_ingredients: [
+            { name: 'Sun Filters + Vitamin E', concentration: 'SPF 50+', role: { ar: 'حماية شاملة ضد الأشعة والأكسدة.', en: 'Comprehensive protection against UV and oxidation.' } },
+            { name: 'Hop Extract', concentration: 'Anti-Pigment | مضاد تصبغ', role: { ar: 'منع تكون البقع الداكنة وتقليل حجمها.', en: 'Preventing dark spots and reducing their size.' } },
+            { name: 'Brown Algae Extract', concentration: 'Soothing | مهدئ', role: { ar: 'ترطيب عميق وتهدئة التهيج.', en: 'Deep hydration and soothing irritation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً في الصباح.', en: 'Daily in the AM.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (واقي شمس علاجي).', en: 'Final step (Therapeutic sunscreen).' },
+        routine_step_number: 4,
+        application: { ar: 'يوضع على الوجه والرقبة وظهر اليدين.', en: 'Apply to face, neck, and back of the hands.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Neocica (للعناية بعد الإجراءات).'], en: ['Neocica cream (for post-procedure care).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الوقاية من الكلف، آثار الحبوب الداكنة، والبشرة بعد الإجراءات الجلدية (الليزر/التقشير).', en: 'Melasma prevention, dark acne marks, and post-dermatological procedures (laser/peel).' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام ذوباني سهل التوزيع ولا يترك أثراً أبيض.', en: 'Melting texture easy to distribute with no white cast.' }
+    }
+});
+
+// [23] FILORGA SKIN UNIFY INTENSIVE ILLUMINATING EVEN SKIN TONE SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_skin_unify_serum', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'سكين-يونيفاي إنتينسيف (سيروم التوحيد والإشراقة)', en: 'Skin Unify Intensive Illuminating Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'مستوحى من 3 تقنيات طبية (الليزر، التقشير، والميديكال ستروبينج). يعتمد على فيتامين C، <span class="glossary-term" onclick="openGlossary(\'cystoseira_extract\')">طحلب سيستوسيرا</span>، والجبريدين لتقليل البقع، وحمض الهيالورونيك للإشراقة الممتلئة.', 
+            en: 'Inspired by 3 medical techniques (Laser, Peeling, Medical Strobing). Relies on Vit C, <span class="glossary-term" onclick="openGlossary(\'cystoseira_extract\')">Cystoseira algae</span>, and Glabridin to reduce spots, and HA for plumping radiance.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل بشكل جذري من التصبغات الداكنة، يوحد لون البشرة، ويعكس الضوء ليعطي تأثيراً مضيئاً يشبه إضاءة الاستوديو.', 
+            en: 'Radically reduces dark pigmentation, evens skin tone, and reflects light to give a luminous, studio-lighting effect.' 
+        },
+        active_ingredients: [
+            { name: 'Vitamin C + Glabridin', concentration: 'Core Actives | أساسي', role: { ar: 'تثبيط تصنيع الميلانين وتفتيح اللون.', en: 'Inhibiting melanin synthesis and brightening tone.' } },
+            { name: 'Cystoseira Algae Extract', concentration: 'Active | فعال', role: { ar: 'منع انتقال الصبغة للخلايا السطحية.', en: 'Preventing pigment transfer to surface cells.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Plumping | ممتلئ', role: { ar: 'ترطيب عميق لعكس الضوء بنضارة.', en: 'Deep hydration to reflect light with radiance.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'سيروم التفتيح الأساسي.', en: 'Core brightening serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوزع على وجه ورقبة نظيفين. يُدلك بلطف لتنشيط المكونات.', en: 'Distribute on clean face and neck. Massage gently to activate ingredients.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات الأحماض القوية جداً (تجنباً للتحسس).'], en: ['Very strong acid exfoliants (to avoid sensitization).'] }, 
+            best_mixed_with: { ar: ['كريم Skin Unify Cream.'], en: ['Skin Unify Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البقع الداكنة، عدم تجانس اللون، والبشرة الباهتة التي تفتقر للإضاءة.', en: 'Dark spots, uneven tone, and dull skin lacking luminosity.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'قوام سائل مع جزيئات لؤلؤية دقيقة تعكس الضوء.', en: 'Fluid texture with fine pearlescent particles that reflect light.' }
+    }
+});
+
+// [24] FILORGA SKIN UNIFY ILLUMINATING EVEN SKIN TONE CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_skin_unify_cream', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'سكين-يونيفاي كريم (كريم التوحيد والإشراقة)', en: 'Skin Unify Illuminating Even Tone Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على نفس المكونات النشطة للسيروم (Vit C، عرق السوس، طحلب قوس قزح) ولكن في قاعدة كريمية مرطبة تعزز تماسك الجلد وتحبس المواد النشطة لفعالية ممتدة.', 
+            en: 'Contains the same active ingredients as the serum (Vit C, Licorice, Rainbow Algae) but in a hydrating cream base that enhances skin cohesion and locks actives for extended efficacy.' 
+        },
+        patient_benefit: { 
+            ar: 'يرطب البشرة بعمق، يمنع ظهور تصبغات جديدة، ويعطي لمسة نهائية ناعمة كالحرير ومضيئة.', 
+            en: 'Deeply hydrates skin, prevents new pigmentation, and provides a silky, luminous finish.' 
+        },
+        active_ingredients: [
+            { name: 'Core Brightening Complex', concentration: 'Active | فعال', role: { ar: 'تقليل البقع وتوحيد لون البشرة.', en: 'Reducing spots and evening skin tone.' } },
+            { name: 'Optical Blurring Agents', concentration: 'Cosmetic | تجميلي', role: { ar: 'تمويه بصري للعيوب فور الاستخدام.', en: 'Optical blurring of flaws upon application.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم الترطيب والتفتيح.', en: 'Hydrating and brightening cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع بعد السيروم على كامل الوجه والرقبة.', en: 'Apply after serum to the entire face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Skin Unify Intensive.', 'واقي شمس في الصباح.'], en: ['Skin Unify Intensive Serum.', 'Sunscreen in the AM.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'اللون غير الموحد، البقع البنية، واحتياج البشرة للترطيب مع التفتيح.', en: 'Uneven tone, brown spots, and skin needing hydration with brightening.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'قوام كريمي غني ومريح، ممتاز كقاعدة للمكياج.', en: 'Rich and comforting cream texture, excellent as a makeup base.' }
+    }
+});
+
+// [25] FILORGA SKIN UNIFY RADIANCE ILLUMINATING PERFECTING FLUID 15 ML
+deepProductsList.push({
+    id: 'fil_skin_unify_radiance', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'سكين-يونيفاي راديانس (سائل الإضاءة الموضعي)', en: 'Skin Unify Radiance Perfecting Fluid' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'مستحضر هجين (عناية + تجميل). يدمج فوائد التفتيح لمركب (Skin Unify) مع لآلئ دقيقة متقزحة (Iridescent pearls) تعمل كـ (Highlighter) سائل لتسليط الضوء على نقاط الجمال.', 
+            en: 'Hybrid product (Care + Makeup). Integrates brightening benefits of (Skin Unify) complex with iridescent micro-pearls acting as a liquid Highlighter to accentuate beauty points.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج التصبغات على المدى الطويل، ويوفر إضاءة فورية (Glow) للأماكن البارزة في الوجه مثل عظام الخد وقوس كيوبيد.', 
+            en: 'Treats pigmentation long-term, and provides instant illumination (Glow) to prominent facial areas like cheekbones and Cupid\'s bow.' 
+        },
+        active_ingredients: [
+            { name: 'Vitamin C + Licorice', concentration: 'Active | فعال', role: { ar: 'تفتيح علاجي مستمر.', en: 'Continuous therapeutic brightening.' } },
+            { name: 'Iridescent Pearls', concentration: 'High | عالي', role: { ar: 'انعكاس ضوئي فوري.', en: 'Instant light reflection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً (أو قبل المناسبات).', en: 'Morning (or before events).' },
+        step_in_routine: { ar: 'اللمسة النهائية (فوق المكياج أو الكريم).', en: 'Final touch (over makeup or cream).' },
+        routine_step_number: 4,
+        application: { ar: 'يُربت على المناطق البارزة (عظام الخد، جسر الأنف، قوس الشفاه).', en: 'Dab onto prominent areas (cheekbones, nose bridge, lip bow).' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يُنصح بتوزيعه على كامل الوجه لتجنب اللمعان المفرط.'], en: ['Not recommended for full face to avoid excessive shine.'] }, 
+            best_mixed_with: { ar: ['كريمات الأساس لزيادة نضارتها.'], en: ['Foundations to increase their radiance.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة، الرغبة في إضاءة تجميلية مع فائدة علاجية.', en: 'Dull skin, desire for cosmetic illumination with therapeutic benefit.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام سائل جداً. يأتي بأنبوبة دقيقة للاستخدام الموضعي.', en: 'Very fluid texture. Comes in a precision tube for localized application.' }
+    }
+});
+
+// [26] FILORGA PIGMENT WHITE CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_pigment_white_cream', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'بيجمنت-وايت كريم (كريم التفتيح متعدد المفعول)', en: 'Pigment-White Multi-Action Brightening Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف 3 ألوان من التصبغات: البقع الداكنة (بواسطة الهيكسيل ريزورسينول وفيتامين سي)، الإحمرار (بواسطة فيتامين B3 ليخفف الالتهاب)، والبهتان الأصفر/الرمادي (عن طريق مستخلصات تقشير نباتية).', 
+            en: 'Targets 3 color irregularities: Dark spots (via Hexylresorcinol & Vit C), Redness (via Vit B3 to reduce inflammation), and Yellow/Gray dullness (via plant exfoliating extracts).' 
+        },
+        patient_benefit: { 
+            ar: 'يعيد بناء لون البشرة بالكامل ليكون نقياً وموحداً، يعالج آثار الحبوب الحمراء والبنية، ويوفر ترطيباً مكثفاً.', 
+            en: 'Completely reconstructs skin tone to be pure and even, treats red and brown acne marks, and provides intense hydration.' 
+        },
+        active_ingredients: [
+            { name: 'Hexylresorcinol + Vit C', concentration: 'High | عالي', role: { ar: 'تدمير البقع البنية ومنع التصبغ.', en: 'Destroying brown spots and preventing pigmentation.' } },
+            { name: 'Vitamin B3 (Niacinamide)', concentration: 'Active | فعال', role: { ar: 'تسكين الاحمرار وتقوية الحاجز.', en: 'Soothing redness and strengthening barrier.' } },
+            { name: 'NCTF Complex', concentration: 'Revitalizing | مجدد', role: { ar: 'تجديد جودة ونقاء البشرة.', en: 'Renewing skin quality and purity.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم الترطيب العلاجي.', en: 'Therapeutic hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع على الوجه والرقبة بعد التنظيف والسيروم.', en: 'Distribute over face and neck after cleansing and serum.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التعرض للشمس دون حماية قوية.'], en: ['Sun exposure without strong protection.'] }, 
+            best_mixed_with: { ar: ['سيروم Pigment-Perfect.', 'واقي شمس UV-Defence.'], en: ['Pigment-Perfect Serum.', 'UV-Defence Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البقع المختلطة (حمراء وبنية)، الكلف، بهتان البشرة وعدم صفائها.', en: 'Mixed spots (red and brown), melasma, dull and unclear skin.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'تركيبة غنية ومريحة ومناسبة لتفتيح الوجه بأمان.', en: 'Rich, comforting formula suitable for safe facial brightening.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (22): فيلورجا (كريمات الترميم، التغذية الشاملة، والشد الليلي)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. المنتجات العميقة (Deep Products) ---
+
+// [27] FILORGA NEOCICA REPAIR CREAM 40 ML (مع باقة العرض)
+deepProductsList.push({
+    id: 'fil_neocica_repair', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
+    name: { ar: 'نيوسيكا (كريم الترميم المهدئ)', en: 'Neocica Universal Repair Care' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'مصمم خصيصاً للتعافي بعد الإجراءات التجميلية. يعتمد على ببتيد محفز للكولاجين مع السكر الرامنويدي (Rhamnose) لتهدئة الالتهاب فوراً وتسريع إعادة بناء البشرة المتضررة.', 
+            en: 'Designed specifically for post-aesthetic recovery. Relies on a collagen-boosting peptide with Rhamnose sugar to instantly soothe inflammation and accelerate the rebuilding of damaged skin.' 
+        },
+        patient_benefit: { 
+            ar: 'يهدئ حرقان الجلد وتهيجه فوراً، يسرع من شفاء الخدوش وجلسات الليزر/التقشير، ويمنع تكون الندبات.', 
+            en: 'Instantly soothes skin burning and irritation, accelerates healing of scratches and laser/peel sessions, and prevents scarring.' 
+        },
+        active_ingredients: [
+            { name: 'Rhamnose Complex', concentration: 'Active | فعال', role: { ar: 'تسكين الاحمرار وتقليل الالتهاب.', en: 'Soothing redness and reducing inflammation.' } },
+            { name: 'Collagen Precursor Peptide', concentration: 'Repairing | مرمم', role: { ar: 'تحفيز بناء الأنسجة الجديدة.', en: 'Stimulating new tissue synthesis.' } },
+            { name: 'Hyaluronic Acid + Aloe Vera', concentration: 'Soothing | مهدئ', role: { ar: 'ترطيب عميق وتبريد السطح.', en: 'Deep hydration and surface cooling.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: '3 إلى 6 مرات يومياً على المنطقة المتضررة.', en: '3 to 6 times daily on the affected area.' },
+        step_in_routine: { ar: 'علاج موضعي مكثف.', en: 'Intensive topical treatment.' },
+        routine_step_number: 3,
+        application: { ar: 'يُربت بلطف على المنطقة المعالجة (لا يُفرك بقوة) حتى يمتص تماماً.', en: 'Dab gently on the treated area (do not rub harshly) until fully absorbed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أي مقشرات أو ريتينول أو فيتامين سي خلال فترة التعافي.'], en: ['Any exfoliants, retinol, or Vit C during the recovery period.'] }, 
+            best_mixed_with: { ar: ['واقي شمس UV-Defence.'], en: ['UV-Defence Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'بعد حقن الفيلر/البوتوكس، بعد الليزر، التقشير الكيميائي، حروق الشمس، والتهابات الحلاقة.', en: 'Post-filler/botox injections, post-laser, chemical peels, sunburns, and shaving rashes.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام "ضمادة" خفيف ومريح لا يترك أثراً دهنياً.', en: 'Comfortable "bandage" texture that leaves no greasy residue.' }
+    }
+});
+
+// [28] FILORGA GLOBAL-REPAIR ADVANCED CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_global_repair_advanced', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
+    name: { ar: 'جلوبال-ريبير أدفانسد (كريم التغذية المتطورة)', en: 'Global-Repair Advanced Youth Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'كريم مضاد للشيخوخة الفائقة يعتمد على تركيبة (Intensive Repairing Factors) المكونة من 3 مغذيات (سيراميدات، أوميجا، فيتامينات) و مركب ببتيدي متطور يعمل على إصلاح طبقة الدهون وإعادة كثافة الجلد.', 
+            en: 'Supreme anti-aging cream based on (Intensive Repairing Factors) consisting of 3 nutrients (Ceramides, Omegas, Vitamins) and an advanced peptide complex to repair the lipid layer and redensify skin.' 
+        },
+        patient_benefit: { 
+            ar: 'يغذي البشرة الناضجة والجافة جداً، يصحح علامات التقدم بالسن الـ 10 (الجفاف، التجاعيد العميقة، الترهل، البهتان، تفاوت اللون).', 
+            en: 'Nourishes mature and very dry skin, corrects the 10 signs of aging (dehydration, deep wrinkles, sagging, dullness, uneven tone).' 
+        },
+        active_ingredients: [
+            { name: 'Ceramides + Omegas + Vitamins', concentration: 'High | عالي', role: { ar: 'ترميم الحاجز الجلدي وتغذية عميقة.', en: 'Skin barrier repair and deep nourishment.' } },
+            { name: 'Peony Extract', concentration: 'Active | فعال', role: { ar: 'نحت ملامح الوجه واستعادة الحجم.', en: 'Sculpting facial contours and restoring volume.' } },
+            { name: 'NCTF Complex', concentration: 'Revitalizing | مجدد', role: { ar: 'تجديد الخلايا الشامل.', en: 'Global cellular renewal.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم العناية الفائقة.', en: 'Supreme care cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على الوجه والرقبة ككريم نهاري، أو يمكن وضع طبقة سميكة ليلاً كقناع نوم (Sleeping Mask).', en: 'Apply to face & neck as day cream, or apply a thick layer at night as a Sleeping Mask.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Global-Repair Intensive.'], en: ['Global-Repair Intensive Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الناضجة جداً (فوق 50 عاماً)، الجفاف المزمن، وفقدان مرونة وكثافة الوجه.', en: 'Very mature skin (50+), chronic dryness, and loss of facial elasticity and density.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غني جداً يذوب في الجلد ليتركه مخملياً.', en: 'Ultra-rich texture that melts into the skin leaving it velvety.' }
+    }
+});
+
+// [29] FILORGA NCTF (NCEF) REVERSE MAT FLUID 50 ML
+deepProductsList.push({
+    id: 'fil_ncef_reverse_mat', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF-ريفرس مات فلويد (سائل التجديد المطفي)', en: 'NCEF-Reverse Mat Supreme Multi-Correction Fluid' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يقدم نفس قوة <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> وحمض الهيالورونيك الموجودة في كريم ريفرس العادي، ولكن بتركيبة معززة بمستخلص شجرة (Enantia chlorantha) لتقليص المسام والتحكم في الإفرازات الدهنية.', 
+            en: 'Delivers the same <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> and HA power as the regular Reverse cream, but enriched with (Enantia chlorantha) extract to shrink pores and control sebum production.' 
+        },
+        patient_benefit: { 
+            ar: 'يجدد خلايا البشرة ويعالج التجاعيد بقوة الميزوثيرابي، مع الحفاظ على مظهر مطفي (Matte) خالٍ من اللمعان طوال اليوم.', 
+            en: 'Renews skin cells and treats wrinkles with mesotherapy power, while maintaining a shine-free, matte look all day.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF + HA + Collagen', concentration: 'High | عالي', role: { ar: 'تجديد، امتلاء، وشد.', en: 'Renewal, plumping, and firming.' } },
+            { name: 'Enantia Chlorantha + Oleanolic Acid', concentration: 'Mattifying | مزيل لمعان', role: { ar: 'تقليص المسام وتخفيض الزهم.', en: 'Pore shrinking and sebum reduction.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم معالج (سائل مطفي).', en: 'Treatment cream (Matte fluid).' },
+        routine_step_number: 3,
+        application: { ar: 'يُوزع على وجه نظيف، مثالي كأساس للمكياج للبشرة الدهنية.', en: 'Distribute on clean face, ideal as a makeup base for oily skin.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الزيوت الإضافية.'], en: ['Additional oils.'] }, 
+            best_mixed_with: { ar: ['سيروم Age-Purify.', 'NCEF Shot.'], en: ['Age-Purify Serum.', 'NCEF Shot.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد، الترهل، البشرة المختلطة إلى الدهنية، والمسام الواسعة اللامعة.', en: 'Wrinkles, sagging, combination to oily skin, and shiny enlarged pores.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام سائل (Fluid) خفيف يمتص فوراً ليترك طبقة بودرية ناعمة.', en: 'Light fluid texture absorbs instantly to leave a soft powdery finish.' }
+    }
+});
+
+// [30] FILORGA SLEEP & LIFT CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_sleep_lift', brandId: 'filorga', familyId: 'lift_structure', brand: 'Filorga',
+    name: { ar: 'سليب آند ليفت (كريم الشد الليلي)', en: 'Sleep & Lift Ultra-Lifting Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يجمع <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">عوامل الشد البلازمية</span> مع حمضين أمينيين مستخلصين من الطحالب الدقيقة لاستعادة مرونة وكثافة الجلد (Skin recovery) خلال فترة التجديد الليلي.', 
+            en: 'Combines <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">Plasmatic Lifting Factors</span> with two amino acids extracted from microalgae to restore skin elasticity and density (Skin recovery) during nighttime regeneration.' 
+        },
+        patient_benefit: { 
+            ar: 'يعمل أثناء النوم لرفع الأنسجة المترهلة وإعادة رسم ملامح الوجه، وتستيقظ المريضة ببشرة مشدودة وممتلئة.', 
+            en: 'Works during sleep to lift sagging tissues and redraw facial contours, patient wakes up with visibly tightened and plumped skin.' 
+        },
+        active_ingredients: [
+            { name: 'Plasmatic Lifting Factors', concentration: 'Core | أساسي', role: { ar: 'نحت الوجه ورفع الجلد.', en: 'Facial sculpting and skin lifting.' } },
+            { name: 'Arginine + PCA (Microalgae)', concentration: 'Active | فعال', role: { ar: 'تعزيز استعادة الكولاجين الليلي.', en: 'Boosting nighttime collagen recovery.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم الليل لشد البشرة.', en: 'Night lifting cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بحركات تصاعدية على الوجه والرقبة.', en: 'Massage with upward strokes on face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Lift-Designer.'], en: ['Lift-Designer Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'ترهل ملامح الوجه، فقدان الحجم، الرقبة المترهلة، والشيخوخة المتقدمة.', en: 'Sagging facial contours, volume loss, sagging neck, and advanced aging.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام بلسمي يغلف البشرة بتأثير الشد.', en: 'Balm-like texture enveloping skin with a tensor effect.' }
+    }
+});
+
+// [31] FILORGA OXYGEN-GLOW CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_oxygen_glow_cream', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-جلو كريم (كريم الإشراقة الفائقة)', en: 'Oxygen-Glow Super-Perfecting Radiance Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستخدم مركب (Super-Skin Boosting Factors) المعتمد على الأكسجين وحمض الهيالورونيك، مع تقنية <span class="glossary-term" onclick="openGlossary(\'photoperfector_hd\')">Photoperfector HD</span>، بالإضافة إلى ببتيد لتصحيح لون البشرة.', 
+            en: 'Uses (Super-Skin Boosting Factors) based on oxygen and HA, with <span class="glossary-term" onclick="openGlossary(\'photoperfector_hd\')">Photoperfector HD</span> tech, plus a color-control peptide.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير السحر الفوري؛ يعطي البشرة إشراقة لؤلؤية طبيعية، يطمس العيوب البصرية، ويرطب بعمق دون أي لمعان دهني.', 
+            en: 'Instant magic effect; gives the skin a natural pearlescent glow, optically blurs flaws, and hydrates deeply without greasy shine.' 
+        },
+        active_ingredients: [
+            { name: 'Oxygen-Booster', concentration: 'Active | فعال', role: { ar: 'تنشيط تنفس الخلايا لإنهاء البهتان.', en: 'Activating cell respiration to end dullness.' } },
+            { name: 'Color-Control Peptide', concentration: 'Color-correcting', role: { ar: 'تجديد خلايا البشرة وتوحيد لونها.', en: 'Skin cell renewal and evening tone.' } },
+            { name: 'Illuminating Micro-particles', concentration: 'Cosmetic | تجميلي', role: { ar: 'توهج فوري وتأثير فلتر طبيعي.', en: 'Instant glow and natural filter effect.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم مرطب منير للوجه.', en: 'Illuminating hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على كامل الوجه كخطوة أخيرة قبل المكياج أو منفرداً.', en: 'Apply to entire face as final step before makeup or alone.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات الثقيلة (تخفي التأثير اللؤلؤي).'], en: ['Heavy moisturizers (hides the pearlescent effect).'] }, 
+            best_mixed_with: { ar: ['Oxygen-Glow Eyes كريم العين.'], en: ['Oxygen-Glow Eyes cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة والمجهدة، عدم توحد السطح، والباحثات عن نضارة وتوهج فوري خالي من المكياج.', en: 'Dull stressed skin, uneven surface, and those seeking an instant makeup-free glow.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لون الكريم وردي لؤلؤي يعزز النضارة البصرية فوراً.', en: 'The cream has a pearlescent pink tint that instantly boosts visual radiance.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (23): فيلورجا (منظفات Skin Prep والماسكات العلاجية)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['melatonin_cx'] = {
+    title: { ar: 'مركب الميلاتونين (Melatonin-CX) 🌙', en: 'Melatonin-CX 🌙' },
+    desc: { 
+        ar: 'مركب قوي ينشط آليات تعافي الجلد الليلية ويحاكي تأثير هرمون النوم (الميلاتونين) على الخلايا، مما يضمن تجدداً عميقاً للبشرة المجهدة أثناء الليل.', 
+        en: 'A potent complex that activates nighttime skin recovery mechanisms, mimicking the cellular effect of the sleep hormone (Melatonin), ensuring deep renewal of stressed skin overnight.' 
+    }
+};
+
+glossaryDict['rhamnose_polysaccharide'] = {
+    title: { ar: 'سكر الرامنوز (Rhamnose Polysaccharide) 🌿', en: 'Rhamnose Polysaccharide 🌿' },
+    desc: { 
+        ar: 'مكون نشط مهدئ بقوة، يخفف التهيج ويوحد لون البشرة فوراً، كما يحفز الخلايا الليفية لإنتاج الكولاجين.', 
+        en: 'A powerfully soothing active ingredient that reduces irritation and instantly evens skin tone, while stimulating fibroblasts to produce collagen.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [32] FILORGA AGE PURIFY CLEAN CLEANSING GEL 150 ML
+deepProductsList.push({
+    id: 'fil_age_purify_clean', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
+    name: { ar: 'إيدج-بيوريفاي كلين (جل الغسول المنقي)', en: 'Age-Purify Clean Smoothing Purifying Cleansing Gel' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (يحترم الحاجز الجلدي)', en: '5.5 (Respects skin barrier)' },
+        mechanism: { 
+            ar: 'يجمع بين <span class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</span> و <span class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</span> في قاعدة تنظيف هلامية. يزيل الشوائب، يقشر الخلايا الميتة بأحماض الفواكه، وينظم الزهم بالزنك.', 
+            en: 'Combines <span class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</span> and <span class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</span> in a gel cleansing base. Removes impurities, exfoliates dead cells with AHAs, and regulates sebum with Zinc.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف البشرة المعرضة للحبوب من البالغين بلطف، يترك الجلد ناعماً وممتلئاً بدلاً من الشعور بالشد والجفاف.', 
+            en: 'Gently cleanses adult blemish-prone skin, leaving it smooth and plump instead of feeling tight and dry.' 
+        },
+        active_ingredients: [
+            { name: 'AHA + Zinc + Peptides', concentration: 'Active | فعال', role: { ar: 'تنظيف عميق، مكافحة تجاعيد وحبوب.', en: 'Deep cleansing, anti-wrinkle & anti-blemish.' } },
+            { name: 'Polysaccharide Matrix', concentration: 'Protecting | حامي', role: { ar: 'منع التصاق البكتيريا المسببة للحبوب.', en: 'Preventing the adhesion of acne-causing bacteria.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى (غسول علاجي).', en: 'First step (Therapeutic cleanser).' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى على بشرة مبللة، يُدلك بلطف، ثم يُشطف جيداً.', en: 'Lather on wet skin, massage gently, then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك الميكانيكي القاسي.'], en: ['Harsh mechanical scrubbing.'] }, 
+            best_mixed_with: { ar: ['سائل Age-Purify Fluid.'], en: ['Age-Purify Fluid.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المختلطة والدهنية التي تعاني من حبوب متأخرة وتجاعيد في آن واحد.', en: 'Combination and oily skin suffering from late-onset acne and wrinkles simultaneously.' },
+        pregnancy_safe: false, sun_sensitivity: false, 
+        notes: { ar: 'قوام جل أخضر خفيف يتحول لرغوة ناعمة.', en: 'Light green gel texture transforming into a soft foam.' }
+    }
+});
+
+// [33] FILORGA SKIN PREP PERFECTING CLEANSING OIL 150 ML
+deepProductsList.push({
+    id: 'fil_skin_prep_oil', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب (زيت التنظيف المثالي)', en: 'Skin Prep Perfecting Cleansing Oil' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'زيت تنظيف غني بأوميجا 6. يعمل بمبدأ "الدهون تذيب الدهون"، فيفكك المكياج المقاوم للماء والدهون المتصلبة داخل المسام، ثم يستحلب بالماء ليُشطف تماماً دون ترك بقايا.', 
+            en: 'Cleansing oil rich in Omega 6. Works on the "like dissolves like" principle, breaking down waterproof makeup and hardened sebum in pores, then emulsifies with water to rinse cleanly without residue.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل أثقل أنواع المكياج (حتى مكياج العين المقاوم للماء) بلطف فائق، ويغذي الجلد ليتركه ناعماً كالحرير.', 
+            en: 'Ultra-gently removes the heaviest makeup (even waterproof eye makeup), nourishing the skin to leave it silky smooth.' 
+        },
+        active_ingredients: [
+            { name: 'Omega 6 (from Plant Oils)', concentration: 'Nourishing | مغذي', role: { ar: 'تذويب الشوائب وتقوية حاجز الجلد.', en: 'Dissolving impurities and strengthening skin barrier.' } },
+            { name: 'Lipophilic Surfactants', concentration: 'Active | فعال', role: { ar: 'التحول إلى مستحلب حليبي عند ملامسة الماء.', en: 'Transforming into a milky emulsion upon contact with water.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مساءً (لإزالة المكياج وواقي الشمس).', en: 'Evening (to remove makeup and SPF).' },
+        step_in_routine: { ar: 'الخطوة الأولى في التنظيف المزدوج.', en: 'First step in Double Cleansing.' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك على بشرة جافة، ثم يضاف قليل من الماء ليصبح حليبياً، ثم يُشطف.', en: 'Massage onto dry skin, add water to emulsify into milk, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الماء قبل وضع الزيت (يجب وضعه على وجه جاف أولاً).'], en: ['Water before oil application (must be applied to a dry face first).'] }, 
+            best_mixed_with: { ar: ['غسول رغوي بعده (Double Cleansing).'], en: ['Foam cleanser afterwards (Double Cleansing).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'إزالة المكياج الثقيل، تنظيف المسام بعمق لجميع أنواع البشرة (بما فيها الدهنية).', en: 'Heavy makeup removal, deep pore cleansing for all skin types (including oily).' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسد المسام (Non-comedogenic).', en: 'Non-comedogenic.' }
+    }
+});
+
+// [34] FILORGA SKIN PREP ENZYMATIC CLEANSING FOAM 150 ML
+deepProductsList.push({
+    id: 'fil_skin_prep_enzymatic_foam', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب (رغوة التنظيف الإنزيمية)', en: 'Skin Prep Enzymatic Cleansing Foam' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'رغوة هوائية تحتوي على إنزيم الباباين (مستخلص البابايا) الذي يهضم البروتينات الميتة على سطح الجلد بلطف، مما يوفر تقشيراً بيولوجياً دقيقاً أثناء التنظيف اليومي.', 
+            en: 'Airy foam containing Papain enzyme (Papaya extract) which gently digests dead surface proteins, providing a micro-biological exfoliation during daily cleansing.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف ويقشر في خطوة واحدة، يعيد الإشراقة للبشرة الباهتة، ويحسن ملمس الجلد دون الحاجة للفرك.', 
+            en: 'Cleanses and exfoliates in one step, restores radiance to dull skin, and refines skin texture without rubbing.' 
+        },
+        active_ingredients: [
+            { name: 'Papain Enzyme', concentration: 'Exfoliating | مقشر', role: { ar: 'إذابة الروابط بين الخلايا الميتة.', en: 'Dissolving bonds between dead cells.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب عميق لمنع جفاف التقشير.', en: 'Deep hydration to prevent peeling dryness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (يُفضل مساءً).', en: 'Once daily (preferably PM).' },
+        step_in_routine: { ar: 'الغسول المقشر.', en: 'Exfoliating cleanser.' },
+        routine_step_number: 1,
+        application: { ar: 'تُضخ الرغوة وتُدلك على وجه مبلل وتترك لثوانٍ ثم تُشطف.', en: 'Pump foam, massage onto wet face, leave for seconds, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات أحماض قوية جداً في نفس الوقت.'], en: ['Very strong acid exfoliants simultaneously.'] }, 
+            best_mixed_with: { ar: ['زيت التنظيف قبله (للتنظيف المزدوج).'], en: ['Cleansing oil beforehand (for Double Cleansing).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة، الملمس الخشن، والبحث عن تجديد سطحي يومي لطيف.', en: 'Dull skin, rough texture, and seeking gentle daily surface renewal.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مناسب للبشرة الحساسة التي لا تتحمل أحماض الفواكه (AHA).', en: 'Suitable for sensitive skin intolerant to Fruit Acids (AHA).' }
+    }
+});
+
+// [35] FILORGA SKIN PREP AHA CLEANSING GEL 150 ML
+deepProductsList.push({
+    id: 'fil_skin_prep_aha_gel', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب (جل التنظيف بأحماض AHA)', en: 'Skin Prep AHA Cleansing Gel' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (للتقشير)', en: 'Acidic (for peeling)' },
+        mechanism: { 
+            ar: 'غسول هلامي نشط يحتوي على مزيج من أحماض ألفا هيدروكسي (AHA) لخفض درجة حموضة السطح مؤقتاً، مما يؤدي إلى تقشير كيميائي يومي يحفز دوران الخلايا.', 
+            en: 'Active gel cleanser containing an AHA blend to temporarily lower surface pH, triggering daily chemical exfoliation that accelerates cell turnover.' 
+        },
+        patient_benefit: { 
+            ar: 'يصقل سطح البشرة، يوحد اللون، ويقلل من ظهور المسام الواسعة والتصبغات الخفيفة بمرور الوقت.', 
+            en: 'Resurfaces the skin, evens tone, and reduces the appearance of enlarged pores and mild pigmentation over time.' 
+        },
+        active_ingredients: [
+            { name: 'AHA Complex (Glycolic, Lactic, etc.)', concentration: 'Active | فعال', role: { ar: 'تقشير الخلايا الميتة وتجديد السطح.', en: 'Exfoliating dead cells and surface renewal.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'غسول تقشير نشط.', en: 'Active exfoliating cleanser.' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى على بشرة مبللة، يُترك دقيقة لتفعيل الأحماض ثم يُشطف.', en: 'Lather on wet skin, leave for 1 min to activate acids, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول المركز أو التونر الحمضي في نفس الليلة.'], en: ['Concentrated retinol or acid toners on the same night.'] }, 
+            best_mixed_with: { ar: ['مرطبات غنية وواقي شمس في الصباح.'], en: ['Rich moisturizers and SPF in the morning.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام الواسعة، البشرة السميكة، التصبغات السطحية، والخطوط الرفيعة.', en: 'Enlarged pores, thick skin, surface pigmentation, and fine lines.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قد يسبب وخزاً طفيفاً يدل على فعالية الأحماض.', en: 'May cause mild tingling indicating acid activity.' }
+    }
+});
+
+// [36] FILORGA MESO-MASK 50 ML
+deepProductsList.push({
+    id: 'fil_meso_mask', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'ميزو-ماسك (قناع النضارة والتنعيم)', en: 'Meso-Mask Smoothing Radiance Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'أشهر قناع من فيلورجا. يغمر البشرة بمركب <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> مع الكولاجين والإيلاستين، مدعوماً بـ <span class="glossary-term" onclick="openGlossary(\'rhamnose_polysaccharide\')">سكر الرامنوز</span> لتهدئة الاحمرار وتفتيح البشرة فوراً.', 
+            en: 'Filorga\'s most iconic mask. Drenches skin in <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span>, collagen, and elastin, supported by <span class="glossary-term" onclick="openGlossary(\'rhamnose_polysaccharide\')">Rhamnose polysaccharide</span> to instantly soothe redness and brighten.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير سحري فوري؛ يمحو علامات الإرهاق، يملأ الخطوط، يهدئ البشرة، ويمنح الوجه إضاءة وصفاء لا مثيل له.', 
+            en: 'Instant magic effect; erases signs of fatigue, plumps lines, soothes skin, and grants unparalleled facial luminosity and clarity.' 
+        },
+        active_ingredients: [
+            { name: 'Rhamnose Polysaccharide', concentration: 'Soothing | مهدئ', role: { ar: 'توحيد اللون وتقليل التهيج.', en: 'Evening tone and reducing irritation.' } },
+            { name: 'NCEF + Collagen + Elastin', concentration: 'High | عالي', role: { ar: 'تجديد الخلايا وشد البشرة المترهلة.', en: 'Cell renewal and tightening sagging skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة إلى مرتين أسبوعياً.', en: 'Once to twice a week.' },
+        step_in_routine: { ar: 'عناية أسبوعية مكثفة.', en: 'Intensive weekly care.' },
+        routine_step_number: 2,
+        application: { ar: 'توضع طبقة سخية على الوجه، الرقبة، ومحيط العين. يُترك 15-30 دقيقة ثم يُزال بقطن مبلل.', en: 'Apply a generous layer to face, neck, and eye contour. Leave for 15-30 mins, then remove with a damp cotton pad.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['التطبيق قبل المناسبات للحصول على تأثير فلاش (Flash effect).'], en: ['Application before events for a flash effect.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المجهدة جداً، البهتان، الخطوط التعبيرية، والبحث عن نضارة فورية قبل المناسبات.', en: 'Highly stressed skin, dullness, expression lines, and seeking instant pre-event radiance.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام كريمي غني ومريح جداً. يمكن وضعه حول العين بأمان.', en: 'Rich and very comforting creamy texture. Safe to apply around the eyes.' }
+    }
+});
+
+// [37] FILORGA NCEF NIGHT MASK 50 ML
+deepProductsList.push({
+    id: 'fil_ncef_night_mask', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF نايت ماسك (قناع النوم المجدد)', en: 'NCEF-Night Mask Supreme Multi-Correction' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'علاج ليلي فائق يدمج تركيز حقن الميزوثيرابي <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> مع مركب <span class="glossary-term" onclick="openGlossary(\'melatonin_cx\')">Melatonin-CX</span> الذي يسرع عمليات الترميم الليلي الخلوي، بالإضافة إلى حمض الهيالورونيك والكولاجين للامتلاء.', 
+            en: 'Supreme night treatment integrating meso-injection <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> concentration with <span class="glossary-term" onclick="openGlossary(\'melatonin_cx\')">Melatonin-CX</span> complex that accelerates cellular night repair, plus HA and collagen for plumping.' 
+        },
+        patient_benefit: { 
+            ar: 'يعوض نقص النوم (8 ساعات من النوم في قناع). تستيقظ المريضة ببشرة مشدودة، نضرة، مرتاحة تماماً، والتجاعيد أقل وضوحاً بشكل ملحوظ.', 
+            en: 'Compensates for sleep deprivation (8 hours of sleep in a mask). Patient wakes up with tightened, radiant, fully rested skin, and visibly reduced wrinkles.' 
+        },
+        active_ingredients: [
+            { name: 'Melatonin-CX', concentration: 'Recovery | تعافي', role: { ar: 'تنشيط هرمونات التعافي الليلي.', en: 'Activating nighttime recovery hormones.' } },
+            { name: 'NCEF Complex', concentration: 'Supreme | فائق', role: { ar: 'تجديد الخلايا أثناء النوم.', en: 'Cell renewal during sleep.' } },
+            { name: 'Red Indigo Extract', concentration: 'Detox', role: { ar: 'إزالة الإجهاد والسموم المتراكمة.', en: 'Eliminating stress and accumulated toxins.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً، أو 3 مرات أسبوعياً كعلاج مكثف.', en: 'Daily, or 3 times a week as an intensive treatment.' },
+        step_in_routine: { ar: 'الخطوة الليلية الأخيرة (يترك حتى الصباح).', en: 'Last PM step (leave on until morning).' },
+        routine_step_number: 4,
+        application: { ar: 'توضع طبقة رقيقة على وجه نظيف (ومحيط العين). لا يشطف. يترك طوال الليل.', en: 'Apply a thin layer to clean face (and eye contour). Do not rinse. Leave on overnight.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الكريمات الليلية الثقيلة الأخرى (استخدمه كبديل لها).'], en: ['Other heavy night creams (use as an alternative).' ] }, 
+            best_mixed_with: { ar: ['سيروم NCEF Intensive قبله.'], en: ['NCEF Intensive Serum beforehand.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'ليالي السهر، الإرهاق الشديد، التجاعيد، والبهتان الصباحي.', en: 'Sleepless nights, severe fatigue, wrinkles, and morning dullness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام جل مغلف سريع الامتصاص، لا يلوث الوسادة.', en: 'Enveloping quick-absorbing gel texture, does not stain the pillow.' }
+    }
+});
+
+// [38] FILORGA OXYGEN-GLOW MASK 75 ML
+deepProductsList.push({
+    id: 'fil_oxygen_glow_mask', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-جلو ماسك (قناع الإشراقة الفورية)', en: 'Oxygen-Glow Super-Perfecting Express Mask' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'قناع سريع المفعول يدمج مركب تعزيز الأكسجين مع حمض الهيالورونيك وإنزيم L مزيل للسموم، بالإضافة إلى مقشرات دقيقة نشطة (Gluconolactone) لتوحيد السطح فوراً.', 
+            en: 'Express action mask integrating Oxygen booster complex with HA and detox L-enzyme, plus active micro-exfoliants (Gluconolactone) to instantly even the surface.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج البشرة الباهتة والمتعبة في 10 دقائق فقط؛ يمنح توهجاً فورياً، يملأ الجلد، ويضيق المسام، لتبدو البشرة خالية من العيوب.', 
+            en: 'Treats dull and tired skin in just 10 mins; grants an instant glow, plumps the skin, and tightens pores, for a flawless complexion.' 
+        },
+        active_ingredients: [
+            { name: 'Super-Skin Boosting Factors', concentration: 'Active | فعال', role: { ar: 'ضخ الأكسجين والترطيب.', en: 'Pumping oxygen and hydration.' } },
+            { name: 'Gluconolactone (PHA) + Papaya', concentration: 'Peeling | تقشير', role: { ar: 'إزالة الخلايا الميتة لنضارة فورية.', en: 'Removing dead cells for instant radiance.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: '1 إلى 3 مرات أسبوعياً.', en: '1 to 3 times a week.' },
+        step_in_routine: { ar: 'قناع فلاش للوجه.', en: 'Flash face mask.' },
+        routine_step_number: 2,
+        application: { ar: 'توضع طبقة سميكة على وجه نظيف. يُترك لمدة 10 دقائق ثم يُشطف بقطنة مبللة.', en: 'Apply a thick layer to clean face. Leave for 10 mins, then rinse with a damp cotton pad.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات عنيفة في نفس اليوم.'], en: ['Harsh exfoliants on the same day.'] }, 
+            best_mixed_with: { ar: ['كريم Oxygen-Glow للوجه للحفاظ على النضارة.'], en: ['Oxygen-Glow Face Cream to lock in the radiance.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'بهتان البشرة، المسام الواسعة، الملمس الخشن، والحاجة لنضارة سريعة.', en: 'Dullness, enlarged pores, rough texture, and need for quick radiance.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لون وردي معدني يضفي إضاءة بصرية أثناء وبعد الاستخدام.', en: 'Metallic pink color imparts visual illumination during and after use.' }
+    }
+});
+
+// [39] FILORGA AGE PURIFY MASK 75 ML
+deepProductsList.push({
+    id: 'fil_age_purify_mask', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
+    name: { ar: 'إيدج-بيوريفاي ماسك (قناع التنقية والتجاعيد)', en: 'Age-Purify Double Correction Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (قاعدة طينية)', en: 'Balanced (Clay base)' },
+        mechanism: { 
+            ar: 'قناع من الطين الأبيض (Kaolin) مدعوم بمركبي (Hyaluro-Youth) للتجاعيد و (Dermo-Rescue) للحبوب. ينظف المسام بعمق ويمتص الدهون مع الحفاظ على امتلاء الجلد.', 
+            en: 'White Clay (Kaolin) mask powered by (Hyaluro-Youth) for wrinkles and (Dermo-Rescue) for blemishes. Deeply cleanses pores and absorbs sebum while keeping skin plump.' 
+        },
+        patient_benefit: { 
+            ar: 'يمتص اللمعان والدهون فوراً، ينظف الرؤوس السوداء ويصغر المسام، وفي نفس الوقت يشد البشرة ولا يسبب الجفاف القاسي المعتاد لماسكات الطين.', 
+            en: 'Instantly absorbs shine and sebum, clears blackheads and shrinks pores, while firming the skin without the harsh dryness typical of clay masks.' 
+        },
+        active_ingredients: [
+            { name: 'White Clay (Kaolin)', concentration: 'Purifying | منقي', role: { ar: 'امتصاص الزهم وإزالة سموم المسام.', en: 'Sebum absorption and pore detoxification.' } },
+            { name: 'Micro-peeling Acids + Zinc', concentration: 'Active | فعال', role: { ar: 'علاج الحبوب وتنظيم الإفرازات.', en: 'Treating blemishes and regulating secretions.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Plumping | ممتلئ', role: { ar: 'منع الجفاف وملء الخطوط.', en: 'Preventing dryness and plumping lines.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين أسبوعياً.', en: 'Twice a week.' },
+        step_in_routine: { ar: 'قناع أسبوعي منقي.', en: 'Weekly purifying mask.' },
+        routine_step_number: 2,
+        application: { ar: 'توضع طبقة سميكة على الوجه (خاصة منطقة T-Zone)، يُترك 10 دقائق ثم يُشطف جيداً.', en: 'Apply a thick layer to face (esp. T-Zone), leave 10 mins, then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات كيميائية أو فيزيائية إضافية.'], en: ['Additional chemical or physical scrubs.'] }, 
+            best_mixed_with: { ar: ['سائل Age-Purify Fluid للترطيب بعده.'], en: ['Age-Purify Fluid for hydration afterwards.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام المسدودة، الرؤوس السوداء، اللمعان، وحب الشباب لدى البالغين مع وجود تجاعيد.', en: 'Clogged pores, blackheads, shine, and adult acne with existing wrinkles.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قوام طيني كريمي أخضر لا ينشف بشكل متحجر على الوجه.', en: 'Green creamy clay texture that does not crack or dry rock-hard on the face.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (24): فيلورجا (الإصدارات الحديثة والماسكات الورقية)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['aox_5_complex'] = {
+    title: { ar: 'مركب مضادات الأكسدة الخماسي 🛡️', en: 'AOX 5 Complex 🛡️' },
+    desc: { 
+        ar: 'مزيج جبار من 5 مضادات أكسدة (أستازانثين، إرغوثيونين، فيتامين C، فيتامين E، وفيتامين B3) يحمي البشرة من الإجهاد التأكسدي اليومي ويمنع التدمير المبكر للكولاجين.', 
+        en: 'A powerful blend of 5 antioxidants (Astaxanthin, Ergothioneine, Vit C, Vit E, and Vit B3) protecting the skin from daily oxidative stress and preventing premature collagen destruction.' 
+    }
+};
+
+glossaryDict['neuropeptide_tech'] = {
+    title: { ar: 'تقنية الببتيد العصبي (Neuropeptide) 💉', en: 'Neuropeptide Technology 💉' },
+    desc: { 
+        ar: 'ببتيدات متطورة صُممت لتقليد تأثير (توكسين البوتولينوم/البوتوكس) موضعياً، تعمل على استرخاء التشنجات العضلية الدقيقة المسببة للتجاعيد التعبيرية بدقة متناهية.', 
+        en: 'Advanced peptides designed to topically mimic the effect of (Botulinum toxin/Botox), relaxing micro-muscle spasms that cause expression lines with pinpoint accuracy.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [40] FILORGA TIME FILLER SHOT 15 ML
+deepProductsList.push({
+    id: 'fil_time_filler_shot', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر شوت (حقنة التجاعيد التعبيرية)', en: 'Time-Filler Shot 5XP Expression Lines' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن للجلد', en: 'Skin Balanced' },
+        mechanism: { 
+            ar: 'سيروم موضعي شديد التركيز يعتمد على <span class="glossary-term" onclick="openGlossary(\'neuropeptide_tech\')">الببتيدات العصبية</span> لاسترخاء العضلات، مع سكريات نباتية لتشكيل غشاء يشد الجلد فوراً. يأتي بأداة تطبيق دقيقة (Zamac applicator) تشبه الحقنة لتدليك الخطوط وتبريدها.', 
+            en: 'Highly concentrated topical serum relying on <span class="glossary-term" onclick="openGlossary(\'neuropeptide_tech\')">Neuropeptides</span> to relax muscles, with plant polysaccharides forming an instant tightening film. Comes with a syringe-like Zamac applicator to massage and cool lines.' 
+        },
+        patient_benefit: { 
+            ar: 'يستهدف تجاعيد التعبير الخمسة بدقة (الجبهة، العبسة، قدم الغراب، حول الفم، والرقبة)، يفكك التشنج العضلي وينعم الخطوط خلال 7 أيام دون تجميد الملامح.', 
+            en: 'Precisely targets the 5 expression lines (forehead, frown, crow\'s feet, upper lip, neck), relaxing muscle spasms and smoothing lines in 7 days without freezing features.' 
+        },
+        active_ingredients: [
+            { name: 'Hexapeptide Complex', concentration: 'High Dose | جرعة عالية', role: { ar: 'إرخاء انقباضات العضلات التعبيرية.', en: 'Relaxing expression muscle contractions.' } },
+            { name: 'Marine Ferment', concentration: 'Active | فعال', role: { ar: 'تحسين توتر العضلات ودعم الجلد.', en: 'Improving muscle tone and skin support.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'علاج موضعي قبل السيروم أو الكريم.', en: 'Topical treatment before serum or cream.' },
+        routine_step_number: 2,
+        application: { ar: 'يُطبق مباشرة على الخطوط التعبيرية باستخدام الرأس المعدني البارد، ثم يُدلك بالتربيت.', en: 'Apply directly to expression lines using the cooling metal tip, then dab to absorb.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Time-Filler 5XP لنتيجة متكاملة.'], en: ['Time-Filler 5XP Cream for a complete result.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد التعبيرية العميقة، خطوط الجبهة والعبسة الدائمة، كبديل أو داعم لحقن البوتوكس.', en: 'Deep expression wrinkles, permanent forehead/frown lines, as an alternative or complement to Botox injections.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يوضع على كامل الوجه، مخصص للاستخدام الموضعي فقط (Spot treatment).', en: 'Not for the entire face, intended for targeted spot treatment only.' }
+    }
+});
+
+// [41] FILORGA NCEF REVITALIZE SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_ncef_revitalize_serum', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF ريفيتالايز (سيروم التجديد الحيوي المتطور)', en: 'NCEF-Revitalize Polyrevitalizing Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'النسخة الأحدث والأكثر تطوراً. يدمج تركيزاً عالياً من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> مع مركب إنزيمي يستهدف الخلايا المتشيخة (Senescent cells)، ليعيد تفعيل ديناميكية الجلد وتجديد الأنسجة بشكل شامل.', 
+            en: 'The newest, most advanced version. Integrates a high concentration of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> with an enzyme complex targeting senescent cells, reactivating skin dynamics and globally renewing tissues.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر إشراقة وتماسكاً لا مثيل لهما، ينعم ملمس الجلد، ويوحد لونه، ويعالج علامات التقدم بالسن بشكل أسرع من الإصدارات السابقة.', 
+            en: 'Provides unparalleled radiance and firmness, smooths skin texture, evens tone, and treats aging signs faster than previous editions.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF 10x Concentration', concentration: 'Supreme | فائق', role: { ar: 'تغذية الخلايا وإعادة بناء الأدمة.', en: 'Nourishing cells and rebuilding the dermis.' } },
+            { name: 'Senolytic Enzyme Complex', concentration: 'Active | فعال', role: { ar: 'إزالة الخلايا الهرمة التي تسبب شيخوخة الأنسجة المحيطة.', en: 'Clearing aging cells that cause surrounding tissue aging.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'السيروم الأساسي لمكافحة الشيخوخة.', en: 'Core anti-aging serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على وجه ورقبة نظيفين قبل كريم العناية.', en: 'Apply to clean face and neck before care cream.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم NCEF-Revitalize.'], en: ['NCEF-Revitalize Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'شيخوخة الجلد المتقدمة، الإرهاق الخلوي، البهتان الشديد وضعف نسيج البشرة.', en: 'Advanced skin aging, cellular exhaustion, severe dullness, and poor skin texture.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تركيبة خفيفة جداً تذوب في الجلد لتعطي امتلاءً فورياً.', en: 'Ultra-light melting formula that gives an instant plumping effect.' }
+    }
+});
+
+// [42] FILORGA NCEF REVITALIZE CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_ncef_revitalize_cream', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF ريفيتالايز (كريم التجديد الحيوي المتطور)', en: 'NCEF-Revitalize Polyrevitalizing Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يكمل عمل السيروم؛ يغذي الجلد بعمق بفضل مزيج الزيوت النباتية ومركب <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> المعزز لتماسك الخلايا، ليعمل كدرع واقي ومجدد طوال اليوم.', 
+            en: 'Complements the serum; deeply nourishes the skin via botanical oils and the <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> complex which boosts cell cohesion, acting as a protective and renewing shield all day.' 
+        },
+        patient_benefit: { 
+            ar: 'يقوي حاجز الجلد، يوفر راحة فائقة للبشرة الجافة، ويشد الوجه ليمنح مظهراً شاباً ومتألقاً بفعالية مستمرة.', 
+            en: 'Strengthens the skin barrier, provides ultimate comfort for dry skin, and firms the face for a youthful, radiant look with sustained efficacy.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF Complex', concentration: 'High | عالي', role: { ar: 'محاكاة التأثير المجدد للميزوثيرابي.', en: 'Mimicking the revitalizing effect of mesotherapy.' } },
+            { name: '5 Botanical Oils + Ceramides', concentration: 'Nourishing | مغذي', role: { ar: 'ترميم حاجز الدهون ومنع جفاف الجلد.', en: 'Repairing the lipid barrier and preventing skin dehydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم العناية اليومية المجدد.', en: 'Daily renewing care cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع بلطف على كامل الوجه والرقبة.', en: 'Distribute gently over the entire face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم NCEF Revitalize.'], en: ['NCEF Revitalize Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'فقدان الإشراقة، التجاعيد، الجفاف المصاحب لتقدم العمر، وضعف بنية الجلد.', en: 'Loss of radiance, wrinkles, age-related dryness, and poor skin structure.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام كريمي مريح ومثالي للبشرة العادية إلى الجافة.', en: 'Comforting creamy texture, ideal for normal to dry skin.' }
+    }
+});
+
+// [43] FILORGA HYDRA-AOX [5] SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_hydra_aox5_serum', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-AOX [5] (سيروم مضاد للأكسدة ومجدد)', en: 'Hydra-AOX [5] Intensive Antioxidant Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'سيروم وقائي وعلاجي يعتمد على <span class="glossary-term" onclick="openGlossary(\'aox_5_complex\')">مركب مضادات الأكسدة الخماسي</span> ليحيد 100% من الشوارد الحرة، مدعوماً بحمض الهيالورونيك منخفض الوزن الجزيئي لترطيب عميق.', 
+            en: 'Preventive & therapeutic serum relying on <span class="glossary-term" onclick="openGlossary(\'aox_5_complex\')">AOX 5 Complex</span> to neutralize 100% of free radicals, backed by low molecular weight HA for deep hydration.' 
+        },
+        patient_benefit: { 
+            ar: 'درع يومي متكامل؛ يحمي من الشيخوخة المبكرة (الناتجة عن التلوث والشمس)، يقلص المسام، يقلل الخطوط الرفيعة، ويفجر نضارة الوجه.', 
+            en: 'Comprehensive daily shield; protects against premature aging (from pollution/sun), shrinks pores, reduces fine lines, and explodes facial radiance.' 
+        },
+        active_ingredients: [
+            { name: 'Astaxanthin + Ergothioneine', concentration: 'Super AOX | مضادات فائقة', role: { ar: 'حماية خلوية مطلقة من الإجهاد التأكسدي.', en: 'Absolute cellular protection from oxidative stress.' } },
+            { name: 'Vitamin C + E + B3 (Niacinamide)', concentration: 'Active | فعال', role: { ar: 'تفتيح، تهدئة، وتقوية حاجز الجلد.', en: 'Brightening, soothing, and barrier strengthening.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب وملء السطح.', en: 'Hydrating and surface plumping.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة كل صباح.', en: 'Once every morning.' },
+        step_in_routine: { ar: 'سيروم الحماية الصباحي (مضاد الأكسدة).', en: 'AM protection serum (Antioxidant).' },
+        routine_step_number: 2,
+        application: { ar: 'توضع بضع قطرات على وجه نظيف قبل المرطب وواقي الشمس.', en: 'Apply a few drops to a clean face before moisturizer and SPF.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أحماض تقشير قوية في نفس الروتين الصباحي.', 'مقشرات الإنزيم.'], en: ['Strong peeling acids in the same AM routine.', 'Enzyme exfoliants.'] }, 
+            best_mixed_with: { ar: ['واقي شمس (يعزز مفعول الحماية من الأشعة).'], en: ['Sunscreen (boosts UV protection efficacy).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الوقاية من الشيخوخة، البشرة المعرضة للتلوث الحضري، البهتان، والمسام الواسعة.', en: 'Aging prevention, urban pollution-exposed skin, dullness, and enlarged pores.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لونه البرتقالي الفاتح طبيعي بسبب مادة الأستازانثين.', en: 'Its light orange color is naturally derived from Astaxanthin.' }
+    }
+});
+
+// [44] FILORGA SKIN PREP ENZYMATIC EXFOLIATING CREAM 75 ML
+deepProductsList.push({
+    id: 'fil_skin_prep_enzymatic_cream', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب (كريم التقشير الإنزيمي المزدوج)', en: 'Skin Prep Enzymatic Exfoliating Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن للتقشير', en: 'Balanced for peeling' },
+        mechanism: { 
+            ar: 'يقدم تقشيراً مزدوجاً: ميكانيكي (عن طريق جزيئات الرمل البركاني الدقيقة جداً) وإنزيمي (باستخدام إنزيم الباباين). يزيل الجلد الميت ويفكك الروابط البروتينية القديمة دون تخريش الجلد.', 
+            en: 'Offers dual exfoliation: Mechanical (via ultra-fine volcanic sand particles) and Enzymatic (using Papain enzyme). Removes dead skin and breaks old protein bonds without scratching the skin.' 
+        },
+        patient_benefit: { 
+            ar: 'يصقل نسيج البشرة فوراً لتصبح فائقة النعومة كبشرة الأطفال، يزيل الرؤوس السوداء السطحية، ويعيد الإشراقة الطبيعية.', 
+            en: 'Instantly resurfaces skin texture to become baby-soft, removes superficial blackheads, and restores natural radiance.' 
+        },
+        active_ingredients: [
+            { name: 'Volcanic Sand', concentration: 'Micro-particles | جزيئات دقيقة', role: { ar: 'سنفرة ميكانيكية لطيفة وآمنة.', en: 'Gentle and safe mechanical sanding.' } },
+            { name: 'Papain Enzyme', concentration: 'Biological Exfoliant', role: { ar: 'إذابة الخلايا الميتة كيميائياً/بيولوجياً.', en: 'Chemically/biologically dissolving dead cells.' } },
+            { name: 'Niacinamide', concentration: 'Soothing | مهدئ', role: { ar: 'منع التهيج المصاحب للتقشير.', en: 'Preventing peeling-associated irritation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة إلى مرتين أسبوعياً.', en: 'Once or twice a week.' },
+        step_in_routine: { ar: 'عناية أسبوعية للتقشير (بعد الغسول).', en: 'Weekly exfoliating care (post-cleansing).' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على وجه مبلل، يُدلك بحركات دائرية خفيفة لمدة دقيقة، يُترك دقيقتين إضافيتين للإنزيم، ثم يُشطف.', en: 'Apply to wet face, massage in light circular motions for 1 min, leave for 2 extra mins for enzymes, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف.', 'استخدامه مع مقشرات أحماض (AHA) في نفس الوقت.'], en: ['Harsh rubbing.', 'Using with AHA peels simultaneously.'] }, 
+            best_mixed_with: { ar: ['الترطيب العميق بكريم Hydra-Hyal بعد الشطف.'], en: ['Deep hydration with Hydra-Hyal cream post-rinsing.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تراكم الجلد الميت، الرؤوس السوداء السطحية، الملمس الخشن، واللون الباهت.', en: 'Dead skin accumulation, superficial blackheads, rough texture, and dull tone.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يُفضل تجنب منطقة محيط العين الدقيقة.', en: 'Best to avoid the delicate eye contour area.' }
+    }
+});
+
+// [45] FILORGA UV CELLULAR PROTECT FACE SPF 50+ 40 ML
+deepProductsList.push({
+    id: 'fil_uv_cellular_face', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
+    name: { ar: 'يو في سيلولار بروتيكت (واقي شمس للوجه)', en: 'UV Cellular Protect Face SPF 50+' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية خلوية متقدمة بفضل فلاتر (UVA/UVB) واسعة الطيف، معززة بفيتامين E ومضادات الأكسدة لمنع تدمير الخلايا (Photoaging) والحفاظ على مرونة الجلد في الشمس.', 
+            en: 'Provides advanced cellular protection via broad-spectrum (UVA/UVB) filters, reinforced with Vit E and antioxidants to prevent photoaging and preserve skin elasticity in the sun.' 
+        },
+        patient_benefit: { 
+            ar: 'يحمي من حروق الشمس وظهور البقع الداكنة، ويقاوم تجاعيد الشمس بقوام سائل غير لزج ولا يترك أثراً أبيض.', 
+            en: 'Protects from sunburns and dark spots, resists sun wrinkles with a non-sticky fluid texture leaving zero white cast.' 
+        },
+        active_ingredients: [
+            { name: 'UVA/UVB Sun Filters', concentration: 'SPF 50+', role: { ar: 'درع حماية خارجي عالي الكفاءة.', en: 'High-efficacy external protective shield.' } },
+            { name: 'Vitamin E + Niacinamide', concentration: 'Active | فعال', role: { ar: 'مكافحة الشوارد الحرة وتهدئة الجلد.', en: 'Combating free radicals and soothing skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (يُجدد كل ساعتين في الشمس المباشرة).', en: 'Daily (Reapply every 2h in direct sun).' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (الصباح).', en: 'Last AM step.' },
+        routine_step_number: 4,
+        application: { ar: 'يُرج ويوضع بكمية وفيرة على الوجه والرقبة قبل التعرض للشمس.', en: 'Shake and apply a generous amount to face and neck before sun exposure.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Hydra-AOX 5 قبله لمضاعفة الحماية المضادة للأكسدة.'], en: ['Hydra-AOX 5 Serum beforehand to double antioxidant protection.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الوقاية اليومية، البشرة الحساسة للشمس، والحماية بعد العلاجات التجميلية الخفيفة.', en: 'Daily prevention, sun-sensitive skin, and protection post-mild cosmetic treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره من قبل أطباء الجلد. مقاوم للماء.', en: 'Dermatologically tested. Water-resistant.' }
+    }
+});
+
+// [46] FILORGA UV CELLULAR PROTECT FACE & BODY SPF 50+ 125 ML
+deepProductsList.push({
+    id: 'fil_uv_cellular_body', brandId: 'filorga', familyId: 'sun_care', brand: 'Filorga',
+    name: { ar: 'يو في سيلولار بروتيكت (لوشن للوجه والجسم)', en: 'UV Cellular Protect Face & Body SPF 50+' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'نسخة اقتصادية وذات قوام حليبي (Lotion) مخصصة لحماية مساحات أوسع. توفر نفس الحماية الخلوية لفلاتر الشمس ومضادات الأكسدة مع زيوت مرطبة تمنع جفاف الجسم.', 
+            en: 'An economical, milky (Lotion) version designed for larger areas. Provides the same cellular sun filters and antioxidants with hydrating oils to prevent body dryness.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر حماية عائلية ممتدة (للوجه والجسم)، يرطب الجلد المعرض لحرارة الشمس والمياه، ولا يترك طبقة دهنية مزعجة على الجسم.', 
+            en: 'Provides extended family protection (face/body), hydrates skin exposed to sun heat/water, leaving no annoying greasy film on the body.' 
+        },
+        active_ingredients: [
+            { name: 'Broad Spectrum Filters', concentration: 'SPF 50+', role: { ar: 'حماية شاملة من حروق الشمس.', en: 'Comprehensive protection from sunburns.' } },
+            { name: 'Hyaluronic Acid + Plant Oils', concentration: 'Nourishing | مغذي', role: { ar: 'ترطيب عميق لجلد الجسم الجاف.', en: 'Deep hydration for dry body skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند التعرض للشمس (البحر، المسبح).', en: 'During sun exposure (beach, pool).' },
+        step_in_routine: { ar: 'واقي شمس للجسم.', en: 'Body sunscreen.' },
+        routine_step_number: 4,
+        application: { ar: 'يُدلك على كامل مناطق الجسم المكشوفة، ويُجدد بعد السباحة أو التعرق.', en: 'Massage onto all exposed body areas, reapply after swimming or sweating.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التعرض المباشر للشمس، المصايف، حماية الجسم واليدين.', en: 'Direct sun exposure, holidays, body and hands protection.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'سريع الامتصاص، لا يلتصق بالملابس أو الرمل.', en: 'Fast-absorbing, does not stick to clothes or sand.' }
+    }
+});
+
+// [47] FILORGA LIFT-MASK (SHEET) 14 ML
+deepProductsList.push({
+    id: 'fil_sheet_lift_mask', brandId: 'filorga', familyId: 'lift_structure', brand: 'Filorga',
+    name: { ar: 'ليفت-ماسك (الماسك الورقي للشد الفوري)', en: 'Lift-Mask Ultra-Lifting Sheet Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعتمد على تقنية (Skin-Lifting Technology) وهي أنسجة من البيو-سيليلوز الدقيقة جداً (Bio-cellulose) تلتصق بالبشرة كـ "بشرة ثانية" لتوصيل <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">عوامل الشد البلازمية</span> ومضادات الأكسدة مباشرة للخلايا.', 
+            en: 'Relies on Skin-Lifting Technology: ultra-fine Bio-cellulose tissues that adhere like a "second skin" to deliver <span class="glossary-term" onclick="openGlossary(\'plasmatic_lifting\')">Plasmatic Lifting Factors</span> and antioxidants directly to cells.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير (Lifting) فوري خلال 15 دقيقة؛ يشد ملامح الوجه المترهلة، يملأ البشرة، ويعطي إشراقة وتماسكاً مثالياً قبل المناسبات.', 
+            en: 'Instant Lifting effect in 15 mins; tightens sagging facial contours, plumps the skin, and gives perfect firmness and radiance before events.' 
+        },
+        active_ingredients: [
+            { name: 'Plasmatic Lifting Factors', concentration: 'Intense Dose | جرعة مكثفة', role: { ar: 'شد الجلد المترهل فورياً.', en: 'Instantly tightening sagging skin.' } },
+            { name: 'Sophora Japonica Extract', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'محاربة شيخوخة الخلايا وإعطاء نضارة.', en: 'Fighting cellular aging and granting glow.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: '1 إلى 3 مرات أسبوعياً (أو قبل مناسبة).', en: '1 to 3 times a week (or pre-event).' },
+        step_in_routine: { ar: 'قناع فلاش معالج.', en: 'Flash treatment mask.' },
+        routine_step_number: 2,
+        application: { ar: 'يُفتح القناع، يُزال الغلاف الشبكي، يوضع على الوجه ليطابق الملامح لمدة 15 دقيقة. لا يُشطف، وتُدلك البقايا لتمتص.', en: 'Unfold, remove mesh layer, fit to facial contours for 15 mins. Do not rinse, massage remaining serum into skin.' },
+        layering: { 
+            do_not_mix_with: { ar: ['غسل الوجه بعده (تفقد الفائدة).'], en: ['Washing face afterwards (loses the benefit).'] }, 
+            best_mixed_with: { ar: ['تطبيق المكياج بعده مباشرة لنتيجة خيالية.'], en: ['Applying makeup directly after for a flawless result.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الترهل المفاجئ، التعب، المناسبات الهامة، وفقدان تحديد الوجه.', en: 'Sudden sagging, fatigue, important events, and loss of facial definition.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'الماسك مصمم من مواد طبيعية 100% قابلة للتحلل.', en: 'The mask is designed from 100% natural biodegradable material.' }
+    }
+});
+
+// [48] FILORGA TIME-FILLER MASK (SHEET) 23 G
+deepProductsList.push({
+    id: 'fil_sheet_time_filler_mask', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر ماسك (الماسك الورقي للتجاعيد)', en: 'Time-Filler Mask Super-Smoothing Sheet Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'ماسك من الألياف السوداء (Black Fiber Tech) الغنية بالكربون النشط، مشبع بـ <span class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">ببتيدات الشد</span> والكولاجين لتقليل الخطوط وتقديم تأثير تجميلي لتنعيم سطح البشرة في 15 دقيقة.', 
+            en: 'A Black Fiber Tech mask rich in active carbon, saturated with <span class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">Lifting Peptides</span> and Collagen to reduce lines and provide an aesthetic surface smoothing effect in 15 mins.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير كي (Ironing effect) للتجاعيد السطحية والتعبيرية. يعطي نعومة، يملأ الوجه، ويزيل علامات الإجهاد والخطوط سريعاً.', 
+            en: 'An "ironing effect" for surface and expression wrinkles. Grants smoothness, plumps the face, and rapidly erases signs of fatigue and lines.' 
+        },
+        active_ingredients: [
+            { name: 'Natural Collagen + Hyaluronic Acid', concentration: 'High | عالي', role: { ar: 'ترطيب عميق ونفخ التجاعيد.', en: 'Deep hydration and plumping wrinkles.' } },
+            { name: 'Cellular Renewing Peptides', concentration: 'Active | فعال', role: { ar: 'إرخاء الخطوط وتجديد البشرة.', en: 'Relaxing lines and renewing skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة (قبل المناسبات).', en: 'As needed (pre-events).' },
+        step_in_routine: { ar: 'عناية سريعة للتجاعيد.', en: 'Express wrinkle care.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع القناع الأسود على وجه نظيف ويترك 15 دقيقة. يُدلك السيروم المتبقي ولا يُشطف.', en: 'Apply the black mask to clean face and leave for 15 mins. Massage remaining serum, do not rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Time-Filler لختم العلاج.'], en: ['Time-Filler Cream to seal the treatment.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد الظاهرة، الخطوط الناتجة عن الجفاف والإرهاق، والحاجة لتنعيم فلاشي.', en: 'Visible wrinkles, dehydration/fatigue lines, and the need for flash smoothing.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مريح جداً ويمسك بملامح الوجه بإحكام (Second-skin effect).', en: 'Very comfortable and tightly grips facial contours (Second-skin effect).' }
+    }
+});
+
+// [49] FILORGA HYDRA-FILLER MASK (SHEET) 20 ML
+deepProductsList.push({
+    id: 'fil_sheet_hydra_filler_mask', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-فيلر ماسك (الماسك الورقي للترطيب)', en: 'Hydra-Filler Mask Super-Moisturizing Sheet Mask' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يعتمد على تركيبة الصبار (Aloe Vera) لتلطيف الجلد مع حمض الهيالورونيك المغلف، مشبع في نسيج ورقي مبرد. يشكل حماماً مائياً (Water Bath) للخلايا العطشى في 15 دقيقة.', 
+            en: 'Relies on an Aloe Vera formula to soothe skin with encapsulated HA, saturated in a cooling sheet tissue. Creates a (Water Bath) for thirsty cells in 15 mins.' 
+        },
+        patient_benefit: { 
+            ar: 'إنعاش فوري للبشرة الجافة والباهتة. يعيد لها الامتلاء المائي، يهدئ الاحمرار (خاصة بعد التعرض للشمس)، ويوفر نضارة نديّة (Dewy look).', 
+            en: 'Instant revival for dry, dull skin. Restores its watery plumpness, soothes redness (esp. after sun exposure), and provides a fresh Dewy look.' 
+        },
+        active_ingredients: [
+            { name: 'Hyaluronic Acid', concentration: 'Intense | مكثف', role: { ar: 'ترطيب عميق وحبس للماء.', en: 'Deep hydration and water locking.' } },
+            { name: 'Aloe Vera Extract', concentration: 'Soothing | مهدئ', role: { ar: 'تسكين الحرارة وتقليل التهيج.', en: 'Relieving heat and reducing irritation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين أسبوعياً (أو بعد التعرض للشمس/الإجهاد).', en: 'Twice a week (or post-sun/stress exposure).' },
+        step_in_routine: { ar: 'ماسك الترطيب الطارئ.', en: 'Emergency hydration mask.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع القناع على وجه نظيف لمدة 15 دقيقة. تُدلك البقايا بلطف ولا يشطف بالماء.', en: 'Apply mask to clean face for 15 mins. Massage remnants gently and do not rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['حفظه في الثلاجة لزيادة التأثير المبرد والمهدئ.'], en: ['Store in fridge to boost the cooling/soothing effect.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد المفاجئ، حروق الشمس الخفيفة، الإرهاق، وقبل وضع المكياج لبشرة جافة.', en: 'Sudden severe dryness, mild sunburns, fatigue, and pre-makeup for dry skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يعتبر العلاج المائي الأسرع لإنقاذ البشرة.', en: 'Considered the fastest water-therapy to rescue the skin.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (25): فيلورجا (المكياج العلاجي، البرايمر، وعناية الرموش/الشفاه)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة عائلة جديدة (المكياج العلاجي) ومصطلحات القاموس ---
+
+// تحديث العائلات لإضافة عائلة (Flash-Nude) للمكياج
+let filorgaMakeupBrand = brandsList.find(b => b.id === 'filorga');
+if (filorgaMakeupBrand && !filorgaMakeupBrand.families.find(f => f.id === 'flash_nude')) {
+    filorgaMakeupBrand.families.push({ id: 'flash_nude', name: { ar: 'فلاش-نود (المكياج العلاجي والبرايمر)', en: 'Flash-Nude (Hybrid Makeup & Primers)' } });
+}
+
+glossaryDict['flash_nude_tech'] = {
+    title: { ar: 'تقنية فلاش-نود (Flash-Nude Tech) 🎨', en: 'Flash-Nude Technology 🎨' },
+    desc: { 
+        ar: 'تقنية مكياج متطورة (Pro-perfection) تدمج صبغات دقيقة تندمج مع الجلد (Skin-fusing) مع مكونات نشطة لعلاج البشرة (حمض هيالورونيك ومفتح)، لمنح تأثير "بشرة عارية مثالية" دون الشعور بوجود طبقة مكياج.', 
+        en: 'Advanced Pro-perfection makeup technology integrating skin-fusing micro-pigments with active skincare ingredients (HA & brighteners) for a flawless bare-skin effect without a mask-like feel.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [50] FILORGA FLASH NUDE FLUID (00 & 01) 30 ML
+deepProductsList.push({
+    id: 'fil_flash_nude_fluid', brandId: 'filorga', familyId: 'flash_nude', brand: 'Filorga',
+    name: { ar: 'فلاش-نود فلويد (كريم أساس علاجي SPF 30)', en: 'Flash-Nude Fluid Pro-Perfection Foundation SPF 30' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'مكياج هجين (Skincare + Makeup) يعمل بتقنية <span class="glossary-term" onclick="openGlossary(\'flash_nude_tech\')">Flash-Nude</span> لتغطية العيوب، بينما يعمل حمض الهيالورونيك والهيكسيل ريزورسينول كعلاج يومي لملء التجاعيد وتوحيد التصبغات، مع حماية من الشمس والفلورا البيئية.', 
+            en: 'Hybrid makeup (Skincare + Makeup) using <span class="glossary-term" onclick="openGlossary(\'flash_nude_tech\')">Flash-Nude</span> tech to cover flaws, while HA and Hexylresorcinol provide daily treatment to plump wrinkles and even tone, with SPF and pollution protection.' 
+        },
+        patient_benefit: { 
+            ar: 'يعطي تغطية قابلة للبناء (تأثير طبيعي إلى متوسط)، يصحح العيوب فوراً، ويعالج البشرة على المدى الطويل ليجعلها أكثر صفاءً خالية من المكياج.', 
+            en: 'Provides buildable coverage (natural to medium effect), instantly corrects flaws, and treats the skin long-term to become clearer even bare.' 
+        },
+        active_ingredients: [
+            { name: 'Skin-fusing Micro-pigments', concentration: 'Cosmetic | تجميلي', role: { ar: 'تغطية مثالية بدون تكتل.', en: 'Perfect coverage without caking.' } },
+            { name: 'Hyaluronic Acid + Hexylresorcinol', concentration: 'Active | فعال', role: { ar: 'ملء الخطوط وتفتيح البقع الداكنة.', en: 'Plumping lines and brightening dark spots.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً كبديل لكريم الأساس.', en: 'Daily as a foundation substitute.' },
+        step_in_routine: { ar: 'خطوة المكياج (اللمسة النهائية).', en: 'Makeup step (Final touch).' },
+        routine_step_number: 4,
+        application: { ar: 'يُرج جيداً، ثم يوزع بالأصابع أو بفرشاة المكياج. متوفر بدرجتين 00 (فاتح جداً) و 01 (فاتح/حنطي).', en: 'Shake well, apply with fingers or a brush. Available in shades 00 (very fair) and 01 (fair/medium).' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['بودرة Flash Nude للتثبيت.'], en: ['Flash Nude Powder to set.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'توحيد لون الوجه التجميلي، إخفاء العيوب مع توفير حماية وعلاج مضاد للشيخوخة.', en: 'Cosmetic tone evening, concealing flaws while providing SPF and anti-aging treatment.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تركيبة (Breathable) لا تسد المسام وتسمح بتنفس الجلد.', en: 'Breathable, non-comedogenic formula that lets skin breathe.' }
+    }
+});
+
+// [51] FILORGA FLASH NUDE POWDER 6.2 G
+deepProductsList.push({
+    id: 'fil_flash_nude_powder', brandId: 'filorga', familyId: 'flash_nude', brand: 'Filorga',
+    name: { ar: 'فلاش-نود بودرة (بودرة التثبيت والمثالية)', en: 'Flash-Nude Invisible Pro-Perfection Powder' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'N/A (بودرة)', en: 'N/A (Powder)' },
+        mechanism: { 
+            ar: 'بودرة غير مرئية (Invisible) مزودة بالسيليكا وعوامل طمس (Blurring agents) لامتصاص الزهم وتنعيم المسام، مع حمض الهيالورونيك لمنع تجفاف الجلد كما تفعل البودرة التقليدية.', 
+            en: 'Invisible powder equipped with Silica and blurring agents to absorb sebum and smooth pores, infused with HA to prevent the skin-drying effect of traditional powders.' 
+        },
+        patient_benefit: { 
+            ar: 'تثبت المكياج، تطفئ لمعان الوجه طوال اليوم دون أن تبرز التجاعيد، وتحمي البشرة من التلوث والأشعة الزرقاء بفضل مستخلص عباد الشمس.', 
+            en: 'Sets makeup, mattifies the face all day without highlighting wrinkles, and protects skin from pollution and blue light via Sunflower extract.' 
+        },
+        active_ingredients: [
+            { name: 'Silica + Perfecting Micro-powder', concentration: 'High | عالي', role: { ar: 'امتصاص اللمعان وإخفاء المسام.', en: 'Absorbing shine and blurring pores.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب السطح ومنع التشقق.', en: 'Surface hydration and preventing caking.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً فوق المكياج، أو للروتوش.', en: 'Daily over makeup, or for touch-ups.' },
+        step_in_routine: { ar: 'التثبيت (آخر خطوة).', en: 'Setting (Last step).' },
+        routine_step_number: 4,
+        application: { ar: 'تُطبق بالفرشاة المرفقة على كامل الوجه، مع التركيز على منطقة T-Zone.', en: 'Apply with the included brush over the entire face, focusing on the T-Zone.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم الأساس Flash Nude Fluid.'], en: ['Flash Nude Fluid foundation.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'اللمعان الزائد، تثبيت المكياج، والمسام الواسعة.', en: 'Excess shine, makeup setting, and enlarged pores.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لون موحد يناسب جميع درجات البشرة (Universal Shade).', en: 'Universal shade suitable for all skin tones.' }
+    }
+});
+
+// [52] FILORGA PORE-EXPRESS 30 ML
+deepProductsList.push({
+    id: 'fil_pore_express', brandId: 'filorga', familyId: 'flash_nude', brand: 'Filorga', // يندرج تحت التحضير والبرايمر
+    name: { ar: 'بور-إكسبريس (برايمر المسام واللمعان)', en: 'Pore-Express Regulating Primer' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'برايمر تنظيمي هجين؛ يقدم مفعولاً فورياً لتمويه المسام بفضل الممحيات البصرية (Optical Blur)، ومفعولاً علاجياً طويلاً الأمد لتقليل الإفرازات الدهنية باستخدام الزنك ومستخلص النباتات.', 
+            en: 'Hybrid regulating primer; offers an instant pore-blurring effect via optical blurs, and long-term therapeutic action to reduce sebum using Zinc and plant extracts.' 
+        },
+        patient_benefit: { 
+            ar: 'يخفي المسام الواسعة كالسحر فور تطبيقه، يمنع لمعان المكياج طوال اليوم، ويعالج حب الشباب الخفيف والرؤوس السوداء مع الاستخدام.', 
+            en: 'Magically conceals enlarged pores upon application, prevents makeup shine all day, and treats mild acne and blackheads with use.' 
+        },
+        active_ingredients: [
+            { name: 'Mineral Sebum Sensors', concentration: 'Mattifying | مطفي', role: { ar: 'امتصاص اللمعان فوراً.', en: 'Instantly absorbing shine.' } },
+            { name: 'Zinc + Niacinamide', concentration: 'Active | فعال', role: { ar: 'تنظيم الزهم وعلاج المسام.', en: 'Regulating sebum and treating pores.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً صباحاً.', en: 'Daily in the AM.' },
+        step_in_routine: { ar: 'البرايمر (بعد المرطب وقبل المكياج).', en: 'Primer (post-moisturizer & pre-makeup).' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على كامل الوجه أو المناطق التي تعاني من اللمعان والمسام (T-Zone).', en: 'Apply to the entire face or shine/pore-prone areas (T-Zone).' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات شديدة الكثافة قبله (قد تتسبب في تقشره).'], en: ['Very thick moisturizers underneath (may cause it to pill).'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام الواسعة، البشرة الدهنية والمختلطة، وتجهيز البشرة لمكياج يدوم طويلاً.', en: 'Enlarged pores, oily/combi skin, and prepping skin for long-lasting makeup.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يعمل كفلتر شفاف. لا يغير لون البشرة.', en: 'Acts as a transparent filter. Does not alter skin tone.' }
+    }
+});
+
+// [53] FILORGA TIME-FLASH ACTIVE PRIMER 30 ML
+deepProductsList.push({
+    id: 'fil_time_flash_primer', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فلاش (برايمر كي التجاعيد)', en: 'Time-Flash Express Smoothing Active Primer' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'برايمر مخصص للتجاعيد يجمع تقنية "الشد الثلاثي الأبعاد" (3D Lift) لتنعيم سطح الجلد بصرياً، مع <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> وببتيدات لتقليص التجاعيد بيولوجياً يوماً بعد يوم.', 
+            en: 'Wrinkle-specific primer combining a "3D Lift" tech to visually smooth the skin surface, with <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> and peptides to biologically shrink wrinkles day by day.' 
+        },
+        patient_benefit: { 
+            ar: 'يعمل كمكواة لـ (كي) الخطوط الدقيقة فور وضعه ليمنع ترسب المكياج بداخلها، بينما يعالج التجاعيد ويشد الوجه بشكل دائم.', 
+            en: 'Acts as an "iron" to smooth fine lines instantly, preventing makeup from settling into them, while permanently treating wrinkles and lifting the face.' 
+        },
+        active_ingredients: [
+            { name: '3D Optical Blur', concentration: 'Cosmetic | تجميلي', role: { ar: 'إخفاء التجاعيد فورياً بانعكاس الضوء.', en: 'Instantly hiding wrinkles via light reflection.' } },
+            { name: 'Hexapeptide + Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'نفخ الخطوط وإرخاء العضلات.', en: 'Plumping lines and relaxing muscles.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (صباحاً أو قبل المناسبات).', en: 'Daily (AM or pre-events).' },
+        step_in_routine: { ar: 'البرايمر (بعد العناية وقبل المكياج).', en: 'Primer (post-care & pre-makeup).' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلس بلطف على الوجه والرقبة. يمكن استخدامه منفرداً لتأثير شد فوري.', en: 'Smooth gently over face and neck. Can be used alone for an instant lifting effect.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Time-Filler.'], en: ['Time-Filler Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد الظاهرة، تحضير البشرة للمكياج لمنع تخطيطه، وتنعيم سطح الجلد.', en: 'Visible wrinkles, prepping skin for makeup to prevent creasing, and surface smoothing.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام سيليكوني ناعم جداً يحسن ثبات المكياج.', en: 'Very smooth silicone-like texture that improves makeup hold.' }
+    }
+});
+
+// [54] FILORGA OPTIM-EYES LOTION 110 ML
+deepProductsList.push({
+    id: 'fil_optim_eyes_lotion', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
+    name: { ar: 'أوبتيم-آيز لوشن (سيروم إزالة مكياج العين)', en: 'Optim-Eyes Lotion Eye Makeup Remover Serum' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي (متوافق مع الدموع)', en: 'Physiological (Tear-compatible)' },
+        mechanism: { 
+            ar: 'ليس مجرد مزيل مكياج! هو محلول ثنائي الطور (Biphasic) يعتمد على مركب زيت-في-ماء لإذابة المكياج المقاوم للماء فوراً، مدمج مع ببتيدات وعوامل لتقوية الرموش وتخفيف الإرهاق.', 
+            en: 'Not just a makeup remover! A biphasic (Oil-in-Water) solution that instantly dissolves waterproof makeup, combined with peptides and agents to strengthen lashes and relieve fatigue.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل المكياج دون الحاجة لفرك الجفن الحساس، يرطب محيط العين لتخفيف علامات التعب، ويغذي الرموش ليقلل تساقطها.', 
+            en: 'Removes makeup without rubbing the sensitive eyelid, hydrates the eye contour to reduce fatigue signs, and nourishes lashes to minimize fallout.' 
+        },
+        active_ingredients: [
+            { name: 'Oleoclean Complex', concentration: 'Active | فعال', role: { ar: 'إذابة المكياج العنيد فوراً.', en: 'Instantly dissolving stubborn makeup.' } },
+            { name: 'Stimulating Peptide', concentration: 'Fortifying | مقوي', role: { ar: 'تقوية بصيلات الرموش.', en: 'Strengthening lash follicles.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (مساءً).', en: 'Daily (PM).' },
+        step_in_routine: { ar: 'إزالة المكياج.', en: 'Makeup removal.' },
+        routine_step_number: 1,
+        application: { ar: 'يُرج جيداً لخلط الطورين، يوضع على قطنة، يُترك على العين لثوانٍ ثم يُمسح بلطف.', en: 'Shake well to mix phases, apply to cotton pad, leave on eye for seconds, then wipe gently.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Optim-Eyes أو Time-Filler Eyes بعده.'], en: ['Optim-Eyes or Time-Filler Eyes cream afterwards.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المكياج المقاوم للماء، العيون المتعبة، الرموش الضعيفة.', en: 'Waterproof makeup, tired eyes, weak lashes.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يترك غشاء زيتي يزعج الرؤية كباقي المزيلات ثنائية الطور.', en: 'Does not leave an oily film that blurs vision like other biphasic removers.' }
+    }
+});
+
+// [55] FILORGA OPTIM-EYES LASHES & BROWS 13 ML
+deepProductsList.push({
+    id: 'fil_optim_eyes_lashes', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
+    name: { ar: 'أوبتيم-آيز للرموش والحواجب (مكثف مزدوج)', en: 'Optim-Eyes Lashes & Brows Double Formula' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'عبوة مزدوجة (Step 1 + Step 2). الخطوة 1: سيروم يحفز نمو الرموش والحواجب بمركب (KERA-EXTEND) وتقنية NCTF. الخطوة 2: برايمر يغلف الرموش ببروتينات وحمض هيالورونيك لزيادة سماكتها فوراً قبل المسكارا.', 
+            en: 'Dual packaging (Step 1 + Step 2). Step 1: A growth-stimulating serum with (KERA-EXTEND) and NCTF. Step 2: A volumizing primer coating lashes with proteins and HA to instantly thicken them pre-mascara.' 
+        },
+        patient_benefit: { 
+            ar: 'يوقف تساقط الرموش والحواجب، يسرع نموها لتصبح أطول وأكثر كثافة خلال 14 يوماً، ويعمل كأساس ممتاز لزيادة ثبات وحجم المسكارا.', 
+            en: 'Stops lash/brow fallout, accelerates growth making them longer and denser in 14 days, and acts as an excellent base to enhance mascara volume and hold.' 
+        },
+        active_ingredients: [
+            { name: 'KERA-EXTEND CX + NCTF', concentration: 'Growth | نمو', role: { ar: 'تنشيط البصيلات وزيادة الطول.', en: 'Activating follicles and increasing length.' } },
+            { name: 'Carob Extract + Protein', concentration: 'Volumizing | تكثيف', role: { ar: 'تغليف الشعرة وزيادة سماكتها.', en: 'Coating the hair and increasing its thickness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'عناية الرموش والحواجب.', en: 'Lashes and brows care.' },
+        routine_step_number: 2,
+        application: { ar: 'الخطوة 1 (فرشاة رفيعة): تمرر على جذور الرموش والحواجب كالأيلاينر. الخطوة 2 (فرشاة ماسكارا): تُمشط بها الرموش/الحواجب من الجذور للأطراف.', en: 'Step 1 (fine brush): Apply to lash/brow roots like eyeliner. Step 2 (mascara brush): Coat lashes/brows from root to tip.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الرموش الصناعية الدائمة (قد تذيب الصمغ).'], en: ['Permanent false lashes (may dissolve the glue).'] }, 
+            best_mixed_with: { ar: ['المسكارا المعتادة (تُطبق فوق الخطوة 2).'], en: ['Regular mascara (applied over Step 2).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الرموش والحواجب الخفيفة، القصيرة، أو المتساقطة بسبب المكياج.', en: 'Sparse, short, or falling lashes/brows due to makeup.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يجب أن يكون محيط العين نظيفاً تماماً قبل الخطوة 1.', en: 'The eye contour must be perfectly clean before Step 1.' }
+    }
+});
+
+// [56] FILORGA NUTRI-FILLER LIPS 4 G
+deepProductsList.push({
+    id: 'fil_nutri_filler_lips', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga', // يتبع للتغذية والترميم
+    name: { ar: 'نوتري-فيلر ليبس (بلسم نفخ الشفاه)', en: 'Nutri-Filler Lips Nutri-Plumping Lip Balm' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'بلسم علاجي يدمج زيوت الأرجان والشيا لترميم الشفاه العميقة، مع ببتيد برو-كولاجين (Pro-collagen) لتنعيم ونفخ (Plump) الشفاه، ومركب نشط لتعزيز لون الشفاه الوردي الطبيعي.', 
+            en: 'Therapeutic balm integrating Argan/Shea oils for deep repair, with a Pro-collagen peptide to smooth and plump the lips, and an active to revive natural pink lip color.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج الشفاه شديدة التشقق، يمنح امتلاءً وحجماً جذاباً للشفاه الرقيقة، ويحيي لونها الوردي الباهت.', 
+            en: 'Treats severely chapped lips, grants attractive volume and plumpness to thin lips, and revives their dull pink color.' 
+        },
+        active_ingredients: [
+            { name: 'Pro-Collagen Peptide', concentration: 'Plumping | ممتلئ', role: { ar: 'نفخ الشفاه وتحديد محيطها.', en: 'Plumping lips and redefining their contour.' } },
+            { name: 'Argan Oil + Shea Butter', concentration: 'Nourishing | مغذي', role: { ar: 'ترميم التشققات وحماية من الجفاف.', en: 'Repairing cracks and protecting from dryness.' } },
+            { name: 'NCTF Complex', concentration: 'Revitalizing | مجدد', role: { ar: 'تجديد أنسجة الشفاه وتوحيد لونها.', en: 'Renewing lip tissue and evening their color.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة طوال اليوم.', en: 'As needed throughout the day.' },
+        step_in_routine: { ar: 'العناية بالشفاه.', en: 'Lip care.' },
+        routine_step_number: 3,
+        application: { ar: 'يُطبق مباشرة على الشفاه باستخدام أداة السيليكون المرنة.', en: 'Apply directly to lips using the flexible silicone applicator.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['قبل أحمر الشفاه الجاف (Matte lipstick) كقاعدة ترطيب.'], en: ['Before Matte lipstick as a hydrating base.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشفاه الجافة، المتشققة، الفاقدة للحجم الطبيعي، والبهتان.', en: 'Dry, chapped lips, loss of natural volume, and dullness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام زيتي-بلسمي (Balm-oil) لا يلتصق.', en: 'Balm-oil texture that does not stick.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (26): فيلورجا (الختام - العناية الليلية، فيتامين سي، والترطيب)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['pure_vitamin_c_powder'] = {
+    title: { ar: 'بودرة فيتامين C النقي 🍊', en: 'Pure Vitamin C Powder 🍊' },
+    desc: { 
+        ar: 'فيتامين سي (L-Ascorbic Acid) بتركيز 8%، محفوظ في غطاء عازل للضوء والهواء كبودرة جافة لضمان فعاليته 100%، ويتم خلطه بالسيروم لحظة الاستخدام فقط.', 
+        en: '8% pure Vitamin C (L-Ascorbic Acid), preserved in a light/air-proof cap as a dry powder to ensure 100% efficacy, mixed with the serum only right before use.' 
+    }
+};
+
+glossaryDict['aha_bha_peel'] = {
+    title: { ar: 'التقشير بأحماض AHA/BHA 🧪', en: 'AHA/BHA Peeling 🧪' },
+    desc: { 
+        ar: 'مزيج من 6 أحماض (جليكوليك، ماليك، ساليسيليك، لاكتيك، أزيليك، بايروفيك) يوفر تقشيراً كيميائياً آمناً أثناء النوم لتجديد الخلايا وتقليل التصبغات.', 
+        en: 'A blend of 6 acids (Glycolic, Malic, Salicylic, Lactic, Azelaic, Pyruvic) providing safe overnight chemical peeling to renew cells and reduce pigmentation.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [57] FILORGA C-RECOVER CONCENTRATE 10 ML X 3 S
+deepProductsList.push({
+    id: 'fil_c_recover', brandId: 'filorga', familyId: 'skin_unify', brand: 'Filorga',
+    name: { ar: 'سي-ريكوفر (مركز فيتامين C للنضارة)', en: 'C-Recover Radiance Boosting Concentrate' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'كورس علاجي مكثف يعتمد على <span class="glossary-term" onclick="openGlossary(\'pure_vitamin_c_powder\')">بودرة فيتامين C النقي 8%</span> التي يتم تفعيلها يدوياً مع سيروم غني بمركب NCTF والأحماض الأمينية، لتوفير أقوى جرعة مضادة للأكسدة.', 
+            en: 'Intensive course relying on <span class="glossary-term" onclick="openGlossary(\'pure_vitamin_c_powder\')">8% Pure Vitamin C powder</span> activated manually with an NCTF/Amino acid-rich serum, delivering the strongest antioxidant dose.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج طارئ (لمدة 21 يوماً) يمحو الإرهاق الشديد، يوحد لون البشرة الباهتة، ويعيد لها توهجها الطبيعي فوراً.', 
+            en: 'Emergency treatment (for 21 days) erasing severe fatigue, evening dull skin tone, and instantly restoring its natural glow.' 
+        },
+        active_ingredients: [
+            { name: 'Pure L-Ascorbic Acid', concentration: '8%', role: { ar: 'تحفيز الكولاجين وتفتيح التصبغات.', en: 'Stimulating collagen and brightening pigmentation.' } },
+            { name: 'NCTF + Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'ترطيب عميق وتجديد الخلايا.', en: 'Deep hydration and cell renewal.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة صباحاً ككورس لمدة 21 يوماً.', en: 'Once daily AM as a 21-day course.' },
+        step_in_routine: { ar: 'سيروم التفتيح والنضارة.', en: 'Brightening and radiance serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يُضغط الغطاء لإسقاط البودرة، تُرَج العبوة جيداً، ثم تستخدم القطارة لتوزيع السيروم. (العبوة صالحة لـ 7 أيام بعد الخلط، تحفظ بالثلاجة).', en: 'Press cap to release powder, shake well, use dropper to apply. (Vial valid for 7 days post-mixing, keep refrigerated).' },
+        layering: { 
+            do_not_mix_with: { ar: ['أحماض تقشير قوية في نفس الوقت.'], en: ['Strong peeling acids simultaneously.'] }, 
+            best_mixed_with: { ar: ['واقي شمس (إلزامي للوقاية من تأكسد الفيتامين).'], en: ['Sunscreen (Mandatory to prevent vitamin oxidation).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المجهدة جداً، بهتان اللون، التعافي من المرض، والتغيرات الموسمية.', en: 'Highly stressed skin, dullness, post-illness recovery, and seasonal changes.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'العلبة تحتوي على 3 عبوات، كل عبوة تكفي لأسبوع.', en: 'Box contains 3 vials, each lasts for one week.' }
+    }
+});
+
+// [58] FILORGA SLEEP AND PEEL NIGHT CREAM 40 ML
+deepProductsList.push({
+    id: 'fil_sleep_and_peel', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سليب آند بيل (كريم التقشير الليلي)', en: 'Sleep & Peel Resurfacing Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (4.5)', en: 'Acidic (4.5)' },
+        mechanism: { 
+            ar: 'يعمل كعلاج تجديد سطحي أثناء النوم باستخدام تقنية <span class="glossary-term" onclick="openGlossary(\'aha_bha_peel\')">التقشير بأحماض AHA/BHA</span> (بتركيز آمن)، مع الطحالب البنية لتهدئة الجلد وتجنب التهيج.', 
+            en: 'Acts as a surface renewal treatment overnight using <span class="glossary-term" onclick="openGlossary(\'aha_bha_peel\')">AHA/BHA Peeling</span> tech (safe concentration), with brown algae to soothe skin and avoid irritation.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير "الجلد الجديد" في الصباح؛ يصقل المسام، ينعم الملمس، يزيل الخلايا الميتة، ويمنح نضارة فائقة.', 
+            en: '"New skin" effect in the morning; refines pores, smooths texture, removes dead cells, and grants supreme radiance.' 
+        },
+        active_ingredients: [
+            { name: '6 Hydroxy Acids (AHA/BHA)', concentration: 'Active | فعال', role: { ar: 'تقشير الخلايا الميتة بأمان.', en: 'Exfoliating dead cells safely.' } },
+            { name: 'Brown Algae Extract', concentration: 'Soothing | مهدئ', role: { ar: 'تهدئة الاحمرار وترميم الجلد.', en: 'Soothing redness and skin repair.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً (يُفضل يوماً بعد يوم للبشرة الحساسة).', en: 'Once daily PM (preferably every other day for sensitive skin).' },
+        step_in_routine: { ar: 'كريم الليل المقشر.', en: 'Exfoliating night cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع على وجه نظيف. يترك طوال الليل ويُغسل في الصباح.', en: 'Distribute on clean face. Leave overnight and wash in the AM.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول أو سيرومات فيتامين سي في نفس الليلة.'], en: ['Retinol or Vit C serums on the same night.'] }, 
+            best_mixed_with: { ar: ['مرطب عميق في الصباح التالي وواقي شمس.'], en: ['Deep moisturizer the next AM and Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الخشنة، المسام الواسعة، التصبغات الخفيفة، والخطوط السطحية.', en: 'Rough skin, enlarged pores, mild pigmentation, and surface lines.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'يُمنع وضعه حول محيط العين الحساس.', en: 'Avoid applying around the sensitive eye contour.' }
+    }
+});
+
+// [59] FILORGA SLEEP-RECOVER BALM 50 ML
+deepProductsList.push({
+    id: 'fil_sleep_recover', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'سليب-ريكوفر (بلسم مكافحة الإرهاق الليلي)', en: 'Sleep-Recover Anti-Fatigue Night Balm' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'بلسم مرمم يجمع بين مركب (Silk Tree) الذي يمنع عملية الجلْكَزة (Glycation) المدمرة للكولاجين، وبين خلاصة الكستناء لتقليل الانتفاخ وتنشيط التصريف اللمفاوي أثناء النوم.', 
+            en: 'Repairing balm combining (Silk Tree) complex which prevents collagen-destroying Glycation, and Chestnut extract to reduce puffiness and stimulate lymphatic drainage during sleep.' 
+        },
+        patient_benefit: { 
+            ar: 'يمسح علامات قلة النوم والإرهاق؛ يقلل ملامح التعب العميقة، ويوفر بشرة مرتاحة ومشدودة في الصباح.', 
+            en: 'Erases signs of sleep deprivation and fatigue; reduces deep tired features, providing rested and tightened skin in the morning.' 
+        },
+        active_ingredients: [
+            { name: 'Silk Tree Extract', concentration: 'Active | فعال', role: { ar: 'حماية الأنسجة وتجديد الحيوية.', en: 'Tissue protection and vitality renewal.' } },
+            { name: 'Horse Chestnut Extract', concentration: 'Decongestant | مزيل للاحتقان', role: { ar: 'تقليل تورم الوجه واحتباس السوائل.', en: 'Reducing facial puffiness and fluid retention.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم الليل (المرمم).', en: 'Night cream (Repairing).' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة قبل النوم.', en: 'Massage onto face and neck before sleep.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم NCEF Intensive.'], en: ['NCEF Intensive Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تعب الملامح، الهالات والانتفاخات الصباحية، والخطوط الناتجة عن التوتر.', en: 'Fatigued features, morning circles/puffiness, and stress-induced lines.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام "بلسم-جل" مغلف يوفر شعوراً بالراحة الفورية.', en: 'Enveloping "gel-balm" texture providing an instant feeling of comfort.' }
+    }
+});
+
+// [60] FILORGA PERFECT+ SERUM 30 ML
+deepProductsList.push({
+    id: 'fil_perfect_plus_serum', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
+    name: { ar: 'بيرفكت+ سيروم (سيروم البشرة المثالية)', en: 'Perfect+ Perfect Skin Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'سيروم شامل يدمج ببتيدات مقشرة لتنعيم الخطوط، مستخلصات نباتية قابضة لتصغير المسام، ومكونات بصرية لمعان فوري لتقديم مظهر (بشرة خالية من العيوب).', 
+            en: 'Comprehensive serum integrating exfoliating peptides to smooth lines, astringent plant extracts to shrink pores, and optical agents for instant glow, providing a (flawless skin) look.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج 3 في 1: يقلل التجاعيد، يصغر المسام بشكل ملحوظ، ويوفر إشراقة وتوحيداً فورياً للون البشرة.', 
+            en: '3-in-1 treatment: reduces wrinkles, visibly shrinks pores, and provides instant radiance and even skin tone.' 
+        },
+        active_ingredients: [
+            { name: 'NCTF + Peptides', concentration: 'Active | فعال', role: { ar: 'تجديد الخلايا وإرخاء الخطوط.', en: 'Cell renewal and line relaxation.' } },
+            { name: 'Astringent Active', concentration: 'Pore-Refiner | مصغر مسام', role: { ar: 'تقليل حجم المسام وتنظيم الزهم.', en: 'Reducing pore size and regulating sebum.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'سيروم التصحيح المتعدد.', en: 'Multi-correction serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على وجه نظيف قبل كريم العناية.', en: 'Apply to clean face before care cream.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Time-Filler.'], en: ['Time-Filler Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام الواسعة، التجاعيد الأولية، وعدم صفاء البشرة.', en: 'Enlarged pores, early wrinkles, and lack of skin clarity.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يُعتبر بديلاً قديماً فعالاً في تصحيح الملمس (غالباً ما تم تحديثه ضمن خط Age-Purify).', en: 'Considered an effective legacy texture corrector (often updated within Age-Purify line).' }
+    }
+});
+
+// [61] FILORGA HYDRA-FILLER CREAM 50 ML
+deepProductsList.push({
+    id: 'fil_hydra_filler_cream', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-فيلر (كريم الترطيب المعزز للشباب)', en: 'Hydra-Filler Pro-Youth Boosting Moisturizer' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستغل قوة حمض الهيالورونيك عالي ومنخفض الوزن الجزيئي لترطيب السطح ونفخ الأدمة، بالإضافة لمركب يحفز إنتاج الكولاجين للوقاية من علامات التقدم بالسن.', 
+            en: 'Harnesses the power of high & low molecular weight HA to hydrate the surface and plump the dermis, plus a collagen-boosting complex to prevent aging signs.' 
+        },
+        patient_benefit: { 
+            ar: 'ترطيب عميق يدوم طويلاً، يخفي خطوط الجفاف الدقيقة، ويحافظ على مرونة وشباب البشرة.', 
+            en: 'Deep long-lasting hydration, hides fine dehydration lines, and preserves skin elasticity and youthfulness.' 
+        },
+        active_ingredients: [
+            { name: 'Extra-Pure Hyaluronic Acid', concentration: 'High | عالي', role: { ar: 'تخزين الماء كالإسفنجة في طبقات الجلد.', en: 'Storing water like a sponge in skin layers.' } },
+            { name: 'Bio-active Extract', concentration: 'Pro-Youth | داعم للشباب', role: { ar: 'تقوية حاجز الدهون ومنع التبخر.', en: 'Strengthening lipid barrier and preventing evaporation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم الترطيب اليومي.', en: 'Daily hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع بلطف على الوجه والرقبة.', en: 'Distribute gently over face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Hydra-Hyal أو Meso+.'], en: ['Hydra-Hyal or Meso+ Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة العطشى، الخطوط الناتجة عن الجفاف، وكعناية وقائية أولى ضد التجاعيد.', en: 'Thirsty skin, dehydration lines, and as first preventive care against wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام جل-كريم غير دهني يوفر راحة فورية.', en: 'Non-greasy gel-cream texture providing instant comfort.' }
+    }
+});
+
+// [62] FILORGA UNIVERSAL CREAM 100 ML
+deepProductsList.push({
+    id: 'fil_universal_cream', brandId: 'filorga', familyId: 'global_repair', brand: 'Filorga',
+    name: { ar: 'يونيفرسال كريم (كريم العناية الشاملة)', en: 'Universal Cream Daily Multi-Purpose Treatment' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'كريم متعدد الاستخدامات يعتمد على اليوريا ومركب مهدئ لترميم حاجز البشرة المتضرر، مع الببتيدات لتحفيز الكولاجين وتوفير حماية للعائلة بأكملها.', 
+            en: 'Multi-purpose cream based on Urea and a soothing complex to repair the damaged skin barrier, with peptides to stimulate collagen and provide protection for the whole family.' 
+        },
+        patient_benefit: { 
+            ar: 'حل عملي شامل (للوجه والجسم)؛ يهدئ الاحمرار، يعالج الجفاف الشديد والتشققات، ويعتبر المنقذ السريع للبشرة المتهيجة.', 
+            en: 'Comprehensive practical solution (face & body); soothes redness, treats severe dryness and cracks, acting as a quick rescue for irritated skin.' 
+        },
+        active_ingredients: [
+            { name: 'Urea + Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب عميق وتقشير القشور السطحية.', en: 'Deep hydration and exfoliating surface scales.' } },
+            { name: 'Polysaccharide', concentration: 'Soothing | مهدئ', role: { ar: 'تسكين الاحمرار والالتهاب.', en: 'Soothing redness and inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة (صباحاً ومساءً).', en: 'As needed (Morning and Evening).' },
+        step_in_routine: { ar: 'ترطيب وعناية شاملة.', en: 'Hydration and global care.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على أي منطقة جافة أو متهيجة في الوجه والجسم.', en: 'Apply to any dry or irritated area on face and body.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['أي منتج علاجي كطبقة حماية نهائية.'], en: ['Any therapeutic product as a final protective layer.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف المفاجئ، حروق الشمس الخفيفة، تهيج ما بعد الحلاقة، والتشققات.', en: 'Sudden dryness, mild sunburns, post-shaving irritation, and chapping.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن لجميع أفراد الأسرة. قوام ذوباني غير دهني.', en: 'Safe for the whole family. Non-greasy melting texture.' }
+    }
+});
+
+// [63] FILORGA NCEF REVITALIZE MASK - 1 SHEET 20 ML
+deepProductsList.push({
+    id: 'fil_ncef_revitalize_sheet_mask', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF ريفيتالايز ماسك (الماسك الورقي للتجديد الحيوي)', en: 'NCEF-Revitalize Polyrevitalizing Sheet Mask' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'ورقة ماسك مشبعة بالجيل الجديد من <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> والإنزيمات الحالّة للخلايا المتشيخة (Senolytic)، تلتصق بقوة لضخ المكونات بفعالية حقن الميزوثيرابي خلال 15 دقيقة.', 
+            en: 'Sheet mask saturated with the new generation of <span class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</span> and Senolytic enzymes, tightly adhering to pump ingredients with meso-injection efficacy in 15 mins.' 
+        },
+        patient_benefit: { 
+            ar: 'تجديد فوري للخلايا؛ يمحو علامات الإرهاق القوية، يشد الوجه، ويوفر نضارة وحيوية فورية للبشرة المتقدمة في السن قبل المناسبات.', 
+            en: 'Instant cell renewal; erases strong fatigue signs, firms the face, and provides instant vitality and glow for aging skin pre-events.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF Supreme Dose', concentration: 'High | عالي', role: { ar: 'تغذية الخلايا من العمق.', en: 'Nourishing cells from within.' } },
+            { name: 'Senolytic Enzyme Complex', concentration: 'Active | فعال', role: { ar: 'إنعاش الخلايا المجهدة وتجديدها.', en: 'Reviving and renewing exhausted cells.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: '1-2 مرات أسبوعياً، أو قبل المناسبات.', en: '1-2 times a week, or pre-events.' },
+        step_in_routine: { ar: 'قناع فلاش معالج.', en: 'Flash treatment mask.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على الوجه ويُترك 15 دقيقة، ثم يُدلك السيروم المتبقي ولا يُغسل.', en: 'Apply to face, leave 15 mins, then massage remaining serum and do not wash.' },
+        layering: { 
+            do_not_mix_with: { ar: ['غسل الوجه فوراً بالماء.'], en: ['Washing face immediately with water.'] }, 
+            best_mixed_with: { ar: ['سيروم وكريم NCEF Revitalize لاحقاً.'], en: ['NCEF Revitalize Serum and Cream afterwards.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشيخوخة المتقدمة، الإرهاق الخلوي السريع، الاستعداد للمناسبات.', en: 'Advanced aging, rapid cellular exhaustion, event preparation.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مصنوع من ألياف دقيقة عالية الامتصاص لتأثير "البشرة الثانية".', en: 'Made from high-absorption micro-fibers for a "second skin" effect.' }
+    }
+});
