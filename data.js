@@ -7466,3 +7466,98 @@ window.glossaryDict['enoxolone'] = {
         en: 'A licorice-derived agent that protects the skin\'s natural Hyaluronic Acid from degradation by inhibiting the Hyaluronidase enzyme, prolonging internal plumpness and hydration.' 
     }
 };
+// ==========================================
+// 📚 بلوك رقم (35): الملحق الشامل لقاموس المصطلحات (Master Glossary)
+// يغطي براءات الاختراع والتقنيات الناقصة للـ 4 براندات
+// ==========================================
+
+// --- مصطلحات بيوديرما (Bioderma) ---
+window.glossaryDict['daf_patent'] = {
+    title: { ar: 'براءة اختراع D.A.F 🛡️', en: 'D.A.F Patent 🛡️' },
+    desc: { 
+        ar: 'تركيبة جلدية متقدمة (Dermatological Advanced Formulation) تعمل على رفع عتبة تحمل البشرة، مما يجعلها أقل تفاعلاً وتحسساً تجاه العوامل البيئية القاسية.', 
+        en: 'Dermatological Advanced Formulation that increases the skin\'s tolerance threshold, making it less reactive and sensitive to harsh environmental factors.' 
+    }
+};
+
+window.glossaryDict['fluidactiv'] = {
+    title: { ar: 'براءة اختراع فلويد-أكتيف (Fluidactiv) 💧', en: 'Fluidactiv Patent 💧' },
+    desc: { 
+        ar: 'تقنية حصرية من بيوديرما تنظم جودة الزهم (الدهون) بيولوجياً، وتمنع زيادة سماكته وتأكسده، وهو السبب الرئيسي لانسداد المسام وتكون الرؤوس السوداء.', 
+        en: 'Exclusive Bioderma technology that biologically regulates sebum quality, preventing it from thickening and oxidizing, which is the main cause of clogged pores and blackheads.' 
+    }
+};
+
+window.glossaryDict['cellular_bioprotection'] = {
+    title: { ar: 'الحماية الحيوية الخلوية ☀️', en: 'Cellular Bioprotection ☀️' },
+    desc: { 
+        ar: 'تقنية موجودة في واقيات شمس بيوديرما، تحفز الدفاعات الطبيعية للجلد وتحمي الحمض النووي (DNA) الخلوي بنسبة 93% من التلف الناتج عن أشعة الشمس.', 
+        en: 'A technology in Bioderma sunscreens that stimulates the skin\'s natural defenses and protects cellular DNA by 93% from sun-induced damage.' 
+    }
+};
+
+window.glossaryDict['rosactiv'] = {
+    title: { ar: 'براءة اختراع روزاكتيف (Rosactiv) 🔴', en: 'Rosactiv Patent 🔴' },
+    desc: { 
+        ar: 'مركب يستهدف العامل البيولوجي الرئيسي المسؤول عن توسع وضعف الأوعية الدموية (VEGF)، مما يعالج ويمنع الاحمرار والوردية بشكل فعال.', 
+        en: 'A complex targeting the main biological factor responsible for the dilation and weakening of blood vessels (VEGF), effectively treating and preventing redness and rosacea.' 
+    }
+};
+
+// --- مصطلحات لاروش بوزيه (La Roche-Posay) ---
+window.glossaryDict['neurosensine'] = {
+    title: { ar: 'نيوروسينسين (Neurosensine) 🧠', en: 'Neurosensine 🧠' },
+    desc: { 
+        ar: 'ببتيد مهدئ قوي جداً يقطع إشارات الألم والتهيج المرسلة عبر الألياف العصبية السطحية، مما يوفر راحة فورية للبشرة شديدة الحساسية أو المتهيجة.', 
+        en: 'A powerful soothing peptide that cuts off pain and irritation signals sent via superficial nerve fibers, providing instant relief for highly sensitive or irritated skin.' 
+    }
+};
+
+window.glossaryDict['aqua_posae_filiformis'] = {
+    title: { ar: 'أكوا بوزيه فيليفورميس (APF) 🦠', en: 'Aqua Posae Filiformis (APF) 🦠' },
+    desc: { 
+        ar: 'بكتيريا نافعة مزروعة في مياه لاروش بوزيه الحرارية، تعمل على استعادة التوازن البكتيري للجلد (الميكروبيوم) لتقوية المناعة الطبيعية ومنع نوبات الإكزيما.', 
+        en: 'Beneficial bacteria grown in La Roche-Posay Thermal Water, acting to restore the skin\'s bacterial balance (Microbiome) to strengthen natural immunity and prevent eczema flare-ups.' 
+    }
+};
+
+window.glossaryDict['airlicium'] = {
+    title: { ar: 'إيرليسيوم (Airlicium) 🌬️', en: 'Airlicium 🌬️' },
+    desc: { 
+        ar: 'جزيئات دقيقة جداً تتكون من 99% هواء و 1% سيليكا، قادرة على امتصاص الزهم والعرق بـ 150 ضعف وزنها، مما يمنح البشرة تأثيراً مطفياً (Matte) يدوم طويلاً.', 
+        en: 'Ultra-fine particles composed of 99% air and 1% silica, capable of absorbing 150x their weight in sebum and sweat, giving the skin a long-lasting matte effect.' 
+    }
+};
+
+window.glossaryDict['mexoryl'] = {
+    title: { ar: 'ميكسوريل (Mexoryl SX/XL) ☀️', en: 'Mexoryl SX/XL ☀️' },
+    desc: { 
+        ar: 'فلاتر شمسية فائقة التطور وحصرية، توفر حماية قصوى ومستقرة ضوئياً ضد مجموعة واسعة جداً من أشعة UVA و UVB، وتعتبر المعيار الذهبي في الوقاية من السرطان والشيخوخة.', 
+        en: 'Highly advanced and exclusive sun filters providing supreme, photo-stable protection against a very broad range of UVA and UVB rays, considered the gold standard in preventing cancer and photoaging.' 
+    }
+};
+
+// --- مصطلحات فيلورجا ويوسيرين الإضافية (Filorga & Eucerin) ---
+window.glossaryDict['chrysin'] = {
+    title: { ar: 'كريسين (Chrysin) 👁️', en: 'Chrysin 👁️' },
+    desc: { 
+        ar: 'مكون نشط يستخدم في كريمات محيط العين المتطورة، يعمل على تكسير وتصريف البيليروبين والحديد (بقايا الدم المتسربة) والتي تسبب اللون الأزرق/البنفسجي للهالات السوداء.', 
+        en: 'An active ingredient used in advanced eye creams, acting to break down and drain bilirubin and iron (leaked blood residue) which cause the blue/purple color of dark circles.' 
+    }
+};
+
+window.glossaryDict['hexylresorcinol'] = {
+    title: { ar: 'هيكسيل ريزورسينول (Hexylresorcinol) ✨', en: 'Hexylresorcinol ✨' },
+    desc: { 
+        ar: 'جزيء مفتح قوي جداً يعمل كبديل آمن للهيدروكينون. يثبط إنزيم التيروزيناز، يقلل انتقال صبغة الميلانين، ويوفر حماية مضادة للأكسدة لبشرة صافية.', 
+        en: 'A highly potent brightening molecule acting as a safe alternative to Hydroquinone. Inhibits tyrosinase, reduces melanin transfer, and provides antioxidant protection for clear skin.' 
+    }
+};
+
+window.glossaryDict['climbazole_piroctone'] = {
+    title: { ar: 'كليمبازول وبيروكتون أولامين 🧴', en: 'Climbazole & Piroctone Olamine 🧴' },
+    desc: { 
+        ar: 'مزيج طبي قوي مضاد للفطريات، يستهدف فطر الملاسيزيا المسبب لقشرة الرأس والتهاب الجلد الدهني بفعالية عالية دون التسبب في جفاف الفروة.', 
+        en: 'A powerful medical anti-fungal blend targeting the Malassezia fungus responsible for dandruff and seborrheic dermatitis highly effectively without causing scalp dryness.' 
+    }
+};
