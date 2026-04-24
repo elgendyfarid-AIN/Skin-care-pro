@@ -172,9 +172,7 @@
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' }, mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
             active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' }, ph_level: { ar: 'مستوى الحموضة (pH):', en: 'pH Level:' },
             usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, potency_label: { ar: 'مؤشر القوة (Potency):', en: 'Potency Indicator:' },
-            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, 
-            duration_label: { ar: 'المدة المتوقعة للعلاج:', en: 'Expected Treatment Duration:' },
-            application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
+            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
             routine_step: { ar: 'موقعه في الروتين:', en: 'Step in Routine:' }, layering: { ar: 'المقبول والمحظور مع هذا المنتج (Layering):', en: 'Layering (Do\'s & Don\'ts):' },
             indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, ind_label: { ar: 'الحالات المستهدفة (Indications):', en: 'Target Indications:' },
             safety_label: { ar: 'الأمان:', en: 'Safety:' }, notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
@@ -238,7 +236,7 @@
                 html += `<div class="page-title">${brand.name}</div>`;
                 brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products_list', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); 
                 app.innerHTML = html;
-            } else if (view === 'products_list') {
+            } else if (view === 'products_list') { // مستوى جديد: عرض أسماء المنتجات كأزرار
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
                 let html = buildBreadcrumb([
@@ -253,6 +251,7 @@
                     html += `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد منتجات بعد...' : 'No products yet...'}</div>`;
                 } else {
                     prods.forEach(p => { 
+                        // زر يفتح المنتج الواحد
                         html += `<div class="tree-btn" style="justify-content: flex-start; gap:15px;" onclick="navigateTo('single_product', '${p1}', '${p2}', '${p.id}')">
                                     <div style="width:40px; height:40px; background:#e2e8f0; border-radius:6px; flex-shrink:0; overflow:hidden;">
                                         ${p.image ? `<img src="${p.image}" style="width:100%; height:100%; object-fit:contain;">` : ''}
@@ -266,7 +265,7 @@
                     });
                 }
                 app.innerHTML = html;
-            } else if (view === 'single_product') {
+            } else if (view === 'single_product') { // مستوى جديد: عرض كارت منتج واحد فقط
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
                 const product = deepProductsList.find(p => p.id === p3);
@@ -284,6 +283,7 @@
             }
         }
 
+        // الدالة المعدلة لترسم منتج واحد فقط
         function buildSingleProductHTML(p) {
             let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة لهذا المنتج حالياً' : 'No image available'}')">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
             
@@ -331,7 +331,6 @@
                     <div class="data-grid">
                         <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
                         <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
-                        ${p.clinical_usage.expected_duration ? `<div class="data-row"><span class="data-label">${txt.duration_label[currentLang]}</span> ${p.clinical_usage.expected_duration[currentLang]}</div>` : ''}
                         <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
                         <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                         <div class="data-row">
@@ -353,7 +352,7 @@
             </div>`;
         }
 
-        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerHTML = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
+        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerText = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
         function openImageModal(imgSrc) { document.getElementById('zoomedImg').src = imgSrc; document.getElementById('imageModal').style.display = 'flex'; }
         function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
