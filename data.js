@@ -5353,3 +5353,2029 @@ deepProductsList.push({
         notes: { ar: 'مصنوع من ألياف دقيقة عالية الامتصاص لتأثير "البشرة الثانية".', en: 'Made from high-absorption micro-fibers for a "second skin" effect.' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (27): تأسيس يوسيرين (Eucerin) - البلوك الأول
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة العلامة التجارية (Eucerin) وعائلاتها ---
+brandsList.push({
+    id: 'eucerin', name: 'Eucerin',
+    families: [
+        { id: 'even_pigment', name: { ar: 'إيفن بيجمنت (علاج التصبغات وتوحيد اللون)', en: 'Even Pigment Perfector (Hyperpigmentation)' } },
+        { id: 'dermopurifyer', name: { ar: 'ديرمو بيوريفاير (لحب الشباب والبشرة الدهنية)', en: 'DermoPurifyer (Acne & Blemish-Prone)' } },
+        { id: 'hyaluron_filler', name: { ar: 'هيالورون-فيلر (مكافحة التجاعيد والشيخوخة)', en: 'Hyaluron-Filler (Anti-Aging & Wrinkles)' } },
+        { id: 'urea_repair', name: { ar: 'يوريا-ريبير (للجفاف الشديد والخشونة)', en: 'UreaRepair PLUS (Severe Dryness)' } },
+        { id: 'aquaphor', name: { ar: 'أكوافور (ترميم وشفاء الجلد المتضرر)', en: 'Aquaphor (Skin Repair & Healing)' } },
+        { id: 'atopicontrol', name: { ar: 'أتوبي-كونترول (للإكزيما والحكة)', en: 'AtopiControl (Atopic Dermatitis)' } },
+        { id: 'aquaporin', name: { ar: 'أكوابورين (ترطيب عميق للبشرة الحساسة)', en: 'AQUAporin ACTIVE (Deep Hydration)' } },
+        { id: 'sun_care', name: { ar: 'العناية بالشمس (حماية من الأشعة والضوء الأزرق)', en: 'Sun Protection (UV & HEVIS Care)' } },
+        { id: 'ph5', name: { ar: 'بي إتش 5 (حماية البشرة الحساسة)', en: 'pH5 (Sensitive Skin Protection)' } },
+        { id: 'dermato_clean', name: { ar: 'ديرماتو-كلين (تنظيف البشرة)', en: 'DermatoCLEAN (Cleansing)' } },
+        { id: 'dermocapillaire', name: { ar: 'ديرمو-كابيلير (عناية فروة الرأس)', en: 'DermoCapillaire (Scalp Care)' } }
+    ]
+});
+
+// --- 2. إضافة مصطلحات القاموس الطبي (Glossary) الخاصة بيوسيرين ---
+
+glossaryDict['thiamidol'] = {
+    title: { ar: 'الثياميدول (Thiamidol) 🔬', en: 'Thiamidol 🔬' },
+    desc: { 
+        ar: 'براءة اختراع حصرية ليوسيرين بعد 10 سنوات من البحث. مكون فعال يستهدف السبب الجذري لفرط التصبغ عن طريق تثبيط إنزيم التيروزيناز البشري، مما يقلل البقع الداكنة ويمنع ظهورها مجدداً بشكل فعال جداً.', 
+        en: 'A patented exclusive Eucerin ingredient after 10 years of research. It targets the root cause of hyperpigmentation by inhibiting human tyrosinase, effectively reducing dark spots and preventing their reappearance.' 
+    }
+};
+
+glossaryDict['licochalcone_a'] = {
+    title: { ar: 'ليكوتشالكون A (Licochalcone A) 🌿', en: 'Licochalcone A 🌿' },
+    desc: { 
+        ar: 'مستخلص طبيعي من جذور عرق السوس، يعمل كمضاد قوي جداً للأكسدة والالتهابات. يهدئ تهيج الجلد بسرعة ويحيد الشوارد الحرة الناتجة عن الأشعة فوق البنفسجية والضوء المرئي عالي الطاقة (HEVIS).', 
+        en: 'A natural extract from licorice root acting as a highly potent antioxidant and anti-inflammatory. It rapidly soothes irritation and neutralizes free radicals induced by UV and HEVIS light.' 
+    }
+};
+
+glossaryDict['gluconoglycerol'] = {
+    title: { ar: 'جلوكو-جليسرول (Gluco-Glycerol) 💧', en: 'Gluco-Glycerol 💧' },
+    desc: { 
+        ar: 'مكون نشط طبيعي يحفز إنشاء قنوات الأكوابورين (Aquaporin 3) في الجلد، وهي القنوات المسؤولة عن نقل الماء بين الخلايا، مما يضمن ترطيباً عميقاً من الداخل.', 
+        en: 'A nature-identical active that stimulates the creation of Aquaporin 3 channels in the skin, responsible for water transport between cells, ensuring deep hydration from within.' 
+    }
+};
+
+// --- 3. المنتجات العميقة (Deep Products) ---
+
+// [1] EUCERIN ACTIVE LIP CARE BALM 4.8 G
+deepProductsList.push({
+    id: 'euc_active_lip_care', brandId: 'eucerin', familyId: 'ph5', brand: 'Eucerin',
+    name: { ar: 'أكتيف ليب كير (مرطب الشفاه النشط)', en: 'Active Lip Care Balm 4.8g' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعتمد على ديكسبانثينول (Dexpanthenol) وفيتامين E لترميم الأغشية المخاطية للشفاه، مع تشكيل طبقة دهنية خفيفة تحمي من العوامل البيئية הקاسية.', 
+            en: 'Relies on Dexpanthenol and Vitamin E to repair lip mucous membranes, forming a light lipid layer that protects against harsh environmental factors.' 
+        },
+        patient_benefit: { 
+            ar: 'يرطب الشفاه الخشنة والمتشققة فوراً، يوفر حماية يومية ضد الجفاف، ويترك الشفاه ناعمة ومرنة.', 
+            en: 'Instantly hydrates rough, chapped lips, provides daily protection against dryness, and leaves lips soft and supple.' 
+        },
+        active_ingredients: [
+            { name: 'Dexpanthenol', concentration: 'Active | فعال', role: { ar: 'تحفيز تجديد الخلايا وتسكين التشققات.', en: 'Stimulating cell regeneration and soothing cracks.' } },
+            { name: 'Vitamin E', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'حماية الشفاه من الجذور الحرة والجفاف.', en: 'Protecting lips from free radicals and dryness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة طوال اليوم.', en: 'As needed throughout the day.' },
+        step_in_routine: { ar: 'العناية بالشفاه.', en: 'Lip care.' },
+        routine_step_number: 3,
+        application: { ar: 'يُمرر على الشفاه الجافة مباشرة.', en: 'Glide directly onto dry lips.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشفاه الجافة، الخشنة، والعناية اليومية للوقاية من تشققات الشتاء.', en: 'Dry, rough lips, and daily care to prevent winter chapping.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يحتوي على عامل حماية SPF 15 (تأكد من العبوة، بعض الإصدارات تحتوي عليه).', en: 'Contains SPF 15 (check packaging, some versions include it).' }
+    }
+});
+
+// [2] EUCERIN AQUAPHOR SOOTHING SKIN BALM 45 ML / 110 ML
+deepProductsList.push({
+    id: 'euc_aquaphor_balm', brandId: 'eucerin', familyId: 'aquaphor', brand: 'Eucerin',
+    name: { ar: 'أكوافور (مرهم ترميم الجلد المتهيج)', en: 'Aquaphor Soothing Skin Balm' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'لا يوجد (خالٍ من الماء)', en: 'N/A (Water-free)' },
+        mechanism: { 
+            ar: 'مرهم خالٍ من الماء يخلق طبقة شبه منفذة (Semi-permeable) كحاجز واقٍ يسمح بمرور بخار الماء والأكسجين (يسمح للجلد بالتنفس)، مدعوم بالبانثينول والبيسابولول لتسريع تجديد الجلد.', 
+            en: 'Water-free ointment creating a semi-permeable protective barrier allowing water vapor and oxygen to pass (lets skin breathe), supported by Panthenol and Bisabolol to speed skin regeneration.' 
+        },
+        patient_benefit: { 
+            ar: 'يسرع بشكل سريري من التئام الجلد المتضرر، يهدئ الجفاف الشديد جداً، التشققات، وحروق الاحتكاك.', 
+            en: 'Clinically accelerates the healing of damaged skin, soothes extreme dryness, cracks, and friction burns.' 
+        },
+        active_ingredients: [
+            { name: 'Panthenol', concentration: 'Active | فعال', role: { ar: 'ترميم وتجديد حاجز الجلد.', en: 'Repairing and regenerating the skin barrier.' } },
+            { name: 'Bisabolol', concentration: 'Soothing | مهدئ', role: { ar: 'مضاد للتهيج والالتهاب الموضعي.', en: 'Anti-irritant and local anti-inflammatory.' } },
+            { name: 'Petrolatum Base', concentration: 'Occlusive | عازل', role: { ar: 'تشكيل حاجز تنفسي يحمي الجرح.', en: 'Forming a breathable barrier protecting the wound.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'حسب الحاجة على المناطق المتضررة.', en: 'As needed on affected areas.' },
+        step_in_routine: { ar: 'علاج موضعي مكثف.', en: 'Intensive topical treatment.' },
+        routine_step_number: 3,
+        application: { ar: 'تُدفأ كمية صغيرة بين أطراف الأصابع وتُدلك بلطف على الجلد الجاف أو المتشقق.', en: 'Warm a small amount between fingertips and gently massage onto dry or cracked skin.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الجروح المفتوحة النازفة بشدة أو الحروق من الدرجة الثالثة.', 'الالتهابات الفطرية.'], en: ['Heavily bleeding open wounds or 3rd-degree burns.', 'Fungal infections.'] }, 
+            best_mixed_with: { ar: ['الـ "Slugging" فوق المرطبات الخفيفة ليلاً لحبس الرطوبة.'], en: ['"Slugging" over light moisturizers at night to lock in moisture.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تشققات الكعبين، جفاف الركب والأكواع، بعد الإجراءات الجلدية السطحية (كالليزر)، وطفح الحفاض.', en: 'Cracked heels, dry knees/elbows, post-superficial dermatological procedures (like laser), and diaper rash.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن للرضع. لا يسبب انسداد المسام رغم قوامه الثقيل (Non-comedogenic).', en: 'Safe for babies. Non-comedogenic despite its heavy texture.' }
+    }
+});
+
+// [3] EUCERIN AQUAPORIN ACTIVE CREAM NORMAL 50 ML
+deepProductsList.push({
+    id: 'euc_aquaporin_active_normal', brandId: 'eucerin', familyId: 'aquaporin', brand: 'Eucerin',
+    name: { ar: 'أكوابورين أكتيف (كريم الترطيب للبشرة العادية)', en: 'AQUAporin ACTIVE Hydrating Cream (Normal/Combi)' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعتمد على تقنية <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">جلوكو-جليسرول</span> لتنشيط نظام الترطيب الذاتي للجلد عن طريق زيادة عدد "الأكوابورينات" (قنوات الماء)، مما يضمن توزيع الماء بالتساوي في جميع طبقات البشرة.', 
+            en: 'Relies on <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">Gluco-Glycerol</span> technology to activate the skin\'s self-hydration system by increasing the number of "Aquaporins" (water channels), ensuring even water distribution.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر ترطيباً عميقاً ومكثفاً يدوم لـ 24 ساعة، يزيل الإحساس بالشد، ويجعل البشرة العادية إلى المختلطة ناعمة ونضرة.', 
+            en: 'Provides deep, intense 24h hydration, eliminates tightness, and leaves normal to combination skin smooth and radiant.' 
+        },
+        active_ingredients: [
+            { name: 'Gluco-Glycerol', concentration: 'Active | فعال', role: { ar: 'تحفيز قنوات الماء الخلوية.', en: 'Stimulating cellular water channels.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'كريم الترطيب اليومي.', en: 'Daily hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع بلطف على الوجه والرقبة بعد التنظيف.', en: 'Distribute gently over face and neck after cleansing.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيرومات الترطيب أو التفتيح.'], en: ['Hydrating or brightening serums.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة العادية والمختلطة الفاقدة للماء (Dehydrated)، الحساسية والبهتان.', en: 'Dehydrated normal to combination skin, sensitivity, and dullness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام خفيف يمتص بسرعة فائقة. خالي من العطور.', en: 'Light texture absorbs very quickly. Fragrance-free.' }
+    }
+});
+
+// [4] EUCERIN UREA REPAIR PLUS 10% LOTION 250 ML
+deepProductsList.push({
+    id: 'euc_urea_repair_10_lotion', brandId: 'eucerin', familyId: 'urea_repair', brand: 'Eucerin',
+    name: { ar: 'يوريا-ريبير بلس 10% (لوشن الجسم للخشونة)', en: 'UreaRepair PLUS 10% Urea Lotion' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً (لتعزيز التقشير)', en: 'Slightly acidic (to enhance peeling)' },
+        mechanism: { 
+            ar: 'تركيبة علاجية مكثفة تحتوي على **10%** يوريا مع عوامل الترطيب الطبيعية (NMFs) لجذب الماء، وسيراميد لتقوية الحاجز الدهني، مما يمنع فقدان الرطوبة ويقشر الخلايا الميتة المتصلبة.', 
+            en: 'Intensive therapeutic formula with **10%** Urea and Natural Moisturizing Factors (NMFs) to bind water, and Ceramides to strengthen the lipid barrier, preventing moisture loss and exfoliating hardened dead cells.' 
+        },
+        patient_benefit: { 
+            ar: 'راحة فورية تدوم لـ 48 ساعة من الجفاف الشديد. يعالج الحكة، يزيل القشور الخشنة ("جلد الوزة")، ويعيد ليونة الجلد.', 
+            en: 'Instant 48h relief from severe dryness. Treats itching, removes rough scales (Keratosis Pilaris), and restores skin suppleness.' 
+        },
+        active_ingredients: [
+            { name: 'Urea', concentration: '10%', role: { ar: 'ترطيب عميق وتقشير كيراتيني للخشونة.', en: 'Deep hydration and keratolytic exfoliation for roughness.' } },
+            { name: 'Ceramide NP', concentration: 'Repairing | مرمم', role: { ar: 'سد الفجوات في حاجز الجلد.', en: 'Filling gaps in the skin barrier.' } },
+            { name: 'NMFs (Amino Acids, Lactic Acid)', concentration: 'Active | فعال', role: { ar: 'حبس الرطوبة داخل البشرة.', en: 'Trapping moisture inside the skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'علاج وترطيب الجسم.', en: 'Body treatment and hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على مناطق الجسم شديدة الجفاف والمتقشرة حتى يمتص.', en: 'Massage onto extremely dry and flaky body areas until absorbed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['استخدامه على الجروح المفتوحة أو الالتهابات النشطة (قد يسبب لسعة قوية).'], en: ['Use on open wounds or active inflammation (may cause severe stinging).'] }, 
+            best_mixed_with: { ar: ['غسول UreaRepair الاستحمامي.'], en: ['UreaRepair wash.' ] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جفاف الجسم الشديد جداً، التقرن الشعري (جلد الوزة)، الصدفية، جفاف مرضى السكري، وجفاف الشيخوخة.', en: 'Extremely severe body dryness, Keratosis Pilaris, Psoriasis, Diabetic skin, and senile dryness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'أثبتت الدراسات فعاليته في تأخير نوبات الجفاف لمرضى السكري.', en: 'Clinically proven to delay dryness flare-ups in diabetic patients.' }
+    }
+});
+
+// [5] EUCERIN EVEN PIGMENT HAND CREAM SPF 30 75 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_hand', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (كريم اليدين لعلاج البقع SPF 30)', en: 'Even Pigment Perfector Hand Cream SPF 30' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستخدم <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> لتقليل إنتاج الميلانين في اليدين، مع فلاتر حماية UVA/UVB لمنع ظهور بقع التقدم في السن (Age spots) الناتجة عن التعرض المستمر للشمس.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> to reduce melanin production on hands, with UVA/UVB filters to prevent age spots caused by continuous sun exposure.' 
+        },
+        patient_benefit: { 
+            ar: 'يخفف البقع الداكنة على ظهر اليدين بوضوح خلال أسبوعين، يمنع ظهورها مجدداً، ويرطب الجلد بفعالية لتبدو اليدين أصغر سناً.', 
+            en: 'Visibly reduces dark spots on the back of hands within 2 weeks, prevents their reappearance, and effectively moisturizes for younger-looking hands.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Patented | براءة اختراع', role: { ar: 'علاج التصبغات البنية وعلامات الشيخوخة.', en: 'Treating brown pigmentation and aging spots.' } },
+            { name: 'UVA/UVB Filters', concentration: 'SPF 30', role: { ar: 'الحماية اليومية من الشمس.', en: 'Daily sun protection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً، بحد أقصى 4 تطبيقات لمنتجات الثياميدول في اليوم.', en: 'Daily, max 4 applications of Thiamidol products per day.' },
+        step_in_routine: { ar: 'عناية اليدين.', en: 'Hand care.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على اليدين جيداً. يُجدد بعد غسل اليدين إذا كان التعرض للشمس مستمراً.', en: 'Massage well onto hands. Reapply after washing if sun exposure continues.' },
+        layering: { 
+            do_not_mix_with: { ar: ['تجاوز الحد الأقصى (4 مرات) لأي منتج يحتوي على ثياميدول يومياً.'], en: ['Exceeding the max limit (4 times) for any Thiamidol product daily.'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البقع العمرية على اليدين، كلف اليدين، الجفاف، والوقاية من أضرار القيادة تحت الشمس.', en: 'Age spots on hands, hand melasma, dryness, and prevention of sun damage while driving.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'سريع الامتصاص، لا يترك ملمساً لزجاً على اليدين.', en: 'Fast-absorbing, leaves no sticky feeling on hands.' }
+    }
+});
+
+// [6] EUCERIN EVEN PIGMENT PERFECTOR DUAL SERUM 30ML
+deepProductsList.push({
+    id: 'euc_even_pigment_dual_serum', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (السيروم المزدوج للتفتيح)', en: 'Even Pigment Perfector Dual Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'سيروم مزدوج الحجرات؛ الحجرة الأولى تحتوي على <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> المركز لعلاج التصبغات، والثانية تحتوي على حمض هيالورونيك مركز عالي ومنخفض الوزن الجزيئي لترطيب الأدمة والبشرة وتنعيم التجاعيد.', 
+            en: 'Dual-chamber serum; the first chamber contains concentrated <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> for pigmentation, the second contains high/low molecular weight HA to hydrate dermis/epidermis and smooth wrinkles.' 
+        },
+        patient_benefit: { 
+            ar: 'العلاج الأقوى للكلف والتصبغات المستعصية. يقلل البقع بشكل جذري خلال أسبوعين، ويوفر نضارة، امتلاء، وتوحيد شامل للون الوجه.', 
+            en: 'The most potent treatment for melasma and stubborn pigmentation. Radically reduces spots in 2 weeks, providing radiance, plumpness, and overall even tone.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'High Dose | جرعة عالية', role: { ar: 'تثبيط التيروزيناز وتقليل الميلانين.', en: 'Tyrosinase inhibition and melanin reduction.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Concentrated | مركز', role: { ar: 'نفخ الخطوط الرفيعة وترطيب عميق.', en: 'Plumping fine lines and deep hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (صباحاً أو مساءً).', en: 'Once daily (AM or PM).' },
+        step_in_routine: { ar: 'سيروم التفتيح الأساسي.', en: 'Core brightening serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يُضغط على منتصف المضخة لخروج المزيجين معاً، يُخلط في راحة اليد ويُوزع على الوجه والرقبة.', en: 'Press the middle of the pump to release both formulas, mix in palm, and apply to face/neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات الأحماض العنيفة في نفس الوقت.'], en: ['Harsh acid exfoliants simultaneously.'] }, 
+            best_mixed_with: { ar: ['كريم إيفن بيجمنت النهاري SPF30 (لنتائج مضاعفة).'], en: ['Even Pigment Day Cream SPF30 (for double results).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الكلف العنيد، تصبغات ما بعد الالتهاب، بقع الشمس، وعدم توحد لون البشرة.', en: 'Stubborn melasma, Post-Inflammatory Hyperpigmentation (PIH), sun spots, and uneven skin tone.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تذكر ألا تتجاوز 4 تطبيقات لمنتجات الثياميدول في اليوم الواحد.', en: 'Remember not to exceed 4 applications of Thiamidol products per day.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (28): يوسيرين (الواقيات الشمسية، التجاعيد، وحب الشباب)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['hevis_light'] = {
+    title: { ar: 'الضوء المرئي عالي الطاقة (HEVIS) ☀️', en: 'HEVIS Light ☀️' },
+    desc: { 
+        ar: 'الضوء المرئي عالي الطاقة الذي يولد شوارد حرة في الجلد، مما يؤدي إلى تكسير الكولاجين وظهور التصبغات المبكرة (Photoaging) بشكل مشابه أو حتى أقوى من أشعة الـ UVA.', 
+        en: 'High-Energy Visible Light that generates free radicals in the skin, leading to collagen breakdown and premature pigmentation (Photoaging) similarly to or even stronger than UVA rays.' 
+    }
+};
+
+glossaryDict['glycine_saponin'] = {
+    title: { ar: 'جلايسين سابونين (Glycine Saponin) 🌱', en: 'Glycine Saponin 🌱' },
+    desc: { 
+        ar: 'مستخلص حيوي نشط من فول الصويا، يُعد من أقوى محفزات إنتاج حمض الهيالورونيك الطبيعي في الجلد؛ حيث أثبت سريرياً قدرته على زيادة إنتاجه بنسبة تصل إلى 256%.', 
+        en: 'A bioactive extract from soya bean, considered one of the most effective stimulators of natural HA production in the skin; clinically proven to increase it by up to 256%.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [7] EUCERIN EVEN PIGMENT PERFECTOR SUN FLUID SPF50 50 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_sun_fluid', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (واقي شمس سائل لعلاج التصبغات)', en: 'Even Pigment Perfector Sun Fluid SPF 50+' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يجمع بين تقنية الطيف المتقدمة (Advanced Spectral Tech) لحماية فائقة من UVA/UVB و <span class="glossary-term" onclick="openGlossary(\'hevis_light\')">الضوء المرئي (HEVIS)</span>، مع <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> لمعالجة البقع الداكنة ومنع تكونها من جديد.', 
+            en: 'Combines Advanced Spectral Tech for supreme UVA/UVB and <span class="glossary-term" onclick="openGlossary(\'hevis_light\')">HEVIS Light</span> protection, with <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> to treat dark spots and prevent their reappearance.' 
+        },
+        patient_benefit: { 
+            ar: 'واقي شمس وعلاج للتصبغات في خطوة واحدة. يمنع البقع الناتجة عن الشمس بفعالية، ويوفر تغطية سائلة خفيفة لا تسد المسام.', 
+            en: 'Sunscreen and pigmentation treatment in one step. Effectively prevents sun-induced spots and provides light fluid coverage that does not clog pores.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Patented | براءة اختراع', role: { ar: 'تثبيط إنتاج الميلانين لعلاج الكلف.', en: 'Inhibiting melanin production to treat melasma.' } },
+            { name: 'Licochalcone A', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'تحييد الشوارد الحرة الناتجة عن ضوء HEVIS.', en: 'Neutralizing free radicals from HEVIS light.' } },
+            { name: 'Glycyrrhetinic Acid', concentration: 'DNA Repair | مرمم للحمض', role: { ar: 'دعم آلية إصلاح الحمض النووي للجلد.', en: 'Supporting the skin\'s DNA repair mechanism.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (الخطوة الأخيرة صباحاً). أقصى استخدام لمنتجات الثياميدول 4 مرات يومياً.', en: 'Daily (last step AM). Max use of Thiamidol products is 4 times/day.' },
+        step_in_routine: { ar: 'الحماية اليومية والعلاج.', en: 'Daily protection and treatment.' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع بسخاء على الوجه والرقبة قبل التعرض للشمس ويُعاد تطبيقه بانتظام.', en: 'Apply generously to face and neck before sun exposure and reapply regularly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Even Pigment Dual Serum قبله لنتائج مضاعفة.'], en: ['Even Pigment Dual Serum beforehand for double results.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الوقاية من الكلف، بقع الشمس، التصبغات الهرمونية، وتوحيد لون البشرة تحت الشمس.', en: 'Prevention of melasma, sun spots, hormonal pigmentation, and evening tone under the sun.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'متوفر بنسخة شفافة (Fluid) ونسخة ملونة (Tinted). يمتص بسرعة فائقة.', en: 'Available in clear (Fluid) and Tinted versions. Absorbs very rapidly.' }
+    }
+});
+
+// [8] EUCERIN HYALURON-FILLER NIGHT CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_filler_night', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (كريم الليل المضاد للتجاعيد)', en: 'Hyaluron-Filler Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يملأ التجاعيد (Plumps) بفضل حمض الهيالورونيك عالي ومنخفض الوزن الجزيئي، يحفز إنتاجه الذاتي بـ <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">الجلايسين سابونين</span>، ويدعم التجديد الخلوي الليلي عبر ديكسبانثينول.', 
+            en: 'Plumps wrinkles via High/Low MW HA, stimulates its natural production via <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">Glycine Saponin</span>, and supports nocturnal cell renewal via Dexpanthenol.' 
+        },
+        patient_benefit: { 
+            ar: 'يملأ أعمق التجاعيد بشكل ملحوظ من الداخل للخارج أثناء النوم، ويستيقظ المريض ببشرة ناعمة ومسترخية وممتلئة.', 
+            en: 'Visibly plumps the deepest wrinkles from the inside out during sleep, patient wakes up with smooth, rested, and plump skin.' 
+        },
+        active_ingredients: [
+            { name: 'High & Low MW Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'ترطيب السطح واختراق العمق لملء الخطوط.', en: 'Hydrating surface and penetrating deep to plump lines.' } },
+            { name: 'Glycine Saponin', concentration: 'Stimulator | محفز', role: { ar: 'زيادة إفراز حمض الهيالورونيك في الجلد.', en: 'Increasing HA secretion in the skin.' } },
+            { name: 'Dexpanthenol', concentration: 'Repairing | مرمم', role: { ar: 'تعزيز عملية التجدد الخلوي الليلي.', en: 'Enhancing nocturnal cellular regeneration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'الترطيب الليلي المعالج.', en: 'Night treatment hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة بعد التنظيف (وتطبيق السيروم إن وُجد).', en: 'Massage onto face and neck after cleansing (and serum application if any).' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Hyaluron-Filler Peeling & Serum.'], en: ['Hyaluron-Filler Peeling & Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد الظاهرة، الخطوط الرفيعة، فقدان حجم البشرة، والوقاية من الشيخوخة المبكرة.', en: 'Visible wrinkles, fine lines, loss of skin volume, and premature aging prevention.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسد المسام (Non-comedogenic). يوفر ملمساً حريرياً غنياً.', en: 'Non-comedogenic. Provides a rich silky texture.' }
+    }
+});
+
+// [9] EUCERIN REPAIR FOOT CREAM 10% UREA 100 ML
+deepProductsList.push({
+    id: 'euc_repair_foot_cream_10', brandId: 'eucerin', familyId: 'urea_repair', brand: 'Eucerin',
+    name: { ar: 'يوريا-ريبير (كريم القدمين 10% يوريا)', en: 'UreaRepair PLUS 10% Urea Foot Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً (مقشر)', en: 'Slightly acidic (Exfoliating)' },
+        mechanism: { 
+            ar: 'يقدم ترطيباً مكثفاً وتقشيراً لطيفاً للطبقة القرنية المتصلبة باستخدام 10% يوريا، مع السيراميدات لإصلاح حاجز الجلد وعوامل الترطيب الطبيعية لتقليل فقدان الماء.', 
+            en: 'Provides intense hydration and gentle exfoliation of the hardened stratum corneum using 10% Urea, with Ceramides to repair the barrier and NMFs to reduce water loss.' 
+        },
+        patient_benefit: { 
+            ar: 'يرطب الأقدام شديدة الجفاف والمتشققة بشكل مكثف وفوري. يقلل من مسامير القدم والكالو، وينعم الكعبين بشكل ملحوظ.', 
+            en: 'Intensely and instantly hydrates extremely dry, cracked feet. Reduces calluses and corns, and visibly smooths heels.' 
+        },
+        active_ingredients: [
+            { name: 'Urea', concentration: '10%', role: { ar: 'إذابة الجلد الميت وحبس الرطوبة بعمق.', en: 'Dissolving dead skin and locking moisture deeply.' } },
+            { name: 'Ceramides', concentration: 'Repairing | مرمم', role: { ar: 'منع تبخر الماء وتقوية الجلد.', en: 'Preventing water evaporation and strengthening skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً (أو كلما لزم الأمر).', en: 'Morning and Evening (or as needed).' },
+        step_in_routine: { ar: 'عناية القدمين.', en: 'Foot care.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بلطف على أقدام نظيفة وجافة، مع التركيز على الكعبين والمناطق المتصلبة.', en: 'Massage gently onto clean, dry feet, focusing on heels and hardened areas.' },
+        layering: { 
+            do_not_mix_with: { ar: ['وضعه على الجروح المفتوحة أو التشققات النازفة.', 'بين أصابع القدم لمنع الفطريات.'], en: ['Applying on open wounds or bleeding cracks.', 'Between toes to prevent fungal infections.'] }, 
+            best_mixed_with: { ar: ['ارتداء جوارب قطنية ليلاً بعد التطبيق لنتائج أسرع.'], en: ['Wearing cotton socks at night post-application for faster results.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تشققات الكعبين، القدم السكري (Diabetic foot)، مسامير القدم (Calluses)، والجفاف الشديد.', en: 'Cracked heels, Diabetic foot, Calluses, and severe dryness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن وفعال جداً لمرضى السكري لتجنب مضاعفات القدم السكري.', en: 'Highly safe and effective for diabetics to avoid diabetic foot complications.' }
+    }
+});
+
+// [10] EUCERIN SUN CREAM SPF 50+ 50 ML
+deepProductsList.push({
+    id: 'euc_sun_cream_sensitive', brandId: 'eucerin', familyId: 'sun_care', brand: 'Eucerin',
+    name: { ar: 'صن كريم (واقي شمس للبشرة الحساسة والجافة)', en: 'Sun Creme Sensitive Protect SPF 50+' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية خلوية ثلاثية الأبعاد بفضل (Advanced Spectral Tech)، وحماية مضادة للأكسدة عبر <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span>، مع حمض الجليسيريتينيك لدعم إصلاح الـ DNA.', 
+            en: 'Provides 3D cellular protection via (Advanced Spectral Tech), antioxidant protection via <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span>, and Glycyrrhetinic Acid to support DNA repair.' 
+        },
+        patient_benefit: { 
+            ar: 'يحمي البشرة الجافة والحساسة من حروق الشمس، يوفر ترطيباً عميقاً، ويهدئ الاحمرار والتهيج الناتج عن الأشعة.', 
+            en: 'Protects dry/sensitive skin from sunburns, provides deep hydration, and soothes redness/irritation caused by rays.' 
+        },
+        active_ingredients: [
+            { name: 'Broad-Spectrum UV Filters', concentration: 'SPF 50+', role: { ar: 'حماية شاملة ضد الأشعة فوق البنفسجية.', en: 'Comprehensive protection against UV rays.' } },
+            { name: 'Licochalcone A + Glycyrrhetinic Acid', concentration: 'Active | فعال', role: { ar: 'مضاد أكسدة قوي وترميم جيني.', en: 'Strong antioxidant and genetic repair.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً عند التعرض للشمس.', en: 'Daily during sun exposure.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (كريم حماية).', en: 'Final step (Protection cream).' },
+        routine_step_number: 4,
+        application: { ar: 'يوضع بسخاء قبل 20 دقيقة من التعرض للشمس، ويُجدد بعد السباحة أو التعرق.', en: 'Apply generously 20 mins before sun exposure, reapply after swimming/sweating.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['مرطبات البشرة الجافة (مثل Aquaporin).'], en: ['Dry skin moisturizers (like Aquaporin).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة، البشرة الحساسة المعرضة للتهيج من الشمس، والتهاب الجلد التأتبي.', en: 'Dry skin, sensitive skin prone to sun irritation, and atopic dermatitis.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام كريمي غني لا يترك أثراً أبيض، مقاوم للماء.', en: 'Rich creamy texture leaving no white cast, water-resistant.' }
+    }
+});
+
+// [11] EUCERIN SUN GEL-CREAM OIL CONTROL SPF 50+ 50 ML
+deepProductsList.push({
+    id: 'euc_sun_oil_control', brandId: 'eucerin', familyId: 'sun_care', brand: 'Eucerin',
+    name: { ar: 'صن جل-كريم أويل كونترول (واقي شمس للبشرة الدهنية)', en: 'Sun Gel-Cream Dry Touch Oil Control SPF 50+' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يدمج الحماية الخلوية (UV/HEVIS) مع تقنية التحكم بالدهون (Oil Control Tech) المعتمدة على الكارنيتين (L-Carnitine) المنظم للزهم، وجزيئات دقيقة لامتصاص اللمعان فوراً.', 
+            en: 'Integrates cellular protection (UV/HEVIS) with Oil Control Tech based on sebum-regulating L-Carnitine, and micro-particles to absorb shine instantly.' 
+        },
+        patient_benefit: { 
+            ar: 'الواقي رقم 1 للبشرة الدهنية في العديد من العيادات. يعطي لمسة جافة جداً (Dry-touch)، يمنع اللمعان لـ 8 ساعات، ولا يسبب أو يزيد من حب الشباب.', 
+            en: 'The #1 sunscreen for oily skin in many clinics. Provides an ultra dry-touch finish, prevents shine for 8h, and does not cause or worsen acne.' 
+        },
+        active_ingredients: [
+            { name: 'L-Carnitine', concentration: 'Active | فعال', role: { ar: 'تقليل إفراز الزهم (الدهون) بيولوجياً.', en: 'Biologically reducing sebum secretion.' } },
+            { name: 'Lipid-Absorbing Pigments', concentration: 'Mattifying | مطفي', role: { ar: 'تأثير مطفي يدوم طويلاً.', en: 'Long-lasting mattifying effect.' } },
+            { name: 'Licochalcone A', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'تهدئة التهابات حب الشباب الناتجة عن الشمس.', en: 'Soothing sun-induced acne inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (صباحاً وتجديد).', en: 'Daily (AM and reapplication).' },
+        step_in_routine: { ar: 'الخطوة الأخيرة للحماية.', en: 'Final step for protection.' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع على وجه نظيف. يمتص في ثوانٍ ولا يحتاج لفرك.', en: 'Distribute on clean face. Absorbs in seconds, no rubbing needed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات الزيتية الكثيفة أسفله.', 'الطبقات السميكة من المكياج (قد يتقشر/Pilling).'], en: ['Heavy oily moisturizers underneath.', 'Thick layers of makeup (might cause pilling).'] }, 
+            best_mixed_with: { ar: ['مجموعة DermoPurifyer.', 'أساس ممتاز للمكياج الخفيف.'], en: ['DermoPurifyer range.', 'Excellent base for light makeup.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الدهنية، البشرة المعرضة لحب الشباب، المسام الواسعة، والبيئات الحارة الرطبة.', en: 'Oily skin, acne-prone skin, enlarged pores, and hot/humid environments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تركيبة خالية تماماً من الزيوت (Oil-free)، لا تترك أثراً أبيض ولا تسد المسام.', en: 'Completely oil-free formula, leaves no white cast, non-comedogenic.' }
+    }
+});
+
+// [12] EUCERIN SUN HYDRO PROTECT SPF 50+ ULTRA LIGHT FLUID 50 ML
+deepProductsList.push({
+    id: 'euc_sun_hydro_protect', brandId: 'eucerin', familyId: 'sun_care', brand: 'Eucerin',
+    name: { ar: 'صن هيدرو بروتيكت (واقي شمس سائل مرطب)', en: 'Sun Hydro Protect Ultra Light Fluid SPF 50+' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية متقدمة من الأشعة (UV/HEVIS) مدعوماً بمركب (Hydro-Tech Complex) الذي يضم حمض الهيالورونيك وعوامل ترطيب طبيعية (NMFs) لإنعاش البشرة فوراً دون لزوجة.', 
+            en: 'Provides advanced protection (UV/HEVIS) backed by (Hydro-Tech Complex) combining HA and Natural Moisturizing Factors (NMFs) to instantly refresh skin without stickiness.' 
+        },
+        patient_benefit: { 
+            ar: 'يجمع بين الحماية العالية جداً والترطيب العميق بقوام "مائي" فائق الخفة، يعطي انتعاشاً للبشرة ولا يترك أي لمعان أو بقايا.', 
+            en: 'Combines very high protection with deep hydration in an ultra-light "watery" texture, refreshing the skin with zero shine or residue.' 
+        },
+        active_ingredients: [
+            { name: 'Advanced Spectral Tech', concentration: 'SPF 50+', role: { ar: 'حماية خلوية شاملة.', en: 'Comprehensive cellular protection.' } },
+            { name: 'Hyaluronic Acid + NMFs', concentration: 'Hydro-Tech Complex', role: { ar: 'ترطيب فوري ومنع تبخر الماء.', en: 'Instant hydration and preventing water evaporation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً.', en: 'Daily.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة للحماية.', en: 'Final step for protection.' },
+        routine_step_number: 4,
+        application: { ar: 'تُرج العبوة جيداً، يُوزع بسخاء ويمتص فوراً.', en: 'Shake well, apply generously, absorbs instantly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['روتين العناية اليومي لجميع أنواع البشرة.'], en: ['Daily care routine for all skin types.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جميع أنواع البشرة (حتى الحساسة)، الأشخاص الذين يكرهون ملمس كريمات الشمس، والمناخ الرطب.', en: 'All skin types (even sensitive), people who dislike sunscreen textures, and humid climates.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسبب العرق المفرط تحت الشمس (لا يكتم المسام).', en: 'Does not cause excessive sweating under the sun (does not suffocate pores).' }
+    }
+});
+
+// [13] EUCERIN EVEN PIGMENT PERFECTOR DAILY BODY LOTION 250 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_body', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (لوشن تفتيح الجسم)', en: 'Even Pigment Perfector Daily Body Lotion' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'ينقل قوة <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> المفتحة إلى الجسم بالكامل. يثبط إنتاج الميلانين الزائد، مع حمض الهيالورونيك لترطيب الجسم وتنعيم المناطق الخشنة الداكنة.', 
+            en: 'Brings the brightening power of <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> to the entire body. Inhibits excess melanin, with HA to hydrate and smooth rough dark areas.' 
+        },
+        patient_benefit: { 
+            ar: 'يوحد لون الجسم، يقلل من اسمرار المناطق المعرضة للاحتكاك (كالركب والأكواع)، ويترك البشرة مرطبة ومشرقة.', 
+            en: 'Evens body tone, reduces darkening in friction-prone areas (like knees & elbows), and leaves skin hydrated and radiant.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Patented | براءة اختراع', role: { ar: 'علاج التصبغات وتوحيد لون الجسم.', en: 'Treating pigmentation and evening body tone.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب عميق للجسم.', en: 'Deep body hydration.' } },
+            { name: 'Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'تخفيف الاحمرار والالتهاب.', en: 'Reducing redness and inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'ترطيب وتفتيح الجسم.', en: 'Body hydration and brightening.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بلطف على بشرة الجسم، مع التركيز على المناطق الداكنة.', en: 'Massage gently onto body skin, focusing on dark areas.' },
+        layering: { 
+            do_not_mix_with: { ar: ['استخدام منتجات الثياميدول أكثر من 4 مرات في اليوم.'], en: ['Using Thiamidol products more than 4 times a day.'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'اسمرار الجسم، عدم توحد لون الركب والأكواع، وتصبغات الجسم.', en: 'Body darkening, uneven knees and elbows, and body pigmentation.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'سريع الامتصاص ولا يترك أثراً دهنياً على الملابس.', en: 'Fast-absorbing and leaves no greasy residue on clothes.' }
+    }
+});
+
+// [14] EUCERIN DERMOPURIFYER POST BLEMISH TRIPLE EFFECT SERUM 40 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_triple_effect', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (سيروم التأثير الثلاثي لآثار الحبوب)', en: 'DermoPurifyer Post-Blemish Triple Effect Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'ابتكار مذهل يجمع <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> (لعلاج التصبغ ما بعد الالتهاب PIH)، وحمض الساليسيليك (لعلاج الحبوب النشطة)، وتقنية التحكم بالزهم (للتحكم باللمعان).', 
+            en: 'An amazing innovation combining <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> (to treat PIH), Salicylic Acid (to treat active blemishes), and Sebum Control Tech (to control shine).' 
+        },
+        patient_benefit: { 
+            ar: 'يضرب 3 عصافير بحجر: يمحو آثار الحبوب الداكنة القديمة، يقلل البثور النشطة، ويمنع لمعان البشرة المزعج.', 
+            en: 'Kills 3 birds with one stone: erases old dark acne marks, reduces active blemishes, and prevents annoying skin shine.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Active | فعال', role: { ar: 'إزالة البقع الداكنة الناتجة عن حب الشباب.', en: 'Eliminating dark post-acne marks.' } },
+            { name: 'Salicylic Acid (BHA)', concentration: 'Keratolytic | مقشر', role: { ar: 'فتح المسام وتقليل الحبوب النشطة.', en: 'Unclogging pores and reducing active blemishes.' } },
+            { name: 'Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'تسكين الالتهاب المصاحب للحبوب.', en: 'Soothing acne-associated inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'السيروم العلاجي المتكامل.', en: 'Comprehensive treatment serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوزع على كامل الوجه النظيف، مع تجنب محيط العينين.', en: 'Distribute over entire clean face, avoiding the eye contour.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول أو المقشرات القوية في نفس الوقت.', 'لا يُستخدم على حب الشباب الملتهب جداً أو المفتوح.'], en: ['Retinol or strong exfoliants simultaneously.', 'Do not use on highly inflamed or open acne.'] }, 
+            best_mixed_with: { ar: ['غسول DermoPurifyer.', 'واقي شمس Oil Control أو DermoPurifyer Protective Fluid.'], en: ['DermoPurifyer Cleanser.', 'Oil Control SPF or DermoPurifyer Protective Fluid.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الآثار الداكنة لحب الشباب (PIH)، الحبوب المتكررة، البشرة الدهنية واللمعان.', en: 'Dark post-acne marks (PIH), recurring blemishes, oily skin and shine.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'أول سيروم يجمع بين علاج حب الشباب وتفتيح آثاره بأمان عالي (تقنية الثياميدول).', en: 'The first serum to combine acne treatment and safe mark brightening (Thiamidol tech).' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (29): يوسيرين (المنظفات، حب الشباب، العناية المتخصصة)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['decanediol'] = {
+    title: { ar: 'ديكانديول (Decanediol) 🦠', en: 'Decanediol 🦠' },
+    desc: { 
+        ar: 'مكون نشط مرطب وله خصائص قوية جداً مضادة للبكتيريا، يستهدف بكتيريا (C. acnes) المسببة لحب الشباب بشكل مباشر لمنع انتشار البثور.', 
+        en: 'A moisturizing active ingredient with highly potent antibacterial properties, directly targeting the acne-causing bacteria (C. acnes) to prevent blemish proliferation.' 
+    }
+};
+
+glossaryDict['polidocanol'] = {
+    title: { ar: 'بوليدوكانول (Polidocanol) 🛑', en: 'Polidocanol 🛑' },
+    desc: { 
+        ar: 'مادة طبية مهدئة تعمل كمخدر موضعي خفيف لتهدئة الجلد وفروة الرأس، مما يوقف الإحساس بالحكة فوراً ويمنع الرغبة في الهرش.', 
+        en: 'A medical soothing agent acting as a mild topical anesthetic to calm the skin and scalp, instantly stopping the sensation of itchiness and the urge to scratch.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [15] EUCERIN DERMOPURIFYER POST BLEMISH PROTECTIVE FLUID SPF 30 50 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_protective_fluid', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (سائل الحماية من آثار الحبوب SPF 30)', en: 'DermoPurifyer Post-Blemish Protective Fluid SPF 30' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يجمع بين فلاتر SPF 30 لصد الأشعة المسببة لاسمرار آثار الحبوب (PIH)، وتقنية تنظيم الزهم (Sebum Regulating Tech) لتقليل اللمعان، و <span class="glossary-term" onclick="openGlossary(\'decanediol\')">ديكانديول</span> لمنع البكتيريا.', 
+            en: 'Combines SPF 30 filters to block rays causing PIH darkening, Sebum Regulating Tech to reduce shine, and <span class="glossary-term" onclick="openGlossary(\'decanediol\')">Decanediol</span> to prevent bacteria.' 
+        },
+        patient_benefit: { 
+            ar: 'الخطوة الصباحية المكملة لسيروم التأثير الثلاثي؛ يمنع اسمرار البقع تحت الشمس، يطفئ اللمعان، ويوفر حماية يومية للبشرة المعرضة للحبوب دون سد المسام.', 
+            en: 'The AM complementary step to the Triple Effect Serum; prevents spot darkening under the sun, mattifies shine, and provides daily protection for blemish-prone skin without clogging pores.' 
+        },
+        active_ingredients: [
+            { name: 'UVA/UVB Filters', concentration: 'SPF 30', role: { ar: 'منع تفاقم تصبغات ما بعد الالتهاب.', en: 'Preventing the aggravation of PIH.' } },
+            { name: 'Licochalcone A', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'تهدئة التهاب الحبوب النشطة.', en: 'Soothing active blemish inflammation.' } },
+            { name: 'Decanediol', concentration: 'Antibacterial | مضاد بكتيريا', role: { ar: 'منع نمو بكتيريا حب الشباب.', en: 'Preventing acne bacteria growth.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (كل صباح).', en: 'Daily (Every morning).' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (عناية نهارية وحماية).', en: 'Final step (Day care and protection).' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع على الوجه والرقبة. يمتص بسرعة ولا يترك أثراً.', en: 'Distribute over face and neck. Absorbs quickly leaving no trace.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات الثقيلة جداً فوقه.'], en: ['Very heavy moisturizers on top of it.'] }, 
+            best_mixed_with: { ar: ['سيروم DermoPurifyer Triple Effect (يُوضع قبله).'], en: ['DermoPurifyer Triple Effect Serum (applied beforehand).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'آثار حب الشباب، البشرة المعرضة للشوائب، اللمعان، والحماية اليومية من الشمس.', en: 'Post-acne marks, blemish-prone skin, shine, and daily sun protection.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام سائل غير دهني يحافظ على مظهر مطفي طوال اليوم.', en: 'Non-greasy fluid texture maintaining a matte look all day.' }
+    }
+});
+
+// [16] EUCERIN DERMOPURIFYER TONER 200 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_toner', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (تونر منقي للمسام)', en: 'DermoPurifyer Clearing Toner' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (يحفز التقشير الخفيف)', en: 'Acidic (Stimulates mild peeling)' },
+        mechanism: { 
+            ar: 'تركيبة تحتوي على حمض اللاكتيك (Lactic Acid) بنسبة 2%، تعمل على فتح المسام المسدودة، تنظيف منطقة T-Zone بعمق، ومنع نمو البكتيريا دون التسبب في جفاف مفرط.', 
+            en: 'Formula containing 2% Lactic Acid, works to unclog blocked pores, deeply clean the T-Zone, and prevent bacterial growth without causing excessive dryness.' 
+        },
+        patient_benefit: { 
+            ar: 'يهيئ البشرة للعلاجات اللاحقة، يزيل أي بقايا للمكياج والغسول، يقلص المسام الواسعة، ويترك البشرة نظيفة ومنتعشة.', 
+            en: 'Preps skin for subsequent treatments, removes any makeup/cleanser residue, shrinks enlarged pores, and leaves skin clean and refreshed.' 
+        },
+        active_ingredients: [
+            { name: 'Lactic Acid (AHA)', concentration: '2%', role: { ar: 'تقشير سطحي لطيف وتطهير المسام.', en: 'Gentle surface exfoliation and pore purification.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'التونر (بعد الغسول وقبل السيروم).', en: 'Toner (Post-cleanser & Pre-serum).' },
+        routine_step_number: 2,
+        application: { ar: 'يُبلل قطن بالتونر ويُمسح به كامل الوجه والرقبة (مع التركيز على T-Zone). لا يُشطف.', en: 'Soak a cotton pad and wipe over entire face and neck (focusing on T-Zone). Do not rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['علاجات الروكوتان الفموية (لتجنب الجفاف).', 'أحماض تقشير قوية جداً.'], en: ['Oral Accutane treatments (to avoid dryness).', 'Very strong exfoliating acids.'] }, 
+            best_mixed_with: { ar: ['غسول DermoPurifyer.'], en: ['DermoPurifyer Cleanser.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'المسام الواسعة والمسدودة، الرؤوس السوداء، والبشرة الدهنية.', en: 'Enlarged and clogged pores, blackheads, and oily skin.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'لا يُستخدم حول منطقة العين.', en: 'Do not use around the eye area.' }
+    }
+});
+
+// [17] EUCERIN DERMOPURIFYER CLEANSER 200 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_cleanser', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (جل غسول منقي)', en: 'DermoPurifyer Cleansing Gel' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'منظف خالٍ من الصابون يعتمد على 6% من المؤثرات السطحية المذبذبة (Ampho-Tensides) لإزالة الزهم الزائد بلطف، مع حمض الساليسيليك كمضاد للبكتيريا.', 
+            en: 'Soap-free cleanser relying on 6% Ampho-Tensides to gently remove excess sebum, with Salicylic Acid acting as an antibacterial agent.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل الأوساخ والمكياج والدهون بفعالية دون الإخلال بحاجز الجلد، ويترك البشرة نظيفة، منتعشة، وغير مشدودة.', 
+            en: 'Effectively removes dirt, makeup, and sebum without disrupting the skin barrier, leaving skin clean, refreshed, and non-tight.' 
+        },
+        active_ingredients: [
+            { name: 'Ampho-Tensides', concentration: '6%', role: { ar: 'تنظيف عميق ولطيف للدهون.', en: 'Deep and gentle sebum cleansing.' } },
+            { name: 'Salicylic Acid', concentration: 'Active | فعال', role: { ar: 'تنقية المسام ومضاد بكتيري.', en: 'Pore purification and antibacterial.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (AM & PM).' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف).', en: 'Step 1 (Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى في اليدين مع قليل من الماء، يُدلك على الوجه ثم يُشطف بماء فاتر.', en: 'Lather in hands with a little water, massage onto face, then rinse with lukewarm water.' },
+        layering: { 
+            do_not_mix_with: { ar: ['فرش التنظيف الخشنة جداً على الحبوب الملتهبة.'], en: ['Very harsh cleansing brushes on inflamed acne.'] }, 
+            best_mixed_with: { ar: ['جميع منتجات DermoPurifyer.'], en: ['All DermoPurifyer products.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المعرضة لحب الشباب، اللمعان المفرط، والتنظيف اليومي للبشرة الدهنية.', en: 'Acne-prone skin, excessive shine, and daily cleansing for oily skin.' },
+        pregnancy_safe: false, sun_sensitivity: false, 
+        notes: { ar: 'آمن للاستخدام كغسول للجسم في حال وجود حبوب في الظهر أو الصدر.', en: 'Safe to use as a body wash for back or chest acne.' }
+    }
+});
+
+// [18] EUCERIN INTIMATE CARE 250 ML
+deepProductsList.push({
+    id: 'euc_intimate_care', brandId: 'eucerin', familyId: 'ph5', brand: 'Eucerin',
+    name: { ar: 'إنتميت كير (غسول العناية بالمناطق الحساسة)', en: 'Intimate Protect Gentle Cleansing Fluid' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '4.5 (يطابق الحموضة الطبيعية للمنطقة)', en: '4.5 (Matches natural intimate pH)' },
+        mechanism: { 
+            ar: 'يحتوي على حمض اللاكتيك (Lactic Acid) الطبيعي للمنطقة الحساسة للمحافظة على الفلورا المهبلية الدقيقة (Microflora)، بالإضافة للبيسابولول لتهدئة التهيج.', 
+            en: 'Contains skin\'s own Lactic Acid to maintain the intimate microflora, plus Bisabolol to soothe irritation.' 
+        },
+        patient_benefit: { 
+            ar: 'يحمي من العدوى، يهدئ التهيج والالتهابات، وينظف بلطف فائق ليمنح إحساساً بالراحة والانتعاش طوال اليوم.', 
+            en: 'Protects against infections, soothes irritation and inflammation, and ultra-gently cleanses for a feeling of comfort and freshness all day.' 
+        },
+        active_ingredients: [
+            { name: 'Lactic Acid', concentration: 'Physiological | فسيولوجي', role: { ar: 'الحفاظ على التوازن الحمضي الواقي.', en: 'Maintaining the protective acidic balance.' } },
+            { name: 'Bisabolol', concentration: 'Soothing | مهدئ', role: { ar: 'تسكين الاحمرار والتهيج الموضعي.', en: 'Soothing redness and local irritation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (أثناء الاستحمام).', en: 'Daily (during shower).' },
+        step_in_routine: { ar: 'العناية الشخصية.', en: 'Personal care.' },
+        routine_step_number: 1,
+        application: { ar: 'يُستخدم كجل استحمام خارجي للمنطقة الحساسة، ثم يُشطف جيداً بالماء.', en: 'Used as an external shower gel for the intimate area, then rinsed thoroughly with water.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الصابون القلوي العادي (يدمر الفلورا الطبيعية).'], en: ['Standard alkaline soap (destroys natural flora).'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'العناية اليومية بالمناطق الحساسة، الحماية من الالتهابات، وخلال فترات التغير الهرموني.', en: 'Daily intimate care, protection against infections, and during hormonal fluctuations.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مختبر من قبل أطباء الأمراض النسائية والجلدية.', en: 'Gynecologically and dermatologically tested.' }
+    }
+});
+
+// [19] EUCERIN ATOPICONTROL BODY CARE LOTION 250 ML
+deepProductsList.push({
+    id: 'euc_atopicontrol_lotion', brandId: 'eucerin', familyId: 'atopicontrol', brand: 'Eucerin',
+    name: { ar: 'أتوبي-كونترول (لوشن العناية بالجسم للإكزيما)', en: 'AtopiControl Body Care Lotion' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'تركيبة غنية تعتمد على الأوميجا 6 (زيت زهرة الربيع المسائية وزيت بذور العنب) لترميم الحاجز الجلدي، مع <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">ليكوکالكون A</span> لتهدئة الالتهاب وتقليل الحكة.', 
+            en: 'Rich formula based on Omega 6 (Evening Primrose Oil & Grape Seed Oil) to repair the skin barrier, with <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span> to soothe inflammation and reduce itching.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر ترطيباً عميقاً للجلد التأتبي والمتهيج، يقلل من خشونة الجلد ويخفف الإحساس بالحكة والشد لترتاح البشرة فوراً.', 
+            en: 'Provides deep hydration for atopic and irritated skin, reduces skin roughness, and relieves itching and tightness for instant skin comfort.' 
+        },
+        active_ingredients: [
+            { name: 'Omega-6 Fatty Acids', concentration: 'Rich | غني', role: { ar: 'تجديد وتقوية حاجز البشرة.', en: 'Renewing and strengthening the skin barrier.' } },
+            { name: 'Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'تخفيف الاحمرار والالتهاب.', en: 'Relieving redness and inflammation.' } },
+            { name: 'Ceramides', concentration: 'Active | فعال', role: { ar: 'منع تبخر الماء من الجلد.', en: 'Preventing water evaporation from the skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'الترطيب الأساسي للجسم.', en: 'Core body hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على كامل الجسم نظيفاً ومجففاً، خاصة المناطق المتهيجة.', en: 'Massage onto entire clean, dry body, especially irritated areas.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['زيت الاستحمام AtopiControl Bath & Shower Oil.'], en: ['AtopiControl Bath & Shower Oil.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الإكزيما التأتبية (Atopic Dermatitis)، الجفاف الشديد، الحكة، وخشونة الجلد.', en: 'Atopic Dermatitis, severe dryness, itching, and skin roughness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن للرضع فوق 3 أشهر. خالي من الكورتيزون والعطور.', en: 'Safe for babies over 3 months. Cortisone and fragrance-free.' }
+    }
+});
+
+// [20] EUCERIN AQUAPHOR BODY OINTMENT SPRAY 250 ML
+deepProductsList.push({
+    id: 'euc_aquaphor_spray', brandId: 'eucerin', familyId: 'aquaphor', brand: 'Eucerin',
+    name: { ar: 'أكوافور بخاخ (مرهم بخاخ للجسم)', en: 'Aquaphor Body Ointment Spray' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'N/A (خالٍ من الماء)', en: 'N/A (Water-free)' },
+        mechanism: { 
+            ar: 'ابتكار يجمع نفس فعالية مرهم أكوافور العلاجي للترميم (بانثينول + جلسرين + بيسابولول) في شكل بخاخ يعمل بـ 360 درجة، لسهولة الوصول وتغطية المساحات الكبيرة بسرعة.', 
+            en: 'Innovation combining the same therapeutic repair efficacy of Aquaphor ointment (Panthenol + Glycerin + Bisabolol) in a 360-degree spray format, for easy reach and fast coverage of large areas.' 
+        },
+        patient_benefit: { 
+            ar: 'يرمم ويهدئ البشرة شديدة الجفاف والمتهيجة على الفور. مثالي لمناطق الجسم الواسعة أو التي يصعب الوصول إليها (مثل الظهر أو الساقين).', 
+            en: 'Instantly repairs and soothes severely dry, irritated skin. Ideal for large or hard-to-reach body areas (like back or legs).' 
+        },
+        active_ingredients: [
+            { name: 'Panthenol', concentration: 'Active | فعال', role: { ar: 'تسريع تجديد الخلايا.', en: 'Accelerating cell regeneration.' } },
+            { name: 'Glycerin', concentration: 'Hydrating | مرطب', role: { ar: 'جذب الماء للجلد وحبسه.', en: 'Attracting water to skin and locking it.' } },
+            { name: 'Bisabolol', concentration: 'Soothing | مهدئ', role: { ar: 'تقليل التهيج.', en: 'Reducing irritation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة.', en: 'As needed.' },
+        step_in_routine: { ar: 'علاج طارئ / ترطيب مكثف.', en: 'Emergency treatment / Intense hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُرش على بعد 15 سم من الجلد بالتساوي، يُدلك بلطف إذا لزم الأمر.', en: 'Spray evenly 15cm away from the skin, massage gently if needed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يُرش مباشرة على الوجه (يرش في اليد أولاً).'], en: ['Do not spray directly onto the face (spray into hands first).'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد على مساحات واسعة من الجسم، خشونة الساقين والأذرع، وتهيج الاحتكاك.', en: 'Severe dryness on large body areas, rough legs and arms, and friction irritation.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'البخاخ يعمل حتى وهو مقلوب رأساً على عقب.', en: 'Spray works even when held upside down.' }
+    }
+});
+
+// [21] EUCERIN DERMO CAPILLAIRE SHAMPOO DANDRUFF 250 ML
+deepProductsList.push({
+    id: 'euc_dermocapillaire_dandruff_gel', brandId: 'eucerin', familyId: 'dermocapillaire', brand: 'Eucerin',
+    name: { ar: 'ديرمو-كابيلير (شامبو جل للقشرة الدهنية)', en: 'DermoCapillaire Anti-Dandruff Gel Shampoo' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن لفروة الرأس', en: 'Scalp-balanced' },
+        mechanism: { 
+            ar: 'يجمع بين (Climbazole و Piroctone Olamine) لاستهداف فطر الملاسيزيا المسبب للقشرة، مع <span class="glossary-term" onclick="openGlossary(\'polidocanol\')">البوليدوكانول</span> المهدئ لإيقاف حكة فروة الرأس المزعجة من أول غسلة.', 
+            en: 'Combines (Climbazole and Piroctone Olamine) to target Malassezia fungus causing dandruff, with soothing <span class="glossary-term" onclick="openGlossary(\'polidocanol\')">Polidocanol</span> to stop annoying scalp itch from the 1st wash.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل القشرة الدهنية (الصفراء/اللزجة) بفعالية، يمنع عودتها، وينظف الشعر وفروة الرأس ويتركهما منتعشين بلا حكة.', 
+            en: 'Effectively removes oily (yellow/sticky) dandruff, prevents its relapse, and cleanses hair and scalp leaving them refreshed and itch-free.' 
+        },
+        active_ingredients: [
+            { name: 'Climbazole & Piroctone Olamine', concentration: 'Active | فعال', role: { ar: 'مكافحة الفطريات والبكتيريا.', en: 'Combating fungi and bacteria.' } },
+            { name: 'Polidocanol', concentration: 'Soothing | مهدئ', role: { ar: 'تسكين الحكة فوراً.', en: 'Instantly soothing itching.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: '2-3 مرات أسبوعياً كعلاج. ثم مرة أسبوعياً للوقاية.', en: '2-3 times/week as treatment. Then once/week for maintenance.' },
+        step_in_routine: { ar: 'علاج فروة الرأس.', en: 'Scalp treatment.' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك على فروة مبللة، يُترك لعدة دقائق لتفعيل المواد، ثم يُشطف.', en: 'Massage into wet scalp, leave for a few minutes to activate, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['شامبوهات قاسية أخرى.', 'الماء الساخن جداً.'], en: ['Other harsh shampoos.', 'Very hot water.'] }, 
+            best_mixed_with: { ar: ['شامبو خفيف (pH5) في الأيام البينية.'], en: ['Mild shampoo (pH5) on alternate days.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'القشرة الدهنية (التي تلتصق بالفروة)، التهاب الجلد الدهني (Seborrheic Dermatitis)، وحكة الرأس.', en: 'Oily dandruff (sticking to the scalp), Seborrheic Dermatitis, and scalp itch.' },
+        pregnancy_safe: false, sun_sensitivity: false, 
+        notes: { ar: 'يحسن لمعان ونعومة الشعر ولا يسبب جفافه كباقي شامبوهات القشرة.', en: 'Improves hair shine and softness without drying it like other dandruff shampoos.' }
+    }
+});
+
+// [22] EUCERIN DERMATO CLEAN MICELLAR FLUID 3 IN 1 200 ML
+deepProductsList.push({
+    id: 'euc_dermatoclean_micellar', brandId: 'eucerin', familyId: 'dermato_clean', brand: 'Eucerin',
+    name: { ar: 'ديرماتو-كلين 3 في 1 (محلول ميسيلار منقي)', en: 'DermatoCLEAN 3 in 1 Micellar Cleansing Fluid' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'يجمع مركب التنظيف اللطيف (APG Complex) مع <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">جلوكو-جليسرول</span> وحمض الهيالورونيك، ليزيل المكياج والأوساخ مع السماح للجلد بالتنفس (يعزز امتصاص الأكسجين بنسبة عالية).', 
+            en: 'Combines a mild cleansing complex (APG) with <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">Gluco-Glycerol</span> and HA, removing makeup and dirt while allowing skin to breathe (significantly enhances oxygen uptake).' 
+        },
+        patient_benefit: { 
+            ar: 'منظف وتونر ومزيل مكياج عين في خطوة واحدة. يترك البشرة نقية، مرطبة، وتتنفس بحرية استعداداً للمرطبات.', 
+            en: 'Cleanser, toner, and eye makeup remover in one step. Leaves skin pure, hydrated, and breathing freely ready for moisturizers.' 
+        },
+        active_ingredients: [
+            { name: 'APG Complex', concentration: 'Ultra-mild', role: { ar: 'تنظيف سطحي فعال دون تجريد الزيوت.', en: 'Effective surface cleansing without stripping oils.' } },
+            { name: 'Hyaluronic Acid + Gluco-Glycerol', concentration: 'Hydrating | مرطب', role: { ar: 'ترطيب وحماية من الجفاف.', en: 'Hydrating and protecting from dryness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى للتنظيف.', en: 'First cleansing step.' },
+        routine_step_number: 1,
+        application: { ar: 'يُبلل قطن نظيف ويمسح الوجه والعينين بلطف. لا يحتاج لشطف.', en: 'Soak a cotton pad and gently wipe face and eyes. No rinsing required.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك القاسي.'], en: ['Harsh rubbing.'] }, 
+            best_mixed_with: { ar: ['جميع روتينات العناية اليومية من يوسيرين.'], en: ['All Eucerin daily care routines.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التنظيف اليومي لجميع أنواع البشرة (بما فيها الحساسة)، وإزالة مكياج الوجه والعين.', en: 'Daily cleansing for all skin types (including sensitive), and face/eye makeup removal.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره من قبل أطباء العيون. يناسب مستخدمي العدسات اللاصقة.', en: 'Ophthalmologically tested. Suitable for contact lens wearers.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (30): يوسيرين (عائلة Hyaluron-Filler، Elasticity، والعناية بالعين)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. تحديث العائلات ومصطلحات القاموس الجديدة ---
+
+let eucerinBrandUpdate3 = brandsList.find(b => b.id === 'eucerin');
+if (eucerinBrandUpdate3) {
+    if (!eucerinBrandUpdate3.families.find(f => f.id === 'elasticity')) {
+        eucerinBrandUpdate3.families.push({ id: 'elasticity', name: { ar: 'إلاستيستي (لمرونة البشرة الناضجة)', en: 'Hyaluron-Filler + Elasticity' } });
+    }
+}
+
+glossaryDict['arctiin'] = {
+    title: { ar: 'الأركتين (Arctiin) 🌼', en: 'Arctiin 🌼' },
+    desc: { 
+        ar: 'مستخلص نشط طبيعياً من ثمرة الأرقطيون. أثبت سريرياً قدرته على تسريع عملية تجديد الكولاجين في خلايا الجلد، مما يجعله مثالياً لعلاج فقدان المرونة والترهل في البشرة الناضجة.', 
+        en: 'A naturally active extract from the Burdock fruit. Clinically proven to accelerate collagen renewal in skin cells, making it ideal for treating loss of elasticity and sagging in mature skin.' 
+    }
+};
+
+glossaryDict['aha_complex_eucerin'] = {
+    title: { ar: 'مركب التقشير (AHA Complex) 🧪', en: 'AHA Peeling Complex 🧪' },
+    desc: { 
+        ar: 'مزيج مدروس من أحماض ألفا هيدروكسي (جليكوليك، لاكتيك، جلوكونولاكتون) يعمل على تقشير الجلد الميت بلطف أثناء الليل، لتعزيز إشراقة البشرة وتسهيل اختراق حمض الهيالورونيك.', 
+        en: 'A carefully formulated blend of Alpha Hydroxy Acids (Glycolic, Lactic, Gluconolactone) that gently exfoliates dead skin overnight, enhancing radiance and facilitating HA penetration.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [23] EUCERIN HYALURON-FILLER NIGHT PEELING & SERUM 30 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_night_peeling', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (سيروم التقشير الليلي)', en: 'Hyaluron-Filler Night Peeling & Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'عبوة مزدوجة تدمج <span class="glossary-term" onclick="openGlossary(\'aha_complex_eucerin\')">مركب التقشير AHA</span> لتجديد الخلايا، مع جل حمض الهيالورونيك عالي ومنخفض الوزن الجزيئي وجلايسين سابونين لملء التجاعيد من الداخل.', 
+            en: 'Dual-chamber integrating <span class="glossary-term" onclick="openGlossary(\'aha_complex_eucerin\')">AHA Peeling Complex</span> for cell renewal, with High/Low MW HA gel and Glycine Saponin to plump wrinkles from within.' 
+        },
+        patient_benefit: { 
+            ar: 'يصقل ملمس البشرة، يضيق المسام، ويملأ أعمق التجاعيد أثناء النوم، ليمنح البشرة نعومة وإشراقة ملحوظة في الصباح.', 
+            en: 'Refines skin texture, tightens pores, and plumps the deepest wrinkles overnight, granting noticeable smoothness and radiance in the AM.' 
+        },
+        active_ingredients: [
+            { name: 'AHA Complex', concentration: 'Active | فعال', role: { ar: 'تقشير الخلايا الميتة وتجديد السطح.', en: 'Exfoliating dead cells and surface renewal.' } },
+            { name: 'Hyaluronic Acid + Saponin', concentration: 'Plumping | ممتلئ', role: { ar: 'ترطيب عميق وتحفيز الهيالورونيك الذاتي.', en: 'Deep hydration and stimulating natural HA.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'سيروم علاجي ليلي مزدوج.', en: 'Dual night treatment serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يُضغط في المنتصف لخروج المزيجين معاً، يُخلط باليد ويوزع على الوجه والرقبة.', en: 'Press the middle to release both formulas, mix in hand and apply to face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات كيميائية أو ريتينول قوي في نفس الليلة.'], en: ['Chemical peels or strong retinol on the same night.'] }, 
+            best_mixed_with: { ar: ['كريم Hyaluron-Filler Night Cream.', 'واقي شمس إلزامي صباحاً.'], en: ['Hyaluron-Filler Night Cream.', 'Mandatory SPF in the AM.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد العميقة، المسام الواسعة، الملمس الخشن، وفقدان النضارة.', en: 'Deep wrinkles, enlarged pores, rough texture, and loss of radiance.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'قد يسبب وخزاً طفيفاً يزول بسرعة.', en: 'May cause slight tingling that fades quickly.' }
+    }
+});
+
+// [24] EUCERIN ELASTICITY + FILLER FACIAL OIL 30 ML
+deepProductsList.push({
+    id: 'euc_elasticity_filler_oil', brandId: 'eucerin', familyId: 'elasticity', brand: 'Eucerin',
+    name: { ar: 'إلاستيستي + فيلر (زيت الوجه لمرونة البشرة)', en: 'Elasticity + Filler Facial Oil' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'زيت علاجي يغذي البشرة الناضجة. يحتوي على زيت الأرجان الغني بالليبيدات، وفيتامين E، ومستخلص (Milk Thistle) لتحسين مرونة الجلد ومكافحة التدهور التأكسدي.', 
+            en: 'Therapeutic oil nourishing mature skin. Contains lipid-rich Argan Oil, Vitamin E, and Milk Thistle extract to improve skin elasticity and combat oxidative degradation.' 
+        },
+        patient_benefit: { 
+            ar: 'يعيد بناء حاجز الدهون المفقود في البشرة المتقدمة في السن، يمنحها نعومة حريرية، ويحسن من تماسكها وإشراقتها فوراً.', 
+            en: 'Rebuilds the lost lipid barrier in aging skin, grants silky smoothness, and instantly improves firmness and radiance.' 
+        },
+        active_ingredients: [
+            { name: 'Argan Oil', concentration: 'Rich | غني', role: { ar: 'تغذية وتنعيم مكثف للجلد الجاف.', en: 'Intense nourishment and smoothing for dry skin.' } },
+            { name: 'Milk Thistle Extract', concentration: 'Active | فعال', role: { ar: 'حماية الكولاجين من التكسر.', en: 'Protecting collagen from breakdown.' } },
+            { name: 'Vitamin E', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'محاربة الجذور الحرة والشيخوخة.', en: 'Fighting free radicals and aging.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً (أو حسب الحاجة للترطيب).', en: 'Morning and Evening (or as needed for hydration).' },
+        step_in_routine: { ar: 'زيت علاجي مغذي.', en: 'Nourishing treatment oil.' },
+        routine_step_number: 2,
+        application: { ar: 'يمكن استخدامه قبل كريم العناية، أو خلط بضع قطرات منه مع كريم النهار/الليل لزيادة التغذية.', en: 'Can be used before care cream, or mix a few drops with day/night cream for extra nourishment.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Hyaluron-Filler + Elasticity.'], en: ['Hyaluron-Filler + Elasticity Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الناضجة والجافة جداً، فقدان المرونة، البهتان الشديد المرتبط بالعمر.', en: 'Mature and very dry skin, loss of elasticity, and severe age-related dullness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يترك أثراً دهنياً ثقيلاً (Satin finish).', en: 'Leaves no heavy greasy residue (Satin finish).' }
+    }
+});
+
+// [25] EUCERIN HYALURON-FILLER VIT C BOOSTER SERUM 3 X 8 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_vitc_booster', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (معزز فيتامين سي 10%)', en: 'Hyaluron-Filler Vitamin C Booster 10%' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (لامتصاص الفيتامين)', en: 'Acidic (for vitamin absorption)' },
+        mechanism: { 
+            ar: 'بودرة فيتامين C نقي بتركيز 10% تُفعل لحظة الاستخدام، ممزوجة مع حمض الهيالورونيك ومضاد الأكسدة <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span> لتوفير حماية خلوية ونضارة فورية.', 
+            en: '10% pure Vitamin C powder activated upon use, mixed with HA and the antioxidant <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span> to provide cellular protection and instant radiance.' 
+        },
+        patient_benefit: { 
+            ar: 'يقوي دفاعات البشرة ضد التلوث والشمس، يعالج البهتان الشديد في 7 أيام فقط، ويؤخر ظهور التجاعيد.', 
+            en: 'Strengthens skin defenses against pollution and sun, treats severe dullness in just 7 days, and delays the appearance of wrinkles.' 
+        },
+        active_ingredients: [
+            { name: 'Pure L-Ascorbic Acid', concentration: '10%', role: { ar: 'تحفيز الكولاجين وتفتيح النضارة.', en: 'Stimulating collagen and brightening radiance.' } },
+            { name: 'Licochalcone A + HA', concentration: 'Active | فعال', role: { ar: 'تهدئة، ترطيب، ومحاربة الشوارد الحرة.', en: 'Soothing, hydrating, and fighting free radicals.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة صباحاً.', en: 'Once daily AM.' },
+        step_in_routine: { ar: 'سيروم النضارة المضاد للأكسدة.', en: 'Antioxidant radiance serum.' },
+        routine_step_number: 2,
+        application: { ar: 'تُضغط الكبسولة العلوية لتحرير البودرة، تُرَج جيداً، ثم توضع قطرات على الوجه. (صالحة لمدة 7-10 أيام من التفعيل).', en: 'Press top capsule to release powder, shake well, apply drops to face. (Valid for 7-10 days post-activation).' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات أو ريتينول في نفس اللحظة.'], en: ['Exfoliants or retinol at the same time.'] }, 
+            best_mixed_with: { ar: ['واقي شمس Eucerin SPF50.'], en: ['Eucerin SPF50 Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة والمجهدة، التلوث، التجاعيد الأولية، وعدم تجانس اللون.', en: 'Dull stressed skin, pollution, early wrinkles, and uneven tone.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'العبوة مصممة لحماية الفيتامين من الأكسدة لضمان أقصى فعالية.', en: 'Packaging designed to protect the vitamin from oxidation ensuring max efficacy.' }
+    }
+});
+
+// [26] EUCERIN HYALURON-FILLER MOISTURE BOOSTER (ULTRA LIGHT) 30 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_moisture_booster', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (معزز الترطيب الفائق الخفة)', en: 'Hyaluron-Filler Moisture Booster (Ultra Light)' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'جل مائي منعش للغاية يجمع 3 أضعاف تركيز حمض الهيالورونيك (مقارنة بكريمات يوسيرين) مع الجلسرين، لضخ ترطيب فوري وطويل الأمد حتى 24 ساعة.', 
+            en: 'Ultra-refreshing water gel combining 3x the concentration of HA (compared to Eucerin creams) with Glycerin, pumping instant and long-lasting hydration up to 24h.' 
+        },
+        patient_benefit: { 
+            ar: 'ينعش البشرة العطشى فوراً، يملأ الخطوط الدقيقة (Plumping)، ويعطي مظهراً صحياً وندياً (Dewy) دون أي لزوجة.', 
+            en: 'Instantly refreshes thirsty skin, plumps fine lines, and gives a healthy dewy look without any stickiness.' 
+        },
+        active_ingredients: [
+            { name: 'Hyaluronic Acid', concentration: '3x Concentration', role: { ar: 'جذب الماء لطبقات الجلد العليا والعميقة.', en: 'Attracting water to upper and deep skin layers.' } },
+            { name: 'Glycerin', concentration: 'Active | فعال', role: { ar: 'ترطيب وتنعيم سطح الجلد.', en: 'Hydrating and smoothing skin surface.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'سيروم الترطيب الأول.', en: 'First hydrating serum.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على وجه نظيف ومندى (Damp) قليلاً لتعزيز حبس الماء.', en: 'Apply to a clean, slightly damp face to enhance water locking.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['أساس ممتاز (Primer) للمكياج.', 'واقي شمس Hydro Protect.'], en: ['Excellent makeup primer.', 'Hydro Protect SPF.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف السطحي، الخطوط الرفيعة، البشرة المجهدة، ومحبي القوام المائي الخفيف جداً.', en: 'Surface dehydration, fine lines, stressed skin, and lovers of ultra-light watery textures.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسد المسام (Non-comedogenic). ممتاز للبشرة المختلطة والدهنية التي ترفض الكريمات.', en: 'Non-comedogenic. Excellent for combi/oily skin that rejects creams.' }
+    }
+});
+
+// [27] EUCERIN HYALURON RADIANCE-BOOST SPRAY 150 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_spray', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون سبراي (بخاخ الترطيب والنضارة)', en: 'Hyaluron Radiance-Boost Spray' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'بخاخ منعش يدمج حمض الهيالورونيك مع <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">جلوكو-جليسرول</span> لتعزيز قنوات توزيع الماء في الخلايا وتوفير إشراقة فورية وتلطيف للجلد.', 
+            en: 'Refreshing spray integrating HA with <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">Gluco-Glycerol</span> to boost water distribution channels in cells, providing instant radiance and skin soothing.' 
+        },
+        patient_benefit: { 
+            ar: 'يبرد الجلد فوراً، يثبت المكياج، ويعيد الحيوية والترطيب للبشرة الجافة أو المجهدة في أي وقت من اليوم.', 
+            en: 'Instantly cools the skin, sets makeup, and restores vitality and hydration to dry or stressed skin anytime during the day.' 
+        },
+        active_ingredients: [
+            { name: 'Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'ترطيب سطحي فوري.', en: 'Instant surface hydration.' } },
+            { name: 'Gluco-Glycerol', concentration: 'Active | فعال', role: { ar: 'تنشيط الأكوابورينات لترطيب مستدام.', en: 'Activating aquaporins for sustained hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة طوال اليوم.', en: 'As needed throughout the day.' },
+        step_in_routine: { ar: 'ترطيب طارئ / تثبيت.', en: 'Emergency hydration / Setting.' },
+        routine_step_number: 2,
+        application: { ar: 'يُرش على الوجه من مسافة 20 سم. يترك ليجف لبضع ثوانٍ.', en: 'Spray onto face from 20cm away. Leave to dry for a few seconds.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['فوق المكياج لزيادة النضارة (Dewy effect).'], en: ['Over makeup to increase radiance (Dewy effect).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الحرارة، الجفاف المكتبي (التكييف)، الإرهاق، وإنعاش البشرة الحساسة.', en: 'Heat, office dryness (AC), fatigue, and refreshing sensitive skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من العطور. يوفر رذاذاً دقيقاً جداً (Fine mist).', en: 'Fragrance-free. Provides a very fine mist.' }
+    }
+});
+
+// [28] EUCERIN EVEN PIGMENT PERFECTOR GENTLE CLEANSING FOAM 150 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_foam', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (رغوة التنظيف لتفتيح البشرة)', en: 'Even Pigment Perfector Gentle Cleansing Foam' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'رغوة تنظيف لطيفة غنية بمستخلصات مفتحة ومضادة للأكسدة، تهيئ البشرة وتزيد من نفاذية واستجابة الجلد لمادة (الثياميدول) العلاجية اللاحقة.', 
+            en: 'Gentle cleansing foam rich in brightening and antioxidant extracts, prepping the skin and increasing its permeability and response to the subsequent (Thiamidol) treatment.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل الشوائب والمكياج بلطف، ينير البشرة الباهتة، ويدعم روتين علاج الكلف والتصبغات.', 
+            en: 'Gently removes impurities and makeup, illuminates dull skin, and supports the melasma and pigmentation treatment routine.' 
+        },
+        active_ingredients: [
+            { name: 'Dioic Acid', concentration: 'Active | فعال', role: { ar: 'تنظيم الزهم وتقليل البقع.', en: 'Regulating sebum and reducing spots.' } },
+            { name: 'Bisabolol', concentration: 'Soothing | مهدئ', role: { ar: 'منع التهيج أثناء التنظيف.', en: 'Preventing irritation during cleansing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف والتفتيح).', en: 'Step 1 (Cleansing & Brightening).' },
+        routine_step_number: 1,
+        application: { ar: 'تُضخ الرغوة، تُدلك على وجه مبلل برفق، ثم تُشطف.', en: 'Pump foam, massage gently onto wet face, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Even Pigment Dual Serum.'], en: ['Even Pigment Dual Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة ذات اللون غير الموحد، البقع الداكنة، والتحضير لروتين التفتيح.', en: 'Uneven skin tone, dark spots, and prepping for brightening routine.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يحتوي على الثياميدول، ولكنه يعزز من تأثيره.', en: 'Does not contain Thiamidol, but enhances its effect.' }
+    }
+});
+
+// [29] EUCERIN AQUAPORIN ACTIVE EYE CREAM 15 ML
+deepProductsList.push({
+    id: 'euc_aquaporin_eye', brandId: 'eucerin', familyId: 'aquaporin', brand: 'Eucerin',
+    name: { ar: 'أكوابورين أكتيف (كريم ترطيب محيط العين)', en: 'AQUAporin ACTIVE Eye Cream' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي (متوافق مع الدموع)', en: 'Physiological (Tear-compatible)' },
+        mechanism: { 
+            ar: 'يستخدم تقنية <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">جلوكو-جليسرول</span> لترطيب منطقة العين المعرضة للجفاف بشدة، مدعوماً بخلاصة الجينسنج (Ginseng) لتنشيط الدورة الدموية وتقليل الانتفاخات.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'gluconoglycerol\')">Gluco-Glycerol</span> tech to hydrate the highly dryness-prone eye area, backed by Ginseng extract to stimulate circulation and reduce puffiness.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر ترطيباً مكثفاً لـ 24 ساعة، يخفف الهالات السوداء المرتبطة بالإرهاق، ويبرد محيط العين فوراً بفضل الأداة المعدنية.', 
+            en: 'Provides intense 24h hydration, relieves fatigue-related dark circles, and instantly cools the eye contour via the metal applicator.' 
+        },
+        active_ingredients: [
+            { name: 'Gluco-Glycerol', concentration: 'Hydrating | مرطب', role: { ar: 'حبس الماء وتنشيط الأكوابورينات.', en: 'Locking water and activating aquaporins.' } },
+            { name: 'Ginseng Extract', concentration: 'Energizing | منشط', role: { ar: 'تقليل الانتفاخات وعلامات التعب.', en: 'Reducing puffiness and fatigue signs.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'ترطيب محيط العين.', en: 'Eye contour hydration.' },
+        routine_step_number: 2,
+        application: { ar: 'يوزع بواسطة الرأس المعدني المبرد بلطف حول العينين.', en: 'Distribute gently around eyes using the cooling metal applicator.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد حول العين، الخطوط الدقيقة الناتجة عن نقص الماء، والعيون المجهدة.', en: 'Severe dryness around eyes, dehydration fine lines, and fatigued eyes.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من العطور. آمن لمستخدمي العدسات اللاصقة.', en: 'Fragrance-free. Safe for contact lens wearers.' }
+    }
+});
+
+// [30] EUCERIN HYALURON-FILLER EYE CREAM 15 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_filler_eye', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (كريم تجاعيد محيط العين)', en: 'Hyaluron-Filler Eye Cream SPF 15' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يستهدف تجاعيد "قدم الغراب" (Crow\'s feet) بمزيج من حمض الهيالورونيك عالي ومنخفض الوزن الجزيئي و <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">جلايسين سابونين</span> لملء الخطوط، مع فلاتر SPF 15 للوقاية.', 
+            en: 'Targets "Crow\'s feet" wrinkles with a blend of High/Low MW HA and <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">Glycine Saponin</span> to plump lines, with SPF 15 filters for prevention.' 
+        },
+        patient_benefit: { 
+            ar: 'يملأ التجاعيد العميقة من الداخل للخارج بفعالية مثبتة، ويحمي المنطقة الرقيقة من الشيخوخة الضوئية المستقبلية.', 
+            en: 'Plumps deep wrinkles from the inside out with proven efficacy, and protects the delicate area from future photoaging.' 
+        },
+        active_ingredients: [
+            { name: 'HA + Saponin', concentration: 'Active | فعال', role: { ar: 'نفخ التجاعيد وتحفيز إنتاج الهيالورونيك.', en: 'Plumping wrinkles and stimulating HA production.' } },
+            { name: 'UVA/UVB Filters', concentration: 'SPF 15', role: { ar: 'حماية من أشعة الشمس اليومية.', en: 'Daily sun protection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً (لوجود عامل حماية).', en: 'Morning (due to SPF).' },
+        step_in_routine: { ar: 'علاج تجاعيد العين وحمايتها.', en: 'Eye wrinkle treatment & protection.' },
+        routine_step_number: 2,
+        application: { ar: 'يُربت بلطف حول العينين باستخدام البنصر.', en: 'Dab gently around the eyes using the ring finger.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك القاسي.', 'استخدامه ليلاً (يُفضل استخدام مرطب بدون SPF ليلاً).'], en: ['Harsh rubbing.', 'Using it at night (better to use an SPF-free moisturizer at night).'] }, 
+            best_mixed_with: { ar: ['سيروم Hyaluron-Filler للوجه.'], en: ['Hyaluron-Filler Face Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تجاعيد محيط العين الظاهرة (Crow\'s feet)، فقدان الحجم، والحماية من شيخوخة الشمس.', en: 'Visible eye contour wrinkles (Crow\'s feet), volume loss, and protection from sun aging.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره طبياً. مناسب كقاعدة للكونسيلر.', en: 'Medically tested. Suitable as a concealer base.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (31): يوسيرين (علاج نوبات الإكزيما، pH5، وعلاجات التصبغات)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. إضافة مصطلحات القاموس الجديدة ---
+
+glossaryDict['ph5_citrate_buffer'] = {
+    title: { ar: 'نظام توازن pH5 (Citrate Buffer) 🛡️', en: 'pH5 Citrate Buffer 🛡️' },
+    desc: { 
+        ar: 'مركب يعتمد على حمض الستريك، يعمل على استعادة ودعم درجة الحموضة الطبيعية المثلى للجلد (pH 5)، مما ينشط الإنزيمات الطبيعية التي تحمي حاجز البشرة وتمنع التحسس.', 
+        en: 'A Citric Acid-based complex that restores and supports the skin\'s optimal natural pH (pH 5), activating natural enzymes that protect the skin barrier and prevent sensitivity.' 
+    }
+};
+
+glossaryDict['menthoxypropanediol'] = {
+    title: { ar: 'منثوكسي بروبانيديول (Menthoxypropanediol) ❄️', en: 'Menthoxypropanediol ❄️' },
+    desc: { 
+        ar: 'مشتق من المنثول (النعناع) يعمل كمبرد فوري ومسكن حسي للجلد، يقطع إشارات الحكة ويخفف الرغبة الشديدة في الهرش أثناء نوبات الإكزيما.', 
+        en: 'A menthol derivative acting as an instant cooling and sensory soothing agent for the skin, breaking the itch signals and relieving the severe urge to scratch during eczema flare-ups.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [31] EUCERIN DERMOPURIFYER OIL CONTROL MATTIFYING FLUID 50 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_mattifying', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (سائل مطفي للتحكم بالدهون)', en: 'DermoPurifyer Oil Control Mattifying Fluid' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر تحكماً مزدوجاً: يعالج الحبوب بحمض الساليسيليك وليكوتشالكون A، ويتحكم باللمعان عبر جزيئات ممتصة للدهون تمنح تأثيراً مطفياً يدوم 8 ساعات.', 
+            en: 'Provides dual control: treats blemishes with Salicylic Acid and Licochalcone A, and controls shine via sebum-absorbing particles granting an 8h mattifying effect.' 
+        },
+        patient_benefit: { 
+            ar: 'يرطب البشرة الدهنية دون ترك طبقة دهنية، يهدئ الاحمرار، يمنع اللمعان المزعج طوال اليوم، ويقلل البثور بشكل ملحوظ.', 
+            en: 'Hydrates oily skin without a greasy film, soothes redness, prevents annoying shine all day, and visibly reduces blemishes.' 
+        },
+        active_ingredients: [
+            { name: 'Salicylic Acid', concentration: 'Active | فعال', role: { ar: 'مضاد للبكتيريا وتقشير داخل المسام.', en: 'Antibacterial and intra-pore exfoliation.' } },
+            { name: 'Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'تخفيف التهابات حب الشباب.', en: 'Relieving acne inflammation.' } },
+            { name: 'Mattifying Particles', concentration: 'Sebum Control | تحكم', role: { ar: 'امتصاص الدهون الفائضة فوراً.', en: 'Instantly absorbing excess sebum.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'مرطب يومي علاجي.', en: 'Daily therapeutic moisturizer.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع على الوجه بعد التنظيف (وتجنب منطقة العين).', en: 'Distribute over the face after cleansing (avoiding eye area).' },
+        layering: { 
+            do_not_mix_with: { ar: ['المرطبات الثقيلة الأخرى.'], en: ['Other heavy moisturizers.'] }, 
+            best_mixed_with: { ar: ['واقي شمس Oil Control SPF50.'], en: ['Oil Control SPF50 Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المعرضة للشوائب، الإفرازات الدهنية الزائدة، واللمعان المستمر.', en: 'Blemish-prone skin, excess sebum production, and continuous shine.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'ممتاز كقاعدة قبل المكياج للبشرة الدهنية.', en: 'Excellent as a makeup base for oily skin.' }
+    }
+});
+
+// [32] EUCERIN ATOPICONTROL ACUTE CARE CREAM 40 ML
+deepProductsList.push({
+    id: 'euc_atopicontrol_acute', brandId: 'eucerin', familyId: 'atopicontrol', brand: 'Eucerin',
+    name: { ar: 'أتوبي-كونترول (كريم العناية الحادة للإكزيما)', en: 'AtopiControl Acute Care Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'علاج طارئ يكسر حلقة "الحكة-الهرش" المفرغة. يعتمد على <span class="glossary-term" onclick="openGlossary(\'menthoxypropanediol\')">المنثوكسي بروبانيديول</span> للتبريد، الديكانديول كمضاد للبكتيريا، والليكوتشالكون A لتهدئة الالتهاب، مع السيراميد للترميم.', 
+            en: 'Emergency care breaking the vicious "itch-scratch" cycle. Relies on <span class="glossary-term" onclick="openGlossary(\'menthoxypropanediol\')">Menthoxypropanediol</span> for cooling, Decanediol as antibacterial, Licochalcone A for inflammation, and Ceramides for repair.' 
+        },
+        patient_benefit: { 
+            ar: 'تأثير يضاهي كريمات الكورتيزون الموضعية الخفيفة؛ يهدئ نوبات الإكزيما الحادة، يبرد الجلد لتقليل الحكة، ويحسن النوم بفضل تقليل الانزعاج ليلاً.', 
+            en: 'Effect comparable to mild topical cortisone creams; soothes acute eczema flare-ups, cools skin to reduce itching, and improves sleep by reducing nighttime discomfort.' 
+        },
+        active_ingredients: [
+            { name: 'Menthoxypropanediol', concentration: 'Cooling | مبرد', role: { ar: 'تسكين حسي فوري للحكة.', en: 'Instant sensory itch relief.' } },
+            { name: 'Decanediol', concentration: 'Antibacterial | مضاد', role: { ar: 'منع تكاثر بكتيريا المكورات العنقودية.', en: 'Preventing Staph bacteria proliferation.' } },
+            { name: 'Licochalcone A + Ceramides', concentration: 'Active | فعال', role: { ar: 'إيقاف الالتهاب وسد شقوق الحاجز الجلدي.', en: 'Stopping inflammation and sealing barrier cracks.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'كلما دعت الحاجة أثناء نوبات الإكزيما (Flare-ups).', en: 'As often as needed during eczema flare-ups.' },
+        step_in_routine: { ar: 'علاج موضعي مكثف.', en: 'Intensive topical treatment.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بلطف على المناطق المتهيجة والحمراء فقط.', en: 'Massage gently onto irritated and red areas only.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الاستخدام على جروح مفتوحة جداً (قد يسبب لسعة مبردة).'], en: ['Applying on very open wounds (may cause a cooling sting).'] }, 
+            best_mixed_with: { ar: ['لوشن AtopiControl (يُستخدم اللوشن لباقي الجسم).'], en: ['AtopiControl Lotion (use the lotion for the rest of the body).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'نوبات الإكزيما التأتبية الحادة (Flare-ups)، التهاب الجلد التماسي، والحكة العنيفة.', en: 'Acute Atopic Dermatitis flare-ups, contact dermatitis, and violent itching.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن للرضع فوق سن 3 أشهر. خالي من الكورتيزون.', en: 'Safe for babies over 3 months. Cortisone-free.' }
+    }
+});
+
+// [33] EUCERIN UREA REPAIR PLUS REPLENISHING BODY WASH 400 ML
+deepProductsList.push({
+    id: 'euc_urea_repair_wash', brandId: 'eucerin', familyId: 'urea_repair', brand: 'Eucerin',
+    name: { ar: 'يوريا-ريبير بلس 5% (غسول الجسم للخشونة)', en: 'UreaRepair PLUS 5% Urea Replenishing Body Wash' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'غسول علاجي خالي من الصابون القاسي، يعتمد على منظفات لطيفة جداً مدمجة مع 5% يوريا وعوامل الترطيب الطبيعية (NMFs) لمنع جفاف الجلد أثناء الاستحمام.', 
+            en: 'Therapeutic soap-free wash relying on ultra-mild surfactants combined with 5% Urea and NMFs to prevent skin dehydration during showering.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف البشرة شديدة الجفاف بلطف، يمنع الحكة والشد بعد الاستحمام، ويحافظ على الزيوت الطبيعية للجلد.', 
+            en: 'Gently cleanses extremely dry skin, prevents post-shower itching and tightness, and preserves natural skin oils.' 
+        },
+        active_ingredients: [
+            { name: 'Urea 5%', concentration: 'Hydrating | مرطب', role: { ar: 'جذب الماء للطبقة القرنية أثناء الغسيل.', en: 'Attracting water to the stratum corneum during washing.' } },
+            { name: 'NMFs', concentration: 'Active | فعال', role: { ar: 'دعم الترطيب الذاتي للجلد.', en: 'Supporting the skin\'s self-hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً أثناء الاستحمام.', en: 'Daily during shower.' },
+        step_in_routine: { ar: 'تنظيف الجسم (بديل الصابون).', en: 'Body cleansing (Soap alternative).' },
+        routine_step_number: 1,
+        application: { ar: 'توضع كمية على اليد، تُرغى بلطف على بشرة مبللة، ثم تُشطف جيداً.', en: 'Dispense into hand, lather gently on wet skin, then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['لوشن UreaRepair Plus 10% بعد التجفيف.'], en: ['UreaRepair Plus 10% Lotion after drying.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة شديدة الجفاف والمتقشرة، الصدفية، جفاف مرضى السكري، وجفاف كبار السن.', en: 'Extremely dry and flaky skin, psoriasis, diabetic skin, and senile dryness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مناسب للاستخدام اليومي المستمر ولطيف على الأغشية المخاطية.', en: 'Suitable for continuous daily use and gentle on mucous membranes.' }
+    }
+});
+
+// [34] EUCERIN PH5 BODY LOTION 400 ML
+deepProductsList.push({
+    id: 'euc_ph5_lotion', brandId: 'eucerin', familyId: 'ph5', brand: 'Eucerin',
+    name: { ar: 'بي إتش 5 (لوشن ترطيب الجسم للحساسية)', en: 'pH5 Light Lotion' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.0 (درجة الحموضة المثالية للجلد)', en: '5.0 (Optimal Skin pH)' },
+        mechanism: { 
+            ar: 'يستخدم <span class="glossary-term" onclick="openGlossary(\'ph5_citrate_buffer\')">نظام توازن pH5</span> جنباً إلى جنب مع الديكسبانثينول بنسبة 5% لتحفيز إنزيمات الجلد الطبيعية المسؤولة عن بناء الحاجز الواقي ومنع الملوثات والمحسسات من اختراق الجلد.', 
+            en: 'Uses <span class="glossary-term" onclick="openGlossary(\'ph5_citrate_buffer\')">pH5 Citrate Buffer</span> alongside 5% Dexpanthenol to stimulate natural skin enzymes responsible for building the protective barrier and preventing allergens from penetrating.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل من حساسية الجلد وتفاعله مع العوامل الخارجية، يوفر ترطيباً طويل الأمد لمدة 24 ساعة، ويترك البشرة ناعمة ومرنة.', 
+            en: 'Reduces skin sensitivity and reactivity to external factors, provides 24h long-lasting hydration, and leaves skin soft and resilient.' 
+        },
+        active_ingredients: [
+            { name: 'Dexpanthenol (5%)', concentration: 'Active | فعال', role: { ar: 'ترميم وتجديد سطح البشرة.', en: 'Repairing and regenerating skin surface.' } },
+            { name: 'pH5 Citrate Buffer', concentration: 'Balancing | معادل', role: { ar: 'تقوية المناعة الطبيعية للجلد.', en: 'Strengthening skin\'s natural immunity.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (يفضل بعد الاستحمام).', en: 'Daily (preferably post-shower).' },
+        step_in_routine: { ar: 'ترطيب وحماية الجسم.', en: 'Body hydration and protection.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بلطف على بشرة الجسم حتى يمتص بالكامل.', en: 'Massage gently onto body skin until fully absorbed.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['زيت استحمام pH5 Shower Oil.'], en: ['pH5 Shower Oil.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة، المعرضة للحساسية بسهولة، والعناية اليومية للجلد الرقيق.', en: 'Sensitive skin, easily allergy-prone skin, and daily care for delicate skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يوجد منه نسخة Light (سريعة الامتصاص) ونسخة Rich (مغذية أكثر). آمن للأطفال.', en: 'Available in Light (fast-absorbing) and Rich (more nourishing) versions. Safe for children.' }
+    }
+});
+
+// [35] EUCERIN PH5 SHOWER OIL 400 ML
+deepProductsList.push({
+    id: 'euc_ph5_shower_oil', brandId: 'eucerin', familyId: 'ph5', brand: 'Eucerin',
+    name: { ar: 'بي إتش 5 (زيت الاستحمام الواقي)', en: 'pH5 Shower Oil' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.0 (يحترم إنزيمات الجلد)', en: '5.0 (Respects skin enzymes)' },
+        mechanism: { 
+            ar: 'غسول زيتي غني بزيوت العناية الطبيعية (53٪) لتكوين درع دهني واقي أثناء الاستحمام، مع <span class="glossary-term" onclick="openGlossary(\'ph5_citrate_buffer\')">نظام توازن pH5</span> لمنع جفاف البشرة حتى مع الاستحمام المتكرر.', 
+            en: 'Oil cleanser rich in natural caring oils (53%) to form a protective lipid shield during bathing, with <span class="glossary-term" onclick="openGlossary(\'ph5_citrate_buffer\')">pH5 Citrate Buffer</span> to prevent drying even with frequent showering.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف بلطف شديد ويعوض نقص الدهون المفقودة بالماء، ويترك البشرة الحساسة ناعمة كالحرير دون الشعور بالشد.', 
+            en: 'Ultra-gently cleanses and replenishes lipids lost to water, leaving sensitive skin silky soft without tightness.' 
+        },
+        active_ingredients: [
+            { name: 'Natural Caring Oils (53%)', concentration: 'Rich | غني', role: { ar: 'ترطيب عميق وحماية الغلاف المائي الدهني.', en: 'Deep hydration and protecting the hydrolipidic film.' } },
+            { name: 'pH5 Citrate Buffer', concentration: 'Balancing | معادل', role: { ar: 'الحفاظ على مرونة البشرة.', en: 'Maintaining skin resilience.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً أثناء الاستحمام.', en: 'Daily during shower.' },
+        step_in_routine: { ar: 'تنظيف الجسم للبشرة الحساسة.', en: 'Body cleansing for sensitive skin.' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك على بشرة مبللة (سيتحول الزيت إلى مستحلب أبيض خفيف)، ثم يُشطف.', en: 'Massage onto wet skin (oil transforms into a light white emulsion), then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['اللوف الخشن.'], en: ['Harsh loofahs.'] }, 
+            best_mixed_with: { ar: ['لوشن pH5 Body Lotion.'], en: ['pH5 Body Lotion.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة جداً، الجافة، حساسية ما بعد الاستحمام، والاستحمام المتكرر.', en: 'Highly sensitive skin, dry skin, post-shower allergies, and frequent showering.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يجب الحذر لأنه قد يجعل حوض الاستحمام زلقاً.', en: 'Caution: may make the bathtub slippery.' }
+    }
+});
+
+// [36] EUCERIN UREA SMOOTHING FACE CREAM 5% 50 ML
+deepProductsList.push({
+    id: 'euc_urea_face_cream_5', brandId: 'eucerin', familyId: 'urea_repair', brand: 'Eucerin',
+    name: { ar: 'يوريا-ريبير (كريم الوجه المنعم 5% يوريا)', en: 'UreaRepair Smoothing Face Cream 5% Urea' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'مرطب وجه علاجي خفيف وسريع الامتصاص، يعتمد على 5% يوريا مع اللاكتات (Lactate) لجذب الرطوبة وربطها بالطبقة القرنية للوجه، مع تقشير ميكروبيولوجي للقشور الجافة.', 
+            en: 'Light, fast-absorbing therapeutic face moisturizer, relying on 5% Urea and Lactate to attract and bind moisture to the facial stratum corneum, with micro-exfoliation for dry flakes.' 
+        },
+        patient_benefit: { 
+            ar: 'يرطب بشرة الوجه الجافة والمشدودة فوراً، يزيل القشور السطحية، ويعيد النعومة والراحة للوجه.', 
+            en: 'Instantly hydrates dry, tight facial skin, removes surface flakes, and restores softness and comfort to the face.' 
+        },
+        active_ingredients: [
+            { name: 'Urea 5%', concentration: 'Active | فعال', role: { ar: 'الترطيب العميق للوجه دون سد المسام.', en: 'Deep facial hydration without clogging pores.' } },
+            { name: 'Lactate (Lactic Acid derivative)', concentration: 'NMF', role: { ar: 'تعزيز الاحتفاظ بالرطوبة وتنعيم السطح.', en: 'Enhancing moisture retention and surface smoothing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'ترطيب الوجه العلاجي.', en: 'Therapeutic face hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك برفق على وجه وعنق نظيفين.', en: 'Massage gently onto clean face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الوضع المباشر حول العينين.'], en: ['Direct application around the eyes.'] }, 
+            best_mixed_with: { ar: ['أساس ممتاز للمكياج.', 'واقي شمس للوجه.'], en: ['Excellent makeup base.', 'Facial sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جفاف الوجه الشديد، القشور، الصدفية في الوجه، والجلد المشدود.', en: 'Severe facial dryness, flakes, facial psoriasis, and tight skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من العطور والملونات لتقليل فرص التحسس.', en: 'Fragrance and colorant-free to minimize allergy risks.' }
+    }
+});
+
+// [37] EUCERIN EVEN PIGMENT PERFECTOR SPOT CORRECTOR 5 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_spot', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (مصحح البقع الموضعي)', en: 'Even Pigment Perfector Spot Corrector' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'علاج موضعي عالي الدقة، يحتوي على أعلى تركيز مسموح به من <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span>، يعمل مباشرة على البقعة الداكنة لتثبيط التيروزيناز وإيقاف إنتاج الميلانين في تلك المنطقة فقط.', 
+            en: 'High-precision topical treatment, containing the highest permissible concentration of <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span>, acting directly on the dark spot to inhibit tyrosinase and stop melanin production only in that area.' 
+        },
+        patient_benefit: { 
+            ar: 'يتلاشى البقع الداكنة الصغيرة (مثل آثار الحبوب أو النمش أو بقع العمر) بدقة متناهية وسرعة، ويمنع تحولها إلى تصبغات دائمة.', 
+            en: 'Fades small dark spots (like acne marks, freckles, or age spots) with pinpoint accuracy and speed, preventing them from becoming permanent.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Max Concentration | تركيز أقصى', role: { ar: 'علاج جذري للبقعة المستهدفة.', en: 'Radical treatment for the targeted spot.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (صباحاً أو مساءً).', en: 'Once daily (AM or PM).' },
+        step_in_routine: { ar: 'علاج موضعي مركز.', en: 'Targeted intensive treatment.' },
+        routine_step_number: 2,
+        application: { ar: 'يُطبق مباشرة وحصرياً على البقعة الداكنة باستخدام الرأس الإسفنجي الدقيق.', en: 'Apply directly and exclusively to the dark spot using the precision sponge tip.' },
+        layering: { 
+            do_not_mix_with: { ar: ['توزيعه على كامل الوجه.'], en: ['Distributing over the entire face.'] }, 
+            best_mixed_with: { ar: ['سيروم وكريم إيفن بيجمنت (مع مراعاة حد الـ 4 تطبيقات للثياميدول).'], en: ['Even Pigment Serum and Cream (minding the 4x Thiamidol limit).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البقع العمرية الفردية، آثار الحبوب الداكنة المحددة، والنمش المتفرق.', en: 'Individual age spots, specific dark acne marks, and scattered freckles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تصميم قلم (Pen) يضمن عدم تطبيق المادة المفتحة على الجلد الطبيعي المحيط بالبقعة.', en: 'Pen design ensures the brightening agent is not applied to normal skin surrounding the spot.' }
+    }
+});
+
+// [38] EUCERIN EVEN PIGMENT PERFECTOR DAY CREAM SPF30 50 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_day', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (كريم النهار للتفتيح SPF 30)', en: 'Even Pigment Perfector Day Cream SPF 30' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يدمج <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> مع فلاتر UVA/UVB لتوفير حماية نهارية مزدوجة: يعالج التصبغات الحالية ويمنع الشمس من تنشيط تصبغات جديدة.', 
+            en: 'Integrates <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> with UVA/UVB filters to provide dual daytime protection: treats existing pigmentation and prevents sun from activating new ones.' 
+        },
+        patient_benefit: { 
+            ar: 'مرطب نهاري متكامل؛ يفتح الكلف والبقع، يوفر حماية من الشمس، ويعطي البشرة نضارة وتوحيداً تدريجياً للونها.', 
+            en: 'Comprehensive day moisturizer; brightens melasma and spots, provides sun protection, and gives the skin radiance and gradual tone evening.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Active | فعال', role: { ar: 'تقليل إنتاج الميلانين نهاراً.', en: 'Reducing daytime melanin production.' } },
+            { name: 'UVA/UVB Filters', concentration: 'SPF 30', role: { ar: 'الوقاية من شيخوخة وتصبغ الشمس.', en: 'Prevention of sun aging and pigmentation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً في الصباح.', en: 'Daily in the morning.' },
+        step_in_routine: { ar: 'كريم نهار علاجي وحماية.', en: 'Therapeutic day cream and protection.' },
+        routine_step_number: 4,
+        application: { ar: 'يُدلك بلطف على وجه ورقبة نظيفين، متجنباً منطقة العين.', en: 'Massage gently onto clean face and neck, avoiding the eye area.' },
+        layering: { 
+            do_not_mix_with: { ar: ['تخطي الحد الأقصى لتطبيقات الثياميدول (4 مرات يومياً).'], en: ['Exceeding the max Thiamidol applications limit (4 times daily).'] }, 
+            best_mixed_with: { ar: ['سيروم Even Pigment المزدوج (يوضع قبله).'], en: ['Even Pigment Dual Serum (applied beforehand).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الكلف، البقع الداكنة، اللون الباهت، والوقاية اليومية لذوي البشرة المعرضة للتصبغ.', en: 'Melasma, dark spots, dull tone, and daily prevention for pigmentation-prone skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قد لا يكفي كواقي شمس للتعرض المباشر الطويل (يحتاج لواقي أقوى فوقه).', en: 'May not be sufficient as SPF for long direct sun exposure (requires stronger SPF on top).' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (32): يوسيرين (الشيخوخة المتقدمة، التفتيح الليلي، والمرطبات المصاحبة)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. تحديث العائلات ومصطلحات القاموس الجديدة ---
+
+let eucerinBrandUpdate4 = brandsList.find(b => b.id === 'eucerin');
+if (eucerinBrandUpdate4) {
+    if (!eucerinBrandUpdate4.families.find(f => f.id === 'dermo_densifyer')) {
+        eucerinBrandUpdate4.families.push({ id: 'dermo_densifyer', name: { ar: 'ديرمو-دينسيفاير (لزيادة كثافة البشرة)', en: 'DermoDensifyer (Redensifying)' } });
+    }
+}
+
+glossaryDict['apiaceae_peptides'] = {
+    title: { ar: 'ببتيدات الفصيلة الخيمية (Apiaceae Peptides) 🌱', en: 'Apiaceae Peptides 🌱' },
+    desc: { 
+        ar: 'ببتيدات نشطة مستخلصة من نباتات اليانسون، تعمل على تقوية الروابط بين ألياف الكولاجين والإيلاستين في طبقة الأدمة، مما يعيد بناء الأنسجة الضامة ويزيد من كثافة الجلد المترهل.', 
+        en: 'Active peptides extracted from Anise plants that strengthen the connections between collagen and elastin fibers in the dermis, rebuilding connective tissue and redensifying sagging skin.' 
+    }
+};
+
+glossaryDict['symsitive'] = {
+    title: { ar: 'سيمسيتيف (SymSitive) 🛡️', en: 'SymSitive 🛡️' },
+    desc: { 
+        ar: 'مكون نشط سريع المفعول يعمل كمنظم لحساسية الجلد. يهدئ ألياف الأعصاب السطحية فوراً لتقليل الإحساس بالوخز، الحرقان، والشد في البشرة شديدة التفاعل.', 
+        en: 'A fast-acting active ingredient acting as a skin sensitivity regulator. Instantly calms superficial nerve fibers to reduce stinging, burning, and tightness in highly reactive skin.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [39] EUCERIN ANTI-AGE DERMO DENSIFYER DAY CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_dermo_densifyer_day', brandId: 'eucerin', familyId: 'dermo_densifyer', brand: 'Eucerin',
+    name: { ar: 'ديرمو-دينسيفاير (كريم النهار لكثافة البشرة)', en: 'Anti-Age Dermo Densifyer Day Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف ترقق الجلد الناتج عن التغيرات الهرمونية بانقطاع الطمث. يدمج <span class="glossary-term" onclick="openGlossary(\'arctiin\')">الأركتين</span> لتسريع الكولاجين و <span class="glossary-term" onclick="openGlossary(\'apiaceae_peptides\')">ببتيدات Apiaceae</span> لتقوية الأنسجة الضامة، مع فلاتر SPF 15.', 
+            en: 'Targets skin thinning caused by post-menopausal hormonal changes. Integrates <span class="glossary-term" onclick="openGlossary(\'arctiin\')">Arctiin</span> to accelerate collagen and <span class="glossary-term" onclick="openGlossary(\'apiaceae_peptides\')">Apiaceae Peptides</span> to strengthen connective tissues, with SPF 15.' 
+        },
+        patient_benefit: { 
+            ar: 'يعيد بناء كثافة الجلد الرقيق والمتجعد، يحسن مرونته بشكل كبير، ويعطي الوجه مظهراً مشدوداً وأكثر سماكة وشباباً.', 
+            en: 'Rebuilds density in thin, wrinkled skin, significantly improves elasticity, and gives the face a tighter, thicker, and more youthful appearance.' 
+        },
+        active_ingredients: [
+            { name: 'Arctiin + Apiaceae Peptides', concentration: 'Active | فعال', role: { ar: 'زيادة سماكة الأدمة وتدعيم شبكة الكولاجين.', en: 'Increasing dermis thickness and supporting the collagen network.' } },
+            { name: 'UVA/UVB Filters', concentration: 'SPF 15', role: { ar: 'منع تكسر الكولاجين الضوئي.', en: 'Preventing photo-collagen degradation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (كل صباح).', en: 'Daily (Every morning).' },
+        step_in_routine: { ar: 'كريم النهار المعالج.', en: 'Therapeutic day cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة والصدر بحركات تصاعدية خفيفة.', en: 'Massage onto face, neck, and décolleté in light upward strokes.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Hyaluron-Filler Elasticity 3D.'], en: ['Hyaluron-Filler Elasticity 3D Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'ترقق البشرة (Thinning skin)، فقدان الكثافة والمرونة، والتجاعيد العميقة المرتبطة بانقطاع الطمث.', en: 'Thinning skin, loss of density and elasticity, and deep post-menopausal wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غني يمتص بسرعة، يعتبر درعاً ممتازاً للبشرة الهشة.', en: 'Rich texture that absorbs quickly, considered an excellent shield for fragile skin.' }
+    }
+});
+
+// [40] EUCERIN ANTI-AGE DERMO DENSIFYER NIGHT CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_dermo_densifyer_night', brandId: 'eucerin', familyId: 'dermo_densifyer', brand: 'Eucerin',
+    name: { ar: 'ديرمو-دينسيفاير (كريم الليل لكثافة البشرة)', en: 'Anti-Age Dermo Densifyer Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على نفس المركبات النشطة (Arctiin & Apiaceae Peptides) مع إضافة الديكسبانثينول (Dexpanthenol) لدعم عملية تجديد الخلايا والتعافي التي تحدث طبيعياً أثناء النوم.', 
+            en: 'Contains the same active compounds (Arctiin & Apiaceae Peptides) with added Dexpanthenol to support the cell regeneration and recovery process that occurs naturally during sleep.' 
+        },
+        patient_benefit: { 
+            ar: 'يغذي البشرة الناضجة ليلاً، يصلح حاجز الجلد التالف، وتستيقظ المريضة ببشرة أكثر راحة، تماسكاً، وكثافة.', 
+            en: 'Nourishes mature skin at night, repairs the damaged skin barrier, and the patient wakes up with more comforted, firmer, and denser skin.' 
+        },
+        active_ingredients: [
+            { name: 'Arctiin + Apiaceae Peptides', concentration: 'Core | أساسي', role: { ar: 'تسريع تجديد شبكة الكولاجين.', en: 'Accelerating collagen network renewal.' } },
+            { name: 'Dexpanthenol', concentration: 'Repairing | مرمم', role: { ar: 'ترميم الأنسجة وزيادة الترطيب الليلي.', en: 'Tissue repair and increasing nocturnal hydration.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم الليل المعالج.', en: 'Therapeutic night cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على وجه ورقبة نظيفين بعد السيروم.', en: 'Apply to clean face and neck after serum.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['زيت Elasticity + Filler Facial Oil لزيادة التغذية.'], en: ['Elasticity + Filler Facial Oil for extra nourishment.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشيخوخة المتقدمة، الجلد الهش المفتقر للمرونة، واحتياجات التغذية الليلية.', en: 'Advanced aging, fragile skin lacking elasticity, and nocturnal nutritional needs.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره وتأكيد ملاءمته حتى للبشرة الحساسة جداً.', en: 'Tested and proven highly compatible even with very sensitive skin.' }
+    }
+});
+
+// [41] EUCERIN EVEN PIGMENT PERFECTOR NIGHT CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_even_pigment_night', brandId: 'eucerin', familyId: 'even_pigment', brand: 'Eucerin',
+    name: { ar: 'إيفن بيجمنت (كريم الليل لتفتيح البشرة)', en: 'Even Pigment Perfector Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يعمل أثناء الليل (ذروة تجدد الخلايا) مستخدماً <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">الثياميدول</span> لوقف إنتاج الميلانين، والديكسبانثينول لدعم الترميم الخلوي وتعزيز تجدد الجلد.', 
+            en: 'Works overnight (peak cell renewal) using <span class="glossary-term" onclick="openGlossary(\'thiamidol\')">Thiamidol</span> to halt melanin production, and Dexpanthenol to support cellular repair and enhance skin turnover.' 
+        },
+        patient_benefit: { 
+            ar: 'يفتح البقع الداكنة بشكل تدريجي ومستدام أثناء النوم، يعيد إشراقة الوجه، ويصلح أضرار الأشعة التي حدثت نهاراً.', 
+            en: 'Gradually and sustainably lightens dark spots during sleep, restores facial radiance, and repairs ray damage occurred during the day.' 
+        },
+        active_ingredients: [
+            { name: 'Thiamidol', concentration: 'Active | فعال', role: { ar: 'علاج الكلف وتوحيد اللون من الجذور.', en: 'Treating melasma and evening tone from the roots.' } },
+            { name: 'Dexpanthenol', concentration: 'Healing | شافي', role: { ar: 'تجديد خلايا البشرة أثناء النوم.', en: 'Renewing skin cells during sleep.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم التفتيح الليلي.', en: 'Night brightening cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بلطف على وجه ورقبة نظيفين. (تذكر ألا تتجاوز 4 تطبيقات للثياميدول يومياً).', en: 'Massage gently onto clean face and neck. (Remember not to exceed 4 Thiamidol applications/day).' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول عالي التركيز في نفس الوقت لتجنب التحسس.'], en: ['High concentration retinol simultaneously to avoid sensitivity.'] }, 
+            best_mixed_with: { ar: ['سيروم Even Pigment Dual Serum (تُدهش النتائج عند دمجهما).'], en: ['Even Pigment Dual Serum (results are astonishing when combined).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الكلف، تصبغات ما بعد الالتهاب، بهتان البشرة، والنمش.', en: 'Melasma, post-inflammatory hyperpigmentation, dullness, and freckles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من المقشرات القاسية، مما يجعله آمناً للاستخدام اليومي المستمر.', en: 'Free of harsh exfoliants, making it safe for continuous daily use.' }
+    }
+});
+
+// [42] EUCERIN SUN FLUID ANTI AGE SPF 50 50 ML
+deepProductsList.push({
+    id: 'euc_sun_anti_age_fluid', brandId: 'eucerin', familyId: 'sun_care', brand: 'Eucerin',
+    name: { ar: 'صن فلويد أنتي-إيدج (واقي شمس سائل للتجاعيد)', en: 'Sun Fluid Photoaging Control SPF 50' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحمي من التلف الخلوي بفضل (Advanced Spectral Technology)، ويعالج التجاعيد الموجودة باستخدام حمض الهيالورونيك عالي ومنخفض الوزن الجزيئي الذي يتغلغل لملء الخطوط.', 
+            en: 'Protects against cellular damage via (Advanced Spectral Technology), and treats existing wrinkles using High & Low MW Hyaluronic Acid that penetrates to plump lines.' 
+        },
+        patient_benefit: { 
+            ar: 'يمنع الشيخوخة الضوئية، يقلل التجاعيد العميقة بشكل ملحوظ، ويوفر حماية مكثفة بقوام سائل خفيف لا يترك أثراً.', 
+            en: 'Prevents photoaging, visibly reduces deep wrinkles, and provides intense protection with a light fluid texture leaving no trace.' 
+        },
+        active_ingredients: [
+            { name: 'Broad Spectrum Filters + Licochalcone A', concentration: 'SPF 50', role: { ar: 'حماية فائقة من UVA/UVB و HEVIS.', en: 'Supreme protection against UVA/UVB & HEVIS.' } },
+            { name: 'Hyaluronic Acid', concentration: 'Dual Weight | وزن مزدوج', role: { ar: 'ترطيب عميق وتقليل عمق التجاعيد.', en: 'Deep hydration and reducing wrinkle depth.' } },
+            { name: 'Glycyrrhetinic Acid', concentration: 'Repairing | مرمم', role: { ar: 'دعم إصلاح DNA الخلايا المتضررة.', en: 'Supporting DNA repair of damaged cells.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (تجديد كل ساعتين تحت الشمس).', en: 'Daily (reapply every 2h under sun).' },
+        step_in_routine: { ar: 'حماية وعناية نهارية (الخطوة 4).', en: 'Day protection and care (Step 4).' },
+        routine_step_number: 4,
+        application: { ar: 'تُرج العبوة جيداً ويوزع السائل بسخاء على الوجه والرقبة.', en: 'Shake well and distribute fluid generously over face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['مجموعة Hyaluron-Filler كروتين مكافحة شيخوخة متكامل.'], en: ['Hyaluron-Filler range as a complete anti-aging routine.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الوقاية من التجاعيد، البشرة الناضجة، والحاجة لواقي شمس خفيف غير دهني.', en: 'Wrinkle prevention, mature skin, and need for a light non-greasy SPF.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسد المسام ومناسب كقاعدة للمكياج.', en: 'Non-comedogenic and suitable as a makeup base.' }
+    }
+});
+
+// [43] EUCERIN HYALURON FILLER ELASTICITY DAY CREAM SPF15 50 ML
+deepProductsList.push({
+    id: 'euc_elasticity_day_spf15', brandId: 'eucerin', familyId: 'elasticity', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر إلاستيستي (كريم نهار لمرونة البشرة)', en: 'Hyaluron-Filler + Elasticity Day Cream SPF 15' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'صمم لتعزيز بنية البشرة؛ <span class="glossary-term" onclick="openGlossary(\'arctiin\')">الأركتين</span> يحفز الكولاجين، والسلبين المريمي (Silymarin) يحمي من تدهوره، وحمض الهيالورونيك يملأ التجاعيد. (الإصدارات الحديثة قد تحتوي على الثياميدول لبقع العمر).', 
+            en: 'Designed to reinforce skin structure; <span class="glossary-term" onclick="openGlossary(\'arctiin\')">Arctiin</span> stimulates collagen, Silymarin protects against its degradation, and HA plumps wrinkles. (Newer versions may contain Thiamidol for age spots).' 
+        },
+        patient_benefit: { 
+            ar: 'يحسن مرونة الجلد بشكل جذري، يملأ أعمق التجاعيد، يعزز إشراقة البشرة، ويحميها من التلف الضوئي اليومي بفضل SPF15.', 
+            en: 'Radically improves skin elasticity, plumps deepest wrinkles, boosts skin radiance, and protects against daily photo-damage via SPF15.' 
+        },
+        active_ingredients: [
+            { name: 'Arctiin + Silymarin', concentration: 'Firming Complex | مركب شد', role: { ar: 'زيادة متانة ومرونة الجلد.', en: 'Increasing skin firmness and elasticity.' } },
+            { name: 'Hyaluronic Acid', concentration: 'High & Low MW', role: { ar: 'الترطيب العميق والنفخ.', en: 'Deep hydration and plumping.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً (يومياً).', en: 'Morning (Daily).' },
+        step_in_routine: { ar: 'كريم النهار المعالج.', en: 'Therapeutic day cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة والصدر بحركات تصاعدية.', en: 'Massage onto face, neck, and décolleté in upward strokes.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Elasticity 3D Serum.'], en: ['Elasticity 3D Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'فقدان مرونة الجلد، التجاعيد العميقة، جفاف البشرة الناضجة، والبهتان.', en: 'Loss of skin elasticity, deep wrinkles, mature skin dryness, and dullness.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'ملمس ناعم كالحرير لا يسد المسام.', en: 'Silky smooth texture that does not clog pores.' }
+    }
+});
+
+// [44] EUCERIN HYALURON FILLER ELASTICITY NIGHT CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_elasticity_night', brandId: 'eucerin', familyId: 'elasticity', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر إلاستيستي (كريم الليل لمرونة البشرة)', en: 'Hyaluron-Filler + Elasticity Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يغذي البشرة الناضجة ليلاً باستخدام (الأركتين والسيليمارين) لدعم الكولاجين، وحمض الهيالورونيك لملء الخطوط، مع زيت الأرجان (Argan Oil) الغني لترميم طبقة الليبيدات أثناء النوم.', 
+            en: 'Nourishes mature skin at night using (Arctiin & Silymarin) to support collagen, HA to plump lines, with rich Argan Oil to repair the lipid layer during sleep.' 
+        },
+        patient_benefit: { 
+            ar: 'يعمل طوال الليل لترميم الحاجز الجلدي، يشد البشرة المترهلة، ويعطي الوجه ملمساً ناعماً ومريحاً في الصباح.', 
+            en: 'Works overnight to repair the skin barrier, tightens sagging skin, and gives the face a smooth, comfortable feel in the morning.' 
+        },
+        active_ingredients: [
+            { name: 'Arctiin + Silymarin', concentration: 'Active | فعال', role: { ar: 'تجديد الكولاجين ومنع تكسره.', en: 'Renewing collagen and preventing breakdown.' } },
+            { name: 'Argan Oil + Panthenol', concentration: 'Nourishing | مغذي', role: { ar: 'تعويض الدهون المفقودة ودعم التعافي الليلي.', en: 'Replenishing lost lipids and supporting night recovery.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم الليل المعالج للشيخوخة.', en: 'Anti-aging night cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على وجه نظيف ومجفف كخطوة أخيرة في الروتين.', en: 'Apply to clean, dried face as the final routine step.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['زيت Elasticity + Filler Facial Oil (يمكن خلط قطرة معه).'], en: ['Elasticity + Filler Facial Oil (can mix a drop with it).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الترهل الشديد، البشرة الجافة والناضجة جداً، والتجاعيد العميقة المحفورة.', en: 'Severe sagging, very dry and mature skin, and deeply entrenched wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غني جداً (Rich Balm) يعطي إحساساً بالتغليف والحماية.', en: 'Very rich balm texture giving a feeling of envelopment and protection.' }
+    }
+});
+
+// [45] EUCERIN HYALURON FILLER WRINKLE DAY 50 ML
+deepProductsList.push({
+    id: 'euc_hyaluron_wrinkle_day', brandId: 'eucerin', familyId: 'hyaluron_filler', brand: 'Eucerin',
+    name: { ar: 'هيالورون-فيلر (كريم النهار للتجاعيد)', en: 'Hyaluron-Filler Day Cream SPF 15' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'تركيبة ثلاثية المفعول (يملأ، يحفز، يحمي): يملأ التجاعيد بحمض الهيالورونيك، ويحفزه بـ <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">الجلايسين سابونين</span>، ويحمي من تكسره بواسطة (Enoxolone) وفلاتر SPF 15.', 
+            en: 'Triple-action formula (Plumps, Stimulates, Defends): plumps wrinkles with HA, stimulates it via <span class="glossary-term" onclick="openGlossary(\'glycine_saponin\')">Glycine Saponin</span>, and defends against degradation via Enoxolone and SPF 15.' 
+        },
+        patient_benefit: { 
+            ar: 'يملأ التجاعيد الظاهرة والدقيقة بشكل ملحوظ، يحمي من شيخوخة الشمس، ويمنح البشرة ترطيباً ناعماً طوال اليوم.', 
+            en: 'Visibly plumps fine and apparent wrinkles, protects against sun-aging, and grants skin smooth hydration all day.' 
+        },
+        active_ingredients: [
+            { name: 'High & Low MW Hyaluronic Acid', concentration: 'Active | فعال', role: { ar: 'الترطيب السطحي والملء العميق.', en: 'Surface hydration and deep plumping.' } },
+            { name: 'Glycine Saponin + Enoxolone', concentration: 'Protecting | حامي', role: { ar: 'تحفيز الهيالورونيك وتقليل تدهوره.', en: 'Stimulating HA and reducing its degradation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً (كل يوم).', en: 'Morning (Daily).' },
+        step_in_routine: { ar: 'كريم النهار وحماية أساسية.', en: 'Day cream and basic protection.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة. متوفر بنسختين (للبشرة الجافة، وللبشرة العادية/المختلطة).', en: 'Massage onto face and neck. Available in two versions (for Dry skin, and for Normal/Combi skin).' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Moisture Booster (لتكثيف الترطيب المائي).'], en: ['Moisture Booster Serum (to intensify water hydration).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التجاعيد الأولية، الخطوط الرفيعة، الجفاف، وبداية فقدان مرونة الجلد.', en: 'Initial wrinkles, fine lines, dryness, and early loss of skin elasticity.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مثالي لمن هم في أواخر العشرينات والثلاثينات لبدء روتين مكافحة الشيخوخة.', en: 'Ideal for those in their late 20s and 30s to start an anti-aging routine.' }
+    }
+});
+
+// [46] EUCERIN DERMO PURIFYER HYDRATING CARE ADJUNCTIVE 50 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_adjunctive', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (المرطب الملطف المصاحب للعلاج)', en: 'DermoPurifyer Adjunctive Soothing Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'صُمم خصيصاً كعلاج مصاحب لأدوية حب الشباب المجففة (مثل الروكوتان). يستخدم <span class="glossary-term" onclick="openGlossary(\'symsitive\')">سيمسيتيف</span> لتهدئة لسعات الجلد، السيراميد لترميم الحاجز، وليكوتشالكون A لتقليل الاحمرار العنيف.', 
+            en: 'Designed specifically as an adjunctive care for drying acne meds (like Accutane). Uses <span class="glossary-term" onclick="openGlossary(\'symsitive\')">SymSitive</span> to calm skin stinging, Ceramides to repair the barrier, and Licochalcone A to reduce violent redness.' 
+        },
+        patient_benefit: { 
+            ar: 'يخفف الآثار الجانبية للعلاجات الطبية القاسية؛ يزيل الجفاف الشديد، التقشر، الإحساس بالحرقان، ويعيد للجلد راحته ومرونته.', 
+            en: 'Alleviates side effects of harsh medical treatments; removes severe dryness, flaking, burning sensation, and restores skin comfort and suppleness.' 
+        },
+        active_ingredients: [
+            { name: 'Ceramides', concentration: 'Repairing | مرمم', role: { ar: 'إعادة بناء طبقة الدهون الواقية وتقليل التبخر.', en: 'Rebuilding the protective lipid layer and reducing evaporation.' } },
+            { name: 'SymSitive + Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'تهدئة فورية لألياف الأعصاب والالتهاب.', en: 'Instant calming of nerve fibers and inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً (أو كلما شعرت بالشد).', en: 'Morning and Evening (or whenever tightness is felt).' },
+        step_in_routine: { ar: 'الترطيب التعويضي.', en: 'Compensatory hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع بلطف تام على الوجه (لا يُفرك بقوة لأن البشرة تكون هشة جداً).', en: 'Distribute very gently on the face (do not rub hard as skin is extremely fragile).' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات أو أي منتجات تحتوي على أحماض أو كحول.'], en: ['Exfoliants or any products containing acids or alcohol.'] }, 
+            best_mixed_with: { ar: ['أدوية الأيزوتريتينوين (Isotretinoin) الفموية.'], en: ['Oral Isotretinoin medications.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جفاف البشرة الشديد والتهيج الناتج عن أدوية حب الشباب (الطبية).', en: 'Severe skin dryness and irritation induced by medical acne treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'لا يسد المسام ويتحكم بلمعان البشرة بشكل متوازن.', en: 'Non-comedogenic and controls skin shine in a balanced way.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (33): يوسيرين (الختام - Volume-Lift وتكملة العناية المتخصصة)
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+// --- 1. تحديث العائلات ومصطلحات القاموس الجديدة ---
+
+let eucerinBrandUpdate5 = brandsList.find(b => b.id === 'eucerin');
+if (eucerinBrandUpdate5) {
+    if (!eucerinBrandUpdate5.families.find(f => f.id === 'volume_lift')) {
+        eucerinBrandUpdate5.families.push({ id: 'volume_lift', name: { ar: 'فوليوم-ليفت (لاستعادة حجم وشد البشرة)', en: 'Volume-Lift (Restoring Volume & Contours)' } });
+    }
+}
+
+glossaryDict['magnolol'] = {
+    title: { ar: 'ماجنولول (Magnolol) 🌸', en: 'Magnolol 🌸' },
+    desc: { 
+        ar: 'مستخلص نشط من لحاء شجرة الماغنوليا. يعمل على تحفيز زيادة حجم وعدد الخلايا المكونة للحجم في طبقات الجلد العميقة، مما يعيد الامتلاء للمناطق الغائرة.', 
+        en: 'An active extract from Magnolia bark. It stimulates the increase in size and number of volume-giving cells in the deep skin layers, restoring plumpness to sunken areas.' 
+    }
+};
+
+glossaryDict['oligo_peptides_eucerin'] = {
+    title: { ar: 'أوليجو ببتيدات (Oligo Peptides) 🧬', en: 'Oligo Peptides 🧬' },
+    desc: { 
+        ar: 'ببتيدات مستخلصة من اليانسون، تقوي شبكة الكولاجين وتحفز تجدده، مما يشد الجلد المترهل ويدعم هيكل الوجه.', 
+        en: 'Peptides extracted from Anise that strengthen the collagen network and stimulate its renewal, firming sagging skin and supporting facial structure.' 
+    }
+};
+
+// --- 2. المنتجات العميقة (Deep Products) ---
+
+// [47] EUCERIN HYALURON-FILLER + VOLUME-LIFT DAY CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_volume_lift_day', brandId: 'eucerin', familyId: 'volume_lift', brand: 'Eucerin',
+    name: { ar: 'فوليوم-ليفت (كريم النهار لاستعادة الحجم)', en: 'Hyaluron-Filler + Volume-Lift Day Cream SPF 15' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يستهدف الطبقات الثلاث للجلد المترهل: <span class="glossary-term" onclick="openGlossary(\'magnolol\')">الماجنولول</span> يزيد حجم الخلايا، و <span class="glossary-term" onclick="openGlossary(\'oligo_peptides_eucerin\')">الأوليجو ببتيدات</span> تدعم الكولاجين، وحمض الهيالورونيك يرطب السطح لتقليل التجاعيد، مع حماية SPF 15.', 
+            en: 'Targets the 3 layers of sagging skin: <span class="glossary-term" onclick="openGlossary(\'magnolol\')">Magnolol</span> increases cell volume, <span class="glossary-term" onclick="openGlossary(\'oligo_peptides_eucerin\')">Oligo Peptides</span> support collagen, and HA hydrates the surface to reduce wrinkles, with SPF 15.' 
+        },
+        patient_benefit: { 
+            ar: 'يعيد تعريف ملامح الوجه المترهلة (مثل الخدود)، يملأ التجاويف العميقة، ويشد البشرة بقوة لتبدو أصغر سناً.', 
+            en: 'Redefines sagging facial contours (like cheeks), plumps deep hollows, and powerfully firms the skin for a younger look.' 
+        },
+        active_ingredients: [
+            { name: 'Magnolol', concentration: 'Volumizing | مكثف للحجم', role: { ar: 'تكبير الخلايا لاستعادة امتلاء الوجه.', en: 'Enlarging cells to restore facial plumpness.' } },
+            { name: 'Oligo Peptides', concentration: 'Firming | شد', role: { ar: 'تقوية الأنسجة الضامة.', en: 'Strengthening connective tissues.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً (كل يوم).', en: 'Morning (Daily).' },
+        step_in_routine: { ar: 'كريم النهار المعالج.', en: 'Therapeutic day cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك بحركات تصاعدية ثابتة لتعزيز تأثير الشد.', en: 'Massage with firm upward strokes to enhance the lifting effect.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سيروم Hyaluron-Filler Moisture Booster.'], en: ['Hyaluron-Filler Moisture Booster Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'فقدان الحجم في الخدود، ترهل ملامح الوجه، وتعمق خطوط الابتسامة.', en: 'Volume loss in cheeks, sagging facial contours, and deepening smile lines.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يتوفر بنسخة للبشرة الجافة وأخرى للعادية/المختلطة.', en: 'Available in versions for Dry skin and Normal/Combi skin.' }
+    }
+});
+
+// [48] EUCERIN HYALURON-FILLER + VOLUME-LIFT NIGHT CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_volume_lift_night', brandId: 'eucerin', familyId: 'volume_lift', brand: 'Eucerin',
+    name: { ar: 'فوليوم-ليفت (كريم الليل لاستعادة الحجم)', en: 'Hyaluron-Filler + Volume-Lift Night Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يحتوي على (الماجنولول والأوليجو ببتيدات وحمض الهيالورونيك) مع إضافة الديكسبانثينول (Dexpanthenol) لتحفيز تجدد الخلايا والتعافي العميق أثناء النوم.', 
+            en: 'Contains (Magnolol, Oligo Peptides, HA) with the addition of Dexpanthenol to stimulate cell renewal and deep recovery during sleep.' 
+        },
+        patient_benefit: { 
+            ar: 'يعمل طوال الليل على ترميم الأنسجة المترهلة. تستيقظ المريضة بوجه ممتلئ، مشدود، ومرتاح.', 
+            en: 'Works overnight to repair sagging tissues. Patient wakes up with a plump, firm, and rested face.' 
+        },
+        active_ingredients: [
+            { name: 'Magnolol + Oligo Peptides', concentration: 'Active | فعال', role: { ar: 'إعادة الهيكلة والشد الليلي.', en: 'Nocturnal restructuring and lifting.' } },
+            { name: 'Dexpanthenol', concentration: 'Regenerating | مجدد', role: { ar: 'دعم الإصلاح الخلوي.', en: 'Supporting cellular repair.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        step_in_routine: { ar: 'كريم الليل المعالج.', en: 'Therapeutic night cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على وجه ورقبة نظيفين بعد السيروم.', en: 'Apply to clean face and neck after serum.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الترهل الواضح، فقدان الكثافة الحجمية ليلاً، والبشرة الناضجة.', en: 'Visible sagging, nighttime volume loss, and mature skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مناسب لجميع أنواع البشرة. يغذي بفعالية دون سد المسام.', en: 'Suitable for all skin types. Nourishes effectively without clogging pores.' }
+    }
+});
+
+// [49] EUCERIN DERMOPURIFYER SCRUB 100 ML
+deepProductsList.push({
+    id: 'euc_dermopurifyer_scrub', brandId: 'eucerin', familyId: 'dermopurifyer', brand: 'Eucerin',
+    name: { ar: 'ديرموبيوريفاير (مقشر الوجه لحب الشباب)', en: 'DermoPurifyer Scrub' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
+        mechanism: { 
+            ar: 'مقشر ميكانيكي خالي من الزيوت يحتوي على حمض اللاكتيك (Lactic Acid) وجزيئات دقيقة تصقل السطح دون إيذاء الجلد، لتنظيف المسام وإزالة الرؤوس السوداء.', 
+            en: 'Oil-free mechanical scrub containing Lactic Acid and micro-particles that refine the surface without damaging the skin, unclogging pores and removing blackheads.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل الجلد الميت والشوائب العميقة، يقلل الرؤوس السوداء بشكل ملحوظ، ويحسن ملمس البشرة الدهنية.', 
+            en: 'Removes dead skin and deep impurities, visibly reduces blackheads, and improves oily skin texture.' 
+        },
+        active_ingredients: [
+            { name: 'Lactic Acid', concentration: 'Active | فعال', role: { ar: 'إذابة الروابط بين الخلايا الميتة.', en: 'Dissolving bonds between dead cells.' } },
+            { name: 'Micro-Particles', concentration: 'Exfoliating | مقشر', role: { ar: 'إزالة الشوائب ميكانيكياً.', en: 'Mechanically removing impurities.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة إلى مرتين أسبوعياً.', en: '1 to 2 times a week.' },
+        step_in_routine: { ar: 'تنظيف أسبوعي عميق.', en: 'Weekly deep cleansing.' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك بلطف على وجه مبلل بحركات دائرية ثم يُشطف.', en: 'Massage gently on a wet face with circular motions, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك على الحبوب الملتهبة النشطة.', 'علاجات الروكوتان.'], en: ['Rubbing on active inflamed acne.', 'Accutane treatments.'] }, 
+            best_mixed_with: { ar: ['تونر DermoPurifyer بعده لإغلاق المسام.'], en: ['DermoPurifyer Toner afterwards to close pores.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الرؤوس السوداء، المسام المسدودة، وتراكم الشوائب.', en: 'Blackheads, clogged pores, and impurity buildup.' },
+        pregnancy_safe: false, sun_sensitivity: false, 
+        notes: { ar: 'صُمم ليكون لطيفاً ولا يسبب خدوشاً دقيقة (Micro-tears).', en: 'Designed to be gentle and not cause micro-tears.' }
+    }
+});
+
+// [50] EUCERIN ATOPICONTROL FACE CREAM 50 ML
+deepProductsList.push({
+    id: 'euc_atopicontrol_face', brandId: 'eucerin', familyId: 'atopicontrol', brand: 'Eucerin',
+    name: { ar: 'أتوبي-كونترول (كريم الوجه للإكزيما)', en: 'AtopiControl Face Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'مصمم خصيصاً للوجه الرقيق. يدمج 12% من زيوت الأوميجا 6 مع <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">ليكوتشالكون A</span> لتهدئة التهاب واحمرار الوجه الناتج عن الإكزيما وترميم حاجزه.', 
+            en: 'Designed specifically for the delicate face. Integrates 12% Omega-6 oils with <span class="glossary-term" onclick="openGlossary(\'licochalcone_a\')">Licochalcone A</span> to soothe eczema-induced facial inflammation/redness and repair its barrier.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر راحة فورية للوجه المشدود والمتقشر، يخفف الحكة والاحمرار، ويطيل فترة الهدوء بين النوبات.', 
+            en: 'Provides instant comfort for tight, flaky faces, relieves itching and redness, and prolongs the calm period between flare-ups.' 
+        },
+        active_ingredients: [
+            { name: 'Omega-6 (Evening Primrose Oil)', concentration: '12%', role: { ar: 'ترميم حاجز دهون الوجه.', en: 'Repairing facial lipid barrier.' } },
+            { name: 'Licochalcone A', concentration: 'Soothing | مهدئ', role: { ar: 'إيقاف التهاب الوجه.', en: 'Stopping facial inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'ترطيب الوجه الأساسي.', en: 'Core facial hydration.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك برفق على الوجه والرقبة بعد تنظيفهما.', en: 'Massage gently onto cleansed face and neck.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['كريم Acute Care (أثناء النوبات الشديدة جداً).'], en: ['Acute Care Cream (during very severe flare-ups).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'إكزيما الوجه، الاحمرار الشديد، جفاف وتوسف الوجه، ومرضى التهاب الجلد التأتبي.', en: 'Facial eczema, severe redness, facial dryness/desquamation, and atopic dermatitis patients.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن للرضع والأطفال. يعمل كقاعدة ممتازة للمكياج للبشرة المريضة.', en: 'Safe for babies and children. Acts as an excellent makeup base for diseased skin.' }
+    }
+});
