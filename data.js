@@ -7379,3 +7379,46 @@ deepProductsList.push({
         notes: { ar: 'آمن للرضع والأطفال. يعمل كقاعدة ممتازة للمكياج للبشرة المريضة.', en: 'Safe for babies and children. Acts as an excellent makeup base for diseased skin.' }
     }
 });
+// ==========================================
+// 📚 ملحق القاموس الطبي (Glossary) الإضافي - يوسيرين
+// ==========================================
+
+window.glossaryDict['glycyrrhetinic_acid'] = {
+    title: { ar: 'حمض الجليسيريتينيك (Enoxolone) 🧬', en: 'Glycyrrhetinic Acid 🧬' },
+    desc: { 
+        ar: 'مستخلص نشط من جذور عرق السوس الصينية. يدعم ويعزز الآلية الطبيعية لإصلاح الحمض النووي (DNA) في خلايا الجلد التالفة جراء التعرض للأشعة فوق البنفسجية، مما يمنع الشيخوخة الضوئية.', 
+        en: 'An active extract from Chinese licorice roots. It supports and enhances the skin\'s natural DNA repair mechanism for cells damaged by UV rays, preventing photoaging.' 
+    }
+};
+
+window.glossaryDict['ampho_tensides'] = {
+    title: { ar: 'مؤثرات سطحية مذبذبة (Ampho-Tensides) 🫧', en: 'Ampho-Tensides 🫧' },
+    desc: { 
+        ar: 'نظام تنظيف فائق اللطف وخالٍ من الصابون، يخفض التوتر السطحي للماء ليزيل الدهون والأوساخ بفعالية دون تجريد البشرة من زيوتها الطبيعية أو إحداث خلل في الحاجز الجلدي.', 
+        en: 'An ultra-mild, soap-free cleansing system that lowers water surface tension to effectively remove sebum and dirt without stripping natural oils or disrupting the skin barrier.' 
+    }
+};
+
+window.glossaryDict['l_carnitine_tech'] = {
+    title: { ar: 'تقنية الكارنيتين (L-Carnitine Tech) ⚖️', en: 'L-Carnitine Technology ⚖️' },
+    desc: { 
+        ar: 'حمض أميني طبيعي يتم توظيفه في مستحضرات يوسيرين لتنظيم الإفرازات الدهنية بيولوجياً من داخل المسام، حيث يسرع من عملية استقلاب وحرق الأحماض الدهنية في الخلايا.', 
+        en: 'A natural amino acid utilized in Eucerin formulas to biologically regulate sebum production from within the pores, by accelerating the metabolism and burning of fatty acids in cells.' 
+    }
+};
+
+window.glossaryDict['ceramide_3'] = {
+    title: { ar: 'سيراميد-3 (Ceramide-3) 🧱', en: 'Ceramide-3 🧱' },
+    desc: { 
+        ar: 'جزيئات دهنية متطابقة مع تلك الموجودة طبيعياً في الجلد (تمثل 50% من دهون البشرة). تعمل كالإسمنت الذي يربط خلايا الجلد ببعضها لسد التشققات ومنع تبخر الماء، وهي حجر الزاوية لعلاج الإكزيما.', 
+        en: 'Lipid molecules identical to those naturally found in skin (representing 50% of skin lipids). Acts as the mortar binding skin cells together to seal cracks and prevent water evaporation, a cornerstone for eczema treatment.' 
+    }
+};
+
+window.glossaryDict['dexpanthenol'] = {
+    title: { ar: 'ديكسبانثينول (Pro-Vitamin B5) 🌿', en: 'Dexpanthenol (Pro-Vitamin B5) 🌿' },
+    desc: { 
+        ar: 'فيتامين نشط يتحول داخل الجلد إلى حمض البانتوثينيك. يحفز تجديد الخلايا الليفية وينشط عملية التئام الجروح والتعافي السريع للجلد المتهيج والمتقشر.', 
+        en: 'An active vitamin that converts into Pantothenic acid in the skin. It stimulates fibroblast regeneration and activates wound healing and rapid recovery of irritated, flaky skin.' 
+    }
+};
