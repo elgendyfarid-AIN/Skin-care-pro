@@ -7422,3 +7422,47 @@ window.glossaryDict['dexpanthenol'] = {
         en: 'An active vitamin that converts into Pantothenic acid in the skin. It stimulates fibroblast regeneration and activates wound healing and rapid recovery of irritated, flaky skin.' 
     }
 };
+// ==========================================
+// 📚 بلوك رقم (34): ملحق القاموس العلمي (Deep Science Glossary)
+// يركز على الحالات الطبية والمكونات التخصصية في يوسيرين
+// ==========================================
+
+window.glossaryDict['keratosis_pilaris'] = {
+    title: { ar: 'التقرن الشعري (جلد الوزة) 🦵', en: 'Keratosis Pilaris 🦵' },
+    desc: { 
+        ar: 'حالة جلدية شائعة تحدث نتيجة تراكم بروتين الكيراتين في مسام بصيلات الشعر، مما يؤدي إلى ظهور نتوءات خشنة تشبه حبوب القشعريرة. يحتاج علاجها إلى دمج التقشير الكيميائي (اليوريا) مع ترميم الحاجز الدهني.', 
+        en: 'A common skin condition where keratin protein builds up in hair follicles, causing rough bumps often called "chicken skin". Treatment requires combining chemical exfoliation (Urea) with lipid barrier repair.' 
+    }
+};
+
+window.glossaryDict['urea_keratolytic'] = {
+    title: { ar: 'اليوريا (كمادة مقشرة للكيراتين) 🔬', en: 'Urea (Keratolytic Action) 🔬' },
+    desc: { 
+        ar: 'اليوريا مادة ثنائية المفعول؛ بتركيزات منخفضة ترطب، وبتركيزات عالية (10% فأكثر) تعمل كمحلل للقرنية (Keratolytic) حيث تكسر الروابط بين الخلايا الميتة المتصلبة، مما يسهل تقشيرها برفق دون كشط ميكانيكي.', 
+        en: 'Urea is a dual-action agent; it hydrates at low doses and acts as a keratolytic at higher doses (10%+), breaking down the bonds between hardened dead cells to facilitate gentle exfoliation without mechanical scrubbing.' 
+    }
+};
+
+window.glossaryDict['nmfs_complex'] = {
+    title: { ar: 'عوامل الترطيب الطبيعية (NMFs) 💦', en: 'Natural Moisturizing Factors (NMFs) 💦' },
+    desc: { 
+        ar: 'مزيج من الجزيئات الموجودة طبيعياً في الجلد (مثل PCA، الأحماض الأمينية، واللاكتات) تعمل كمغناطيس للماء؛ فهي تجذب الرطوبة من الجو وتحبسها داخل الطبقة القرنية لمنع الجفاف الداخلي.', 
+        en: 'A blend of molecules naturally present in the skin (like PCA, amino acids, and lactate) that act as water magnets; they attract moisture from the environment and lock it within the stratum corneum to prevent internal dehydration.' 
+    }
+};
+
+window.glossaryDict['advanced_spectral_tech'] = {
+    title: { ar: 'تقنية الطيف المتقدمة (Spectral Tech) 🛡️', en: 'Advanced Spectral Technology 🛡️' },
+    desc: { 
+        ar: 'نظام حماية واسع المدى يدمج فلاتر UVA/UVB التقليدية مع حماية بيولوجية ضد الضوء المرئي عالي الطاقة (HEVIS)، لمنع الأضرار العميقة التي تصل للأدمة وتسبب التصبغات.', 
+        en: 'A broad-spectrum protection system integrating traditional UVA/UVB filters with biological defense against High-Energy Visible (HEVIS) light, preventing deep damage to the dermis that causes pigmentation.' 
+    }
+};
+
+window.glossaryDict['enoxolone'] = {
+    title: { ar: 'إينوكسولون (Enoxolone) 🧬', en: 'Enoxolone 🧬' },
+    desc: { 
+        ar: 'مادة مشتقة من عرق السوس تعمل على حماية حمض الهيالورونيك الطبيعي في الجلد من التكسر، عن طريق تثبيط إنزيم (Hyaluronidase)، مما يطيل عمر الامتلاء والترطيب الداخلي للبشرة.', 
+        en: 'A licorice-derived agent that protects the skin\'s natural Hyaluronic Acid from degradation by inhibiting the Hyaluronidase enzyme, prolonging internal plumpness and hydration.' 
+    }
+};
