@@ -1619,3 +1619,155 @@ deepProductsList.push({
         notes: { ar: 'آمن وفعال جداً للمراهقين (Adolescents). قوام جل-كريم غير لزج.', en: 'Highly safe and effective for adolescents. Non-sticky gel-cream texture.' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (11): ختام براند بيوديرما (المنظفات النشطة والترميم المكثف)
+// متوافق 100% مع واجهة Dashboard Layout
+// ==========================================
+
+// --- المنتجات العميقة الجديدة ---
+
+// [37] Bioderma Pigmentbio Foaming Cream
+deepProductsList.push({
+    id: 'bio_pigmentbio_foaming_cream', brandId: 'bioderma', familyId: 'pigmentbio', brand: 'Bioderma',
+    name: { ar: 'بيجمنت بيو كريم رغوي (غسول تفتيح)', en: 'Pigmentbio Foaming Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً', en: 'Slightly Acidic' },
+        mechanism: { 
+            ar: 'يجمع بين التقشير الفيزيائي اللطيف (Micro-beads) والتقشير الكيميائي (AHA) لإزالة الخلايا المصبوغة فوراً، مع تفتيح البشرة بتقنية LumiReveal أثناء التنظيف.', 
+            en: 'Combines gentle physical exfoliation (Micro-beads) and chemical peeling (AHA) to remove pigmented cells instantly, while brightening skin via LumiReveal technology during cleansing.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف البشرة بعمق ويعطي إشراقة فورية، ويمنع ظهور البقع الجديدة، ويمكن استخدامه كقناع (Mask) لتفتيح مكثف مرة أسبوعياً.', 
+            en: 'Deeply cleanses and provides instant radiance, prevents new spots, and can be used as a mask for intensive brightening once a week.' 
+        },
+        active_ingredients: [
+            { name: 'Citric Acid + Cellulose Acetate', concentration: { ar: 'مقشر مزدوج', en: 'Dual Exfoliant' }, role: { ar: 'تجديد خلايا البشرة وإزالة التصبغ السطحي.', en: 'Renewing skin cells and removing surface pigmentation.' } },
+            { name: 'Coco Glucoside & Glyceryl Oleate', concentration: { ar: 'منظف مرطب', en: 'Hydrating Cleanser' }, role: { ar: 'الحفاظ على رطوبة الجلد أثناء التقشير.', en: 'Preserving skin moisture during exfoliation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (صباحاً أو مساءً).', en: 'Daily (AM or PM).' },
+        step_in_routine: { ar: 'خطوة التنظيف والتفتيح.', en: 'Cleansing and brightening step.' },
+        routine_step_number: 1,
+        application: { ar: 'يُوضع على بشرة مبللة، يُدلك حتى يرغي، ثم يُشطف. كقناع: يُترك لمدة 5 دقائق ثم يُشطف.', en: 'Apply to wet skin, massage to lather, then rinse. As a mask: leave for 5 mins then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['اللوف الخشن (التقشير كافٍ).'], en: ['Harsh loofahs (exfoliation is sufficient).'] }, 
+            best_mixed_with: { ar: ['بيجمنت بيو سي-كونسينتريت.'], en: ['Pigmentbio C-Concentrate.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة، التصبغات، وعدم توحد لون الوجه والجسم.', en: 'Dull skin, pigmentation, and uneven face and body tone.' },
+        pregnancy_safe: true, sun_sensitivity: true, 
+        notes: { ar: 'آمن للمناطق الحساسة الخارجية. خالي من الصابون.', en: 'Safe for external sensitive areas. Soap-free.' }
+    }
+});
+
+// [38] Bioderma Sebium Gel Moussant Actif (Intense Exfoliating Cleanser)
+deepProductsList.push({
+    id: 'bio_sebium_gel_actif', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
+    name: { ar: 'سيبيوم جل موسان أكتيف (الغسول المركز)', en: 'Sebium Gel Moussant Actif' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (4.5) لتقشير أعمق', en: 'Acidic (4.5) for deeper peeling' },
+        mechanism: { 
+            ar: 'غسول علاجي مكثف يدمج (1% حمض الساليسيليك + 1.8% حمض الجليكوليك) لاختراق المسام المسدودة وإذابة الدهون المتحجرة ومنع تكون الرؤوس السوداء.', 
+            en: 'Intensive therapeutic cleanser combining (1% Salicylic + 1.8% Glycolic Acid) to penetrate clogged pores, dissolve hardened sebum, and prevent blackheads.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل البثور بنسبة 32% والرؤوس السوداء بنسبة 17%، ويترك المسام نظيفة تماماً دون التسبب في التهيج المعتاد للمقشرات القوية.', 
+            en: 'Reduces pimples by 32% and blackheads by 17%, leaving pores perfectly clean without the typical irritation of strong exfoliants.' 
+        },
+        active_ingredients: [
+            { name: 'Salicylic Acid (BHA)', concentration: { ar: '1%', en: '1%' }, role: { ar: 'تنظيف المسام من الداخل.', en: 'Cleansing pores from within.' } },
+            { name: 'Glycolic Acid (AHA)', concentration: { ar: '1.8%', en: '1.8%' }, role: { ar: 'تقشير سطحي لتنعيم الجلد.', en: 'Surface exfoliation to smooth skin.' } },
+            { name: 'Zinc Gluconate', concentration: { ar: 'منظم دهون', en: 'Sebo-regulator' }, role: { ar: 'تقليل اللمعان الفوري.', en: 'Immediate shine reduction.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (أو حسب تحمل البشرة).', en: 'Once daily (or as tolerated).' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف العلاجي).', en: 'Step 1 (Therapeutic Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى بلطف على البشرة، يُترك لمدة 30 ثانية لفعالية الأحماض، ثم يُشطف جيداً.', en: 'Lather gently, leave for 30 seconds for acid efficacy, then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['علاجات الروكوتان الفموية (خطر جفاف شديد).'], en: ['Oral Isotretinoin (risk of severe dryness).'] }, 
+            best_mixed_with: { ar: ['سيبيوم هيدرا (لترميم الحاجز).'], en: ['Sebium Hydra (for barrier repair).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب العنيد، المسام المسدودة بشدة، والبشرة الدهنية السميكة.', en: 'Stubborn acne, severely clogged pores, and thick oily skin.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'إذا حدث تهيج أو تقشر مفرط، يُستخدم يوماً بعد يوم.', en: 'If irritation or excessive peeling occurs, use every other day.' }
+    }
+});
+
+// [39] Bioderma Atoderm Intensive Gel Moussant
+deepProductsList.push({
+    id: 'bio_atoderm_intensive_gel', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
+    name: { ar: 'أتوديرم إنتينسيف جل موسان (للبشرة التأتبية)', en: 'Atoderm Intensive Gel Moussant' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (فسيولوجي)', en: '5.5 (Physiological)' },
+        mechanism: { 
+            ar: 'منظف مهدئ بتركيبة مضادة للحكة، يمنع انتشار البكتيريا المهيجة بفضل كبريتات الزنك والنحاس، مع الحفاظ على التوازن الحيوي للبشرة شديدة الجفاف.', 
+            en: 'Soothing cleanser with an anti-itch formula, preventing the proliferation of irritating bacteria via Zinc and Copper sulfates, while preserving the biological balance of very dry skin.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل الرغبة في الحك فوراً بعد الاستحمام، ويخفف الإحساس بالانزعاج، ويقوي الحاجز الجلدي الطبيعي.', 
+            en: 'Reduces the urge to scratch immediately after bathing, eases discomfort, and strengthens the natural skin barrier.' 
+        },
+        active_ingredients: [
+            { name: 'Vitamin PP (Niacinamide)', concentration: { ar: 'فعال', en: 'Active' }, role: { ar: 'تحفيز بناء ليبيدات الجلد.', en: 'Stimulating skin lipid synthesis.' } },
+            { name: 'Zinc & Copper Sulfates', concentration: { ar: 'منقي', en: 'Purifying' }, role: { ar: 'تطهير الجلد ومنع الانتكاسات البكتيرية.', en: 'Purifying skin and preventing bacterial relapses.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (أثناء الاستحمام).', en: 'Daily (during shower).' },
+        step_in_routine: { ar: 'خطوة التنظيف الأساسية للإكزيما.', en: 'Core cleansing step for eczema.' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى على بشرة مبللة، يُشطف برفق، ويُجفف الجلد بالتربيت.', en: 'Lather on wet skin, rinse gently, and pat dry.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المنظفات المعطرة.'], en: ['Fragranced cleansers.'] }, 
+            best_mixed_with: { ar: ['أتوديرم إنتينسيف بوم (فوراً بعد التجفيف).'], en: ['Atoderm Intensive Baume (immediately after drying).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الإكزيما التأتبية، الجفاف الشديد، ونوبات الحكة الجلدية.', en: 'Atopic eczema, severe dryness, and itching flare-ups.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'خالي من الصابون والعطور والبارابين. آمن لحديثي الولادة.', en: 'Soap, fragrance, and paraben-free. Safe for newborns.' }
+    }
+});
+
+// [40] Bioderma Cicabio Pommade (Insulating Repairing Ointment)
+deepProductsList.push({
+    id: 'bio_cicabio_pommade', brandId: 'bioderma', familyId: 'cicabio', brand: 'Bioderma',
+    name: { ar: 'سيكابيو بوماد (المرهم المرمم)', en: 'Cicabio Pommade' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر "ضمادة سائلة" (Liquid Bandage) تحمي الجرح بعمق. يعيد بناء البشرة في كل مرحلة، ويسكن الألم بـ Antalgicine، ويخلق غشاءً عازلاً مغذياً يسمح للجلد بالتنفس.', 
+            en: 'Provides a "liquid bandage" for deep wound protection. Reconstructs skin at every stage, relieves pain via Antalgicine, and creates an insulating, nourishing breathable film.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج مثالي للتلف الجلدي العميق؛ يسرع الالتئام، يغذي البشرة بكثافة، ويمنع الحكة أثناء تكوين الجلد الجديد.', 
+            en: 'Ideal treatment for deep skin damage; accelerates healing, intensely nourishes, and prevents itching during new skin formation.' 
+        },
+        active_ingredients: [
+            { name: 'Antalgicine™ Patent', concentration: { ar: 'براءة اختراع', en: 'Patented' }, role: { ar: 'تسكين فوري للألم والوخز.', en: 'Instant relief from pain and stinging.' } },
+            { name: 'Zinc & Copper Sulfates', concentration: { ar: 'منقي', en: 'Purifying' }, role: { ar: 'منع العدوى البكتيرية في الجروح العميقة.', en: 'Preventing bacterial infection in deep wounds.' } },
+            { name: 'Hyaluronic Acid + Lipids', concentration: { ar: 'مركز', en: 'Concentrated' }, role: { ar: 'خلق بيئة رطبة لالتئام أسرع.', en: 'Creating a moist environment for faster healing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً حتى تمام الشفاء.', en: 'Twice daily until fully healed.' },
+        step_in_routine: { ar: 'علاج ترميم موضعي مكثف.', en: 'Intensive targeted repair treatment.' },
+        routine_step_number: 3,
+        application: { ar: 'توضع طبقة سميكة على المنطقة المتضررة النظيفة والجافة.', en: 'Apply a thick layer to the clean, dry affected area.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الاستخدام على جروح مفتوحة تنزف.'], en: ['Use on open bleeding wounds.'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'التشققات الكبيرة، القروح غير النازفة، بعد العمليات الجراحية البسيطة، والحروق العميقة.', en: 'Major cracking, non-bleeding sores, post-minor surgery, and deep burns.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام "مرهم" ثقيل جداً يوفر حماية قصوى. لونه طبيعي.', en: 'Very heavy "ointment" texture for maximum protection. Natural color.' }
+    }
+});
