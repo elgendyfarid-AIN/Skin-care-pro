@@ -1253,3 +1253,369 @@ deepProductsList.push({
         notes: { ar: 'خالي من العطور. قوامه غير لزج ولا يترك أثراً دهنياً.', en: 'Fragrance-free. Non-sticky and non-greasy texture.' }
     }
 });
+// ==========================================
+// 📦 بلوك رقم (8): بيوديرما (Sensibio Defensive + Photoderm M)
+// متوافق 100% مع واجهة Dashboard Layout
+// ==========================================
+
+// --- 1. المنتجات العميقة الجديدة ---
+
+// [27] Bioderma Sensibio Defensive Active Soothing Cream
+deepProductsList.push({
+    id: 'bio_sensibio_defensive_normal', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو ديفينسيف (كريم مهدئ نشط)', en: 'Sensibio Defensive Active Soothing Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً', en: 'Physiologically Balanced' },
+        mechanism: { 
+            ar: 'يعمل بتقنية <span class="glossary-term" onclick="openGlossary(\'defensive_tech\')">Defensive Technology</span> التي تقوي قدرة الجلد على الدفاع عن نفسه ضد الالتهاب الناتج عن البيئة (البرد، التلوث) والأكسدة.', 
+            en: 'Acts via <span class="glossary-term" onclick="openGlossary(\'defensive_tech\')">Defensive Technology</span> that strengthens the skin\'s self-defense against environmental inflammation and oxidative stress.' 
+        },
+        patient_benefit: { 
+            ar: 'يهدئ الوخز والشد فوراً، يمنح ترطيباً لمدة 12 ساعة، ويجعل البشرة الحساسة أقل تفاعلية مع الوقت.', 
+            en: 'Instantly soothes tingling and tightness, provides 12-hour hydration, and makes sensitive skin less reactive over time.' 
+        },
+        active_ingredients: [
+            { name: 'Carnosine + Vitamin E', concentration: { ar: 'مضادات أكسدة', en: 'Antioxidants' }, role: { ar: 'حماية الخلايا من الشوارد الحرة.', en: 'Protecting cells from free radicals.' } },
+            { name: 'Red Sage Polyphenols', concentration: { ar: 'منقي', en: 'Purifying' }, role: { ar: 'الحد من فرط تفاعل النهايات العصبية.', en: 'Limiting nerve fiber hyper-reactivity.' } },
+            { name: 'Tetrapeptide-10', concentration: { ar: 'ببتيد فعال', en: 'Active Peptide' }, role: { ar: 'تقوية وظيفة حاجز البشرة المادي.', en: 'Strengthening the physical skin barrier function.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        step_in_routine: { ar: 'خطوة الترطيب اليومي.', en: 'Daily hydration step.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على الوجه والرقبة بعد التنظيف.', en: 'Apply to face and neck after cleansing.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يوجد تعارض.'], en: ['No contraindications.'] }, 
+            best_mixed_with: { ar: ['سينسيبيو H2O.', 'واقي شمس فوتوديرم.'], en: ['Sensibio H2O.', 'Photoderm Sunscreen.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة والمتهيجة (العادية إلى المختلطة).', en: 'Sensitive and sensitized skin (Normal to Combination).' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام خفيف ومنعش، يمتص بسرعة فائقة.', en: 'Light and refreshing texture, absorbs very quickly.' }
+    }
+});
+
+// [28] Bioderma Sensibio Defensive RICH Active Soothing Cream
+deepProductsList.push({
+    id: 'bio_sensibio_defensive_rich', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو ديفينسيف ريتش (كريم مهدئ مغذي)', en: 'Sensibio Defensive Rich Active Soothing Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'نفس تقنية <span class="glossary-term" onclick="openGlossary(\'defensive_tech\')">Defensive</span> ولكن بقاعدة غنية بالليبيدات لتعويض نقص الدهون في البشرة الجافة.', 
+            en: 'Same <span class="glossary-term" onclick="openGlossary(\'defensive_tech\')">Defensive</span> technology but with a lipid-rich base to compensate for lipid deficiency in dry skin.' 
+        },
+        patient_benefit: { 
+            ar: 'تغذية عميقة وراحة فورية من الجفاف والتحسس، مع حماية الحاجز الجلدي من المؤثرات الخارجية.', 
+            en: 'Deep nourishment and instant relief from dryness and sensitivity, protecting the skin barrier from external aggressors.' 
+        },
+        active_ingredients: [
+            { name: 'Carnosine', concentration: { ar: 'فعال', en: 'Active' }, role: { ar: 'حماية الـ DNA الخلوي.', en: 'Protecting cellular DNA.' } },
+            { name: 'Palmitoyl Tetrapeptide-10', concentration: { ar: 'مركز', en: 'Concentrated' }, role: { ar: 'ترميم الحاجز الجلدي.', en: 'Skin barrier repair.' } },
+            { name: 'Rich Emollients', concentration: { ar: 'مغذي', en: 'Nourishing' }, role: { ar: 'توفير الراحة للبشرة الجافة.', en: 'Providing comfort for dry skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' },
+        step_in_routine: { ar: 'خطوة الترطيب والتغذية.', en: 'Hydration and nourishment step.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على وجه نظيف وجاف.', en: 'Apply to clean, dry face.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['سينسيبيو زيت التنظيف (Cleansing Oil).'], en: ['Sensibio Cleansing Oil.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الحساسة الجافة إلى شديدة الجفاف.', en: 'Sensitive dry to very dry skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'قوام غني كريمي ولكن لا يترك ملمس دهني مزعج.', en: 'Rich creamy texture but non-greasy finish.' }
+    }
+});
+
+// [29] Bioderma Photoderm M Gel-Cream SPF 50+ (Light/Golden Shades)
+deepProductsList.push({
+    id: 'bio_photoderm_m', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم M (واقي شمس لعلاج الكلف)', en: 'Photoderm M Gel-Cream SPF 50+' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'ابتكار طبي يجمع بين الحماية من الشمس و <span class="glossary-term" onclick="openGlossary(\'iron_oxides_blue_light\')">أكاسيد الحديد</span> بنسبة عالية لمنع 66% من الضوء الأزرق المسبب للكلف، مع <span class="glossary-term" onclick="openGlossary(\'glabridin\')">الجلابريدين</span> لتفتيح البقع.', 
+            en: 'Medical innovation combining sun protection with high concentration of <span class="glossary-term" onclick="openGlossary(\'iron_oxides_blue_light\')">Iron Oxides</span> to block 66% of blue light causing melasma, with <span class="glossary-term" onclick="openGlossary(\'glabridin\')">Glabridin</span> to brighten spots.' 
+        },
+        patient_benefit: { 
+            ar: 'يمنع ظهور الكلف الجديد ويقلل من فرصة عودة التصبغات القديمة، ويوفر تغطية تجميلية مطفية توحد لون البشرة.', 
+            en: 'Prevents new melasma and reduces relapse of old pigmentation, providing matte cosmetic coverage that evens skin tone.' 
+        },
+        active_ingredients: [
+            { name: 'Iron Oxides', concentration: { ar: 'تركيز عالي ملون', en: 'High Tinted Concentration' }, role: { ar: 'حجب الضوء الأزرق المرئي.', en: 'Blocking visible Blue Light.' } },
+            { name: 'Glabridin', concentration: { ar: 'نشط', en: 'Active' }, role: { ar: 'تثبيط إنتاج الميلانين.', en: 'Inhibiting melanin production.' } },
+            { name: 'Sun Active Defense', concentration: { ar: 'براءة اختراع', en: 'Patented' }, role: { ar: 'حماية بيولوجية للحمض النووي.', en: 'Biological DNA protection.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (ضروري)، ويُجدد كل ساعتين.', en: 'Daily (Crucial), reapply every 2 hours.' },
+        step_in_routine: { ar: 'الخطوة الصباحية العلاجية والوقائية.', en: 'AM treatment and prevention step.' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع بالتساوي على الوجه. يتوفر بدرجة Light و Golden.', en: 'Apply evenly to face. Available in Light and Golden shades.' },
+        layering: { 
+            do_not_mix_with: { ar: ['تخفيفه بالمرطبات (يقلل كفاءة حجب الضوء الأزرق).'], en: ['Diluting with moisturizers (reduces blue light blocking efficiency).'] }, 
+            best_mixed_with: { ar: ['مجموعة Pigmentbio للتفتيح.'], en: ['Pigmentbio brightening range.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'كلف الحمل، فرط التصبغ الهرموني، والوقاية من بقع الشمس.', en: 'Pregnancy mask, hormonal hyperpigmentation, and sun spot prevention.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مقاوم للماء والعرق، قوام جل-كريم غير لامع.', en: 'Water and sweat resistant, matte gel-cream texture.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (9): بيوديرما (Photoderm Cream + Max Fluid Colors)
+// متوافق 100% مع واجهة Dashboard Layout
+// ==========================================
+
+// --- المنتجات العميقة الجديدة ---
+
+// [31] Bioderma Photoderm Cream SPF 50+ (Invisible / Light)
+deepProductsList.push({
+    id: 'bio_photoderm_cream_spf50', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم كريم SPF 50+ (شفاف / ملون)', en: 'Photoderm Cream SPF 50+ (Invisible / Light)' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'يوفر حماية فائقة للبشرة الجافة بفضل تقنية <span class="glossary-term" onclick="openGlossary(\'sun_active_defense\')">Sun Active Defense</span>، مع قاعدة كريمية توفر ترطيباً يدوم 8 ساعات وتمنع الجفاف الناتج عن الشمس.', 
+            en: 'Provides superior protection for dry skin using <span class="glossary-term" onclick="openGlossary(\'sun_active_defense\')">Sun Active Defense</span>, with a creamy base that delivers 8-hour hydration and prevents sun-induced dryness.' 
+        },
+        patient_benefit: { 
+            ar: 'يجمع بين الحماية القصوى والراحة المغذية للبشرة الجافة، لا يترك أثراً دهنياً، ويعطي مظهر نضر وصحي (Glowy finish).', 
+            en: 'Combines maximum protection with nourishing comfort for dry skin, leaves no greasy residue, and provides a healthy, glowy finish.' 
+        },
+        active_ingredients: [
+            { name: 'UVA/UVB Filters', concentration: { ar: 'عالي الحماية', en: 'High Protection' }, role: { ar: 'منع حروق الشمس وتلف الخلايا.', en: 'Preventing sunburn and cellular damage.' } },
+            { name: 'Moisturizing Glycerin', concentration: { ar: 'غني', en: 'Rich' }, role: { ar: 'حبس الرطوبة داخل الجلد.', en: 'Locking moisture into the skin.' } },
+            { name: 'Sun Active Defense', concentration: { ar: 'براءة اختراع', en: 'Patented' }, role: { ar: 'تقوية مناعة الجلد ضد الأكسدة.', en: 'Strengthening skin immunity against oxidation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً قبل الشمس.', en: 'Daily before sun exposure.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (للبشرة الجافة).', en: 'Final step (for dry skin).' },
+        routine_step_number: 4,
+        application: { ar: 'يوضع بسخاء على الوجه والرقبة. متوفر بنسخة شفافة ونسخة ملونة (Light).', en: 'Apply generously to face and neck. Available in Invisible and Light tinted versions.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المنظفات القاسية قبل الاستخدام.'], en: ['Harsh cleansers before application.'] }, 
+            best_mixed_with: { ar: ['سيروم هيدرابيو (لبشرة شديدة النضارة).'], en: ['Hydrabio Serum (for extra radiance).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة، الجافة جداً، والبشرة الحساسة التي تحتاج لترطيب مع الحماية.', en: 'Dry, very dry skin, and sensitive skin needing hydration with protection.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'مقاوم للماء والعرق، ولا يسبب وخز العينين.', en: 'Water and sweat resistant, anti-eye stinging.' }
+    }
+});
+
+// [32] Bioderma Photoderm MAX Fluid SPF 100 (Light / Very Light Versions)
+deepProductsList.push({
+    id: 'bio_photoderm_max_fluid_tinted', brandId: 'bioderma', familyId: 'photoderm', brand: 'Bioderma',
+    name: { ar: 'فوتوديرم ماكس فلويد SPF 100 (ملون)', en: 'Photoderm MAX Fluid SPF 100 (Tinted)' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
+        mechanism: { 
+            ar: 'أقصى حماية فيزيائية وكيميائية ممكنة ضد الشمس، مدمجة مع صبغات معدنية توفر تغطية كاملة للعيوب وتعمل كحاجز إضافي ضد الأشعة المرئية.', 
+            en: 'Maximum possible physical and chemical sun protection, combined with mineral pigments providing full coverage for imperfections and an extra barrier against visible light.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر حماية مطلقة للحالات السريرية (بعد الليزر) مع توحيد فوري ولون طبيعي يغني عن كريم الأساس.', 
+            en: 'Provides absolute protection for clinical cases (post-laser) with instant evening of skin tone, replacing foundation.' 
+        },
+        active_ingredients: [
+            { name: 'Max UV Filters', concentration: { ar: 'SPF 100', en: 'SPF 100' }, role: { ar: 'صد تام لأشعة UVA/UVB القوية.', en: 'Total block of strong UVA/UVB rays.' } },
+            { name: 'Mineral Color Pigments', concentration: { ar: 'تغطية عالية', en: 'High Coverage' }, role: { ar: 'توحيد لون البشرة وإخفاء العيوب.', en: 'Evening skin tone and hiding blemishes.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً عند التعرض المباشر.', en: 'Daily during direct exposure.' },
+        step_in_routine: { ar: 'خطوة الحماية القصوى والتغطية.', en: 'Ultimate protection and coverage step.' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع جيداً على الوجه. متاح بدرجات (Light) و (Very Light).', en: 'Distribute well on face. Available in Light and Very Light shades.' },
+        layering: { 
+            do_not_mix_with: { ar: ['طبقات كثيفة من المكياج (لتجنب التكتل).'], en: ['Heavy layers of makeup (to avoid pilling).'] }, 
+            best_mixed_with: { ar: ['كريمات سيكابيو المرممة.'], en: ['Cicabio repairing creams.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة شديدة الحساسية، بعد العمليات التجميلية، والنمش الكثيف.', en: 'Extreme sun sensitivity, post-procedure skin, and heavy freckles.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'يجب اختيار الدرجة (Very Light) للبشرة شديدة البياض لتجنب مظهر القناع.', en: 'Choose (Very Light) for very fair skin to avoid a mask-like look.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (10): بيوديرما (المنظفات المتخصصة + علاجات Sebium المتقدمة)
+// متوافق 100% مع واجهة Dashboard Layout
+// ==========================================
+
+// --- 1. إضافات القاموس الطبي (Glossary Additions) ---
+
+glossaryDict['bakuchiol_patent'] = {
+    title: { ar: 'براءة اختراع Bakuchiol 🌿', en: 'Bakuchiol Patent 🌿' },
+    desc: { 
+        ar: 'بديل طبيعي للريتينول، يعمل مع تقنية Fluidactiv لإعادة تدريب البشرة على إنتاج دهون صحية غير قابلة للأكسدة، مما يمنع ظهور الحبوب من جذورها.', 
+        en: 'A natural retinol alternative that works with Fluidactiv technology to retrain the skin to produce healthy, non-oxidized sebum, preventing acne at the source.' 
+    }
+};
+
+glossaryDict['keratolytic_salicylic'] = {
+    title: { ar: 'التقشير المزدوج (Double Keratolytic) 🧪', en: 'Double Keratolytic 🧪' },
+    desc: { 
+        ar: 'دمج بين حمض الساليسيليك (BHA) لتنظيف المسام من الداخل، وحمض المالييك (AHA) لتقشير السطح وتنعيم الجلد، بتركيز يضمن الفعالية دون تهيج.', 
+        en: 'A combination of Salicylic Acid (BHA) to clean pores from within, and Malic Acid (AHA) to exfoliate the surface and smooth skin, at a concentration ensuring efficacy without irritation.' 
+    }
+};
+
+// --- 2. المنتجات العميقة الجديدة ---
+
+// [33] Bioderma Sensibio H2O Eye (Micellar Biphasic)
+deepProductsList.push({
+    id: 'bio_sensibio_h2o_eye', brandId: 'bioderma', familyId: 'sensibio', brand: 'Bioderma',
+    name: { ar: 'سينسيبيو H2O آي (مزيل مكياج العين الثنائي)', en: 'Sensibio H2O Eye (Biphasic Micellar)' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي (مطابق لدموع العين)', en: 'Physiological (matches tears)' },
+        mechanism: { 
+            ar: 'محلول ثنائي الطور (Biphasic) يجمع بين 70% ماء ميسيلار لتنظيف الشوائب و 30% مرحلة زيتية لإذابة المكياج المقاوم للماء (Waterproof) فوراً، مع تقوية الرموش بفضل برو-فيتامين B5.', 
+            en: 'Biphasic formula combining 70% micellar water and 30% oily phase to instantly dissolve waterproof makeup, while strengthening lashes with Pro-vitamin B5.' 
+        },
+        patient_benefit: { 
+            ar: 'يزيل أصعب أنواع المكياج والروج الثابت بمسحة واحدة، يهدئ جفن العين الحساس، ولا يترك أي غشاء دهني مشوش للرؤية.', 
+            en: 'Removes the toughest waterproof makeup and long-wear lipstick in one wipe, soothes sensitive eyelids, and leaves no blurry oily film.' 
+        },
+        active_ingredients: [
+            { name: 'Pro-vitamin B5 (Panthenol)', concentration: { ar: 'مغذي', en: 'Nourishing' }, role: { ar: 'ترطيب محيط العين وتقوية الرموش.', en: 'Hydrating eye contour and strengthening lashes.' } },
+            { name: 'Fructooligosaccharides', concentration: { ar: 'مهدئ', en: 'Soothing' }, role: { ar: 'تقليل التهاب الجفون الحساسة.', en: 'Reducing sensitive eyelid inflammation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'عند الحاجة (لإزالة المكياج).', en: 'As needed (for makeup removal).' },
+        step_in_routine: { ar: 'الخطوة الأولى (تنظيف العيون والشفاه).', en: 'Step 1 (Eye & Lip Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'تُرج العبوة جيداً لخلط الطورين، يُوضع على قطنة وتُثبت على العين لثوانٍ ثم تُمسح بلطف.', en: 'Shake well to mix phases, apply to cotton pad, hold over eyes for seconds, then wipe gently.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف للرموش.'], en: ['Harsh rubbing of eyelashes.'] }, 
+            best_mixed_with: { ar: ['جميع كريمات محيط العين.'], en: ['All eye contour creams.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'العيون الحساسة، مستخدمي العدسات اللاصقة، والمكياج المقاوم للماء.', en: 'Sensitive eyes, contact lens wearers, and waterproof makeup.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'تم اختباره من قبل أطباء العيون. خالي من العطور.', en: 'Ophthalmologically tested. Fragrance-free.' }
+    }
+});
+
+// [34] Bioderma Atoderm Gel Douche (The Blue One)
+deepProductsList.push({
+    id: 'bio_atoderm_gel_douche', brandId: 'bioderma', familyId: 'atoderm', brand: 'Bioderma',
+    name: { ar: 'أتوديرم جل دوش (منظف يومي لطيف)', en: 'Atoderm Gel Douche' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (فسيولوجي)', en: '5.5 (Physiological)' },
+        mechanism: { 
+            ar: 'غسول رغوي خالي من الصابون يعتمد على (Skin Protect Complex) لتحفيز إنتاج حمض الهيالورونيك، مع تقنية النحاس (Copper Sulfate) التي تعطي اللون الأزرق الطبيعي وتطهر الجلد.', 
+            en: 'Soap-free foaming gel utilizing Skin Protect Complex to stimulate Hyaluronic Acid production, with Copper Sulfate providing its natural blue color and purifying the skin.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف الوجه والجسم بلطف شديد، يحمي من جفاف المياه العسرة، ويترك البشرة ناعمة ومرنة بعد الاستحمام.', 
+            en: 'Gently cleanses face and body, protects against hard water dryness, and leaves skin soft and supple post-shower.' 
+        },
+        active_ingredients: [
+            { name: 'Skin Protect Complex', concentration: { ar: 'براءة اختراع', en: 'Patented' }, role: { ar: 'تقوية حاجز الجلد وحبس الرطوبة.', en: 'Strengthening skin barrier and locking moisture.' } },
+            { name: 'Copper Sulfate', concentration: { ar: 'منقي', en: 'Purifying' }, role: { ar: 'تطهير الجلد بلطف ومنع البكتيريا.', en: 'Gentle skin purification and preventing bacteria.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (أثناء الاستحمام).', en: 'Daily (during shower).' },
+        step_in_routine: { ar: 'خطوة التنظيف اليومية (بديل الصابون).', en: 'Daily cleansing step (soap alternative).' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى على بشرة مبللة ثم يُشطف جيداً.', en: 'Lather on wet skin then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['اللوف الخشن جداً.'], en: ['Very harsh loofahs.'] }, 
+            best_mixed_with: { ar: ['أتوديرم كريم ألترا (للترطيب بعد التجفيف).'], en: ['Atoderm Cream Ultra (for post-shower hydration).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الجافة، الحساسة، والعناية اليومية لجميع أفراد العائلة.', en: 'Dry, sensitive skin, and daily care for the whole family.' },
+        pregnancy_safe: true, sun_sensitivity: false, 
+        notes: { ar: 'آمن للرضع والأطفال والبالغين. رائحة منعشة خفيفة.', en: 'Safe for babies, children, and adults. Light fresh scent.' }
+    }
+});
+
+// [35] Bioderma Sebium Global (Intensive Purifying Care)
+deepProductsList.push({
+    id: 'bio_sebium_global', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
+    name: { ar: 'سيبيوم جلوبال (علاج الحبوب المكثف)', en: 'Sebium Global' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً (4.5 - 5.0)', en: 'Slightly acidic' },
+        mechanism: { 
+            ar: 'يستخدم تقنية <span class="glossary-term" onclick="openGlossary(\'bakuchiol_patent\')">Bakuchiol</span> مع Fluidactiv لإعادة تكوين دهون صحية، مدمج مع أحماض AHA/BHA لإزالة الرؤوس السوداء والالتهاب.', 
+            en: 'Utilizes <span class="glossary-term" onclick="openGlossary(\'bakuchiol_patent\')">Bakuchiol</span> technology and Fluidactiv to reformulate healthy sebum, combined with AHA/BHA to eliminate blackheads and inflammation.' 
+        },
+        patient_benefit: { 
+            ar: 'علاج شامل للحبوب النشطة؛ يقلل البثور بنسبة 78%، يمنع تكون آثار الحبوب، ويتحكم في لمعان البشرة.', 
+            en: 'Comprehensive acne treatment; reduces pimples by 78%, prevents post-acne marks, and controls shine.' 
+        },
+        active_ingredients: [
+            { name: 'Salicylic Acid + Citric Acid', concentration: { ar: 'تقشير مزدوج', en: 'Dual Exfoliation' }, role: { ar: 'فتح المسام وتنعيم ملمس البشرة.', en: 'Unclogging pores and smoothing skin texture.' } },
+            { name: 'Zinc Gluconate', concentration: { ar: 'منظم دهون', en: 'Sebo-regulating' }, role: { ar: 'تقليل اللمعان والالتهاب.', en: 'Reducing shine and inflammation.' } },
+            { name: 'Enoxolone', concentration: { ar: 'مهدئ', en: 'Soothing' }, role: { ar: 'تسكين الاحمرار المصاحب للحبوب.', en: 'Soothing acne-related redness.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'خطوة العلاج الأساسية.', en: 'Core treatment step.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على كامل الوجه بعد تنظيفه بغسول سيبيوم.', en: 'Apply to entire face after cleansing with Sebium gel.' },
+        layering: { 
+            do_not_mix_with: { ar: ['علاجات الروكوتان الفموية (قد يسبب جفاف مفرط).'], en: ['Oral Accutane treatments (may cause excessive dryness).'] }, 
+            best_mixed_with: { ar: ['واقي شمس فوتوديرم نهاراً.'], en: ['Photoderm sunscreen in the AM.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب المعتدل، الرؤوس السوداء والبيضاء، والمسام المسدودة.', en: 'Moderate acne, blackheads, whiteheads, and clogged pores.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'يعد بديلاً ممتازاً للعلاجات الطبية في حالات الحبوب البسيطة والمتوسطة.', en: 'Excellent medical alternative for mild to moderate acne.' }
+    }
+});
+
+// [36] Bioderma Sebium Kerato+ (High Tolerance Gel-Cream)
+deepProductsList.push({
+    id: 'bio_sebium_kerato_plus', brandId: 'bioderma', familyId: 'sebium', brand: 'Bioderma',
+    name: { ar: 'سيبيوم كيراتو بلس (علاج الحبوب عالي التحمل)', en: 'Sebium Kerato+' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي (لأقصى فعالية تقشير)', en: 'Acidic for maximum exfoliation' },
+        mechanism: { 
+            ar: 'يعتمد على تقنية <span class="glossary-term" onclick="openGlossary(\'keratolytic_salicylic\')">التقشير المزدوج</span> (1.8% حمض ساليسيليك + 10% حمض المالييك) لاختراق المسام بفعالية مع الحفاظ على راحة الجلد وترطيبه لمدة 8 ساعات.', 
+            en: 'Relies on <span class="glossary-term" onclick="openGlossary(\'keratolytic_salicylic\')">Double Keratolytic</span> technology (1.8% Salicylic + 10% Malic Acid) to effectively penetrate pores while maintaining skin comfort and 8h hydration.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل الحبوب والآثار بنسبة 41% في يومين فقط، دون تسبب في جفاف أو قشرة أو تهيج للبشرة الحساسة.', 
+            en: 'Reduces pimples and marks by 41% in just 2 days, without causing dryness, flaking, or irritation for sensitive skin.' 
+        },
+        active_ingredients: [
+            { name: 'Salicylic Acid (BHA)', concentration: { ar: '1.8%', en: '1.8%' }, role: { ar: 'تنظيف المسام العميقة.', en: 'Deep pore cleansing.' } },
+            { name: 'Malic Acid Ester (AHA)', concentration: { ar: '10%', en: '10%' }, role: { ar: 'تقشير سطحي لطيف وتنعيم الجلد.', en: 'Gentle surface exfoliation and skin smoothing.' } },
+            { name: 'Fluidactiv™ Patent', concentration: { ar: 'براءة اختراع', en: 'Patented' }, role: { ar: 'منع انسداد المسام مستقبلياً.', en: 'Preventing future pore clogging.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة أو مرتين يومياً.', en: 'Once or twice daily.' },
+        step_in_routine: { ar: 'خطوة العلاج السريع واللطيف.', en: 'Fast and gentle treatment step.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على كامل الوجه أو موضعياً على البثور.', en: 'Apply to entire face or topically on blemishes.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أي مقشرات كيميائية قوية أخرى في نفس الوقت.'], en: ['Any other strong chemical exfoliants simultaneously.'] }, 
+            best_mixed_with: { ar: ['سيبيوم هيدرا (إذا كانت البشرة تميل للجفاف).'], en: ['Sebium Hydra (if skin tends to dry).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب في بدايته، الآثار الحمراء والداكنة، والبشرة الدهنية الحساسة.', en: 'Early-stage acne, red and dark marks, and sensitive oily skin.' },
+        pregnancy_safe: false, sun_sensitivity: true, 
+        notes: { ar: 'آمن وفعال جداً للمراهقين (Adolescents). قوام جل-كريم غير لزج.', en: 'Highly safe and effective for adolescents. Non-sticky gel-cream texture.' }
+    }
+});
