@@ -172,7 +172,9 @@
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' }, mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
             active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' }, ph_level: { ar: 'مستوى الحموضة (pH):', en: 'pH Level:' },
             usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, potency_label: { ar: 'مؤشر القوة (Potency):', en: 'Potency Indicator:' },
-            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
+            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, 
+            duration_label: { ar: 'المدة المتوقعة للعلاج:', en: 'Expected Treatment Duration:' },
+            application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
             routine_step: { ar: 'موقعه في الروتين:', en: 'Step in Routine:' }, layering: { ar: 'المقبول والمحظور مع هذا المنتج (Layering):', en: 'Layering (Do\'s & Don\'ts):' },
             indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, ind_label: { ar: 'الحالات المستهدفة (Indications):', en: 'Target Indications:' },
             safety_label: { ar: 'الأمان:', en: 'Safety:' }, notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
@@ -331,6 +333,7 @@
                     <div class="data-grid">
                         <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
                         <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
+                        ${p.clinical_usage.expected_duration ? `<div class="data-row"><span class="data-label">${txt.duration_label[currentLang]}</span> ${p.clinical_usage.expected_duration[currentLang]}</div>` : ''}
                         <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
                         <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                         <div class="data-row">
@@ -352,7 +355,8 @@
             </div>`;
         }
 
-        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerText = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
+        // تم التعديل إلى innerHTML لحل مشكلة القاموس
+        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerHTML = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
         function openImageModal(imgSrc) { document.getElementById('zoomedImg').src = imgSrc; document.getElementById('imageModal').style.display = 'flex'; }
         function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
