@@ -7379,124 +7379,98 @@ deepProductsList.push({
         notes: { ar: 'آمن للرضع والأطفال. يعمل كقاعدة ممتازة للمكياج للبشرة المريضة.', en: 'Safe for babies and children. Acts as an excellent makeup base for diseased skin.' }
     }
 });
-// --- 1. إضافة العلامة التجارية (Vichy) وعائلاتها ---
-window.brandsList.push({
-    id: 'vichy', name: 'Vichy',
-    families: [
-        { id: 'normaderm', name: { ar: 'نورماديرم (لعلاج حب الشباب والمسام)', en: 'Normaderm (Acne & Large Pores)' } },
-        { id: 'liftactiv', name: { ar: 'ليفت أكتيف (مكافحة التجاعيد والشد)', en: 'Liftactiv (Anti-Aging & Firming)' } },
-        { id: 'mineral89', name: { ar: 'مينيرال 89 (الترطيب والتدعيم)', en: 'Mineral 89 (Hydration & Fortifying)' } },
-        { id: 'dercos', name: { ar: 'ديركوس (علاج مشاكل الشعر والفروة)', en: 'Dercos (Hair & Scalp Care)' } },
-        { id: 'capital_soleil', name: { ar: 'كابيتال سوليه (الحماية من الشمس)', en: 'Capital Soleil (Sun Protection)' } },
-        { id: 'vichy_deodorant', name: { ar: 'مزيلات العرق (الحماية والنعومة)', en: 'Deodorants (Protection & Softness)' } }
-    ]
-});
-
-// --- 2. القاموس الطبي المتخصص لبراند فيتشي (Vichy Glossary) ---
+// --- 1. القاموس العلمي المتخصص (Vichy Glossary) ---
 window.glossaryDict['aminexil_patent'] = {
     title: { ar: 'براءة اختراع أمينيكسيل (Aminexil) 🧪', en: 'Aminexil Patent 🧪' },
     desc: { 
-        ar: 'جزيء مرجعي في علاج تساقط الشعر، يعمل على منع تصلب غلاف الكولاجين المحيط ببصيلة الشعر، مما يحافظ على مرونة الأنسجة ويجعل البصيلة تلتصق بقوة أكبر في فروة الرأس.', 
-        en: 'A reference molecule in hair loss treatment. It prevents the stiffening of the collagen sheath around the hair follicle, maintaining tissue flexibility and allowing the follicle to anchor more firmly into the scalp.' 
+        ar: 'جزيء مرجعي عالمي حاصل على براءة اختراع لمكافحة تساقط الشعر. يعمل على محاربة "تصلب غلاف الكولاجين" المحيط بالبصيلة، مما يحافظ على مرونة الأنسجة ويضمن تثبيت البصيلة بقوة أكبر في فروة الرأس.', 
+        en: 'A patented reference molecule against hair loss. It fights "collagen sheath stiffening" around the follicle, maintaining tissue flexibility and ensuring the follicle is more firmly anchored in the scalp.' 
     }
 };
 
-window.glossaryDict['volcanic_water'] = {
-    title: { ar: 'مياه فيتشي البركانية (Volcanic Water) 🌋', en: 'Vichy Volcanic Water 🌋' },
+window.glossaryDict['sp94_molecule'] = {
+    title: { ar: 'جزيء SP94 🧬', en: 'SP94 Molecule 🧬' },
     desc: { 
-        ar: 'مياه غنية بـ 15 معدناً أساسياً، مستخلصة من قلب البراكين الفرنسية. تعمل على تقوية حاجز الجلد الطبيعي وتحميه من العوامل الخارجية (مثل التلوث والجهد التأكسدي).', 
-        en: 'Water enriched with 15 essential minerals, sourced from the heart of French volcanoes. It strengthens the skin\'s natural barrier and protects it against external exposome factors.' 
+        ar: 'مركب حصري يتحول داخل بصيلة الشعر إلى مواد بناء (ليبيدات وسكريات)، مما يغذي الشعر من الجذور ويرفع من جودة وسمك ألياف الشعر الجديدة.', 
+        en: 'An exclusive compound that transforms inside the hair follicle into essential building blocks (lipids and glucides), nourishing the hair from the root and improving the quality and thickness of new hair fibers.' 
     }
 };
 
-window.glossaryDict['netlock_tech'] = {
-    title: { ar: 'تقنية نت-لوك (Netlock Technology) 🛡️', en: 'Netlock Technology 🛡️' },
-    desc: { 
-        ar: 'تقنية حصرية تقوم بحبس الفلاتر الشمسية في طبقة رقيقة جداً وغير مرئية. تضمن تغطية متجانسة، مقاومة فائقة للماء والعرق، وبدون ملمس دهني.', 
-        en: 'An exclusive technology that traps sun filters in an ultra-thin, invisible film. Ensures uniform coverage, high resistance to water and sweat, and a non-greasy finish.' 
-    }
-};
-
-window.glossaryDict['ds_technology'] = {
-    title: { ar: 'تقنية ثاني كبريتيد السيلينيوم (Selenium DS) 🔬', en: 'Selenium DS Technology 🔬' },
-    desc: { 
-        ar: 'مادة فعالة قوية تستهدف الملاسيزيا (الفطريات المسببة للقشرة). تعيد توازن الميكروبيوم في فروة الرأس وتمنع ظهور القشرة من أول استخدام.', 
-        en: 'A powerful active ingredient targeting Malassezia (dandruff-causing fungi). It restores the scalp microbiome balance and eliminates dandruff from the first use.' 
-    }
-};
-
-// --- 3. قائمة المنتجات (Product Data) ---
+// --- 2. منتجات فيتشي المحدثة (Vichy Products) ---
 window.deepProductsList.push(
     {
-        id: 'vichy-dercos-anti-dandruff-ds-oily',
+        id: 'vichy-dercos-aminexil-men',
         brandId: 'vichy',
         familyId: 'dercos',
-        name: { ar: 'ديركوس شامبو مضاد للقشرة (للبشرة العادية إلى الدهنية)', en: 'Dercos Anti-Dandruff DS Shampoo (Normal to Oily Hair)' },
-        image: 'https://images.vichy.com/v1/anti-dandruff-ds.jpg', // رابط افتراضي
+        name: { ar: 'أمينيكسيل كلينيكال 5 - أمبولات لعلاج تساقط الشعر (للرجال)', en: 'Dercos Aminexil Clinical 5 Ampoules (Men)' },
+        image: 'https://images.vichy.com/v1/aminexil-men.jpg',
         potency: 3,
         brand: 'VICHY',
         pharmacology: {
             mechanism: { 
-                ar: 'يعتمد على <span class="glossary-term" onclick="openGlossary(\'ds_technology\')">براءة اختراع Selenium DS</span> للقضاء على 100% من القشرة المرئية، مع إعادة توازن <span class="glossary-term" onclick="openGlossary(\'microbiome\')">ميكروبيوم</span> فروة الرأس.', 
-                en: 'Utilizes <span class="glossary-term" onclick="openGlossary(\'ds_technology\')">Selenium DS Patent</span> to eliminate 100% of visible dandruff while rebalancing the scalp <span class="glossary-term" onclick="openGlossary(\'microbiome\')">microbiome</span>.' 
+                ar: 'يعمل بـ 5 إجراءات مستهدفاً البصيلة والفروة؛ يعتمد على <span class="glossary-term" onclick="openGlossary(\'aminexil_patent\')">براءة اختراع Aminexil</span> لمنع تصلب الكولاجين، مع <span class="glossary-term" onclick="openGlossary(\'sp94_molecule\')">جزيء SP94</span> لتحسين جودة الألياف، و <span class="glossary-term" onclick="openGlossary(\'volcanic_water\')">مياه فيتشي البركانية</span> لتقوية حاجز الفروة.', 
+                en: 'Acts through 5 actions targeting the follicle and scalp; features <span class="glossary-term" onclick="openGlossary(\'aminexil_patent\')">Aminexil Patent</span> to prevent collagen stiffening, <span class="glossary-term" onclick="openGlossary(\'sp94_molecule\')">SP94 Molecule</span> to enhance fiber quality, and <span class="glossary-term" onclick="openGlossary(\'volcanic_water\')">Vichy Volcanic Water</span> to strengthen the scalp barrier.' 
             },
             patient_benefit: { 
-                ar: 'راحة فورية من الحكة وتقليل الدهون في الفروة مع منع عودة القشرة لمدة تصل إلى 6 أسابيع.', 
-                en: 'Instant relief from itching, reduced scalp oiliness, and anti-relapse action for up to 6 weeks.' 
+                ar: 'تقليل تساقط الشعر بشكل ملحوظ خلال 3 أسابيع، مع زيادة قوة ومتانة الشعر واستعادة توازن فروة الرأس.', 
+                en: 'Visibly reduces hair loss within 3 weeks, increases hair strength and resilience, and restores scalp balance.' 
             },
             active_ingredients: [
-                { name: 'Selenium DS', concentration: '1%', role: { ar: 'مضاد قوي للفطريات.', en: 'Potent anti-fungal.' } },
-                { name: 'Salicylic Acid', concentration: 'Exfoliator', role: { ar: 'تقشير قشور الرأس الدهنية.', en: 'Exfoliating oily scalp flakes.' } }
+                { name: 'Aminexil (1.5%)', concentration: 'Patented', role: { ar: 'تثبيت البصيلة ومنع التساقط.', en: 'Anchoring the follicle and preventing loss.' } },
+                { name: 'Arginine', concentration: 'Vasodilator', role: { ar: 'تحفيز الدورة الدموية الدقيقة الواصلة للبصيلة.', en: 'Stimulating micro-circulation to the follicle.' } }
             ]
         },
         clinical_usage: {
-            frequency: { ar: '3 مرات أسبوعياً كعلاج، ثم مرة واحدة كوقاية.', en: '3 times a week for treatment, then once a week for maintenance.' },
-            expected_duration: { ar: 'كورس علاجي مكثف لمدة 4 أسابيع.', en: 'Intensive 4-week treatment course.' },
-            application: { ar: 'يترك على الشعر المبلل لمدة دقيقتين قبل الشطف.', en: 'Leave on wet hair for 2 minutes before rinsing.' },
-            step_in_routine: { ar: 'شامبو علاجي (Treatment Shampoo).', en: 'Therapeutic treatment shampoo.' },
-            layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['Dercos Energy+ (لتقوية الشعر)'], en: ['Dercos Energy+ (to strengthen hair)'] } }
+            frequency: { ar: 'أمبولة واحدة يومياً لمدة 6 أسابيع (كعلاج مكثف).', en: '1 ampoule daily for 6 weeks (Intensive treatment).' },
+            expected_duration: { ar: 'تظهر النتائج الأولية في الأسبوع الثالث، والكورس الكامل 6 أسابيع.', en: 'Initial results appear in week 3; full course is 6 weeks.' },
+            application: { ar: 'تدلك على فروة رأس نظيفة (جافة أو مبللة) باستخدام الأداة المرفقة، ولا يشطف.', en: 'Massage onto clean scalp (dry or wet) using the applicator, do not rinse.' },
+            step_in_routine: { ar: 'علاج موضعي مكثف (Intensive Treatment).', en: 'Intensive topical treatment.' },
+            layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['Dercos Energy+ Shampoo'], en: ['Dercos Energy+ Shampoo'] } }
         },
         precautions: {
-            indications: { ar: 'القشرة الدهنية، الحكة الشديدة، والتهاب الجلد الدهني في الفروة.', en: 'Oily dandruff, severe itching, and seborrheic dermatitis of the scalp.' },
+            indications: { ar: 'تساقط الشعر الوراثي أو الناتج عن التوتر والإجهاد (للرجال).', en: 'Androgenetic hair loss or stress-related loss (Men).' },
             pregnancy_safe: true,
             sun_sensitivity: false,
-            notes: { ar: 'يحتوي على ثاني كبريتيد السيلينيوم؛ تجنب ملامسة العينين والجلد المتضرر.', en: 'Contains Selenium Disulfide; avoid contact with eyes and broken skin.' }
+            notes: { ar: 'تركيبة غير دهنية، غير لزجة، وتجف بسرعة.', en: 'Non-greasy, non-sticky, and quick-drying formula.' }
         }
     },
     {
-        id: 'vichy-liftactiv-collagen-specialist',
+        id: 'vichy-liftactiv-retinol-serum',
         brandId: 'vichy',
         familyId: 'liftactiv',
-        name: { ar: 'كريم ليفت أكتيف كولاجين سبيشياليست', en: 'Liftactiv Collagen Specialist Cream' },
-        image: 'https://images.vichy.com/v1/collagen-specialist.jpg',
+        name: { ar: 'ليفت أكتيف سيروم ريتينول المتخصص', en: 'Liftactiv Retinol Specialist Serum' },
+        image: 'https://images.vichy.com/v1/retinol-specialist.jpg',
         potency: 3,
         brand: 'VICHY',
         pharmacology: {
             mechanism: { 
-                ar: 'مزيج من الببتيدات الحيوية مع <span class="glossary-term" onclick="openGlossary(\'vitamin_c\')">فيتامين Cg</span> لتحفيز إنتاج <span class="glossary-term" onclick="openGlossary(\'collagen\')">الكولاجين</span> الطبيعي في الجلد، معزز بـ <span class="glossary-term" onclick="openGlossary(\'volcanic_water\')">مياه فيتشي البركانية</span>.', 
-                en: 'A blend of Bio-peptides and <span class="glossary-term" onclick="openGlossary(\'vitamin_c\')">Vitamin Cg</span> to stimulate natural <span class="glossary-term" onclick="openGlossary(\'collagen\')">collagen</span> production, reinforced with <span class="glossary-term" onclick="openGlossary(\'volcanic_water\')">Vichy Volcanic Water</span>.' 
+                ar: 'يستخدم تقنية <span class="glossary-term" onclick="openGlossary(\'retinol_tech\')">Pure Retinol</span> بتركيز عالٍ لتسريع <span class="glossary-term" onclick="openGlossary(\'cell_turnover\')">تجدد الخلايا</span>، معزز بـ "ببتيدات الأرز" لتعزيز مرونة الجلد وتقليل التجاعيد العميقة.', 
+                en: 'Uses high-concentration <span class="glossary-term" onclick="openGlossary(\'retinol_tech\')">Pure Retinol</span> to accelerate <span class="glossary-term" onclick="openGlossary(\'cell_turnover\')">cell turnover</span>, boosted by Rice Peptides to enhance skin elasticity and reduce deep wrinkles.' 
             },
             patient_benefit: { 
-                ar: 'شد فوري للبشرة، تقليل التجاعيد بنسبة كبيرة، وتوحيد لون البشرة بوضوح.', 
-                en: 'Immediate skin firmness, significant reduction in wrinkles, and visible skin tone evening.' 
+                ar: 'بشرة أكثر نضارة ومشدودة، مع اختفاء تدريجي للخطوط الدقيقة والتجاعيد العنيدة.', 
+                en: 'Firmer, more radiant skin with progressive fading of fine lines and stubborn wrinkles.' 
             },
             active_ingredients: [
-                { name: 'Bio-Peptides', concentration: 'Type I & II', role: { ar: 'إعادة بناء ألياف الجلد.', en: 'Skin fiber reconstruction.' } },
-                { name: 'Vitamin Cg', concentration: 'Antioxidant', role: { ar: 'تفتيح البشرة وتحفيز الكولاجين.', en: 'Brightening and collagen stimulation.' } }
+                { name: 'Pure Retinol', concentration: '0.2%', role: { ar: 'محفز قوي للتجديد والكولاجين.', en: 'Potent renewal and collagen booster.' } },
+                { name: 'Probiotic Fractions', concentration: 'Repairing', role: { ar: 'دعم حاجز الجلد وتقليل التهيج.', en: 'Supporting skin barrier and reducing irritation.' } }
             ]
         },
         clinical_usage: {
-            frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
-            expected_duration: { ar: 'تظهر النتائج في شد البشرة خلال 4 أسابيع من الاستخدام المنتظم.', en: 'Firming results visible within 4 weeks of regular use.' },
-            application: { ar: 'يوزع على الوجه والرقبة بحركات تصاعدية.', en: 'Apply to face and neck with upward strokes.' },
-            step_in_routine: { ar: 'كريم ترطيب وعلاج أساسي.', en: 'Core hydrating and treatment cream.' },
-            layering: { do_not_mix_with: { ar: ['-'], en: ['-'] }, best_mixed_with: { ar: ['Liftactiv B3 Serum'], en: ['Liftactiv B3 Serum'] } }
+            frequency: { ar: 'مساءً فقط (بالتدريج: مرتين في الأسبوع الأول).', en: 'Evening only (Gradually: twice in the first week).' },
+            expected_duration: { ar: 'تظهر النتائج الملموسة بعد 4 إلى 8 أسابيع من الاستخدام.', en: 'Tangible results appear after 4 to 8 weeks of use.' },
+            application: { ar: 'توضع عدة قطرات على بشرة نظيفة وجافة قبل المرطب.', en: 'Apply a few drops to clean, dry skin before moisturizer.' },
+            step_in_routine: { ar: 'سيروم علاجي ليلي.', en: 'Night treatment serum.' },
+            layering: { 
+                do_not_mix_with: { ar: ['Vitamin C (في نفس الوقت)', 'Glycolic Acid'], en: ['Vitamin C (simultaneously)', 'Glycolic Acid'] }, 
+                best_mixed_with: { ar: ['Mineral 89 Serum'], en: ['Mineral 89 Serum'] } 
+            }
         },
         precautions: {
-            indications: { ar: 'فقدان مرونة الجلد، التجاعيد العميقة، واللون الباهت.', en: 'Loss of elasticity, deep wrinkles, and dull skin tone.' },
-            pregnancy_safe: true,
+            indications: { ar: 'التجاعيد العميقة، ترهل الجلد، وعدم تجانس الملمس.', en: 'Deep wrinkles, skin sagging, and uneven texture.' },
+            pregnancy_safe: false,
             sun_sensitivity: true,
-            notes: { ar: 'يفضل استخدام واقي شمس صباحاً بسبب وجود فيتامين C.', en: 'Best paired with sunscreen in the morning due to Vitamin C content.' }
+            notes: { ar: 'الريتينول مادة حساسة؛ يجب استخدام واقي شمس SPF 50 في الصباح التالي حتماً.', en: 'Retinol is sensitive; SPF 50 MUST be used the following morning.' }
         }
     }
 );
