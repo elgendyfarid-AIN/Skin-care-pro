@@ -74,8 +74,9 @@
 
         .main-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .cat-btn { background-color: var(--card-bg); color: var(--text-main); padding: 30px 15px; border-radius: var(--border-radius); text-align: center; font-size: 18px; font-weight: 800; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: pointer; border: 2px solid transparent; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 12px;}
-        .cat-btn span { font-size: 32px; }
+        .cat-icon { width: 48px; height: 48px; color: var(--accent-blue); transition: 0.2s; }
         .cat-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15,96,155,0.1);}
+        .cat-btn:hover .cat-icon { color: var(--accent-teal); transform: scale(1.1); }
 
         /* المسار الصارم */
         .breadcrumb { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -136,7 +137,7 @@
         <div class="site-title" onclick="navigateTo('home')">Skin Care Pro <span style="font-size:12px; color:var(--text-secondary); margin-top:6px; margin-right:6px;">| Clinical</span></div>
         <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="searchInput" placeholder="بحث عن منتج، مادة فعالة، حالة..." onclick="alert(txt.coming_soon[currentLang])" readonly>
+            <input type="text" class="search-input" id="searchInput" placeholder="بحث عن منتج، مادة فعالة، تقنية..." oninput="handleSearch()">
         </div>
         <div class="controls">
             <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">🌓</button>
@@ -166,20 +167,20 @@
         let currentLang = localStorage.getItem('siteLang') || 'ar';
         
         const txt = {
-            home: { ar: 'الرئيسية', en: 'Home' }, products: { ar: 'المنتجات', en: 'Products' },
+            home: { ar: 'الرئيسية', en: 'Home' }, products: { ar: 'المنتجات والبراندات', en: 'Brands & Products' },
             cases: { ar: 'الحالات (روتين)', en: 'Cases (Routine)' }, skinTypes: { ar: 'أنواع البشرة', en: 'Skin Types' },
-            common_cases: { ar: 'حالات شائعة', en: 'Common Cases' }, search_placeholder: { ar: 'بحث عن منتج، مادة فعالة، أو حالة...', en: 'Search products, actives, cases...' },
+            common_cases: { ar: 'حالات شائعة', en: 'Common Cases' }, search_placeholder: { ar: 'بحث عن منتج، مادة فعالة، تقنية...', en: 'Search products, actives, techs...' },
             pharmacology: { ar: 'البطاقة الدوائية', en: 'Pharmacology' }, mechanism: { ar: 'آلية العمل:', en: 'Mechanism of Action:' },
             active_ing: { ar: 'المواد الفعالة والتركيزات:', en: 'Active Ingredients & Concentrations:' }, ph_level: { ar: 'مستوى الحموضة (pH):', en: 'pH Level:' },
             usage: { ar: 'طريقة الاستعمال والجرعات', en: 'Application & Dosage' }, potency_label: { ar: 'مؤشر القوة (Potency):', en: 'Potency Indicator:' },
-            frequency: { ar: 'التكرار والمدة:', en: 'Frequency & Duration:' }, application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
+            frequency: { ar: 'التكرار:', en: 'Frequency:' }, duration_label: { ar: 'المدة المتوقعة للعلاج:', en: 'Expected Duration:' },
+            application: { ar: 'الجرعة وطريقة التطبيق:', en: 'Dosage & Application:' },
             routine_step: { ar: 'موقعه في الروتين:', en: 'Step in Routine:' }, layering: { ar: 'المقبول والمحظور مع هذا المنتج (Layering):', en: 'Layering (Do\'s & Don\'ts):' },
             indications: { ar: 'دواعي الاستعمال والتحذيرات', en: 'Indications & Warnings' }, ind_label: { ar: 'الحالات المستهدفة (Indications):', en: 'Target Indications:' },
             safety_label: { ar: 'الأمان:', en: 'Safety:' }, notes_label: { ar: 'ملاحظات:', en: 'Notes:' },
             benefit: { ar: '💡 النتيجة للمستخدم:', en: '💡 User Benefit:' }, close: { ar: 'إغلاق', en: 'Close' }, coming_soon: { ar: 'سيتم برمجتها قريباً...', en: 'Coming soon...' }
         };
 
-        // دالة التنقل المعدلة لتدعم الشجرة الكاملة
         function navigateTo(view, p1 = '', p2 = '', p3 = '') { 
             localStorage.setItem('cv', view); localStorage.setItem('p1', p1); localStorage.setItem('p2', p2); localStorage.setItem('p3', p3);
             renderView(view, p1, p2, p3); 
@@ -216,14 +217,51 @@
             sb.innerHTML = html;
         }
 
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if(!query) { renderView(localStorage.getItem('cv') || 'home', localStorage.getItem('p1'), localStorage.getItem('p2'), localStorage.getItem('p3')); return; }
+            
+            const results = deepProductsList.filter(p => 
+                p.name.ar.toLowerCase().includes(query) || p.name.en.toLowerCase().includes(query) || 
+                p.pharmacology.mechanism.ar.toLowerCase().includes(query) || p.pharmacology.mechanism.en.toLowerCase().includes(query)
+            );
+            
+            const app = document.getElementById('app');
+            let html = `<div class="page-title">${currentLang === 'ar' ? 'نتائج البحث' : 'Search Results'}</div>`;
+            if(results.length === 0) { html += `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد نتائج مطابقة...' : 'No results found...'}</div>`; }
+            else {
+                results.forEach(p => { 
+                    html += `<div class="tree-btn" style="justify-content: flex-start; gap:15px;" onclick="navigateTo('single_product', '${p.brandId}', '${p.familyId}', '${p.id}')">
+                                <div style="width:40px; height:40px; background:#e2e8f0; border-radius:6px; flex-shrink:0; overflow:hidden;">
+                                    ${p.image ? `<img src="${p.image}" style="width:100%; height:100%; object-fit:contain;">` : ''}
+                                </div>
+                                <div style="flex-grow:1;">
+                                    <div style="font-size:16px;">${p.name[currentLang]}</div>
+                                    <div style="font-size:12px; color:var(--text-secondary); font-weight:normal;">${p.brand}</div>
+                                </div><span style="color:var(--accent-teal);">▶</span></div>`; 
+                });
+            }
+            app.innerHTML = html;
+        }
+
         function renderView(view, p1, p2, p3) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; updateUI_Language();
+            document.getElementById('searchInput').value = '';
 
             if (view === 'home') {
                 app.innerHTML = `<div class="main-categories">
-                            <div class="cat-btn" onclick="navigateTo('brands')"><span>📦</span> ${txt.products[currentLang]}</div>
-                            <div class="cat-btn" onclick="navigateTo('cases')"><span>🩺</span> ${txt.cases[currentLang]}</div>
-                            <div class="cat-btn" onclick="navigateTo('skin_types')"><span>🧑‍⚕️</span> ${txt.skinTypes[currentLang]}</div>
+                            <div class="cat-btn" onclick="navigateTo('brands')">
+                                <svg class="cat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                ${txt.products[currentLang]}
+                            </div>
+                            <div class="cat-btn" onclick="navigateTo('cases')">
+                                <svg class="cat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                ${txt.cases[currentLang]}
+                            </div>
+                            <div class="cat-btn" onclick="navigateTo('skin_types')">
+                                <svg class="cat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                ${txt.skinTypes[currentLang]}
+                            </div>
                         </div>`;
             } else if (view === 'brands') {
                 let html = buildBreadcrumb([{label: txt.products[currentLang], action: ""}]); 
@@ -236,7 +274,7 @@
                 html += `<div class="page-title">${brand.name}</div>`;
                 brand.families.forEach(f => { html += `<div class="tree-btn" onclick="navigateTo('products_list', '${brand.id}', '${f.id}')">${f.name[currentLang]} <span>▼</span></div>`; }); 
                 app.innerHTML = html;
-            } else if (view === 'products_list') { // مستوى جديد: عرض أسماء المنتجات كأزرار
+            } else if (view === 'products_list') {
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
                 let html = buildBreadcrumb([
@@ -251,7 +289,6 @@
                     html += `<div style="text-align:center; padding:20px;">${currentLang === 'ar' ? 'لا توجد منتجات بعد...' : 'No products yet...'}</div>`;
                 } else {
                     prods.forEach(p => { 
-                        // زر يفتح المنتج الواحد
                         html += `<div class="tree-btn" style="justify-content: flex-start; gap:15px;" onclick="navigateTo('single_product', '${p1}', '${p2}', '${p.id}')">
                                     <div style="width:40px; height:40px; background:#e2e8f0; border-radius:6px; flex-shrink:0; overflow:hidden;">
                                         ${p.image ? `<img src="${p.image}" style="width:100%; height:100%; object-fit:contain;">` : ''}
@@ -265,7 +302,7 @@
                     });
                 }
                 app.innerHTML = html;
-            } else if (view === 'single_product') { // مستوى جديد: عرض كارت منتج واحد فقط
+            } else if (view === 'single_product') {
                 const brand = brandsList.find(b => b.id === p1); 
                 const family = brand.families.find(f => f.id === p2);
                 const product = deepProductsList.find(p => p.id === p3);
@@ -279,13 +316,12 @@
                 html += buildSingleProductHTML(product); 
                 app.innerHTML = html;
             } else if (view === 'cases' || view === 'skin_types') {
-                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث للنسخة العميقة..." : "Updating to Clinical Edition...", action: "navigateTo('home')"}]);
+                app.innerHTML = buildBreadcrumb([{label: currentLang === 'ar' ? "جاري التحديث..." : "Updating...", action: "navigateTo('home')"}]);
             }
         }
 
-        // الدالة المعدلة لترسم منتج واحد فقط
         function buildSingleProductHTML(p) {
-            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة لهذا المنتج حالياً' : 'No image available'}')">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
+            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة' : 'No image'}')">${currentLang === 'ar' ? 'صورة' : 'Image'}</div>`;
             
             let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
             let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
@@ -295,8 +331,8 @@
             if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
             if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
 
-            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل (غير آمن)' : 'Not Safe for Pregnancy'}</span>`;
-            let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يزيد التحسس للشمس (يتطلب واقي)' : 'Increases Sun Sensitivity (Requires SPF)'}</span>` : '';
+            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل' : 'Not Safe'}</span>`;
+            let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يتطلب واقي شمس' : 'Requires SPF'}</span>` : '';
 
             return `
             <div class="product-card" style="margin-top:10px;">
@@ -331,6 +367,7 @@
                     <div class="data-grid">
                         <div class="data-row"><span class="data-label">${txt.potency_label[currentLang]}</span> ${potencyHtml}</div>
                         <div class="data-row"><span class="data-label">${txt.frequency[currentLang]}</span> ${p.clinical_usage.frequency[currentLang]}</div>
+                        ${p.clinical_usage.expected_duration ? `<div class="data-row"><span class="data-label">${txt.duration_label[currentLang]}</span> ${p.clinical_usage.expected_duration[currentLang]}</div>` : ''}
                         <div class="data-row"><span class="data-label">${txt.application[currentLang]}</span> ${p.clinical_usage.application[currentLang]}</div>
                         <div class="data-row"><span class="data-label">${txt.routine_step[currentLang]}</span> ${p.clinical_usage.step_in_routine[currentLang]}</div>
                         <div class="data-row">
@@ -352,7 +389,7 @@
             </div>`;
         }
 
-        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerText = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
+        function openGlossary(termId) { const term = glossaryDict[termId]; if(term) { document.getElementById('glossaryTitle').innerText = term.title[currentLang]; document.getElementById('glossaryBody').innerHTML = term.desc[currentLang]; document.getElementById('glossaryModal').style.display = 'flex'; } }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
         function openImageModal(imgSrc) { document.getElementById('zoomedImg').src = imgSrc; document.getElementById('imageModal').style.display = 'flex'; }
         function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
