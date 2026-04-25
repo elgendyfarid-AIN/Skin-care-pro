@@ -216,7 +216,7 @@ window.brandsList.push({
 
 
 // ==========================================
-// 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 1 إلى 6)
+// 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 1 إلى 10)
 // ==========================================
 
 // [1] EFFACLAR DUO (+)
@@ -229,7 +229,7 @@ window.deepProductsList.push({
             en: '5.5 (Balanced with acid mantle to maintain microbiome and inhibit acne bacteria)' 
         },
         mechanism: { 
-            ar: 'استهداف بكتيريا <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> ومنع تكوين <span class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</span>، مع تقشير دقيق لمنع انسداد المسام وتقليل <span class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</span> المتبقية.', 
+            ar: 'استهداف بكتيريا <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> ومنع تكوين <span class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</span>، مع تقشير دقيق لمنع انسداد المسام وتقليل <span class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</span>.', 
             en: 'Targets <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> bacteria and prevents the formation of <span class="glossary-term" onclick="openGlossary(\'biofilms\')">Biofilms</span>, with precise micro-exfoliation to prevent clogged pores and reduce <span class="glossary-term" onclick="openGlossary(\'pih\')">PIH</span>.' 
         },
         patient_benefit: { 
@@ -237,9 +237,9 @@ window.deepProductsList.push({
             en: 'Does not just treat the pimple, it prevents its formation (Anti-relapse). Stops red pimples from turning into stubborn brown marks.' 
         },
         active_ingredients: [
-            { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار ويدعم الحاجز الجلدي.', en: 'Anti-inflammatory, soothes redness and supports the barrier.' } },
-            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> يخترق المسام ببطء ولطف شديد لتنظيفها من الداخل.', en: 'A <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> exfoliator that gently penetrates and cleanses pores.' } },
-            { name: 'Salicylic Acid', concentration: '0.5%', role: { ar: 'يعمل بخاصية <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">تحلل القرنية</span> لتذويب الدهون المتصلبة.', en: 'Provides <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">Keratolytic</span> action to dissolve hardened sebum.' } }
+            { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory, soothes redness.' } },
+            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> يخترق المسام بلطف لتنظيفها.', en: 'A <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> exfoliator that gently penetrates and cleanses pores.' } },
+            { name: 'Salicylic Acid', concentration: '0.5%', role: { ar: 'يعمل بخاصية <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">تحلل القرنية</span> لتنظيف المسام.', en: 'Provides <span class="glossary-term" onclick="openGlossary(\'keratolytic\')">Keratolytic</span> action to deeply cleanse pores.' } }
         ]
     },
     clinical_usage: {
@@ -248,23 +248,23 @@ window.deepProductsList.push({
             ar: 'يقل الاحمرار خلال 12-24 ساعة. يتطلب كورس متواصل من 4 إلى 8 أسابيع لتنظيف المسام العميقة وتقليل التصبغات.', 
             en: 'Redness reduces within 12-24h. Requires a 4-8 week continuous course to clear deep pores and reduce pigmentation.' 
         },
-        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول وقبل المرطب).', en: 'Treatment Step (After cleanser, before moisturizer).' },
+        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول).', en: 'Treatment Step (After cleanser).' },
         routine_step_number: 2,
         application: { 
-            ar: 'توزع طبقة رقيقة على كامل الوجه، لا يستخدم كنقطة علاجية (Spot Treatment) فقط، لضمان تنظيف المسام الخفية التي لم تلتهب بعد.', 
+            ar: 'توزع طبقة رقيقة على كامل الوجه، لا يستخدم كنقطة علاجية فقط لضمان تنظيف المسام الخفية التي لم تلتهب بعد.', 
             en: 'Apply a thin layer over the entire face. Do not use as a spot treatment only, to ensure clearing hidden, uninflamed pores.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['مقشرات كيميائية قوية (AHA/BHA)', 'الريتينول'], en: ['Strong chemical exfoliants (AHA/BHA)', 'Retinol'] }, 
-            best_mixed_with: { ar: ['غسول إيفاكلار', 'مرمّمات الحاجز (Ceramides)'], en: ['Effaclar Cleanser', 'Barrier repair creams'] } 
+            best_mixed_with: { ar: ['غسول لطيف', 'مرمّمات الحاجز (Ceramides)'], en: ['Gentle cleansers', 'Barrier repair creams'] } 
         }
     },
     precautions: {
         indications: { ar: 'حب الشباب الخفيف إلى المتوسط، الرؤوس السوداء، والآثار الحمراء بعد الحبوب.', en: 'Mild to moderate acne, blackheads, and post-acne red marks.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
         notes: { 
-            ar: 'نصيحة احترافية: لتجنب الجفاف والوخز في الأيام الأولى، يمكن وضع طبقة رقيقة من مرطب خالي من الزيوت قبل الديو وبعده لتقليل الامتصاص السريع.', 
-            en: 'Pro Tip: To avoid dryness/tingling initially, apply a thin layer of oil-free moisturizer before and after Duo to buffer rapid absorption.' 
+            ar: '**نصيحة احترافية:** في الأسبوع الأول، قد تشعرين بوخز خفيف. إذا كان الجفاف شديداً، استخدمي <b class="glossary-term" onclick="alert(\'تقنية الساندويتش: وضع طبقة مرطب خفيف، ثم العلاج، ثم طبقة مرطب أخرى لتقليل الامتصاص السريع والتهيج.\')">تقنية الساندويتش</b> مع مرطب خالي من الزيوت.', 
+            en: '**Pro Tip:** Mild tingling in the first week is normal. If dryness is severe, use the <b class="glossary-term" onclick="alert(\'Sandwich Technique: Light moisturizer, then treatment, then moisturizer again to reduce rapid absorption and irritation.\')">Sandwich Technique</b> with an oil-free moisturizer.' 
         }
     }
 });
@@ -279,15 +279,15 @@ window.deepProductsList.push({
             en: '5.5 (Respects acid mantle to prevent stripping and rebound sebum production)' 
         },
         mechanism: { 
-            ar: 'ينظف البشرة بلطف بفضل عوامل التنظيف المختارة، ويزيل الشوائب والزهم الزائد بفضل الزنك، مع الحفاظ على توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span>.', 
-            en: 'Gently cleanses the skin with selected agents. Eliminates impurities and excess sebum with Zinc, preserving the <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span>.' 
+            ar: 'ينظف البشرة بلطف بفضل عوامل التنظيف المختارة للبشرة الحساسة، ويزيل الشوائب والزهم الزائد بفضل الزنك.', 
+            en: 'Gently cleanses the skin with agents selected for sensitive skin. Eliminates impurities and excess sebum with Zinc.' 
         },
         patient_benefit: { 
             ar: 'يترك البشرة نظيفة تماماً وينظم إفراز الدهون دون أن يترك شعوراً بشد البشرة المزعج الذي يدمر الحاجز الجلدي.', 
             en: 'Leaves skin perfectly clean and regulates sebum without a tight feeling that damages the skin barrier.' 
         },
         active_ingredients: [
-            { name: 'Zinc PCA', concentration: 'Active | فعال', role: { ar: 'ينظم إفراز الزهم وله خصائص قوية مضادة للبكتيريا.', en: 'Regulates sebum production with strong antibacterial properties.' } },
+            { name: 'Zinc PCA', concentration: 'Active | فعال', role: { ar: 'ينظم إفراز الزهم وله خصائص مضادة للبكتيريا.', en: 'Regulates sebum production with antibacterial properties.' } },
             { name: 'Thermal Spring Water', concentration: 'Base | أساسي', role: { ar: 'مياه حرارية مهدئة ومضادة للتهيج.', en: 'Soothing and anti-irritating thermal water.' } }
         ]
     },
@@ -300,8 +300,8 @@ window.deepProductsList.push({
         step_in_routine: { ar: 'الخطوة 1 (التنظيف).', en: 'Step 1 (Cleansing).' },
         routine_step_number: 1,
         application: { 
-            ar: 'لضمان أقصى فعالية للزنك، يُرغى بماء فاتر ويُدلك بلطف لمدة 60 ثانية كاملة، ثم يُشطف بماء بارد لغلق المسام.', 
-            en: 'For maximum Zinc efficacy, lather with lukewarm water and massage gently for a full 60 seconds, then rinse with cool water.' 
+            ar: 'لضمان أقصى فعالية للزنك، يُرغى بماء فاتر ويُدلك بلطف لمدة <b class="glossary-term" onclick="alert(\'قاعدة الـ 60 ثانية: تتيح للمواد الفعالة مثل الزنك الوقت الكافي للعمل داخل المسام قبل شطفها.\')">60 ثانية كاملة</b>، ثم يُشطف بماء بارد لغلق المسام.', 
+            en: 'For maximum Zinc efficacy, lather with lukewarm water and massage gently for a full <b class="glossary-term" onclick="alert(\'60-Second Rule: Allows active ingredients like Zinc enough time to work inside the pores before rinsing.\')">60 seconds</b>, then rinse with cool water.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['فرش التنظيف القاسية (تُهيج الغدد الدهنية).'], en: ['Harsh cleansing brushes (irritates sebaceous glands).'] }, 
@@ -312,8 +312,8 @@ window.deepProductsList.push({
         indications: { ar: 'البشرة الدهنية، المعرضة لحب الشباب، واللمعان الزائد.', en: 'Oily, acne-prone skin, and excess shine.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: false, 
         notes: { 
-            ar: 'نصيحة احترافية: المبالغة في غسل البشرة الدهنية لأكثر من مرتين يومياً يؤدي إلى نتيجة عكسية؛ حيث تُفرز الغدد دهوناً مضاعفة لتعويض الجفاف.', 
-            en: 'Pro Tip: Over-washing oily skin more than twice a day backfires; glands produce double the sebum to compensate for dryness.' 
+            ar: '**توجيه صيدلاني:** المبالغة في غسل البشرة الدهنية لأكثر من مرتين يومياً يؤدي إلى نتيجة عكسية؛ حيث تُفرز الغدد دهوناً مضاعفة لتعويض الجفاف.', 
+            en: '**Pharma Tip:** Over-washing oily skin more than twice a day backfires; glands produce double the sebum to compensate for dryness.' 
         }
     }
 });
@@ -328,12 +328,12 @@ window.deepProductsList.push({
             en: 'Below 4.0 (Acidic to ensure acid activity in dissolving cellular bonds)' 
         },
         mechanism: { 
-            ar: 'مركب ثلاثي الأحماض <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> يعمل بآلية تآزرية لتقشير الخلايا الميتة السطحية وفتح المسام العميقة، بينما يلطف النياسيناميد الجلد.', 
-            en: 'A tri-acid complex <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> works synergistically to exfoliate surface cells and unclog deep pores, while Niacinamide soothes.' 
+            ar: 'مركب ثلاثي الأحماض <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> يعمل بآلية تآزرية لتقشير الخلايا الميتة السطحية وفتح المسام العميقة.', 
+            en: 'A tri-acid complex <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> works synergistically to exfoliate surface dead cells and unclog deep pores.' 
         },
         patient_benefit: { 
-            ar: 'مُصمم لحب الشباب عند البالغين. يقلل حجم المسام، ويمحو العلامات الداكنة والخطوط الدقيقة في منتج واحد.', 
-            en: 'Formulated for adult acne. Reduces pore size, erases dark marks and fine lines in one product.' 
+            ar: 'يستهدف حب الشباب لدى البالغين الذي يترك تصبغات وتجاعيد دقيقة معاً. يوفر تأثيراً مشابهاً للتقشير الكيميائي الخفيف في العيادة.', 
+            en: 'Targets adult acne which leaves pigmentation and fine wrinkles together. Provides an effect similar to a light in-clinic chemical peel.' 
         },
         active_ingredients: [
             { name: 'Glycolic Acid (AHA)', concentration: '3.5%', role: { ar: 'تقشير سطحي وتخفيف العلامات.', en: 'Surface exfoliation and fading marks.' } },
@@ -343,7 +343,7 @@ window.deepProductsList.push({
         ]
     },
     clinical_usage: {
-        frequency: { ar: 'مرة واحدة يومياً (مساءً فقط)، ويمكن تقليلها حسب حساسية البشرة.', en: 'Once daily (PM only), can be reduced based on skin sensitivity.' },
+        frequency: { ar: 'مرة واحدة يومياً (مساءً فقط).', en: 'Once daily (PM only).' },
         expected_duration: { 
             ar: 'يستخدم ككورس علاجي من 4 إلى 8 أسابيع لتقليل الخطوط الدقيقة وتلاشي التصبغات المستعصية.', 
             en: 'Used as a 4 to 8-week treatment course to reduce fine lines and fade stubborn pigmentation.' 
@@ -351,8 +351,8 @@ window.deepProductsList.push({
         step_in_routine: { ar: 'خطوة السيروم (قبل المرطب).', en: 'Serum step (Before moisturizer).' },
         routine_step_number: 2,
         application: { 
-            ar: 'توضع قطرات على الوجه مع تجنب محيط العينين. يُفضل استخدامه ضمن روتين تدوير العناية (Skin Cycling) في ليالي التقشير لتجنب إرهاق الحاجز الجلدي.', 
-            en: 'Apply drops to the face avoiding the eye contour. Best used within a Skin Cycling routine on exfoliation nights to avoid barrier fatigue.' 
+            ar: 'توضع قطرات على الوجه مع تجنب محيط العينين. يُفضل إدخاله ضمن روتين <b class="glossary-term" onclick="alert(\'تدوير العناية (Skin Cycling): تخصيص ليالي للتقشير وأخرى للترطيب لتجنب إرهاق الحاجز الجلدي.\')">تدوير العناية</b> في ليالي التقشير.', 
+            en: 'Apply drops to the face avoiding the eye contour. Best introduced within a <b class="glossary-term" onclick="alert(\'Skin Cycling: Dedicating specific nights for exfoliation and others for hydration to avoid barrier fatigue.\')">Skin Cycling</b> routine on exfoliation nights.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['أي مقشرات أخرى', 'الريتينول', 'فيتامين سي النقي'], en: ['Any other exfoliants', 'Retinol', 'Pure Vitamin C'] }, 
@@ -363,8 +363,8 @@ window.deepProductsList.push({
         indications: { ar: 'حب الشباب لدى البالغين، المسام الواسعة، التصبغات العنيدة.', en: 'Adult acne, enlarged pores, persistent pigmentation.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
         notes: { 
-            ar: 'نصيحة طبية: إذا كانت البشرة حساسة جداً للأحماض، يمكن تطبيق السيروم لمدة 15-20 دقيقة ثم غسله (Short Contact Therapy) للحصول على الفائدة وتجنب التهيج.', 
-            en: 'Medical Tip: If skin is very acid-sensitive, apply the serum for 15-20 minutes then wash it off (Short Contact Therapy) to gain benefits and avoid irritation.' 
+            ar: '**سر الصنعة:** إذا كانت البشرة حساسة جداً للأحماض، يمكن تطبيق السيروم لمدة 15-20 دقيقة ثم غسله، وهي ما تُعرف بـ <b class="glossary-term" onclick="alert(\'العلاج بالاتصال القصير (Short Contact Therapy): يعطي فوائد التقشير مع تقليل خطر التهيج لدرجة الصفر تقريباً.\')">العلاج بالاتصال القصير</b>.', 
+            en: '**Trade Secret:** If skin is highly acid-sensitive, apply the serum for 15-20 mins then wash it off, known as <b class="glossary-term" onclick="alert(\'Short Contact Therapy: Provides exfoliation benefits while reducing irritation risk to nearly zero.\')">Short Contact Therapy</b>.' 
         }
     }
 });
@@ -379,8 +379,8 @@ window.deepProductsList.push({
             en: '5.5 (Gentle and skin-matching to soothe skin battered by strong acne treatments)' 
         },
         mechanism: { 
-            ar: 'يرمم الحاجز الجلدي ويستعيد توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> الذي تدمر بفضل تقنية <span class="glossary-term" onclick="openGlossary(\'aqua_posae_filiformis\')">APF</span>.', 
-            en: 'Repairs the skin barrier and restores <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> balance compromised by acne treatments via <span class="glossary-term" onclick="openGlossary(\'aqua_posae_filiformis\')">APF</span> tech.' 
+            ar: 'يرمم الحاجز الجلدي ويستعيد توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> الذي تدمر بسبب علاجات حب الشباب المجففة.', 
+            en: 'Repairs the skin barrier and restores <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> balance compromised by drying acne treatments.' 
         },
         patient_benefit: { 
             ar: 'راحة فورية من الجفاف والتشقق الشديد الناتج عن أدوية الحبوب (مثل الأيزوتريتينوين الفموي) دون التسبب في سد المسام.', 
@@ -400,8 +400,8 @@ window.deepProductsList.push({
         step_in_routine: { ar: 'الترطيب.', en: 'Moisturization.' },
         routine_step_number: 3,
         application: { 
-            ar: 'يوضع بلطف على بشرة نظيفة. يمكن استخدامه كقاعدة ممتازة لحبس الترطيب (Slugging) الخفيف فوق العلاجات الموضعية القوية لتقليل آثارها الجانبية.', 
-            en: 'Apply gently to clean skin. Excellent as a base for light slugging over strong topical treatments to mitigate side effects.' 
+            ar: 'يوضع بلطف على بشرة نظيفة. يعمل كقاعدة ممتازة لحبس الترطيب أو <b class="glossary-term" onclick="alert(\'تقنية حبس الترطيب (Slugging) الخفيفة: استخدام مرطب غني فوق العلاجات الموضعية القوية لتقليل آثارها الجانبية وحماية الحاجز.\')">الـ Slugging الخفيف</b> فوق العلاجات القوية.', 
+            en: 'Apply gently to clean skin. Works as an excellent base for light <b class="glossary-term" onclick="alert(\'Light Slugging: Using a rich moisturizer over strong topicals to mitigate side effects and protect the barrier.\')">Slugging</b> over strong treatments.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['لا يوجد تعارضات خطيرة.'], en: ['No severe interactions.'] }, 
@@ -409,11 +409,11 @@ window.deepProductsList.push({
         }
     },
     precautions: {
-        indications: { ar: 'البشرة المعرضة للحبوب والتي أضعفتها وجففتها العلاجات الطبية.', en: 'Acne-prone skin weakened and dried by medical treatments.' },
+        indications: { ar: 'البشرة المعرضة للحبوب والتي أضعفتها العلاجات المجففة.', en: 'Acne-prone skin weakened by drying treatments.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: false, 
         notes: { 
-            ar: 'توجيه صيدلاني: بالرغم من قوامه المرطب الغني جداً لعلاج الجفاف، إلا أن تركيبته مصممة خصيصاً لكي لا تسد المسام أو تحفز ظهور حبوب جديدة إطلاقاً.', 
-            en: 'Pharma Tip: Despite its very rich moisturizing texture for dryness, its formula is specifically designed to never clog pores or trigger new breakouts.' 
+            ar: '**ملاحظة هامة:** بالرغم من قوامه المرطب الغني جداً لعلاج الجفاف، إلا أن تركيبته مصممة خصيصاً لكي لا تسد المسام أو تحفز ظهور حبوب جديدة إطلاقاً.', 
+            en: '**Important Note:** Despite its very rich moisturizing texture for dryness, its formula is specifically designed not to clog pores or trigger new breakouts.' 
         }
     }
 });
@@ -428,8 +428,8 @@ window.deepProductsList.push({
             en: 'Physiological (with a slight acidic touch to activate Salicylic without stripping)' 
         },
         mechanism: { 
-            ar: 'قوة تقشير مزدوجة تجمع بين حمض الساليسيليك و <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> لاختراق المسام وتنظيفها من الدهون المتصلبة.', 
-            en: 'Dual exfoliating power combining Salicylic Acid and <span class="glossary-term" onclick="openGlossary(\'lha\')">LHA</span> to penetrate pores and clear hardened sebum.' 
+            ar: 'قوة تقشير مزدوجة تجمع بين حمض الساليسيليك (2%) و LHA لاختراق المسام وتنظيفها من الدهون المتصلبة.', 
+            en: 'Dual exfoliating power combining 2% Salicylic Acid and LHA to penetrate pores and clear hardened sebum.' 
         },
         patient_benefit: { 
             ar: 'يستهدف بفعالية حب الشباب الشديد على الوجه والجسم (الظهر والصدر)، ويساهم في تقليل آثار الحبوب المتبقية بشكل ملحوظ.', 
@@ -450,8 +450,8 @@ window.deepProductsList.push({
         step_in_routine: { ar: 'التنظيف العلاجي.', en: 'Therapeutic Cleansing.' },
         routine_step_number: 1,
         application: { 
-            ar: 'يُنصح بتركه على مناطق حبوب الجسم (كالظهر) لمدة دقيقتين قبل الشطف للسماح للمقشرات الكيميائية بالعمل داخل المسام.', 
-            en: 'Recommended to leave on body acne areas (like the back) for 2 minutes before rinsing to allow chemical exfoliants to work inside pores.' 
+            ar: 'يُنصح بتركه على مناطق حبوب الجسم (كالظهر) لمدة دقيقتين قبل الشطف لتطبيق مفهوم <b class="glossary-term" onclick="alert(\'العلاج بالاتصال (Contact Therapy): إعطاء المقشرات الكيميائية في الغسول وقتاً كافياً للعمل داخل المسام قبل إزالتها بالماء.\')">العلاج بالاتصال</b>.', 
+            en: 'Recommended to leave on body acne areas (like the back) for 2 minutes before rinsing to apply the <b class="glossary-term" onclick="alert(\'Contact Therapy: Giving chemical exfoliants in the cleanser enough time to work inside the pores before washing them off.\')">Contact Therapy</b> concept.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['أحماض تقشير إضافية قوية.'], en: ['Additional strong peeling acids.'] }, 
@@ -462,8 +462,8 @@ window.deepProductsList.push({
         indications: { ar: 'حب الشباب الشديد، حبوب الظهر والصدر.', en: 'Severe acne, back and chest acne.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
         notes: { 
-            ar: 'نصيحة طبية: ممتاز للاستخدام المباشر في الاستحمام بعد التمارين الرياضية الكثيفة لمنع تكدس العرق والدهون المسببة لحبوب الجسم (Bacne).', 
-            en: 'Medical Tip: Excellent for immediate shower use after intense workouts to prevent the buildup of sweat and sebum that causes body acne (Bacne).' 
+            ar: '**نصيحة ذهبية:** ممتاز للاستخدام المباشر في الاستحمام بعد التمارين الرياضية الكثيفة لمنع تكدس العرق والدهون المسببة لحبوب الجسم أو الـ (Bacne).', 
+            en: '**Golden Pearl:** Excellent for immediate shower use after intense workouts to prevent the buildup of sweat and sebum that causes body acne (Bacne).' 
         }
     }
 });
@@ -482,8 +482,8 @@ window.deepProductsList.push({
             en: 'Provides an optimal environment for skin healing using <span class="glossary-term" onclick="openGlossary(\'madecassoside\')">Madecassoside</span>, while rebalancing the <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> with Tribioma to prevent scarring.' 
         },
         patient_benefit: { 
-            ar: 'بلسم إنقاذ متعدد الأغراض. يعالج الجفاف الشديد، التشققات، الحروق السطحية، والتهابات الحفاض، ويوفر طبقة عازلة غير لزجة.', 
-            en: 'Multi-purpose rescue balm. Treats severe dryness, cracks, superficial burns, and diaper rash, providing a non-sticky protective barrier.' 
+            ar: 'بمثابة ضمادة سائلة متعددة الأغراض. يعالج الجفاف الشديد، التشققات، الحروق السطحية، وتهيج الليزر في أيام معدودة.', 
+            en: 'Acts as a multi-purpose liquid bandage. Treats severe dryness, cracks, superficial burns, and laser irritation in days.' 
         },
         active_ingredients: [
             { name: 'Panthenol (B5)', concentration: '5%', role: { ar: 'ترطيب عميق وتهدئة فورية للحكة.', en: 'Deep hydration and instant itch relief.' } },
@@ -500,8 +500,8 @@ window.deepProductsList.push({
         step_in_routine: { ar: 'الخطوة الأخيرة (للترميم الموضعي أو كمرطب ليلي).', en: 'Final step (for targeted repair or as night cream).' },
         routine_step_number: 3,
         application: { 
-            ar: 'توضع طبقة سميكة. يُعتبر مثالياً كطبقة عازلة (Slugging) في الخطوة الأخيرة ليلاً لحبس الرطوبة وتسريع ترميم الحاجز الجلدي.', 
-            en: 'Apply a thick layer. Ideal as an occlusive layer (Slugging) in the final night step to lock in moisture and accelerate barrier repair.' 
+            ar: 'توضع طبقة سميكة. يُعتبر مثالياً كطبقة عازلة في الخطوة الأخيرة ليلاً لتطبيق مبدأ <b class="glossary-term" onclick="alert(\'تقنية الـ Slugging: وضع طبقة سميكة من مرهم عازل كخطوة أخيرة في الليل لحبس كل الرطوبة والعلاجات في الجلد وتسريع الترميم.\')">حبس الترطيب العميق</b>.', 
+            en: 'Apply a thick layer. Ideal as an occlusive layer in the final night step to apply the <b class="glossary-term" onclick="alert(\'Slugging Technique: Applying a thick layer of occlusive ointment as the final night step to lock in all moisture and treatments, accelerating repair.\')">Deep Moisture Lock (Slugging)</b> concept.' 
         },
         layering: { 
             do_not_mix_with: { ar: ['يُمنع وضعه على الجروح المفتوحة التي تنزف بقوة.'], en: ['Do not apply on heavily bleeding, open wounds.'] }, 
@@ -512,8 +512,8 @@ window.deepProductsList.push({
         indications: { ar: 'بعد جلسات الليزر، التقشير الكيميائي، طفح الحفاض، التشققات الشتوية، الإكزيما الجافة.', en: 'Post-laser, chemical peels, diaper rash, winter cracks, dry eczema.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: true, 
         notes: { 
-            ar: 'توجيه صيدلاني: الإصدار الجديد (+) يمتص أسرع ولا يترك طبقة بيضاء مزعجة. آمن تماماً لاستخدامه لتهدئة طفح الحفاض للرضع من اليوم الأول.', 
-            en: 'Pharma Tip: The new (+) version absorbs faster and leaves no annoying white cast. Perfectly safe for soothing diaper rash in infants from day one.' 
+            ar: '**سر الصنعة:** آمن تماماً لاستخدامه لتهدئة طفح الحفاض للرضع من اليوم الأول. الإصدار الجديد (+) يمتص أسرع ولا يترك طبقة بيضاء مزعجة.', 
+            en: '**Trade Secret:** Completely safe for soothing diaper rash in infants from day one. The new (+) version absorbs faster and leaves no annoying white cast.' 
         }
     }
 });
