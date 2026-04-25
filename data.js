@@ -1170,3 +1170,1076 @@ window.deepProductsList.push({
         notes: { ar: 'قوام سائل منعش وخفيف جداً. مخصص للبالغين 18+.', en: 'Very light and refreshing fluid texture. For adults 18+.' }
     }
 });
+// ==========================================
+// 🏥 Skin Care Pro - Clinical Database
+// 🟦 Brand: La Roche-Posay (laroche_data.js)
+// ==========================================
+
+// تهيئة المصفوفات بطريقة تدعم وجود ملفات متعددة (Multiple Files Support)
+window.brandsList = window.brandsList || [];
+window.deepProductsList = window.deepProductsList || [];
+window.glossaryDict = window.glossaryDict || {};
+
+// ==========================================
+// 📚 1. القاموس الطبي (Glossary) - La Roche-Posay
+// ==========================================
+
+window.glossaryDict['c_acnes'] = {
+    title: { ar: 'بكتيريا C.acnes 🦠', en: 'C.acnes Bacteria 🦠' },
+    desc: { 
+        ar: 'البكتيريا الرئيسية المسببة لحب الشباب. تعيش داخل المسام وتتغذى على الإفرازات الدهنية، مما يسبب الالتهاب والاحمرار.', 
+        en: 'The primary bacteria responsible for acne. It lives inside the pores and feeds on sebum, causing inflammation.' 
+    }
+};
+
+window.glossaryDict['biofilms'] = {
+    title: { ar: 'الأغشية الحيوية (Biofilms) 🛡️', en: 'Biofilms 🛡️' },
+    desc: { 
+        ar: 'درع واقي تبنيه البكتيريا حول نفسها لحماية نفسها من العلاجات والمضادات. تكسير هذا الدرع يعني القضاء على الحبوب من جذورها.', 
+        en: 'A protective shield built by bacteria to defend against treatments. Breaking this shield eliminates breakouts from the root.' 
+    }
+};
+
+window.glossaryDict['pih'] = {
+    title: { ar: 'التصبغات (PIH) 🟤', en: 'PIH (Hyperpigmentation) 🟤' },
+    desc: { 
+        ar: 'البقع الداكنة أو البنية التي تتركها الحبة بعد أن تجف وتشفى، وتحدث نتيجة زيادة إنتاج الميلانين بسبب الالتهاب.', 
+        en: 'Post-Inflammatory Hyperpigmentation: The dark or brown spots left behind after a pimple heals, caused by excess melanin production.' 
+    }
+};
+
+window.glossaryDict['lha'] = {
+    title: { ar: 'حمض LHA 🧪', en: 'LHA Acid 🧪' },
+    desc: { 
+        ar: 'مُقشر مشتق من حمض الساليسيليك، لكنه ألطف بكثير. يتميز بأنه "محب للدهون" فيخترق المسام ببطء لتنظيفها من الداخل دون تهيج.', 
+        en: 'Lipo-Hydroxy Acid: A derivative of Salicylic Acid, but much gentler. Being lipophilic (fat-loving), it slowly penetrates and deeply cleanses pores without irritation.' 
+    }
+};
+
+window.glossaryDict['keratolytic'] = {
+    title: { ar: 'تحلل القرنية (Keratolytic) 🧹', en: 'Keratolytic Action 🧹' },
+    desc: { 
+        ar: 'عملية إذابة وتقشير الطبقة الخارجية الميتة من الجلد (الكيراتين)، مما يساعد في فتح المسام المسدودة وتنعيم ملمس البشرة.', 
+        en: 'The process of dissolving and exfoliating the dead outer layer of the skin (keratin), which helps unclog pores and smooth skin texture.' 
+    }
+};
+
+window.glossaryDict['aha_bha'] = {
+    title: { ar: 'أحماض AHA و BHA 💧', en: 'AHA & BHA Acids 💧' },
+    desc: { 
+        ar: 'أحماض ألفا هيدروكسي (AHA) تقشر السطح وتوحد اللون، بينما أحماض بيتا هيدروكسي (BHA) تذوب في الدهون لتنظيف المسام من الداخل.', 
+        en: 'Alpha Hydroxy Acids (AHA) exfoliate the surface and even tone, while Beta Hydroxy Acids (BHA) are oil-soluble to deep-clean pores.' 
+    }
+};
+
+window.glossaryDict['microbiome_science'] = {
+    title: { ar: 'علم الميكروبيوم 🧫', en: 'Microbiome Science 🧫' },
+    desc: { 
+        ar: 'توازن البكتيريا النافعة على سطح الجلد. الإخلال بهذا التوازن يؤدي إلى الالتهابات، حب الشباب، أو الإكزيما.', 
+        en: 'The balance of beneficial bacteria on the skin surface. Disrupting this balance leads to inflammation, acne, or eczema.' 
+    }
+};
+
+window.glossaryDict['madecassoside'] = {
+    title: { ar: 'ماديكاسوسيد (Madecassoside) 🌿', en: 'Madecassoside 🌿' },
+    desc: { 
+        ar: 'مستخلص نقي من نبتة سرة الأرض (Centella Asiatica)، يُسرع من التئام الجلد، يهدئ الالتهابات، ويُحفز تجديد الخلايا بقوة.', 
+        en: 'A pure extract from Centella Asiatica that accelerates skin healing, soothes inflammation, and powerfully stimulates cell renewal.' 
+    }
+};
+
+window.glossaryDict['neurosensine'] = {
+    title: { ar: 'نيوروسينسين (Neurosensine) 🧠', en: 'Neurosensine 🧠' },
+    desc: { 
+        ar: 'ببتيد مهدئ قوي جداً، يستهدف آليات تهيج الجلد مباشرة ليقلل من الإحساس بالحكة، الحرارة، والألم في البشرة شديدة الحساسية.', 
+        en: 'A highly soothing peptide that targets skin irritation mechanisms directly to reduce sensations of itching, heat, and pain in ultra-sensitive skin.' 
+    }
+};
+
+window.glossaryDict['aqua_posae_filiformis'] = {
+    title: { ar: 'أكوا بوزاي فيليفورميس (APF) 🧫', en: 'Aqua Posae Filiformis 🧫' },
+    desc: { 
+        ar: 'مكون نشط حصري من لاروش بوزيه يُزرع في مياهها الحرارية، يعمل على إعادة توازن الميكروبيوم وتقوية حاجز البشرة لمنع نوبات الجفاف الشديد.', 
+        en: 'An exclusive active ingredient grown in La Roche-Posay Thermal Water, rebalances the microbiome and strengthens the skin barrier to prevent severe dryness flare-ups.' 
+    }
+};
+
+window.glossaryDict['micro_m_tech'] = {
+    title: { ar: 'تقنية Micro-M 🛡️', en: 'Micro-M Technology 🛡️' },
+    desc: { 
+        ar: 'تقنية متطورة تساعد في منع تكوين الأغشية الحيوية (Biofilms) للبكتيريا الضارة على الجلد، مما يقلل بشكل كبير من الحكة والالتهاب في حالات الإكزيما.', 
+        en: 'Advanced technology that helps prevent the formation of harmful bacterial biofilms on the skin, significantly reducing itching and inflammation in eczema.' 
+    }
+};
+
+window.glossaryDict['hepes'] = {
+    title: { ar: 'مادة HEPES 🧹', en: 'HEPES 🧹' },
+    desc: { 
+        ar: 'عامل تقشير فسيولوجي يعمل على إذابة الروابط بين الخلايا الميتة بلطف شديد، مما يساعد في تنعيم البشرة الخشنة والقشرية دون تهيج.', 
+        en: 'A physiological exfoliating agent that gently dissolves bonds between dead cells, helping smooth rough and scaly skin without irritation.' 
+    }
+};
+
+window.glossaryDict['cellox_b3'] = {
+    title: { ar: 'تقنية CELLOX-B3 ✨', en: 'CELLOX-B3 TECH™ ✨' },
+    desc: { 
+        ar: 'ابتكار يدمج حماية واسعة الطيف من الشمس مع مواد نشطة (نياسيناميد وفينيل إيثيل ريزورسينول) للحد من تلف الخلايا الناتج عن الأشعة والملوثات، وتصحيح التصبغات بفعالية.', 
+        en: 'Innovation combining broad-spectrum sun protection with actives (Niacinamide & PHE-Resorcinol) to limit cellular damage from UV/Pollution and effectively correct pigmentation.' 
+    }
+};
+
+window.glossaryDict['airlicium'] = {
+    title: { ar: 'جزيء إيرليسيوم (Airlicium) 🌬️', en: 'Airlicium™ 🌬️' },
+    desc: { 
+        ar: 'جزيء مجهري فائق الامتصاص يتكون من 99% هواء، يمكنه امتصاص كميات هائلة من الدهون والعرق واللمعان، مما يضمن بقاء البشرة مطفية (Matte) لمدة 12 ساعة.', 
+        en: 'An ultra-absorbing micro-molecule consisting of 99% air, capable of absorbing massive amounts of sebum, sweat, and shine, ensuring 12h matte skin.' 
+    }
+};
+
+window.glossaryDict['pure_vitamin_c'] = {
+    title: { ar: 'فيتامين C النقي 🍊', en: 'Pure Vitamin C 🍊' },
+    desc: { 
+        ar: 'حمض الـ L-ascorbic بتركيز 10%، وهو الشكل الأكثر نشاطاً بيولوجياً لفيتامين سي. يعمل كمضاد أكسدة جبار، يحفز الكولاجين ويعيد النضارة الفورية للبشرة الباهتة.', 
+        en: '10% L-ascorbic acid, the most biologically active form of Vitamin C. Acts as a potent antioxidant, stimulates collagen, and restores instant radiance.' 
+    }
+};
+
+window.glossaryDict['gradual_retinol'] = {
+    title: { ar: 'الريتينول ممتد المفعول ⏱️', en: 'Gradual Release Retinol ⏱️' },
+    desc: { 
+        ar: 'تقنية تطلق الريتينول في الجلد ببطء وتدريج، مما يسمح للبشرة الحساسة بتحمله دون حدوث تهيج أو احمرار عنيف، مع ضمان أقصى فعالية ضد التجاعيد.', 
+        en: 'A technology that releases retinol into the skin slowly and steadily, allowing sensitive skin to tolerate it without irritation, ensuring maximum anti-wrinkle efficacy.' 
+    }
+};
+
+window.glossaryDict['fragmented_hyaluronic'] = {
+    title: { ar: 'حمض الهيالورونيك المجزأ 💧', en: 'Fragmented Hyaluronic Acid 💧' },
+    desc: { 
+        ar: 'جزيئات ذات أوزان جزيئية مختلفة؛ الجزيئات الكبيرة ترطب السطح، والمجزأة (الصغيرة) تخترق العمق لملء الخطوط الدقيقة وإعادة الحيوية (Plumping).', 
+        en: 'Molecules with different molecular weights; large ones hydrate the surface, while fragmented (small) ones penetrate deep to plump fine lines.' 
+    }
+};
+
+window.glossaryDict['melasyl'] = {
+    title: { ar: 'مادة الميلازيل (Melasyl™) 🔬', en: 'Melasyl™ 🔬' },
+    desc: { 
+        ar: 'أحدث ابتكار من لوريال بعد 18 سنة من البحث. مادة متعددة براءات الاختراع تعمل على التقاط فائض الميلانين قبل أن يترك أثراً على الجلد، مما يمنع التصبغات قبل حدوثها.', 
+        en: 'The latest multi-patented molecule from L\'Oreal. It catches excess melanin before it marks the skin, preventing hyperpigmentation at its earliest stage.' 
+    }
+};
+
+window.glossaryDict['proadryn'] = {
+    title: { ar: 'مركب بروادرين (Proadryn) 🛡️', en: 'Proadryn™ 🛡️' },
+    desc: { 
+        ar: 'مادة فعالة مهدئة تستخدم في منتجات الأطفال لتقوية الدفاعات الطبيعية للبشرة الرقيقة وحمايتها من العوامل الخارجية القاسية.', 
+        en: 'A soothing active ingredient used in pediatric products to strengthen the natural defenses of delicate skin and protect it from harsh external factors.' 
+    }
+};
+
+window.glossaryDict['phe_resorcinol'] = {
+    title: { ar: 'فينيل إيثيل ريزورسينول (PHE) 🧪', en: 'PHE-Resorcinol 🧪' },
+    desc: { 
+        ar: 'مكون جبار لتفتيح البشرة، أثبتت الدراسات السريرية أنه أقوى بـ 100 مرة من حمض الكوجيك في تثبيط إنظيم التيروزيناز المسؤول عن إنتاج الميلانين.', 
+        en: 'A powerful skin brightening ingredient, clinically proven to be 100 times more potent than Kojic Acid in inhibiting the tyrosinase enzyme responsible for melanin production.' 
+    }
+};
+
+window.glossaryDict['green_tech_hyaluronic'] = {
+    title: { ar: 'تكنولوجيا التخمير الحيوي 🌿', en: 'Bio-fermentation Tech 🌿' },
+    desc: { 
+        ar: 'تقنية "خضراء" تُستخدم لاستخراج حمض الهيالورونيك النقي من السكريات النباتية، مما يضمن درجة نقاء عالية جداً وامتصاصاً أفضل داخل طبقات الجلد.', 
+        en: 'A "Green Technology" used to extract pure Hyaluronic Acid from plant sugars, ensuring ultra-high purity and better absorption within skin layers.' 
+    }
+};
+
+window.glossaryDict['uvmune_400'] = {
+    title: { ar: 'ميكسوريل 400 (Mexoryl 400) ☀️', en: 'Mexoryl 400 ☀️' },
+    desc: { 
+        ar: 'أحدث وأقوى فلتر شمسي في العالم من ابتكار لوريال، وهو الوحيد القادر على حجب أشعة UVA الطويلة جداً (حتى 400 نانومتر) التي تخترق الجلد بعمق وتسبب السرطانات والتجاعيد.', 
+        en: 'The most advanced UV filter globally, capable of blocking ultra-long UVA rays (up to 400nm) that penetrate deep into the skin, causing DNA damage and premature aging.' 
+    }
+};
+
+window.glossaryDict['mp_lipids'] = {
+    title: { ar: 'ليبيدات MP (MP-Lipids) 🧬', en: 'MP-Lipids 🧬' },
+    desc: { 
+        ar: 'جيل جديد من الليبيدات القادرة على محاكاة دهون الجلد الطبيعية، لترميم حاجز البشرة المتهالك وإعادة بناء الغشاء الحامي للجلد من الداخل.', 
+        en: 'A new generation of biomimetic lipids that repair the skin barrier and rebuild the protective film from within.' 
+    }
+};
+
+window.glossaryDict['sandwich_tech'] = {
+    title: { ar: 'تقنية الساندويتش 🥪', en: 'Sandwich Technique 🥪' },
+    desc: { ar: 'تطبيق طبقة رقيقة من مرطب خالي من الزيوت، يليها المادة الفعالة، ثم طبقة مرطب أخرى. لتخفيف سرعة الامتصاص وتقليل التهيج.', en: 'Applying a light moisturizer, then the active ingredient, followed by another layer of moisturizer to buffer rapid absorption and reduce irritation.' }
+};
+
+window.glossaryDict['sixty_sec_rule'] = {
+    title: { ar: 'قاعدة الـ 60 ثانية ⏱️', en: '60-Second Rule ⏱️' },
+    desc: { ar: 'تدليك الغسول على البشرة لمدة دقيقة كاملة للسماح للمواد العلاجية بالعمل داخل المسام قبل شطفها.', en: 'Massaging the cleanser into the skin for a full minute to allow therapeutic ingredients to work inside pores before rinsing.' }
+};
+
+window.glossaryDict['short_contact'] = {
+    title: { ar: 'العلاج بالاتصال القصير ⏱️', en: 'Short Contact Therapy ⏱️' },
+    desc: { ar: 'ترك المادة الفعالة على الجلد لعدة دقائق ثم غسلها لتجنب تلف الحاجز الجلدي الحساس.', en: 'Leaving the active ingredient on the skin for a few minutes then washing it off to avoid damaging a sensitive skin barrier.' }
+};
+
+window.glossaryDict['skin_cycling'] = {
+    title: { ar: 'تدوير العناية (Skin Cycling) 🔄', en: 'Skin Cycling 🔄' },
+    desc: { ar: 'بروتوكول يمتد لعدة ليالٍ يفصل بين المقشرات والريتينول وأيام الترطيب لمنع التهاب البشرة.', en: 'A protocol alternating exfoliants, retinoids, and recovery nights to prevent skin inflammation.' }
+};
+
+window.glossaryDict['slugging'] = {
+    title: { ar: 'حبس الترطيب (Slugging) 🐌', en: 'Slugging 🐌' },
+    desc: { ar: 'وضع طبقة سميكة من مرهم عازل كخطوة مسائية أخيرة لمنع التبخر المائي عبر الجلد وتسريع التئام الأنسجة.', en: 'Applying a thick layer of occlusive ointment as the final PM step to prevent transepidermal water loss and accelerate tissue healing.' }
+};
+
+window.glossaryDict['patting_tech'] = {
+    title: { ar: 'التربيت اللطيف (Patting) ✋', en: 'Gentle Patting ✋' },
+    desc: { ar: 'توزيع المنتج بالطبطبة الخفيفة جداً باستخدام أطراف الأصابع لتجنب الاحتكاك الذي يهيج الأوعية الدموية الدقيقة.', en: 'Distributing product by very light tapping with fingertips to avoid friction that irritates micro-capillaries.' }
+};
+
+window.glossaryDict['waterless_cleansing'] = {
+    title: { ar: 'التنظيف الجاف 💧', en: 'Waterless Cleansing 💧' },
+    desc: { ar: 'إزالة الغسول باستخدام قطعة قطن نظيفة دون استخدام الماء، مناسب لحالات التحسس من مياه الصنبور.', en: 'Removing cleanser using a clean cotton pad without water, suitable for tap water sensitization.' }
+};
+
+window.glossaryDict['two_finger_rule'] = {
+    title: { ar: 'قاعدة الإصبعين ✌️', en: 'Two-Finger Rule ✌️' },
+    desc: { ar: 'معيار يحدد كمية الواقي الشمسي المطلوبة للوجه والرقبة معاً (طول إصبعي السبابة والوسطى) للحصول على درجة الحماية المكتوبة.', en: 'A standard defining the amount of sunscreen needed for face and neck (length of index and middle fingers) to achieve labeled protection.' }
+};
+
+window.glossaryDict['lip_slugging'] = {
+    title: { ar: 'ترميم الشفاه المكثف 👄', en: 'Lip Slugging 👄' },
+    desc: { ar: 'تغطية الشفاه ليلاً بطبقة كثيفة من بلسم مرمم عازل لإصلاح التشققات العميقة وحمايتها من الجفاف.', en: 'Coating lips at night with a thick layer of occlusive repairing balm to fix deep cracks and protect from dryness.' }
+};
+
+window.glossaryDict['active_cleansing'] = {
+    title: { ar: 'التنظيف النشط ⏳', en: 'Active Cleansing ⏳' },
+    desc: { ar: 'إبقاء الغسول العلاجي ملامساً للبشرة لدقيقتين قبل غسله لتفعيل المكونات العلاجية.', en: 'Keeping the therapeutic cleanser in contact with the skin for minutes before washing to activate therapeutic ingredients.' }
+};
+
+window.glossaryDict['spot_treatment'] = {
+    title: { ar: 'العلاج النقطي 🎯', en: 'Spot Treatment 🎯' },
+    desc: { ar: 'تطبيق كمية صغيرة من العلاج المركز على الحبة فقط لتجنب جفاف باقي مناطق الوجه السليمة.', en: 'Applying a small amount of concentrated treatment only on the pimple to avoid drying the rest of the face.' }
+};
+
+
+// ==========================================
+// 🏢 2. العلامات التجارية والعائلات لـ La Roche-Posay
+// ==========================================
+
+window.brandsList.push({
+    id: 'laroche', name: 'La Roche-Posay',
+    families: [
+        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
+        { id: 'cicaplast', name: { ar: 'سيكابلاست (ترميم وحماية الحاجز)', en: 'Cicaplast (Barrier Repair)' } },
+        { id: 'toleriane', name: { ar: 'توليان (للبشرة الحساسة والمتحسسة)', en: 'Toleriane (Sensitive & Allergy-Prone)' } },
+        { id: 'lipikar', name: { ar: 'ليبيكار (للجفاف الشديد والإكزيما)', en: 'Lipikar (Severe Dryness & Eczema)' } },
+        { id: 'anthelios', name: { ar: 'أنثيليوس (حماية فائقة من الشمس)', en: 'Anthelios (High Sun Protection)' } },
+        { id: 'anti_aging', name: { ar: 'مضادات الشيخوخة والسيرومات', en: 'Anti-Aging & Serums' } },
+        { id: 'physiological', name: { ar: 'المنظفات الفسيولوجية', en: 'Physiological Cleansers' } }
+    ]
+});
+
+
+// ==========================================
+// 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 1 إلى 10)
+// ==========================================
+
+// [1] EFFACLAR DUO (+)
+window.deepProductsList.push({
+    id: 'lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (يحافظ على الغلاف الحمضي لتثبيط بكتيريا الحبوب دون تجريد البشرة)', en: '5.5 (Maintains acid mantle to inhibit acne bacteria without stripping skin)' },
+        mechanism: { 
+            ar: 'يستهدف بكتيريا <b class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</b> ويمنع تكوين <b class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</b>، مع تقشير دقيق لمنع انسداد المسام وتقليل <b class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</b>.', 
+            en: 'Targets <b class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</b> bacteria and prevents <b class="glossary-term" onclick="openGlossary(\'biofilms\')">Biofilms</b> formation, with micro-exfoliation to prevent clogged pores and reduce <b class="glossary-term" onclick="openGlossary(\'pih\')">PIH</b>.' 
+        },
+        patient_benefit: { 
+            ar: 'يُعالج الحبوب النشطة ويمنع ظهورها مجدداً، ويمنع الحبة الحمراء من التحول لبقعة داكنة بعد جفافها.', 
+            en: 'Treats active breakouts and prevents their recurrence, stopping red pimples from turning into dark marks after drying.' 
+        },
+        active_ingredients: [
+            { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory, soothes redness.' } },
+            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> يخترق المسام بلطف لتنظيفها.', en: 'A <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> exfoliator that gently penetrates to cleanse pores.' } },
+            { name: 'Salicylic Acid', concentration: '0.5%', role: { ar: 'يعمل بخاصية <b class="glossary-term" onclick="openGlossary(\'keratolytic\')">تحلل القرنية</b> لتنظيف المسام.', en: 'Provides <b class="glossary-term" onclick="openGlossary(\'keratolytic\')">Keratolytic</b> action to cleanse pores.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً (يُمكن رفعها لمرتين للمتحملين).', en: 'Once daily PM (can increase to twice if tolerated).' },
+        expected_duration: { ar: 'تخفيف الاحمرار خلال 12 ساعة. كورس مستمر من 4 إلى 8 أسابيع لعلاج المسام المسدودة وتقليل التصبغات.', en: 'Reduces redness in 12 hours. Continuous 4-8 week course to clear clogged pores and reduce pigmentation.' },
+        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول).', en: 'Treatment Step (After cleanser).' },
+        routine_step_number: 2,
+        application: { ar: 'توزع طبقة رقيقة على كامل الوجه لضمان علاج المسام الخفية، ويُمكن تطبيق <b class="glossary-term" onclick="openGlossary(\'spot_treatment\')">العلاج النقطي</b> على الحبوب الكبيرة.', en: 'Apply a thin layer over entire face to treat hidden pores, and <b class="glossary-term" onclick="openGlossary(\'spot_treatment\')">Spot Treatment</b> can be applied to large pimples.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات كيميائية قوية (AHA/BHA)', 'الريتينول'], en: ['Strong chemical exfoliants (AHA/BHA)', 'Retinol'] }, 
+            best_mixed_with: { ar: ['غسول لطيف', 'مرمّمات الحاجز (Ceramides)'], en: ['Gentle cleansers', 'Barrier repair creams'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب الخفيف إلى المتوسط، الرؤوس السوداء، والآثار الحمراء.', en: 'Mild to moderate acne, blackheads, and post-acne red marks.' },
+        pregnancy_safe: false, sun_sensitivity: true, child_safe: false,
+        notes: { ar: 'مخصص للمراهقين (12+) والبالغين. لتخفيف الجفاف الأولي، يُنصح بتطبيق <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">تقنية الساندويتش</b>.', en: 'For teens (12+) and adults. To mitigate initial dryness, applying the <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">Sandwich Technique</b> is recommended.' }
+    }
+});
+
+// [2] EFFACLAR PURIFYING FOAMING GEL
+window.deepProductsList.push({
+    id: 'lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار جل غسول رغوي منقي', en: 'Effaclar Purifying Foaming Gel' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (يتوافق مع الغلاف الجلدي لتجنب تحفيز الغدد الدهنية كرد فعل عكسي)', en: '5.5 (Matches the skin mantle to avoid stimulating sebaceous glands as a rebound reaction)' },
+        mechanism: { 
+            ar: 'ينظف البشرة بلطف بفضل عوامل التنظيف المختارة للبشرة الحساسة، ويزيل الشوائب والزهم الزائد بفضل الزنك.', 
+            en: 'Gently cleanses the skin with agents selected for sensitive skin. Eliminates impurities and excess sebum with Zinc.' 
+        },
+        patient_benefit: { 
+            ar: 'يترك البشرة نظيفة تماماً دون الشعور بالشد أو الجفاف، ويقلل من لمعان البشرة الدهنية تدريجياً.', 
+            en: 'Leaves skin perfectly clean without a tight feeling, and gradually reduces oily shine.' 
+        },
+        active_ingredients: [
+            { name: 'Zinc PCA', concentration: 'Active | فعال', role: { ar: 'ينظم إفراز الزهم وله خصائص مضادة للبكتيريا.', en: 'Regulates sebum production with antibacterial properties.' } },
+            { name: 'Thermal Spring Water', concentration: 'Base | أساسي', role: { ar: 'مياه حرارية مهدئة ومضادة للتهيج.', en: 'Soothing and anti-irritating thermal water.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (Morning and Evening).' },
+        expected_duration: { ar: 'استخدام يومي مستمر للحفاظ على نقاء المسام والسيطرة على اللمعان.', en: 'Continuous daily use to maintain clear pores and control shine.' },
+        step_in_routine: { ar: 'الخطوة 1 (التنظيف).', en: 'Step 1 (Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى بماء فاتر ويُدلك مع الالتزام بـ <b class="glossary-term" onclick="openGlossary(\'sixty_sec_rule\')">قاعدة الـ 60 ثانية</b>، ثم يُشطف.', en: 'Lather with lukewarm water and massage adhering to the <b class="glossary-term" onclick="openGlossary(\'sixty_sec_rule\')">60-Second Rule</b>, then rinse.' },
+        layering: { 
+            do_not_mix_with: { ar: ['فرش التنظيف القاسية (تُهيج الغدد الدهنية).'], en: ['Harsh cleansing brushes (irritates sebaceous glands).'] }, 
+            best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مضادات الأكسدة نهاراً'], en: ['Effaclar Duo (+)', 'Daytime Antioxidants'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الدهنية، المعرضة لحب الشباب، واللمعان الزائد.', en: 'Oily, acne-prone skin, and excess shine.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'مخصص للمراهقين (12+) والبالغين. غسل البشرة الدهنية أكثر من مرتين يومياً يؤدي لنتيجة عكسية.', en: 'For teens (12+) and adults. Washing oily skin more than twice daily causes a rebound effect.' }
+    }
+});
+
+// [3] EFFACLAR ULTRA CONCENTRATED SERUM
+window.deepProductsList.push({
+    id: 'lrp_effaclar_serum', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار سيروم التقشير المركز', en: 'Effaclar Ultra Concentrated Serum' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'أقل من 4.0 (درجة حامضية لضمان فعالية الأحماض في تذويب الروابط الخلوية)', en: 'Below 4.0 (Acidic pH to ensure acid efficacy in dissolving cellular bonds)' },
+        mechanism: { 
+            ar: 'مركب ثلاثي الأحماض <b class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</b> يعمل بآلية تآزرية لتقشير الخلايا الميتة السطحية وفتح المسام العميقة.', 
+            en: 'A tri-acid complex <b class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</b> works synergistically to exfoliate surface dead cells and unclog deep pores.' 
+        },
+        patient_benefit: { 
+            ar: 'يقلل حجم المسام، ويمحو العلامات الداكنة والخطوط الدقيقة لدى البالغين.', 
+            en: 'Reduces pore size, erases dark marks and fine lines in adults.' 
+        },
+        active_ingredients: [
+            { name: 'Glycolic Acid (AHA)', concentration: '3.5%', role: { ar: 'تقشير سطحي وتخفيف العلامات.', en: 'Surface exfoliation and fading marks.' } },
+            { name: 'Salicylic Acid (BHA)', concentration: '1.5%', role: { ar: 'تنظيف المسام العميقة.', en: 'Cleanses deep pores.' } },
+            { name: 'LHA', concentration: '0.45%', role: { ar: 'تقشير دقيق ولطيف.', en: 'Micro and gentle exfoliation.' } },
+            { name: 'Niacinamide', concentration: '2%', role: { ar: 'تهدئة البشرة وتقوية الحاجز.', en: 'Soothes skin and strengthens barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً فقط (يبدأ بالتدريج).', en: 'Once daily PM only (starts gradually).' },
+        expected_duration: { ar: 'كورس مكثف من 4 إلى 8 أسابيع لتخفيف التصبغات والتجاعيد الدقيقة المستعصية.', en: 'Intensive 4-8 week course to fade stubborn pigmentation and fine lines.' },
+        step_in_routine: { ar: 'خطوة السيروم (قبل المرطب).', en: 'Serum step (Before moisturizer).' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع على وجه نظيف وجاف ضمن جدول <b class="glossary-term" onclick="openGlossary(\'skin_cycling\')">تدوير العناية</b> لتقليل الإجهاد الجلدي.', en: 'Apply to clean, dry face within a <b class="glossary-term" onclick="openGlossary(\'skin_cycling\')">Skin Cycling</b> schedule to reduce skin fatigue.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أي مقشرات أخرى', 'الريتينول', 'فيتامين سي النقي'], en: ['Any other exfoliants', 'Retinol', 'Pure Vitamin C'] }, 
+            best_mixed_with: { ar: ['مرطب إيفاكلار إتش (للتوازن)', 'واقي شمس (إجباري)'], en: ['Effaclar H moisturizer (for balance)', 'SPF (Mandatory)'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب لدى البالغين، المسام الواسعة، التصبغات العنيدة.', en: 'Adult acne, enlarged pores, persistent pigmentation.' },
+        pregnancy_safe: false, sun_sensitivity: true, child_safe: false,
+        notes: { ar: 'مخصص للبالغين. للبشرات الحساسة للأحماض، يُمكن الاعتماد على <b class="glossary-term" onclick="openGlossary(\'short_contact\')">العلاج بالاتصال القصير</b> لمدة 15 دقيقة ثم غسله.', en: 'Adults only. For acid-sensitive skin, rely on <b class="glossary-term" onclick="openGlossary(\'short_contact\')">Short Contact Therapy</b> for 15 mins then wash.' }
+    }
+});
+
+// [4] EFFACLAR H ISO-BIOME CREAM
+window.deepProductsList.push({
+    id: 'lrp_effaclar_h_isobiome', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار H إيزو-بايوم (كريم مرطب معوض)', en: 'Effaclar H Iso-Biome Care Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (لطيف لتهدئة البشرة المتهالكة من الأدوية المجففة)', en: '5.5 (Gentle to soothe skin battered by drying meds)' },
+        mechanism: { 
+            ar: 'يرمم الحاجز الجلدي ويستعيد توازن <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</b> الذي تدمر بسبب علاجات حب الشباب القوية.', 
+            en: 'Repairs the skin barrier and restores <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</b> balance compromised by strong acne treatments.' 
+        },
+        patient_benefit: { 
+            ar: 'راحة فورية من الجفاف والتشقق الناتج عن أدوية الحبوب (مثل الإيزوتريتينوين الفموي) دون التسبب بانسداد المسام.', 
+            en: 'Instant relief from severe dryness and cracking caused by acne meds (like oral Isotretinoin) without clogging pores.' 
+        },
+        active_ingredients: [
+            { name: 'Aqua Posae Filiformis', concentration: 'Active | فعال', role: { ar: 'إعادة توازن البكتيريا النافعة.', en: 'Rebalancing beneficial bacteria.' } },
+            { name: 'Niacinamide + Panthenol', concentration: 'High | عالي', role: { ar: 'ترميم وتقليل الالتهاب.', en: 'Repair and inflammation reduction.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'يُستخدم طوال فترة العلاج الطبي ويستمر لشهر إضافي بعد التوقف.', en: 'Used throughout the medical treatment period and continues for one extra month.' },
+        step_in_routine: { ar: 'الترطيب.', en: 'Moisturization.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع بلطف على بشرة نظيفة. يعمل كقاعدة لتطبيق <b class="glossary-term" onclick="openGlossary(\'slugging\')">حبس الترطيب</b> الخفيف فوق المقشرات.', en: 'Apply gently to clean skin. Works as a base to apply light <b class="glossary-term" onclick="openGlossary(\'slugging\')">Slugging</b> over exfoliants.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يوجد تعارضات خطيرة.'], en: ['No severe interactions.'] }, 
+            best_mixed_with: { ar: ['أدوية حب الشباب الموصوفة كمعوض للجفاف.'], en: ['Prescription acne meds to compensate for dryness.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المعرضة للحبوب والتي أضعفتها العلاجات المجففة.', en: 'Acne-prone skin weakened by drying treatments.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'تركيبة مصممة بدقة لتكون غير زؤانية. مخصص للمراهقين (12+) والبالغين.', en: 'Formulated to be non-comedogenic. For teens (12+) and adults.' }
+    }
+});
+
+// [5] EFFACLAR MICRO-PEELING PURIFYING GEL
+window.deepProductsList.push({
+    id: 'lrp_effaclar_micro_peeling', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
+    name: { ar: 'إيفاكلار مايكرو-بيلينج (غسول مقشر دقيق)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن إلى حامضي قليلاً (لتفعيل أحماض التقشير دون تجريد كامل للدهون)', en: 'Balanced to slightly acidic (To activate exfoliating acids without complete lipid stripping)' },
+        mechanism: { 
+            ar: 'قوة تقشير مزدوجة تجمع بين حمض الساليسيليك (2%) و <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> لاختراق المسام الكثيفة وتنظيفها من الدهون المتصلبة.', 
+            en: 'Dual exfoliating power combining 2% Salicylic Acid and <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> to penetrate dense pores and clear hardened sebum.' 
+        },
+        patient_benefit: { 
+            ar: 'يستهدف حب الشباب الشديد وتراكم الكيراتين على الظهر والصدر، ويقلل من آثار الحبوب المتبقية بوضوح.', 
+            en: 'Targets severe acne and keratin buildup on back/chest, and visibly reduces residual acne marks.' 
+        },
+        active_ingredients: [
+            { name: 'Salicylic Acid (BHA)', concentration: '2%', role: { ar: 'فتح المسام وتقشير عميق.', en: 'Unclogging pores and deep exfoliation.' } },
+            { name: 'LHA', concentration: '0.05%', role: { ar: 'تقشير سطحي ناعم.', en: 'Gentle surface exfoliation.' } },
+            { name: 'Zinc PCA', concentration: 'Active | فعال', role: { ar: 'تقليل اللمعان والبكتيريا.', en: 'Reducing shine and bacteria.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة يومياً (للوجه)، أو مع كل استحمام (للجسم).', en: 'Once daily (for face), or every shower (for body).' },
+        expected_duration: { ar: 'تخفيف واضح لحبوب الظهر والجسم وتنعيم ملمس الجلد خلال 4 أسابيع.', en: 'Visible reduction of back/body acne and skin smoothing within 4 weeks.' },
+        step_in_routine: { ar: 'التنظيف العلاجي.', en: 'Therapeutic Cleansing.' },
+        routine_step_number: 1,
+        application: { ar: 'يُرغى ويُترك لدقيقتين لتفعيل <b class="glossary-term" onclick="openGlossary(\'active_cleansing\')">التنظيف النشط</b>، ثم يُشطف جيداً.', en: 'Lather, leave for 2 mins to activate <b class="glossary-term" onclick="openGlossary(\'active_cleansing\')">Active Cleansing</b>, then rinse thoroughly.' },
+        layering: { 
+            do_not_mix_with: { ar: ['أحماض تقشير إضافية قوية (ليف-إن).'], en: ['Additional strong leave-in peeling acids.'] }, 
+            best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مرطبات الجسم الخفيفة.'], en: ['Effaclar Duo (+)', 'Light body moisturizers.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب الشديد، حبوب الظهر والصدر، والتقرن الشعري (جلد الوزة الخفيف).', en: 'Severe acne, back and chest acne, and mild Keratosis Pilaris.' },
+        pregnancy_safe: false, sun_sensitivity: true, child_safe: false,
+        notes: { ar: 'مخصص لعلاج حبوب الجسم للمراهقين (12+) والبالغين.', en: 'Dedicated to treating body acne for teens (12+) and adults.' }
+    }
+});
+
+// [6] CICAPLAST BAUME B5+
+window.deepProductsList.push({
+    id: 'lrp_cicaplast_baume', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
+    name: { ar: 'سيكابلاست بوم بـ 5 (+)', en: 'Cicaplast Baume B5 (+)' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (خالي من الأحماض ليكون آمناً على الخدوش والجروح السطحية)', en: 'Balanced (Acid-free to be completely safe on scratches and superficial wounds)' },
+        mechanism: { 
+            ar: 'يوفر بيئة مثالية لالتئام الجلد بفضل الـ <b class="glossary-term" onclick="openGlossary(\'madecassoside\')">ماديكاسوسيد</b>، مع إعادة توازن <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</b> لضمان عدم ترك ندبات.', 
+            en: 'Provides an optimal environment for skin healing using <b class="glossary-term" onclick="openGlossary(\'madecassoside\')">Madecassoside</b>, while rebalancing the <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</b> to prevent scarring.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج الجفاف الشديد، التشققات، الحروق السطحية، والتهابات الحفاض، ويوفر طبقة عازلة غير لزجة.', 
+            en: 'Treats severe dryness, cracks, superficial burns, and diaper rash, providing a non-sticky protective barrier.' 
+        },
+        active_ingredients: [
+            { name: 'Panthenol (B5)', concentration: '5%', role: { ar: 'ترطيب عميق وتهدئة فورية للحكة.', en: 'Deep hydration and instant itch relief.' } },
+            { name: 'Madecassoside', concentration: 'Active | فعال', role: { ar: 'تسريع التئام الجروح وتجديد الخلايا.', en: 'Accelerates wound healing and cell renewal.' } },
+            { name: 'Zinc & Manganese', concentration: 'Active | فعال', role: { ar: 'مضاد للبكتيريا لمنع تلوث المنطقة المتضررة.', en: 'Antibacterial to prevent infection of the damaged area.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً، أو عند الحاجة.', en: 'Twice daily, or as needed.' },
+        expected_duration: { ar: 'ترميم كامل لطبقات الجلد السطحية خلال 3 إلى 7 أيام.', en: 'Full epidermal repair within 3 to 7 days.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (للترميم الموضعي أو كمرطب ليلي).', en: 'Final step (for targeted repair or as night cream).' },
+        routine_step_number: 3,
+        application: { ar: 'توضع طبقة سميكة على بشرة نظيفة لتطبيق تقنية <b class="glossary-term" onclick="openGlossary(\'slugging\')">حبس الترطيب</b> الليلية.', en: 'Apply a thick layer to clean skin to apply the PM <b class="glossary-term" onclick="openGlossary(\'slugging\')">Slugging</b> technique.' },
+        layering: { 
+            do_not_mix_with: { ar: ['يُمنع وضعه على الجروح المفتوحة التي تنزف بقوة.'], en: ['Do not apply on heavily bleeding, open wounds.'] }, 
+            best_mixed_with: { ar: ['غسول لطيف', 'فوق الريتينول أو المقشرات.'], en: ['Gentle cleansers', 'Over retinol or exfoliants.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'بعد جلسات الليزر، التقشير الكيميائي، طفح الحفاض، التشققات الشتوية، الإكزيما الجافة.', en: 'Post-laser, chemical peels, diaper rash, winter cracks, dry eczema.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: true,
+        notes: { ar: 'آمن تماماً للرضع والأطفال من اليوم الأول. النسخة المحدثة تمتص أسرع ولا تترك أثراً أبيضاً.', en: 'Completely safe for babies and children from day one. The updated version absorbs faster leaving no white cast.' }
+    }
+});
+
+// [7] TOLERIANE DERMALLERGO CREAM
+window.deepProductsList.push({
+    id: 'lrp_toleriane_dermallergo', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
+    name: { ar: 'توليان ديرماليرجو كريم', en: 'Toleriane Dermallergo Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن بدقة (خالٍ من المهيجات لعدم إثارة النهايات العصبية)', en: 'Strictly balanced (Free of irritants to avoid triggering nerve endings)' },
+        mechanism: { 
+            ar: 'يستهدف فرط حساسية الجلد مباشرة باستخدام الـ <b class="glossary-term" onclick="openGlossary(\'neurosensine\')">نيوروسينسين</b> لقطع إشارات الألم والحرارة، ويدعم <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</b> لتقليل نوبات التحسس المستقبلية.', 
+            en: 'Targets skin hyper-sensitivity directly using <b class="glossary-term" onclick="openGlossary(\'neurosensine\')">Neurosensine</b> to block pain/heat signals, and supports the <b class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</b> to reduce future allergy flare-ups.' 
+        },
+        patient_benefit: { 
+            ar: 'يهدئ البشرة الملتهبة والمتحسسة في دقيقة واحدة، يوفر ترطيباً لمدة 48 ساعة، ويقلل من احمرار الجلد المستمر.', 
+            en: 'Soothes inflamed, allergic skin in 1 minute, provides 48h hydration, and reduces persistent skin redness.' 
+        },
+        active_ingredients: [
+            { name: 'Neurosensine', concentration: 'Strong | قوي', role: { ar: 'تهدئة عصبية للجلد وتقليل الحكة والوخز.', en: 'Neurological skin soothing, reducing itching and stinging.' } },
+            { name: 'Sphingobioma', concentration: 'Extract | مستخلص', role: { ar: 'دعم بكتيريا الجلد النافعة.', en: 'Supports beneficial skin bacteria.' } },
+            { name: 'Shea Butter', concentration: 'Rich | غني', role: { ar: 'ترميم حاجز الدهون الطبيعي.', en: 'Restores the natural lipid barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (AM & PM).' },
+        expected_duration: { ar: 'تهدئة للاحمرار والوخز خلال 60 ثانية. يُستخدم بانتظام لرفع قدرة تحمل البشرة.', en: 'Soothes redness and stinging in 60 seconds. Used regularly to raise skin tolerance.' },
+        step_in_routine: { ar: 'خطوة الترطيب الأساسية.', en: 'Main moisturizing step.' },
+        routine_step_number: 3,
+        application: { ar: 'يوزع بلطف على الوجه ومحيط العينين باستخدام <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">التربيت اللطيف</b> لعدم إثارة الأوعية الدموية.', en: 'Distribute gently over face and eye contour using <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">Gentle Patting</b> to avoid irritating blood vessels.' },
+        layering: { 
+            do_not_mix_with: { ar: ['المنتجات التي تحتوي على عطور أو كحول.'], en: ['Products containing fragrance or alcohol.'] }, 
+            best_mixed_with: { ar: ['غسول توليان ديرمو-كلينزر.'], en: ['Toleriane Dermo-Cleanser.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة شديدة الحساسية، المعرضة للحساسية (Allergy-prone)، البشرة التي لا تتحمل مستحضرات التجميل العادية.', en: 'Ultra-sensitive skin, allergy-prone skin, intolerant skin to standard cosmetics.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: true,
+        notes: { ar: 'عبوة معقمة 100% تمنع دخول الهواء. آمن للأطفال من عمر سنتين لتهدئة الوجه.', en: '100% sterile packaging prevents air entry. Safe for children from 2 years to soothe the face.' }
+    }
+});
+
+// [8] TOLERIANE DERMO-CLEANSER
+window.deepProductsList.push({
+    id: 'lrp_toleriane_cleanser', brandId: 'laroche', familyId: 'toleriane', brand: 'La Roche-Posay',
+    name: { ar: 'توليان غسول ديرمو-كلينزر حليبي', en: 'Toleriane Dermo-Cleanser' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: '5.5 (مطابق لحموضة الأغشية المخاطية للعين)', en: '5.5 (Matches the pH of ocular mucous membranes)' },
+        mechanism: { 
+            ar: 'ينظف البشرة ويزيل المكياج دون الحاجة للفرك أو استخدام مؤثرات سطحية قاسية، مما يحافظ على حاجز الجلد سليمًا ويمنع الجفاف.', 
+            en: 'Cleanses and removes makeup without rubbing or harsh surfactants, keeping the skin barrier intact and preventing dryness.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف بلطف شديد بفضل قوامه الحليبي، يزيل مكياج الوجه والعين دون تهيج، ويترك البشرة رطبة ومرتاحة.', 
+            en: 'Ultra-gentle cleansing with a milky texture, removes face and eye makeup without irritation, leaving skin hydrated and comforted.' 
+        },
+        active_ingredients: [
+            { name: 'Glycerin', concentration: 'High | عالي', role: { ar: 'يحافظ على رطوبة الجلد أثناء التنظيف.', en: 'Maintains skin hydration during cleansing.' } },
+            { name: 'La Roche-Posay Thermal Water', concentration: 'Base | أساسي', role: { ar: 'تهدئة الجلد فوراً.', en: 'Instantly soothes the skin.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً.', en: 'Twice daily.' },
+        expected_duration: { ar: 'استخدام يومي دائم للحفاظ على الحاجز الحساس من التدهور.', en: 'Continuous daily use to preserve the sensitive barrier from degradation.' },
+        step_in_routine: { ar: 'الخطوة الأولى (التنظيف اللطيف).', en: 'Step 1 (Gentle Cleansing).' },
+        routine_step_number: 1,
+        application: { ar: 'يُدلك بأطراف الأصابع، ثم يُمسح بقطنة تطبيقاً لـ <b class="glossary-term" onclick="openGlossary(\'waterless_cleansing\')">التنظيف الجاف</b> أو يُشطف بالماء.', en: 'Massage with fingertips, then wipe with a cotton pad applying <b class="glossary-term" onclick="openGlossary(\'waterless_cleansing\')">Waterless Cleansing</b> or rinse with water.' },
+        layering: { 
+            do_not_mix_with: { ar: ['فرش التنظيف الخشنة.'], en: ['Harsh physical cleansing brushes.'] }, 
+            best_mixed_with: { ar: ['توليان ديرماليرجو كريم.'], en: ['Toleriane Dermallergo Cream.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة التي لا تتحمل الغسول الرغوي، بعد الإجراءات التجميلية القاسية، البشرة المعرضة للوردية والاحمرار.', en: 'Skin intolerant to foaming gels, post-harsh cosmetic procedures, rosacea-prone skin.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: true,
+        notes: { ar: 'لا يحتاج لماء للشطف. آمن ولطيف لحديثي الولادة والرضع.', en: 'Does not require water to rinse. Safe and gentle for newborns and infants.' }
+    }
+});
+
+// [9] ANTHELIOS UVMUNE 400 (Invisible Fluid)
+window.deepProductsList.push({
+    id: 'lrp_anthelios_uvmune', brandId: 'laroche', familyId: 'anthelios', brand: 'La Roche-Posay', 
+    name: { ar: 'أنثيليوس UVMune 400 (سائل غير مرئي)', en: 'Anthelios UVMune 400 Invisible Fluid' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (مستقر لضمان عدم تحلل فلاتر الحماية الكيميائية على البشرة)', en: 'Balanced (Stable to ensure no degradation of chemical UV filters on skin)' },
+        mechanism: { 
+            ar: 'يستخدم فلتر <b class="glossary-term" onclick="openGlossary(\'uvmune_400\')">ميكسوريل 400</b> الحصري للحماية من أشعة UVA الطويلة جداً، مع تقنية (Netlock) التي تثبت الفلاتر في غشاء غير مرئي على الجلد.', 
+            en: 'Features the exclusive <b class="glossary-term" onclick="openGlossary(\'uvmune_400\')">Mexoryl 400</b> filter against ultra-long UVA, with Netlock technology that anchors filters in an invisible film.' 
+        },
+        patient_benefit: { 
+            ar: 'حماية فائقة من التصبغات والشيخوخة، مقاوم للماء والعرق، ولا يترك أي أثر أبيض نهائياً.', 
+            en: 'Ultimate protection against pigmentation and aging, water/sweat resistant, and zero white cast.' 
+        },
+        active_ingredients: [
+            { name: 'Mexoryl 400', concentration: 'Patented | براءة اختراع', role: { ar: 'حماية من أعمق أشعة الشمس ضرراً.', en: 'Protection against the deepest, most damaging UV rays.' } },
+            { name: 'Vitamin E', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'حماية الخلايا من الشوارد الحرة.', en: 'Protects cells from free radicals.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً، يُجدد كل ساعتين.', en: 'Daily, reapply every 2 hours.' },
+        expected_duration: { ar: 'حماية فورية من الحروق. الاستمرار اليومي يمنع ظهور التصبغات والشيخوخة المبكرة.', en: 'Instant burn protection. Daily continuation prevents pigmentation and premature aging.' },
+        step_in_routine: { ar: 'آخر خطوة صباحية.', en: 'Last morning step.' },
+        routine_step_number: 4,
+        application: { ar: 'يُرج جيداً ويوضع على الوجه ومحيط العين مع تطبيق <b class="glossary-term" onclick="openGlossary(\'two_finger_rule\')">قاعدة الإصبعين</b>.', en: 'Shake well and apply to face and eye area, applying the <b class="glossary-term" onclick="openGlossary(\'two_finger_rule\')">Two-Finger Rule</b>.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الزيوت الثقيلة تحته.'], en: ['Heavy oils underneath.'] }, 
+            best_mixed_with: { ar: ['جميع السيرومات العلاجية.'], en: ['All treatment serums.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'جميع أنواع البشرة، البشرة شديدة التحسس للشمس، والوقاية من الكلف.', en: 'All skin types, sun-allergic skin, and melasma prevention.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'لا يسبب تدميع العين. مخصص للبالغين والمراهقين (12+ سنة). خالي من العطور.', en: 'Does not cause eye tearing. Dedicated for adults and teenagers (12+ years). Fragrance-free.' }
+    }
+});
+
+// [10] CICAPLAST LIPS
+window.deepProductsList.push({
+    id: 'lrp_cicaplast_lips', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
+    name: { ar: 'سيكابلاست لشفاه (مرمم الشفاه)', en: 'Cicaplast Lips Barrier Repair' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (لطيف جداً على الأغشية الرقيقة للشفاه)', en: 'Balanced (Very gentle on delicate lip membranes)' },
+        mechanism: { 
+            ar: 'يصنع طبقة عازلة بتركيز 5% من البانثينول لترميم الشقوق، مع <b class="glossary-term" onclick="openGlossary(\'mp_lipids\')">ليبيدات MP</b> لإعادة ترطيب غشاء الشفاه من الداخل.', 
+            en: 'Creates an occlusive layer with 5% Panthenol to repair cracks, and <b class="glossary-term" onclick="openGlossary(\'mp_lipids\')">MP-Lipids</b> to rehydrate the lip membrane from within.' 
+        },
+        patient_benefit: { 
+            ar: 'يعالج الشفاه المتشققة والنازفة فوراً، يمنع التهيج الناتج عن لعق الشفاه أو البرد، ويوفر حماية طويلة الأمد.', 
+            en: 'Instantly heals cracked and bleeding lips, prevents irritation from lip-licking or cold, and provides long-lasting protection.' 
+        },
+        active_ingredients: [
+            { name: 'Panthenol', concentration: '5%', role: { ar: 'تهدئة وترميم سريع.', en: 'Soothing and fast repair.' } },
+            { name: 'MP-Lipids', concentration: 'Active | فعال', role: { ar: 'إعادة بناء حاجز الشفاه.', en: 'Rebuilding the lip barrier.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'متكرر يومياً.', en: 'Multiple times daily.' },
+        expected_duration: { ar: 'ترميم الشقوق العميقة والنازفة خلال 48 ساعة من الاستخدام.', en: 'Repairs deep and bleeding cracks within 48 hours of use.' },
+        step_in_routine: { ar: 'عناية موضعية.', en: 'Targeted care.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع مباشرة على الشفاه نهاراً، وكطبقة كثيفة لتطبيق <b class="glossary-term" onclick="openGlossary(\'lip_slugging\')">ترميم الشفاه المكثف</b> ليلاً.', en: 'Apply directly to lips in the AM, and as a thick layer to apply PM <b class="glossary-term" onclick="openGlossary(\'lip_slugging\')">Lip Slugging</b>.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التقشير القاسي للشفاه.'], en: ['Harsh lip scrubs.'] }, 
+            best_mixed_with: { ar: ['علاجات الروكوتان.'], en: ['Accutane treatments.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الشفاه شديدة الجفاف والمتشققة.', en: 'Severely dry and cracked lips.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: true,
+        notes: { ar: 'قوام غير مرئي. آمن للرضع والأطفال المتضررين من البرد الجاف.', en: 'Invisible texture. Safe for infants and children affected by dry cold.' }
+    }
+});
+// ==========================================
+// 📦 بلوك رقم (17): تأسيس فيلورجا (Filorga) - البلوك الأول
+// متوافق 100% مع واجهة Dashboard Layout السريرية
+// ==========================================
+
+window.brandsList = window.brandsList || [];
+window.deepProductsList = window.deepProductsList || [];
+window.glossaryDict = window.glossaryDict || {};
+
+// --- 1. إضافة العلامة التجارية (Filorga) وعائلاتها ---
+window.brandsList.push({
+    id: 'filorga', name: 'Filorga',
+    families: [
+        { id: 'ncef', name: { ar: 'NCEF (التجديد الخلوي الشامل)', en: 'NCEF (Global Cell Renewal)' } },
+        { id: 'time_filler', name: { ar: 'تايم-فيلر (تصحيح التجاعيد المتقدم)', en: 'Time-Filler (Wrinkle Correction)' } },
+        { id: 'hydra_hyal', name: { ar: 'هيدرا-هيال (ترطيب وامتلاء مكثف)', en: 'Hydra-Hyal (Intense Plumping & Hydration)' } },
+        { id: 'age_purify', name: { ar: 'إيدج-بيوريفاي (مكافحة التجاعيد وحب الشباب)', en: 'Age-Purify (Anti-Aging & Blemish)' } },
+        { id: 'optim_eyes', name: { ar: 'أوبتيم-آيز (عناية محيط العين)', en: 'Optim-Eyes (Eye Care)' } },
+        { id: 'skin_unify', name: { ar: 'سكين-يونيفاي (تفتيح وتوحيد اللون)', en: 'Skin-Unify (Illuminating & Even Tone)' } },
+        { id: 'global_repair', name: { ar: 'جلوبال-ريبير (التغذية ومكافحة الشيخوخة الشاملة)', en: 'Global-Repair (Advanced Anti-Aging)' } },
+        { id: 'oxygen_glow', name: { ar: 'أكسجين-جلو (نضارة وإشراقة فورية)', en: 'Oxygen-Glow (Instant Radiance)' } },
+        { id: 'skin_prep', name: { ar: 'سكين-بريب (المنظفات والتقشير)', en: 'Skin-Prep (Cleansers & Peeling)' } },
+        { id: 'sun_care', name: { ar: 'العناية بالشمس (UV-Protect)', en: 'Sun Care (UV Protection)' } }
+    ]
+});
+
+// --- 2. مصطلحات القاموس الطبي الخاصة بفيلورجا والتريكات ---
+
+window.glossaryDict['ncef_complex'] = {
+    title: { ar: 'مركب NCEF 🧬', en: 'NCEF Complex 🧬' },
+    desc: { 
+        ar: 'مركب حصري من فيلورجا (New Cellular Encapsulated Factors) يحتوي على حمض الهيالورونيك و 50 مكوناً نشطاً (فيتامينات، أحماض أمينية، معادن، إنزيمات مساعدة، مضادات أكسدة) مستوحى من تقنية الميزوثيرابي لتجديد جودة الجلد من العمق.', 
+        en: 'Filorga\'s exclusive complex containing Hyaluronic Acid and 50 revitalizing ingredients (vitamins, amino acids, minerals, coenzymes, antioxidants) inspired by mesotherapy to renew skin quality from within.' 
+    }
+};
+
+window.glossaryDict['chronospheres'] = {
+    title: { ar: 'الكرونوسفير (Chronospheres) 🔮', en: 'Chronospheres 🔮' },
+    desc: { 
+        ar: 'نواقل مجهرية متطورة تغلف مركب NCEF وتضمن اختراقه العميق وتوزيعه التدريجي داخل طبقات الجلد المختلفة وصولاً إلى الأدمة لتحقيق امتصاص وفعالية مركزة.', 
+        en: 'Microscopic vectors encapsulating the NCEF complex, ensuring deep penetration and gradual release into the skin layers down to the dermis, for concentrated absorption and efficacy.' 
+    }
+};
+
+window.glossaryDict['hyaluro_youth'] = {
+    title: { ar: 'مركب هيالورو-يوث (Hyaluro-Youth CX) 💧', en: 'Hyaluro-Youth CX 💧' },
+    desc: { 
+        ar: 'مركب يجمع بين 3 مكونات مضادة للتجاعيد: حمض الهيالورونيك الممتلئ، ببتيد منعم للخطوط، وجليكوببتيد معزز لمرونة الجلد لتنعيم وتعبئة التجاعيد بشكل فعال.', 
+        en: 'A complex combining 3 anti-wrinkle ingredients: plumping HA, a smoothing peptide, and a plumping glycopeptide to effectively smooth and fill wrinkles.' 
+    }
+};
+
+window.glossaryDict['dermo_rescue'] = {
+    title: { ar: 'مركب ديرما-ريسكيو (Dermo-Rescue CX) 🌿', en: 'Dermo-Rescue CX 🌿' },
+    desc: { 
+        ar: 'مركب يعالج عيوب البشرة يدمج: 5 أحماض تقشير دقيق، زنك منظم للدهون، ومستخلص نباتي مضاد للالتهابات لتقليل حجم المسام والرؤوس السوداء والشوائب.', 
+        en: 'A blemish-treating complex combining: 5 micro-peeling acids, sebum-regulating Zinc, and an anti-inflammatory plant extract to reduce pore size, blackheads, and impurities.' 
+    }
+};
+
+window.glossaryDict['express_recover'] = {
+    title: { ar: 'مركب التعافي السريع 🌙', en: 'Express-Recover Complex 🌙' },
+    desc: { 
+        ar: 'مركب ليلي متطور يجمع بين معززات مرونة الجلد ومستخلصات نباتية مزيلة للسموم، يعمل أثناء النوم لمنع "تجاعيد الوسادة" وتورم الوجه الصباحي لاحتباس السوائل.', 
+        en: 'An advanced night complex combining elastin boosters and detoxifying plant extracts, working during sleep to prevent "pillow wrinkles" and morning facial puffiness from fluid retention.' 
+    }
+};
+
+window.glossaryDict['eye_impact_tech'] = {
+    title: { ar: 'تقنية آي-إمباكت (Eye-Impact) 👁️', en: 'Eye-Impact Technology 👁️' },
+    desc: { 
+        ar: 'تقنية تستهدف مشاكل محيط العين الثلاثية؛ تستخدم مركب (Chrysin) لتقليل التصبغ الدموي (الهالات)، وببتيدات معززة للدورة اللمفاوية (للانتفاخات)، وحمض هيالورونيك مجزأ (للتجاعيد).', 
+        en: 'A technology targeting triple eye contour issues; uses Chrysin to reduce blood pigmentation (dark circles), lymphatic-boosting peptides (puffiness), and fragmented HA (wrinkles).' 
+    }
+};
+
+window.glossaryDict['botox_like_peptide'] = {
+    title: { ar: 'ببتيدات البوتوكس 💉', en: 'Botox-like Peptides 💉' },
+    desc: { ar: 'ببتيدات سداسية (Hexapeptides) تعمل على إرخاء العضلات الدقيقة السطحية للوجه بشكل مؤقت لتقليل حدة خطوط التعبير دون شلل العضلة الحقيقي.', en: 'Hexapeptides that temporarily relax superficial facial micro-muscles to reduce the severity of expression lines without actual muscle paralysis.' }
+};
+
+
+// --- 3. المنتجات العميقة (Deep Products) ---
+
+// [1] FILORGA NCEF SHOT BOOSTER 15 ML
+window.deepProductsList.push({
+    id: 'fil_ncef_shot', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF شوت (معزز التجديد المركز)', en: 'NCEF-Shot Supreme Polyrevitalizing Concentrate' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً (لضمان بقاء المكونات النشطة الـ 50 مستقرة واختراقها بأمان)', en: 'Physiologically Balanced (To ensure the 50 active ingredients remain stable and penetrate safely)' },
+        mechanism: { 
+            ar: 'يحتوي على تركيز فائق من <b class="glossary-term" onclick="openGlossary(\'ncef_complex\')">مركب NCEF</b> المنقول عبر <b class="glossary-term" onclick="openGlossary(\'chronospheres\')">الكرونوسفير</b> لتنشيط الخلايا وتكوين كولاجين وإيلاستين جديد.', 
+            en: 'Features a supreme concentration of <b class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF Complex</b> delivered via <b class="glossary-term" onclick="openGlossary(\'chronospheres\')">Chronospheres</b> to revitalize cells and build new collagen/elastin.' 
+        },
+        patient_benefit: { 
+            ar: 'يمنح إشراقة وتوحيد للون، يشد البشرة، ويملأ الخطوط الدقيقة بتركيز يضاهي إجراءات الميزوثيرابي الموضعية.', 
+            en: 'Provides radiance and even tone, firms the skin, and plumps fine lines with a concentration comparable to topical mesotherapy procedures.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF (50 Ingredients + HA)', concentration: 'Supreme Dose | جرعة فائقة', role: { ar: 'تجديد الخلايا وتحفيز الأيض الخلوي.', en: 'Cellular renewal and stimulating cellular metabolism.' } },
+            { name: 'Pseudoalteromonas Extract', concentration: 'Active | فعال', role: { ar: 'بروتين بحري يعزز تماسك الخلايا ويقوي الجلد.', en: 'Marine protein enhancing cellular adhesion and skin strength.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرتين يومياً (صباحاً ومساءً) ككورس لمدة 10 أيام.', en: 'Twice daily (AM & PM) as a 10-day course.' },
+        expected_duration: { ar: 'كورس مكثف مدته 10 أيام فقط لتجديد جودة الجلد بالكامل. لا يُستخدم كروتين دائم لتجنب الإرهاق الخلوي.', en: 'An intensive 10-day course to fully renew skin quality. Not for permanent routine use to avoid cellular exhaustion.' },
+        step_in_routine: { ar: 'الخطوة الأولى بعد الغسول (قبل أي سيروم أو كريم).', en: 'First step post-cleanser (before any serum or cream).' },
+        routine_step_number: 2,
+        application: { ar: 'تُسحب الجرعة المحددة بالقطارة وتوزع على الوجه والرقبة. يفضل تطبيقه بـ <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">التربيت اللطيف</b> لتعزيز الامتصاص.', en: 'Draw the exact dose with the pipette and apply to face/neck. Best applied with <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">Gentle Patting</b> to enhance absorption.' },
+        layering: { 
+            do_not_mix_with: { ar: ['التقشير الكيميائي العنيف في نفس الكورس.'], en: ['Harsh chemical peeling during the course.'] }, 
+            best_mixed_with: { ar: ['كريم NCEF-Reverse للحصول على نتيجة متكاملة.'], en: ['NCEF-Reverse cream for a complete result.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة المنهكة والمجهدة، البهتان الشديد، وتغيير الفصول أو التحضير للمناسبات.', en: 'Exhausted and stressed skin, severe dullness, changing seasons, or event preparation.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'قوام مائي خفيف يمتص في ثوانٍ. مخصص للبالغين 18+ فقط لمعالجة تقدم السن.', en: 'Light watery texture absorbing in seconds. Dedicated for adults 18+ only for anti-aging.' }
+    }
+});
+
+// [2] FILORGA OXYGEN - GLOW CC CREAM SPF 30
+window.deepProductsList.push({
+    id: 'fil_oxygen_glow_cc', brandId: 'filorga', familyId: 'oxygen_glow', brand: 'Filorga',
+    name: { ar: 'أكسجين-جلو سي سي كريم SPF 30', en: 'Oxygen-Glow CC Cream SPF 30' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (يضمن عدم تحلل فلاتر الـ UV أو الأصباغ الدقيقة)', en: 'Balanced (Ensures non-degradation of UV filters or micro-pigments)' },
+        mechanism: { 
+            ar: 'يجمع بين معززات الأكسجين وحمض الهيالورونيك والإنزيمات المزيلة للسموم لتنشيط البشرة، مع أصباغ دقيقة التغليف تتكيف مع لون البشرة وتوفر وقاية من الـ UV.', 
+            en: 'Combines oxygenation boosters, HA, and detoxifying enzymes to revitalize skin, with micro-encapsulated pigments adapting to skin tone and providing UV protection.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر تغطية طبيعية فورية توحد لون البشرة، يزيل البهتان واللون الرمادي، ويحمي من الأشعة فوق البنفسجية والتلوث البيئي.', 
+            en: 'Provides instant natural coverage to even skin tone, removes dull grayish tint, and protects from UV rays and environmental pollution.' 
+        },
+        active_ingredients: [
+            { name: 'Nasturtium Extract', concentration: 'Active | فعال', role: { ar: 'تعزيز نقل الأكسجين للخلايا لنضارة الأنسجة.', en: 'Boosting oxygen transport to cells for tissue radiance.' } },
+            { name: 'Micro-encapsulated Pigments', concentration: 'Cosmetic', role: { ar: 'توحيد لون البشرة بشكل يتكيف مع لونها الأصلي.', en: 'Evening skin tone adapting to the original skin color.' } },
+            { name: 'UV Filters', concentration: 'SPF 30', role: { ar: 'حماية من الأشعة فوق البنفسجية والشيخوخة الضوئية.', en: 'Protection against UV and photoaging.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'يومياً (صباحاً).', en: 'Daily (AM).' },
+        expected_duration: { ar: 'تغطية ونضارة فورية. يعالج شحوب البشرة وتأكسد الخلايا تدريجياً خلال شهر من الاستخدام الصباحي.', en: 'Instant coverage and radiance. Gradually treats skin pallor and cellular oxidation within a month of AM use.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة (كريم نهار وتغطية وواقي شمس).', en: 'Last step (Day cream, coverage, and SPF).' },
+        routine_step_number: 4,
+        application: { ar: 'يوزع على الوجه للحصول على تغطية متساوية، ويجب الالتزام بـ <b class="glossary-term" onclick="openGlossary(\'two_finger_rule\')">قاعدة الإصبعين</b> لضمان فعالية عامل الحماية SPF 30.', en: 'Distribute over face for even coverage, and adhere to the <b class="glossary-term" onclick="openGlossary(\'two_finger_rule\')">Two-Finger Rule</b> to ensure SPF 30 efficacy.' },
+        layering: { 
+            do_not_mix_with: { ar: ['كريمات الأساس الثقيلة جداً (تفقد مظهر النضارة).'], en: ['Very heavy foundations (loses the radiance effect).'] }, 
+            best_mixed_with: { ar: ['كريم أوبتيم-آيز لمحيط العين.'], en: ['Optim-Eyes cream for eye contour.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'البشرة الباهتة، اللون غير الموحد، نقص الإشراقة، والحاجة لتغطية خفيفة نهارية مع حماية.', en: 'Dull skin, uneven tone, lack of radiance, and need for light daytime coverage with protection.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'يتميز بلون وردي خفيف يتغير ليطابق لون البشرة. مخصص للبالغين 18+.', en: 'Features a light pink tint that transforms to match skin tone. For adults 18+.' }
+    }
+});
+
+// [3] FILORGA SKIN PREP MICELLAR SOLUTION 400 ML
+window.deepProductsList.push({
+    id: 'fil_skin_prep_micellar', brandId: 'filorga', familyId: 'skin_prep', brand: 'Filorga',
+    name: { ar: 'سكين-بريب محلول ميسيلار', en: 'Skin Prep Micellar Solution' }, image: "", potency: 1, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي (يمنع تجريد دهون البشرة اللازمة للحفاظ على مرونتها المضادة للتجاعيد)', en: 'Physiological (Prevents stripping skin lipids necessary for anti-wrinkle elasticity)' },
+        mechanism: { 
+            ar: 'محلول ميسيلار غني بمواد مرطبة ومهدئة (تريهالوز) يعمل كمنظف مضاد للشيخوخة، يزيل المكياج تماماً دون التأثير على التوازن المائي للجلد.', 
+            en: 'Micellar solution enriched with hydrating and soothing actives (Trehalose) acting as an anti-aging cleanser, removing makeup without affecting skin water balance.' 
+        },
+        patient_benefit: { 
+            ar: 'ينظف الوجه والعينين بعمق، يزيل المكياج المقاوم للماء، ويترك البشرة مرطبة وجاهزة لاستقبال العلاجات المضادة للتجاعيد.', 
+            en: 'Deeply cleanses face and eyes, removes waterproof makeup, and leaves skin hydrated and prepped for anti-wrinkle treatments.' 
+        },
+        active_ingredients: [
+            { name: 'Micelles', concentration: 'Active | فعال', role: { ar: 'التقاط الشوائب والدهون بلطف.', en: 'Gently capturing impurities and sebum.' } },
+            { name: 'Trehalose', concentration: 'Hydrating | مرطب', role: { ar: 'حماية الخلايا من الجفاف والاحتفاظ بالماء.', en: 'Protecting cells from dehydration and retaining water.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'تنظيف يومي يمنع جفاف وشد البشرة المسرع لظهور التجاعيد السطحية.', en: 'Daily cleansing preventing skin dryness and tightness that accelerates superficial wrinkles.' },
+        step_in_routine: { ar: 'الخطوة الأولى في تحضير البشرة.', en: 'First step in skin preparation.' },
+        routine_step_number: 1,
+        application: { ar: 'يُبلل قطن نظيف ويُمسح الوجه والعينين بطريقة <b class="glossary-term" onclick="openGlossary(\'waterless_cleansing\')">التنظيف الجاف</b>. لا يتطلب الشطف.', en: 'Soak a cotton pad and wipe face and eyes using <b class="glossary-term" onclick="openGlossary(\'waterless_cleansing\')">Waterless Cleansing</b>. No rinsing required.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف للعينين.'], en: ['Harsh rubbing of the eyes.'] }, 
+            best_mixed_with: { ar: ['غسول فيلورجا الرغوي (لتطبيق <b class="glossary-term" onclick="openGlossary(\'double_cleansing\')">التنظيف المزدوج</b>).'], en: ['Filorga Foam Cleanser (to apply <b class="glossary-term" onclick="openGlossary(\'double_cleansing\')">Double Cleansing</b>).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'إزالة المكياج، التنظيف اليومي للشوائب، والتحضير للروتين المضاد للشيخوخة.', en: 'Makeup removal, daily impurity cleansing, and prepping for anti-aging routine.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'مُعزز بخصائص مرطبة تمنع إحساس الشد بعد التنظيف. مخصص للبالغين 18+.', en: 'Enhanced with hydrating properties preventing tightness post-cleansing. For adults 18+.' }
+    }
+});
+
+// [4] FILORGA AGE PURIFY FLUID 50 ML
+window.deepProductsList.push({
+    id: 'fil_age_purify_fluid', brandId: 'filorga', familyId: 'age_purify', brand: 'Filorga',
+    name: { ar: 'إيدج-بيوريفاي فلويد (سائل التجاعيد والحبوب)', en: 'Age-Purify Double Correction Fluid' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'حامضي قليلاً (للسماح لمركب الأحماض الخمسة بالتقشير الفعال للزهم المتصلب والتجاعيد السطحية)', en: 'Slightly Acidic (To allow the 5-acid complex to effectively exfoliate hardened sebum and surface wrinkles)' },
+        mechanism: { 
+            ar: 'علاج مزدوج يدمج <b class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</b> لملء التجاعيد و <b class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</b> لتقشير الخلايا وتنظيم الإفرازات الدهنية، مع حماية ضد البكتيريا.', 
+            en: 'Dual treatment integrating <b class="glossary-term" onclick="openGlossary(\'hyaluro_youth\')">Hyaluro-Youth CX</b> to plump wrinkles and <b class="glossary-term" onclick="openGlossary(\'dermo_rescue\')">Dermo-Rescue CX</b> to exfoliate cells and regulate sebum, with anti-bacterial protection.' 
+        },
+        patient_benefit: { 
+            ar: 'يشد البشرة ويملأ الخطوط بينما يعالج اللمعان، المسام الواسعة، والبثور النشطة في نفس الوقت.', 
+            en: 'Firms and plumps lines while simultaneously treating shine, enlarged pores, and active breakouts.' 
+        },
+        active_ingredients: [
+            { name: '5 Micro-peeling Acids (AHA/BHA/PHA)', concentration: 'Active | فعال', role: { ar: 'تجديد السطح وإزالة الانسدادات الدهنية.', en: 'Surface renewal and removing sebum clogs.' } },
+            { name: 'Zinc + Exopolysaccharide', concentration: 'Purifying | منقي', role: { ar: 'تقليل الدهون ومنع التصاق بكتيريا حب الشباب.', en: 'Reducing sebum and preventing acne bacteria adhesion.' } },
+            { name: 'Hyaluronic Acid + Peptides', concentration: 'Plumping | ممتلئ', role: { ar: 'محاربة التجاعيد وترميم حجم البشرة.', en: 'Fighting wrinkles and restoring skin volume.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'إزالة فورية للمعان. تصحيح ملحوظ لحجم المسام وعمق التجاعيد مع علاج الحبوب خلال 4 إلى 8 أسابيع.', en: 'Instant shine removal. Noticeable correction of pore size and wrinkle depth with acne clearing in 4 to 8 weeks.' },
+        step_in_routine: { ar: 'كريم المعالجة والترطيب الأساسي.', en: 'Core treatment and hydration cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يوضع على كامل الوجه. يعطي تأثير <b class="glossary-term" onclick="openGlossary(\'primer_effect\')">تأثير البرايمر</b> مما يجعله قاعدة غير لامعة لمنع انسداد المسام بالمكياج.', en: 'Apply to entire face. Gives a <b class="glossary-term" onclick="openGlossary(\'primer_effect\')">Primer Effect</b> making it a matte base preventing pores from clogging with makeup.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات إضافية في نفس الروتين (قد تسبب تهيج مفرط).'], en: ['Additional exfoliants in the same routine (may cause excessive irritation).'] }, 
+            best_mixed_with: { ar: ['سيروم Age-Purify Intensive.'], en: ['Age-Purify Intensive Serum.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'حب الشباب المتأخر (Adult Acne)، التجاعيد الأولى، المسام الواسعة، واللمعان.', en: 'Adult acne, first wrinkles, enlarged pores, and shine.' },
+        pregnancy_safe: false, sun_sensitivity: true, child_safe: false,
+        notes: { ar: 'قوام سائل (Fluid) مطفي خفيف جداً. مخصص للبالغين الذين يعانون من البثور والتجاعيد معاً.', en: 'Ultra-light mattifying fluid texture. Dedicated for adults suffering from both breakouts and wrinkles.' }
+    }
+});
+
+// [5] FILORGA HYDRA HYAL CREAM 50 ML
+window.deepProductsList.push({
+    id: 'fil_hydra_hyal_cream', brandId: 'filorga', familyId: 'hydra_hyal', brand: 'Filorga',
+    name: { ar: 'هيدرا-هيال كريم (مرطب هيالورونيك مكثف)', en: 'Hydra-Hyal Hydrating Plumping Cream' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (يمنع تفكك جزيئات الهيالورونيك المغلفة أثناء اختراقها الأدمة)', en: 'Balanced (Prevents degradation of encapsulated HA molecules during dermal penetration)' },
+        mechanism: { 
+            ar: 'يحتوي على 5 أنواع من حمض الهيالورونيك لترطيب البشرة من السطح حتى أعمق الطبقات، مع مستخلص السوفورا جابونيكا لمكافحة شيخوخة الأنسجة.', 
+            en: 'Contains 5 types of HA to hydrate skin from surface to deepest layers, with Sophora Japonica extract to combat tissue aging.' 
+        },
+        patient_benefit: { 
+            ar: 'يوفر ترطيباً عميقاً، يملأ الخطوط الرفيعة الناتجة عن الجفاف، ويعيد الحجم والإشراقة للبشرة المترهلة والفاقدة للماء.', 
+            en: 'Provides deep hydration, plumps dehydration fine lines, and restores volume and radiance to sagging and dehydrated skin.' 
+        },
+        active_ingredients: [
+            { name: '5 Types of Hyaluronic Acid', concentration: 'Intense | مكثف', role: { ar: 'ترطيب متعدد الطبقات ونفخ الخطوط.', en: 'Multi-layer hydration and line plumping.' } },
+            { name: 'Sophora Japonica Extract', concentration: 'Antioxidant | مضاد أكسدة', role: { ar: 'حماية حمض الهيالورونيك الطبيعي من التكسر.', en: 'Protecting natural HA from degradation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'نفخ فوري لسطح الجلد وترطيب مكثف. يدعم امتلاء الخطوط والتجاعيد بشكل ملحوظ خلال 28 يوماً.', en: 'Instant surface plumping and intense hydration. Visibly supports line and wrinkle filling in 28 days.' },
+        step_in_routine: { ar: 'كريم الترطيب.', en: 'Hydrating cream.' },
+        routine_step_number: 3,
+        application: { ar: 'يُدلك على الوجه والرقبة على بشرة ندية ليعمل الحمض كـ <b class="glossary-term" onclick="openGlossary(\'moisture_magnet\')">مغناطيس للرطوبة</b> ويحبس الماء في الخلايا.', en: 'Massage onto face and neck on damp skin to allow the acid to act as a <b class="glossary-term" onclick="openGlossary(\'moisture_magnet\')">Moisture Magnet</b> locking water into cells.' },
+        layering: { 
+            do_not_mix_with: { ar: ['لا يوجد تعارض.'], en: ['No contraindications.'] }, 
+            best_mixed_with: { ar: ['سيروم Hydra-Hyal.', 'أي مكونات نشطة قاسية للحد من جفافها كحاجز حماية.'], en: ['Hydra-Hyal Serum.', 'Any harsh actives to buffer their dryness as a protective barrier.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الجفاف الشديد، الخطوط الرفيعة المرتبطة بنقص الماء، وفقدان الحجم الطبيعي للوجه.', en: 'Severe dehydration, water-loss fine lines, and loss of natural facial volume.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'قوام كريمي ناعم، مناسب للبشرة العادية إلى الجافة لدى البالغين.', en: 'Smooth creamy texture, suitable for normal to dry adult skin.' }
+    }
+});
+
+// [6] FILORGA TIME-FILLER NIGHT 5XP CREAM 50 ML
+window.deepProductsList.push({
+    id: 'fil_time_filler_night', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر نايت 5XP (كريم التجاعيد الليلي)', en: 'Time-Filler Night 5XP Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن (مريح جداً للجلد لضمان التجديد الخلوي أثناء النوم دون تحفيز الالتهاب)', en: 'Balanced (Very comfortable to ensure cellular renewal during sleep without triggering inflammation)' },
+        mechanism: { 
+            ar: 'يحفز تجديد الخلايا ويمنع احتباس السوائل الذي يسبب انتفاخ الوجه وتجاعيد النوم عبر <b class="glossary-term" onclick="openGlossary(\'express_recover\')">مركب التعافي السريع</b>.', 
+            en: 'Stimulates cell renewal and prevents fluid retention causing morning puffiness and sleep wrinkles via the <b class="glossary-term" onclick="openGlossary(\'express_recover\')">Express-Recover Complex</b>.' 
+        },
+        patient_benefit: { 
+            ar: 'يصحح جميع أنواع التجاعيد العميقة والسطحية أثناء النوم، ويمنع خطوط الوسادة والانتفاخات الصباحية.', 
+            en: 'Corrects all deep and surface wrinkles during sleep, preventing pillow lines and morning puffiness.' 
+        },
+        active_ingredients: [
+            { name: 'Hexapeptide + NCEF', concentration: 'Relaxing | مرخي', role: { ar: 'إرخاء عضلات الوجه الدقيقة أثناء النوم لتقليل الخطوط.', en: 'Relaxing facial micro-muscles during sleep to reduce lines.' } },
+            { name: 'Passion Fruit Extract', concentration: 'Active | فعال', role: { ar: 'تحفيز التصريف اللمفاوي الليلي للسوائل المحتبسة.', en: 'Stimulating nighttime lymphatic drainage of trapped fluids.' } },
+            { name: 'Gluconolactone (PHA)', concentration: 'Micro-peeling', role: { ar: 'تجديد سطح الجلد وتنعيمه بلطف بالغ.', en: 'Surface renewal and gentle smoothing.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'مرة واحدة مساءً.', en: 'Once daily PM.' },
+        expected_duration: { ar: 'وجه مشدود وأقل انتفاخاً من الصباح الأول. تصحيح فعلي وعميق لتجاعيد التعبير والجفاف خلال 8 أسابيع.', en: 'Firmer and less puffy face from the 1st morning. Actual deep correction of expression and dehydration wrinkles in 8 weeks.' },
+        step_in_routine: { ar: 'الخطوة الأخيرة في الروتين الليلي.', en: 'Last step in the night routine.' },
+        routine_step_number: 4,
+        application: { ar: 'يُدلك بلطف على كامل الوجه والرقبة، ويعمل كـ <b class="glossary-term" onclick="openGlossary(\'slugging\')">مرهم عازل (Slugging)</b> ليلي رقيق يغلف البشرة لمنع تبخر الماء وتسهيل الترميم.', en: 'Massage gently onto entire face and neck, acting as a thin PM <b class="glossary-term" onclick="openGlossary(\'slugging\')">Occlusive Ointment (Slugging)</b> enveloping skin to prevent water loss and facilitate repair.' },
+        layering: { 
+            do_not_mix_with: { ar: ['مقشرات قوية جداً (لأنه يحتوي بالفعل على مقشرات أحماض PHA لطيفة).'], en: ['Very strong exfoliants (as it already contains mild PHA exfoliants).'] }, 
+            best_mixed_with: { ar: ['سيروم Time-Filler Intensive.', 'NCEF Shot.'], en: ['Time-Filler Intensive Serum.', 'NCEF Shot.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تجاعيد النوم، تورم الوجه الصباحي، علامات الإرهاق، وجميع أنواع التجاعيد العميقة والسطحية.', en: 'Sleep wrinkles, morning facial puffiness, signs of fatigue, and all deep/surface wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'قوام جل-كريم ناعم يغلف البشرة كقناع ليلي. مخصص للبالغين 18+ فقط للعمليات التصحيحية للشيخوخة.', en: 'Smooth gel-cream texture enveloping skin like a PM mask. Dedicated for adults 18+ only for anti-aging correction.' }
+    }
+});
+
+// [7] FILORGA TIME-FILLER EYES CREAM 15 ML
+window.deepProductsList.push({
+    id: 'fil_time_filler_eyes', brandId: 'filorga', familyId: 'time_filler', brand: 'Filorga',
+    name: { ar: 'تايم-فيلر آيز (كريم تجاعيد العين والرموش)', en: 'Time-Filler Eyes Cream' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً (مطابق لدرجة حموضة الأغشية المخاطية للعين لمنع تدميعها)', en: 'Physiologically Balanced (Matches ocular mucous membranes pH to prevent tearing)' },
+        mechanism: { 
+            ar: 'يستهدف تجاعيد العين بـ <b class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">ببتيدات البوتوكس</b>، ويعالج التجويف بحمض هيالورونيك مغلف، ويشد الجفون العلوية بمستخلص نباتي، ويكثف الرموش بمادة (Matrikine).', 
+            en: 'Targets eye wrinkles with <b class="glossary-term" onclick="openGlossary(\'botox_like_peptide\')">Botox-like peptides</b>, treats hollows with encapsulated HA, lifts upper eyelids with botanical extract, and densifies lashes with Matrikine.' 
+        },
+        patient_benefit: { 
+            ar: 'يملأ التجاعيد الغائرة وتجاعيد "قدم الغراب"، يشد الجفون العلوية المترهلة، ويقوي الرموش الضعيفة ليعطي مظهراً مفتوحاً للعين.', 
+            en: 'Plumps hollow and "crow\'s feet" wrinkles, lifts sagging upper eyelids, and strengthens weak lashes for an open-eye look.' 
+        },
+        active_ingredients: [
+            { name: 'Tripeptide', concentration: 'Relaxing | مرخي عضلات', role: { ar: 'تنعيم تجاعيد قدم الغراب المحيطة بالعين.', en: 'Smoothing crow\'s feet wrinkles around the eye.' } },
+            { name: 'Matrikine + Provitamin B5', concentration: 'Active | فعال', role: { ar: 'تحفيز نمو وتقوية بصيلات الرموش الرقيقة.', en: 'Stimulating growth and strengthening delicate lash follicles.' } },
+            { name: 'Silk Tree Extract', concentration: 'Lifting | شد', role: { ar: 'رفع الجفن العلوي المترهل ومحاربة التجعد السطحي.', en: 'Lifting sagging upper eyelids and fighting surface crinkling.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'ترطيب وشعور فوري بالشد. تحسن واضح في التجاعيد الدقيقة وكثافة الرموش بعد 8 أسابيع.', en: 'Instant hydration and lifting sensation. Visible improvement in fine lines and lash density after 8 weeks.' },
+        step_in_routine: { ar: 'عناية محيط العين (قبل كريم الوجه).', en: 'Eye contour care (before face cream).' },
+        routine_step_number: 2,
+        application: { ar: 'يُطبق باستخدام <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">التربيت اللطيف</b> حول العينين، وعلى الجفن العلوي، وحتى جذور الرموش برفق شديد.', en: 'Apply using <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">Gentle Patting</b> around eyes, on the upper eyelid, and down to lash roots very gently.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الفرك العنيف للعين أو استخدام مقشرات قاسية بالقرب منها.'], en: ['Harsh eye rubbing or using strong exfoliants near it.'] }, 
+            best_mixed_with: { ar: ['-'], en: ['-'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'تجاعيد محيط العين، ترهل الجفون العلوية، تجاويف العين الغائرة، وضعف الرموش وتكسرها.', en: 'Eye contour wrinkles, sagging upper eyelids, hollow sunken eyes, and weak breaking lashes.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'تم اختباره من قبل أطباء العيون. لا يسيل داخل العين. مخصص للبالغين كعلاج للشيخوخة.', en: 'Ophthalmologically tested. Does not migrate into the eye. For adults as an anti-aging treatment.' }
+    }
+});
+
+// [8] FILORGA OPTIM EYES CREAM 15 ML
+window.deepProductsList.push({
+    id: 'fil_optim_eyes', brandId: 'filorga', familyId: 'optim_eyes', brand: 'Filorga',
+    name: { ar: 'أوبتيم-آيز (كريم الهالات والانتفاخات)', en: 'Optim-Eyes Intensive Revitalizing 3-in-1' }, image: "", potency: 2, 
+    pharmacology: {
+        ph_level: { ar: 'فسيولوجي (مطابق لتكوين الأنسجة الرقيقة حول العين لمنع الحساسية)', en: 'Physiological (Matches the delicate eye tissue composition to prevent allergies)' },
+        mechanism: { 
+            ar: 'يستخدم تقنية <b class="glossary-term" onclick="openGlossary(\'eye_impact_tech\')">Eye-Impact</b> لتفكيك التصبغات الدموية والميلانينية معاً، بالإضافة إلى ببتيدات تصريف السوائل لتقليل الانتفاخ المحتبس، و NCEF للتنعيم.', 
+            en: 'Uses <b class="glossary-term" onclick="openGlossary(\'eye_impact_tech\')">Eye-Impact</b> tech to dismantle vascular and melanin pigments, plus draining peptides for trapped fluid puffiness, and NCEF for smoothing.' 
+        },
+        patient_benefit: { 
+            ar: 'يمحو الهالات السوداء بأنواعها، يخفف الانتفاخات الصباحية وأكياس المياه فوراً، وينعش مظهر العين المتعبة والمرهقة.', 
+            en: 'Erases all types of dark circles, instantly reduces morning puffiness and water bags, and refreshes the look of tired, exhausted eyes.' 
+        },
+        active_ingredients: [
+            { name: 'Chrysin + N-hydroxysuccinimide', concentration: 'Active | فعال', role: { ar: 'إزالة التصبغ الدموي (الهالات الزرقاء/الحمراء المتجمعة).', en: 'Eliminating vascular pigmentation (pooled blue/red circles).' } },
+            { name: 'Hesperidin + Peptides', concentration: 'Draining | مصِرف', role: { ar: 'تصريف السوائل اللمفاوية وتقليل الأكياس المائية تحت العين.', en: 'Draining lymphatic fluids and reducing under-eye water bags.' } },
+            { name: 'Hyaluronic Acid + NCEF', concentration: 'Revitalizing | مجدد', role: { ar: 'ترطيب عميق وتنعيم خطوط الإرهاق الدقيقة.', en: 'Deep hydration and smoothing fine fatigue lines.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'انتعاش وتصريف للسوائل فور وضعه. يقلل الهالات المستعصية بشكل دائم خلال 4 إلى 8 أسابيع.', en: 'Instant refreshment and fluid drainage. Permanently reduces stubborn circles within 4 to 8 weeks.' },
+        step_in_routine: { ar: 'عناية محيط العين.', en: 'Eye contour care.' },
+        routine_step_number: 2,
+        application: { ar: 'يُربت برفق من الزاوية الداخلية للعين إلى الخارج. يُنصح بحفظه في الثلاجة واستخدامه لعمل مساج <b class="glossary-term" onclick="openGlossary(\'lymphatic_drainage\')">التصريف الليمفاوي</b> لزيادة مفعول التبريد والشد.', en: 'Dab gently from the inner corner outwards. Recommended to keep in the fridge and use for <b class="glossary-term" onclick="openGlossary(\'lymphatic_drainage\')">Lymphatic Drainage</b> massage to enhance cooling and lifting.' },
+        layering: { 
+            do_not_mix_with: { ar: ['-'], en: ['-'] }, 
+            best_mixed_with: { ar: ['غسول Optim-Eyes Lotion لإزالة مكياج العين دون تهيج.'], en: ['Optim-Eyes Lotion for makeup removal without irritation.'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'الهالات السوداء (الوعائية الدموية والمصبوغة)، الانتفاخات وأكياس العين، علامات التعب والإرهاق الشديد.', en: 'Dark circles (vascular & pigmented), puffiness and eye bags, signs of severe fatigue and exhaustion.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'قوام منعش يمتص بسرعة ولا يسبب <b class="glossary-term" onclick="openGlossary(\'pilling\')">تكتل (Pilling)</b> للكونسيلر. للبالغين 18+.', en: 'Refreshing texture absorbs quickly and causes no concealer <b class="glossary-term" onclick="openGlossary(\'pilling\')">Pilling</b>. For adults 18+.' }
+    }
+});
+
+// [9] FILORGA NCEF-REVERSE EYE CREAM 15 ML
+window.deepProductsList.push({
+    id: 'fil_ncef_reverse_eyes', brandId: 'filorga', familyId: 'ncef', brand: 'Filorga',
+    name: { ar: 'NCEF-ريفرس آيز (كريم التجديد الشامل للعين)', en: 'NCEF-Reverse Eyes Supreme Multi-Correction' }, image: "", potency: 3, 
+    pharmacology: {
+        ph_level: { ar: 'متوازن فسيولوجياً (لحماية الأنسجة الرقيقة وضمان النفاذية العميقة لمواد الميزوثيرابي)', en: 'Physiologically Balanced (To protect delicate tissues and ensure deep permeability of mesotherapy agents)' },
+        mechanism: { 
+            ar: 'يحتوي على أعلى تركيز من <b class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</b> للعين، مدمج بتقنية (Genius-Vector) لتوصيل 5 مكونات نشطة (HA، كولاجين، فيتامين C، إسسين، وكافيين) إلى عمق الأدمة.', 
+            en: 'Contains the highest concentration of <b class="glossary-term" onclick="openGlossary(\'ncef_complex\')">NCEF</b> for eyes, combined with Genius-Vector tech to deliver 5 actives (HA, Collagen, Vit C, Escin, Caffeine) deep into the dermis.' 
+        },
+        patient_benefit: { 
+            ar: 'تصحيح شامل 5 في 1: يعالج التجاعيد، الهالات السوداء، الانتفاخات، الترهل الجفني، والبهتان في منتج واحد فائق الفعالية.', 
+            en: 'Global 5-in-1 correction: treats wrinkles, dark circles, puffiness, eyelid sagging, and dullness in one supremely effective product.' 
+        },
+        active_ingredients: [
+            { name: 'NCEF + Collagen', concentration: 'Supreme | فائق', role: { ar: 'إعادة بناء أنسجة محيط العين وشد الترهل بقوة.', en: 'Rebuilding eye contour tissues and powerfully lifting sagging.' } },
+            { name: 'Caffeine + Escin', concentration: 'Active | فعال', role: { ar: 'تنشيط الدورة الدموية الكسولة لإنهاء الهالات والانتفاخ.', en: 'Stimulating sluggish circulation to end circles and puffiness.' } },
+            { name: 'Vitamin C', concentration: 'Brightening | مفتح', role: { ar: 'إشراقة فورية ومحاربة التصبغ المتقدم.', en: 'Instant radiance and fighting advanced pigmentation.' } }
+        ]
+    },
+    clinical_usage: {
+        frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
+        expected_duration: { ar: 'ترطيب وتنعيم فوري. تجديد كامل لخلايا محيط العين وشد للترهلات المتقدمة خلال 8 إلى 12 أسبوعاً.', en: 'Instant hydration and smoothing. Full eye contour cell renewal and lifting of advanced sagging in 8 to 12 weeks.' },
+        step_in_routine: { ar: 'علاج محيط العين المكثف المضاد للشيخوخة.', en: 'Intensive anti-aging eye contour treatment.' },
+        routine_step_number: 2,
+        application: { ar: 'يوضع يومياً حول العينين بـ <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">التربيت اللطيف</b> حتى يمتص تماماً لمنع إرهاق الجلد والتجاعيد الميكانيكية.', en: 'Apply daily around eyes with <b class="glossary-term" onclick="openGlossary(\'patting_tech\')">Gentle Patting</b> until absorbed to prevent skin fatigue and mechanical wrinkles.' },
+        layering: { 
+            do_not_mix_with: { ar: ['الريتينول المركز لمحيط العين (لتجنب التحسس وتدمير الجلد السطحي).'], en: ['Concentrated eye contour retinol (to avoid sensitization and surface skin damage).'] }, 
+            best_mixed_with: { ar: ['سيروم NCEF-Shot للوجه (لبروتوكول تجديد شامل).'], en: ['NCEF-Shot face serum (for a global renewal protocol).'] } 
+        }
+    },
+    precautions: {
+        indications: { ar: 'علامات الشيخوخة المتقدمة حول العين، الترهل الجلدي، الهالات العنيدة، والتجاعيد المتعددة والعميقة.', en: 'Advanced aging signs around eyes, skin sagging, stubborn dark circles, and multiple deep wrinkles.' },
+        pregnancy_safe: true, sun_sensitivity: false, child_safe: false,
+        notes: { ar: 'تركيبة غنية، تعتبر الأقوى كعلاج شامل ومركز للعين في براند فيلورجا. مخصص للبالغين 18+ لمعالجة الشيخوخة.', en: 'Rich formula, considered the most potent global and concentrated eye treatment in Filorga. For adults 18+ anti-aging.' }
+    }
+});
