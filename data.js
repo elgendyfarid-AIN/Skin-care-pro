@@ -1,5 +1,41 @@
 // ==========================================
-// 🧪 3. المنتجات السريرية لـ La Roche-Posay (المجموعة 1 من 1 إلى 6)
+// 🏥 Skin Care Pro - Clinical Database
+// 🟦 Brand: La Roche-Posay
+// ==========================================
+
+// 1. تهيئة المصفوفات الأساسية
+window.brandsList = window.brandsList || [];
+window.deepProductsList = window.deepProductsList || [];
+window.glossaryDict = window.glossaryDict || {};
+
+// ==========================================
+// 📚 2. القاموس الطبي (Glossary) - La Roche-Posay
+// ==========================================
+
+window.glossaryDict['c_acnes'] = { title: { ar: 'بكتيريا C.acnes 🦠', en: 'C.acnes Bacteria 🦠' }, desc: { ar: 'البكتيريا الرئيسية المسببة لحب الشباب. تعيش داخل المسام وتتغذى على الإفرازات الدهنية، مما يسبب الالتهاب والاحمرار.', en: 'The primary bacteria responsible for acne. It lives inside the pores and feeds on sebum, causing inflammation.' } };
+window.glossaryDict['biofilms'] = { title: { ar: 'الأغشية الحيوية (Biofilms) 🛡️', en: 'Biofilms 🛡️' }, desc: { ar: 'درع واقي تبنيه البكتيريا حول نفسها لحماية نفسها من العلاجات والمضادات. تكسير هذا الدرع يعني القضاء على الحبوب من جذورها.', en: 'A protective shield built by bacteria to defend against treatments. Breaking this shield eliminates breakouts from the root.' } };
+window.glossaryDict['pih'] = { title: { ar: 'التصبغات (PIH) 🟤', en: 'PIH (Hyperpigmentation) 🟤' }, desc: { ar: 'البقع الداكنة أو البنية التي تتركها الحبة بعد أن تجف وتشفى، وتحدث نتيجة زيادة إنتاج الميلانين بسبب الالتهاب.', en: 'Post-Inflammatory Hyperpigmentation: The dark or brown spots left behind after a pimple heals, caused by excess melanin production.' } };
+window.glossaryDict['lha'] = { title: { ar: 'حمض LHA 🧪', en: 'LHA Acid 🧪' }, desc: { ar: 'مُقشر مشتق من حمض الساليسيليك، لكنه ألطف بكثير. يتميز بأنه "محب للدهون" فيخترق المسام ببطء لتنظيفها من الداخل دون تهيج.', en: 'Lipo-Hydroxy Acid: A derivative of Salicylic Acid, but much gentler. Being lipophilic (fat-loving), it slowly penetrates and deeply cleanses pores without irritation.' } };
+window.glossaryDict['keratolytic'] = { title: { ar: 'تحلل القرنية (Keratolytic) 🧹', en: 'Keratolytic Action 🧹' }, desc: { ar: 'عملية إذابة وتقشير الطبقة الخارجية الميتة من الجلد (الكيراتين)، مما يساعد في فتح المسام المسدودة وتنعيم ملمس البشرة.', en: 'The process of dissolving and exfoliating the dead outer layer of the skin (keratin), which helps unclog pores and smooth skin texture.' } };
+window.glossaryDict['aha_bha'] = { title: { ar: 'أحماض AHA و BHA 💧', en: 'AHA & BHA Acids 💧' }, desc: { ar: 'أحماض ألفا هيدروكسي (AHA) تقشر السطح وتوحد اللون، بينما أحماض بيتا هيدروكسي (BHA) تذوب في الدهون لتنظيف المسام من الداخل.', en: 'Alpha Hydroxy Acids (AHA) exfoliate the surface and even tone, while Beta Hydroxy Acids (BHA) are oil-soluble to deep-clean pores.' } };
+window.glossaryDict['microbiome_science'] = { title: { ar: 'علم الميكروبيوم 🧫', en: 'Microbiome Science 🧫' }, desc: { ar: 'توازن البكتيريا النافعة على سطح الجلد. الإخلال بهذا التوازن يؤدي إلى الالتهابات، حب الشباب، أو الإكزيما.', en: 'The balance of beneficial bacteria on the skin surface. Disrupting this balance leads to inflammation, acne, or eczema.' } };
+window.glossaryDict['madecassoside'] = { title: { ar: 'ماديكاسوسيد (Madecassoside) 🌿', en: 'Madecassoside 🌿' }, desc: { ar: 'مستخلص نقي من نبتة سرة الأرض (Centella Asiatica)، يُسرع من التئام الجلد، يهدئ الالتهابات، ويُحفز تجديد الخلايا بقوة.', en: 'A pure extract from Centella Asiatica that accelerates skin healing, soothes inflammation, and powerfully stimulates cell renewal.' } };
+window.glossaryDict['aqua_posae_filiformis'] = { title: { ar: 'أكوا بوزاي فيليفورميس (APF) 🧫', en: 'Aqua Posae Filiformis 🧫' }, desc: { ar: 'مكون نشط حصري من لاروش بوزيه يُزرع في مياهها الحرارية، يعمل على إعادة توازن الميكروبيوم وتقوية حاجز البشرة لمنع نوبات الجفاف الشديد.', en: 'An exclusive active ingredient grown in La Roche-Posay Thermal Water, rebalances the microbiome and strengthens the skin barrier to prevent severe dryness flare-ups.' } };
+
+// ==========================================
+// 🏢 3. العلامات التجارية والعائلات لـ La Roche-Posay
+// ==========================================
+
+window.brandsList.push({
+    id: 'laroche', name: 'La Roche-Posay',
+    families: [
+        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
+        { id: 'cicaplast', name: { ar: 'سيكابلاست (ترميم وحماية الحاجز)', en: 'Cicaplast (Barrier Repair)' } }
+    ]
+});
+
+// ==========================================
+// 🧪 4. المنتجات السريرية لـ La Roche-Posay (المجموعة 1 من 1 إلى 6)
 // ==========================================
 
 // [1] EFFACLAR DUO (+)
