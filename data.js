@@ -196,6 +196,47 @@ window.glossaryDict['mp_lipids'] = {
     }
 };
 
+// --- إضافات التريكات الطبية للقاموس ---
+window.glossaryDict['sandwich_tech'] = {
+    title: { ar: 'تقنية الساندويتش 🥪', en: 'Sandwich Technique 🥪' },
+    desc: { 
+        ar: 'وضع طبقة من مرطب خفيف، ثم وضع المادة الفعالة القوية (كالمقشرات أو الريتينول)، ثم طبقة أخرى من المرطب، وذلك لتقليل الامتصاص السريع ومنع تهيج الحاجز الجلدي.', 
+        en: 'Applying a light moisturizer, then the potent active ingredient (like exfoliants or retinol), followed by another layer of moisturizer to buffer rapid absorption and prevent irritation.' 
+    }
+};
+
+window.glossaryDict['sixty_sec_rule'] = {
+    title: { ar: 'قاعدة الـ 60 ثانية ⏱️', en: '60-Second Rule ⏱️' },
+    desc: { 
+        ar: 'تدليك الغسول العلاجي على البشرة لمدة 60 ثانية كاملة للسماح للمواد الفعالة (مثل الزنك أو حمض الساليسيليك) باختراق المسام والعمل بفعالية قبل شطفها بالماء.', 
+        en: 'Massaging the therapeutic cleanser into the skin for a full 60 seconds to allow active ingredients (like Zinc or Salicylic acid) to penetrate pores and act effectively before rinsing.' 
+    }
+};
+
+window.glossaryDict['skin_cycling'] = {
+    title: { ar: 'تدوير العناية (Skin Cycling) 🔄', en: 'Skin Cycling 🔄' },
+    desc: { 
+        ar: 'جدول عناية مسائي يمتد لـ 4 أيام: ليلة للتقشير، ليلة للريتينول، وليلتين للترطيب والترميم فقط، لتجنب إرهاق الحاجز الجلدي.', 
+        en: 'A 4-night PM skincare schedule: Exfoliation night, Retinol night, followed by two recovery (hydration) nights, to completely avoid compromising the skin barrier.' 
+    }
+};
+
+window.glossaryDict['short_contact'] = {
+    title: { ar: 'العلاج بالاتصال القصير ⏱️', en: 'Short Contact Therapy ⏱️' },
+    desc: { 
+        ar: 'وضع المادة الفعالة القوية (كالأحماض) على البشرة لبضع دقائق فقط ثم غسلها، للحصول على الفائدة وتجنب التهيج أو الحرق الكيميائي.', 
+        en: 'Applying a potent active (like acids) to the skin for just a few minutes then washing it off, to reap the benefits while completely avoiding irritation or chemical burns.' 
+    }
+};
+
+window.glossaryDict['slugging'] = {
+    title: { ar: 'حبس الترطيب (Slugging) 🐌', en: 'Slugging 🐌' },
+    desc: { 
+        ar: 'وضع طبقة سميكة من مرهم عازل (مثل سيكابلاست أو فازلين) كخطوة أخيرة في روتين المساء لحبس الرطوبة ومنع تبخر الماء، وتسريع عملية التئام الجلد أثناء النوم.', 
+        en: 'Applying a thick layer of an occlusive ointment as the final step in the PM routine to lock in moisture, prevent water loss, and accelerate healing overnight.' 
+    }
+};
+
 
 // ==========================================
 // 🏢 2. العلامات التجارية والعائلات لـ La Roche-Posay
@@ -216,7 +257,7 @@ window.brandsList.push({
 
 
 // ==========================================
-// 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 1 إلى 10)
+// 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 1 إلى 6)
 // ==========================================
 
 // [1] EFFACLAR DUO (+)
@@ -224,17 +265,14 @@ window.deepProductsList.push({
     id: 'lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "", potency: 3, 
     pharmacology: {
-        ph_level: { 
-            ar: '5.5 (متوازن مع الغلاف الحمضي للحفاظ على توازن الميكروبيوم ومنع نشاط بكتيريا الحبوب)', 
-            en: '5.5 (Balanced with acid mantle to maintain microbiome and inhibit acne bacteria)' 
-        },
+        ph_level: { ar: '5.5 (متوازن مع الغلاف الحمضي)', en: '5.5 (Balanced with acid mantle)' },
         mechanism: { 
             ar: 'استهداف بكتيريا <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> ومنع تكوين <span class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</span>، مع تقشير دقيق لمنع انسداد المسام وتقليل <span class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</span>.', 
             en: 'Targets <span class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</span> bacteria and prevents the formation of <span class="glossary-term" onclick="openGlossary(\'biofilms\')">Biofilms</span>, with precise micro-exfoliation to prevent clogged pores and reduce <span class="glossary-term" onclick="openGlossary(\'pih\')">PIH</span>.' 
         },
         patient_benefit: { 
-            ar: 'لا يعالج الحبة فحسب، بل يمنع تكونها من الأساس (Anti-relapse). يقطع دورة حياة الحبة الحمراء ويمنعها من التحول إلى بقعة بنية عنيدة بعد جفافها.', 
-            en: 'Does not just treat the pimple, it prevents its formation (Anti-relapse). Stops red pimples from turning into stubborn brown marks.' 
+            ar: 'لا يعالج الحبة فحسب، بل يمنع تكونها من الأساس. يقطع دورة حياة الحبة الحمراء ويمنعها من التحول إلى بقعة بنية عنيدة بعد جفافها.', 
+            en: 'Does not just treat the pimple, it prevents its formation. Stops red pimples from turning into stubborn brown marks.' 
         },
         active_ingredients: [
             { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory, soothes redness.' } },
@@ -243,17 +281,11 @@ window.deepProductsList.push({
         ]
     },
     clinical_usage: {
-        frequency: { ar: 'يُستخدم مرة واحدة مساءً (أو مرتين تدريجياً إذا تحملت البشرة).', en: 'Use once daily PM (or twice gradually if tolerated).' },
-        expected_duration: { 
-            ar: 'يقل الاحمرار خلال 12-24 ساعة. يتطلب كورس متواصل من 4 إلى 8 أسابيع لتنظيف المسام العميقة وتقليل التصبغات.', 
-            en: 'Redness reduces within 12-24h. Requires a 4-8 week continuous course to clear deep pores and reduce pigmentation.' 
-        },
+        frequency: { ar: 'يُستخدم مرة واحدة مساءً (أو مرتين إذا تحملت البشرة).', en: 'Use once daily PM (or twice if tolerated).' },
+        expected_duration: { ar: 'كورس متواصل لا يقل عن 4 أسابيع لتنظيف المسام وتقليل التصبغات بشكل ملموس.', en: 'A continuous course of at least 4 weeks to clear pores and visibly reduce pigmentation.' },
         step_in_routine: { ar: 'خطوة العلاج (بعد الغسول).', en: 'Treatment Step (After cleanser).' },
         routine_step_number: 2,
-        application: { 
-            ar: 'توزع طبقة رقيقة على كامل الوجه، لا يستخدم كنقطة علاجية فقط لضمان تنظيف المسام الخفية التي لم تلتهب بعد.', 
-            en: 'Apply a thin layer over the entire face. Do not use as a spot treatment only, to ensure clearing hidden, uninflamed pores.' 
-        },
+        application: { ar: 'توزع طبقة رقيقة على كامل الوجه، لا يستخدم كنقطة علاجية فقط لضمان تنظيف المسام الخفية.', en: 'Apply a thin layer over the entire face. Do not use as a spot treatment only.' },
         layering: { 
             do_not_mix_with: { ar: ['مقشرات كيميائية قوية (AHA/BHA)', 'الريتينول'], en: ['Strong chemical exfoliants (AHA/BHA)', 'Retinol'] }, 
             best_mixed_with: { ar: ['غسول لطيف', 'مرمّمات الحاجز (Ceramides)'], en: ['Gentle cleansers', 'Barrier repair creams'] } 
@@ -262,10 +294,7 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'حب الشباب الخفيف إلى المتوسط، الرؤوس السوداء، والآثار الحمراء بعد الحبوب.', en: 'Mild to moderate acne, blackheads, and post-acne red marks.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
-        notes: { 
-            ar: '**نصيحة احترافية:** في الأسبوع الأول، قد تشعرين بوخز خفيف. إذا كان الجفاف شديداً، استخدمي <b class="glossary-term" onclick="alert(\'تقنية الساندويتش: وضع طبقة مرطب خفيف، ثم العلاج، ثم طبقة مرطب أخرى لتقليل الامتصاص السريع والتهيج.\')">تقنية الساندويتش</b> مع مرطب خالي من الزيوت.', 
-            en: '**Pro Tip:** Mild tingling in the first week is normal. If dryness is severe, use the <b class="glossary-term" onclick="alert(\'Sandwich Technique: Light moisturizer, then treatment, then moisturizer again to reduce rapid absorption and irritation.\')">Sandwich Technique</b> with an oil-free moisturizer.' 
-        }
+        notes: { ar: 'لتجنب الجفاف والوخز في الأيام الأولى، استخدمي <span class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">تقنية الساندويتش</span> مع مرطب خالي من الزيوت.', en: 'To avoid initial dryness and tingling, use the <span class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">Sandwich Technique</span> with an oil-free moisturizer.' }
     }
 });
 
@@ -274,10 +303,7 @@ window.deepProductsList.push({
     id: 'lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار جل غسول رغوي منقي', en: 'Effaclar Purifying Foaming Gel' }, image: "", potency: 2, 
     pharmacology: {
-        ph_level: { 
-            ar: '5.5 (يحترم الغلاف الحمضي لمنع تجريد البشرة وتجنب رد الفعل الدهني العكسي)', 
-            en: '5.5 (Respects acid mantle to prevent stripping and rebound sebum production)' 
-        },
+        ph_level: { ar: '5.5 (يحترم الغلاف الحمضي)', en: '5.5 (Respects acid mantle)' },
         mechanism: { 
             ar: 'ينظف البشرة بلطف بفضل عوامل التنظيف المختارة للبشرة الحساسة، ويزيل الشوائب والزهم الزائد بفضل الزنك.', 
             en: 'Gently cleanses the skin with agents selected for sensitive skin. Eliminates impurities and excess sebum with Zinc.' 
@@ -293,16 +319,10 @@ window.deepProductsList.push({
     },
     clinical_usage: {
         frequency: { ar: 'مرتين يومياً (صباحاً ومساءً).', en: 'Twice daily (Morning and Evening).' },
-        expected_duration: { 
-            ar: 'استخدام مستمر كجزء من الروتين اليومي الأساسي للحفاظ على نقاء المسام والتحكم باللمعان.', 
-            en: 'Continuous use as part of the daily core routine to maintain clear pores and control shine.' 
-        },
+        expected_duration: { ar: 'يمكن الاستمرار عليه كجزء من الروتين اليومي.', en: 'Can be continued as part of the daily routine.' },
         step_in_routine: { ar: 'الخطوة 1 (التنظيف).', en: 'Step 1 (Cleansing).' },
         routine_step_number: 1,
-        application: { 
-            ar: 'لضمان أقصى فعالية للزنك، يُرغى بماء فاتر ويُدلك بلطف لمدة <b class="glossary-term" onclick="alert(\'قاعدة الـ 60 ثانية: تتيح للمواد الفعالة مثل الزنك الوقت الكافي للعمل داخل المسام قبل شطفها.\')">60 ثانية كاملة</b>، ثم يُشطف بماء بارد لغلق المسام.', 
-            en: 'For maximum Zinc efficacy, lather with lukewarm water and massage gently for a full <b class="glossary-term" onclick="alert(\'60-Second Rule: Allows active ingredients like Zinc enough time to work inside the pores before rinsing.\')">60 seconds</b>, then rinse with cool water.' 
-        },
+        application: { ar: 'يُرغى بماء فاتر ويُدلك بلطف مطبقاً <span class="glossary-term" onclick="openGlossary(\'sixty_sec_rule\')">قاعدة الـ 60 ثانية</span>، ثم يُشطف بماء بارد لغلق المسام.', en: 'Lather with lukewarm water and massage gently applying the <span class="glossary-term" onclick="openGlossary(\'sixty_sec_rule\')">60-Second Rule</span>, then rinse with cool water to close pores.' },
         layering: { 
             do_not_mix_with: { ar: ['فرش التنظيف القاسية (تُهيج الغدد الدهنية).'], en: ['Harsh cleansing brushes (irritates sebaceous glands).'] }, 
             best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مضادات الأكسدة نهاراً'], en: ['Effaclar Duo (+)', 'Daytime Antioxidants'] } 
@@ -311,10 +331,7 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'البشرة الدهنية، المعرضة لحب الشباب، واللمعان الزائد.', en: 'Oily, acne-prone skin, and excess shine.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: false, 
-        notes: { 
-            ar: '**توجيه صيدلاني:** المبالغة في غسل البشرة الدهنية لأكثر من مرتين يومياً يؤدي إلى نتيجة عكسية؛ حيث تُفرز الغدد دهوناً مضاعفة لتعويض الجفاف.', 
-            en: '**Pharma Tip:** Over-washing oily skin more than twice a day backfires; glands produce double the sebum to compensate for dryness.' 
-        }
+        notes: { ar: 'المبالغة في غسل البشرة الدهنية لأكثر من مرتين يومياً يؤدي إلى نتيجة عكسية؛ حيث تُفرز الغدد دهوناً مضاعفة لتعويض الجفاف.', en: 'Over-washing oily skin more than twice a day backfires; glands produce double the sebum to compensate for dryness.' }
     }
 });
 
@@ -323,17 +340,14 @@ window.deepProductsList.push({
     id: 'lrp_effaclar_serum', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار سيروم التقشير المركز', en: 'Effaclar Ultra Concentrated Serum' }, image: "", potency: 3, 
     pharmacology: {
-        ph_level: { 
-            ar: 'أقل من 4.0 (حامضي لضمان نشاط وفعالية الأحماض في تذويب الروابط الخلوية)', 
-            en: 'Below 4.0 (Acidic to ensure acid activity in dissolving cellular bonds)' 
-        },
+        ph_level: { ar: 'حامضي للتقشير', en: 'Acidic for exfoliation' },
         mechanism: { 
             ar: 'مركب ثلاثي الأحماض <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> يعمل بآلية تآزرية لتقشير الخلايا الميتة السطحية وفتح المسام العميقة.', 
             en: 'A tri-acid complex <span class="glossary-term" onclick="openGlossary(\'aha_bha\')">(AHA/BHA/LHA)</span> works synergistically to exfoliate surface dead cells and unclog deep pores.' 
         },
         patient_benefit: { 
-            ar: 'يستهدف حب الشباب لدى البالغين الذي يترك تصبغات وتجاعيد دقيقة معاً. يوفر تأثيراً مشابهاً للتقشير الكيميائي الخفيف في العيادة.', 
-            en: 'Targets adult acne which leaves pigmentation and fine wrinkles together. Provides an effect similar to a light in-clinic chemical peel.' 
+            ar: 'يستهدف حب الشباب لدى البالغين الذي يترك تصبغات وتجاعيد دقيقة معاً. يوفر تأثيراً مشابهاً للتقشير الكيميائي الخفيف.', 
+            en: 'Targets adult acne which leaves pigmentation and fine wrinkles together. Provides an effect similar to a light chemical peel.' 
         },
         active_ingredients: [
             { name: 'Glycolic Acid (AHA)', concentration: '3.5%', role: { ar: 'تقشير سطحي وتخفيف العلامات.', en: 'Surface exfoliation and fading marks.' } },
@@ -344,16 +358,10 @@ window.deepProductsList.push({
     },
     clinical_usage: {
         frequency: { ar: 'مرة واحدة يومياً (مساءً فقط).', en: 'Once daily (PM only).' },
-        expected_duration: { 
-            ar: 'يستخدم ككورس علاجي من 4 إلى 8 أسابيع لتقليل الخطوط الدقيقة وتلاشي التصبغات المستعصية.', 
-            en: 'Used as a 4 to 8-week treatment course to reduce fine lines and fade stubborn pigmentation.' 
-        },
+        expected_duration: { ar: 'كورس علاج من 4 إلى 8 أسابيع لتخفيف التصبغات وتحسين الملمس.', en: 'Treatment course of 4 to 8 weeks to fade pigmentation and improve texture.' },
         step_in_routine: { ar: 'خطوة السيروم (قبل المرطب).', en: 'Serum step (Before moisturizer).' },
         routine_step_number: 2,
-        application: { 
-            ar: 'توضع قطرات على الوجه مع تجنب محيط العينين. يُفضل إدخاله ضمن روتين <b class="glossary-term" onclick="alert(\'تدوير العناية (Skin Cycling): تخصيص ليالي للتقشير وأخرى للترطيب لتجنب إرهاق الحاجز الجلدي.\')">تدوير العناية</b> في ليالي التقشير.', 
-            en: 'Apply drops to the face avoiding the eye contour. Best introduced within a <b class="glossary-term" onclick="alert(\'Skin Cycling: Dedicating specific nights for exfoliation and others for hydration to avoid barrier fatigue.\')">Skin Cycling</b> routine on exfoliation nights.' 
-        },
+        application: { ar: 'توضع قطرات على الوجه مع تجنب محيط العينين. يُفضل إدخاله ضمن روتين <span class="glossary-term" onclick="openGlossary(\'skin_cycling\')">تدوير العناية</span> في ليالي التقشير.', en: 'Apply drops to the face avoiding the eye contour. Best introduced within a <span class="glossary-term" onclick="openGlossary(\'skin_cycling\')">Skin Cycling</span> routine on exfoliation nights.' },
         layering: { 
             do_not_mix_with: { ar: ['أي مقشرات أخرى', 'الريتينول', 'فيتامين سي النقي'], en: ['Any other exfoliants', 'Retinol', 'Pure Vitamin C'] }, 
             best_mixed_with: { ar: ['مرطب إيفاكلار إتش (للتوازن)', 'واقي شمس (إجباري)'], en: ['Effaclar H moisturizer (for balance)', 'SPF (Mandatory)'] } 
@@ -362,10 +370,7 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'حب الشباب لدى البالغين، المسام الواسعة، التصبغات العنيدة.', en: 'Adult acne, enlarged pores, persistent pigmentation.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
-        notes: { 
-            ar: '**سر الصنعة:** إذا كانت البشرة حساسة جداً للأحماض، يمكن تطبيق السيروم لمدة 15-20 دقيقة ثم غسله، وهي ما تُعرف بـ <b class="glossary-term" onclick="alert(\'العلاج بالاتصال القصير (Short Contact Therapy): يعطي فوائد التقشير مع تقليل خطر التهيج لدرجة الصفر تقريباً.\')">العلاج بالاتصال القصير</b>.', 
-            en: '**Trade Secret:** If skin is highly acid-sensitive, apply the serum for 15-20 mins then wash it off, known as <b class="glossary-term" onclick="alert(\'Short Contact Therapy: Provides exfoliation benefits while reducing irritation risk to nearly zero.\')">Short Contact Therapy</b>.' 
-        }
+        notes: { ar: 'إذا كانت البشرة حساسة جداً للأحماض، طبقي السيروم لمدة 15 دقيقة ثم اغسليه معتمداً على <span class="glossary-term" onclick="openGlossary(\'short_contact\')">العلاج بالاتصال القصير</span>.', en: 'If the skin is highly acid-sensitive, apply the serum for 15 minutes then wash it off, relying on <span class="glossary-term" onclick="openGlossary(\'short_contact\')">Short Contact Therapy</span>.' }
     }
 });
 
@@ -374,10 +379,7 @@ window.deepProductsList.push({
     id: 'lrp_effaclar_h_isobiome', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار H إيزو-بايوم (كريم مرطب معوض)', en: 'Effaclar H Iso-Biome Care Cream' }, image: "", potency: 2, 
     pharmacology: {
-        ph_level: { 
-            ar: '5.5 (لطيف ومطابق للجلد لتهدئة البشرة المتهالكة من علاجات حب الشباب القوية)', 
-            en: '5.5 (Gentle and skin-matching to soothe skin battered by strong acne treatments)' 
-        },
+        ph_level: { ar: '5.5', en: '5.5' },
         mechanism: { 
             ar: 'يرمم الحاجز الجلدي ويستعيد توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> الذي تدمر بسبب علاجات حب الشباب المجففة.', 
             en: 'Repairs the skin barrier and restores <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> balance compromised by drying acne treatments.' 
@@ -393,16 +395,10 @@ window.deepProductsList.push({
     },
     clinical_usage: {
         frequency: { ar: 'صباحاً ومساءً.', en: 'Morning and Evening.' },
-        expected_duration: { 
-            ar: 'يستخدم طوال أشهر العلاج الطبي القاسي ويستمر لشهر إضافي بعد التوقف لضمان استعادة كامل صحة حاجز البشرة.', 
-            en: 'Used throughout the harsh medical treatment months and continues for one extra month to ensure full barrier recovery.' 
-        },
+        expected_duration: { ar: 'يستمر استخدامه طوال فترة أدوية حب الشباب المجففة.', en: 'Continues throughout the duration of drying acne medications.' },
         step_in_routine: { ar: 'الترطيب.', en: 'Moisturization.' },
         routine_step_number: 3,
-        application: { 
-            ar: 'يوضع بلطف على بشرة نظيفة. يعمل كقاعدة ممتازة لحبس الترطيب أو <b class="glossary-term" onclick="alert(\'تقنية حبس الترطيب (Slugging) الخفيفة: استخدام مرطب غني فوق العلاجات الموضعية القوية لتقليل آثارها الجانبية وحماية الحاجز.\')">الـ Slugging الخفيف</b> فوق العلاجات القوية.', 
-            en: 'Apply gently to clean skin. Works as an excellent base for light <b class="glossary-term" onclick="alert(\'Light Slugging: Using a rich moisturizer over strong topicals to mitigate side effects and protect the barrier.\')">Slugging</b> over strong treatments.' 
-        },
+        application: { ar: 'يوضع بلطف على بشرة نظيفة. يعمل كقاعدة ممتازة لتقنية <span class="glossary-term" onclick="openGlossary(\'slugging\')">حبس الترطيب</span> الخفيف فوق العلاجات القوية.', en: 'Apply gently to clean skin. Works as an excellent base for light <span class="glossary-term" onclick="openGlossary(\'slugging\')">Slugging</span> over strong treatments.' },
         layering: { 
             do_not_mix_with: { ar: ['لا يوجد تعارضات خطيرة.'], en: ['No severe interactions.'] }, 
             best_mixed_with: { ar: ['أدوية حب الشباب الموصوفة كمعوض للجفاف.'], en: ['Prescription acne meds to compensate for dryness.'] } 
@@ -411,10 +407,7 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'البشرة المعرضة للحبوب والتي أضعفتها العلاجات المجففة.', en: 'Acne-prone skin weakened by drying treatments.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: false, 
-        notes: { 
-            ar: '**ملاحظة هامة:** بالرغم من قوامه المرطب الغني جداً لعلاج الجفاف، إلا أن تركيبته مصممة خصيصاً لكي لا تسد المسام أو تحفز ظهور حبوب جديدة إطلاقاً.', 
-            en: '**Important Note:** Despite its very rich moisturizing texture for dryness, its formula is specifically designed not to clog pores or trigger new breakouts.' 
-        }
+        notes: { ar: 'بالرغم من قوامه المرطب الغني جداً لعلاج الجفاف، إلا أن تركيبته مصممة خصيصاً لكي لا تسد المسام أو تحفز ظهور حبوب جديدة إطلاقاً.', en: 'Despite its very rich moisturizing texture for dryness, its formula is specifically designed not to clog pores or trigger new breakouts at all.' }
     }
 });
 
@@ -423,10 +416,7 @@ window.deepProductsList.push({
     id: 'lrp_effaclar_micro_peeling', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
     name: { ar: 'إيفاكلار مايكرو-بيلينج (غسول مقشر دقيق)', en: 'Effaclar Micro-Peeling Purifying Gel' }, image: "", potency: 2, 
     pharmacology: {
-        ph_level: { 
-            ar: 'فسيولوجي (مع لمسة حمضية طفيفة لتفعيل الساليسيليك دون تجريد البشرة)', 
-            en: 'Physiological (with a slight acidic touch to activate Salicylic without stripping)' 
-        },
+        ph_level: { ar: 'فسيولوجي', en: 'Physiological' },
         mechanism: { 
             ar: 'قوة تقشير مزدوجة تجمع بين حمض الساليسيليك (2%) و LHA لاختراق المسام وتنظيفها من الدهون المتصلبة.', 
             en: 'Dual exfoliating power combining 2% Salicylic Acid and LHA to penetrate pores and clear hardened sebum.' 
@@ -443,16 +433,10 @@ window.deepProductsList.push({
     },
     clinical_usage: {
         frequency: { ar: 'مرة واحدة يومياً.', en: 'Once daily.' },
-        expected_duration: { 
-            ar: 'يستغرق 4 أسابيع تقريباً لملاحظة تراجع واضح في حبوب الجسم الملتهبة وملمس الجلد الخشن.', 
-            en: 'Takes about 4 weeks to notice a clear reduction in inflamed body acne and rough skin texture.' 
-        },
+        expected_duration: { ar: 'يُستخدم من 4 إلى 8 أسابيع لتخفيف حبوب الجسم بشكل كبير.', en: 'Use for 4 to 8 weeks to significantly reduce body acne.' },
         step_in_routine: { ar: 'التنظيف العلاجي.', en: 'Therapeutic Cleansing.' },
         routine_step_number: 1,
-        application: { 
-            ar: 'يُنصح بتركه على مناطق حبوب الجسم (كالظهر) لمدة دقيقتين قبل الشطف لتطبيق مفهوم <b class="glossary-term" onclick="alert(\'العلاج بالاتصال (Contact Therapy): إعطاء المقشرات الكيميائية في الغسول وقتاً كافياً للعمل داخل المسام قبل إزالتها بالماء.\')">العلاج بالاتصال</b>.', 
-            en: 'Recommended to leave on body acne areas (like the back) for 2 minutes before rinsing to apply the <b class="glossary-term" onclick="alert(\'Contact Therapy: Giving chemical exfoliants in the cleanser enough time to work inside the pores before washing them off.\')">Contact Therapy</b> concept.' 
-        },
+        application: { ar: 'يترك على مناطق حبوب الجسم لمدة دقيقتين قبل الشطف لتطبيق مفهوم <span class="glossary-term" onclick="openGlossary(\'short_contact\')">العلاج بالاتصال القصير</span>.', en: 'Leave on body acne areas for 2 minutes before rinsing to apply the <span class="glossary-term" onclick="openGlossary(\'short_contact\')">Short Contact Therapy</span> concept.' },
         layering: { 
             do_not_mix_with: { ar: ['أحماض تقشير إضافية قوية.'], en: ['Additional strong peeling acids.'] }, 
             best_mixed_with: { ar: ['إيفاكلار ديو (+)', 'مرطبات خفيفة.'], en: ['Effaclar Duo (+)', 'Light moisturizers.'] } 
@@ -461,10 +445,7 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'حب الشباب الشديد، حبوب الظهر والصدر.', en: 'Severe acne, back and chest acne.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false, 
-        notes: { 
-            ar: '**نصيحة ذهبية:** ممتاز للاستخدام المباشر في الاستحمام بعد التمارين الرياضية الكثيفة لمنع تكدس العرق والدهون المسببة لحبوب الجسم أو الـ (Bacne).', 
-            en: '**Golden Pearl:** Excellent for immediate shower use after intense workouts to prevent the buildup of sweat and sebum that causes body acne (Bacne).' 
-        }
+        notes: { ar: 'ممتاز للاستخدام المباشر في الاستحمام بعد التمارين الرياضية الكثيفة لمنع تكدس العرق والدهون المسببة لحبوب الجسم (Bacne).', en: 'Excellent for immediate shower use after intense workouts to prevent the buildup of sweat and sebum that causes body acne (Bacne).' }
     }
 });
 
@@ -473,10 +454,7 @@ window.deepProductsList.push({
     id: 'lrp_cicaplast_baume', brandId: 'laroche', familyId: 'cicaplast', brand: 'La Roche-Posay',
     name: { ar: 'سيكابلاست بوم بـ 5 (+)', en: 'Cicaplast Baume B5 (+)' }, image: "", potency: 3, 
     pharmacology: {
-        ph_level: { 
-            ar: 'متوازن (لا يحتوي على أي أحماض ليكون آمناً تماماً على الجروح السطحية المفتوحة)', 
-            en: 'Balanced (Contains no acids to be completely safe on superficial open wounds)' 
-        },
+        ph_level: { ar: 'متوازن', en: 'Balanced' },
         mechanism: { 
             ar: 'يوفر بيئة مثالية لالتئام الجلد بفضل الـ <span class="glossary-term" onclick="openGlossary(\'madecassoside\')">ماديكاسوسيد</span>، مع إعادة توازن <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">الميكروبيوم</span> بمركب (Tribioma) الحصري لضمان عدم ترك ندبات.', 
             en: 'Provides an optimal environment for skin healing using <span class="glossary-term" onclick="openGlossary(\'madecassoside\')">Madecassoside</span>, while rebalancing the <span class="glossary-term" onclick="openGlossary(\'microbiome_science\')">Microbiome</span> with Tribioma to prevent scarring.' 
@@ -492,28 +470,19 @@ window.deepProductsList.push({
         ]
     },
     clinical_usage: {
-        frequency: { ar: 'مرتين يومياً، أو عند الحاجة المتكررة.', en: 'Twice daily, or as frequently needed.' },
-        expected_duration: { 
-            ar: '3 إلى 7 أيام لترميم التهيجات والحروق السطحية بالكامل. يُستخدم بشكل متقطع عند اللزوم.', 
-            en: '3 to 7 days to fully repair surface irritations and burns. Used intermittently as needed.' 
-        },
+        frequency: { ar: 'مرتين يومياً، أو عند الحاجة.', en: 'Twice daily, or as needed.' },
+        expected_duration: { ar: 'من 3 إلى 7 أيام لترميم الجلد التالف بالكامل.', en: '3 to 7 days to fully repair damaged skin.' },
         step_in_routine: { ar: 'الخطوة الأخيرة (للترميم الموضعي أو كمرطب ليلي).', en: 'Final step (for targeted repair or as night cream).' },
         routine_step_number: 3,
-        application: { 
-            ar: 'توضع طبقة سميكة. يُعتبر مثالياً كطبقة عازلة في الخطوة الأخيرة ليلاً لتطبيق مبدأ <b class="glossary-term" onclick="alert(\'تقنية الـ Slugging: وضع طبقة سميكة من مرهم عازل كخطوة أخيرة في الليل لحبس كل الرطوبة والعلاجات في الجلد وتسريع الترميم.\')">حبس الترطيب العميق</b>.', 
-            en: 'Apply a thick layer. Ideal as an occlusive layer in the final night step to apply the <b class="glossary-term" onclick="alert(\'Slugging Technique: Applying a thick layer of occlusive ointment as the final night step to lock in all moisture and treatments, accelerating repair.\')">Deep Moisture Lock (Slugging)</b> concept.' 
-        },
+        application: { ar: 'توضع طبقة سميكة. يُعتبر مثالياً كطبقة عازلة في الخطوة الأخيرة ليلاً لتطبيق مبدأ <span class="glossary-term" onclick="openGlossary(\'slugging\')">حبس الترطيب (Slugging)</span>.', en: 'Apply a thick layer. Ideal as an occlusive layer in the final night step to apply the <span class="glossary-term" onclick="openGlossary(\'slugging\')">Slugging</span> concept.' },
         layering: { 
             do_not_mix_with: { ar: ['يُمنع وضعه على الجروح المفتوحة التي تنزف بقوة.'], en: ['Do not apply on heavily bleeding, open wounds.'] }, 
-            best_mixed_with: { ar: ['غسول لطيف', 'فوق الريتينول أو المقشرات لتقليل التهيج (الساندويتش).'], en: ['Gentle cleansers', 'Over retinol or exfoliants to reduce irritation (Sandwich method).'] } 
+            best_mixed_with: { ar: ['غسول لطيف', 'فوق الريتينول أو المقشرات لتقليل التهيج.'], en: ['Gentle cleansers', 'Over retinol or exfoliants to reduce irritation.'] } 
         }
     },
     precautions: {
         indications: { ar: 'بعد جلسات الليزر، التقشير الكيميائي، طفح الحفاض، التشققات الشتوية، الإكزيما الجافة.', en: 'Post-laser, chemical peels, diaper rash, winter cracks, dry eczema.' },
         pregnancy_safe: true, sun_sensitivity: false, child_safe: true, 
-        notes: { 
-            ar: '**سر الصنعة:** آمن تماماً لاستخدامه لتهدئة طفح الحفاض للرضع من اليوم الأول. الإصدار الجديد (+) يمتص أسرع ولا يترك طبقة بيضاء مزعجة.', 
-            en: '**Trade Secret:** Completely safe for soothing diaper rash in infants from day one. The new (+) version absorbs faster and leaves no annoying white cast.' 
-        }
+        notes: { ar: 'آمن تماماً للأطفال والرضع (من اليوم الأول للولادة). الإصدار الجديد (+) يمتص أسرع ولا يترك طبقة بيضاء مزعجة.', en: 'Completely safe for babies and children (from day one). The new (+) version absorbs faster and leaves no annoying white cast.' }
     }
 });
