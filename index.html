@@ -8,56 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8fafc; --card-bg: #ffffff; --text-main: #0f172a;
-            --text-secondary: #64748b; --accent-blue: #2563eb; --accent-teal: #0d9488;
-            --danger: #e11d48; --warning: #f59e0b; --border-radius: 12px;
+            --bg-color: #f4f7fa; --card-bg: #ffffff; --text-main: #102a43;
+            --text-secondary: #486581; --accent-blue: #0f609b; --accent-teal: #048274;
+            --danger: #d90429; --warning: #f59e0b; --border-radius: 12px;
         }
         [data-theme="dark"] {
-            --bg-color: #0f172a; --card-bg: #1e293b; --text-main: #f1f5f9;
-            --text-secondary: #94a3b8; --accent-blue: #60a5fa; --accent-teal: #2dd4bf;
+            --bg-color: #0b1a2a; --card-bg: #192e44; --text-main: #f0f4f8;
+            --text-secondary: #bcccdc; --accent-blue: #4aa9ec; --accent-teal: #2cb1bc;
         }
         body { 
-            font-family: 'Cairo', sans-serif; background-color: var(--bg-color); 
-            color: var(--text-main); margin: 0; transition: 0.3s; line-height: 1.6;
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--bg-color); color: var(--text-main); 
+            margin: 0; padding: 0; padding-bottom: 50px; transition: 0.3s ease;
         }
-
-        /* الهيدر */
+        
+        /* الهيدر المحسن */
         .top-bar { 
             background: var(--accent-blue); color: white; padding: 12px 20px; 
             display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .logo { font-weight: 700; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
-        .nav-controls { display: flex; gap: 15px; align-items: center; }
-        .control-btn { background: rgba(255,255,255,0.2); border: none; color: white; padding: 5px 10px; border-radius: 8px; cursor: pointer; font-family: 'Cairo'; font-size: 0.8rem; }
+        .logo-section { cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .nav-tools { display: flex; gap: 12px; align-items: center; }
+        .tool-btn { background: rgba(255,255,255,0.15); border: none; color: white; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-family: 'Cairo'; }
 
         /* البحث العالمي */
-        .search-section { padding: 20px; background: var(--card-bg); margin-bottom: 10px; }
-        #globalSearch { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; font-family: 'Cairo'; box-sizing: border-box; }
+        .search-area { padding: 15px 20px; background: var(--card-bg); }
+        #globalSearch { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #e2e8f0; font-family: 'Cairo'; outline: none; }
 
-        /* الأقسام الرئيسية */
+        /* أيقونات السكاشن الاحترافية */
         .main-categories { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
-        .cat-card { 
+        .cat-btn { 
             background: var(--card-bg); padding: 25px 15px; border-radius: var(--border-radius);
-            text-align: center; cursor: pointer; transition: 0.3s; border: 1px solid rgba(0,0,0,0.05);
+            text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            cursor: pointer; transition: 0.3s; border: 1px solid rgba(0,0,0,0.05);
             display: flex; flex-direction: column; align-items: center; gap: 12px;
         }
-        .cat-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .cat-icon { width: 45px; height: 45px; fill: var(--accent-blue); }
-        .cat-card span { font-weight: 700; font-size: 0.95rem; }
+        .cat-btn:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+        .cat-svg { width: 45px; height: 45px; fill: var(--accent-blue); }
+        .cat-btn span { font-weight: 700; font-size: 0.9rem; color: var(--text-main); }
+
+        /* تنسيق القاموس (Bold + Underline) */
+        .glossary-term {
+            font-weight: 700;
+            text-decoration: underline dotted var(--accent-blue);
+            color: var(--accent-blue);
+            cursor: help;
+        }
+
+        /* النوافذ المنبثقة */
+        .modal { 
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.6); align-items: center; justify-content: center; backdrop-filter: blur(4px);
+        }
+        .modal-content { 
+            background: var(--card-bg); padding: 25px; border-radius: 15px; width: 85%; max-width: 450px; 
+            position: relative; animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .close-modal { position: absolute; top: 10px; left: 10px; font-size: 24px; cursor: pointer; color: var(--text-secondary); }
 
         /* كروت المنتجات */
-        .product-card { background: var(--card-bg); margin: 15px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
-        .product-img { width: 100%; height: 200px; background: white; display: flex; align-items: center; justify-content: center; padding: 10px; }
-        .product-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .product-info { padding: 15px; }
-        .badge { padding: 3px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-left: 5px; color: white; display: inline-block; margin-bottom: 5px; }
-
-        /* القاموس */
-        .glossary-term { color: var(--accent-blue); font-weight: 700; text-decoration: underline dotted; cursor: help; }
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; backdrop-filter: blur(4px); }
-        .modal-content { background: var(--card-bg); padding: 25px; border-radius: 15px; width: 85%; max-width: 450px; position: relative; }
-        .close-btn { position: absolute; top: 10px; left: 10px; font-size: 24px; cursor: pointer; }
+        .product-card { background: var(--card-bg); margin: 15px; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); }
+        .product-img { width: 100%; height: 220px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .product-img img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
+        .product-body { padding: 20px; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-left: 5px; color: white; display: inline-block; }
 
         .hidden { display: none !important; }
     </style>
@@ -65,141 +81,159 @@
 <body>
 
     <div class="top-bar">
-        <div class="logo" onclick="goHome()">🏥 Skin Care Pro</div>
-        <div class="nav-controls">
-            <button class="control-btn" onclick="toggleLanguage()" id="langBtn">EN</button>
-            <button class="control-btn" onclick="toggleTheme()">🌓</button>
+        <div class="logo-section" onclick="goHome()">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M18,14H14V18H10V14H6V10H10V6H14V10H18M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>
+            <span>Skin Care Pro</span>
+        </div>
+        <div class="nav-tools">
+            <button class="tool-btn" onclick="toggleLanguage()" id="langBtn">EN</button>
+            <button class="tool-btn" onclick="toggleTheme()">🌓</button>
         </div>
     </div>
 
     <div id="homeView">
-        <div class="search-section">
-            <input type="text" id="globalSearch" placeholder="ابحث عن منتج، مادة فعالة، أو حالة..." onkeyup="handleGlobalSearch()">
+        <div class="search-area">
+            <input type="text" id="globalSearch" placeholder="ابحث عن منتج أو مادة فعالة..." onkeyup="handleGlobalSearch()">
         </div>
         
-        <div class="main-categories" id="mainCats">
-            <div class="cat-card" onclick="showBrands()">
-                <svg class="cat-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 15h-2v-2h2v2m0-4h-2V7h2v7z"/></svg>
-                <span id="txt-products">المنتجات الطبية</span>
+        <div class="main-categories">
+            <div class="cat-btn" onclick="showBrands()">
+                <svg class="cat-svg" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M17,11H13V7H11V11H7V13H11V17H13V13H17V11Z" /></svg>
+                <span id="txt-prods">المنتجات الطبية</span>
             </div>
-            <div class="cat-card" onclick="alert('قيد التجهيز')">
-                <svg class="cat-icon" viewBox="0 0 24 24"><path d="M12 2c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L3.01 21l6.74-2.23C10.63 19.54 12.09 20 13.66 20c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/></svg>
-                <span id="txt-conditions">الحالات الجلدية</span>
+            <div class="cat-btn" onclick="alert('قيد التجهيز بمحبة')">
+                <svg class="cat-svg" viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12S6.48,22 12,22 22,17.52 22,12 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12S7.59,4 12,4 20,7.59 20,12 16.41,20 12,20M15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9A3,3 0 0,1 15,12Z" /></svg>
+                <span id="txt-conds">الحالات الجلدية</span>
             </div>
-            <div class="cat-card" onclick="alert('قيد التجهيز')">
-                <svg class="cat-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                <span id="txt-skintypes">أنواع البشرة</span>
+            <div class="cat-btn" onclick="alert('قيد التجهيز بمحبة')">
+                <svg class="cat-svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7,13H17V11H7V13Z" /></svg>
+                <span id="txt-types">أنواع البشرة</span>
             </div>
-            <div class="cat-card" onclick="alert('قيد التجهيز')">
-                <svg class="cat-icon" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
-                <span id="txt-routine">بناء روتين</span>
+            <div class="cat-btn" onclick="alert('قيد التجهيز بمحبة')">
+                <svg class="cat-svg" viewBox="0 0 24 24"><path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7Z" /></svg>
+                <span id="txt-rout">بناء روتين</span>
             </div>
         </div>
     </div>
 
     <div id="brandsView" class="hidden">
-        <div style="padding: 15px; font-weight: bold; color: var(--accent-blue);" onclick="goHome()">← العودة</div>
+        <div style="padding:15px; cursor:pointer; color:var(--accent-blue)" onclick="goHome()">← العودة</div>
         <div id="brandsList" class="main-categories"></div>
     </div>
 
     <div id="resultsView" class="hidden">
-        <div style="padding: 15px; font-weight: bold; color: var(--accent-blue);" onclick="goHome()">← العودة للرئيسية</div>
+        <div style="padding:15px; cursor:pointer; color:var(--accent-blue)" onclick="goHome()">← الرئيسية</div>
         <div id="resultsList"></div>
     </div>
 
     <div id="glossaryModal" class="modal" onclick="closeGlossary()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeGlossary()">&times;</span>
-            <h3 id="glossaryTitle"></h3>
-            <p id="glossaryBody"></p>
+            <span class="close-modal" onclick="closeGlossary()">&times;</span>
+            <h3 id="glossaryTitle" style="color:var(--accent-blue); margin-top:0;"></h3>
+            <hr style="border:0; border-top:1px solid #eee;">
+            <p id="glossaryBody" style="line-height:1.7; color:var(--text-secondary)"></p>
         </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <img id="zoomedImg" style="max-width:95%; max-height:95%; border-radius:10px;">
     </div>
 
     <script src="data (6).js"></script>
 
     <script>
-        let currentLang = 'ar';
-        const uiText = {
-            ar: { products: "المنتجات الطبية", conditions: "الحالات الجلدية", skintypes: "أنواع البشرة", routine: "بناء روتين", search: "ابحث عن منتج، مادة فعالة...", back: "العودة" },
-            en: { products: "Clinical Products", conditions: "Skin Conditions", skintypes: "Skin Types", routine: "Routine Builder", search: "Search products, ingredients...", back: "Back" }
+        let currentLang = localStorage.getItem('siteLang') || 'ar';
+        let viewHistory = ['home'];
+
+        const translations = {
+            ar: { prods: "المنتجات الطبية", conds: "الحالات الجلدية", types: "أنواع البشرة", rout: "بناء روتين", search: "ابحث عن منتج أو مادة فعالة...", pregnancy: "آمن للحامل", not_safe: "غير آمن", routine_step: "خطوة رقم" },
+            en: { prods: "Clinical Products", conds: "Skin Conditions", types: "Skin Types", rout: "Routine Builder", search: "Search products or ingredients...", pregnancy: "Pregnancy Safe", not_safe: "Not Safe", routine_step: "Step #" }
         };
+
+        function initApp() {
+            applyLanguage();
+            if(localStorage.getItem('siteTheme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        function applyLanguage() {
+            const t = translations[currentLang];
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+            document.getElementById('langBtn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
+            document.getElementById('txt-prods').innerText = t.prods;
+            document.getElementById('txt-conds').innerText = t.conds;
+            document.getElementById('txt-types').innerText = t.types;
+            document.getElementById('txt-rout').innerText = t.rout;
+            document.getElementById('globalSearch').placeholder = t.search;
+        }
 
         function goHome() {
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('brandsView').classList.add('hidden');
             document.getElementById('resultsView').classList.add('hidden');
-            document.getElementById('globalSearch').value = '';
+            viewHistory = ['home'];
         }
 
         function showBrands() {
-            const list = document.getElementById('brandsList');
-            list.innerHTML = '';
-            // استخدام brandsList من ملف data (6).js
-            window.brandsList.forEach(brand => {
-                list.innerHTML += `
-                    <div class="cat-card" onclick="showProductsByBrand('${brand.id}')">
-                        <img src="${brand.logo || ''}" style="width:50px; height:50px; object-fit:contain;" onerror="this.src='https://cdn-icons-png.flaticon.com/512/883/883044.png'">
-                        <span>${brand.name}</span>
+            const container = document.getElementById('brandsList');
+            container.innerHTML = '';
+            window.brandsList.forEach(b => {
+                container.innerHTML += `
+                    <div class="cat-btn" onclick="showProductsByBrand('${b.id}')">
+                        <img src="${b.logo || ''}" style="width:50px; height:50px; object-fit:contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/883/883044.png'">
+                        <span>${b.name}</span>
                     </div>`;
             });
-            document.getElementById('homeView').classList.add('hidden');
-            document.getElementById('brandsView').classList.remove('hidden');
+            switchView('brands');
         }
 
         function showProductsByBrand(brandId) {
             const products = window.deepProductsList.filter(p => p.brandId === brandId);
-            renderResults(products);
+            renderProducts(products);
         }
 
         function handleGlobalSearch() {
-            const query = document.getElementById('globalSearch').value.toLowerCase();
-            if (query.length < 2) return;
-            
+            const q = document.getElementById('globalSearch').value.toLowerCase();
+            if(q.length < 2) return;
             const results = window.deepProductsList.filter(p => 
-                p.name.ar.toLowerCase().includes(query) || 
-                p.name.en.toLowerCase().includes(query) ||
-                p.clinical_data.mechanism.ar.includes(query)
+                p.name.ar.toLowerCase().includes(q) || 
+                p.name.en.toLowerCase().includes(q) || 
+                p.clinical_data.mechanism.ar.includes(q)
             );
-            renderResults(results);
+            renderProducts(results);
         }
 
-        function renderResults(products) {
+        function renderProducts(products) {
             const list = document.getElementById('resultsList');
             list.innerHTML = '';
             products.forEach(p => {
                 list.innerHTML += `
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="${p.image || 'https://via.placeholder.com/200x200?text=Skin+Care'}" alt="${p.name.en}">
+                        <img src="${p.image || 'https://via.placeholder.com/300?text=SkinCare+Pro'}" onclick="openImageModal(this.src)">
                     </div>
-                    <div class="product-info">
-                        <h3 style="margin:0; color:var(--accent-blue)">${p.name[currentLang]}</h3>
-                        <div style="margin: 10px 0;">
-                            ${p.precautions.pregnancy_safe ? '<span class="badge" style="background:var(--accent-teal)">آمن للحامل</span>' : '<span class="badge" style="background:var(--danger)">غير آمن</span>'}
+                    <div class="product-body">
+                        <h3 style="margin:0 0 10px 0; color:var(--accent-blue)">${p.name[currentLang]}</h3>
+                        <div style="margin-bottom:10px;">
+                            <span class="badge" style="background:${p.precautions.pregnancy_safe ? 'var(--accent-teal)' : 'var(--danger)'}">
+                                ${p.precautions.pregnancy_safe ? translations[currentLang].pregnancy : translations[currentLang].not_safe}
+                            </span>
                         </div>
                         <p style="font-size:0.9rem; color:var(--text-secondary)">${p.clinical_data.mechanism[currentLang]}</p>
+                        <div style="margin-top:10px; font-weight:700; font-size:0.85rem; color:var(--accent-teal)">
+                            ${translations[currentLang].routine_step} ${p.clinical_usage.routine_step_number}
+                        </div>
                     </div>
                 </div>`;
             });
-            document.getElementById('homeView').classList.add('hidden');
-            document.getElementById('brandsView').classList.add('hidden');
-            document.getElementById('resultsView').classList.remove('hidden');
+            switchView('results');
         }
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLang;
-            document.getElementById('langBtn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
-            
-            // تحديث نصوص الواجهة
-            document.getElementById('txt-products').innerText = uiText[currentLang].products;
-            document.getElementById('txt-conditions').innerText = uiText[currentLang].conditions;
-            document.getElementById('txt-skintypes').innerText = uiText[currentLang].skintypes;
-            document.getElementById('txt-routine').innerText = uiText[currentLang].routine;
-            document.getElementById('globalSearch').placeholder = uiText[currentLang].search;
-            
-            goHome(); // إعادة تعيين الواجهة
+        function switchView(id) {
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('brandsView').classList.add('hidden');
+            document.getElementById('resultsView').classList.add('hidden');
+            document.getElementById(id + 'View').classList.remove('hidden');
         }
 
         function openGlossary(id) {
@@ -212,10 +246,24 @@
         }
         function closeGlossary() { document.getElementById('glossaryModal').style.display = 'none'; }
 
-        function toggleTheme() {
-            const html = document.documentElement;
-            html.getAttribute('data-theme') === 'dark' ? html.removeAttribute('data-theme') : html.setAttribute('data-theme', 'dark');
+        function openImageModal(src) { document.getElementById('zoomedImg').src = src; document.getElementById('imageModal').style.display = 'flex'; }
+        function closeImageModal() { document.getElementById('imageModal').style.display = 'none'; }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('siteLang', currentLang);
+            applyLanguage();
+            goHome();
         }
+
+        function toggleTheme() {
+            const h = document.documentElement;
+            const isDark = h.getAttribute('data-theme') === 'dark';
+            isDark ? h.removeAttribute('data-theme') : h.setAttribute('data-theme', 'dark');
+            localStorage.setItem('siteTheme', isDark ? 'light' : 'dark');
+        }
+
+        window.onload = initApp;
     </script>
 </body>
 </html>
