@@ -246,7 +246,8 @@
 
         function renderView(view, p1, p2, p3) {
             const app = document.getElementById('app'); document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr'; app.innerHTML = ''; updateUI_Language();
-            document.getElementById('searchInput').value = '';
+
+            if (view !== 'home') document.getElementById('searchInput').value = '';
 
             if (view === 'home') {
                 app.innerHTML = `<div class="main-categories">
@@ -321,7 +322,7 @@
         }
 
         function buildSingleProductHTML(p) {
-            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة' : 'No image'}')">${currentLang === 'ar' ? 'صورة' : 'Image'}</div>`;
+            let imgElement = p.image ? `<img src="${p.image}" class="prod-img">` : `<div class="img-placeholder" onclick="alert('${currentLang === 'ar' ? 'لا توجد صورة لهذا المنتج حالياً' : 'No image available'}')">${currentLang === 'ar' ? 'صورة<br>المنتج' : 'Product<br>Image'}</div>`;
             
             let doNotMix = p.clinical_usage.layering.do_not_mix_with[currentLang].map(item => `<span class="tag-danger">❌ ${item}</span>`).join('');
             let bestMix = p.clinical_usage.layering.best_mixed_with[currentLang].map(item => `<span class="tag-safe">✅ ${item}</span>`).join('');
@@ -331,8 +332,9 @@
             if(p.potency === 2) potencyHtml = `<span class="potency-indicator" style="color:var(--warning);">🟡🟡⚪ ${currentLang === 'ar' ? 'متوسط (Moderate)' : 'Moderate'}</span>`;
             if(p.potency === 3) potencyHtml = `<span class="potency-indicator" style="color:var(--danger);">🔴🔴🔴 ${currentLang === 'ar' ? 'قوي/مكثف (Strong)' : 'Strong / Intense'}</span>`;
 
-            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل' : 'Not Safe'}</span>`;
+            let pregnancySafeHtml = p.precautions.pregnancy_safe ? `<span class="tag-safe">🤰 ${currentLang === 'ar' ? 'آمن للحوامل' : 'Pregnancy Safe'}</span>` : `<span class="tag-danger">⛔ ${currentLang === 'ar' ? 'يمنع للحوامل' : 'Not Safe for Pregnancy'}</span>`;
             let sunSafeHtml = p.precautions.sun_sensitivity ? `<span class="tag-danger">☀️ ${currentLang === 'ar' ? 'يتطلب واقي شمس' : 'Requires SPF'}</span>` : '';
+            let childSafeHtml = p.precautions.child_safe ? `<span class="tag-safe">👶 ${currentLang === 'ar' ? 'آمن للأطفال' : 'Child Safe'}</span>` : '';
 
             return `
             <div class="product-card" style="margin-top:10px;">
@@ -381,7 +383,7 @@
                         <div class="data-row"><span class="data-label">${txt.ind_label[currentLang]}</span> ${p.precautions.indications[currentLang]}</div>
                         <div class="data-row">
                             <span class="data-label">${txt.safety_label[currentLang]}</span>
-                            ${pregnancySafeHtml} ${sunSafeHtml}
+                            ${pregnancySafeHtml} ${sunSafeHtml} ${childSafeHtml}
                         </div>
                         <div class="data-row"><span class="data-label">${txt.notes_label[currentLang]}</span> ${p.precautions.notes[currentLang]}</div>
                     </div>
