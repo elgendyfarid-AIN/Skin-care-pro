@@ -738,20 +738,6 @@ window.glossaryDict['pilling'] = {
 // 🏢 2. العلامات التجارية والعائلات لـ La Roche-Posay
 // ==========================================
 
-window.brandsList.push({
-    id: 'laroche', name: 'La Roche-Posay',
-    families: [
-        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
-        { id: 'cicaplast', name: { ar: 'سيكابلاست (ترميم وحماية الحاجز)', en: 'Cicaplast (Barrier Repair)' } },
-        { id: 'toleriane', name: { ar: 'توليان (للبشرة الحساسة والمتحسسة)', en: 'Toleriane (Sensitive & Allergy-Prone)' } },
-        { id: 'lipikar', name: { ar: 'ليبيكار (للجفاف الشديد والإكزيما)', en: 'Lipikar (Severe Dryness & Eczema)' } },
-        { id: 'anthelios', name: { ar: 'أنثيليوس (حماية فائقة من الشمس)', en: 'Anthelios (High Sun Protection)' } },
-        { id: 'anti_aging', name: { ar: 'مضادات الشيخوخة والسيرومات', en: 'Anti-Aging & Serums' } },
-        { id: 'physiological', name: { ar: 'المنظفات الفسيولوجية', en: 'Physiological Cleansers' } }
-    ]
-});
-
-
 // ==========================================
 // 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 7 إلى 18)
 // ==========================================
@@ -1457,20 +1443,6 @@ window.glossaryDict['glove_effect'] = {
 // ==========================================
 // 🏢 2. العلامات التجارية والعائلات لـ La Roche-Posay
 // ==========================================
-
-window.brandsList.push({
-    id: 'laroche', name: 'La Roche-Posay',
-    families: [
-        { id: 'effaclar', name: { ar: 'إيفاكلار (للبشرة الدهنية وحب الشباب)', en: 'Effaclar (Oily & Acne-Prone)' } },
-        { id: 'cicaplast', name: { ar: 'سيكابلاست (ترميم وحماية الحاجز)', en: 'Cicaplast (Barrier Repair)' } },
-        { id: 'toleriane', name: { ar: 'توليان (للبشرة الحساسة والمتحسسة)', en: 'Toleriane (Sensitive & Allergy-Prone)' } },
-        { id: 'lipikar', name: { ar: 'ليبيكار (للجفاف الشديد والإكزيما)', en: 'Lipikar (Severe Dryness & Eczema)' } },
-        { id: 'anthelios', name: { ar: 'أنثيليوس (حماية فائقة من الشمس)', en: 'Anthelios (High Sun Protection)' } },
-        { id: 'anti_aging', name: { ar: 'مضادات الشيخوخة والسيرومات', en: 'Anti-Aging & Serums' } },
-        { id: 'physiological', name: { ar: 'المنظفات الفسيولوجية', en: 'Physiological Cleansers' } }
-    ]
-});
-
 
 // ==========================================
 // 🧪 3. المنتجات السريرية لـ La Roche-Posay (من 19 إلى 30)
