@@ -74,29 +74,32 @@ window.brandsList.push({
 // [1] EFFACLAR DUO (+)
 window.deepProductsList.push({
     id: 'lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "", potency: 3, 
+    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "effaclar duo +.jpg", potency: 3, 
     pharmacology: {
-        ph_level: { ar: '5.5 (يحافظ على الغلاف الحمضي لتثبيط بكتيريا الحبوب دون تجريد الجلد)', en: '5.5 (Maintains acid mantle to inhibit acne bacteria without stripping skin)' },
+        ph_level: { 
+            ar: '5.5 (يحافظ على الغلاف الحمضي لتثبيط بكتيريا الحبوب دون تجريد البشرة)', 
+            en: '5.5 (Maintains acid mantle to inhibit acne bacteria without stripping skin)' 
+        },
         mechanism: { 
-            ar: 'يستهدف بكتيريا <b class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</b> ويمنع تكوين <b class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</b>، مع تقشير دقيق لمنع انسداد المسام وتقليل <b class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات (PIH)</b>.', 
+            ar: 'يستهدف بكتيريا <b class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</b> ويمنع تكوين <b class="glossary-term" onclick="openGlossary(\'biofilms\')">الأغشية الحيوية</b>، مع تقشير دقيق لمنع انسداد المسام وتقليل <b class="glossary-term" onclick="openGlossary(\'pih\')">التصبغات</b>.', 
             en: 'Targets <b class="glossary-term" onclick="openGlossary(\'c_acnes\')">C.acnes</b> bacteria and prevents <b class="glossary-term" onclick="openGlossary(\'biofilms\')">Biofilms</b> formation, with micro-exfoliation to prevent clogged pores and reduce <b class="glossary-term" onclick="openGlossary(\'pih\')">PIH</b>.' 
         },
         patient_benefit: { 
-            ar: 'يعالج الحبوب النشطة من جذورها ويمنع ظهور حبوب جديدة، ويمنع تحول الحبة الحمراء إلى بقعة داكنة بعد جفافها.', 
-            en: 'Treats active breakouts from the root, prevents new ones, and stops red pimples from turning into dark marks after drying.' 
+            ar: 'يُعالج الحبوب النشطة ويمنع تكونها مجدداً، ويمنع الحبة الحمراء من التحول لبقعة داكنة بعد جفافها.', 
+            en: 'Treats active breakouts and prevents their recurrence, stopping red pimples from turning into dark marks after drying.' 
         },
         active_ingredients: [
             { name: 'Niacinamide', concentration: '4%', role: { ar: 'مضاد للالتهاب ويهدئ الاحمرار.', en: 'Anti-inflammatory, soothes redness.' } },
-            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر يخترق المسام لتنظيفها.', en: 'An exfoliator that penetrates to cleanse pores.' } },
+            { name: 'LHA', concentration: '0.3%', role: { ar: 'مقشر <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> يخترق المسام بلطف لتنظيفها.', en: 'A <b class="glossary-term" onclick="openGlossary(\'lha\')">LHA</b> exfoliator that gently penetrates to cleanse pores.' } },
             { name: 'Salicylic Acid', concentration: '0.5%', role: { ar: 'يعمل بخاصية <b class="glossary-term" onclick="openGlossary(\'keratolytic\')">تحلل القرنية</b> لتنظيف المسام.', en: 'Provides <b class="glossary-term" onclick="openGlossary(\'keratolytic\')">Keratolytic</b> action to cleanse pores.' } }
         ]
     },
     clinical_usage: {
-        frequency: { ar: 'مرة واحدة مساءً (يُمكن رفعها لمرتين إذا تحملت البشرة).', en: 'Once daily PM (can increase to twice if tolerated).' },
-        expected_duration: { ar: 'تخفيف الاحمرار خلال 12 ساعة. يُستخدم باستمرار من 4 إلى 8 أسابيع لعلاج المسام والآثار.', en: 'Reduces redness in 12 hours. Use continuously for 4-8 weeks to treat pores and marks.' },
-        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول).', en: 'Treatment Step (After cleanser).' },
+        frequency: { ar: 'مرة واحدة مساءً (يُمكن رفعها لمرتين للمتحملين).', en: 'Once daily PM (can increase to twice if tolerated).' },
+        expected_duration: { ar: 'تخفيف الاحمرار خلال 12 ساعة. يُستخدم بشكل مستمر من 4 إلى 8 أسابيع لعلاج المسام المسدودة وتقليل التصبغات.', en: 'Reduces redness in 12 hours. Use continuously for 4-8 weeks to clear clogged pores and reduce pigmentation.' },
+        step_in_routine: { ar: 'خطوة العلاج (بعد الغسول وقبل المرطب).', en: 'Treatment Step (After cleanser, before moisturizer).' },
         routine_step_number: 2,
-        application: { ar: 'توزع طبقة رقيقة على كامل الوجه، ويُمكن تطبيق <b class="glossary-term" onclick="openGlossary(\'spot_treatment\')">العلاج النقطي</b> للحطاطات الكبيرة.', en: 'Apply a thin layer over the entire face, <b class="glossary-term" onclick="openGlossary(\'spot_treatment\')">Spot Treatment</b> can be applied to large papules.' },
+        application: { ar: 'توزع طبقة رقيقة على كامل منطقة المشكلة لضمان علاج المسام الخفية.', en: 'Apply a thin layer over the entire problem area to ensure treatment of hidden pores.' },
         layering: { 
             do_not_mix_with: { ar: ['مقشرات كيميائية قوية (AHA/BHA)', 'الريتينول'], en: ['Strong chemical exfoliants (AHA/BHA)', 'Retinol'] }, 
             best_mixed_with: { ar: ['غسول لطيف', 'مرمّمات الحاجز (Ceramides)'], en: ['Gentle cleansers', 'Barrier repair creams'] } 
@@ -105,10 +108,9 @@ window.deepProductsList.push({
     precautions: {
         indications: { ar: 'حب الشباب الخفيف إلى المتوسط، الرؤوس السوداء، والآثار الحمراء.', en: 'Mild to moderate acne, blackheads, and post-acne red marks.' },
         pregnancy_safe: false, sun_sensitivity: true, child_safe: false,
-        notes: { ar: 'يسبب وخزاً خفيفاً في الأسبوع الأول، يُنصح بتطبيق <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">تقنية الساندويتش</b>. للبالغين والمراهقين (12+).', en: 'Causes mild tingling initially, applying the <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">Sandwich Technique</b> is recommended. For adults and teens (12+).' }
+        notes: { ar: 'لتخفيف الجفاف والوخز في الأسبوع الأول، يُنصح بتطبيق <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">تقنية الساندويتش</b>. مخصص للمراهقين (12+) والبالغين.', en: 'To mitigate dryness and tingling in the first week, apply the <b class="glossary-term" onclick="openGlossary(\'sandwich_tech\')">Sandwich Technique</b>. For teens (12+) and adults.' }
     }
 });
-
 // [2] EFFACLAR PURIFYING FOAMING GEL
 window.deepProductsList.push({
     id: 'lrp_effaclar_gel', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
