@@ -74,7 +74,7 @@ window.brandsList.push({
 // [1] EFFACLAR DUO (+)
 window.deepProductsList.push({
     id: 'lrp_effaclar_duo', brandId: 'laroche', familyId: 'effaclar', brand: 'La Roche-Posay',
-    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "effaclar_duo.jpg", potency: 3, 
+    name: { ar: 'إيفاكلار ديو (+)', en: 'Effaclar Duo (+)' }, image: "effaclar.jpg", potency: 3, 
     pharmacology: {
         ph_level: { 
             ar: '5.5 (يحافظ على الغلاف الحمضي لتثبيط بكتيريا الحبوب دون تجريد البشرة)', 
